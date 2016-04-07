@@ -15,36 +15,33 @@ module Billimatic
       false
     end
 
-    # def payees
-    #   Resources::Payee.new(http)
-    # end
+    def plans
+      Resources::Plan.new(http)
+    end
 
-    # def bank_accounts
-    #   Resources::BankAccount.new(http)
-    # end
+    def subscriptions
+      Resources::Subscription.new(http)
+    end
 
-    # def charge_accounts
-    #   Resources::ChargeAccount.new(http)
-    # end
+    def contracts
+      Resources::Contract.new(http)
+    end
 
-    # def charges
-    #   Resources::Charge.new(http)
-    # end
+    def invoices
+      Resources::Invoice.new(http)
+    end
 
-    # def webhooks
-    #   Resources::Webhook.new(http)
-    # end
+    def invoice_rules
+      Resources::InvoiceRule.new(http)
+    end
 
-    # def charging_types
-    #   Resources::ChargingType.new(http)
-    # end
+    def companies
+      Resources::Company.new(http)
+    end
 
-    # def regress_cnabs
-    #   Resources::RegressCnab.new(http)
-    # end
+    def webhooks
+      Resources::Webhook.new(http)
+    end
 
-    # def remittance_cnabs
-    #   Resources::RemittanceCnab.new(http)
-    # end
   end
 end
