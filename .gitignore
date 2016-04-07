@@ -37,3 +37,5 @@ build/
 
 .env
 .envrc
+
+.DS_Store
