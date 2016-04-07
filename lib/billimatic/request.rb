@@ -22,8 +22,7 @@ module Billimatic
           params: args[:params],
           body: body,
           headers: headers,
-          userpwd: token,
-          accept_encoding: "gzip"
+          accept_encoding: "gzip, deflate"
         }.reject {|k,v| v.nil?}
       end
 
@@ -33,6 +32,8 @@ module Billimatic
           "Accept" => "application/json",
           "Content-Type" => "application/json",
           "User-Agent" => args[:user_agent],
+          "Authorization" => "Token token=#{token}",
+          "Accept-Language" => "pt-br",
         }.merge(headers)
       end
 
@@ -43,7 +44,7 @@ module Billimatic
       end
 
       def token
-        "#{args[:token]}:x"
+        args[:token]
       end
 
   end

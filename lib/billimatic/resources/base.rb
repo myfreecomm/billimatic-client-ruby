@@ -104,7 +104,7 @@ module Billimatic
       end
 
       def entity_klass(class_name = base_klass)
-        @entity_klass ||= Billimatic::Entities.const_get(class_name.to_sym) # TODO
+        @entity_klass ||= Billimatic::Entities.const_get(class_name.to_sym)
       end
 
       def underscore_pluralized(str)

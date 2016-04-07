@@ -7,7 +7,7 @@ module Billimatic
     end
 
     def authenticated?
-      http.get("") do |response|
+      http.get("/companies/search?cnpj=auth_test") do |response|
         response.code == 200
       end
     rescue RequestError => e
