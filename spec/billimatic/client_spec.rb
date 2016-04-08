@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Billimatic::Client do
-  let(:token) { "45d4e96c707f2a45f73ac9848ff8eeab" } #user login my_favorite_billimatic_user@mailinator.com, passw: 123123
+  let(:token) { "bfe97f701f615edf41587cbd59d6a0e8" } # user login my_favorite_billimatic_user@mailinator.com, passw: 123456
   subject { described_class.new(token) }
 
   describe "#authenticated?" do
@@ -12,10 +12,8 @@ describe Billimatic::Client do
         end
       end
     end
-
     context "with an invalid token" do
       subject { described_class.new("FAKE-TOKEN") }
-
       it "returns false" do
         VCR.use_cassette("client/authenticated/false") do
           expect(subject.authenticated?).to be_falsey

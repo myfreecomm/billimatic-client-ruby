@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=auth_test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=FAKE-TOKEN
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Fri, 08 Apr 2016 18:59:22 GMT
+      Server:
+      - nginx/1.8.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 425bd79e-eeb7-4c77-9e69-1a153d9d4781
+      X-Runtime:
+      - '0.006926'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=auth_test
+  recorded_at: Fri, 08 Apr 2016 18:59:22 GMT
+recorded_with: VCR 3.0.1
