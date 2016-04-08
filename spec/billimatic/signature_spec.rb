@@ -2,14 +2,11 @@ require "spec_helper"
 
 describe Billimatic::Signature do
   let(:body) do
-    {
-      test: true
-    }
+    {test: true}
   end
-
-  let(:secret)             { 'my-billimatic-secret' }
+  let(:secret) { 'my-billimatic-secret' }
   let(:billimatic_request_id) { 'anything' }
-  let(:billimatic_signature)  { OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), secret, "#{billimatic_request_id}#{body}") }
+  let(:billimatic_signature) { OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), secret, "#{billimatic_request_id}#{body}") }
 
   describe '#check?' do
     subject { described_class.new(secret) }
