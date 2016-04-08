@@ -23,16 +23,17 @@ describe Billimatic::Http do
     it "sends a #{verb.to_s.upcase} request to billimatic API" do
       subject.send(verb, "/some_resource")
       expect(request).to have_received(:new).
-        with('https://sandbox.billimatic.com/api/v1/some_resource',
-             method: verb,
-             userpwd: "#{token}:x",
-             accept_encoding: "gzip",
-             headers:  {
-                "Accept" => "application/json",
-                "Content-Type" => "application/json",
-                "User-Agent" => Billimatic.configuration.user_agent
-              }
-            )
+        with('https://sandbox.billimatic.com.br/api/v1/some_resource',
+         method: verb,
+         accept_encoding: "gzip, deflate",
+         headers:  {
+            "Accept" => "application/json",
+            "Content-Type" => "application/json",
+            "User-Agent" => Billimatic.configuration.user_agent,
+            "Authorization"=>"Token token=#{token}",
+            "Accept-Language"=>"pt-br"
+          }
+        )
     end
 
     it 'raises RequestTimeout when timed out' do
