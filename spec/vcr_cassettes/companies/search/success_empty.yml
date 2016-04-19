@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=45.368.637%2F0001-73
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 19 Apr 2016 20:48:24 GMT
+      ETag:
+      - W/"5697e2918375712f776fdad900c87b76"
+      Server:
+      - nginx/1.8.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 42d88e6e-547a-4892-82c0-308c2be5a9a8
+      X-Runtime:
+      - '0.011135'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"companies":[]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=45.368.637%2F0001-73
+  recorded_at: Tue, 19 Apr 2016 20:48:24 GMT
+recorded_with: VCR 3.0.1

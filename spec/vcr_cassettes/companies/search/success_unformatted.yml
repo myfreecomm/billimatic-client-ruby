@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=81644331000166
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 19 Apr 2016 20:48:25 GMT
+      ETag:
+      - W/"eef3c6c7d0879e64eb7d61a21c51cc9d"
+      Server:
+      - nginx/1.8.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 3a3aa4db-5c0d-4942-bf0c-a083a819d5bd
+      X-Runtime:
+      - '0.026009'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '239'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"companies":[{"id":565,"name":"Empresa Zero Um","account_id":32,"company_name":"Emp
+        01","cnpj":"81.644.331/0001-66","address":"","number":"","zipcode":"","district":"","complement":"","city":"","state":"","ibge_code":"","contacts":"","billing_contacts":"","created_at":"2016-04-07T16:55:18.000-03:00","updated_at":"2016-04-07T16:55:18.000-03:00","kind":"company","comments":""}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=81644331000166
+  recorded_at: Tue, 19 Apr 2016 20:48:25 GMT
+recorded_with: VCR 3.0.1

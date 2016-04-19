@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 19 Apr 2016 21:04:14 GMT
+      Server:
+      - nginx/1.8.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 46554a80-3856-4f01-bca9-28b5cc723e9e
+      X-Runtime:
+      - '0.012882'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '56'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOiJQYXLDom1ldHJvKHMpIGludsOhbGlkbyhzKSBwYXJhIGJ1
+        c2NhOiBjbnBqIn0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=
+  recorded_at: Tue, 19 Apr 2016 21:04:14 GMT
+recorded_with: VCR 3.0.1

@@ -81,7 +81,6 @@ module Billimatic
         class_name    ||= base_klass
         naked_klass     = entity_klass(class_name)
         hash            = parsed_body(response)
-        collection_name = underscore_pluralized(class_name)
 
         hash[collection_name].map { |item| naked_klass.new(item) }
       end
