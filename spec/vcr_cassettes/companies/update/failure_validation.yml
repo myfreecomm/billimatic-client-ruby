@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/567
+    body:
+      encoding: UTF-8
+      string: '{"address":"Outra Rua","number":"999","zipcode":"22290-080"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Apr 2016 20:33:10 GMT
+      Server:
+      - nginx/1.8.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 2effd77c-8ab9-4a6b-8e6e-6454565fc8bd
+      X-Runtime:
+      - '0.030104'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '59'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiemlwY29kZSI6WyJQb3IgZmF2b3IgZGlnaXRlIHVtIENF
+        UCB2w6FsaWRvLiJdfX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/567
+  recorded_at: Wed, 20 Apr 2016 20:33:10 GMT
+recorded_with: VCR 3.0.1

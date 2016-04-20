@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/567
+    body:
+      encoding: UTF-8
+      string: '{"address":"Outra Rua","number":"999"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Apr 2016 20:33:10 GMT
+      ETag:
+      - W/"fccd4631140fc6dadb10a5cc7f741544"
+      Server:
+      - nginx/1.8.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - f54c9c5b-1e15-4050-9d40-e297ae42ca3d
+      X-Runtime:
+      - '0.091780'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '332'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6NTY3LCJuYW1lIjoiQWNtZSBJbmMiLCJhY2NvdW50X2lkIjozMiwi
+        Y29tcGFueV9uYW1lIjoiQWNtZSBJbmNvcnBvcmF0ZWQiLCJjbnBqIjoiNDYu
+        MTgxLjY1Ni8wMDAxLTU5IiwiYWRkcmVzcyI6Ik91dHJhIFJ1YSIsIm51bWJl
+        ciI6Ijk5OSIsInppcGNvZGUiOiIyMjI5MDA4MCIsImRpc3RyaWN0IjoiQ2Vu
+        dHJvIiwiY29tcGxlbWVudCI6ImFwdG8gNDIiLCJjaXR5IjoiUmlvIGRlIEph
+        bmVpcm8iLCJzdGF0ZSI6IlJKIiwiaWJnZV9jb2RlIjoiMTIzNDUiLCJjb250
+        YWN0cyI6ImZvb0BiYXIuY29tLCBzcGFtQGVnZ3MuY28udWsiLCJiaWxsaW5n
+        X2NvbnRhY3RzIjoiYmF6QGJhbWJhbS5jb20uYnIiLCJjcmVhdGVkX2F0Ijoi
+        MjAxNi0wNC0yMFQxNzoyODoyMC4wMDAtMDM6MDAiLCJ1cGRhdGVkX2F0Ijoi
+        MjAxNi0wNC0yMFQxNzozMzoxMC4zNDYtMDM6MDAiLCJraW5kIjoiY29tcGFu
+        eSIsImNvbW1lbnRzIjoiQWxndW0gY29tZW50w6FyaW8ifQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/567
+  recorded_at: Wed, 20 Apr 2016 20:33:10 GMT
+recorded_with: VCR 3.0.1

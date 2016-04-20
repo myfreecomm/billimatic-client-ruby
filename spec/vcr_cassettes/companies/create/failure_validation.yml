@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/companies
+    body:
+      encoding: UTF-8
+      string: '{"name":"Acme Inc","cnpj":"46.181.656/0001-59","company_name":"Acme
+        Incorporated","address":"Rua Tal","number":"1337","complement":"apto 42","district":"Centro","zipcode":"22290-080","city":"Rio
+        de Janeiro","state":"RJ","ibge_code":"12345","contacts":"foo@bar.com, spam@eggs.co.uk","billing_contacts":"baz@bambam.com.br","comments":"Algum
+        comentário"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Apr 2016 20:28:56 GMT
+      Server:
+      - nginx/1.8.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 1efed28f-06d0-483e-a950-f7c630726d0a
+      X-Runtime:
+      - '0.028699'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '151'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiY25waiI6WyJqw6EgZXN0w6EgZW0gdXNvIl0sIm5hbWUi
+        OlsiasOhIGVzdMOhIGVtIHVzbyJdLCJjb21wYW55X25hbWUiOlsiasOhIGVz
+        dMOhIGVtIHVzbyJdLCJ6aXBjb2RlIjpbIlBvciBmYXZvciBkaWdpdGUgdW0g
+        Q0VQIHbDoWxpZG8uIl19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies
+  recorded_at: Wed, 20 Apr 2016 20:28:56 GMT
+recorded_with: VCR 3.0.1

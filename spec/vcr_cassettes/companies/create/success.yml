@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/companies
+    body:
+      encoding: UTF-8
+      string: '{"name":"Acme Inc","cnpj":"46.181.656/0001-59","company_name":"Acme
+        Incorporated","address":"Rua Tal","number":"1337","complement":"apto 42","district":"Centro","zipcode":"22290080","city":"Rio
+        de Janeiro","state":"RJ","ibge_code":"12345","contacts":"foo@bar.com, spam@eggs.co.uk","billing_contacts":"baz@bambam.com.br","comments":"Algum
+        comentário"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Apr 2016 20:28:20 GMT
+      ETag:
+      - W/"939bd55178d0b6df8cea5b822a50cf5b"
+      Server:
+      - nginx/1.8.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 09ee2ddb-2b1b-481b-a0da-d6aa309085de
+      X-Runtime:
+      - '0.053325'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '483'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6NTY3LCJuYW1lIjoiQWNtZSBJbmMiLCJhY2NvdW50X2lkIjozMiwi
+        Y29tcGFueV9uYW1lIjoiQWNtZSBJbmNvcnBvcmF0ZWQiLCJjbnBqIjoiNDYu
+        MTgxLjY1Ni8wMDAxLTU5IiwiYWRkcmVzcyI6IlJ1YSBUYWwiLCJudW1iZXIi
+        OiIxMzM3IiwiemlwY29kZSI6IjIyMjkwMDgwIiwiZGlzdHJpY3QiOiJDZW50
+        cm8iLCJjb21wbGVtZW50IjoiYXB0byA0MiIsImNpdHkiOiJSaW8gZGUgSmFu
+        ZWlybyIsInN0YXRlIjoiUkoiLCJpYmdlX2NvZGUiOiIxMjM0NSIsImNvbnRh
+        Y3RzIjoiZm9vQGJhci5jb20sIHNwYW1AZWdncy5jby51ayIsImJpbGxpbmdf
+        Y29udGFjdHMiOiJiYXpAYmFtYmFtLmNvbS5iciIsImNyZWF0ZWRfYXQiOiIy
+        MDE2LTA0LTIwVDE3OjI4OjIwLjYzOC0wMzowMCIsInVwZGF0ZWRfYXQiOiIy
+        MDE2LTA0LTIwVDE3OjI4OjIwLjYzOC0wMzowMCIsImtpbmQiOiJjb21wYW55
+        IiwiY29tbWVudHMiOiJBbGd1bSBjb21lbnTDoXJpbyJ9
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies
+  recorded_at: Wed, 20 Apr 2016 20:28:20 GMT
+recorded_with: VCR 3.0.1
