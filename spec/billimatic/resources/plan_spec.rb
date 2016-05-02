@@ -14,10 +14,16 @@ describe Billimatic::Resources::Plan do
     it 'returns a collection of plans for an organization' do
       VCR.use_cassette('plans/list/success') do
         plans = subject.list(564)
+        entity_service_items = plans.each.map(&:products).flatten
 
         expect(plans).to be_a Array
         plans.each do |plan|
           expect(plan).to be_a entity_klass
+        end
+
+        entity_service_items.each do |entity_service_item|
+          expect(entity_service_item).
+            to be_a Billimatic::Entities::EntityServiceItem
         end
       end
     end

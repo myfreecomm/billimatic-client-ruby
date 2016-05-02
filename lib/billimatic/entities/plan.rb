@@ -15,6 +15,7 @@ module Billimatic
       attribute :finance_category, String
       attribute :finance_revenue_center, String
       attribute :created_at, DateTime
+      attribute :products, Array[EntityServiceItem]
     end
   end
 end

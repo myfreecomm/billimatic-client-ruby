@@ -29,9 +29,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 02 May 2016 20:39:20 GMT
+      - Mon, 02 May 2016 21:11:59 GMT
       ETag:
-      - W/"852fc9bd7219200b4aed1e9b0df4f878"
+      - W/"21c8e2b992cd7aafdd8216f16962ffc6"
       Server:
       - nginx/1.10.0
       Strict-Transport-Security:
@@ -43,13 +43,13 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 18dcb168-fe6b-418b-ac0f-1ca28b99c4a4
+      - bd00b792-225c-4b21-8bc2-60a3f72993f4
       X-Runtime:
-      - '0.026229'
+      - '0.029909'
       X-XSS-Protection:
       - 1; mode=block
       Content-Length:
-      - '285'
+      - '324'
       Connection:
       - keep-alive
     body:
@@ -63,10 +63,12 @@ http_interactions:
         ImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiY29icmF0b19iaWxs
         ZXRfY2hhcmdlX2NvbmZpZ19pZCI6bnVsbCwiZmluYW5jZV9jYXRlZ29yeSI6
         bnVsbCwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6bnVsbCwiY3JlYXRlZF9h
-        dCI6IjAyLzA1LzIwMTYgMTc6MTk6MjcgLTAzOjAwIiwicHJvZHVjdHMiOltd
+        dCI6IjAyLzA1LzIwMTYgMTc6MTk6MjcgLTAzOjAwIiwicHJvZHVjdHMiOlt7
+        ImlkIjo3OTM4NSwibmFtZSI6IlNlcnZpw6dvIE9ubGluZSAxIiwidW5pdF92
+        YWx1ZSI6IjEwMC4wIiwidW5pdHMiOiIxLjAiLCJ2YWx1ZSI6IjEwMC4wIn1d
         fV19
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans
-  recorded_at: Mon, 02 May 2016 20:39:20 GMT
+  recorded_at: Mon, 02 May 2016 21:11:59 GMT
 recorded_with: VCR 3.0.1

@@ -16,7 +16,16 @@ describe Billimatic::Entities::Plan do
       cobrato_billet_charge_config_id: 110,
       finance_category: 'Outros',
       finance_revenue_center: 'CR1',
-      created_at: "2016-05-02T16:55:10.000-03:00"
+      created_at: "2016-05-02T16:55:10.000-03:00",
+      products: [
+        Billimatic::Entities::EntityServiceItem.new(
+          id: 1,
+          name: 'Serviço',
+          unit_value: 150.0,
+          units: 2.0,
+          value: 300.0
+        )
+      ]
     }
   end
 
@@ -27,6 +36,6 @@ describe Billimatic::Entities::Plan do
                     :translated_billing_period, :has_trial, :trial_period,
                     :redirect_url, :emites_service_values_id,
                     :cobrato_billet_charge_config_id, :finance_category,
-                    :finance_revenue_center, :created_at
+                    :finance_revenue_center, :created_at, :products
                   ]
 end
