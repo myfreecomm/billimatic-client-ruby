@@ -13,24 +13,17 @@ describe Billimatic::Resources::Plan do
   describe '#list' do
     it 'returns a collection of plans for an organization' do
       VCR.use_cassette('plans/list/success') do
-        plans = subject.list(564)
-        entity_service_items = plans.each.map(&:products).flatten
+        plans = subject.list(organization_id: 564)
 
-        expect(plans).to be_a Array
-        plans.each do |plan|
-          expect(plan).to be_a entity_klass
-        end
-
-        entity_service_items.each do |entity_service_item|
-          expect(entity_service_item).
-            to be_a Billimatic::Entities::EntityServiceItem
-        end
+        expect(plans.size).to eql 1
+        expect(plans.first).to be_an entity_klass
+        expect(plans.first.products).not_to be_empty
       end
     end
 
     it 'returns not found it the organization is not found' do
       VCR.use_cassette('plans/list/organization_not_found') do
-        expect { subject.list(51) }.to raise_error(
+        expect { subject.list(organization_id: 51) }.to raise_error(
                                          Billimatic::RequestError
                                        ) { |error| expect(error.code).to eql(404) }
       end

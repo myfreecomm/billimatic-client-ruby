@@ -18,7 +18,7 @@ describe Billimatic::Entities::Plan do
       finance_revenue_center: 'CR1',
       created_at: "2016-05-02T16:55:10.000-03:00",
       products: [
-        Billimatic::Entities::EntityServiceItem.new(
+        Billimatic::Entities::Product.new(
           id: 1,
           name: 'Serviço',
           unit_value: 150.0,
