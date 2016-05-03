@@ -123,7 +123,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
             </a>
         </td>
         <td>
-            <code>client.plans.list(organization_id: organization_id)</code>
+            <code>client.plans.list(organization_id: id)</code>
         </td>
     </tr>
 </table>
@@ -144,7 +144,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
             </a>
         </td>
         <td>
-            <code>client.subscriptions.show(token: subscription_token)</code>
+            <code>client.subscriptions.show(token: token)</code>
         </td>
     </tr>
     <tr>
@@ -166,7 +166,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
             </a>
         </td>
         <td>
-            <code>client.subscriptions.cancel(token: subscription_token)</code>
+            <code>client.subscriptions.cancel(token: token)</code>
         </td>
     </tr>
 </table>
