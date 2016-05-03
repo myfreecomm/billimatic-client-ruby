@@ -37,6 +37,9 @@ describe Billimatic::Resources::Subscription do
         subscription = subject.create(subscription_params)
 
         expect(subscription).to be_a entity_klass
+        expect(subscription.name).to eql 'Assinatura Empresa de Teste - Plano 1'
+        expect(subscription.status).to eql 'trial'
+        expect(subscription.plan.id).to eql subscription_params.fetch(:plan_id)
       end
     end
 
