@@ -5,8 +5,12 @@ module Billimatic
 
       # TODO...
       # search
-      # token
 
+      def show(token:)
+        http.get("#{resource_base_path}/token/#{token}") do |response|
+          respond_with_entity(response)
+        end
+      end
     end
   end
 end

@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/token/f7e385a902a9f626addacdcccc90f10e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 03 May 2016 12:14:33 GMT
+      ETag:
+      - W/"24f66708617bf9415777cbc4b6730025"
+      Server:
+      - nginx/1.10.0
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 6a2f0fe0-3d5d-460c-be3c-8c731e77c0e0
+      X-Runtime:
+      - '0.021264'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '522'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb250cmFjdCI6eyJpZCI6MjIxLCJuYW1lIjoiQXNzaW5hdHVyYSBDb21w
+        YW5oaWEgVGVzdGUgLSBQbGFubyAxIiwidGl0bGUiOiJBc3NpbmF0dXJhIENv
+        bXBhbmhpYSBUZXN0ZSAtIFBsYW5vIDEiLCJ0b2tlbiI6ImY3ZTM4NWE5MDJh
+        OWY2MjZhZGRhY2RjY2NjOTBmMTBlIiwiZGVzY3JpcHRpb24iOm51bGwsImN1
+        c3RvbWVyX2lkIjo1NjgsImN1c3RvbWVyX3R5cGUiOiJDb21wYW55Iiwic3Vw
+        cGxpZXJfaWQiOjU2NCwic3VwcGxpZXJfdHlwZSI6IkNvbXBhbnkiLCJzdGF0
+        ZSI6MSwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjIwMTYtMDUtMDMi
+        LCJlbmRfZGF0ZSI6IjIwMTYtMDYtMDIiLCJjcmVhdGVkX2F0IjoiMDMvMDUv
+        MjAxNiAwODoxODoyMiAtMDM6MDAiLCJraW5kIjoic2FsZSIsInJlZ2lzdHJh
+        dGlvbl9tZXRob2QiOiJzdWJzY3JpcHRpb24iLCJvdmVyZHVlIjpmYWxzZSwi
+        c3RhdHVzIjoidHJpYWwiLCJwbGFuIjp7ImlkIjo0LCJuYW1lIjoiUGxhbm8g
+        MSIsImRlc2NyaXB0aW9uIjoiUGxhbm8gMSBkZXNjcmnDp8OjbyIsInJlZGly
+        ZWN0X3VybCI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS5iciIsInByaWNlIjoi
+        MTAwLjAiLCJiaWxsaW5nX3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5n
+        X3BlcmlvZCI6Ik1lbnNhbG1lbnRlIiwiaGFzX3RyaWFsIjp0cnVlLCJ0cmlh
+        bF9wZXJpb2QiOjMwLCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOm51bGws
+        ImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdfaWQiOm51bGwsImZpbmFu
+        Y2VfY2F0ZWdvcnkiOm51bGwsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOm51
+        bGwsImNyZWF0ZWRfYXQiOiIwMi8wNS8yMDE2IDE3OjE5OjI3IC0wMzowMCIs
+        InByb2R1Y3RzIjpbeyJpZCI6NzkzODUsIm5hbWUiOiJTZXJ2acOnbyBPbmxp
+        bmUgMSIsInVuaXRfdmFsdWUiOiIxMDAuMCIsInVuaXRzIjoiMS4wIiwidmFs
+        dWUiOiIxMDAuMCJ9XX19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/token/f7e385a902a9f626addacdcccc90f10e
+  recorded_at: Tue, 03 May 2016 12:14:33 GMT
+recorded_with: VCR 3.0.1
