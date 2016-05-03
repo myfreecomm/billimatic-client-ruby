@@ -1,10 +1,8 @@
 module Billimatic
   module Entities
-    class Subscription < Base
-      attribute :id, Integer
+    class Subscription < Contract
       attribute :plan_id, Integer
-      attribute :customer, Billimatic::Entities::Customer
-      attribute :address_information, Billimatic::Entities::AddressInformation
+      attribute :customer, Customer
     end
   end
 end

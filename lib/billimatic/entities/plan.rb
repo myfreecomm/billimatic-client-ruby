@@ -6,7 +6,7 @@ module Billimatic
       attribute :description, String
       attribute :price, Decimal
       attribute :billing_period, Integer
-      attribute :translated_billing_period, Integer
+      attribute :translated_billing_period, String
       attribute :has_trial, Boolean
       attribute :trial_period, Integer
       attribute :redirect_url, String
