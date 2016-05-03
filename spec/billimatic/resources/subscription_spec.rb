@@ -34,9 +34,9 @@ describe Billimatic::Resources::Subscription do
 
     it 'returns the newly created subscription' do
       VCR.use_cassette('subscriptions/create/success') do
-        contract = subject.create(subscription_params)
+        subscription = subject.create(subscription_params)
 
-        expect(contract).to be_a entity_klass
+        expect(subscription).to be_a entity_klass
       end
     end
 
@@ -58,6 +58,26 @@ describe Billimatic::Resources::Subscription do
 
         expect {
           subject.create(subscription_params)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+  end
+
+  describe '#cancel' do
+    it "successfully sets a subscription to 'cancelled'" do
+      VCR.use_cassette('subscriptions/cancel/success') do
+        subscription = subject.cancel(token: 'f7e385a902a9f626addacdcccc90f10e')
+
+        expect(subscription.status).to eql 'cancelled'
+      end
+    end
+
+    it 'returns an error if subscription is not found' do
+      VCR.use_cassette('subscriptions/cancel/not_found') do
+        expect {
+          subject.cancel(token: 'foo123')
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 404
         end
