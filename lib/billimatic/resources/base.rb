@@ -87,7 +87,7 @@ module Billimatic
 
       def respond_with_entity(response, naked_klass = entity_klass)
         item = parsed_body(response)
-        naked_klass.new(item)
+        naked_klass.new(item[base_klass.downcase])
       end
 
       def respond_with_openstruct(response)
