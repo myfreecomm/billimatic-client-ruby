@@ -29,11 +29,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 19 Apr 2016 20:48:24 GMT
+      - Tue, 03 May 2016 15:22:06 GMT
       ETag:
       - W/"5697e2918375712f776fdad900c87b76"
       Server:
-      - nginx/1.8.1
+      - nginx/1.10.0
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains;
       Vary:
@@ -43,9 +43,9 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 42d88e6e-547a-4892-82c0-308c2be5a9a8
+      - d351adad-ad32-4ada-b461-609c7a176b1e
       X-Runtime:
-      - '0.011135'
+      - '0.083704'
       X-XSS-Protection:
       - 1; mode=block
       Content-Length:
@@ -58,5 +58,5 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=45.368.637%2F0001-73
-  recorded_at: Tue, 19 Apr 2016 20:48:24 GMT
+  recorded_at: Tue, 03 May 2016 15:22:06 GMT
 recorded_with: VCR 3.0.1

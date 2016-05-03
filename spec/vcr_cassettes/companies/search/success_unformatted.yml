@@ -29,11 +29,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 19 Apr 2016 20:48:25 GMT
+      - Tue, 03 May 2016 15:22:06 GMT
       ETag:
-      - W/"eef3c6c7d0879e64eb7d61a21c51cc9d"
+      - W/"faa11e8d844a51cf769582b65baa6e61"
       Server:
-      - nginx/1.8.1
+      - nginx/1.10.0
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains;
       Vary:
@@ -43,21 +43,22 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 3a3aa4db-5c0d-4942-bf0c-a083a819d5bd
+      - fcf50c66-28e7-4364-8535-074655c11829
       X-Runtime:
-      - '0.026009'
+      - '0.022009'
       X-XSS-Protection:
       - 1; mode=block
       Content-Length:
-      - '239'
+      - '227'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"companies":[{"id":565,"name":"Empresa Zero Um","account_id":32,"company_name":"Emp
-        01","cnpj":"81.644.331/0001-66","address":"","number":"","zipcode":"","district":"","complement":"","city":"","state":"","ibge_code":"","contacts":"","billing_contacts":"","created_at":"2016-04-07T16:55:18.000-03:00","updated_at":"2016-04-07T16:55:18.000-03:00","kind":"company","comments":""}]}'
+      string: '{"companies":[{"id":565,"account_id":32,"name":"Empresa Zero Um","company_name":"Emp
+        01","cnpj":"81.644.331/0001-66","address":"","number":"","zipcode":"","district":"","complement":"","city":"","state":"","ibge_code":"","contacts":"","billing_contacts":"","kind":"company","comments":"","created_at":"07/04/2016
+        16:55:18 -03:00"}]}'
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=81644331000166
-  recorded_at: Tue, 19 Apr 2016 20:48:25 GMT
+  recorded_at: Tue, 03 May 2016 15:22:06 GMT
 recorded_with: VCR 3.0.1

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://sandbox.billimatic.com.br/api/v1/companies/567
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/571
     body:
       encoding: US-ASCII
       string: ''
@@ -25,9 +25,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       Date:
-      - Wed, 20 Apr 2016 20:33:24 GMT
+      - Tue, 03 May 2016 15:27:34 GMT
       Server:
-      - nginx/1.8.1
+      - nginx/1.10.0
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains;
       X-Content-Type-Options:
@@ -35,9 +35,9 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 376de541-12aa-4aae-903e-aa79198ac2cd
+      - ed016cfc-54d6-4567-9aee-e54ab81d3bc5
       X-Runtime:
-      - '0.043225'
+      - '0.049521'
       X-XSS-Protection:
       - 1; mode=block
       Connection:
@@ -47,6 +47,6 @@ http_interactions:
       string: ''
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/567
-  recorded_at: Wed, 20 Apr 2016 20:33:25 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/571
+  recorded_at: Tue, 03 May 2016 15:27:34 GMT
 recorded_with: VCR 3.0.1

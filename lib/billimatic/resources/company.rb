@@ -21,8 +21,6 @@ module Billimatic
           respond_with_entity(response)
         end
       end
-
     end
   end
 end
-

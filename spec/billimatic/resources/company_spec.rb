@@ -98,7 +98,7 @@ describe Billimatic::Resources::Company do
   end
 
   describe '#update' do
-    let(:id) { 567 } # ID of the company created on the #create test above
+    let(:id) { 571 } # ID of the company created on the #create test above
     let(:params) do
       {address: 'Outra Rua', number: '999'}
     end
@@ -132,7 +132,7 @@ describe Billimatic::Resources::Company do
   end
 
   describe '#destroy' do
-    let(:id) { 567 } # ID of the company created on the #create test above
+    let(:id) { 571 } # ID of the company created on the #create test above
     it 'deletes an existing company and returns true' do
       VCR.use_cassette('companies/destroy/success') do
         result = subject.destroy(id)
@@ -146,5 +146,4 @@ describe Billimatic::Resources::Company do
       end
     end
   end
-
 end
