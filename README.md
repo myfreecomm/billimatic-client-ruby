@@ -47,11 +47,129 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
 
 ##### Now you have acess to every API endpoint:
 
-* TODO
+* [Companies API](https://app.billimatic.com.br/docs/api#!/companies) as `client.companies`
+* [Plans API](https://app.billimatic.com.br/docs/api#!/plans) as `client.plans`
+* [Subscriptions API](https://app.billimatic.com.br/docs/api#!/subscriptions) as `client.subscriptions`
 
 ## Endpoints
 
-TODO
+#### [Companies](https://app.billimatic.com.br/docs/api#!/companies)
+
+<table>
+    <tr>
+        <th>HTTP method</th>
+        <th>Endpoint</th>
+        <th>Client method</th>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_search_get_0" target="_blank">
+                /api/v1/companies/search?cnpj=:cnpj
+            </a>
+        </td>
+        <td>
+            <code>client.companies.search(cnpj)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>POST</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_create_post_1" target="_blank">
+                /api/v1/companies
+            </a>
+        </td>
+        <td>
+            <code>client.companies.create(attributes_hash)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>PATCH</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_update_patch_2" target="_blank">
+                /api/v1/companies/:id
+            </a>
+        </td>
+        <td>
+            <code>client.companies.update(id, attributes_hash)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>DELETE</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_destroy_delete_3" target="_blank">
+                /api/v1/companies/:id
+            </a>
+        </td>
+        <td>
+            <code>client.companies.destroy(id)</code>
+        </td>
+    </tr>
+</table>
+
+#### [Plans](https://app.billimatic.com.br/docs/api#!/plans)
+
+<table>
+    <tr>
+        <th>HTTP method</th>
+        <th>Endpoint</th>
+        <th>Client method</th>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/plans/API_V1_Plans_index_get_0" target="_blank">
+                /api/v1/organizations/:organization_id/plans
+            </a>
+        </td>
+        <td>
+            <code>client.plans.list(organization_id: organization_id)</code>
+        </td>
+    </tr>
+</table>
+
+#### [Subscriptions](https://app.billimatic.com.br/docs/api#!/subscriptions)
+
+<table>
+    <tr>
+        <th>HTTP method</th>
+        <th>Endpoint</th>
+        <th>Client method</th>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/subscriptions/API_V1_Subscriptions_show_by_token_get_1" target="_blank">
+                /api/v1/subscriptions/token/:token
+            </a>
+        </td>
+        <td>
+            <code>client.subscriptions.show(token: subscription_token)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>POST</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/subscriptions/API_V1_Subscriptions_create_post_2" target="_blank">
+                /api/v1/subscriptions
+            </a>
+        </td>
+        <td>
+            <code>client.subscriptions.create(attributes_hash)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>PATCH</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/subscriptions/API_V1_Subscriptions_cancel_patch_0" target="_blank">
+                /api/v1/subscriptions/:token/cancel
+            </a>
+        </td>
+        <td>
+            <code>client.subscriptions.cancel(token: subscription_token)</code>
+        </td>
+    </tr>
+</table>
 
 ## Callbacks
 
