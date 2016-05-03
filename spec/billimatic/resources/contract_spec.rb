@@ -9,24 +9,4 @@ describe Billimatic::Resources::Contract do
   it 'has a instance of Billimatic::Http' do
     expect(subject.http).to eq(http)
   end
-
-  describe '#show :token' do
-    it 'returns the contract that has the token attached' do
-      VCR.use_cassette('contracts/show_by_token/success') do
-        contract = subject.show(token: 'f7e385a902a9f626addacdcccc90f10e')
-
-        expect(contract).to be_a entity_klass
-      end
-    end
-
-    it 'returns an error if contract is not found with the given token' do
-      VCR.use_cassette('contracts/show_by_token/failure') do
-        expect {
-          subject.show(token: 'foo123')
-        }.to raise_error(Billimatic::RequestError) do |error|
-          expect(error.code).to eql 404
-        end
-      end
-    end
-  end
 end

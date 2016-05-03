@@ -10,6 +10,28 @@ describe Billimatic::Resources::Subscription do
     expect(subject.http).to eq(http)
   end
 
+  describe '#show :token' do
+    it 'returns the subscription that has the token attached' do
+      VCR.use_cassette('subscriptions/show_by_token/success') do
+        subscription = subject.show(token: 'f7e385a902a9f626addacdcccc90f10e')
+
+        expect(subscription).to be_a entity_klass
+        expect(subscription.token).to eql 'f7e385a902a9f626addacdcccc90f10e'
+        expect(subscription.name).not_to be_nil
+      end
+    end
+
+    it 'returns an error if subscription is not found with the given token' do
+      VCR.use_cassette('subscriptions/show_by_token/failure') do
+        expect {
+          subject.show(token: 'foo123')
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+  end
+
   describe '#create' do
     let(:subscription_params) do
       {
