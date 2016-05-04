@@ -16,7 +16,7 @@ module Billimatic
       end
 
       def collection_name
-        @collection_name ||= underscore_pluralized(base_klass)
+        @collection_name ||= underscore_pluralized_klass_name
       end
 
       def parsed_body(response)
@@ -87,7 +87,7 @@ module Billimatic
 
       def respond_with_entity(response, naked_klass = entity_klass)
         item = parsed_body(response)
-        naked_klass.new(item[base_klass.downcase])
+        naked_klass.new(item[underscored_klass_name])
       end
 
       def respond_with_openstruct(response)
@@ -106,10 +106,13 @@ module Billimatic
         @entity_klass ||= Billimatic::Entities.const_get(class_name.to_sym)
       end
 
-      def underscore_pluralized(str)
-        "#{str.gsub(/(.)([A-Z])/,'\1_\2').downcase}s"
+      def underscore_pluralized_klass_name
+        "#{underscored_klass_name}s"
       end
 
+      def underscored_klass_name
+        base_klass.gsub(/(.)([A-Z])/, '\1_\2').downcase
+      end
     end
   end
 end
