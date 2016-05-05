@@ -16,7 +16,7 @@ module Billimatic
       end
 
       def collection_name
-        @collection_name ||= underscore_pluralized(base_klass)
+        @collection_name ||= underscore_pluralized_klass_name
       end
 
       def parsed_body(response)
@@ -68,26 +68,24 @@ module Billimatic
       notify :create, :destroy
 
       protected
+
       def crud_request
         method = caller_locations(1,1)[0].label
         if self.class.crud.include?(:all) || self.class.crud.include?(method.to_sym)
           yield
         else
-          raise raise RuntimeError, "#{base_klass} do not implement the #{method} method"
+          raise RuntimeError, "#{base_klass} do not implement the #{method} method"
         end
       end
 
-      def respond_with_collection(response, class_name = nil)
-        class_name    ||= base_klass
-        naked_klass     = entity_klass(class_name)
-        hash            = parsed_body(response)
-
-        hash[collection_name].map { |item| naked_klass.new(item) }
+      def respond_with_collection(response, class_name = base_klass)
+        parsed_body(response)[collection_name].map do |item|
+          entity_klass(class_name).new(item)
+        end
       end
 
       def respond_with_entity(response, naked_klass = entity_klass)
-        item = parsed_body(response)
-        naked_klass.new(item)
+        naked_klass.new(parsed_body(response)[underscored_klass_name])
       end
 
       def respond_with_openstruct(response)
@@ -106,10 +104,13 @@ module Billimatic
         @entity_klass ||= Billimatic::Entities.const_get(class_name.to_sym)
       end
 
-      def underscore_pluralized(str)
-        "#{str.gsub(/(.)([A-Z])/,'\1_\2').downcase}s"
+      def underscore_pluralized_klass_name
+        "#{underscored_klass_name}s"
       end
 
+      def underscored_klass_name
+        base_klass.gsub(/(.)([A-Z])/, '\1_\2').downcase
+      end
     end
   end
 end

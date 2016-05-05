@@ -27,17 +27,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 19 Apr 2016 21:04:13 GMT
+      - Tue, 03 May 2016 15:22:06 GMT
       Server:
-      - nginx/1.8.1
+      - nginx/1.10.0
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 34e7d4c4-4575-4ef6-ba97-30161ca176ca
+      - 77748c40-c552-4bf2-b0e5-8101e07a004c
       X-Runtime:
-      - '0.013308'
+      - '0.013497'
       X-XSS-Protection:
       - 1; mode=block
       Content-Length:
@@ -52,5 +52,5 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/companies/search?cnpj=
-  recorded_at: Tue, 19 Apr 2016 21:04:13 GMT
+  recorded_at: Tue, 03 May 2016 15:22:06 GMT
 recorded_with: VCR 3.0.1

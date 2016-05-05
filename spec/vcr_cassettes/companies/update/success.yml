@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: https://sandbox.billimatic.com.br/api/v1/companies/567
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/571
     body:
       encoding: UTF-8
       string: '{"address":"Outra Rua","number":"999"}'
@@ -29,11 +29,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 20 Apr 2016 20:33:10 GMT
+      - Tue, 03 May 2016 15:26:28 GMT
       ETag:
-      - W/"fccd4631140fc6dadb10a5cc7f741544"
+      - W/"509c724c3e84c74196d55256282e5831"
       Server:
-      - nginx/1.8.1
+      - nginx/1.10.0
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains;
       Vary:
@@ -43,31 +43,30 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - f54c9c5b-1e15-4050-9d40-e297ae42ca3d
+      - b1b794b5-22f4-412c-9a38-9bf19dfbe792
       X-Runtime:
-      - '0.091780'
+      - '0.040573'
       X-XSS-Protection:
       - 1; mode=block
       Content-Length:
-      - '332'
+      - '316'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpZCI6NTY3LCJuYW1lIjoiQWNtZSBJbmMiLCJhY2NvdW50X2lkIjozMiwi
-        Y29tcGFueV9uYW1lIjoiQWNtZSBJbmNvcnBvcmF0ZWQiLCJjbnBqIjoiNDYu
-        MTgxLjY1Ni8wMDAxLTU5IiwiYWRkcmVzcyI6Ik91dHJhIFJ1YSIsIm51bWJl
-        ciI6Ijk5OSIsInppcGNvZGUiOiIyMjI5MDA4MCIsImRpc3RyaWN0IjoiQ2Vu
-        dHJvIiwiY29tcGxlbWVudCI6ImFwdG8gNDIiLCJjaXR5IjoiUmlvIGRlIEph
-        bmVpcm8iLCJzdGF0ZSI6IlJKIiwiaWJnZV9jb2RlIjoiMTIzNDUiLCJjb250
-        YWN0cyI6ImZvb0BiYXIuY29tLCBzcGFtQGVnZ3MuY28udWsiLCJiaWxsaW5n
-        X2NvbnRhY3RzIjoiYmF6QGJhbWJhbS5jb20uYnIiLCJjcmVhdGVkX2F0Ijoi
-        MjAxNi0wNC0yMFQxNzoyODoyMC4wMDAtMDM6MDAiLCJ1cGRhdGVkX2F0Ijoi
-        MjAxNi0wNC0yMFQxNzozMzoxMC4zNDYtMDM6MDAiLCJraW5kIjoiY29tcGFu
-        eSIsImNvbW1lbnRzIjoiQWxndW0gY29tZW50w6FyaW8ifQ==
+        eyJjb21wYW55Ijp7ImlkIjo1NzEsImFjY291bnRfaWQiOjMyLCJuYW1lIjoi
+        QWNtZSBJbmMiLCJjb21wYW55X25hbWUiOiJBY21lIEluY29ycG9yYXRlZCIs
+        ImNucGoiOiI0Ni4xODEuNjU2LzAwMDEtNTkiLCJhZGRyZXNzIjoiT3V0cmEg
+        UnVhIiwibnVtYmVyIjoiOTk5IiwiemlwY29kZSI6IjIyMjkwMDgwIiwiZGlz
+        dHJpY3QiOiJDZW50cm8iLCJjb21wbGVtZW50IjoiYXB0byA0MiIsImNpdHki
+        OiJSaW8gZGUgSmFuZWlybyIsInN0YXRlIjoiUkoiLCJpYmdlX2NvZGUiOiIx
+        MjM0NSIsImNvbnRhY3RzIjoiZm9vQGJhci5jb20sIHNwYW1AZWdncy5jby51
+        ayIsImJpbGxpbmdfY29udGFjdHMiOiJiYXpAYmFtYmFtLmNvbS5iciIsImtp
+        bmQiOiJjb21wYW55IiwiY29tbWVudHMiOiJBbGd1bSBjb21lbnTDoXJpbyIs
+        ImNyZWF0ZWRfYXQiOiIwMy8wNS8yMDE2IDEyOjI0OjQ0IC0wMzowMCJ9fQ==
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/567
-  recorded_at: Wed, 20 Apr 2016 20:33:10 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/571
+  recorded_at: Tue, 03 May 2016 15:26:28 GMT
 recorded_with: VCR 3.0.1

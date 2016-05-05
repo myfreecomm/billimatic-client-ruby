@@ -1,6 +1,6 @@
 module Billimatic
   module Entities
-    class Subscription < Contract
+    class Product < EntityServiceItem
     end
   end
 end

@@ -5,8 +5,6 @@ module Billimatic
 
       # TODO...
       # search
-      # token
-
     end
   end
 end

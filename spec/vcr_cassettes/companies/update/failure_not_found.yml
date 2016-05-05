@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: https://sandbox.billimatic.com.br/api/v1/companies/568
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/572
     body:
       encoding: UTF-8
       string: '{"address":"Outra Rua","number":"999"}'
@@ -29,9 +29,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 20 Apr 2016 20:33:10 GMT
+      - Tue, 03 May 2016 15:26:28 GMT
       Server:
-      - nginx/1.8.1
+      - nginx/1.10.0
       Vary:
       - Accept-Encoding
       X-Content-Type-Options:
@@ -39,9 +39,9 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 1050dd4b-c5cd-455c-86f2-c4fbcbf04ad0
+      - cbcb9457-9834-454c-ab3b-7a5ec2872d5a
       X-Runtime:
-      - '0.016108'
+      - '0.010822'
       X-XSS-Protection:
       - 1; mode=block
       Content-Length:
@@ -53,6 +53,6 @@ http_interactions:
       string: ''
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/568
-  recorded_at: Wed, 20 Apr 2016 20:33:10 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/572
+  recorded_at: Tue, 03 May 2016 15:26:28 GMT
 recorded_with: VCR 3.0.1
