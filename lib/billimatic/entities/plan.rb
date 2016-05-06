@@ -10,6 +10,7 @@ module Billimatic
       attribute :has_trial, Boolean
       attribute :trial_period, Integer
       attribute :redirect_url, String
+      attribute :features, Array
       attribute :emites_service_values_id, Integer
       attribute :cobrato_billet_charge_config_id, Integer
       attribute :finance_category, String

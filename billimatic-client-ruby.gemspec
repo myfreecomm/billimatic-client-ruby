@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['rodrigo@pittlandia.net', 'victor.alexandrefs@gmail.com']
 
   spec.summary       = %q{This is the official Ruby client for the Billimatic API.}
-  spec.description   = %q{This is the official Ruby client for the Billimatic API. See http://www.billimatic.com,br for more information.}
+  spec.description   = %q{This is the official Ruby client for the Billimatic API. See http://www.billimatic.com.br for more information.}
   spec.homepage      = 'https://github.com/myfreecomm/billimatic-client-ruby/'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
