@@ -12,6 +12,7 @@ describe Billimatic::Entities::Plan do
       has_trial: true,
       trial_period: 30,
       redirect_url: "http://www.empresa.com/foo",
+      features: ['2 usuários', '5 gb de armazenamento', '2 empresas'],
       emites_service_values_id: 47,
       cobrato_billet_charge_config_id: 110,
       finance_category: 'Outros',
@@ -34,7 +35,7 @@ describe Billimatic::Entities::Plan do
   it_behaves_like "entity_attributes", [
                     :id, :name, :description, :price, :billing_period,
                     :translated_billing_period, :has_trial, :trial_period,
-                    :redirect_url, :emites_service_values_id,
+                    :redirect_url, :features, :emites_service_values_id,
                     :cobrato_billet_charge_config_id, :finance_category,
                     :finance_revenue_center, :created_at, :products
                   ]
