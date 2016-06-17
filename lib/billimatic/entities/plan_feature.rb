@@ -1,6 +1,6 @@
 module Billimatic
   module Entities
-    class Feature < Base
+    class PlanFeature < Base
       attribute :id, Integer
       attribute :description, String
       attribute :value, String

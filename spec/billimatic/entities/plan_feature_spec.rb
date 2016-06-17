@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Billimatic::Entities::Feature do
+describe Billimatic::Entities::PlanFeature do
   let(:attributes) do
     {
       id: 1,

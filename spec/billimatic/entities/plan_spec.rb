@@ -13,10 +13,10 @@ describe Billimatic::Entities::Plan do
       trial_period: 30,
       redirect_url: "http://www.empresa.com/foo",
       features: [
-        Billimatic::Entities::Feature.new(
+        Billimatic::Entities::PlanFeature.new(
           id: 1, description: 'Até 5 usuários', value: 'Foo', tag: 'Tag'
         ),
-        Billimatic::Entities::Feature.new(
+        Billimatic::Entities::PlanFeature.new(
           id: 2, description: '50 GB de armazenamento', value: 'Bar', tag: 'Tag'
         )
       ],
