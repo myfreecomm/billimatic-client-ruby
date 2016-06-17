@@ -12,7 +12,14 @@ describe Billimatic::Entities::Plan do
       has_trial: true,
       trial_period: 30,
       redirect_url: "http://www.empresa.com/foo",
-      features: ['2 usuários', '5 gb de armazenamento', '2 empresas'],
+      features: [
+        Billimatic::Entities::Feature.new(
+          id: 1, description: 'Até 5 usuários', value: 'Foo', tag: 'Tag'
+        ),
+        Billimatic::Entities::Feature.new(
+          id: 2, description: '50 GB de armazenamento', value: 'Bar', tag: 'Tag'
+        )
+      ],
       emites_service_values_id: 47,
       cobrato_billet_charge_config_id: 110,
       finance_category: 'Outros',
