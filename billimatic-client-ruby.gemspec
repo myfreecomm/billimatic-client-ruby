@@ -38,6 +38,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.4'
   spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.5'
   spec.add_development_dependency 'simplecov', '~> 0.11'
-  spec.add_development_dependency 'guard-rspec', '~> 4.6'
+  spec.add_development_dependency 'guard-rspec', '~> 4.6' unless `ruby --version` =~ /ruby 2\.1+/
   spec.add_development_dependency 'test_notifier', '~> 2.0'
 end
