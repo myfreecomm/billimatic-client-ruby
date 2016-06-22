@@ -1,7 +1,29 @@
 ---
 engines:
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
   fixme:
     enabled: true
+  rubocop:
+    enabled: true
 ratings:
-  paths: []
-exclude_paths: []
+  paths:
+  - Gemfile.lock
+  - "**.erb"
+  - "**.haml"
+  - "**.rb"
+  - "**.rhtml"
+  - "**.slim"
+  - "**.inc"
+ xclude_paths:
+- coverage/
+- pkg/
+- spec/
+- tmp/
