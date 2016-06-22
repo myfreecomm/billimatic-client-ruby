@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     billimatic-client (0.1.2)
-      multi_json (>= 1.0)
-      typhoeus (>= 0.8)
+      multi_json (~> 1.11)
+      typhoeus (~> 0.8)
       virtus (~> 1.0.5)
       wisper (~> 1.6.1)
 
@@ -93,8 +93,8 @@ GEM
       notifier
     thor (0.19.1)
     thread_safe (0.3.5)
-    typhoeus (1.0.2)
-      ethon (>= 0.9.0)
+    typhoeus (0.8.0)
+      ethon (>= 0.8.0)
     vcr (3.0.3)
     virtus (1.0.5)
       axiom-types (~> 0.1)
