@@ -1,7 +1,5 @@
 ---
 engines:
-  brakeman:
-    enabled: true
   bundler-audit:
     enabled: true
   duplication:
@@ -16,14 +14,9 @@ engines:
 ratings:
   paths:
   - Gemfile.lock
-  - "**.erb"
-  - "**.haml"
   - "**.rb"
-  - "**.rhtml"
-  - "**.slim"
-  - "**.inc"
- xclude_paths:
+exclude_paths:
+- spec/
 - coverage/
 - pkg/
-- spec/
 - tmp/
