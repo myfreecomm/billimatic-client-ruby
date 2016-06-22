@@ -18,6 +18,7 @@ describe Billimatic::Resources::Plan do
         expect(plans.size).to eql 1
         expect(plans.first).to be_an entity_klass
         expect(plans.first.products).not_to be_empty
+        expect(plans.first.features).not_to be_empty
       end
     end
 
