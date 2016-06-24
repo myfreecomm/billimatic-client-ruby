@@ -6,8 +6,8 @@ require 'billimatic/version'
 Gem::Specification.new do |spec|
   spec.name          = 'billimatic-client'
   spec.version       = Billimatic::VERSION
-  spec.authors       = ['Rodrigo Tassinari de Oliveira', 'Victor Franco']
-  spec.email         = ['rodrigo@pittlandia.net', 'victor.alexandrefs@gmail.com']
+  spec.authors       = ['Rodrigo Tassinari de Oliveira', 'Leandro Thimóteo', 'Victor Franco']
+  spec.email         = ['rodrigo@pittlandia.net', 'leandro.s.thimoteo@gmail.com', 'victor.alexandrefs@gmail.com']
 
   spec.summary       = %q{This is the official Ruby client for the Billimatic API.}
   spec.description   = %q{This is the official Ruby client for the Billimatic API. See http://www.billimatic.com.br for more information.}
