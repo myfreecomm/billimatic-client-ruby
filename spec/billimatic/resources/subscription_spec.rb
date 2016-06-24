@@ -109,4 +109,14 @@ describe Billimatic::Resources::Subscription do
       end
     end
   end
+  describe "#checkout_url" do
+    before :each do
+      Billimatic.configuration.host = "http://test.host"
+    end
+
+    it "returns url to checkout on Billimatic app" do
+      url = subject.checkout_url(token: "foo")
+      expect(url).to eq("http://test.host/subscriptions/checkout/foo")
+    end
+  end
 end
