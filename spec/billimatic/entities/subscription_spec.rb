@@ -41,7 +41,7 @@ describe Billimatic::Entities::Subscription do
     end
     it 'returns a full URL to the checkout process for this Subscription' do
       subject.token = 'foo'
-      expect(subject.checkout_url).to eq('https://test.host/api/v1/subscriptions/checkout/foo')
+      expect(subject.checkout_url).to eq('https://test.host/subscriptions/checkout/foo')
     end
   end
 end

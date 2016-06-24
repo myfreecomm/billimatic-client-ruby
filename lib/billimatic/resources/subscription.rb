@@ -16,7 +16,7 @@ module Billimatic
       end
 
       def checkout_url(token:)
-        "#{Billimatic.configuration.url}#{resource_base_path}/checkout/#{token}"
+        "#{Billimatic.configuration.host}#{resource_base_path}/checkout/#{token}"
       end
     end
   end
