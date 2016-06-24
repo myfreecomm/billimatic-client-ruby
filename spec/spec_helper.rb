@@ -31,7 +31,7 @@ RSpec.configure do |config|
   config.mock_with :rspec
 
   config.before(:each) do
-    Billimatic.configuration.url = "https://sandbox.billimatic.com.br/api/v1"
+    Billimatic.configuration.host = "https://sandbox.billimatic.com.br"
     Typhoeus::Expectation.clear
   end
 end

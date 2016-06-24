@@ -9,10 +9,10 @@ describe Billimatic do
   describe ".configuration" do
     it "is done via block initialization" do
       Billimatic.configure do |c|
-        c.url = "http://some/where"
+        c.host = "http://some/where"
         c.user_agent = "My App v1.0"
       end
-      expect(Billimatic.configuration.url).to eq "http://some/where"
+      expect(Billimatic.configuration.url).to eq "http://some/where/api/v1"
       expect(Billimatic.configuration.user_agent).to eq "My App v1.0"
     end
 
