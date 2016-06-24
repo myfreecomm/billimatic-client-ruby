@@ -32,7 +32,7 @@ Or install it yourself as:
 require 'billimatic'
 
 Billimatic.configure do |config|
-  config.url = 'https://sandbox.billimatic.com.br/api/v1' # defaults to 'https://app.billimatic.com.br/api/v1'
+  config.host = 'https://sandbox.billimatic.com.br' # defaults to 'https://app.billimatic.com.br'
   config.user_agent = 'My App v1.0' # optional, but you should pass a custom user-agent identifying your app
 end
 ```

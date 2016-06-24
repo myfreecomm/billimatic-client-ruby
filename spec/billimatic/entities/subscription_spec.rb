@@ -34,4 +34,14 @@ describe Billimatic::Entities::Subscription do
                       :registration_method, :overdue, :status, :plan
                     ]
   end
+
+  describe '#checkout_url' do
+    before do
+      Billimatic.configuration.host = "https://test.host"
+    end
+    it 'returns a full URL to the checkout process for this Subscription' do
+      subject.token = 'foo'
+      expect(subject.checkout_url).to eq('https://test.host/api/v1/subscriptions/checkout/foo')
+    end
+  end
 end
