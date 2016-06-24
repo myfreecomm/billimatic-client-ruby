@@ -10,4 +10,8 @@ describe Billimatic::Configuration do
     expect(subject.user_agent).to eq "Billimatic Ruby Client v#{Billimatic::VERSION}"
   end
 
+  it "uses the production Bilimatic host by default" do
+    expect(subject.host).to eq "https://app.billimatic.com.br"
+  end
+
 end
