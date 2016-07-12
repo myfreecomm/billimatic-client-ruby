@@ -31,7 +31,7 @@ describe Billimatic::Entities::Subscription do
                       :id, :name, :title, :token, :description, :customer_id,
                       :customer_type, :supplier_id, :supplier_type, :state,
                       :init_date, :end_date, :comments, :created_at, :kind,
-                      :registration_method, :overdue, :status, :plan
+                      :registration_method, :overdue, :valid_until, :status, :plan
                     ]
   end
 
