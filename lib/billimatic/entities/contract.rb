@@ -18,6 +18,7 @@ module Billimatic
       attribute :kind, String
       attribute :registration_method, String
       attribute :overdue, Boolean
+      attribute :valid_until, Date
       attribute :status, String
       attribute :plan, Plan
     end
