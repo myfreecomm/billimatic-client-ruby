@@ -171,6 +171,28 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
+## Url helpers
+
+Some url helpers are available:
+
+### Checkout
+
+```ruby
+Billimatic.url_helpers.checkout_url(token: "some-subscription-token")
+```
+
+### Subscription dashboard
+
+```ruby
+Billimatic.url_helpers.subscription_dashboard_url(token: "some-subscription-token")
+```
+
+### Change plan
+
+```ruby
+Billimatic.url_helpers.change_plan_url(token: "some-subscription-token", plan_id: 52)
+```
+
 ## Callbacks
 
 TODO
