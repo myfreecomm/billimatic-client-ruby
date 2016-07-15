@@ -67,4 +67,12 @@ describe Billimatic do
       expect(subject).to be_a(Billimatic::Signature)
     end
   end
+
+  describe '.url_helpers' do
+    subject { described_class.url_helpers }
+
+    it "returns an instance of Billimatic::UrlHelpers" do
+      expect(subject).to be_a(Billimatic::UrlHelpers)
+    end
+  end
 end

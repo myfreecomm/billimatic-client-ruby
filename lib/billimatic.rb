@@ -7,6 +7,7 @@ require 'billimatic/configuration'
 require 'billimatic/client'
 require 'billimatic/http'
 require 'billimatic/signature'
+require 'billimatic/url_helpers'
 
 require 'billimatic/entities/base'
 require 'billimatic/entities/entity_service_item'
@@ -50,5 +51,9 @@ module Billimatic
 
   def self.signature(secret)
     Signature.new(secret)
+  end
+
+  def self.url_helpers
+    UrlHelpers.instance
   end
 end
