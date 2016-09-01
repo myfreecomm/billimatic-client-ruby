@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Billimatic::Entities::Product do
+describe Billimatic::Entities::Service do
   let(:attributes) do
     {
       id: 1,

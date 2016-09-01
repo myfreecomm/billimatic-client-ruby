@@ -6,6 +6,7 @@ module Billimatic
       attribute :unit_value, Decimal
       attribute :units, Decimal
       attribute :value, Decimal
+      attribute :_destroy, Boolean
     end
   end
 end
