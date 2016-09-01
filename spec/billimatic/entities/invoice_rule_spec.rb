@@ -24,6 +24,15 @@ describe Billimatic::Entities::InvoiceRule do
         end_date: '09-01-2017',
         accrual_month_quantity: 1
       },
+      services: [
+          Billimatic::Entities::Service.new(
+          id: 1,
+          service_item_id: 1,
+          units: 2,
+          unit_value: 200.0,
+          value: 400.0
+        )
+      ],
       scheduled_update: {
         id: 1,
         init_date: '10-01-2016',
@@ -50,7 +59,7 @@ describe Billimatic::Entities::InvoiceRule do
                     :emites_service_value_name, :finance_category,
                     :finance_revenue_center, :finance_receive_via,
                     :cobrato_charge_config_id, :cobrato_charge_config_name,
-                    :additional_information, :scheduled_update,
+                    :additional_information, :services, :scheduled_update,
                     :receivables_additional_information
                   ]
 end

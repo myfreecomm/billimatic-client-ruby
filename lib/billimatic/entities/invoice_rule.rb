@@ -15,6 +15,7 @@ module Billimatic
       attribute :finance_receive_via, String
       attribute :cobrato_charge_config_id, Integer
       attribute :cobrato_charge_config_name, String
+      attribute :services, Array[Service]
       attribute :additional_information, Hash
       attribute :scheduled_update, Hash
       attribute :receivables_additional_information, Hash
