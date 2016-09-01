@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/v1/organizations/4/plans/50
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"products":[{"id":23920,"unit_value":150.0,"value":150.0}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"301f70cfc4ce0341ca1ef39c32f23ccd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ac7376cc-6429-40da-ae98-ee0e4bed68d5
+      X-Runtime:
+      - '0.062146'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjo1MCwibmFtZSI6IlVwZGF0ZWQgUGxhbiIsImRlc2Ny
+        aXB0aW9uIjoiRGVzY3JpcHRpb24gZm9yIFBsYW4iLCJyZWRpcmVjdF91cmwi
+        OiJodHRwOi8vbmV4YWFzLmNvbSIsInByaWNlIjoiMTUwLjAiLCJiaWxsaW5n
+        X3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNh
+        bG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xh
+        dGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6
+        ZmFsc2UsInRyaWFsX3BlcmlvZCI6bnVsbCwiZmVhdHVyZXMiOlt7ImlkIjoz
+        MywiZGVzY3JpcHRpb24iOiJmZWF0dXJlIiwidmFsdWUiOiIzMDAiLCJ0YWci
+        OiJmZWF0LiJ9LHsiaWQiOjM1LCJkZXNjcmlwdGlvbiI6Im5ldyBmZWF0dXJl
+        IiwidmFsdWUiOiIyMDAiLCJ0YWciOiJuZXcgZmVhdC4ifV0sImVtaXRlc19z
+        ZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiY29icmF0b19iaWxsZXRfY2hhcmdl
+        X2NvbmZpZ19pZCI6MTI4LCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFy
+        Z2VfY29uZmlnX2lkIjpudWxsLCJmaW5hbmNlX2NhdGVnb3J5IjpudWxsLCJm
+        aW5hbmNlX3JldmVudWVfY2VudGVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMDEv
+        MDkvMjAxNiAxNDowODo0MCAtMDM6MDAiLCJwcm9kdWN0cyI6W3siaWQiOjIz
+        OTIwLCJuYW1lIjoiU2VydmnDp28gVGVzdGUiLCJ1bml0X3ZhbHVlIjoiMTUw
+        LjAiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoiMTUwLjAifV19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/4/plans/50
+  recorded_at: Thu, 01 Sep 2016 19:00:11 GMT
+recorded_with: VCR 3.0.3

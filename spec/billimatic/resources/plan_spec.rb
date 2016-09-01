@@ -153,4 +153,175 @@ describe Billimatic::Resources::Plan do
       end
     end
   end
+
+  describe '#update' do
+    let(:http) { Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d') }
+
+    let(:plan_params) do
+      {
+        name: 'Plan',
+        description: 'Description for Plan',
+        price: 100.0,
+        billing_period: 1,
+        has_trial: false,
+        redirect_url: 'http://nexaas.com',
+        charging_method: 'pre_paid',
+        cobrato_billet_charge_config_id: 128,
+        cobrato_billet_charge_config_name: 'Cobrança não registrada'
+      }
+    end
+
+    before do
+      Billimatic.configuration.host = 'http://localhost:3000'
+    end
+
+    it 'raises Billimatic::RequestError if organization is not found' do
+      VCR.use_cassette('plans/update/not_found_organization_failure') do
+        expect {
+          subject.update(12, plan_params, organization_id: 50)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if plan is not found' do
+      VCR.use_cassette('plans/update/not_found_plan_failure') do
+        expect {
+          subject.update(102, plan_params, organization_id: 4)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'updates successfully plan attributes' do
+      VCR.use_cassette('plans/update/success') do
+        plan = subject.update(50, { name: 'Updated Plan', price: 200.0 }, organization_id: 4)
+
+        expect(plan).to be_a entity_klass
+        expect(plan.name).to eql 'Updated Plan'
+        expect(plan.price).to eql 200.0
+      end
+    end
+
+    context 'plan with features' do
+      it 'raises Billimatic::RequestError if an invalid new feature is sent' do
+        VCR.use_cassette('plans/update/invalid_new_feature_failure') do
+          expect {
+            subject.update(
+              50,
+              { features: [{ description: '', tag: 'feat.' }] },
+              organization_id: 4
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError with an invalid attempt to update a feature' do
+        VCR.use_cassette('plans/update/invalid_existing_feature_failure') do
+          expect {
+            subject.update(
+              50,
+              { features: [{ value: '', description: '' }] },
+              organization_id: 4
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
+      it 'successfully updates plan with a new feature' do
+        VCR.use_cassette('plans/update/success_with_new_feature') do
+          plan = subject.update(
+            50,
+            { features: [{ value: '200', description: 'new feature', tag: 'new feat.' }] },
+            organization_id: 4
+          )
+
+          expect(plan).to be_a entity_klass
+          expect(plan.id).not_to be_nil
+          expect(plan.features.count).to eql 2
+        end
+      end
+
+      it 'successfully updates plan and its existing feature' do
+        VCR.use_cassette('plans/update/success_with_existing_feature') do
+          plan = subject.update(
+            50,
+            { features: [{ id: 33, value: '300' }] },
+            organization_id: 4
+          )
+
+          expect(plan).to be_a entity_klass
+          expect(plan.id).not_to be_nil
+          expect(plan.features.first.value).to eql '300'
+        end
+      end
+    end
+
+    context 'plan with products' do
+      it 'raises Billimatic::RequestError if an invalid new product is sent' do
+        VCR.use_cassette('plans/update/invalid_new_product_failure') do
+          expect {
+            subject.update(
+              50,
+              { products: [{ service_item_id: 1 }] },
+              organization_id: 4
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError with an invalid attempt to update a product' do
+        VCR.use_cassette('plans/update/invalid_existing_product_failure') do
+          expect {
+            subject.update(
+              52,
+              { products: [{ id: 23916, service_item_id: 1, unit_value: '', value: 150 }] },
+              organization_id: 4
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
+      it 'successfully updates plan with a new product' do
+        VCR.use_cassette('plans/update/success_with_new_product') do
+          plan = subject.update(
+            50,
+            { products: [{ service_item_id: 1, units: 1, unit_value: 300.0, value: 300.0 }] },
+            organization_id: 4
+          )
+
+          expect(plan).to be_a entity_klass
+          expect(plan.id).not_to be_nil
+          expect(plan.products.count).to eql 1
+          expect(plan.products.first.value).to eql 300.0
+          expect(plan.price).to eql 300.0
+        end
+      end
+
+      it 'successfully updates plan and its existing product' do
+        VCR.use_cassette('plans/update/success_with_existing_product') do
+          plan = subject.update(
+            50,
+            { products: [{ id: 23920, unit_value: 150.0, value: 150.0 }] },
+            organization_id: 4
+          )
+
+          expect(plan).to be_a entity_klass
+          expect(plan.id).not_to be_nil
+          expect(plan.products.first.value).to eql 150.0
+          expect(plan.price).to eql 150.0
+        end
+      end
+    end
+  end
 end

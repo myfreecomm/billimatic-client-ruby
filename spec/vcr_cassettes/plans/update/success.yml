@@ -1,0 +1,132 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/v1/organizations/4/plans/52
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Updated Plan","price":200.0}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"f354e19deeeaff1d95381a87f08cd3c8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b4a3c81e-553d-4978-93fc-1616fd799981
+      X-Runtime:
+      - '0.068349'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjo1MiwibmFtZSI6IlVwZGF0ZWQgUGxhbiIsImRlc2Ny
+        aXB0aW9uIjoiRGVzY3JpcHRpb24gZm9yIFBsYW4iLCJyZWRpcmVjdF91cmwi
+        OiJodHRwOi8vbmV4YWFzLmNvbSIsInByaWNlIjoiMTAwLjAiLCJiaWxsaW5n
+        X3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNh
+        bG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xh
+        dGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6
+        ZmFsc2UsInRyaWFsX3BlcmlvZCI6bnVsbCwiZmVhdHVyZXMiOlt7ImlkIjoz
+        NCwiZGVzY3JpcHRpb24iOiJmZWF0dXJlIiwidmFsdWUiOiIxMDAiLCJ0YWci
+        OiJmZWF0LiJ9XSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lkIjpudWxsLCJj
+        b2JyYXRvX2JpbGxldF9jaGFyZ2VfY29uZmlnX2lkIjoxMjgsImNvYnJhdG9f
+        cGF5bWVudF9nYXRld2F5X2NoYXJnZV9jb25maWdfaWQiOm51bGwsImZpbmFu
+        Y2VfY2F0ZWdvcnkiOm51bGwsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOm51
+        bGwsImNyZWF0ZWRfYXQiOiIwMS8wOS8yMDE2IDE0OjEwOjQ3IC0wMzowMCIs
+        InByb2R1Y3RzIjpbeyJpZCI6MjM5MTYsIm5hbWUiOiJTZXJ2acOnbyBUZXN0
+        ZSIsInVuaXRfdmFsdWUiOiIxMDAuMCIsInVuaXRzIjoiMS4wIiwidmFsdWUi
+        OiIxMDAuMCJ9XX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/4/plans/52
+  recorded_at: Thu, 01 Sep 2016 18:30:33 GMT
+- request:
+    method: put
+    uri: http://localhost:3000/api/v1/organizations/4/plans/50
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Updated Plan","price":200.0}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"988a260d7700301b38c5800007f01619"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 42628ab1-e4b5-4ef6-810f-cc7a015ea8f4
+      X-Runtime:
+      - '0.053585'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjo1MCwibmFtZSI6IlVwZGF0ZWQgUGxhbiIsImRlc2Ny
+        aXB0aW9uIjoiRGVzY3JpcHRpb24gZm9yIFBsYW4iLCJyZWRpcmVjdF91cmwi
+        OiJodHRwOi8vbmV4YWFzLmNvbSIsInByaWNlIjoiMjAwLjAiLCJiaWxsaW5n
+        X3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNh
+        bG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xh
+        dGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6
+        ZmFsc2UsInRyaWFsX3BlcmlvZCI6bnVsbCwiZmVhdHVyZXMiOlt7ImlkIjoz
+        MywiZGVzY3JpcHRpb24iOiJmZWF0dXJlIiwidmFsdWUiOiIzMDAiLCJ0YWci
+        OiJmZWF0LiJ9LHsiaWQiOjM1LCJkZXNjcmlwdGlvbiI6Im5ldyBmZWF0dXJl
+        IiwidmFsdWUiOiIyMDAiLCJ0YWciOiJuZXcgZmVhdC4ifV0sImVtaXRlc19z
+        ZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiY29icmF0b19iaWxsZXRfY2hhcmdl
+        X2NvbmZpZ19pZCI6MTI4LCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFy
+        Z2VfY29uZmlnX2lkIjpudWxsLCJmaW5hbmNlX2NhdGVnb3J5IjpudWxsLCJm
+        aW5hbmNlX3JldmVudWVfY2VudGVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMDEv
+        MDkvMjAxNiAxNDowODo0MCAtMDM6MDAiLCJwcm9kdWN0cyI6W119fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/4/plans/50
+  recorded_at: Thu, 01 Sep 2016 19:03:33 GMT
+recorded_with: VCR 3.0.3
