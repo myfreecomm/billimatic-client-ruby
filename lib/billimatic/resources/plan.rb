@@ -7,8 +7,10 @@ module Billimatic
         end
       end
 
-      def create(organization_id:, attributes:)
-        http.post("/organizations/#{organization_id}/plans", { body: attributes }) do |response|
+      def create(params, organization_id:)
+        http.post(
+          "/organizations/#{organization_id}/plans", { body: { plan: params } }
+        ) do |response|
           respond_with_entity(response)
         end
       end

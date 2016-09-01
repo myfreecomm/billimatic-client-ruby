@@ -5,8 +5,8 @@ http_interactions:
     uri: http://localhost:3000/api/v1/organizations/4/plans
     body:
       encoding: UTF-8
-      string: '{"name":"","description":"Description for Plan","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
-        não registrada"}'
+      string: '{"plan":{"name":"","description":"Description for Plan","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada"}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.4.0
@@ -34,9 +34,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 276511e1-620d-4d8c-96cc-7a9c045365c9
+      - 51fd7067-ecbd-4d9e-a1ca-ebc063acc85d
       X-Runtime:
-      - '0.042559'
+      - '0.043374'
       Connection:
       - close
       Server:
@@ -49,5 +49,5 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations/4/plans
-  recorded_at: Thu, 01 Sep 2016 11:33:54 GMT
+  recorded_at: Thu, 01 Sep 2016 17:07:22 GMT
 recorded_with: VCR 3.0.3

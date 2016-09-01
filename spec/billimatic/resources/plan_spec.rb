@@ -55,7 +55,7 @@ describe Billimatic::Resources::Plan do
     it 'raises Billimatic::RequestError if organization is not found' do
       VCR.use_cassette('plans/create/not_found_organization_failure') do
         expect {
-          subject.create(organization_id: 50, attributes: plan_params)
+          subject.create(plan_params, organization_id: 50)
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 404
         end
@@ -65,7 +65,7 @@ describe Billimatic::Resources::Plan do
     context 'a plan without features or products' do
       it 'successfully creates a plan' do
         VCR.use_cassette('plans/create/success_without_features_or_products') do
-          plan = subject.create(organization_id: 4, attributes: plan_params)
+          plan = subject.create(plan_params, organization_id: 4)
 
           expect(plan).to be_a entity_klass
           expect(plan.id).not_to be_nil
@@ -77,7 +77,7 @@ describe Billimatic::Resources::Plan do
 
         VCR.use_cassette('plans/create/invalid_plan_failure') do
           expect {
-            subject.create(organization_id: 4, attributes: plan_params)
+            subject.create(plan_params, organization_id: 4)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 422
           end
@@ -90,7 +90,7 @@ describe Billimatic::Resources::Plan do
         plan_params[:features] = [{ description: 'feature', value: '100', tag: 'feat.' }]
 
         VCR.use_cassette('plans/create/success_with_features') do
-          plan = subject.create(organization_id: 4, attributes: { plan: plan_params })
+          plan = subject.create(plan_params, organization_id: 4)
 
           expect(plan).to be_a entity_klass
           expect(plan.id).not_to be_nil
@@ -103,7 +103,7 @@ describe Billimatic::Resources::Plan do
 
         VCR.use_cassette('plans/create/invalid_feature_failure') do
           expect {
-            subject.create(organization_id: 4, attributes: { plan: plan_params })
+            subject.create(plan_params, organization_id: 4)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 422
           end
@@ -116,7 +116,7 @@ describe Billimatic::Resources::Plan do
         plan_params[:products] = [{ service_item_id: 1, units: 1, unit_value: 100, value: 100 }]
 
         VCR.use_cassette('plans/create/success_with_products') do
-          plan = subject.create(organization_id: 4, attributes: { plan: plan_params })
+          plan = subject.create(plan_params, organization_id: 4)
 
           expect(plan).to be_a entity_klass
           expect(plan.id).not_to be_nil
@@ -129,7 +129,7 @@ describe Billimatic::Resources::Plan do
 
         VCR.use_cassette('plans/create/invalid_product_failure') do
           expect {
-            subject.create(organization_id: 4, attributes: { plan: plan_params })
+            subject.create(plan_params, organization_id: 4)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 422
           end
@@ -143,7 +143,7 @@ describe Billimatic::Resources::Plan do
         plan_params[:products] = [{ service_item_id: 1, units: 1, unit_value: 100, value: 100 }]
 
         VCR.use_cassette('plans/create/success_with_features_and_products') do
-          plan = subject.create(organization_id: 4, attributes: { plan: plan_params })
+          plan = subject.create(plan_params, organization_id: 4)
 
           expect(plan).to be_a entity_klass
           expect(plan.id).not_to be_nil

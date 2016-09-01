@@ -32,13 +32,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       ETag:
-      - W/"06b9381eb32e873cb7a96f6f54cb3942"
+      - W/"67bb54cdf08d98fd91e55faaf2a6db1a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2f34d2b7-69dd-4f9d-a222-404255eab03f
+      - 33ec1965-9413-49a1-8f04-ff0584ec5e26
       X-Runtime:
-      - '0.058010'
+      - '0.075555'
       Connection:
       - close
       Server:
@@ -46,7 +46,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJwbGFuIjp7ImlkIjozOCwibmFtZSI6IlBsYW4iLCJkZXNjcmlwdGlvbiI6
+        eyJwbGFuIjp7ImlkIjo1MSwibmFtZSI6IlBsYW4iLCJkZXNjcmlwdGlvbiI6
         IkRlc2NyaXB0aW9uIGZvciBQbGFuIiwicmVkaXJlY3RfdXJsIjoiaHR0cDov
         L25leGFhcy5jb20iLCJwcmljZSI6IjEwMC4wIiwiYmlsbGluZ19wZXJpb2Qi
         OjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxtZW50ZSIs
@@ -57,11 +57,11 @@ http_interactions:
         ZmlnX2lkIjoxMjgsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2NoYXJnZV9j
         b25maWdfaWQiOm51bGwsImZpbmFuY2VfY2F0ZWdvcnkiOm51bGwsImZpbmFu
         Y2VfcmV2ZW51ZV9jZW50ZXIiOm51bGwsImNyZWF0ZWRfYXQiOiIwMS8wOS8y
-        MDE2IDEyOjAzOjIxIC0wMzowMCIsInByb2R1Y3RzIjpbeyJpZCI6MjM5MTAs
+        MDE2IDE0OjA5OjQ2IC0wMzowMCIsInByb2R1Y3RzIjpbeyJpZCI6MjM5MTUs
         Im5hbWUiOiJTZXJ2acOnbyBUZXN0ZSIsInVuaXRfdmFsdWUiOiIxMDAuMCIs
         InVuaXRzIjoiMS4wIiwidmFsdWUiOiIxMDAuMCJ9XX19
     http_version: '1.1'
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations/4/plans
-  recorded_at: Thu, 01 Sep 2016 15:03:21 GMT
+  recorded_at: Thu, 01 Sep 2016 17:09:46 GMT
 recorded_with: VCR 3.0.3

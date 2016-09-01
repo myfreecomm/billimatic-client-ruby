@@ -34,9 +34,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - d6f68838-0856-4cac-a1ec-3725671d8cac
+      - 24f7705f-19fb-4022-9efb-1f042602d588
       X-Runtime:
-      - '0.061623'
+      - '0.047683'
       Connection:
       - close
       Server:
@@ -49,5 +49,5 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations/4/plans
-  recorded_at: Thu, 01 Sep 2016 15:06:38 GMT
+  recorded_at: Thu, 01 Sep 2016 17:10:25 GMT
 recorded_with: VCR 3.0.3

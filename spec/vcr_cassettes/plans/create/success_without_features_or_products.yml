@@ -5,8 +5,8 @@ http_interactions:
     uri: http://localhost:3000/api/v1/organizations/4/plans
     body:
       encoding: UTF-8
-      string: '{"name":"Plan","description":"Description for Plan","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
-        não registrada"}'
+      string: '{"plan":{"name":"Plan","description":"Description for Plan","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada"}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.4.0
@@ -32,13 +32,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       ETag:
-      - W/"b5b4d0e026415b2bd7e614ed0ba6f7be"
+      - W/"a5a4bbb0fa8ad429c861142fa73407e3"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 661a04db-96a0-425b-879e-958f35e39fac
+      - 02da7116-5312-4f0c-93bb-f721813c4f35
       X-Runtime:
-      - '0.581943'
+      - '0.133847'
       Connection:
       - close
       Server:
@@ -46,7 +46,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJwbGFuIjp7ImlkIjoyOCwibmFtZSI6IlBsYW4iLCJkZXNjcmlwdGlvbiI6
+        eyJwbGFuIjp7ImlkIjo0OSwibmFtZSI6IlBsYW4iLCJkZXNjcmlwdGlvbiI6
         IkRlc2NyaXB0aW9uIGZvciBQbGFuIiwicmVkaXJlY3RfdXJsIjoiaHR0cDov
         L25leGFhcy5jb20iLCJwcmljZSI6IjEwMC4wIiwiYmlsbGluZ19wZXJpb2Qi
         OjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxtZW50ZSIs
@@ -57,9 +57,9 @@ http_interactions:
         ZmlnX2lkIjoxMjgsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2NoYXJnZV9j
         b25maWdfaWQiOm51bGwsImZpbmFuY2VfY2F0ZWdvcnkiOm51bGwsImZpbmFu
         Y2VfcmV2ZW51ZV9jZW50ZXIiOm51bGwsImNyZWF0ZWRfYXQiOiIwMS8wOS8y
-        MDE2IDA4OjI4OjI0IC0wMzowMCIsInByb2R1Y3RzIjpbXX19
+        MDE2IDE0OjA2OjU2IC0wMzowMCIsInByb2R1Y3RzIjpbXX19
     http_version: '1.1'
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations/4/plans
-  recorded_at: Thu, 01 Sep 2016 11:28:24 GMT
+  recorded_at: Thu, 01 Sep 2016 17:06:56 GMT
 recorded_with: VCR 3.0.3
