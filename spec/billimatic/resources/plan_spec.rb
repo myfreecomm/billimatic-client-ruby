@@ -324,4 +324,52 @@ describe Billimatic::Resources::Plan do
       end
     end
   end
+
+  describe '#destroy' do
+    let(:http) { Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d') }
+
+    let(:plan_params) do
+      {
+        name: 'Plan',
+        description: 'Description for Plan',
+        price: 100.0,
+        billing_period: 1,
+        has_trial: false,
+        redirect_url: 'http://nexaas.com',
+        charging_method: 'pre_paid',
+        cobrato_billet_charge_config_id: 128,
+        cobrato_billet_charge_config_name: 'Cobrança não registrada'
+      }
+    end
+
+    before do
+      Billimatic.configuration.host = 'http://localhost:3000'
+    end
+
+    it "raises Billimatic::RequestError if organization isn't found" do
+      VCR.use_cassette('plans/destroy/not_found_organization_failure') do
+        expect {
+          subject.destroy(50, organization_id: 100)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it "raises Billimatic::RequestError if plan isn't found" do
+      VCR.use_cassette('plans/destroy/not_found_plan_failure') do
+        expect {
+          subject.destroy(1000, organization_id: 4)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'deletes successfully a plan' do
+      VCR.use_cassette('plans/destroy/success') do
+        expect(subject.destroy(23, organization_id: 4)).to be true
+      end
+    end
+  end
 end

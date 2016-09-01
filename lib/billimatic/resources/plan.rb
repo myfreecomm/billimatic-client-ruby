@@ -24,6 +24,14 @@ module Billimatic
           respond_with_entity(response)
         end
       end
+
+      def destroy(id, organization_id:)
+        http.delete(
+          "/organizations/#{organization_id}#{resource_base_path}/#{id}"
+        ) do |response|
+          response.code == 204
+        end
+      end
     end
   end
 end
