@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/organizations/4/plans
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Plan","description":"Description for Plan","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada","features":[{"description":"feature","value":"100","tag":"feat."}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"1c6c8daa52594ac683b0de91d5b59758"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 34ba3eed-c752-4f50-8a72-3b34404d34dc
+      X-Runtime:
+      - '0.058909'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjozNywibmFtZSI6IlBsYW4iLCJkZXNjcmlwdGlvbiI6
+        IkRlc2NyaXB0aW9uIGZvciBQbGFuIiwicmVkaXJlY3RfdXJsIjoiaHR0cDov
+        L25leGFhcy5jb20iLCJwcmljZSI6IjEwMC4wIiwiYmlsbGluZ19wZXJpb2Qi
+        OjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxtZW50ZSIs
+        ImNoYXJnaW5nX21ldGhvZCI6InByZV9wYWlkIiwidHJhbnNsYXRlZF9jaGFy
+        Z2luZ19tZXRob2QiOiJQcsOpLXBhZ28iLCJoYXNfdHJpYWwiOmZhbHNlLCJ0
+        cmlhbF9wZXJpb2QiOm51bGwsImZlYXR1cmVzIjpbeyJpZCI6MjcsImRlc2Ny
+        aXB0aW9uIjoiZmVhdHVyZSIsInZhbHVlIjoiMTAwIiwidGFnIjoiZmVhdC4i
+        fV0sImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiY29icmF0b19i
+        aWxsZXRfY2hhcmdlX2NvbmZpZ19pZCI6MTI4LCJjb2JyYXRvX3BheW1lbnRf
+        Z2F0ZXdheV9jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJmaW5hbmNlX2NhdGVn
+        b3J5IjpudWxsLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjpudWxsLCJjcmVh
+        dGVkX2F0IjoiMDEvMDkvMjAxNiAxMjowMTowMSAtMDM6MDAiLCJwcm9kdWN0
+        cyI6W119fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/4/plans
+  recorded_at: Thu, 01 Sep 2016 15:01:01 GMT
+recorded_with: VCR 3.0.3

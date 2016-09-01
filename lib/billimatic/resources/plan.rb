@@ -6,6 +6,12 @@ module Billimatic
           respond_with_collection response
         end
       end
+
+      def create(organization_id:, attributes:)
+        http.post("/organizations/#{organization_id}/plans", { body: attributes }) do |response|
+          respond_with_entity(response)
+        end
+      end
     end
   end
 end
