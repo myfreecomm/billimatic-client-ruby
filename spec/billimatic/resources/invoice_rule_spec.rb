@@ -164,4 +164,266 @@ describe Billimatic::Resources::InvoiceRule do
       end
     end
   end
+
+  describe '#update' do
+    it "raises Billimatic::RequestError if contract isn't found" do
+      VCR.use_cassette('invoice_rules/update/contract_not_found_failure') do
+        expect {
+          subject.update(127194, { description: 'NOVO FATURAMENTO' }, contract_id: 1000)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it "raises Billimatic::RequestError if invoice rule isn't found" do
+      VCR.use_cassette('invoice_rules/update/rule_not_found_failure') do
+        expect {
+          subject.update(200000, { description: 'NOVO FATURAMENTO' }, contract_id: 6666)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if invoice_rule is invalid' do
+      VCR.use_cassette('invoice_rules/update/invalid_rule_failure') do
+        expect {
+          subject.update(127194, { description: '' }, contract_id: 6666)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if service to be added is invalid' do
+      VCR.use_cassette('invoice_rules/update/invalid_service_to_be_added_failure') do
+        expect {
+          subject.update(127194, { services: [{ units: '' }] }, contract_id: 6666)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if existing service is invalid' do
+      VCR.use_cassette('invoice_rules/update/invalid_existing_service_failure') do
+        expect {
+          subject.update(127230, { services: [{ id: 183069, units: '' }] }, contract_id: 6666)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if additional information is invalid' do
+      VCR.use_cassette('invoice_rules/update/invalid_additional_information_failure') do
+        expect {
+          subject.update(
+            127230,
+            { additional_information: { id: 5365, title: '' } },
+            contract_id: 6666
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if receivables additional information is invalid' do
+      VCR.use_cassette('invoice_rules/update/invalid_receivables_additional_information_failure') do
+        expect {
+          subject.update(
+            127230,
+            {
+              charge_type: 'fixed_day_and_month_quantity',
+              receivables_additional_information: { id: 5356, month_quantity: '' }
+            },
+            contract_id: 6666
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if new scheduled update is invalid' do
+      VCR.use_cassette('invoice_rules/update/invalid_new_scheduled_update_failure') do
+        expect {
+          subject.update(
+            127230,
+            {
+              scheduled_update: { will_be_created: 'true', month_quantity: '' }
+            },
+            contract_id: 6666
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if existing scheduled update is invalid' do
+      VCR.use_cassette('invoice_rules/update/invalid_existing_scheduled_update_failure') do
+        expect {
+          subject.update(
+            127224,
+            {
+              scheduled_update: { id: 96, will_be_created: 'true', month_quantity: '' }
+            },
+            contract_id: 6666
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'updates invoice_rule attributes correctly' do
+      VCR.use_cassette('invoice_rules/update/success/rule_attributes') do
+        invoice_rule = subject.update(
+          127194,
+          { gross_value: 300.0, description: 'Faturamento novo' },
+          contract_id: 6666
+        )
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.description).to eql 'Faturamento novo'
+        expect(invoice_rule.gross_value).to eql 300.0
+      end
+    end
+
+    it 'updates rule additional information' do
+      VCR.use_cassette('invoice_rules/update/success/additional_information_atttributes') do
+        invoice_rule = subject.update(
+          127230,
+          { additional_information: { id: 5365, title: 'NOVA REGRA', month_quantity: 1 } },
+          contract_id: 6666
+        )
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.additional_information['title']).to eql 'NOVA REGRA'
+        expect(invoice_rule.additional_information['month_quantity']).to eql 1
+      end
+    end
+
+    it 'updates rule receivables additional information' do
+      VCR.use_cassette('invoice_rules/update/success/receivables_additional_information_atttributes') do
+        invoice_rule = subject.update(
+          127230,
+          {
+            receivables_additional_information: {
+              id: 5356, day_number: 25, parcel_number: 2
+            }
+          },
+          contract_id: 6666
+        )
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.receivables_additional_information['day_number']).to eql 25
+        expect(invoice_rule.receivables_additional_information['parcel_number']).to eql 2
+      end
+    end
+
+    it 'updates rule creating scheduled update' do
+      VCR.use_cassette('invoice_rules/update/success/new_scheduled_update') do
+        invoice_rule = subject.update(
+          127224,
+          {
+            scheduled_update: {
+              will_be_created: 'true',
+              price_index: 'ipca',
+              init_date: '02/10/2016',
+              month_quantity: 12,
+              days_until_update: 5
+            }
+          },
+          contract_id: 6666
+        )
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_update).not_to be_nil
+        expect(invoice_rule.scheduled_update['execution_date']).to eql '2016-10-02'
+        expect(invoice_rule.scheduled_update['remind_at']).to eql '2016-09-27'
+      end
+    end
+
+    it 'updates rule existing scheduled update' do
+      VCR.use_cassette('invoice_rules/update/success/existing_scheduled_update') do
+        invoice_rule = subject.update(
+          127224,
+          {
+            scheduled_update: {
+              id: 99,
+              will_be_created: 'true',
+              price_index: 'igpm',
+              month_quantity: 1,
+              days_until_update: 2
+            }
+          },
+          contract_id: 6666
+        )
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_update['execution_date']).to eql '2016-10-02'
+        expect(invoice_rule.scheduled_update['remind_at']).to eql '2016-09-30'
+      end
+    end
+
+    it 'updates rule with services and calculates its gross_value automatically' do
+      VCR.use_cassette('invoice_rules/update/success/new_services') do
+        invoice_rule = subject.update(
+          127224,
+          {
+            services: [
+              {
+                service_item_id: 1,
+                units: 2,
+                unit_value: 100.0,
+                value: 200.0
+              }
+            ]
+          },
+          contract_id: 6666
+        )
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.services).not_to be_empty
+        expect(invoice_rule.services.first.value).to eql 200.0
+        expect(invoice_rule.gross_value).to eql 200.0
+      end
+    end
+
+    it "updates rule's existing services and calculates its gross_value automatically" do
+      VCR.use_cassette('invoice_rules/update/success/existing_services') do
+        invoice_rule = subject.update(
+          127230,
+          {
+            services: [
+              {
+                id: 183069,
+                service_item_id: 1,
+                units: 1,
+                unit_value: 200.0,
+                value: 200.0
+              }
+            ]
+          },
+          contract_id: 6666
+        )
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.services).not_to be_empty
+        expect(invoice_rule.services.first.value).to eql 200.0
+        expect(invoice_rule.gross_value).to eql 200.0
+      end
+    end
+  end
 end

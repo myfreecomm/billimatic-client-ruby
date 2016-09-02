@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"services":[{"id":183069,"service_item_id":1,"units":1,"unit_value":200.0,"value":200.0}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Sep 2016 15:44:03 GMT
+      ETag:
+      - W/"b72ed40516f968c34d1db00471d0146d"
+      Server:
+      - nginx/1.10.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 4ee5e78e-7ff9-4037-baf4-38478a26bb30
+      X-Runtime:
+      - '3.490969'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '548'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"id":127230,"contract_id":6666,"gross_value":"200.0","number":null,"issue_date":null,"state":0,"description":"Faturamento","nfe_service":null,"nfe_verification":null,"created_at":"02/09/2016
+        11:26:12 -03:00","payment_value":"300.0","emites_service_values_id":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"nfe_issued":false,"nfe_issue_date":null,"cobrato_charge_config_id":null,"nfe_body":"$DESCRICAO","services":[{"id":183069,"name":"Aluguel
+        do PSOffice","unit_value":"200.0","units":"1.0","value":"200.0"}],"attachments":[],"additional_information":{"id":5365,"init_date":"2016-09-02","title":"NOVA
+        REGRA","month_quantity":1,"end_date":null,"rulable_id":127230,"created_at":"2016-09-02T11:26:12.000-03:00","updated_at":"2016-09-02T12:24:33.000-03:00","rulable_type":"Invoice","accrual_month_quantity":"same_month"},"scheduled_update":null,"receivables_additional_information":{"id":5356,"day_number":25,"parcel_number":2,"invoice_rule_id":127230,"created_at":"2016-09-02T11:26:12.000-03:00","updated_at":"2016-09-02T12:27:54.000-03:00","day_quantity":null,"month_quantity":null}}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
+  recorded_at: Fri, 02 Sep 2016 15:44:04 GMT
+recorded_with: VCR 3.0.3
