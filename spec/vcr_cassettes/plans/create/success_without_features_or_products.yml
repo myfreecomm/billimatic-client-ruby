@@ -62,4 +62,72 @@ http_interactions:
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations/4/plans
   recorded_at: Thu, 01 Sep 2016 17:06:56 GMT
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Plano de Teste","description":"Description","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada"}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Sep 2016 12:52:13 GMT
+      ETag:
+      - W/"b804cdd4ac80c3be07cf59dd0554208e"
+      Server:
+      - nginx/1.10.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 0f17d004-d2af-4d07-8963-bdc1842b3fda
+      X-Runtime:
+      - '0.081508'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '533'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjoxNDAsIm5hbWUiOiJQbGFubyBkZSBUZXN0ZSIsImRl
+        c2NyaXB0aW9uIjoiRGVzY3JpcHRpb24iLCJyZWRpcmVjdF91cmwiOiJodHRw
+        Oi8vbmV4YWFzLmNvbSIsInByaWNlIjoiMTAwLjAiLCJiaWxsaW5nX3Blcmlv
+        ZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNhbG1lbnRl
+        IiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xhdGVkX2No
+        YXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6ZmFsc2Us
+        InRyaWFsX3BlcmlvZCI6bnVsbCwiZmVhdHVyZXMiOltdLCJlbWl0ZXNfc2Vy
+        dmljZV92YWx1ZXNfaWQiOm51bGwsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9j
+        b25maWdfaWQiOjEyOCwiY29icmF0b19wYXltZW50X2dhdGV3YXlfY2hhcmdl
+        X2NvbmZpZ19pZCI6bnVsbCwiZmluYW5jZV9jYXRlZ29yeSI6bnVsbCwiZmlu
+        YW5jZV9yZXZlbnVlX2NlbnRlciI6bnVsbCwiY3JlYXRlZF9hdCI6IjAyLzA5
+        LzIwMTYgMDk6NTI6MTMgLTAzOjAwIiwicHJvZHVjdHMiOltdfX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans
+  recorded_at: Fri, 02 Sep 2016 12:52:13 GMT
 recorded_with: VCR 3.0.3

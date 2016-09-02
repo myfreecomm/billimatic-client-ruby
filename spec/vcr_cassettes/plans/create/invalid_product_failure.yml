@@ -50,4 +50,58 @@ http_interactions:
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations/4/plans
   recorded_at: Thu, 01 Sep 2016 17:10:25 GMT
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Plano de Teste","description":"Description","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada","products":[{"service_item_id":1,"unit_value":100,"value":100}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Sep 2016 12:55:21 GMT
+      Server:
+      - nginx/1.10.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 088b7301-c744-46b6-9a3f-254e2b476f67
+      X-Runtime:
+      - '0.062331'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '50'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsicHJvZHVjdHMudW5pdHMiOiJkZXZlIHNlciBudW3DqXJp
+        Y28ifX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans
+  recorded_at: Fri, 02 Sep 2016 12:55:21 GMT
 recorded_with: VCR 3.0.3
