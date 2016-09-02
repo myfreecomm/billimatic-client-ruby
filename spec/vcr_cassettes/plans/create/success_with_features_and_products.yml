@@ -1,0 +1,141 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/organizations/4/plans
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Plan","description":"Description for Plan","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada","features":[{"description":"feature","value":"100","tag":"feat."}],"products":[{"service_item_id":1,"units":1,"unit_value":100,"value":100}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"3140ca6c9a90d7d5a724d58a2a4e598f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 460d8b30-6927-496d-b35e-bcbe8875a842
+      X-Runtime:
+      - '0.051272'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjo1MiwibmFtZSI6IlBsYW4iLCJkZXNjcmlwdGlvbiI6
+        IkRlc2NyaXB0aW9uIGZvciBQbGFuIiwicmVkaXJlY3RfdXJsIjoiaHR0cDov
+        L25leGFhcy5jb20iLCJwcmljZSI6IjEwMC4wIiwiYmlsbGluZ19wZXJpb2Qi
+        OjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxtZW50ZSIs
+        ImNoYXJnaW5nX21ldGhvZCI6InByZV9wYWlkIiwidHJhbnNsYXRlZF9jaGFy
+        Z2luZ19tZXRob2QiOiJQcsOpLXBhZ28iLCJoYXNfdHJpYWwiOmZhbHNlLCJ0
+        cmlhbF9wZXJpb2QiOm51bGwsImZlYXR1cmVzIjpbeyJpZCI6MzQsImRlc2Ny
+        aXB0aW9uIjoiZmVhdHVyZSIsInZhbHVlIjoiMTAwIiwidGFnIjoiZmVhdC4i
+        fV0sImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiY29icmF0b19i
+        aWxsZXRfY2hhcmdlX2NvbmZpZ19pZCI6MTI4LCJjb2JyYXRvX3BheW1lbnRf
+        Z2F0ZXdheV9jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJmaW5hbmNlX2NhdGVn
+        b3J5IjpudWxsLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjpudWxsLCJjcmVh
+        dGVkX2F0IjoiMDEvMDkvMjAxNiAxNDoxMDo0NyAtMDM6MDAiLCJwcm9kdWN0
+        cyI6W3siaWQiOjIzOTE2LCJuYW1lIjoiU2VydmnDp28gVGVzdGUiLCJ1bml0
+        X3ZhbHVlIjoiMTAwLjAiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoiMTAwLjAi
+        fV19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/4/plans
+  recorded_at: Thu, 01 Sep 2016 17:10:47 GMT
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Plano de Teste","description":"Description","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada","features":[{"description":"feature","value":"100","tag":"feat."}],"products":[{"service_item_id":1,"units":1,"unit_value":100,"value":100}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Sep 2016 12:55:45 GMT
+      ETag:
+      - W/"428daeaba86f9f30b6ff11b8163c02d9"
+      Server:
+      - nginx/1.10.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 42369ca2-db9f-4382-b8b7-615fc6c17c60
+      X-Runtime:
+      - '0.071424'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '687'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjoxNDMsIm5hbWUiOiJQbGFubyBkZSBUZXN0ZSIsImRl
+        c2NyaXB0aW9uIjoiRGVzY3JpcHRpb24iLCJyZWRpcmVjdF91cmwiOiJodHRw
+        Oi8vbmV4YWFzLmNvbSIsInByaWNlIjoiMTAwLjAiLCJiaWxsaW5nX3Blcmlv
+        ZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNhbG1lbnRl
+        IiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xhdGVkX2No
+        YXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6ZmFsc2Us
+        InRyaWFsX3BlcmlvZCI6bnVsbCwiZmVhdHVyZXMiOlt7ImlkIjo2MiwiZGVz
+        Y3JpcHRpb24iOiJmZWF0dXJlIiwidmFsdWUiOiIxMDAiLCJ0YWciOiJmZWF0
+        LiJ9XSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lkIjpudWxsLCJjb2JyYXRv
+        X2JpbGxldF9jaGFyZ2VfY29uZmlnX2lkIjoxMjgsImNvYnJhdG9fcGF5bWVu
+        dF9nYXRld2F5X2NoYXJnZV9jb25maWdfaWQiOm51bGwsImZpbmFuY2VfY2F0
+        ZWdvcnkiOm51bGwsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOm51bGwsImNy
+        ZWF0ZWRfYXQiOiIwMi8wOS8yMDE2IDA5OjU1OjQ1IC0wMzowMCIsInByb2R1
+        Y3RzIjpbeyJpZCI6MTgzMDY3LCJuYW1lIjoiQWx1Z3VlbCBkbyBQU09mZmlj
+        ZSIsInVuaXRfdmFsdWUiOiIxMDAuMCIsInVuaXRzIjoiMS4wIiwidmFsdWUi
+        OiIxMDAuMCJ9XX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans
+  recorded_at: Fri, 02 Sep 2016 12:55:45 GMT
+recorded_with: VCR 3.0.3

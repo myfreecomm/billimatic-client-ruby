@@ -50,6 +50,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
 * [Companies API](https://app.billimatic.com.br/docs/api#!/companies) as `client.companies`
 * [Plans API](https://app.billimatic.com.br/docs/api#!/plans) as `client.plans`
 * [Subscriptions API](https://app.billimatic.com.br/docs/api#!/subscriptions) as `client.subscriptions`
+* [Invoice Rules API](https://app.billimatic.com.br/docs/api#!/invoice_rules) as `client.invoice_rules`
 
 ## Endpoints
 
@@ -126,6 +127,39 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
             <code>client.plans.list(organization_id: id)</code>
         </td>
     </tr>
+    <tr>
+        <td><code>POST</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/plans/API_V1_Plans_create_post_1" target="_blank">
+                /api/v1/organizations/:organization_id/plans
+            </a>
+        </td>
+        <td>
+            <code>client.plans.create(attributes_hash, organization_id: id)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>PATCH</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/plans/API_V1_Plans_update_patch_2" target="_blank">
+                /api/v1/organizations/:organization_id/plans/:id
+            </a>
+        </td>
+        <td>
+            <code>client.plans.update(id, attributes_hash, organization_id: id)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>DELETE</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/plans/API_V1_Plans_destroy_delete_3" target="_blank">
+                /api/v1/organizations/:organization_id/plans/:id
+            </a>
+        </td>
+        <td>
+            <code>client.plans.destroy(id, organization_id: id)</code>
+        </td>
+    </tr>
 </table>
 
 #### [Subscriptions](https://app.billimatic.com.br/docs/api#!/subscriptions)
@@ -167,6 +201,38 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
         <td>
             <code>client.subscriptions.cancel(token: token)</code>
+        </td>
+    </tr>
+</table>
+
+#### [Invoice Rules](https://app.billimatic.com.br/docs/api#!/invoice_rules)
+
+<table>
+    <tr>
+        <th>HTTP method</th>
+        <th>Endpoint</th>
+        <th>Client method</th>
+    </tr>
+    <tr>
+        <td><code>POST</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_create_post_0" target="_blank">
+                /api/v1/contracts/:contract_id/invoice_rules
+            </a>
+        </td>
+        <td>
+            <code>client.invoice_rules.create(attributes_hash, contract_id: id)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>PATCH</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_update_patch_1" target="_blank">
+                /api/v1/contracts/:contract_id/invoice_rules/:id
+            </a>
+        </td>
+        <td>
+            <code>client.invoice_rules.update(id, attributes_hash, contract_id: id)</code>
         </td>
     </tr>
 </table>

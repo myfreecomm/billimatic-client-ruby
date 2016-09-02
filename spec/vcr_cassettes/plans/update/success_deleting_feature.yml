@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/141
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"features":[{"id":61,"_destroy":true}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Sep 2016 13:23:40 GMT
+      ETag:
+      - W/"33c0a0fd1c16aba39b99f0899efcce60"
+      Server:
+      - nginx/1.10.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 1a7e39ac-95fa-480f-9d64-2ffc20f0914c
+      X-Runtime:
+      - '0.091203'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '335'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjoxNDEsIm5hbWUiOiJQbGFubyBkZSBUZXN0ZSIsImRl
+        c2NyaXB0aW9uIjoiRGVzY3JpcHRpb24iLCJyZWRpcmVjdF91cmwiOiJodHRw
+        Oi8vbmV4YWFzLmNvbSIsInByaWNlIjoiMTAwLjAiLCJiaWxsaW5nX3Blcmlv
+        ZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNhbG1lbnRl
+        IiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xhdGVkX2No
+        YXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6ZmFsc2Us
+        InRyaWFsX3BlcmlvZCI6bnVsbCwiZmVhdHVyZXMiOltdLCJlbWl0ZXNfc2Vy
+        dmljZV92YWx1ZXNfaWQiOm51bGwsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9j
+        b25maWdfaWQiOjEyOCwiY29icmF0b19wYXltZW50X2dhdGV3YXlfY2hhcmdl
+        X2NvbmZpZ19pZCI6bnVsbCwiZmluYW5jZV9jYXRlZ29yeSI6bnVsbCwiZmlu
+        YW5jZV9yZXZlbnVlX2NlbnRlciI6bnVsbCwiY3JlYXRlZF9hdCI6IjAyLzA5
+        LzIwMTYgMDk6NTM6MjggLTAzOjAwIiwicHJvZHVjdHMiOltdfX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/141
+  recorded_at: Fri, 02 Sep 2016 13:23:40 GMT
+recorded_with: VCR 3.0.3

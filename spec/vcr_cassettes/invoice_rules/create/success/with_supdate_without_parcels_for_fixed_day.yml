@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"additional_information":{"title":"REGRA","init_date":"02/09/2016","month_quantity":6},"gross_value":100.0,"description":"Faturamento","nfe_body":"$DESCRICAO","charge_type":"fixed_day","receivables_additional_information":{"day_number":23},"scheduled_update":{"will_be_created":"true","price_index":"ipca","init_date":"02/10/2016","month_quantity":12,"days_until_update":5}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Sep 2016 14:18:54 GMT
+      ETag:
+      - W/"0b0a882feb6a37539df7f526568a2bb3"
+      Server:
+      - nginx/1.10.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains;
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 64eccc64-c948-4d2e-b4fe-d9a6817ad8c6
+      X-Runtime:
+      - '0.462257'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1324'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"id":127224,"contract_id":6666,"gross_value":"100.0","number":null,"issue_date":null,"state":0,"description":"Faturamento","nfe_service":null,"nfe_verification":null,"created_at":"02/09/2016
+        11:18:54 -03:00","payment_value":"100.0","emites_service_values_id":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"nfe_issued":false,"nfe_issue_date":null,"cobrato_charge_config_id":null,"nfe_body":"$DESCRICAO","services":[],"attachments":[],"additional_information":{"id":5364,"init_date":"2016-09-02","title":"REGRA","month_quantity":6,"end_date":null,"rulable_id":127224,"created_at":"2016-09-02T11:18:54.529-03:00","updated_at":"2016-09-02T11:18:54.529-03:00","rulable_type":"Invoice","accrual_month_quantity":"same_month"},"scheduled_update":{"id":96,"invoice_rule_id":127224,"execution_date":"2016-10-02","month_quantity":12,"price_index":"ipca","created_at":"2016-09-02T11:18:54.533-03:00","updated_at":"2016-09-02T11:18:54.533-03:00","init_date":"2016-10-02","days_until_update":5,"remind_at":"2016-09-27","notified":false},"receivables_additional_information":{"id":5355,"day_number":23,"parcel_number":null,"invoice_rule_id":127224,"created_at":"2016-09-02T11:18:54.536-03:00","updated_at":"2016-09-02T11:18:54.536-03:00","day_quantity":null,"month_quantity":null}}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules
+  recorded_at: Fri, 02 Sep 2016 14:18:55 GMT
+recorded_with: VCR 3.0.3

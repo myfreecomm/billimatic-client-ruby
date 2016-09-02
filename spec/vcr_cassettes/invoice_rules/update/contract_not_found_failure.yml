@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/1000/invoice_rules/127194
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"description":"NOVO FATURAMENTO"}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Fri, 02 Sep 2016 14:37:36 GMT
+      Server:
+      - nginx/1.10.1
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - c780804d-af00-4e56-80e1-3dcc03b8c28b
+      X-Runtime:
+      - '0.025872'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '20'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/1000/invoice_rules/127194
+  recorded_at: Fri, 02 Sep 2016 14:37:36 GMT
+recorded_with: VCR 3.0.3

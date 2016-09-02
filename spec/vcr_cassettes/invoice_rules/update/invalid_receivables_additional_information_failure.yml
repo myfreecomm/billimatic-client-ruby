@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"charge_type":"fixed_day_and_month_quantity","receivables_additional_information":{"id":5356,"month_quantity":""}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Sep 2016 15:00:50 GMT
+      Server:
+      - nginx/1.10.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 63b1da67-e1da-4e32-b87d-9020a752e4b7
+      X-Runtime:
+      - '0.030449'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '101'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"errors":{"receivables_additional_information.month_quantity":"o valor
+        deve ser maior do que zero"}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
+  recorded_at: Fri, 02 Sep 2016 15:00:50 GMT
+recorded_with: VCR 3.0.3

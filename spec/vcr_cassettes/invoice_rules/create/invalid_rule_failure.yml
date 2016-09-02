@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/219/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"description":""}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 02 Sep 2016 12:44:12 GMT
+      Server:
+      - nginx/1.10.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 4cec9dee-eac9-4d97-af9a-3a5be065ae8e
+      X-Runtime:
+      - '0.073712'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '128'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiZGVzY3JpcHRpb24iOiJuw6NvIHBvZGUgZmljYXIgZW0g
+        YnJhbmNvIiwibmZlX2JvZHkiOiJuw6NvIHBvZGUgZmljYXIgZW0gYnJhbmNv
+        IiwiZ3Jvc3NfdmFsdWUiOiJkZXZlIHNlciBudW3DqXJpY28ifX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/219/invoice_rules
+  recorded_at: Fri, 02 Sep 2016 12:44:12 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/v1/organizations/4/plans/50
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Plan","description":"Description for Plan","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada"}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"500e304663a0b49d96f96d13ca4ac487"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7aa7f03c-8d88-4b3a-b5ed-afa2c6dd067d
+      X-Runtime:
+      - '0.132808'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjo1MCwibmFtZSI6IlBsYW4iLCJkZXNjcmlwdGlvbiI6
+        IkRlc2NyaXB0aW9uIGZvciBQbGFuIiwicmVkaXJlY3RfdXJsIjoiaHR0cDov
+        L25leGFhcy5jb20iLCJwcmljZSI6IjEwMC4wIiwiYmlsbGluZ19wZXJpb2Qi
+        OjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxtZW50ZSIs
+        ImNoYXJnaW5nX21ldGhvZCI6InByZV9wYWlkIiwidHJhbnNsYXRlZF9jaGFy
+        Z2luZ19tZXRob2QiOiJQcsOpLXBhZ28iLCJoYXNfdHJpYWwiOmZhbHNlLCJ0
+        cmlhbF9wZXJpb2QiOm51bGwsImZlYXR1cmVzIjpbeyJpZCI6MzMsImRlc2Ny
+        aXB0aW9uIjoiZmVhdHVyZSIsInZhbHVlIjoiMTAwIiwidGFnIjoiZmVhdC4i
+        fV0sImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiY29icmF0b19i
+        aWxsZXRfY2hhcmdlX2NvbmZpZ19pZCI6MTI4LCJjb2JyYXRvX3BheW1lbnRf
+        Z2F0ZXdheV9jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJmaW5hbmNlX2NhdGVn
+        b3J5IjpudWxsLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjpudWxsLCJjcmVh
+        dGVkX2F0IjoiMDEvMDkvMjAxNiAxNDowODo0MCAtMDM6MDAiLCJwcm9kdWN0
+        cyI6W119fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/4/plans/50
+  recorded_at: Thu, 01 Sep 2016 18:23:25 GMT
+- request:
+    method: put
+    uri: http://localhost:3000/api/v1/organizations/4/plans/102
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Plan","description":"Description for Plan","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada"}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 90901b23-693e-4412-8879-6a5adb5d6d81
+      X-Runtime:
+      - '0.036478'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/4/plans/102
+  recorded_at: Thu, 01 Sep 2016 19:01:35 GMT
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/102
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Plan","description":"Description for Plan","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada"}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.4.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Sep 2016 12:58:09 GMT
+      Server:
+      - nginx/1.10.1
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - eeb36ef5-4870-49ee-850b-a809e788ec69
+      X-Runtime:
+      - '0.058968'
+      X-XSS-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '20'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/102
+  recorded_at: Fri, 02 Sep 2016 12:58:09 GMT
+recorded_with: VCR 3.0.3
