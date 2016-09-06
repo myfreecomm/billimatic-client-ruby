@@ -23,8 +23,11 @@ describe Billimatic::Entities::Plan do
         )
       ],
       emites_service_values_id: 47,
-      cobrato_billet_charge_config_id: 110,
+      emites_service_value_name: "Aluguel de software",
+      cobrato_billet_charge_config_id: 128,
+      cobrato_billet_charge_config_name: "Cobrança não registrada",
       cobrato_payment_gateway_charge_config_id: 137,
+      cobrato_payment_gateway_charge_config_name: "Teste Cartão",
       finance_category: 'Outros',
       finance_revenue_center: 'CR1',
       created_at: "2016-05-02T16:55:10.000-03:00",
@@ -47,7 +50,10 @@ describe Billimatic::Entities::Plan do
                     :translated_billing_period, :charging_method,
                     :translated_charging_method, :has_trial, :trial_period,
                     :redirect_url, :features, :emites_service_values_id,
-                    :cobrato_billet_charge_config_id, :cobrato_payment_gateway_charge_config_id,
+                    :emites_service_value_name, :cobrato_billet_charge_config_id,
+                    :cobrato_billet_charge_config_name,
+                    :cobrato_payment_gateway_charge_config_id,
+                    :cobrato_payment_gateway_charge_config_name,
                     :finance_category, :finance_revenue_center, :created_at, :products
                   ]
 end
