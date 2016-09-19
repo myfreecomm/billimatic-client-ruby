@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/search?name=Assinatura
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 19 Sep 2016 13:58:03 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0a4f4fb3a6d498630bc200787dd86cdf"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bfd76a0b-ccbd-4e81-a238-88eeaac865d3
+      X-Runtime:
+      - '0.049318'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb250cmFjdHMiOlt7ImlkIjoyMjUsIm5hbWUiOiJBc3NpbmF0dXJhIEVt
+        cHJlc2EgZGUgVGVzdGUgLSBQbGFubyAxIiwidGl0bGUiOiJBc3NpbmF0dXJh
+        IEVtcHJlc2EgZGUgVGVzdGUgLSBQbGFubyAxIiwidG9rZW4iOiIwZDBlNDBl
+        NTFmMGU4Yzc3MmQ3NWJjNTg3OTAxM2ZkYSIsImRlc2NyaXB0aW9uIjpudWxs
+        LCJjdXN0b21lcl9pZCI6NTc0LCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIs
+        InN1cHBsaWVyX2lkIjo1NjQsInN1cHBsaWVyX3R5cGUiOiJDb21wYW55Iiwi
+        c3RhdGUiOjEsImNvbW1lbnRzIjpudWxsLCJpbml0X2RhdGUiOiIwMy8wNS8y
+        MDE2IiwiZW5kX2RhdGUiOiIwMi8wNi8yMDE2IiwiY3JlYXRlZF9hdCI6IjAz
+        LzA1LzIwMTYgMTM6NDc6MDggLTAzOjAwIiwia2luZCI6InNhbGUiLCJyZWdp
+        c3RyYXRpb25fbWV0aG9kIjoic3Vic2NyaXB0aW9uIiwib3ZlcmR1ZSI6dHJ1
+        ZSwidmFsaWRfdW50aWwiOiIwMi8wNi8yMDE2Iiwic3RhdHVzIjoidHJpYWwi
+        LCJwbGFuIjp7ImlkIjo0LCJuYW1lIjoiUGxhbm8gMSIsImRlc2NyaXB0aW9u
+        IjoiUGxhbm8gMSBkZXNjcmnDp8OjbyIsInJlZGlyZWN0X3VybCI6Imh0dHA6
+        Ly93d3cuZ29vZ2xlLmNvbS5iciIsInByaWNlIjoiMTAwLjAiLCJiaWxsaW5n
+        X3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNh
+        bG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xh
+        dGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6
+        dHJ1ZSwidHJpYWxfcGVyaW9kIjozMCwiZmVhdHVyZXMiOlt7ImlkIjoxLCJk
+        ZXNjcmlwdGlvbiI6IkF0w6kgMTAgdXN1w6FyaW9zIiwidmFsdWUiOiIxMCIs
+        InRhZyI6InF1YW50aWRhZGVfZGVfdXN1YXJpb3MifSx7ImlkIjoyLCJkZXNj
+        cmlwdGlvbiI6IkF0w6kgMTAwIEdCIGRlIGFybWF6ZW5hbWVudG8iLCJ2YWx1
+        ZSI6IjEwMCIsInRhZyI6ImFybWF6ZW5hbWVudG8ifSx7ImlkIjozLCJkZXNj
+        cmlwdGlvbiI6IkUtbWFpbHMgY29ycG9yYXRpdm9zIiwidmFsdWUiOiIxMCIs
+        InRhZyI6ImVtYWlscyJ9XSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lkIjpu
+        dWxsLCJlbWl0ZXNfc2VydmljZV92YWx1ZV9uYW1lIjpudWxsLCJjb2JyYXRv
+        X2JpbGxldF9jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJjb2JyYXRvX2JpbGxl
+        dF9jaGFyZ2VfY29uZmlnX25hbWUiOm51bGwsImNvYnJhdG9fcGF5bWVudF9n
+        YXRld2F5X2NoYXJnZV9jb25maWdfaWQiOm51bGwsImNvYnJhdG9fcGF5bWVu
+        dF9nYXRld2F5X2NoYXJnZV9jb25maWdfbmFtZSI6bnVsbCwiZmluYW5jZV9j
+        YXRlZ29yeSI6bnVsbCwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6bnVsbCwi
+        Y3JlYXRlZF9hdCI6IjAyLzA1LzIwMTYgMTc6MTk6MjcgLTAzOjAwIiwicHJv
+        ZHVjdHMiOlt7ImlkIjo3OTM4NSwibmFtZSI6IlNlcnZpw6dvIE9ubGluZSAx
+        IiwidW5pdF92YWx1ZSI6IjEwMC4wIiwidW5pdHMiOiIxLjAiLCJ2YWx1ZSI6
+        IjEwMC4wIn1dfX0seyJpZCI6MjI3LCJuYW1lIjoiQXNzaW5hdHVyYSBDb21w
+        YW5oaWEgTFREQS4gLSBQbGFubyAxIiwidGl0bGUiOiJBc3NpbmF0dXJhIENv
+        bXBhbmhpYSBMVERBLiAtIFBsYW5vIDEiLCJ0b2tlbiI6IjU0NDZjNWI4YjZm
+        M2MzZTdlYzc3NDUxOGVjZDkwOGNjIiwiZGVzY3JpcHRpb24iOm51bGwsImN1
+        c3RvbWVyX2lkIjo1NzgsImN1c3RvbWVyX3R5cGUiOiJDb21wYW55Iiwic3Vw
+        cGxpZXJfaWQiOjU2NCwic3VwcGxpZXJfdHlwZSI6IkNvbXBhbnkiLCJzdGF0
+        ZSI6MSwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjA0LzA1LzIwMTYi
+        LCJlbmRfZGF0ZSI6IjAzLzA2LzIwMTYiLCJjcmVhdGVkX2F0IjoiMDQvMDUv
+        MjAxNiAwODo1MzozMiAtMDM6MDAiLCJraW5kIjoic2FsZSIsInJlZ2lzdHJh
+        dGlvbl9tZXRob2QiOiJzdWJzY3JpcHRpb24iLCJvdmVyZHVlIjp0cnVlLCJ2
+        YWxpZF91bnRpbCI6IjAzLzA2LzIwMTYiLCJzdGF0dXMiOiJ0cmlhbCIsInBs
+        YW4iOnsiaWQiOjQsIm5hbWUiOiJQbGFubyAxIiwiZGVzY3JpcHRpb24iOiJQ
+        bGFubyAxIGRlc2NyacOnw6NvIiwicmVkaXJlY3RfdXJsIjoiaHR0cDovL3d3
+        dy5nb29nbGUuY29tLmJyIiwicHJpY2UiOiIxMDAuMCIsImJpbGxpbmdfcGVy
+        aW9kIjoxLCJ0cmFuc2xhdGVkX2JpbGxpbmdfcGVyaW9kIjoiTWVuc2FsbWVu
+        dGUiLCJjaGFyZ2luZ19tZXRob2QiOiJwcmVfcGFpZCIsInRyYW5zbGF0ZWRf
+        Y2hhcmdpbmdfbWV0aG9kIjoiUHLDqS1wYWdvIiwiaGFzX3RyaWFsIjp0cnVl
+        LCJ0cmlhbF9wZXJpb2QiOjMwLCJmZWF0dXJlcyI6W3siaWQiOjEsImRlc2Ny
+        aXB0aW9uIjoiQXTDqSAxMCB1c3XDoXJpb3MiLCJ2YWx1ZSI6IjEwIiwidGFn
+        IjoicXVhbnRpZGFkZV9kZV91c3VhcmlvcyJ9LHsiaWQiOjIsImRlc2NyaXB0
+        aW9uIjoiQXTDqSAxMDAgR0IgZGUgYXJtYXplbmFtZW50byIsInZhbHVlIjoi
+        MTAwIiwidGFnIjoiYXJtYXplbmFtZW50byJ9LHsiaWQiOjMsImRlc2NyaXB0
+        aW9uIjoiRS1tYWlscyBjb3Jwb3JhdGl2b3MiLCJ2YWx1ZSI6IjEwIiwidGFn
+        IjoiZW1haWxzIn1dLCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOm51bGws
+        ImVtaXRlc19zZXJ2aWNlX3ZhbHVlX25hbWUiOm51bGwsImNvYnJhdG9fYmls
+        bGV0X2NoYXJnZV9jb25maWdfaWQiOm51bGwsImNvYnJhdG9fYmlsbGV0X2No
+        YXJnZV9jb25maWdfbmFtZSI6bnVsbCwiY29icmF0b19wYXltZW50X2dhdGV3
+        YXlfY2hhcmdlX2NvbmZpZ19pZCI6bnVsbCwiY29icmF0b19wYXltZW50X2dh
+        dGV3YXlfY2hhcmdlX2NvbmZpZ19uYW1lIjpudWxsLCJmaW5hbmNlX2NhdGVn
+        b3J5IjpudWxsLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjpudWxsLCJjcmVh
+        dGVkX2F0IjoiMDIvMDUvMjAxNiAxNzoxOToyNyAtMDM6MDAiLCJwcm9kdWN0
+        cyI6W3siaWQiOjc5Mzg1LCJuYW1lIjoiU2VydmnDp28gT25saW5lIDEiLCJ1
+        bml0X3ZhbHVlIjoiMTAwLjAiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoiMTAw
+        LjAifV19fV19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/search?name=Assinatura
+  recorded_at: Mon, 19 Sep 2016 13:58:04 GMT
+recorded_with: VCR 3.0.3

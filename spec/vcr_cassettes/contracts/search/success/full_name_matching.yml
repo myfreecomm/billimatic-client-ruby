@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/search?name=Presta%C3%A7%C3%A3o%20de%20Servi%C3%A7o%20Um
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 19 Sep 2016 13:53:56 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"98d17f1643984835cd9cbc3a6e93f1b6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - afdbf528-7f38-4c26-a10e-d9caf34dc563
+      X-Runtime:
+      - '0.079627'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb250cmFjdHMiOlt7ImlkIjoyMTksIm5hbWUiOiJQcmVzdGHDp8OjbyBk
+        ZSBTZXJ2acOnbyBVbSIsInRpdGxlIjoiVMOtdHVsbyBkbyBzZXJ2acOnbyBV
+        bSIsInRva2VuIjpudWxsLCJkZXNjcmlwdGlvbiI6ImRlc2NyZXZlbmRvIG8g
+        c2VydmnDp28iLCJjdXN0b21lcl9pZCI6NTY1LCJjdXN0b21lcl90eXBlIjoi
+        Q29tcGFueSIsInN1cHBsaWVyX2lkIjo1NjQsInN1cHBsaWVyX3R5cGUiOiJD
+        b21wYW55Iiwic3RhdGUiOjEsImNvbW1lbnRzIjoib2JzZXJ2YW5kbyBvIHNl
+        cnZpw6dvIiwiaW5pdF9kYXRlIjoiMDEvMDQvMjAxNiIsImVuZF9kYXRlIjpu
+        dWxsLCJjcmVhdGVkX2F0IjoiMDgvMDQvMjAxNiAxNjoyNzozMCAtMDM6MDAi
+        LCJraW5kIjoic2FsZSIsInJlZ2lzdHJhdGlvbl9tZXRob2QiOiJyZWd1bGFy
+        Iiwib3ZlcmR1ZSI6ZmFsc2UsInZhbGlkX3VudGlsIjpudWxsLCJzdGF0dXMi
+        Om51bGwsInBsYW4iOm51bGx9XX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/search?name=Presta%C3%A7%C3%A3o%20de%20Servi%C3%A7o%20Um
+  recorded_at: Mon, 19 Sep 2016 13:53:57 GMT
+recorded_with: VCR 3.0.3
