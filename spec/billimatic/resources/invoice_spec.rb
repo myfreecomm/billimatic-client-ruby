@@ -67,4 +67,131 @@ describe Billimatic::Resources::Invoice do
       end
     end
   end
+
+  describe '#create' do
+    let(:invoice_attributes) do
+      {
+        gross_value: 100.0,
+        issue_date: '2016-09-19',
+        description: 'FATURAMENTO',
+        nfe_body: 'FATURAMENTO',
+        receivables: [
+          { due_date: '2016-10-01' }
+        ]
+      }
+    end
+
+    it 'creates an invoice with simple attributes' do
+      VCR.use_cassette('/invoices/create/success/simple_attributes') do
+        invoice = subject.create(invoice_attributes, contract_id: 6666)
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.contract_id).to eql 6666
+        expect(invoice.gross_value).to eql 100.0
+      end
+    end
+
+    it 'create an invoice with multiple receivables' do
+      VCR.use_cassette('/invoices/create/success/multiple_receivables') do
+        invoice_attributes[:receivables] = [
+          { due_date: '2016-11-01', value: 70 },
+          { due_date: '2016-12-01', value: 30 }
+        ]
+
+        invoice = subject.create(invoice_attributes, contract_id: 6666)
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.contract_id).to eql 6666
+        expect(invoice.gross_value).to eql 100.0
+      end
+    end
+
+    it 'creates an invoice with services and automatically calculates its gross value' do
+      VCR.use_cassette('/invoices/create/success/creation_with_services') do
+        invoice_attributes[:services] = [ { service_item_id: 31, units: 2, unit_value: 100 } ]
+
+        invoice = subject.create(invoice_attributes, contract_id: 6666)
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.contract_id).to eql 6666
+        expect(invoice.gross_value).to eql 200.0
+        expect(invoice.services).not_to be_empty
+      end
+    end
+
+    context 'when contract is not found' do
+      it 'raises Billimatic::RequestError on Not Found status' do
+        VCR.use_cassette('/invoices/create/failure/contract_not_found') do
+          expect {
+            subject.create(invoice_attributes, contract_id: 7392)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+    end
+
+    context 'invalid invoice parameters' do
+      it 'raises Billimatic::RequestError if invoice is invalid' do
+        VCR.use_cassette('/invoices/create/failure/invalid_invoice_parameters') do
+          invoice_attributes.delete(:description)
+
+          expect {
+            subject.create(invoice_attributes, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError if invoice receivables are invalid' do
+        VCR.use_cassette('/invoices/create/failure/invalid_receivables') do
+          invoice_attributes.delete(:receivables)
+          invoice_attributes[:receivables] = [ { value: 100.0 } ]
+
+          expect {
+            subject.create(invoice_attributes, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError if invoice receivables are empty' do
+        VCR.use_cassette('/invoices/create/failure/empty_receivables') do
+          invoice_attributes.delete(:receivables)
+
+          expect {
+            subject.create(invoice_attributes, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError if receivable calculation has errors' do
+        VCR.use_cassette('/invoices/create/failure/receivables_calculation_error') do
+          invoice_attributes[:receivables] = [ { due_date: '2016-09-21', value: 120.0 } ]
+
+          expect {
+            subject.create(invoice_attributes, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError if services are invalid' do
+        VCR.use_cassette('/invoices/create/failure/invalid_services') do
+          invoice_attributes[:services] = [ { units: '' } ]
+
+          expect {
+            subject.create(invoice_attributes, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+    end
+  end
 end
