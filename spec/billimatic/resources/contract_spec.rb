@@ -70,4 +70,146 @@ describe Billimatic::Resources::Contract do
       end
     end
   end
+
+  describe '#create' do
+    let(:contract_attributes) do
+      {
+        name: "newcontract",
+        title: "The new contract",
+        supplier_id: 564,
+        supplier_type: "Company",
+        customer_id: 578,
+        customer_type: "Company"
+      }
+    end
+
+    it 'creates successfully a sale contract with a company as customer' do
+      VCR.use_cassette('/contracts/create/success/sale_contract_company_customer') do
+        contract = subject.create(contract_attributes)
+
+        expect(contract).to be_a entity_klass
+        expect(contract.name).to eql 'newcontract'
+        expect(contract.kind).to eql 'sale'
+        expect(contract.customer_type).to eql 'Company'
+      end
+    end
+
+    it 'creates successfuly a sale contract with a person as customer' do
+      VCR.use_cassette('/contracts/create/success/sale_contract_person_customer') do
+        contract_attributes[:name] = 'Person sale contract'
+        contract_attributes[:customer_id] = 1194
+        contract_attributes[:customer_type] = 'Person'
+
+        contract = subject.create(contract_attributes)
+
+        expect(contract).to be_a entity_klass
+        expect(contract.name).to eql 'Person sale contract'
+        expect(contract.kind).to eql 'sale'
+        expect(contract.customer_type).to eql 'Person'
+      end
+    end
+
+    it 'creates successfully a purchase contract with a company as supplier' do
+      VCR.use_cassette('/contracts/create/success/purchase_contract_company_supplier') do
+        contract_attributes[:name] = 'Company purchase contract'
+        contract_attributes[:kind] = 'purchase'
+        contract_attributes[:customer_id] = 564
+        contract_attributes[:customer_type] = 'Company'
+        contract_attributes[:supplier_id] = 578
+        contract_attributes[:supplier_type] = 'Company'
+
+        contract = subject.create(contract_attributes)
+
+        expect(contract).to be_a entity_klass
+        expect(contract.name).to eql 'Company purchase contract'
+        expect(contract.kind).to eql 'purchase'
+        expect(contract.supplier_type).to eql 'Company'
+      end
+    end
+
+    context 'when some mandatory field is not sent' do
+      it 'raises Billimatic::RequestError on Unprocessable Entity status' do
+        VCR.use_cassette('/contracts/create/failure/mandatory_fields_not_present') do
+          contract_attributes.delete(:name)
+
+          expect {
+            subject.create(contract_attributes)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+    end
+
+    context 'when trying to create a contract with duplicated name' do
+      it 'raises Billimatic::RequestError on Unprocessable Entity status' do
+        VCR.use_cassette('/contracts/create/failure/duplicate_name_contract') do
+          contract_attributes[:name] = 'Prestação de Serviço Um'
+
+          expect {
+            subject.create(contract_attributes)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+    end
+
+    context 'when customer is not found or from another account' do
+      it 'raises Billimatic::RequestError on Not Found status' do
+        VCR.use_cassette('/contracts/create/failure/customer_not_found') do
+          contract_attributes[:customer_id] = 1000
+
+          expect {
+            subject.create(contract_attributes)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+    end
+
+    context 'when supplier is not found or from another account' do
+      it 'raises Billimatic::RequestError on Not Found status' do
+        VCR.use_cassette('/contracts/create/failure/supplier_not_found') do
+          contract_attributes[:supplier_id] = 10000
+
+          expect {
+            subject.create(contract_attributes)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+    end
+
+    context 'when is a sale contract' do
+      it 'raises Billimatic::RequestError if supplier is not an organization' do
+        VCR.use_cassette('/contracts/create/failure/supplier_not_organization') do
+          contract_attributes[:supplier_id] = 574
+
+          expect {
+            subject.create(contract_attributes)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+    end
+
+    context 'when is a purchase contract' do
+      it 'raises Billimatic::RequestError if customer is not an organization' do
+        VCR.use_cassette('/contracts/create/failure/customer_not_organization') do
+          contract_attributes[:kind] = 'purchase'
+          contract_attributes[:supplier_id] = 574
+
+          expect {
+            subject.create(contract_attributes)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+    end
+  end
 end

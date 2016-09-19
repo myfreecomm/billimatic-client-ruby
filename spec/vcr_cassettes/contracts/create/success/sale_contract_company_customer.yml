@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts
+    body:
+      encoding: UTF-8
+      string: '{"name":"newcontract","title":"The new contract","kind":"sale","supplier_id":564,"supplier_type":"Company","customer_id":578,"customer_type":"Company"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 19 Sep 2016 15:07:42 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9a64f1d966c4c44cccb5cdc477aca83b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7f788e63-2187-4435-8f82-fdbebafd08b2
+      X-Runtime:
+      - '0.037747'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"contract":{"id":7392,"name":"newcontract","title":"The new contract","token":null,"description":null,"customer_id":578,"customer_type":"Company","supplier_id":564,"supplier_type":"Company","state":1,"comments":null,"init_date":null,"end_date":null,"created_at":"19/09/2016
+        12:07:43 -03:00","kind":"sale","registration_method":"regular","overdue":false,"valid_until":null,"status":null,"plan":null}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts
+  recorded_at: Mon, 19 Sep 2016 15:07:43 GMT
+recorded_with: VCR 3.0.3
