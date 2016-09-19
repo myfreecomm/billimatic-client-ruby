@@ -282,7 +282,7 @@ describe Billimatic::Resources::InvoiceRule do
     it 'updates invoice_rule attributes correctly' do
       VCR.use_cassette('invoice_rules/update/success/rule_attributes') do
         invoice_rule = subject.update(
-          127194,
+          144091,
           { gross_value: 300.0, description: 'Faturamento novo' },
           contract_id: 6666
         )

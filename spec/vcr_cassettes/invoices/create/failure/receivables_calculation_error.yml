@@ -5,7 +5,7 @@ http_interactions:
     uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices
     body:
       encoding: UTF-8
-      string: '{"invoice":{"gross_value":100.0,"issue_date":"2016-09-19","description":"FATURAMENTO","receivables":[{"due_date":"2016-09-21","value":120.0}]}}'
+      string: '{"invoice":{"gross_value":100.0,"issue_date":"2016-09-19","description":"FATURAMENTO","nfe_body":"FATURAMENTO","receivables":[{"due_date":"2016-09-21","value":120.0}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.5.1
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Mon, 19 Sep 2016 19:37:58 GMT
+      - Mon, 19 Sep 2016 20:11:24 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -39,9 +39,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 2db43c1e-d1bf-47f3-be80-db6bb3ecae34
+      - ac21986e-2501-448b-a7b4-6e7e6802f53e
       X-Runtime:
-      - '0.033308'
+      - '0.057033'
       Vary:
       - Origin
       Transfer-Encoding:
@@ -51,10 +51,10 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlcnJvcnMiOnsibmZlX2JvZHkiOiJuw6NvIHBvZGUgZmljYXIgZW0gYnJh
-        bmNvIn19
+        eyJlcnJvcnMiOnsicmVjZWl2YWJsZXMiOiJPcyB2ZW5jaW1lbnRvcyBuw6Nv
+        IHRvdGFsaXphbSAxMDAlLiJ9fQ==
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices
-  recorded_at: Mon, 19 Sep 2016 19:37:59 GMT
+  recorded_at: Mon, 19 Sep 2016 20:11:24 GMT
 recorded_with: VCR 3.0.3

@@ -8,7 +8,7 @@ http_interactions:
       string: '{"invoice_rule":{"description":"NOVO FATURAMENTO"}}'
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.4.0
+      - Billimatic Ruby Client v0.5.1
       Accept:
       - application/json
       Content-Type:
@@ -22,37 +22,37 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
-      Cache-Control:
-      - no-cache
-      Content-Encoding:
-      - gzip
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 02 Sep 2016 14:45:08 GMT
       Server:
-      - nginx/1.10.1
-      Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Request-Id:
-      - df6e505f-4d45-4613-a984-620f83804d98
-      X-Runtime:
-      - '0.015385'
-      X-XSS-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '20'
+      - Cowboy
+      Date:
+      - Mon, 19 Sep 2016 20:05:08 GMT
       Connection:
       - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 17037b2a-77d5-4080-a18a-7e8ed4274fcd
+      X-Runtime:
+      - '0.013532'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: ''
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/200000
-  recorded_at: Fri, 02 Sep 2016 14:45:08 GMT
+  recorded_at: Mon, 19 Sep 2016 20:05:08 GMT
 recorded_with: VCR 3.0.3
