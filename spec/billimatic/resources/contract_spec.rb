@@ -271,4 +271,22 @@ describe Billimatic::Resources::Contract do
       end
     end
   end
+
+  describe '#destroy' do
+    it 'raises Billimatic::RequestError if contract is not found' do
+      VCR.use_cassette('/contracts/destroy/failure/contract_not_found') do
+        expect {
+          subject.destroy(100000)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'correctly deletes a contract' do
+      VCR.use_cassette('/contracts/destroy/success') do
+        expect(subject.destroy(7392)).to be true
+      end
+    end
+  end
 end
