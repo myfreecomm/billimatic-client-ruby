@@ -1,7 +1,7 @@
 module Billimatic
   module Resources
     class Contract < Base
-      crud :create
+      crud :create, :update
 
       def search(name)
         http.get(

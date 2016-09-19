@@ -212,4 +212,63 @@ describe Billimatic::Resources::Contract do
       end
     end
   end
+
+  describe '#update' do
+    it 'correctly updates contract attributes' do
+      VCR.use_cassette('/contracts/update/success/contract_attributes') do
+        contract = subject.update(7392, name: 'Novo Contrato')
+
+        expect(contract).to be_a entity_klass
+        expect(contract.name).to eql 'Novo Contrato'
+      end
+    end
+
+    context 'when contract is not found' do
+      it 'raises Billimatic::RequestError on Not Found status' do
+        VCR.use_cassette('/contracts/update/failure/contract_not_found') do
+          expect {
+            subject.update(1000, name: 'Novo Contrato')
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+    end
+
+    context 'when supplier is not found or belongs to another account' do
+      it 'raises Billimatic::RequestError on Not Found status' do
+        VCR.use_cassette('/contracts/update/failure/supplier_not_found') do
+          expect {
+            subject.update(7394, name: 'Novo Contrato', supplier_id: 1000)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+    end
+
+    context 'when customer is not found or belongs to another account' do
+      it 'raises Billimatic::RequestError on Not Found status' do
+        VCR.use_cassette('/contracts/update/failure/customer_not_found') do
+          expect {
+            subject.update(7392, name: 'Novo Contrato', customer_id: 1000)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+    end
+
+    context 'when trying to update with invalid attributes' do
+      it 'raises Billimatic::RequestError on Unprocessable Entity status' do
+        VCR.use_cassette('/contracts/update/failure/invalid_contract_attributes') do
+          expect {
+            subject.update(7392, name: '')
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+    end
+  end
 end
