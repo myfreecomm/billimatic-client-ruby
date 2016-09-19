@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/search?isue_date_from=foo&issue_date_to=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 19 Sep 2016 18:57:53 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - bb4887f3-c61a-4e9c-9b20-c2cd316179ba
+      X-Runtime:
+      - '0.010801'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOiJQYXLDom1ldHJvKHMpIG9icmlnYXTDs3JpbyhzKSBwYXJh
+        IGJ1c2NhIG7Do28gZW5jb250cmFkbyhzKSBvdSBpbnbDoWxpZG8ocyk6IGlz
+        c3VlX2RhdGVfZnJvbSwgaXNzdWVfZGF0ZV90byJ9
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/search?isue_date_from=foo&issue_date_to=
+  recorded_at: Mon, 19 Sep 2016 18:57:53 GMT
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/search?issue_date_from=foo&issue_date_to=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 19 Sep 2016 19:03:41 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - cd079d9f-bf8e-4216-8c59-6c36ae286ad3
+      X-Runtime:
+      - '0.011051'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOiJQYXLDom1ldHJvKHMpIG9icmlnYXTDs3JpbyhzKSBwYXJh
+        IGJ1c2NhIG7Do28gZW5jb250cmFkbyhzKSBvdSBpbnbDoWxpZG8ocyk6IGlz
+        c3VlX2RhdGVfZnJvbSwgaXNzdWVfZGF0ZV90byJ9
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/search?issue_date_from=foo&issue_date_to=
+  recorded_at: Mon, 19 Sep 2016 19:03:42 GMT
+recorded_with: VCR 3.0.3
