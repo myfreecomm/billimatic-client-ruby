@@ -194,4 +194,170 @@ describe Billimatic::Resources::Invoice do
       end
     end
   end
+
+  describe '#update' do
+    it 'successfully updates invoice attributes' do
+      VCR.use_cassette('/invoices/update/success/invoice_attributes') do
+        invoice = subject.update(
+          144097,
+          { description: 'Novo faturamento' },
+          contract_id: 6666
+        )
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.description).to eql 'Novo faturamento'
+      end
+    end
+
+    it 'successfully updates an invoice creating a new receivable' do
+      VCR.use_cassette('/invoices/update/success/with_new_receivable') do
+        invoice = subject.update(
+          144097,
+          { receivables: [ { due_date: '2016-11-01' } ] },
+          contract_id: 6666
+        )
+
+        expect(invoice).to be_a entity_klass
+      end
+    end
+
+    it 'successfully updates an invoice updating a receivable' do
+      VCR.use_cassette('/invoices/update/success/updates_receivable') do
+        invoice = subject.update(
+          144097,
+          { receivables: [ { id: 140248, value: 50.0 }, { id: 140252, value: 50.0 } ] },
+          contract_id: 6666
+        )
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.gross_value).to eql 100.0
+      end
+    end
+
+    it 'successfully updates an invoice deleting a receivable' do
+      VCR.use_cassette('/invoices/update/success/deletes_receivable') do
+        invoice = subject.update(
+          144097,
+          { receivables: [ { id: 140248, _destroy: true }, { id: 140252, value: 100.0 } ] },
+          contract_id: 6666
+        )
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.gross_value).to eql 100.0
+      end
+    end
+
+    it 'successfully updates an invoice creating a service' do
+      VCR.use_cassette('/invoices/update/success/creates_service') do
+        invoice = subject.update(
+          144097,
+          { services: [ { service_item_id: 31, units: 2, unit_value: 100.0 } ] },
+          contract_id: 6666
+        )
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.services).not_to be_empty
+        expect(invoice.gross_value).to eql 200.0
+      end
+    end
+
+    it 'successfully updates an invoice updating its services' do
+      VCR.use_cassette('/invoices/update/success/updates_service') do
+        invoice = subject.update(
+          144097,
+          { services: [ { id: 200537, units: 3 } ] },
+          contract_id: 6666
+        )
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.gross_value).to eql 300.0
+      end
+    end
+
+    it 'successfully updates an invoice deleting its services' do
+      VCR.use_cassette('/invoices/update/success/deletes_service') do
+        invoice = subject.update(
+          144097,
+          { services: [ { id: 200537, _destroy: true } ] },
+          contract_id: 6666
+        )
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.services).to be_empty
+        expect(invoice.gross_value).to eql 300.0
+      end
+    end
+
+    it 'raises Billimatic::RequestError if contract is not found' do
+      VCR.use_cassette('/invoices/update/failure/contract_not_found') do
+        expect {
+          subject.update(
+            144097, { description: "Novo faturamento" }, contract_id: 7392
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if invoice is not found' do
+      VCR.use_cassette('/invoices/update/failure/invoice_not_found') do
+        expect {
+          subject.update(
+            200000, { description: 'Novo faturamento' }, contract_id: 6666
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if invoice is invalid' do
+      VCR.use_cassette('/invoices/update/failure/invalid_invoice_parameters') do
+        expect {
+          subject.update(144097, { description: '' }, contract_id: 6666)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if invoice receivables are invalid' do
+      VCR.use_cassette('/invoices/update/failure/invalid_receivables') do
+        expect {
+          subject.update(
+            144097, { gross_value: 200.0, receivables: [ { value: 200.0 } ] },
+            contract_id: 6666
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if invoice receivables calculation is invalid' do
+      VCR.use_cassette('/invoices/update/failure/invalid_receivables_calculation') do
+        expect {
+          subject.update(
+            144097, { gross_value: 200.0, receivables: [ { due_date: '2016-10-01', value: 80.0 } ] },
+            contract_id: 6666
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if invoice services are invalid' do
+      VCR.use_cassette('/invoices/update/failure/invalid_services') do
+        expect {
+          subject.update(
+            144097, { services: [ { service_item_id: 31 } ] }, contract_id: 6666
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+  end
 end

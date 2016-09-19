@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/144097
+    body:
+      encoding: UTF-8
+      string: '{"invoice":{"services":[{"service_item_id":31,"units":2,"unit_value":100.0}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 19 Sep 2016 21:02:36 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7b23537b0c4a5d39bd381a5325d1ef7f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6dd54490-8e3a-4ace-a631-762b320068aa
+      X-Runtime:
+      - '0.059017'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbnZvaWNlIjp7ImlkIjoxNDQwOTcsImNvbnRyYWN0X2lkIjo2NjY2LCJn
+        cm9zc192YWx1ZSI6IjIwMC4wIiwibnVtYmVyIjpudWxsLCJpc3N1ZV9kYXRl
+        IjoiMDEvMTAvMjAxNiIsInN0YXRlIjowLCJkZXNjcmlwdGlvbiI6Ik5vdm8g
+        ZmF0dXJhbWVudG8iLCJuZmVfc2VydmljZSI6bnVsbCwibmZlX3ZlcmlmaWNh
+        dGlvbiI6bnVsbCwiY3JlYXRlZF9hdCI6IjE5LzA5LzIwMTYgMTc6MDg6NDUg
+        LTAzOjAwIiwicGF5bWVudF92YWx1ZSI6IjIwMC4wIiwiZW1pdGVzX3NlcnZp
+        Y2VfdmFsdWVzX2lkIjpudWxsLCJmaW5hbmNlX2NhdGVnb3J5IjpudWxsLCJm
+        aW5hbmNlX3JldmVudWVfY2VudGVyIjpudWxsLCJmaW5hbmNlX3JlY2VpdmVf
+        dmlhIjpudWxsLCJuZmVfaXNzdWVkIjpmYWxzZSwibmZlX2lzc3VlX2RhdGUi
+        Om51bGwsImNvYnJhdG9fY2hhcmdlX2NvbmZpZ19pZCI6bnVsbCwic2Vydmlj
+        ZXMiOlt7ImlkIjoyMDA1MzcsIm5hbWUiOiJTZXJ2acOnbyBPbmxpbmUgMSIs
+        InVuaXRfdmFsdWUiOiIxMDAuMCIsInVuaXRzIjoiMi4wIiwidmFsdWUiOiIy
+        MDAuMCJ9XSwiYXR0YWNobWVudHMiOltdfX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/144097
+  recorded_at: Mon, 19 Sep 2016 21:02:36 GMT
+recorded_with: VCR 3.0.3
