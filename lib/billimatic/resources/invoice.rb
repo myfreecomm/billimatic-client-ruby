@@ -9,6 +9,14 @@ module Billimatic
           respond_with_collection response
         end
       end
+
+      def destroy(id, contract_id:)
+        http.delete(
+          "/contracts/#{contract_id}#{resource_base_path}/#{id}"
+        ) do |response|
+          response.code == 204
+        end
+      end
     end
   end
 end

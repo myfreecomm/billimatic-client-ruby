@@ -360,4 +360,32 @@ describe Billimatic::Resources::Invoice do
       end
     end
   end
+
+  describe '#destroy' do
+    it 'raises Billimatic::RequestError if contract is not found' do
+      VCR.use_cassette('/invoices/destroy/failure/contract_not_found') do
+        expect {
+          subject.destroy(144090, contract_id: 7392)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if invoice is not found' do
+      VCR.use_cassette('/invoices/destroy/failure/invoice_not_found') do
+        expect {
+          subject.destroy(200000, contract_id: 6666)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'successfully deletes an invoice' do
+      VCR.use_cassette('/invoices/destroy/success') do
+        expect(subject.destroy(144090, contract_id: 6666)).to be true
+      end
+    end
+  end
 end
