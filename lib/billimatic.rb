@@ -10,6 +10,7 @@ require 'billimatic/signature'
 require 'billimatic/url_helpers'
 
 require 'billimatic/entities/base'
+require 'billimatic/entities/service_item'
 require 'billimatic/entities/entity_service_item'
 require 'billimatic/entities/product'
 require 'billimatic/entities/service'
