@@ -19,7 +19,6 @@ module Billimatic
       attribute :comments, String
       attribute :kind, String
       attribute :created_at, DateTime
-      attribute :updated_at, DateTime
     end
   end
 end
