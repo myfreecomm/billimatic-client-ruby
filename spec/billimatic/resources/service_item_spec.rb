@@ -116,4 +116,32 @@ describe Billimatic::Resources::ServiceItem do
       end
     end
   end
+
+  describe '#destroy' do
+    it 'successfully deletes a service item' do
+      VCR.use_cassette('/service_items/destroy/success') do
+        expect(subject.destroy(58)).to be true
+      end
+    end
+
+    it 'raises Billimatic::RequestError if service item is not found' do
+      VCR.use_cassette('/service_items/destroy/failure/service_item_not_found') do
+        expect {
+          subject.destroy(20000)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if service item is attached to a serviceable resource' do
+      VCR.use_cassette('/service_items/destroy/failure/attached_to_a_serviceable') do
+        expect {
+          subject.destroy(57)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+  end
 end
