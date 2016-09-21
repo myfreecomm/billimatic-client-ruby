@@ -43,6 +43,10 @@ module Billimatic
       Resources::Organization.new(http)
     end
 
+    def service_items
+      Resources::ServiceItem.new(http)
+    end
+
     def webhooks
       Resources::Webhook.new(http)
     end

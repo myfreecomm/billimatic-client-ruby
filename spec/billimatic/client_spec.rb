@@ -64,6 +64,12 @@ describe Billimatic::Client do
     end
   end
 
+  describe "#service_items" do
+    it "returns an instance of Billimatic::Resources::ServiceItem" do
+      expect(subject.service_items).to be_a(Billimatic::Resources::ServiceItem)
+    end
+  end
+
   describe "#webhooks" do
     it "returns an instance of Billimatic::Resources::Webhook" do
       expect(subject.webhooks).to be_a(Billimatic::Resources::Webhook)

@@ -33,6 +33,7 @@ require 'billimatic/resources/contract'
 require 'billimatic/resources/invoice_rule'
 require 'billimatic/resources/invoice'
 require 'billimatic/resources/plan'
+require 'billimatic/resources/service_item'
 require 'billimatic/resources/subscription'
 require 'billimatic/resources/webhook'
 
