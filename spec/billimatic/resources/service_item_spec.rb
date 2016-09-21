@@ -82,4 +82,38 @@ describe Billimatic::Resources::ServiceItem do
       end
     end
   end
+
+  describe '#update' do
+    it 'successfully updates a service item' do
+      VCR.use_cassette('/service_items/update/success') do
+        service_item = subject.update(
+          57, name: 'Service Item Updated', value: 450.0
+        )
+
+        expect(service_item).to be_a entity_klass
+        expect(service_item.name).to eql 'Service Item Updated'
+        expect(service_item.value).to eql 450.0
+      end
+    end
+
+    it 'raises Billimatic::RequestError when service item is not found' do
+      VCR.use_cassette('/service_items/update/failure/service_item_not_found') do
+        expect {
+          subject.update(2000, name: 'Service Item Updated')
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when service item is invalid' do
+      VCR.use_cassette('/service_items/update/failure/invalid_service_item_parameters') do
+        expect {
+          subject.update(57, name: '')
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+  end
 end
