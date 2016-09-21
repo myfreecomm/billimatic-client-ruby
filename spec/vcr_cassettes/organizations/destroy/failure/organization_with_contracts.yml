@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: http://localhost:3000/api/v1/organizations/292
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6123247039bf2a14e3f1de59626e7b2d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - d7fb4da7-3fb1-42ec-bafe-51ce5123c2cb
+      X-Runtime:
+      - '0.048734'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiYmFzZSI6WyJOw6NvIGZvaSBwb3Nzw612ZWwgYXBhZ2Fy
+        IGVzdGEgb3JnYW5pemHDp8OjbywgcG9pcyBow6EgY29udHJhdG9zIGFzc29j
+        aWFkb3Mgw6AgbWVzbWEuIl19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/292
+  recorded_at: Wed, 21 Sep 2016 17:26:53 GMT
+recorded_with: VCR 3.0.3

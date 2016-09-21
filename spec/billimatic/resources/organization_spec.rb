@@ -175,4 +175,32 @@ describe Billimatic::Resources::Organization do
       end
     end
   end
+
+  describe '#destroy' do
+    it 'successfully deletes an organization' do
+      VCR.use_cassette('organizations/destroy/success') do
+        expect(subject.destroy(403)).to be true
+      end
+    end
+
+    it 'raises Billimatic::RequestError if organization is not found' do
+      VCR.use_cassette('organizations/destroy/failure/organization_not_found') do
+        expect {
+          subject.destroy(2000)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if organization has contracts attached' do
+      VCR.use_cassette('organizations/destroy/failure/organization_with_contracts') do
+        expect {
+          subject.destroy(292)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+  end
 end
