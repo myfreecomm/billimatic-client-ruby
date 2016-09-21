@@ -127,4 +127,52 @@ describe Billimatic::Resources::Organization do
       end
     end
   end
+
+  describe '#update' do
+    it 'successfully updates an organization' do
+      VCR.use_cassette('organizations/update/success/simple_update') do
+        organization = subject.update(403, name: 'Organização atualizada')
+        expect(organization).to be_a entity_klass
+        expect(organization.name).to eql 'Organização atualizada'
+      end
+    end
+
+    it 'successfully changes organization cnpj for a valid one' do
+      VCR.use_cassette('organizations/update/success/new_valid_cnpj') do
+        organization = subject.update(403, cnpj: '12.325.676/0001-34')
+        expect(organization).to be_a entity_klass
+        expect(organization.cnpj).to eql '12.325.676/0001-34'
+      end
+    end
+
+    it 'raises Billimatic::RequestError if organization is not found' do
+      VCR.use_cassette('organizations/update/failure/organization_not_found') do
+        expect {
+          subject.update(2000, name: 'Updated Organization')
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if name is invalid' do
+      VCR.use_cassette('organizations/update/failure/invalid_parameter') do
+        expect {
+          subject.update(403, name: '')
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError if cnpj is invalid' do
+      VCR.use_cassette('organizations/update/failure/invalid_cnpj') do
+        expect {
+          subject.update(403, cnpj: '123456')
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+  end
 end

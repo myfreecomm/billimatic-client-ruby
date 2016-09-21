@@ -1,7 +1,7 @@
 module Billimatic
   module Resources
     class Organization < Base
-      crud :create
+      crud :create, :update
 
       def search(cnpj:)
         http.get("#{resource_base_path}/search", params: {cnpj: cnpj}) do |response|

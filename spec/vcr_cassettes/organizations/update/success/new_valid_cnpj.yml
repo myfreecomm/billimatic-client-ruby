@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/v1/organizations/403
+    body:
+      encoding: UTF-8
+      string: '{"cnpj":"12.325.676/0001-34"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6123247039bf2a14e3f1de59626e7b2d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"e15297f5c1e197cdbd0692bc4030a5ea"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bfcfc8c4-d12a-4f22-9773-969fef68376a
+      X-Runtime:
+      - '0.070666'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvcmdhbml6YXRpb24iOnsiaWQiOjQwMywiYWNjb3VudF9pZCI6NywibmFt
+        ZSI6Ik9yZ2FuaXphw6fDo28gYXR1YWxpemFkYSIsImNucGoiOiIxMi4zMjUu
+        Njc2LzAwMDEtMzQiLCJjcmVhdGVkX2F0IjoiMjEvMDkvMjAxNiAxMjo1Nzo0
+        MSAtMDM6MDAifX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/403
+  recorded_at: Wed, 21 Sep 2016 17:18:52 GMT
+recorded_with: VCR 3.0.3
