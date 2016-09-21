@@ -49,4 +49,37 @@ describe Billimatic::Resources::ServiceItem do
       end
     end
   end
+
+  describe '#create' do
+    it 'successfully creates a new service item' do
+      VCR.use_cassette('/service_items/create/success') do
+        service_item = subject.create(
+          name: 'New Service Item', value: 200.0, description: 'Description'
+        )
+
+        expect(service_item).to be_a entity_klass
+        expect(service_item.name).to eql 'New Service Item'
+      end
+    end
+
+    it 'raises Billimatic::RequestError if request is invalid' do
+      VCR.use_cassette('/service_items/create/failure/invalid_parameters') do
+        expect {
+          subject.create(value: 100.0)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError on an attempt to create a duplicated service_item' do
+      VCR.use_cassette('/service_items/create/failure/duplicate_service_item') do
+        expect {
+          subject.create(name: 'Serviço Online 1', value: 200.0)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+  end
 end

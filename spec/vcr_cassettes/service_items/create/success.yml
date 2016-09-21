@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/service_items
+    body:
+      encoding: UTF-8
+      string: '{"name":"New Service Item","value":200.0,"description":"Description"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2016 18:20:20 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ae384315f2c0732c877433c3cbc1bb4a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f65648b0-772b-4039-ac4d-face273f58e7
+      X-Runtime:
+      - '0.030240'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"service_item":{"id":57,"account_id":32,"name":"New Service Item","description":"Description","value":"200.0","unit":"item"}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/service_items
+  recorded_at: Wed, 21 Sep 2016 18:20:20 GMT
+recorded_with: VCR 3.0.3

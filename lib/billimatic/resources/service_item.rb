@@ -1,6 +1,8 @@
 module Billimatic
   module Resources
     class ServiceItem < Base
+      crud :create
+
       def search(name:)
         http.get(
           "#{resource_base_path}/search", params: { name: name }
