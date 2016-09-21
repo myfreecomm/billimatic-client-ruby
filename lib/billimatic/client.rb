@@ -39,9 +39,12 @@ module Billimatic
       Resources::Company.new(http)
     end
 
+    def organizations
+      Resources::Organization.new(http)
+    end
+
     def webhooks
       Resources::Webhook.new(http)
     end
-
   end
 end
