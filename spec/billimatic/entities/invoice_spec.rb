@@ -44,6 +44,8 @@ describe Billimatic::Entities::Invoice do
                     :created_at, :payment_value, :emites_service_values_id,
                     :finance_category, :finance_revenue_center, :finance_receive_via,
                     :nfe_issued, :nfe_issue_date, :cobrato_charge_config_id,
-                    :services, :attachments
+                    :services, :attachments, :nfe_body, :accrual_date, :comments,
+                    :customer_id, :customer_type, :emites_service_value_name,
+                    :cobrato_charge_config_name
                   ]
 end
