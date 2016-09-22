@@ -22,8 +22,7 @@ describe Billimatic::Entities::Receivable do
                     :id, :invoice_id, :due_date, :value, :gross_value,
                     :payment_value, :received_value, :received_at,
                     :created_at, :state, :payment_gateway_status,
-                    :cobrato_charge_id, :cobrato_errors, :processing_on_cobrato,
-                    :waiting_cobrato_registration, :finance_receivable_id,
-                    :finance_entity_id, :finance_errors, :processing_on_myfinance
+                    :cobrato_charge_id, :cobrato_errors, :finance_receivable_id,
+                    :finance_entity_id, :finance_errors
                   ]
 end
