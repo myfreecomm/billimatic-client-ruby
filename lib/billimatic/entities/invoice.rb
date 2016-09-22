@@ -26,6 +26,7 @@ module Billimatic
       attribute :finance_receive_via, String
       attribute :cobrato_charge_config_id, Integer
       attribute :cobrato_charge_config_name, String
+      attribute :receivables, [Receivable]
       attribute :services, [Service]
       attribute :attachments, [Hash]
     end

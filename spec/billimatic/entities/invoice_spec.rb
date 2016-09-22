@@ -21,6 +21,15 @@ describe Billimatic::Entities::Invoice do
       nfe_issued: true,
       nfe_issue_date: '2016-09-19',
       cobrato_charge_config_id: 2,
+      receivables: [
+        Billimatic::Entities::Receivable.new(
+        id: 15,
+        invoice_id: 1,
+        due_date: '2016-09-22',
+        value: 100.0,
+        gross_value: 100.0
+      )
+      ],
       services: [
         Billimatic::Entities::Service.new(
         id: 1,
@@ -44,8 +53,8 @@ describe Billimatic::Entities::Invoice do
                     :created_at, :payment_value, :emites_service_values_id,
                     :finance_category, :finance_revenue_center, :finance_receive_via,
                     :nfe_issued, :nfe_issue_date, :cobrato_charge_config_id,
-                    :services, :attachments, :nfe_body, :accrual_date, :comments,
-                    :customer_id, :customer_type, :emites_service_value_name,
-                    :cobrato_charge_config_name
+                    :receivables, :services, :attachments, :nfe_body,
+                    :accrual_date, :comments, :customer_id, :customer_type,
+                    :emites_service_value_name, :cobrato_charge_config_name
                   ]
 end
