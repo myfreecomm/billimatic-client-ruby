@@ -104,4 +104,61 @@ http_interactions:
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/141
   recorded_at: Fri, 02 Sep 2016 13:03:59 GMT
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/360
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"features":[{"id":12947,"value":""}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 22 Sep 2016 15:39:42 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 560323f0-3203-4208-b6bc-a5c44f4ec432
+      X-Runtime:
+      - '0.147511'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiZmVhdHVyZXMudmFsdWUiOiJuw6NvIHBvZGUgZmljYXIg
+        ZW0gYnJhbmNvIn19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/360
+  recorded_at: Thu, 22 Sep 2016 15:39:43 GMT
 recorded_with: VCR 3.0.3
