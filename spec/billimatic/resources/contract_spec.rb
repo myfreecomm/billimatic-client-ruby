@@ -14,7 +14,7 @@ describe Billimatic::Resources::Contract do
     context 'sending the full contract name as parameter' do
       it 'returns a collection with contracts matching the name' do
         VCR.use_cassette('/contracts/search/success/full_name_matching') do
-          contracts = subject.search('Prestação de Serviço Um')
+          contracts = subject.search(name: 'Prestação de Serviço Um')
 
           expect(contracts).not_to be_empty
           contracts.each do |contract|
@@ -28,7 +28,7 @@ describe Billimatic::Resources::Contract do
     context 'sending part of a contract name as parameter' do
       it 'returns a collection with contracts matching the search' do
         VCR.use_cassette('/contracts/search/success/partial_name_matching') do
-          contracts = subject.search('Assinatura')
+          contracts = subject.search(name: 'Assinatura')
 
           expect(contracts).not_to be_empty
           contracts.each do |contract|
@@ -42,7 +42,7 @@ describe Billimatic::Resources::Contract do
     context 'sending a name with no matches' do
       it 'returns an empty array as result' do
         VCR.use_cassette('/contracts/search/success/no_matches_result') do
-          contracts = subject.search('contrato')
+          contracts = subject.search(name: 'contrato')
           expect(contracts).to be_empty
         end
       end
@@ -52,7 +52,7 @@ describe Billimatic::Resources::Contract do
       it 'raises Billimatic::RequestError on empty string search' do
         VCR.use_cassette('/contracts/search/failure/empty_string_name') do
           expect {
-            subject.search('')
+            subject.search(name: '')
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 400
           end
@@ -62,7 +62,7 @@ describe Billimatic::Resources::Contract do
       it 'raises Billimatic::RequestError on request without name parameter' do
         VCR.use_cassette('/contracts/search/failure/null_parameter') do
           expect {
-            subject.search(nil)
+            subject.search(name: nil)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 400
           end

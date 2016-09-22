@@ -3,7 +3,7 @@ module Billimatic
     class Contract < Base
       crud :create, :update, :destroy
 
-      def search(name)
+      def search(name:)
         http.get(
           "#{resource_base_path}/search", params: { name: name }
         ) do |response|

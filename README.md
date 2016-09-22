@@ -225,7 +225,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
             </a>
         </td>
         <td>
-            <code>client.contracts.search(name)</code>
+            <code>client.contracts.search(name: name)</code>
         </td>
     </tr>
     <tr>
