@@ -10,7 +10,7 @@ module Billimatic
       attribute :customer_type, String
       attribute :supplier_id, Integer
       attribute :supplier_type, String
-      attribute :state, Integer
+      attribute :state, String
       attribute :comments, String
       attribute :init_date, Date
       attribute :end_date, Date

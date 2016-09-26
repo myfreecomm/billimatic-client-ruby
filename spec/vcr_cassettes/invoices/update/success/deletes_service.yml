@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/144097
+    body:
+      encoding: UTF-8
+      string: '{"invoice":{"services":[{"id":200537,"_destroy":true}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 19 Sep 2016 21:07:46 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"365c501918398f694f9987b7661b7f86"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5b71d07f-e7cf-4019-ac7b-f927a4d8b35e
+      X-Runtime:
+      - '0.035047'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"invoice":{"id":144097,"contract_id":6666,"gross_value":"300.0","number":null,"issue_date":"01/10/2016","state":0,"description":"Novo
+        faturamento","nfe_service":null,"nfe_verification":null,"created_at":"19/09/2016
+        17:08:45 -03:00","payment_value":"300.0","emites_service_values_id":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"nfe_issued":false,"nfe_issue_date":null,"cobrato_charge_config_id":null,"services":[],"attachments":[]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/144097
+  recorded_at: Mon, 19 Sep 2016 21:07:46 GMT
+recorded_with: VCR 3.0.3

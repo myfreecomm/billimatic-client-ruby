@@ -200,8 +200,8 @@ describe Billimatic::Resources::Plan do
         VCR.use_cassette('plans/update/invalid_new_feature_failure') do
           expect {
             subject.update(
-              140,
-              { features: [{ description: '', tag: 'feat.' }] },
+              360,
+              { features: [{ value: '' }] },
               organization_id: 564
             )
           }.to raise_error(Billimatic::RequestError) do |error|
@@ -214,8 +214,8 @@ describe Billimatic::Resources::Plan do
         VCR.use_cassette('plans/update/invalid_existing_feature_failure') do
           expect {
             subject.update(
-              141,
-              { features: [{ id: 61, value: '', description: '' }] },
+              360,
+              { features: [{ id: 12947, value: '' }] },
               organization_id: 564
             )
           }.to raise_error(Billimatic::RequestError) do |error|

@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/organizations
+    body:
+      encoding: UTF-8
+      string: '{"name":"Nova Organização","cnpj":"87.667.729/0001-02"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6123247039bf2a14e3f1de59626e7b2d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"6b29c15ed712e2386f2a6fda138e3b83"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c53555f0-9689-440a-a92c-5f831b9f4152
+      X-Runtime:
+      - '0.667528'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvcmdhbml6YXRpb24iOnsiaWQiOjQwMywiYWNjb3VudF9pZCI6NywibmFt
+        ZSI6Ik5vdmEgT3JnYW5pemHDp8OjbyIsImNucGoiOiI4Ny42NjcuNzI5LzAw
+        MDEtMDIiLCJjcmVhdGVkX2F0IjoiMjEvMDkvMjAxNiAxMjo1Nzo0MSAtMDM6
+        MDAifX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations
+  recorded_at: Wed, 21 Sep 2016 15:57:41 GMT
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations
+    body:
+      encoding: UTF-8
+      string: '{"name":"Nova Organização","cnpj":"87.667.729/0001-02"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 26 Sep 2016 13:42:01 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"866f2112e1b7ea4031996596f22bc40c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - efb5403f-352e-47a7-9220-7b9bbf9bac60
+      X-Runtime:
+      - '0.024835'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvcmdhbml6YXRpb24iOnsiaWQiOjE4MzksImFjY291bnRfaWQiOjMyLCJu
+        YW1lIjoiTm92YSBPcmdhbml6YcOnw6NvIiwiY25waiI6Ijg3LjY2Ny43Mjkv
+        MDAwMS0wMiIsImNyZWF0ZWRfYXQiOiIyNi8wOS8yMDE2IDEwOjQyOjAxIC0w
+        MzowMCJ9fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations
+  recorded_at: Mon, 26 Sep 2016 13:42:02 GMT
+recorded_with: VCR 3.0.3

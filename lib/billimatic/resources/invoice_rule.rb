@@ -4,7 +4,7 @@ module Billimatic
       def create(params, contract_id:)
         http.post(
           "/contracts/#{contract_id}#{resource_base_path}",
-          body: { invoice_rule: params }
+          body: { underscored_klass_name.to_sym => params }
         ) do |response|
           respond_with_entity(response)
         end
@@ -13,7 +13,7 @@ module Billimatic
       def update(id, params, contract_id:)
         http.put(
           "/contracts/#{contract_id}#{resource_base_path}/#{id}",
-          body: { invoice_rule: params }
+          body: { underscored_klass_name.to_sym => params }
         ) do |response|
           respond_with_entity(response)
         end

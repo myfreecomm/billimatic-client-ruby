@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts
+    body:
+      encoding: UTF-8
+      string: '{"name":"Prestação de Serviço Um","title":"The new contract","kind":"sale","supplier_id":564,"supplier_type":"Company","customer_id":578,"customer_type":"Company"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 19 Sep 2016 14:47:57 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 9e4fde97-5567-4a8b-9f47-eb4d167df105
+      X-Runtime:
+      - '0.025504'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsibmFtZSI6WyJKw6EgZXhpc3RlIHVtIGNvbnRyYXRvIGNv
+        bSBlc3RlIG5vbWUgbmVzdGEgY29udGEuIl19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts
+  recorded_at: Mon, 19 Sep 2016 14:47:57 GMT
+recorded_with: VCR 3.0.3

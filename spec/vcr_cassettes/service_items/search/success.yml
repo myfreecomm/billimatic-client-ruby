@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/service_items/search?name=Servi%C3%A7o%20Online%201
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 21 Sep 2016 18:08:33 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8bd35b9ebdacb2cd72473e96acb65616"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 167b10cf-fab0-4d9d-998f-0370be2c4c7d
+      X-Runtime:
+      - '0.012580'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzZXJ2aWNlX2l0ZW0iOnsiaWQiOjMxLCJhY2NvdW50X2lkIjozMiwibmFt
+        ZSI6IlNlcnZpw6dvIE9ubGluZSAxIiwiZGVzY3JpcHRpb24iOiJPIHNlcnZp
+        w6dvIG9ubGluZSBuw7ptZXJvIHVtLiIsInZhbHVlIjoiMTIzLjQ1IiwidW5p
+        dCI6Iml0ZW0ifX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/service_items/search?name=Servi%C3%A7o%20Online%201
+  recorded_at: Wed, 21 Sep 2016 18:08:34 GMT
+recorded_with: VCR 3.0.3
