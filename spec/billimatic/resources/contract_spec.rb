@@ -127,6 +127,24 @@ describe Billimatic::Resources::Contract do
       end
     end
 
+    it 'creates successfully a purchase contract with a person as supplier' do
+      VCR.use_cassette('/contracts/create/success/purchase_contract_person_supplier') do
+        contract_attributes[:name] = 'Person purchase contract'
+        contract_attributes[:kind] = 'purchase'
+        contract_attributes[:customer_id] = 564
+        contract_attributes[:customer_type] = 'Company'
+        contract_attributes[:supplier_id] = 1194
+        contract_attributes[:supplier_type] = 'Person'
+
+        contract = subject.create(contract_attributes)
+
+        expect(contract).to be_a entity_klass
+        expect(contract.name).to eql 'Person purchase contract'
+        expect(contract.kind).to eql 'purchase'
+        expect(contract.supplier_type).to eql 'Person'
+      end
+    end
+
     context 'when some mandatory field is not sent' do
       it 'raises Billimatic::RequestError on Unprocessable Entity status' do
         VCR.use_cassette('/contracts/create/failure/mandatory_fields_not_present') do
