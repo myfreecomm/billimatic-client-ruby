@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Mon, 19 Sep 2016 20:09:46 GMT
+      - Mon, 26 Sep 2016 13:25:21 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -37,13 +37,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"69a86a4e22786cb3dfc6e9329d4f5d35"
+      - W/"d691ea6bf22a5816111d91b98ec71014"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bf8f1729-0c0d-46ff-b8d3-238fdb4a2d0f
+      - 1fd572be-31cd-4aa7-9e53-db311783a0ff
       X-Runtime:
-      - '0.080643'
+      - '0.066299'
       Vary:
       - Origin
       Transfer-Encoding:
@@ -52,10 +52,12 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"invoice":{"id":144098,"contract_id":6666,"gross_value":"100.0","number":null,"issue_date":"19/09/2016","state":0,"description":"FATURAMENTO","nfe_service":null,"nfe_verification":null,"created_at":"19/09/2016
-        17:09:46 -03:00","payment_value":"100.0","emites_service_values_id":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"nfe_issued":false,"nfe_issue_date":null,"cobrato_charge_config_id":null,"services":[],"attachments":[]}}'
+      string: '{"invoice":{"id":160615,"contract_id":6666,"issue_date":"19/09/2016","gross_value":"100.0","payment_value":"100.0","description":"FATURAMENTO","state":"to_emit","nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"FATURAMENTO","nfe_issued":false,"number":null,"created_at":"26/09/2016
+        10:25:22 -03:00","accrual_date":null,"comments":null,"customer_id":574,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"receivables":[{"id":156065,"invoice_id":160615,"due_date":"01/11/2016","value":"70.0","gross_value":"70.0","payment_value":"70.0","received_value":null,"received_at":null,"created_at":"26/09/2016
+        10:25:22 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":null,"finance_entity_id":null,"finance_errors":null},{"id":156066,"invoice_id":160615,"due_date":"01/12/2016","value":"30.0","gross_value":"30.0","payment_value":"30.0","received_value":null,"received_at":null,"created_at":"26/09/2016
+        10:25:22 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":null,"finance_entity_id":null,"finance_errors":null}],"services":[],"attachments":[]}}'
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices
-  recorded_at: Mon, 19 Sep 2016 20:09:46 GMT
+  recorded_at: Mon, 26 Sep 2016 13:25:22 GMT
 recorded_with: VCR 3.0.3

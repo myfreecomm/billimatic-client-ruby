@@ -88,6 +88,7 @@ describe Billimatic::Resources::Invoice do
         expect(invoice).to be_a entity_klass
         expect(invoice.contract_id).to eql 6666
         expect(invoice.gross_value).to eql 100.0
+        expect(invoice.receivables).not_to be_empty
       end
     end
 
@@ -103,6 +104,7 @@ describe Billimatic::Resources::Invoice do
         expect(invoice).to be_a entity_klass
         expect(invoice.contract_id).to eql 6666
         expect(invoice.gross_value).to eql 100.0
+        expect(invoice.receivables.size).to eql 2
       end
     end
 
@@ -218,6 +220,7 @@ describe Billimatic::Resources::Invoice do
         )
 
         expect(invoice).to be_a entity_klass
+        expect(invoice.receivables.size).to eql 2
       end
     end
 
@@ -225,12 +228,16 @@ describe Billimatic::Resources::Invoice do
       VCR.use_cassette('/invoices/update/success/updates_receivable') do
         invoice = subject.update(
           144097,
-          { receivables: [ { id: 140248, value: 50.0 }, { id: 140252, value: 50.0 } ] },
+          { receivables: [ { id: 156067, value: 50.0 }, { id: 140252, value: 50.0 } ] },
           contract_id: 6666
         )
 
         expect(invoice).to be_a entity_klass
-        expect(invoice.gross_value).to eql 100.0
+        expect(invoice.gross_value).to eql 300.0
+
+        invoice.receivables.each do |receivable|
+          expect(receivable.gross_value).to eql 150.0
+        end
       end
     end
 
@@ -238,12 +245,13 @@ describe Billimatic::Resources::Invoice do
       VCR.use_cassette('/invoices/update/success/deletes_receivable') do
         invoice = subject.update(
           144097,
-          { receivables: [ { id: 140248, _destroy: true }, { id: 140252, value: 100.0 } ] },
+          { receivables: [ { id: 156067, _destroy: true }, { id: 140252, value: 100.0 } ] },
           contract_id: 6666
         )
 
         expect(invoice).to be_a entity_klass
-        expect(invoice.gross_value).to eql 100.0
+        expect(invoice.gross_value).to eql 300.0
+        expect(invoice.receivables.size).to eql 1
       end
     end
 
