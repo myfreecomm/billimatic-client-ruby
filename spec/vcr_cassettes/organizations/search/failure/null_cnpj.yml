@@ -49,4 +49,61 @@ http_interactions:
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations/search?cnpj=
   recorded_at: Wed, 21 Sep 2016 15:22:15 GMT
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/search?cnpj=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 26 Sep 2016 13:40:32 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 711f2655-b14f-4d0c-8df8-a56027f2b97a
+      X-Runtime:
+      - '0.009898'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOiJQYXLDom1ldHJvKHMpIGludsOhbGlkbyhzKSBwYXJhIGJ1
+        c2NhOiBjbnBqIn0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/search?cnpj=
+  recorded_at: Mon, 26 Sep 2016 13:40:33 GMT
 recorded_with: VCR 3.0.3

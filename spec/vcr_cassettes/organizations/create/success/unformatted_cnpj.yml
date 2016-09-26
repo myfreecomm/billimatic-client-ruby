@@ -53,4 +53,65 @@ http_interactions:
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations
   recorded_at: Wed, 21 Sep 2016 15:58:01 GMT
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations
+    body:
+      encoding: UTF-8
+      string: '{"name":"Nova Organização com CNPJ sem formato","cnpj":"25029551000109"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 26 Sep 2016 13:42:36 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0048da2b4a0939f4a8ccdf2bacd813b0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 172be8b8-0bdf-4a0b-898c-d011a76a5b38
+      X-Runtime:
+      - '0.030823'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvcmdhbml6YXRpb24iOnsiaWQiOjE4NDAsImFjY291bnRfaWQiOjMyLCJu
+        YW1lIjoiTm92YSBPcmdhbml6YcOnw6NvIGNvbSBDTlBKIHNlbSBmb3JtYXRv
+        IiwiY25waiI6IjI1LjAyOS41NTEvMDAwMS0wOSIsImNyZWF0ZWRfYXQiOiIy
+        Ni8wOS8yMDE2IDEwOjQyOjM2IC0wMzowMCJ9fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations
+  recorded_at: Mon, 26 Sep 2016 13:42:37 GMT
 recorded_with: VCR 3.0.3

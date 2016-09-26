@@ -48,4 +48,60 @@ http_interactions:
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations
   recorded_at: Wed, 21 Sep 2016 15:59:37 GMT
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations
+    body:
+      encoding: UTF-8
+      string: '{"name":"Nova Organização","cnpj":"87.667.729/0001-02"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.5.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 26 Sep 2016 13:44:19 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 95e81c01-e291-447a-9fd2-7d987822ab65
+      X-Runtime:
+      - '0.024185'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiY25waiI6WyJqw6EgZXN0w6EgZW0gdXNvIl19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations
+  recorded_at: Mon, 26 Sep 2016 13:44:20 GMT
 recorded_with: VCR 3.0.3
