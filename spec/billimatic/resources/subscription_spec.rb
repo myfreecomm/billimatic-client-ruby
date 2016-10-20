@@ -141,8 +141,8 @@ describe Billimatic::Resources::Subscription do
           subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
-          expect(error.body.dig('errors', 'customer')).to have_key 'name'
-          expect(error.body.dig('errors', 'customer', 'address_information')).to have_key 'zipcode'
+          expect(error.body['errors']['customer']).to have_key 'name'
+          expect(error.body['errors']['customer']['address_information']).to have_key 'zipcode'
         end
       end
     end
@@ -155,7 +155,7 @@ describe Billimatic::Resources::Subscription do
           subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
-          expect(error.body.dig('errors', 'customer')).to have_key 'type'
+          expect(error.body['errors']['customer']).to have_key 'type'
         end
       end
     end
@@ -168,8 +168,8 @@ describe Billimatic::Resources::Subscription do
           subject.checkout(checkout_params, token: "1590c13ad404b973b22b7e2cbbea8230")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
-          expect(error.body.dig('errors', 'payment_information')).to have_key 'card_brand'
-          expect(error.body.dig('errors', 'payment_information')).to have_key 'card_number'
+          expect(error.body['errors']['payment_information']).to have_key 'card_brand'
+          expect(error.body['errors']['payment_information']).to have_key 'card_number'
         end
       end
     end
@@ -188,8 +188,8 @@ describe Billimatic::Resources::Subscription do
           subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
-          expect(error.body.dig('errors', 'payment_information')).to have_key 'type'
-          expect(error.body.dig('errors', 'payment_information', 'type')).not_to be_empty
+          expect(error.body['errors']['payment_information']).to have_key 'type'
+          expect(error.body['errors']['payment_information']['type']).not_to be_empty
         end
       end
     end
@@ -202,8 +202,8 @@ describe Billimatic::Resources::Subscription do
           subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
-          expect(error.body.dig('errors', 'payment_information')).to have_key 'type'
-          expect(error.body.dig('errors', 'payment_information', 'type')).not_to be_empty
+          expect(error.body['errors']['payment_information']).to have_key 'type'
+          expect(error.body['errors']['payment_information']['type']).not_to be_empty
         end
       end
     end
@@ -214,7 +214,7 @@ describe Billimatic::Resources::Subscription do
           subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
-          expect(error.body.dig('errors', 'customer')).to have_key 'checkout'
+          expect(error.body['errors']['customer']).to have_key 'checkout'
         end
       end
     end
@@ -245,7 +245,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:customer][:name] = "Pessoa Jurídica 8"
         checkout_params[:customer][:email] = "pj_8@teste.com"
         checkout_params[:customer][:document] = "51.251.041/0001-91"
-        checkout_params.dig(:customer, :address_information)[:complement] = nil
+        checkout_params[:customer][:address_information][:complement] = nil
 
         result = subject.checkout(
           checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86"
