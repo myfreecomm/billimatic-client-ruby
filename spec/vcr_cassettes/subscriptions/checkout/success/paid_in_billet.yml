@@ -1,0 +1,141 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/subscriptions/checkout/1590c13ad404b973b22b7e2cbbea8230
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"customer":{"type":"Company","name":"Pessoa Jurídica
+        8","email":"pj_8@teste.com","document":"51.251.041/0001-91","address_information":{"address":"Avenida
+        Brigadeiro Luís Antônio","number":"12","complement":null,"zipcode":"01402000","district":"Jardim
+        Paulista","city":"São Paulo","state":"SP"}},"payment_information":{"type":"billet"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.6.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 3fca46b4-f525-4fca-8d72-a776876e52be
+      X-Runtime:
+      - '0.463151'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiY3VzdG9tZXIiOnsiY2hlY2tvdXQiOlsibsOjbyBmb2kg
+        cmVhbGl6YWRvLCBwb2lzIGrDoSBmb2kgcHJvY2Vzc2FkbyBhbnRlcmlvcm1l
+        bnRlLiJdfX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/checkout/1590c13ad404b973b22b7e2cbbea8230
+  recorded_at: Thu, 20 Oct 2016 19:07:21 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/subscriptions/checkout/497c505ec0e6fbafbcb3b9f5122d1a86
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"customer":{"type":"Company","name":"Pessoa Jurídica
+        8","email":"pj_8@teste.com","document":"51.251.041/0001-91","address_information":{"address":"Avenida
+        Brigadeiro Luís Antônio","number":"12","complement":null,"zipcode":"01402000","district":"Jardim
+        Paulista","city":"São Paulo","state":"SP"}},"payment_information":{"type":"billet"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.6.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"cab2b384b84e3b0ffa325c48c5426007"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b31f8d5d-371d-4ae1-b204-7386a3c81abc
+      X-Runtime:
+      - '2.151321'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg2MywibmFtZSI6IkFzc2luYXR1cmEg
+        UGVzc29hIEp1csOtZGljYSA4IC0gUGxhbm8gU2lsdmVyIiwidGl0bGUiOiJB
+        c3NpbmF0dXJhIFBlc3NvYSBKdXLDrWRpY2EgOCAtIFBsYW5vIFNpbHZlciIs
+        InRva2VuIjoiNDk3YzUwNWVjMGU2ZmJhZmJjYjNiOWY1MTIyZDFhODYiLCJk
+        ZXNjcmlwdGlvbiI6bnVsbCwiY3VzdG9tZXJfaWQiOjQyNSwic3VwcGxpZXJf
+        aWQiOjQsInN1cHBsaWVyX3R5cGUiOiJDb21wYW55Iiwic3RhdGUiOiJhY3Rp
+        dmUiLCJjb21tZW50cyI6bnVsbCwiaW5pdF9kYXRlIjoiMjAvMTAvMjAxNiIs
+        ImVuZF9kYXRlIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAvMTAvMjAxNiAxNTo1
+        ODoyOSAtMDI6MDAiLCJraW5kIjoic2FsZSIsInJlZ2lzdHJhdGlvbl9tZXRo
+        b2QiOiJzdWJzY3JpcHRpb24iLCJvdmVyZHVlIjpmYWxzZSwidmFsaWRfdW50
+        aWwiOiIyMC8xMC8yMDE2Iiwic3RhdHVzIjoiZXN0YWJsaXNoZWQiLCJwbGFu
+        Ijp7ImlkIjoyMSwibmFtZSI6IlBsYW5vIFNpbHZlciIsImRlc2NyaXB0aW9u
+        IjoiUGxhbm8gcGFyYSBlbXByZXNhcyBkZSBtw6lkaW8gcG9ydGUiLCJyZWRp
+        cmVjdF91cmwiOiJodHRwOi8vd3d3Lmdvb2dsZS5jb20uYnIiLCJwcmljZSI6
+        IjIwLjAiLCJiaWxsaW5nX3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5n
+        X3BlcmlvZCI6Ik1lbnNhbG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJl
+        X3BhaWQiLCJ0cmFuc2xhdGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFn
+        byIsImhhc190cmlhbCI6ZmFsc2UsInRyaWFsX3BlcmlvZCI6bnVsbCwiZmVh
+        dHVyZXMiOlt7ImlkIjoyMCwiZGVzY3JpcHRpb24iOiJBdMOpIDEwIHVzdcOh
+        cmlvcyIsInZhbHVlIjoiMTAiLCJ0YWciOiJ1c3VhcmlvcyJ9LHsiaWQiOjIz
+        LCJkZXNjcmlwdGlvbiI6IkF0w6kgMTAwIEdCIGRlIGFybWF6ZW5hbWVudG8i
+        LCJ2YWx1ZSI6IjEwMCIsInRhZyI6ImFybWF6ZW5hbWVudG8ifSx7ImlkIjoy
+        NCwiZGVzY3JpcHRpb24iOiJFLW1haWxzIGNvcnBvcmF0aXZvcyIsInZhbHVl
+        IjoiMTAiLCJ0YWciOiJlbWFpbHMifV0sImVtaXRlc19zZXJ2aWNlX3ZhbHVl
+        c19pZCI6NDcsImVtaXRlc19zZXJ2aWNlX3ZhbHVlX25hbWUiOiJBbHVndWVs
+        IGRlIHNvZnR3YXJlIiwiY29icmF0b19iaWxsZXRfY2hhcmdlX2NvbmZpZ19p
+        ZCI6MTI4LCJjb2JyYXRvX2JpbGxldF9jaGFyZ2VfY29uZmlnX25hbWUiOiJD
+        b2JyYW7Dp2EgbsOjbyByZWdpc3RyYWRhIiwiY29icmF0b19wYXltZW50X2dh
+        dGV3YXlfY2hhcmdlX2NvbmZpZ19pZCI6bnVsbCwiY29icmF0b19wYXltZW50
+        X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19uYW1lIjoiIiwiZmluYW5jZV9jYXRl
+        Z29yeSI6IlJlY2VpdGEgLyBTZXJ2acOnb3MiLCJmaW5hbmNlX3JldmVudWVf
+        Y2VudGVyIjoiQ1IxIiwiY3JlYXRlZF9hdCI6IjE1LzA2LzIwMTYgMDg6MDk6
+        MDggLTAzOjAwIiwicHJvZHVjdHMiOltdfX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/checkout/497c505ec0e6fbafbcb3b9f5122d1a86
+  recorded_at: Thu, 20 Oct 2016 19:08:11 GMT
+recorded_with: VCR 3.0.3

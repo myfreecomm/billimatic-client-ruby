@@ -90,6 +90,174 @@ describe Billimatic::Resources::Subscription do
     end
   end
 
+  describe '#checkout' do
+    let(:checkout_params) do
+      {
+        customer: {
+          type: 'Person',
+          name: 'Consumidor 8',
+          email: 'consumidor_8@teste.com',
+          document: '162.558.592-66',
+          address_information: {
+            address: 'Avenida Brigadeiro Luís Antônio',
+            number: '12',
+            complement: 'apto. 111',
+            zipcode: '01402000',
+            district: 'Jardim Paulista',
+            city: 'São Paulo',
+            state: 'SP'
+          }
+        },
+        payment_information: {
+          type: 'billet'
+        }
+      }
+    end
+
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+      @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
+    end
+
+    subject { described_class.new(@http) }
+
+    it "returns not found if subscription isn't found by token sent" do
+      VCR.use_cassette('/subscriptions/checkout/failure/subscription_not_found') do
+        expect {
+          subject.checkout(checkout_params, token: "FOO")
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'returns unprocessable entity if customer required params are missing' do
+      VCR.use_cassette('/subscriptions/checkout/failure/missing_customer_params') do
+        checkout_params[:customer].delete(:name)
+        checkout_params[:customer][:address_information].delete(:zipcode)
+
+        expect {
+          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+          expect(error.body.dig('errors', 'customer')).to have_key 'name'
+          expect(error.body.dig('errors', 'customer', 'address_information')).to have_key 'zipcode'
+        end
+      end
+    end
+
+    it 'returns unprocessable entity if customer type is not sent' do
+      VCR.use_cassette('/subscriptions/checkout/failure/missing_customer_type') do
+        checkout_params[:customer].delete(:type)
+
+        expect {
+          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+          expect(error.body.dig('errors', 'customer')).to have_key 'type'
+        end
+      end
+    end
+
+    it 'returns unprocessable entity if checkout is paid in payment_gateway without card params' do
+      VCR.use_cassette('/subscriptions/checkout/failure/missing_card_params') do
+        checkout_params[:payment_information][:type] = 'payment_gateway'
+
+        expect {
+          subject.checkout(checkout_params, token: "1590c13ad404b973b22b7e2cbbea8230")
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+          expect(error.body.dig('errors', 'payment_information')).to have_key 'card_brand'
+          expect(error.body.dig('errors', 'payment_information')).to have_key 'card_number'
+        end
+      end
+    end
+
+    it 'returns unprocessable entity on checkout attempt for unavailable payment method' do
+      VCR.use_cassette('/subscriptions/checkout/failure/unavailable_payment_method') do
+        checkout_params[:payment_information][:type] = 'payment_gateway'
+        checkout_params[:payment_information][:card_brand] = 'Visa'
+        checkout_params[:payment_information][:card_number] = '4012001038443335'
+        checkout_params[:payment_information][:card_holder_name] = 'CONSUMIDOR OITO'
+        checkout_params[:payment_information][:card_expiration_month] = '12'
+        checkout_params[:payment_information][:card_expiration_year] = '2019'
+        checkout_params[:payment_information][:card_security_code] = '123'
+
+        expect {
+          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+          expect(error.body.dig('errors', 'payment_information')).to have_key 'type'
+          expect(error.body.dig('errors', 'payment_information', 'type')).not_to be_empty
+        end
+      end
+    end
+
+    it 'returns unprocessable entity on checkout attempt for invalid payment method' do
+      VCR.use_cassette('/subscriptions/checkout/failure/invalid_payment_method') do
+        checkout_params[:payment_information][:type] = 'foo'
+
+        expect {
+          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+          expect(error.body.dig('errors', 'payment_information')).to have_key 'type'
+          expect(error.body.dig('errors', 'payment_information', 'type')).not_to be_empty
+        end
+      end
+    end
+
+    it 'returns unprocessable entity on a duplicated checkout attempt' do
+      VCR.use_cassette('/subscriptions/checkout/failure/duplicated_checkout') do
+        expect {
+          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+          expect(error.body.dig('errors', 'customer')).to have_key 'checkout'
+        end
+      end
+    end
+
+    it 'successfully processes checkout paid in payment gateway' do
+      VCR.use_cassette('/subscriptions/checkout/success/paid_in_payment_gateway') do
+        checkout_params[:payment_information][:type] = 'payment_gateway'
+        checkout_params[:payment_information][:card_brand] = 'Visa'
+        checkout_params[:payment_information][:card_number] = '4012001038443335'
+        checkout_params[:payment_information][:card_holder_name] = 'CONSUMIDOR OITO'
+        checkout_params[:payment_information][:card_expiration_month] = '12'
+        checkout_params[:payment_information][:card_expiration_year] = '2019'
+        checkout_params[:payment_information][:card_security_code] = '123'
+
+        result = subject.checkout(
+          checkout_params, token: "1590c13ad404b973b22b7e2cbbea8230"
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.end_date).to be_nil
+        expect(result.status).to eql 'established'
+      end
+    end
+
+    it 'successfully processes checkout paid in billet' do
+      VCR.use_cassette('/subscriptions/checkout/success/paid_in_billet') do
+        checkout_params[:customer][:type] = 'Company'
+        checkout_params[:customer][:name] = "Pessoa Jurídica 8"
+        checkout_params[:customer][:email] = "pj_8@teste.com"
+        checkout_params[:customer][:document] = "51.251.041/0001-91"
+        checkout_params.dig(:customer, :address_information)[:complement] = nil
+
+        result = subject.checkout(
+          checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86"
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.end_date).to be_nil
+        expect(result.status).to eql 'established'
+      end
+    end
+  end
+
   describe '#cancel' do
     it "successfully sets a subscription to 'cancelled'" do
       VCR.use_cassette('subscriptions/cancel/success') do

@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/subscriptions/checkout/1590c13ad404b973b22b7e2cbbea8230
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"customer":{"type":"Person","name":"Consumidor 8","email":"consumidor_8@teste.com","document":"162.558.592-66","address_information":{"address":"Avenida
+        Brigadeiro Luís Antônio","number":"12","complement":"apto. 111","zipcode":"01402000","district":"Jardim
+        Paulista","city":"São Paulo","state":"SP"}},"payment_information":{"type":"payment_gateway"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.6.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 12119d79-ab2a-4ce0-847d-6a43efde441b
+      X-Runtime:
+      - '0.182269'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsicGF5bWVudF9pbmZvcm1hdGlvbiI6eyJjYXJkX2JyYW5k
+        IjpbIm7Do28gcG9kZSBzZXIgZW0gYnJhbmNvIl0sImNhcmRfbnVtYmVyIjpb
+        Im7Do28gcG9kZSBzZXIgZW0gYnJhbmNvIiwiZGV2ZSBzZXIgbnVtw6lyaWNv
+        IiwiZGV2ZSBwb3NzdWlyIGFvIG3DrW5pbW8gMTMgY2FyYWN0ZXJlcyJdLCJj
+        YXJkX2hvbGRlcl9uYW1lIjpbIm7Do28gcG9kZSBzZXIgZW0gYnJhbmNvIl0s
+        ImNhcmRfc2VjdXJpdHlfY29kZSI6WyJuw6NvIHBvZGUgc2VyIGVtIGJyYW5j
+        byIsImRldmUgc2VyIG51bcOpcmljbyIsIm7Do28gdGVtIG8gdGFtYW5obyBj
+        b3JyZXRvIGRlIGFjb3JkbyBjb20gYSBiYW5kZWlyYSJdLCJjYXJkX2V4cGly
+        YXRpb25fbW9udGgiOlsibsOjbyBwb2RlIHNlciBlbSBicmFuY28iLCJkZXZl
+        IHNlciBudW3DqXJpY28iXSwiY2FyZF9leHBpcmF0aW9uX3llYXIiOlsibsOj
+        byBwb2RlIHNlciBlbSBicmFuY28iLCJkZXZlIHNlciBudW3DqXJpY28iXX19
+        fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/checkout/1590c13ad404b973b22b7e2cbbea8230
+  recorded_at: Thu, 20 Oct 2016 18:25:30 GMT
+recorded_with: VCR 3.0.3

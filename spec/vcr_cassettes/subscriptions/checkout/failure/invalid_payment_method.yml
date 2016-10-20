@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/subscriptions/checkout/497c505ec0e6fbafbcb3b9f5122d1a86
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"customer":{"type":"Person","name":"Consumidor 8","email":"consumidor_8@teste.com","document":"162.558.592-66","address_information":{"address":"Avenida
+        Brigadeiro Luís Antônio","number":"12","complement":"apto. 111","zipcode":"01402000","district":"Jardim
+        Paulista","city":"São Paulo","state":"SP"}},"payment_information":{"type":"foo"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.6.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 29d988cb-f79d-4716-83df-c3bfe80b946e
+      X-Runtime:
+      - '0.230979'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsicGF5bWVudF9pbmZvcm1hdGlvbiI6eyJ0eXBlIjpbImZv
+        cm1hIGRlIHBhZ2FtZW50byBzZWxlY2lvbmFkYSBuw6NvIGVzdMOhIGRpc3Bv
+        bsOtdmVsIHBhcmEgbyBwbGFubyJdfX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/checkout/497c505ec0e6fbafbcb3b9f5122d1a86
+  recorded_at: Thu, 20 Oct 2016 18:49:02 GMT
+recorded_with: VCR 3.0.3
