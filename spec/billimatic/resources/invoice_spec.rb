@@ -68,6 +68,46 @@ describe Billimatic::Resources::Invoice do
     end
   end
 
+  describe '#show' do
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+      @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
+    end
+
+    subject { described_class.new(@http) }
+
+    it 'returns not found when contract is not found' do
+      VCR.use_cassette("/invoices/show/failure/contract_not_found") do
+        expect {
+          subject.show(57259, contract_id: 10000)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'returns not found when invoice is not found' do
+      VCR.use_cassette("/invoices/show/failure/invoice_not_found") do
+        expect {
+          subject.show(80000, contract_id: 878)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'returns invoice successfully' do
+      VCR.use_cassette("/invoices/show/success") do
+        invoice = subject.show(57259, contract_id: 878)
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.id).to eql 57259
+        expect(invoice.contract_id).to eql 878
+      end
+    end
+  end
+
   describe '#create' do
     let(:invoice_attributes) do
       {

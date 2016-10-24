@@ -10,6 +10,14 @@ module Billimatic
         end
       end
 
+      def show(id, contract_id:)
+        http.get(
+          "/contracts/#{contract_id}#{resource_base_path}/#{id}"
+        ) do |response|
+          respond_with_entity response
+        end
+      end
+
       def destroy(id, contract_id:)
         http.delete(
           "/contracts/#{contract_id}#{resource_base_path}/#{id}"
