@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/subscriptions/checkout/497c505ec0e6fbafbcb3b9f5122d1a86
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"customer":{"type":"Person","name":"Consumidor 8","email":"consumidor_8@teste.com","document":"162.558.592-66","address_information":{"address":"Avenida
+        Brigadeiro Luís Antônio","number":"12","complement":"apto. 111","zipcode":"01402000","district":"Jardim
+        Paulista","city":"São Paulo","state":"SP"}},"payment_information":{"type":"billet"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.6.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - add96124-f0ac-4753-8bbc-fd5ca9c0b617
+      X-Runtime:
+      - '0.168623'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiY3VzdG9tZXIiOnsiY2hlY2tvdXQiOlsibsOjbyBmb2kg
+        cmVhbGl6YWRvLCBwb2lzIGrDoSBmb2kgcHJvY2Vzc2FkbyBhbnRlcmlvcm1l
+        bnRlLiJdfX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/checkout/497c505ec0e6fbafbcb3b9f5122d1a86
+  recorded_at: Thu, 20 Oct 2016 19:11:00 GMT
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/6022cac78bbe5bba8061efd522a1b130
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"customer":{"type":"Person","name":"Consumidor 8","email":"consumidor_8@teste.com","document":"162.558.592-66","address_information":{"address":"Avenida
+        Brigadeiro Luís Antônio","number":"12","complement":"apto. 111","zipcode":"01402000","district":"Jardim
+        Paulista","city":"São Paulo","state":"SP"}},"payment_information":{"type":"billet"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.6.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 24 Oct 2016 12:41:30 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - d7e393df-54c5-4f15-863c-d786770b4167
+      X-Runtime:
+      - '0.070027'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiY3VzdG9tZXIiOnsiY2hlY2tvdXQiOlsibsOjbyBmb2kg
+        cmVhbGl6YWRvLCBwb2lzIGrDoSBmb2kgcHJvY2Vzc2FkbyBhbnRlcmlvcm1l
+        bnRlLiJdfX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/6022cac78bbe5bba8061efd522a1b130
+  recorded_at: Mon, 24 Oct 2016 12:41:30 GMT
+recorded_with: VCR 3.0.3

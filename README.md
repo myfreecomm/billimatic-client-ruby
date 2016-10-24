@@ -197,6 +197,17 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
+        <td><code>POST</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/checkouts/API_V1_Subscription_Checkouts_create_post_0" target="_blank">
+                /api/v1/subscriptions/checkout/:token
+            </a>
+        </td>
+        <td>
+            <code>client.subscriptions.checkout(attributes_hash, token: token)</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>PATCH</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/subscriptions/API_V1_Subscriptions_cancel_patch_0" target="_blank">
