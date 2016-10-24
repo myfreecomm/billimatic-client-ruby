@@ -115,9 +115,7 @@ describe Billimatic::Resources::Subscription do
     end
 
     before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-      @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
+      @http = Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f')
     end
 
     subject { described_class.new(@http) }
@@ -138,7 +136,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:customer][:address_information].delete(:zipcode)
 
         expect {
-          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+          subject.checkout(checkout_params, token: "964f3000defaed43cd93f08af19c43db")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['customer']).to have_key 'name'
@@ -152,7 +150,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:customer].delete(:type)
 
         expect {
-          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+          subject.checkout(checkout_params, token: "964f3000defaed43cd93f08af19c43db")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['customer']).to have_key 'type'
@@ -165,7 +163,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:payment_information][:type] = 'payment_gateway'
 
         expect {
-          subject.checkout(checkout_params, token: "1590c13ad404b973b22b7e2cbbea8230")
+          subject.checkout(checkout_params, token: "964f3000defaed43cd93f08af19c43db")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['payment_information']).to have_key 'card_brand'
@@ -185,7 +183,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:payment_information][:card_security_code] = '123'
 
         expect {
-          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+          subject.checkout(checkout_params, token: "6022cac78bbe5bba8061efd522a1b130")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['payment_information']).to have_key 'type'
@@ -199,7 +197,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:payment_information][:type] = 'foo'
 
         expect {
-          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+          subject.checkout(checkout_params, token: "6022cac78bbe5bba8061efd522a1b130")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['payment_information']).to have_key 'type'
@@ -211,7 +209,7 @@ describe Billimatic::Resources::Subscription do
     it 'returns unprocessable entity on a duplicated checkout attempt' do
       VCR.use_cassette('/subscriptions/checkout/failure/duplicated_checkout') do
         expect {
-          subject.checkout(checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86")
+          subject.checkout(checkout_params, token: "6022cac78bbe5bba8061efd522a1b130")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['customer']).to have_key 'checkout'
@@ -230,7 +228,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:payment_information][:card_security_code] = '123'
 
         result = subject.checkout(
-          checkout_params, token: "1590c13ad404b973b22b7e2cbbea8230"
+          checkout_params, token: "964f3000defaed43cd93f08af19c43db"
         )
 
         expect(result).to be_a entity_klass
@@ -248,7 +246,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:customer][:address_information][:complement] = nil
 
         result = subject.checkout(
-          checkout_params, token: "497c505ec0e6fbafbcb3b9f5122d1a86"
+          checkout_params, token: "6022cac78bbe5bba8061efd522a1b130"
         )
 
         expect(result).to be_a entity_klass
