@@ -1,0 +1,144 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/contracts/878/invoices/57259
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.7.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 24 Oct 2016 19:32:38 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"9e8ba96c556eb0a0b30cca3214cb3086"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 59a19286-8e29-4649-967a-f0a92c66187d
+      X-Runtime:
+      - '1.013290'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbnZvaWNlIjp7ImlkIjo1NzI1OSwiY29udHJhY3RfaWQiOjg3OCwiaXNz
+        dWVfZGF0ZSI6IjI0LzEwLzIwMTYiLCJncm9zc192YWx1ZSI6IjMwLjAiLCJw
+        YXltZW50X3ZhbHVlIjoiMjkuNCIsImRlc2NyaXB0aW9uIjoiQXNzaW5hdHVy
+        YSBQbGFuby1CbGFjayIsInN0YXRlIjoidG9fcmVjZWl2ZSIsIm5mZV9zZXJ2
+        aWNlIjpudWxsLCJuZmVfdmVyaWZpY2F0aW9uIjpudWxsLCJuZmVfaXNzdWVf
+        ZGF0ZSI6bnVsbCwibmZlX2JvZHkiOiIkREVTQ1JJQ0FPIiwibmZlX2lzc3Vl
+        ZCI6ZmFsc2UsIm51bWJlciI6bnVsbCwiY3JlYXRlZF9hdCI6IjI0LzEwLzIw
+        MTYgMTY6MjQ6MzkgLTAyOjAwIiwiYWNjcnVhbF9kYXRlIjoiMjAxNi0xMC0y
+        MSIsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9pZCI6NDMyLCJjdXN0b21l
+        cl90eXBlIjoiQ29tcGFueSIsImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6
+        NDcsImVtaXRlc19zZXJ2aWNlX3ZhbHVlX25hbWUiOiJBbHVndWVsIGRlIHNv
+        ZnR3YXJlIiwiZmluYW5jZV9jYXRlZ29yeSI6Ik91dHJvcyIsImZpbmFuY2Vf
+        cmV2ZW51ZV9jZW50ZXIiOiJDUjEiLCJmaW5hbmNlX3JlY2VpdmVfdmlhIjpu
+        dWxsLCJjb2JyYXRvX2NoYXJnZV9jb25maWdfaWQiOjEzNywiY29icmF0b19j
+        aGFyZ2VfY29uZmlnX25hbWUiOiJUZXN0ZSBDYXJ0w6NvIiwicmVjZWl2YWJs
+        ZXMiOlt7ImlkIjo1ODA5MSwiaW52b2ljZV9pZCI6NTcyNTksImR1ZV9kYXRl
+        IjoiMjQvMTAvMjAxNiIsInZhbHVlIjoiMTAwLjAiLCJncm9zc192YWx1ZSI6
+        IjMwLjAiLCJwYXltZW50X3ZhbHVlIjoiMjkuNCIsInJlY2VpdmVkX3ZhbHVl
+        IjpudWxsLCJyZWNlaXZlZF9hdCI6bnVsbCwiY3JlYXRlZF9hdCI6IjI0LzEw
+        LzIwMTYgMTY6MjQ6MzkgLTAyOjAwIiwic3RhdGUiOiJ0b19yZWNlaXZlIiwi
+        cGF5bWVudF9nYXRld2F5X3N0YXR1cyI6ImVycm9yIiwiY29icmF0b19jaGFy
+        Z2VfaWQiOjk0NjEsImNvYnJhdG9fZXJyb3JzIjoiT2NvcnJldSB1bSBlcnJv
+        IGFvIHJlY2ViZXIgYSBjb2JyYW7Dp2Egbm8gQ29icmF0by4gTsOjbyBmb2kg
+        cG9zc8OtdmVsIHByb2Nlc3NhciBhIHRyYW5zYcOnw6NvLiBFbnRyZSBlbSBj
+        b250YXRvIGNvbSBhIGxvamEgdmlydHVhbC4iLCJmaW5hbmNlX3JlY2VpdmFi
+        bGVfaWQiOjE3MTY4MDMsImZpbmFuY2VfZW50aXR5X2lkIjozODA0LCJmaW5h
+        bmNlX2Vycm9ycyI6bnVsbH1dLCJzZXJ2aWNlcyI6W3siaWQiOjI2ODk4LCJu
+        YW1lIjoiRm9ybmVjaW1lbnRvIGRlIHBlw6dhcyBkZSByZXBvc2nDp8OjbyIs
+        InVuaXRfdmFsdWUiOiIzMC4wIiwidW5pdHMiOiIxLjAiLCJ2YWx1ZSI6IjMw
+        LjAifV0sImF0dGFjaG1lbnRzIjpbXX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/878/invoices/57259
+  recorded_at: Mon, 24 Oct 2016 19:32:38 GMT
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/127262
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.7.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Tue, 25 Oct 2016 16:32:45 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4459787d76f5f2f7581a07d664a1f1ab"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2c1b3bad-8b0a-4bfc-8a73-35e077df2066
+      X-Runtime:
+      - '0.023435'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"invoice":{"id":127262,"contract_id":6666,"issue_date":"02/09/2015","gross_value":"300.0","payment_value":"300.0","description":"FATURAMENTO","state":"to_emit","nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"02/09/2016
+        15:07:23 -03:00","accrual_date":"2015-09-02","comments":null,"customer_id":574,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"receivables":[{"id":124106,"invoice_id":127262,"due_date":"05/09/2015","value":"50.0","gross_value":"150.0","payment_value":"150.0","received_value":null,"received_at":null,"created_at":"02/09/2016
+        15:15:19 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":null,"finance_entity_id":null,"finance_errors":null},{"id":124107,"invoice_id":127262,"due_date":"05/10/2015","value":"50.0","gross_value":"150.0","payment_value":"150.0","received_value":null,"received_at":null,"created_at":"02/09/2016
+        15:15:19 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":null,"finance_entity_id":null,"finance_errors":null}],"services":[],"attachments":[]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/127262
+  recorded_at: Tue, 25 Oct 2016 16:32:45 GMT
+recorded_with: VCR 3.0.3

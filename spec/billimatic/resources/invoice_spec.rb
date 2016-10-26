@@ -68,6 +68,38 @@ describe Billimatic::Resources::Invoice do
     end
   end
 
+  describe '#show' do
+    it 'returns not found when contract is not found' do
+      VCR.use_cassette("/invoices/show/failure/contract_not_found") do
+        expect {
+          subject.show(127262, contract_id: 10000)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'returns not found when invoice is not found' do
+      VCR.use_cassette("/invoices/show/failure/invoice_not_found") do
+        expect {
+          subject.show(12, contract_id: 6666)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'returns invoice successfully' do
+      VCR.use_cassette("/invoices/show/success") do
+        invoice = subject.show(127262, contract_id: 6666)
+
+        expect(invoice).to be_a entity_klass
+        expect(invoice.id).to eql 127262
+        expect(invoice.contract_id).to eql 6666
+      end
+    end
+  end
+
   describe '#create' do
     let(:invoice_attributes) do
       {

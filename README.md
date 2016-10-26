@@ -294,6 +294,17 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_show_get_2" target="_blank">
+                /api/v1/contracts/:contract_id/invoices/:id
+            </a>
+        </td>
+        <td>
+            <code>client.invoices.show(id, contract_id: id)</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>POST</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_create_post_1" target="_blank">
@@ -307,7 +318,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_update_patch_2" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_update_patch_3" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id
             </a>
         </td>
@@ -318,7 +329,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_destroy_delete_3" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_destroy_delete_4" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id
             </a>
         </td>
