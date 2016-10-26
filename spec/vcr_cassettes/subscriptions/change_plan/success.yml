@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/subscriptions/8f95a5077195a5f75a99a6752096ba8f/change_plan
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"new_plan_id":17}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.7.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 26 Oct 2016 12:20:38 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"4db8fff4e9b3b00463e87c29754294f0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e8a11dc9-45ad-4d5c-a1e7-aa672e0b2c83
+      X-Runtime:
+      - '2.242132'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjgwMiwibmFtZSI6IkFzc2luYXR1cmEg
+        RW1wcmVzYSBOb3ZhIC0gUGxhbm8gdGVzdGUgYW51YWwiLCJ0aXRsZSI6IkFz
+        c2luYXR1cmEgRW1wcmVzYSBOb3ZhIC0gUGxhbm8gdGVzdGUgYW51YWwiLCJ0
+        b2tlbiI6IjhmOTVhNTA3NzE5NWE1Zjc1YTk5YTY3NTIwOTZiYThmIiwiZGVz
+        Y3JpcHRpb24iOm51bGwsImN1c3RvbWVyX2lkIjo0MTYsInN1cHBsaWVyX2lk
+        Ijo0LCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0aXZl
+        IiwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjI5LzA5LzIwMTYiLCJl
+        bmRfZGF0ZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjI5LzA5LzIwMTYgMTU6MzU6
+        MDUgLTAzOjAwIiwia2luZCI6InNhbGUiLCJyZWdpc3RyYXRpb25fbWV0aG9k
+        Ijoic3Vic2NyaXB0aW9uIiwib3ZlcmR1ZSI6ZmFsc2UsInZhbGlkX3VudGls
+        IjoiMzAvMTAvMjAxNiIsInN0YXR1cyI6ImVzdGFibGlzaGVkIiwicGxhbiI6
+        eyJpZCI6MTcsIm5hbWUiOiJQbGFubyB0ZXN0ZSBhbnVhbCIsImRlc2NyaXB0
+        aW9uIjoiR3JhbmRlcyBlbXByZXNhcyBxdWUgcHJvY3VyYW0gXHUyMDI4Y29u
+        dHJvbGUgZmluYW5jZWlybyBjb21wbGV0by4iLCJyZWRpcmVjdF91cmwiOiJo
+        dHRwOi8vd3d3Lm15ZmluYW5jZS5jb20uYnIiLCJwcmljZSI6IjIwLjAiLCJi
+        aWxsaW5nX3BlcmlvZCI6MTIsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2Qi
+        OiJBbnVhbG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0
+        cmFuc2xhdGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190
+        cmlhbCI6ZmFsc2UsInRyaWFsX3BlcmlvZCI6bnVsbCwiZmVhdHVyZXMiOltd
+        LCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOjQ3LCJlbWl0ZXNfc2Vydmlj
+        ZV92YWx1ZV9uYW1lIjoiQWx1Z3VlbCBkZSBzb2Z0d2FyZSIsImNvYnJhdG9f
+        YmlsbGV0X2NoYXJnZV9jb25maWdfaWQiOjEyOCwiY29icmF0b19iaWxsZXRf
+        Y2hhcmdlX2NvbmZpZ19uYW1lIjoiQ29icmFuw6dhIG7Do28gcmVnaXN0cmFk
+        YSIsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2NoYXJnZV9jb25maWdfaWQi
+        OjEzNywiY29icmF0b19wYXltZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19u
+        YW1lIjoiVGVzdGUgQ2FydMOjbyIsImZpbmFuY2VfY2F0ZWdvcnkiOiJPdXRy
+        b3MgLyBPdXRyb3MiLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjoiQ1IxIiwi
+        Y3JlYXRlZF9hdCI6IjA2LzA1LzIwMTYgMTI6MzM6MTMgLTAzOjAwIiwicHJv
+        ZHVjdHMiOlt7ImlkIjoxMDQ2MiwibmFtZSI6IkZvcm5lY2ltZW50byBkZSBw
+        ZcOnYXMgZGUgcmVwb3Npw6fDo28iLCJ1bml0X3ZhbHVlIjoiMjAuMCIsInVu
+        aXRzIjoiMS4wIiwidmFsdWUiOiIyMC4wIn1dfX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/8f95a5077195a5f75a99a6752096ba8f/change_plan
+  recorded_at: Wed, 26 Oct 2016 12:20:38 GMT
+recorded_with: VCR 3.0.3

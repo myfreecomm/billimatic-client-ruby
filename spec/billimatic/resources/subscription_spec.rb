@@ -256,6 +256,47 @@ describe Billimatic::Resources::Subscription do
     end
   end
 
+  describe '#change_plan' do
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+      @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
+    end
+
+    subject { described_class.new(@http) }
+
+    it 'returns not found if subscription token is wrong' do
+      VCR.use_cassette('/subscriptions/change_plan/failure/wrong_token') do
+        expect {
+          subject.change_plan(token: "FOO", new_plan_id: 12)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'returns not found when plan is not found' do
+      VCR.use_cassette('/subscriptions/change_plan/failure/plan_not_found') do
+        expect {
+          subject.change_plan(token: "8f95a5077195a5f75a99a6752096ba8f", new_plan_id: 80)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'successfully processes plan change on subscription' do
+      VCR.use_cassette('/subscriptions/change_plan/success') do
+        subscription = subject.change_plan(
+          token: "8f95a5077195a5f75a99a6752096ba8f", new_plan_id: 17
+        )
+
+        expect(subscription).to be_a entity_klass
+        expect(subscription.plan.id).to eql 17
+      end
+    end
+  end
+
   describe '#cancel' do
     it "successfully sets a subscription to 'cancelled'" do
       VCR.use_cassette('subscriptions/cancel/success') do

@@ -17,6 +17,15 @@ module Billimatic
         end
       end
 
+      def change_plan(token:, new_plan_id:)
+        http.patch(
+          "#{resource_base_path}/#{token}/change_plan",
+          body: { subscription: { new_plan_id: new_plan_id } }
+        ) do |response|
+          respond_with_entity response
+        end
+      end
+
       def cancel(token:)
         http.patch("#{resource_base_path}/#{token}/cancel") do |response|
           respond_with_entity response
