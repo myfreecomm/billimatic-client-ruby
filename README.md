@@ -210,6 +210,17 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/plan_modifications/API_V1_Subscription_PlanModifications_change_plan_patch_0" target="_blank">
+                /api/v1/subscriptions/:token/change_plan
+            </a>
+        </td>
+        <td>
+            <code>client.subscriptions.change_plan(token: token, new_plan_id: id)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>PATCH</code></td>
+        <td>
             <a href="https://app.billimatic.com.br/docs/api#!/subscriptions/API_V1_Subscriptions_cancel_patch_0" target="_blank">
                 /api/v1/subscriptions/:token/cancel
             </a>
