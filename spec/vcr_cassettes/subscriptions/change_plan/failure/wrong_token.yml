@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/subscriptions/FOO/change_plan
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"new_plan_id":12}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.7.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Wed, 26 Oct 2016 12:14:26 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 36c08644-8076-413b-a0a7-8b68bc957e46
+      X-Runtime:
+      - '0.256363'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/FOO/change_plan
+  recorded_at: Wed, 26 Oct 2016 12:14:26 GMT
+- request:
+    method: patch
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/FOO/change_plan
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"new_plan_id":2}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.7.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 27 Oct 2016 16:17:07 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - cbd5d193-9c3d-4cdc-bc29-3c13839c08da
+      X-Runtime:
+      - '0.028996'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/FOO/change_plan
+  recorded_at: Thu, 27 Oct 2016 16:17:07 GMT
+recorded_with: VCR 3.0.3
