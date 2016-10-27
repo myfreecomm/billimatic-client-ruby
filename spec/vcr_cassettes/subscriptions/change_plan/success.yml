@@ -84,4 +84,101 @@ http_interactions:
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/subscriptions/8f95a5077195a5f75a99a6752096ba8f/change_plan
   recorded_at: Wed, 26 Oct 2016 12:20:38 GMT
+- request:
+    method: patch
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/ec0aebe3ed4bd79fd4c238c0b6470c4a/change_plan
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"new_plan_id":2}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.7.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 27 Oct 2016 16:20:14 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"37a9f5fb4a9c0571d87a329a34c7574b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6fbebb78-db0a-42e8-8bcb-0d54332e27f3
+      X-Runtime:
+      - '0.162991'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjgzMTYsIm5hbWUiOiJBc3NpbmF0dXJh
+        IFRlc3RlIFByw6kgUGFnbyBDbGllbnQgQmlsbGltYXRpYyAtIFRFU1RFIEJJ
+        TExJTUFUSUMgTXlmaW5hbmNlIFNpbHZlciIsInRpdGxlIjoiQXNzaW5hdHVy
+        YSBUZXN0ZSBQcsOpIFBhZ28gQ2xpZW50IEJpbGxpbWF0aWMgLSBURVNURSBC
+        SUxMSU1BVElDIE15ZmluYW5jZSBTaWx2ZXIiLCJ0b2tlbiI6ImVjMGFlYmUz
+        ZWQ0YmQ3OWZkNGMyMzhjMGI2NDcwYzRhIiwiZGVzY3JpcHRpb24iOm51bGws
+        ImN1c3RvbWVyX2lkIjo3OTcwLCJzdXBwbGllcl9pZCI6NDg2LCJzdXBwbGll
+        cl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0aXZlIiwiY29tbWVudHMi
+        Om51bGwsImluaXRfZGF0ZSI6IjI3LzEwLzIwMTYiLCJlbmRfZGF0ZSI6IjEx
+        LzExLzIwMTYiLCJjcmVhdGVkX2F0IjoiMjcvMTAvMjAxNiAxNDoxMjo0OSAt
+        MDI6MDAiLCJraW5kIjoic2FsZSIsInJlZ2lzdHJhdGlvbl9tZXRob2QiOiJz
+        dWJzY3JpcHRpb24iLCJvdmVyZHVlIjpmYWxzZSwidmFsaWRfdW50aWwiOiIx
+        MS8xMS8yMDE2Iiwic3RhdHVzIjoidHJpYWwiLCJwbGFuIjp7ImlkIjoyLCJu
+        YW1lIjoiVEVTVEUgQklMTElNQVRJQyBNeWZpbmFuY2UgU2lsdmVyIiwiZGVz
+        Y3JpcHRpb24iOiJNw6lkaWFzIGVtcHJlc2FzIHF1ZSBidXNjYW0gbWFudGVy
+        IGEgc2HDumRlIGZpbmFuY2VpcmEgc2VtcHJlIGVtIGRpYS4iLCJyZWRpcmVj
+        dF91cmwiOiJodHRwczovL2JpbGxpbWF0aWMtZGVtby1zYWFzLXByb2R1Y3Qu
+        aGVyb2t1YXBwLmNvbS8iLCJwcmljZSI6IjEwMC4wIiwiYmlsbGluZ19wZXJp
+        b2QiOjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxtZW50
+        ZSIsImNoYXJnaW5nX21ldGhvZCI6InByZV9wYWlkIiwidHJhbnNsYXRlZF9j
+        aGFyZ2luZ19tZXRob2QiOiJQcsOpLXBhZ28iLCJoYXNfdHJpYWwiOnRydWUs
+        InRyaWFsX3BlcmlvZCI6MTUsImZlYXR1cmVzIjpbeyJpZCI6MTEsImRlc2Ny
+        aXB0aW9uIjoiMiBFbXByZXNhcyIsInZhbHVlIjoiMiIsInRhZyI6InF1YW50
+        aWRhZGVfZGVfZW1wcmVzYXMifSx7ImlkIjoxMiwiZGVzY3JpcHRpb24iOiI2
+        IFVzdcOhcmlvcyIsInZhbHVlIjoiNiIsInRhZyI6InF1YW50aWRhZGVfZGVf
+        dXN1YXJpb3MifSx7ImlkIjoxMywiZGVzY3JpcHRpb24iOiI1IEdCIGRlIGFy
+        bWF6ZW5hbWVudG8iLCJ2YWx1ZSI6IjUiLCJ0YWciOiJhcm1hemVuYW1lbnRv
+        In0seyJpZCI6MTQsImRlc2NyaXB0aW9uIjoiQ29udHJvbGUgZGUgVXN1w6Fy
+        aW9zIiwidmFsdWUiOiIxIiwidGFnIjoiY29udHJvbGVfZGVfdXN1YXJpb3Mi
+        fV0sImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6NDQsImVtaXRlc19zZXJ2
+        aWNlX3ZhbHVlX25hbWUiOiJMaWNlbmNpYW1lbnRvIGRlIHVzbyBkZSBwcm9n
+        cmFtYXMgZGUgY29tcHV0YWRvciIsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9j
+        b25maWdfaWQiOjEyOCwiY29icmF0b19iaWxsZXRfY2hhcmdlX2NvbmZpZ19u
+        YW1lIjoiQ29icmFuw6dhIG7Do28gcmVnaXN0cmFkYSIsImNvYnJhdG9fcGF5
+        bWVudF9nYXRld2F5X2NoYXJnZV9jb25maWdfaWQiOjEzNywiY29icmF0b19w
+        YXltZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQ2Fy
+        dMOjbyIsImZpbmFuY2VfY2F0ZWdvcnkiOiJSZWNlaXRhIC8gQWx1Z3VlbCBk
+        ZSBwcm9kdXRvIiwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6IlJleHBlbnNl
+        IiwiY3JlYXRlZF9hdCI6IjA0LzAzLzIwMTYgMTc6MzM6NDEgLTAzOjAwIiwi
+        cHJvZHVjdHMiOlt7ImlkIjo3ODU2MCwibmFtZSI6Ik15ZmluYW5jZSIsInVu
+        aXRfdmFsdWUiOiIxMDAuMCIsInVuaXRzIjoiMS4wIiwidmFsdWUiOiIxMDAu
+        MCJ9XX19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/ec0aebe3ed4bd79fd4c238c0b6470c4a/change_plan
+  recorded_at: Thu, 27 Oct 2016 16:20:14 GMT
 recorded_with: VCR 3.0.3
