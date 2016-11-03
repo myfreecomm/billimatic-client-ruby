@@ -295,6 +295,82 @@ describe Billimatic::Resources::Subscription do
     end
   end
 
+  describe '#retry_charge' do
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+      @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
+    end
+
+    let(:payment_gateway_params) do
+      {
+        payment_information: {
+          card_brand: "Visa",
+          card_number: "4012001037141112",
+          card_holder_name: "FOO",
+          card_expiration_month: "12",
+          card_expiration_year: "2019",
+          card_security_code: "123"
+        }
+      }
+    end
+
+    subject { described_class.new(@http) }
+
+    it 'returns not found if subscription token is wrong' do
+      VCR.use_cassette('/subscriptions/retry_charge/failure/wrong_token') do
+        expect {
+          subject.retry_charge(payment_gateway_params, token: "FOO", invoice_id: 58117)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it "returns not found when invoice can't be found on contract" do
+      VCR.use_cassette('/subscriptions/retry_charge/failure/invoice_not_found') do
+        expect {
+          subject.retry_charge(
+            payment_gateway_params,
+            token: "011c25b616648590bac247af193588f5",
+            invoice_id: 800000
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'returns unprocessable entity when payment_information sent is invalid' do
+      VCR.use_cassette('/subscriptions/retry_charge/failure/invalid_payment_information') do
+        payment_gateway_params[:payment_information][:card_brand] = 'Amex'
+
+        expect {
+          subject.retry_charge(
+            payment_gateway_params,
+            token: "011c25b616648590bac247af193588f5",
+            invoice_id: 58117
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+          expect(error.body['errors']['payment_information']).to have_key 'card_security_code'
+        end
+      end
+    end
+
+    it 'returns success with subscription on response' do
+      VCR.use_cassette("/subscriptions/retry_charge/success") do
+        result = subject.retry_charge(
+          payment_gateway_params,
+          token: "011c25b616648590bac247af193588f5",
+          invoice_id: 58117
+        )
+
+        expect(result).to be_a entity_klass
+      end
+    end
+  end
+
   describe '#cancel' do
     it "successfully sets a subscription to 'cancelled'" do
       VCR.use_cassette('subscriptions/cancel/success') do
