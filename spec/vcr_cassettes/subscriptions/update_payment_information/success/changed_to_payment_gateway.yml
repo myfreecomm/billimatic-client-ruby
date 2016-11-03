@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/subscriptions/38acaf9d55d6bb82f29e27f2baf00af3/update_payment_information
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"payment_information":{"type":"payment_gateway","card_brand":"Visa","card_number":"4012001037141112","card_holder_name":"PRE
+        PAGO TESTE","card_expiration_month":"12","card_expiration_year":"2021","card_security_code":"123"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.8.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 03 Nov 2016 18:20:14 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"4563f4b15c48d30e4afd9b27276a44b9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d6bc257e-08f2-40a3-8a94-3add88a66af7
+      X-Runtime:
+      - '1.535680'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg5MSwibmFtZSI6IkFzc2luYXR1cmEg
+        Q29uc3VtaWRvciAxMDAgLSBQbGFuby1CbGFjayIsInRpdGxlIjoiQXNzaW5h
+        dHVyYSBDb25zdW1pZG9yIDEwMCAtIFBsYW5vLUJsYWNrIiwidG9rZW4iOiIz
+        OGFjYWY5ZDU1ZDZiYjgyZjI5ZTI3ZjJiYWYwMGFmMyIsImRlc2NyaXB0aW9u
+        IjpudWxsLCJjdXN0b21lcl9pZCI6MTQ1LCJzdXBwbGllcl9pZCI6NCwic3Vw
+        cGxpZXJfdHlwZSI6IkNvbXBhbnkiLCJzdGF0ZSI6ImFjdGl2ZSIsImNvbW1l
+        bnRzIjpudWxsLCJpbml0X2RhdGUiOiIwMy8xMS8yMDE2IiwiZW5kX2RhdGUi
+        Om51bGwsImNyZWF0ZWRfYXQiOiIwMy8xMS8yMDE2IDE2OjE1OjQ5IC0wMjow
+        MCIsImtpbmQiOiJzYWxlIiwicmVnaXN0cmF0aW9uX21ldGhvZCI6InN1YnNj
+        cmlwdGlvbiIsIm92ZXJkdWUiOmZhbHNlLCJ2YWxpZF91bnRpbCI6IjA2LzEx
+        LzIwMTYiLCJzdGF0dXMiOiJlc3RhYmxpc2hlZCIsInBsYW4iOnsiaWQiOjEy
+        LCJuYW1lIjoiUGxhbm8tQmxhY2siLCJkZXNjcmlwdGlvbiI6IlBsYW5vIEJs
+        YWNrIiwicmVkaXJlY3RfdXJsIjoiaHR0cDovL3d3dy5nb29nbGUuY29tLmJy
+        IiwicHJpY2UiOiIzMC4wIiwiYmlsbGluZ19wZXJpb2QiOjEsInRyYW5zbGF0
+        ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxtZW50ZSIsImNoYXJnaW5nX21l
+        dGhvZCI6InByZV9wYWlkIiwidHJhbnNsYXRlZF9jaGFyZ2luZ19tZXRob2Qi
+        OiJQcsOpLXBhZ28iLCJoYXNfdHJpYWwiOmZhbHNlLCJ0cmlhbF9wZXJpb2Qi
+        Om51bGwsImZlYXR1cmVzIjpbXSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lk
+        Ijo0NywiZW1pdGVzX3NlcnZpY2VfdmFsdWVfbmFtZSI6IkFsdWd1ZWwgZGUg
+        c29mdHdhcmUiLCJjb2JyYXRvX2JpbGxldF9jaGFyZ2VfY29uZmlnX2lkIjox
+        MjgsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdfbmFtZSI6IkNvYnJh
+        bsOnYSBuw6NvIHJlZ2lzdHJhZGEiLCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdh
+        eV9jaGFyZ2VfY29uZmlnX2lkIjoxMzcsImNvYnJhdG9fcGF5bWVudF9nYXRl
+        d2F5X2NoYXJnZV9jb25maWdfbmFtZSI6IlRlc3RlIENhcnTDo28iLCJmaW5h
+        bmNlX2NhdGVnb3J5IjoiT3V0cm9zIiwiZmluYW5jZV9yZXZlbnVlX2NlbnRl
+        ciI6IkNSMSIsImNyZWF0ZWRfYXQiOiIxNS8wMy8yMDE2IDA5OjQyOjIzIC0w
+        MzowMCIsInByb2R1Y3RzIjpbeyJpZCI6MjM1NDksIm5hbWUiOiJGb3JuZWNp
+        bWVudG8gZGUgcGXDp2FzIGRlIHJlcG9zacOnw6NvIiwidW5pdF92YWx1ZSI6
+        IjMwLjAiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoiMzAuMCJ9XX0sInBheW1l
+        bnRfaW5mb3JtYXRpb24iOnsicGF5bWVudF9tZXRob2QiOiJwYXltZW50X2dh
+        dGV3YXkifX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/38acaf9d55d6bb82f29e27f2baf00af3/update_payment_information
+  recorded_at: Thu, 03 Nov 2016 18:20:14 GMT
+recorded_with: VCR 3.0.3

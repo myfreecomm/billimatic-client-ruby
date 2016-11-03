@@ -35,6 +35,15 @@ module Billimatic
         end
       end
 
+      def update_payment_information(params, token:)
+        http.patch(
+          "#{resource_base_path}/#{token}/update_payment_information",
+          body: { subscription: params }
+        ) do |response|
+          respond_with_entity response
+        end
+      end
+
       def cancel(token:)
         http.patch("#{resource_base_path}/#{token}/cancel") do |response|
           respond_with_entity response

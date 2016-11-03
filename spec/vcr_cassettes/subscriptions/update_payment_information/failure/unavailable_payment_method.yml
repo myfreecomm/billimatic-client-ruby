@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/subscriptions/037aee22be79e7c0fd00778aa92affd9/update_payment_information
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"payment_information":{"type":"payment_gateway","card_brand":"Visa","card_number":"4012001037141112","card_holder_name":"PRE
+        PAGO TESTE","card_expiration_month":"12","card_expiration_year":"2021","card_security_code":"123"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.8.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Thu, 03 Nov 2016 18:14:14 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 8348988a-e965-4fa3-80e0-e3aea0813d16
+      X-Runtime:
+      - '0.187434'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsicGF5bWVudF9pbmZvcm1hdGlvbiI6eyJ0eXBlIjpbImZv
+        cm1hIGRlIHBhZ2FtZW50byBzZWxlY2lvbmFkYSBuw6NvIGVzdMOhIGRpc3Bv
+        bsOtdmVsIHBhcmEgbyBwbGFubyJdfX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/037aee22be79e7c0fd00778aa92affd9/update_payment_information
+  recorded_at: Thu, 03 Nov 2016 18:14:14 GMT
+recorded_with: VCR 3.0.3

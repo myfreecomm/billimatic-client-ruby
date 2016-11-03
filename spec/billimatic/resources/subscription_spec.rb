@@ -371,6 +371,107 @@ describe Billimatic::Resources::Subscription do
     end
   end
 
+  describe '#update_payment_information' do
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+      @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
+    end
+
+    let(:payment_information_params) do
+      {
+        payment_information: {
+          type: 'billet'
+        }
+      }
+    end
+
+    let(:payment_gateway_params) do
+      {
+        payment_information: {
+          type: 'payment_gateway',
+          card_brand: 'Visa',
+          card_number: '4012001037141112',
+          card_holder_name: 'PRE PAGO TESTE',
+          card_expiration_month: '12',
+          card_expiration_year: '2021',
+          card_security_code: '123'
+        }
+      }
+
+    end
+
+    subject { described_class.new(@http) }
+
+    it 'returns not found when subscription token is wrong' do
+      VCR.use_cassette('/subscriptions/update_payment_information/failure/wrong_token') do
+        expect {
+          subject.update_payment_information(
+            payment_information_params, token: "FOO"
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it "returns unprocessable entity when form isn't valid" do
+      VCR.use_cassette('/subscriptions/update_payment_information/failure/invalid_payment_information') do
+        payment_gateway_params[:payment_information].delete(:card_expiration_month)
+        payment_gateway_params[:payment_information].delete(:card_expiration_year)
+        payment_gateway_params[:payment_information].delete(:card_security_code)
+
+        expect {
+          subject.update_payment_information(
+            payment_gateway_params,
+            token: "e265027c090597a50f5260dc2f84e9d9"
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+          expect(error.body['errors']['payment_information']).to have_key 'card_expiration_month'
+          expect(error.body['errors']['payment_information']).to have_key 'card_expiration_year'
+          expect(error.body['errors']['payment_information']).to have_key 'card_security_code'
+        end
+      end
+    end
+
+    it 'returns unprocessable entity when an attempt is made to update to an unavailable payment_method' do
+      VCR.use_cassette('/subscriptions/update_payment_information/failure/unavailable_payment_method') do
+        expect {
+          subject.update_payment_information(
+            payment_gateway_params,
+            token: "037aee22be79e7c0fd00778aa92affd9"
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+          expect(error.body['errors']['payment_information']).to have_key 'type'
+        end
+      end
+    end
+
+    it 'processes update successfully to billet' do
+      VCR.use_cassette('/subscriptions/update_payment_information/success/changed_to_billet') do
+        result = subject.update_payment_information(
+          payment_information_params, token: "011c25b616648590bac247af193588f5"
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.payment_information.payment_method).to eql 'billet'
+      end
+    end
+
+    it 'processes update successfully to payment_gateway' do
+      VCR.use_cassette('/subscriptions/update_payment_information/success/changed_to_payment_gateway') do
+        result = subject.update_payment_information(
+          payment_gateway_params, token: "38acaf9d55d6bb82f29e27f2baf00af3"
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.payment_information.payment_method).to eql 'payment_gateway'
+      end
+    end
+  end
+
   describe '#cancel' do
     it "successfully sets a subscription to 'cancelled'" do
       VCR.use_cassette('subscriptions/cancel/success') do
