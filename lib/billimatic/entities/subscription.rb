@@ -1,6 +1,8 @@
 module Billimatic
   module Entities
     class Subscription < Contract
+      attribute :payment_information, PaymentInformation
+
       def checkout_url
         # TODO should this come from the JSON from Billimatic?
         fake_http = nil
