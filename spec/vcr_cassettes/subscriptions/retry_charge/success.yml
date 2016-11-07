@@ -86,4 +86,93 @@ http_interactions:
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/subscriptions/011c25b616648590bac247af193588f5/58117/retry
   recorded_at: Thu, 03 Nov 2016 17:32:20 GMT
+- request:
+    method: patch
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/6515b9372adfc5e4fce302433a413236/163321/retry
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"payment_information":{"card_brand":"Visa","card_number":"4012001037141112","card_holder_name":"PRE
+        PAGO PJ","card_expiration_month":"12","card_expiration_year":"2019","card_security_code":"123"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.8.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 07 Nov 2016 17:08:00 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"bd7b68caaa94eed40e61502f35032ec0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 01d4cb79-1d05-4f9d-8fbc-80f3b0433112
+      X-Runtime:
+      - '0.076357'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg0MDgsIm5hbWUiOiJBc3NpbmF0dXJh
+        IENvbXBhbmhpYSBUZXN0ZSBQcsOpIFBhZ28gLSBQbGFubyBUZXN0ZSBkbyBD
+        bGllbnQiLCJ0aXRsZSI6IkFzc2luYXR1cmEgQ29tcGFuaGlhIFRlc3RlIFBy
+        w6kgUGFnbyAtIFBsYW5vIFRlc3RlIGRvIENsaWVudCIsInRva2VuIjoiNjUx
+        NWI5MzcyYWRmYzVlNGZjZTMwMjQzM2E0MTMyMzYiLCJkZXNjcmlwdGlvbiI6
+        bnVsbCwiY3VzdG9tZXJfaWQiOjE4NTUsInN1cHBsaWVyX2lkIjo0ODYsInN1
+        cHBsaWVyX3R5cGUiOiJDb21wYW55Iiwic3RhdGUiOiJhY3RpdmUiLCJjb21t
+        ZW50cyI6bnVsbCwiaW5pdF9kYXRlIjoiMDcvMTEvMjAxNiIsImVuZF9kYXRl
+        IjpudWxsLCJjcmVhdGVkX2F0IjoiMDcvMTEvMjAxNiAxNTowMDo0MCAtMDI6
+        MDAiLCJraW5kIjoic2FsZSIsInJlZ2lzdHJhdGlvbl9tZXRob2QiOiJzdWJz
+        Y3JpcHRpb24iLCJvdmVyZHVlIjpmYWxzZSwidmFsaWRfdW50aWwiOiIwNy8x
+        MS8yMDE2Iiwic3RhdHVzIjoiZXN0YWJsaXNoZWQiLCJwbGFuIjp7ImlkIjo1
+        NzYsIm5hbWUiOiJQbGFubyBUZXN0ZSBkbyBDbGllbnQiLCJkZXNjcmlwdGlv
+        biI6IlBsYW5vIGRlIHRlc3RlIGRvIGNsaWVudCIsInJlZGlyZWN0X3VybCI6
+        Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20uYnIiLCJwcmljZSI6IjE0OS45Iiwi
+        YmlsbGluZ19wZXJpb2QiOjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2Qi
+        OiJNZW5zYWxtZW50ZSIsImNoYXJnaW5nX21ldGhvZCI6InByZV9wYWlkIiwi
+        dHJhbnNsYXRlZF9jaGFyZ2luZ19tZXRob2QiOiJQcsOpLXBhZ28iLCJoYXNf
+        dHJpYWwiOmZhbHNlLCJ0cmlhbF9wZXJpb2QiOm51bGwsImZlYXR1cmVzIjpb
+        XSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lkIjo0NywiZW1pdGVzX3NlcnZp
+        Y2VfdmFsdWVfbmFtZSI6IkFsdWd1ZWwgZGUgc29mdHdhcmUiLCJjb2JyYXRv
+        X2JpbGxldF9jaGFyZ2VfY29uZmlnX2lkIjoxMjgsImNvYnJhdG9fYmlsbGV0
+        X2NoYXJnZV9jb25maWdfbmFtZSI6IkNvYnJhbsOnYSBuw6NvIHJlZ2lzdHJh
+        ZGEiLCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX2lk
+        IjoxMzcsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2NoYXJnZV9jb25maWdf
+        bmFtZSI6IlRlc3RlIENhcnTDo28iLCJmaW5hbmNlX2NhdGVnb3J5IjoiUmVj
+        ZWl0YSAvIFNlcnZpw6dvcyIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOiJD
+        UjEiLCJjcmVhdGVkX2F0IjoiMDcvMTEvMjAxNiAxNTowMDoxOSAtMDI6MDAi
+        LCJwcm9kdWN0cyI6W119LCJwYXltZW50X2luZm9ybWF0aW9uIjp7ImlkIjo3
+        MDc1LCJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdheSIsImNvYnJh
+        dG9fY2FyZF9pZCI6Mzg3OCwiY2FyZF9leHBpcmF0aW9uX21vbnRoIjo1LCJj
+        YXJkX2V4cGlyYXRpb25feWVhciI6MjAxOCwiY3JlYXRlZF9hdCI6IjA3LzEx
+        LzIwMTYgMTU6MDE6NTUgLTAyOjAwIn19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/6515b9372adfc5e4fce302433a413236/163321/retry
+  recorded_at: Mon, 07 Nov 2016 17:08:00 GMT
 recorded_with: VCR 3.0.3

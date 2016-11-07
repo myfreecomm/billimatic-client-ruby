@@ -297,9 +297,7 @@ describe Billimatic::Resources::Subscription do
 
   describe '#retry_charge' do
     before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-      @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
+      @http = Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f')
     end
 
     let(:payment_gateway_params) do
@@ -307,7 +305,7 @@ describe Billimatic::Resources::Subscription do
         payment_information: {
           card_brand: "Visa",
           card_number: "4012001037141112",
-          card_holder_name: "FOO",
+          card_holder_name: "PRE PAGO PJ",
           card_expiration_month: "12",
           card_expiration_year: "2019",
           card_security_code: "123"
@@ -320,7 +318,7 @@ describe Billimatic::Resources::Subscription do
     it 'returns not found if subscription token is wrong' do
       VCR.use_cassette('/subscriptions/retry_charge/failure/wrong_token') do
         expect {
-          subject.retry_charge(payment_gateway_params, token: "FOO", invoice_id: 58117)
+          subject.retry_charge(payment_gateway_params, token: "FOO", invoice_id: 163321)
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 404
         end
@@ -332,7 +330,7 @@ describe Billimatic::Resources::Subscription do
         expect {
           subject.retry_charge(
             payment_gateway_params,
-            token: "011c25b616648590bac247af193588f5",
+            token: "6515b9372adfc5e4fce302433a413236",
             invoice_id: 800000
           )
         }.to raise_error(Billimatic::RequestError) do |error|
@@ -348,8 +346,8 @@ describe Billimatic::Resources::Subscription do
         expect {
           subject.retry_charge(
             payment_gateway_params,
-            token: "011c25b616648590bac247af193588f5",
-            invoice_id: 58117
+            token: "6515b9372adfc5e4fce302433a413236",
+            invoice_id: 163321
           )
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
@@ -362,8 +360,8 @@ describe Billimatic::Resources::Subscription do
       VCR.use_cassette("/subscriptions/retry_charge/success") do
         result = subject.retry_charge(
           payment_gateway_params,
-          token: "011c25b616648590bac247af193588f5",
-          invoice_id: 58117
+          token: "6515b9372adfc5e4fce302433a413236",
+          invoice_id: 163321
         )
 
         expect(result).to be_a entity_klass
@@ -373,9 +371,7 @@ describe Billimatic::Resources::Subscription do
 
   describe '#update_payment_information' do
     before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-      @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
+      @http = Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f')
     end
 
     let(:payment_information_params) do
@@ -398,7 +394,6 @@ describe Billimatic::Resources::Subscription do
           card_security_code: '123'
         }
       }
-
     end
 
     subject { described_class.new(@http) }
@@ -424,7 +419,7 @@ describe Billimatic::Resources::Subscription do
         expect {
           subject.update_payment_information(
             payment_gateway_params,
-            token: "e265027c090597a50f5260dc2f84e9d9"
+            token: "6c8b6e236c8c3a408e1196f456ebe5d1"
           )
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
@@ -440,7 +435,7 @@ describe Billimatic::Resources::Subscription do
         expect {
           subject.update_payment_information(
             payment_gateway_params,
-            token: "037aee22be79e7c0fd00778aa92affd9"
+            token: "84b794193d748966adb074ea1ea7dfbf"
           )
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
@@ -452,7 +447,7 @@ describe Billimatic::Resources::Subscription do
     it 'processes update successfully to billet' do
       VCR.use_cassette('/subscriptions/update_payment_information/success/changed_to_billet') do
         result = subject.update_payment_information(
-          payment_information_params, token: "011c25b616648590bac247af193588f5"
+          payment_information_params, token: "6c8b6e236c8c3a408e1196f456ebe5d1"
         )
 
         expect(result).to be_a entity_klass
@@ -463,7 +458,7 @@ describe Billimatic::Resources::Subscription do
     it 'processes update successfully to payment_gateway' do
       VCR.use_cassette('/subscriptions/update_payment_information/success/changed_to_payment_gateway') do
         result = subject.update_payment_information(
-          payment_gateway_params, token: "38acaf9d55d6bb82f29e27f2baf00af3"
+          payment_gateway_params, token: "84b794193d748966adb074ea1ea7dfbf"
         )
 
         expect(result).to be_a entity_klass
