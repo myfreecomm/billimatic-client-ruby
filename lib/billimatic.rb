@@ -24,6 +24,7 @@ require 'billimatic/entities/organization'
 require 'billimatic/entities/contract'
 require 'billimatic/entities/invoice'
 require 'billimatic/entities/invoice_rule'
+require 'billimatic/entities/payment_information'
 require 'billimatic/entities/subscription'
 require 'billimatic/entities/webhook'
 

@@ -1,0 +1,178 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/subscriptions/011c25b616648590bac247af193588f5/58117/retry
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"payment_information":{"card_brand":"Visa","card_number":"4012001037141112","card_holder_name":"FOO","card_expiration_month":"12","card_expiration_year":"2019","card_security_code":"123"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.8.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 03 Nov 2016 17:32:20 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"ec58accff3398b85120ab86fe69d0737"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 12bcb588-78c7-4c1e-b5f2-0e24e4767ff0
+      X-Runtime:
+      - '0.916006'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg4NywibmFtZSI6IkFzc2luYXR1cmEg
+        Q29uc3VtaWRvciAxIC0gUGxhbm8tQmxhY2siLCJ0aXRsZSI6IkFzc2luYXR1
+        cmEgQ29uc3VtaWRvciAxIC0gUGxhbm8tQmxhY2siLCJ0b2tlbiI6IjAxMWMy
+        NWI2MTY2NDg1OTBiYWMyNDdhZjE5MzU4OGY1IiwiZGVzY3JpcHRpb24iOm51
+        bGwsImN1c3RvbWVyX2lkIjoxMjksInN1cHBsaWVyX2lkIjo0LCJzdXBwbGll
+        cl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0aXZlIiwiY29tbWVudHMi
+        Om51bGwsImluaXRfZGF0ZSI6IjAzLzExLzIwMTYiLCJlbmRfZGF0ZSI6bnVs
+        bCwiY3JlYXRlZF9hdCI6IjAzLzExLzIwMTYgMTI6MTE6MjMgLTAyOjAwIiwi
+        a2luZCI6InNhbGUiLCJyZWdpc3RyYXRpb25fbWV0aG9kIjoic3Vic2NyaXB0
+        aW9uIiwib3ZlcmR1ZSI6ZmFsc2UsInZhbGlkX3VudGlsIjoiMDMvMTEvMjAx
+        NiIsInN0YXR1cyI6ImVzdGFibGlzaGVkIiwicGxhbiI6eyJpZCI6MTIsIm5h
+        bWUiOiJQbGFuby1CbGFjayIsImRlc2NyaXB0aW9uIjoiUGxhbm8gQmxhY2si
+        LCJyZWRpcmVjdF91cmwiOiJodHRwOi8vd3d3Lmdvb2dsZS5jb20uYnIiLCJw
+        cmljZSI6IjMwLjAiLCJiaWxsaW5nX3BlcmlvZCI6MSwidHJhbnNsYXRlZF9i
+        aWxsaW5nX3BlcmlvZCI6Ik1lbnNhbG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9k
+        IjoicHJlX3BhaWQiLCJ0cmFuc2xhdGVkX2NoYXJnaW5nX21ldGhvZCI6IlBy
+        w6ktcGFnbyIsImhhc190cmlhbCI6ZmFsc2UsInRyaWFsX3BlcmlvZCI6bnVs
+        bCwiZmVhdHVyZXMiOltdLCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOjQ3
+        LCJlbWl0ZXNfc2VydmljZV92YWx1ZV9uYW1lIjoiQWx1Z3VlbCBkZSBzb2Z0
+        d2FyZSIsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdfaWQiOjEyOCwi
+        Y29icmF0b19iaWxsZXRfY2hhcmdlX2NvbmZpZ19uYW1lIjoiQ29icmFuw6dh
+        IG7Do28gcmVnaXN0cmFkYSIsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2No
+        YXJnZV9jb25maWdfaWQiOjEzNywiY29icmF0b19wYXltZW50X2dhdGV3YXlf
+        Y2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQ2FydMOjbyIsImZpbmFuY2Vf
+        Y2F0ZWdvcnkiOiJPdXRyb3MiLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjoi
+        Q1IxIiwiY3JlYXRlZF9hdCI6IjE1LzAzLzIwMTYgMDk6NDI6MjMgLTAzOjAw
+        IiwicHJvZHVjdHMiOlt7ImlkIjoyMzU0OSwibmFtZSI6IkZvcm5lY2ltZW50
+        byBkZSBwZcOnYXMgZGUgcmVwb3Npw6fDo28iLCJ1bml0X3ZhbHVlIjoiMzAu
+        MCIsInVuaXRzIjoiMS4wIiwidmFsdWUiOiIzMC4wIn1dfSwicGF5bWVudF9p
+        bmZvcm1hdGlvbiI6eyJpZCI6MTI3LCJwYXltZW50X21ldGhvZCI6InBheW1l
+        bnRfZ2F0ZXdheSIsImNvYnJhdG9fY2FyZF9pZCI6Mzc4MiwiY2FyZF9leHBp
+        cmF0aW9uX21vbnRoIjoxMiwiY2FyZF9leHBpcmF0aW9uX3llYXIiOjIwMjAs
+        ImNyZWF0ZWRfYXQiOiIwMy8xMS8yMDE2IDEzOjU5OjMwIC0wMjowMCJ9fX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/011c25b616648590bac247af193588f5/58117/retry
+  recorded_at: Thu, 03 Nov 2016 17:32:20 GMT
+- request:
+    method: patch
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/6515b9372adfc5e4fce302433a413236/163321/retry
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"payment_information":{"card_brand":"Visa","card_number":"4012001037141112","card_holder_name":"PRE
+        PAGO PJ","card_expiration_month":"12","card_expiration_year":"2019","card_security_code":"123"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.8.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 07 Nov 2016 17:08:00 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"bd7b68caaa94eed40e61502f35032ec0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 01d4cb79-1d05-4f9d-8fbc-80f3b0433112
+      X-Runtime:
+      - '0.076357'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg0MDgsIm5hbWUiOiJBc3NpbmF0dXJh
+        IENvbXBhbmhpYSBUZXN0ZSBQcsOpIFBhZ28gLSBQbGFubyBUZXN0ZSBkbyBD
+        bGllbnQiLCJ0aXRsZSI6IkFzc2luYXR1cmEgQ29tcGFuaGlhIFRlc3RlIFBy
+        w6kgUGFnbyAtIFBsYW5vIFRlc3RlIGRvIENsaWVudCIsInRva2VuIjoiNjUx
+        NWI5MzcyYWRmYzVlNGZjZTMwMjQzM2E0MTMyMzYiLCJkZXNjcmlwdGlvbiI6
+        bnVsbCwiY3VzdG9tZXJfaWQiOjE4NTUsInN1cHBsaWVyX2lkIjo0ODYsInN1
+        cHBsaWVyX3R5cGUiOiJDb21wYW55Iiwic3RhdGUiOiJhY3RpdmUiLCJjb21t
+        ZW50cyI6bnVsbCwiaW5pdF9kYXRlIjoiMDcvMTEvMjAxNiIsImVuZF9kYXRl
+        IjpudWxsLCJjcmVhdGVkX2F0IjoiMDcvMTEvMjAxNiAxNTowMDo0MCAtMDI6
+        MDAiLCJraW5kIjoic2FsZSIsInJlZ2lzdHJhdGlvbl9tZXRob2QiOiJzdWJz
+        Y3JpcHRpb24iLCJvdmVyZHVlIjpmYWxzZSwidmFsaWRfdW50aWwiOiIwNy8x
+        MS8yMDE2Iiwic3RhdHVzIjoiZXN0YWJsaXNoZWQiLCJwbGFuIjp7ImlkIjo1
+        NzYsIm5hbWUiOiJQbGFubyBUZXN0ZSBkbyBDbGllbnQiLCJkZXNjcmlwdGlv
+        biI6IlBsYW5vIGRlIHRlc3RlIGRvIGNsaWVudCIsInJlZGlyZWN0X3VybCI6
+        Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20uYnIiLCJwcmljZSI6IjE0OS45Iiwi
+        YmlsbGluZ19wZXJpb2QiOjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2Qi
+        OiJNZW5zYWxtZW50ZSIsImNoYXJnaW5nX21ldGhvZCI6InByZV9wYWlkIiwi
+        dHJhbnNsYXRlZF9jaGFyZ2luZ19tZXRob2QiOiJQcsOpLXBhZ28iLCJoYXNf
+        dHJpYWwiOmZhbHNlLCJ0cmlhbF9wZXJpb2QiOm51bGwsImZlYXR1cmVzIjpb
+        XSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lkIjo0NywiZW1pdGVzX3NlcnZp
+        Y2VfdmFsdWVfbmFtZSI6IkFsdWd1ZWwgZGUgc29mdHdhcmUiLCJjb2JyYXRv
+        X2JpbGxldF9jaGFyZ2VfY29uZmlnX2lkIjoxMjgsImNvYnJhdG9fYmlsbGV0
+        X2NoYXJnZV9jb25maWdfbmFtZSI6IkNvYnJhbsOnYSBuw6NvIHJlZ2lzdHJh
+        ZGEiLCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX2lk
+        IjoxMzcsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2NoYXJnZV9jb25maWdf
+        bmFtZSI6IlRlc3RlIENhcnTDo28iLCJmaW5hbmNlX2NhdGVnb3J5IjoiUmVj
+        ZWl0YSAvIFNlcnZpw6dvcyIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOiJD
+        UjEiLCJjcmVhdGVkX2F0IjoiMDcvMTEvMjAxNiAxNTowMDoxOSAtMDI6MDAi
+        LCJwcm9kdWN0cyI6W119LCJwYXltZW50X2luZm9ybWF0aW9uIjp7ImlkIjo3
+        MDc1LCJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdheSIsImNvYnJh
+        dG9fY2FyZF9pZCI6Mzg3OCwiY2FyZF9leHBpcmF0aW9uX21vbnRoIjo1LCJj
+        YXJkX2V4cGlyYXRpb25feWVhciI6MjAxOCwiY3JlYXRlZF9hdCI6IjA3LzEx
+        LzIwMTYgMTU6MDE6NTUgLTAyOjAwIn19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/6515b9372adfc5e4fce302433a413236/163321/retry
+  recorded_at: Mon, 07 Nov 2016 17:08:00 GMT
+recorded_with: VCR 3.0.3
