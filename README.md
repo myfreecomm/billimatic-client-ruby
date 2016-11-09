@@ -221,17 +221,6 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/payment_gateway/API_V1_Subscription_PaymentGateway_retry_patch_0" target="_blank">
-                /api/v1/subscriptions/:token/:invoice_id/retry
-            </a>
-        </td>
-        <td>
-            <code>client.subscriptions.retry_charge(attributes_hash, token: token, invoice_id: id)</code>
-        </td>
-    </tr>
-    <tr>
-        <td><code>PATCH</code></td>
-        <td>
             <a href="https://app.billimatic.com.br/docs/api#!/payment_informations/API_V1_Subscription_PaymentInformations_update_patch_0" target="_blank">
                 /api/v1/subscriptions/:token/update_payment_information
             </a>
