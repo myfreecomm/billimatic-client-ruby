@@ -52,6 +52,8 @@ describe Billimatic::Entities::Plan do
                     :redirect_url, :features, :emites_service_values_id,
                     :emites_service_value_name, :cobrato_billet_charge_config_id,
                     :cobrato_billet_charge_config_name,
+                    :cobrato_billet_charge_template_id,
+                    :cobrato_billet_charge_template_name,
                     :cobrato_payment_gateway_charge_config_id,
                     :cobrato_payment_gateway_charge_config_name,
                     :finance_category, :finance_revenue_center, :created_at, :products

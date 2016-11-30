@@ -17,6 +17,8 @@ module Billimatic
       attribute :emites_service_value_name, String
       attribute :cobrato_billet_charge_config_id, Integer
       attribute :cobrato_billet_charge_config_name, String
+      attribute :cobrato_billet_charge_template_id, Integer
+      attribute :cobrato_billet_charge_template_name, String
       attribute :cobrato_payment_gateway_charge_config_id, Integer
       attribute :cobrato_payment_gateway_charge_config_name, String
       attribute :finance_category, String
