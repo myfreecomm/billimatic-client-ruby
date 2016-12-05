@@ -54,11 +54,12 @@ describe Billimatic::Entities::InvoiceRule do
   subject { described_class.new(attributes) }
 
   it_behaves_like 'entity_attributes', [
-                    :id, :gross_value, :description, :nfe_body, :charge_type,
-                    :customer_id, :customer_type, :emites_service_values_id,
+                    :id, :gross_value, :description, :nfe_body, :customer_id,
+                    :customer_type, :emites_service_values_id,
                     :emites_service_value_name, :finance_category,
                     :finance_revenue_center, :finance_receive_via,
                     :cobrato_charge_config_id, :cobrato_charge_config_name,
+                    :cobrato_charge_template_id, :cobrato_charge_template_name,
                     :additional_information, :services, :scheduled_update,
                     :receivables_additional_information
                   ]

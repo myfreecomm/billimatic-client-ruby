@@ -5,7 +5,6 @@ module Billimatic
       attribute :gross_value, Decimal
       attribute :description, String
       attribute :nfe_body, String
-      attribute :charge_type, String
       attribute :customer_id, Integer
       attribute :customer_type, String
       attribute :emites_service_values_id, Integer
@@ -15,6 +14,8 @@ module Billimatic
       attribute :finance_receive_via, String
       attribute :cobrato_charge_config_id, Integer
       attribute :cobrato_charge_config_name, String
+      attribute :cobrato_charge_template_id, Integer
+      attribute :cobrato_charge_template_name, String
       attribute :services, Array[Service]
       attribute :additional_information, Hash
       attribute :scheduled_update, Hash
