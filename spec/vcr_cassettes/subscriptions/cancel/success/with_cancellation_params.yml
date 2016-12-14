@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/subscriptions/96f1bb875ebc1b972bcbd3c60f45efe9/cancel
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"cancel_date":"2016-12-15","cancel_reason":"Cancelamento
+        via API de e-commerce"}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.10.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Dec 2016 13:06:46 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"2fff69cd8ae50ed15de826ef77e4a000"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 983e100b-36ad-4725-8605-bfe03f3cf849
+      X-Runtime:
+      - '0.240607'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjkxNywibmFtZSI6IkFzc2luYXR1cmEg
+        Q29uc3VtaWRvciA4IC0gUGxhbm8gU21hcnQgQW51YWwiLCJ0aXRsZSI6IkFz
+        c2luYXR1cmEgQ29uc3VtaWRvciA4IC0gUGxhbm8gU21hcnQgQW51YWwiLCJ0
+        b2tlbiI6Ijk2ZjFiYjg3NWViYzFiOTcyYmNiZDNjNjBmNDVlZmU5IiwiZGVz
+        Y3JpcHRpb24iOm51bGwsImN1c3RvbWVyX2lkIjoxMzgsInN1cHBsaWVyX2lk
+        Ijo0LCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0aXZl
+        IiwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjA5LzExLzIwMTYiLCJl
+        bmRfZGF0ZSI6IjA2LzExLzIwMTciLCJjcmVhdGVkX2F0IjoiMDkvMTEvMjAx
+        NiAxNDo0MTowMCAtMDI6MDAiLCJraW5kIjoic2FsZSIsInJlZ2lzdHJhdGlv
+        bl9tZXRob2QiOiJzdWJzY3JpcHRpb24iLCJvdmVyZHVlIjpmYWxzZSwidmFs
+        aWRfdW50aWwiOiIwNi8xMS8yMDE3Iiwic3RhdHVzIjoiY2FuY2VsbGVkIiwi
+        Y2FuY2VsX2RhdGUiOiIxNS8xMi8yMDE2IiwiY2FuY2VsX3JlYXNvbiI6IkNh
+        bmNlbGFtZW50byB2aWEgQVBJIGRlIGUtY29tbWVyY2UiLCJwbGFuIjp7Imlk
+        IjoxNSwibmFtZSI6IlBsYW5vIFNtYXJ0IEFudWFsIiwiZGVzY3JpcHRpb24i
+        OiJQbGFubyBTbWFydCBjb20gcGVyaW9kaWNpZGFkZSBhbnVhbCIsInJlZGly
+        ZWN0X3VybCI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS5iciIsInByaWNlIjoi
+        MTguMCIsImJpbGxpbmdfcGVyaW9kIjoxMiwidHJhbnNsYXRlZF9iaWxsaW5n
+        X3BlcmlvZCI6IkFudWFsbWVudGUiLCJjaGFyZ2luZ19tZXRob2QiOiJwb3N0
+        X3BhaWQiLCJ0cmFuc2xhdGVkX2NoYXJnaW5nX21ldGhvZCI6IlDDs3MtcGFn
+        byIsImhhc190cmlhbCI6dHJ1ZSwidHJpYWxfcGVyaW9kIjo3MCwiZmVhdHVy
+        ZXMiOltdLCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOjQ3LCJlbWl0ZXNf
+        c2VydmljZV92YWx1ZV9uYW1lIjoiQWx1Z3VlbCBkZSBzb2Z0d2FyZSIsImNv
+        YnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdfaWQiOjExMCwiY29icmF0b19i
+        aWxsZXRfY2hhcmdlX2NvbmZpZ19uYW1lIjoiT3V0cmEgY29udGEgZGUgY29i
+        cmFuw6dhIiwiY29icmF0b19iaWxsZXRfY2hhcmdlX3RlbXBsYXRlX2lkIjpu
+        dWxsLCJjb2JyYXRvX2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfbmFtZSI6bnVs
+        bCwiY29icmF0b19wYXltZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19pZCI6
+        MTM3LCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX25h
+        bWUiOiJUZXN0ZSBDYXJ0w6NvIiwiZmluYW5jZV9jYXRlZ29yeSI6Ik91dHJv
+        cyIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOiJDUjEiLCJjcmVhdGVkX2F0
+        IjoiMTYvMDMvMjAxNiAxMjoxNDoxMyAtMDM6MDAiLCJwcm9kdWN0cyI6W3si
+        aWQiOjM4NTUsIm5hbWUiOiJGb3JuZWNpbWVudG8gZGUgcGXDp2FzIGRlIHJl
+        cG9zacOnw6NvIiwidW5pdF92YWx1ZSI6IjE4LjAiLCJ1bml0cyI6IjEuMCIs
+        InZhbHVlIjoiMTguMCJ9XX0sInBheW1lbnRfaW5mb3JtYXRpb24iOnsiaWQi
+        OjE1NiwicGF5bWVudF9tZXRob2QiOiJiaWxsZXQiLCJjb2JyYXRvX2NhcmRf
+        aWQiOiItLSIsImNhcmRfZXhwaXJhdGlvbl9tb250aCI6Ii0tIiwiY2FyZF9l
+        eHBpcmF0aW9uX3llYXIiOiItLSIsImNyZWF0ZWRfYXQiOiIwOS8xMS8yMDE2
+        IDE0OjQzOjIyIC0wMjowMCJ9fX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/96f1bb875ebc1b972bcbd3c60f45efe9/cancel
+  recorded_at: Wed, 14 Dec 2016 13:06:46 GMT
+recorded_with: VCR 3.0.3

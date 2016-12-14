@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/subscriptions/d3e7349eede8cc8b030f76319cfa6f8d/cancel
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"cancel_date":null,"cancel_reason":null}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.10.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Dec 2016 12:54:28 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"6418f8731da41f788ddd6aa3cf954f8b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c3e8eefb-44a7-4d53-941a-7f1643bb4bb6
+      X-Runtime:
+      - '1.028452'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjkwMywibmFtZSI6IkFzc2luYXR1cmEg
+        U2ljbGFubyAtIE5vdm8gUGxhbm8iLCJ0aXRsZSI6IkFzc2luYXR1cmEgU2lj
+        bGFubyAtIE5vdm8gUGxhbm8iLCJ0b2tlbiI6ImQzZTczNDllZWRlOGNjOGIw
+        MzBmNzYzMTljZmE2ZjhkIiwiZGVzY3JpcHRpb24iOm51bGwsImN1c3RvbWVy
+        X2lkIjo2OCwic3VwcGxpZXJfaWQiOjQsInN1cHBsaWVyX3R5cGUiOiJDb21w
+        YW55Iiwic3RhdGUiOiJhY3RpdmUiLCJjb21tZW50cyI6bnVsbCwiaW5pdF9k
+        YXRlIjoiMDcvMTEvMjAxNiIsImVuZF9kYXRlIjoiMDkvMDEvMjAxNyIsImNy
+        ZWF0ZWRfYXQiOiIwNy8xMS8yMDE2IDA4OjE1OjQ2IC0wMjowMCIsImtpbmQi
+        OiJzYWxlIiwicmVnaXN0cmF0aW9uX21ldGhvZCI6InN1YnNjcmlwdGlvbiIs
+        Im92ZXJkdWUiOmZhbHNlLCJ2YWxpZF91bnRpbCI6IjA5LzAxLzIwMTciLCJz
+        dGF0dXMiOiJjYW5jZWxsZWQiLCJjYW5jZWxfZGF0ZSI6IjE0LzEyLzIwMTYi
+        LCJjYW5jZWxfcmVhc29uIjpudWxsLCJwbGFuIjp7ImlkIjo1NCwibmFtZSI6
+        Ik5vdm8gUGxhbm8iLCJkZXNjcmlwdGlvbiI6IlBsYW5vIE5vdm8iLCJyZWRp
+        cmVjdF91cmwiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInByaWNlIjoi
+        MTAwMC4wIiwiYmlsbGluZ19wZXJpb2QiOjEsInRyYW5zbGF0ZWRfYmlsbGlu
+        Z19wZXJpb2QiOiJNZW5zYWxtZW50ZSIsImNoYXJnaW5nX21ldGhvZCI6InBy
+        ZV9wYWlkIiwidHJhbnNsYXRlZF9jaGFyZ2luZ19tZXRob2QiOiJQcsOpLXBh
+        Z28iLCJoYXNfdHJpYWwiOnRydWUsInRyaWFsX3BlcmlvZCI6MjAsImZlYXR1
+        cmVzIjpbXSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lkIjo0NywiZW1pdGVz
+        X3NlcnZpY2VfdmFsdWVfbmFtZSI6IkFsdWd1ZWwgZGUgc29mdHdhcmUiLCJj
+        b2JyYXRvX2JpbGxldF9jaGFyZ2VfY29uZmlnX2lkIjoxMjgsImNvYnJhdG9f
+        YmlsbGV0X2NoYXJnZV9jb25maWdfbmFtZSI6IkNvYnJhbsOnYSBuw6NvIHJl
+        Z2lzdHJhZGEiLCJjb2JyYXRvX2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfaWQi
+        OjIsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoiVGVz
+        dGUgTW9kZWxvIGRlIENvYnJhbsOnYSBCaWxsaW1hdGljIiwiY29icmF0b19w
+        YXltZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19pZCI6MTM3LCJjb2JyYXRv
+        X3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX25hbWUiOiJUZXN0ZSBD
+        YXJ0w6NvIiwiZmluYW5jZV9jYXRlZ29yeSI6IlJlY2VpdGEgLyBTZXJ2acOn
+        b3MiLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjoiQ1IxIiwiY3JlYXRlZF9h
+        dCI6IjA2LzA5LzIwMTYgMTY6MjM6MDcgLTAzOjAwIiwicHJvZHVjdHMiOltd
+        fSwicGF5bWVudF9pbmZvcm1hdGlvbiI6eyJpZCI6MTQyLCJwYXltZW50X21l
+        dGhvZCI6InBheW1lbnRfZ2F0ZXdheSIsImNvYnJhdG9fY2FyZF9pZCI6Mzk2
+        OCwiY2FyZF9leHBpcmF0aW9uX21vbnRoIjo5LCJjYXJkX2V4cGlyYXRpb25f
+        eWVhciI6MjAxOSwiY3JlYXRlZF9hdCI6IjA3LzExLzIwMTYgMDg6MjE6NTEg
+        LTAyOjAwIn19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/d3e7349eede8cc8b030f76319cfa6f8d/cancel
+  recorded_at: Wed, 14 Dec 2016 12:54:28 GMT
+recorded_with: VCR 3.0.3
