@@ -20,6 +20,8 @@ module Billimatic
       attribute :overdue, Boolean
       attribute :valid_until, Date
       attribute :status, String
+      attribute :cancel_date, Date
+      attribute :cancel_reason, String
       attribute :plan, Plan
     end
   end
