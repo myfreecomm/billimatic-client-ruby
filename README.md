@@ -237,9 +237,11 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
             </a>
         </td>
         <td>
-            <code>client.subscriptions.cancel(token: token, cancel_date: date, cancel_reason: reason)</code>
-            <br>
-            <code># cancel_date and cancel_reason are optional arguments</code>
+            <code>
+                # cancel_date and cancel_reason are optional arguments
+                <br>
+                client.subscriptions.cancel(token: token, cancel_date: date, cancel_reason: reason)
+            </code>
         </td>
     </tr>
 </table>
