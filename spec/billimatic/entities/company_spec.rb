@@ -29,6 +29,6 @@ describe Billimatic::Entities::Company do
                     :id, :account_id, :name, :company_name, :cnpj, :address,
                     :number, :zipcode, :district, :complement, :city, :state,
                     :ibge_code, :contacts, :billing_contacts, :comments, :kind,
-                    :created_at
+                    :entry_date, :created_at
                   ]
 end

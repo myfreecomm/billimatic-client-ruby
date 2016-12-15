@@ -18,6 +18,7 @@ module Billimatic
       attribute :billing_contacts, String
       attribute :comments, String
       attribute :kind, String
+      attribute :entry_date, Date
       attribute :created_at, DateTime
     end
   end
