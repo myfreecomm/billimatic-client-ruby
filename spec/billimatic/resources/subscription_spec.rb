@@ -395,19 +395,17 @@ describe Billimatic::Resources::Subscription do
 
   describe '#cancel' do
     before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-      @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
+      @http = Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f')
     end
 
     subject { described_class.new(@http) }
 
     it "successfully sets a subscription to 'cancelled' and cancel_date as today" do
       VCR.use_cassette('subscriptions/cancel/success/without_params') do
-        subscription = subject.cancel(token: 'd3e7349eede8cc8b030f76319cfa6f8d')
+        subscription = subject.cancel(token: 'd5f23d94e63b76740f933f36cc2b438b')
 
         expect(subscription.status).to eql 'cancelled'
-        expect(subscription.cancel_date).to eql Date.parse('2016-12-14')
+        expect(subscription.cancel_date).to eql Date.parse('2016-12-15')
         expect(subscription.cancel_reason).to be_nil
       end
     end
@@ -415,12 +413,12 @@ describe Billimatic::Resources::Subscription do
     it 'successfully cancels subscription and sets cancel_date' do
       VCR.use_cassette('subscriptions/cancel/success/with_cancel_date') do
         subscription = subject.cancel(
-          token: 'e5631118c9be24fef01b965ff3649483',
-          cancel_date: Date.parse("15/12/2016")
+          token: 'c74cfae98d7e56821172a0d858b1b468',
+          cancel_date: Date.parse("16/12/2016")
         )
 
         expect(subscription.status).to eql 'cancelled'
-        expect(subscription.cancel_date).to eql Date.parse('2016-12-15')
+        expect(subscription.cancel_date).to eql Date.parse('2016-12-16')
         expect(subscription.cancel_reason).to be_nil
       end
     end
@@ -428,12 +426,12 @@ describe Billimatic::Resources::Subscription do
     it 'successfully cancels subscription and sets cancel_reason' do
       VCR.use_cassette('subscriptions/cancel/success/with_cancel_reason') do
         subscription = subject.cancel(
-          token: '3f9a984162f24e9f1dbda58fdbc2fd8f',
+          token: 'ef7948eff1adb29a693cca46a1238a64',
           cancel_reason: "Cancelamento via API de e-commerce"
         )
 
         expect(subscription.status).to eql 'cancelled'
-        expect(subscription.cancel_date).to eql Date.parse('2016-12-14')
+        expect(subscription.cancel_date).to eql Date.parse('2016-12-15')
         expect(subscription.cancel_reason).to eql "Cancelamento via API de e-commerce"
       end
     end
@@ -441,13 +439,13 @@ describe Billimatic::Resources::Subscription do
     it 'successfully cancels subscription and sets both cancellation params' do
       VCR.use_cassette('subscriptions/cancel/success/with_cancellation_params') do
         subscription = subject.cancel(
-          token: '96f1bb875ebc1b972bcbd3c60f45efe9',
-          cancel_date: Date.parse("15/12/2016"),
+          token: 'a0cc470b0268e08ec00df3c71589fd31',
+          cancel_date: Date.parse("16/12/2016"),
           cancel_reason: "Cancelamento via API de e-commerce"
         )
 
         expect(subscription.status).to eql 'cancelled'
-        expect(subscription.cancel_date).to eql Date.parse('2016-12-15')
+        expect(subscription.cancel_date).to eql Date.parse('2016-12-16')
         expect(subscription.cancel_reason).to eql "Cancelamento via API de e-commerce"
       end
     end
