@@ -35,8 +35,11 @@ module Billimatic
         end
       end
 
-      def cancel(token:)
-        http.patch("#{resource_base_path}/#{token}/cancel") do |response|
+      def cancel(token:, cancel_date: nil, cancel_reason: nil)
+        http.patch(
+          "#{resource_base_path}/#{token}/cancel",
+          body: { subscription: { cancel_date: cancel_date, cancel_reason: cancel_reason } }
+        ) do |response|
           respond_with_entity response
         end
       end

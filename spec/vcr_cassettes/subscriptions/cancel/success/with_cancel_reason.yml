@@ -1,0 +1,200 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/subscriptions/3f9a984162f24e9f1dbda58fdbc2fd8f/cancel
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"cancel_date":null,"cancel_reason":"Cancelamento via
+        API de e-commerce"}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.10.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Dec 2016 13:04:27 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"37116635ef2cf6d3a72b08335c31a919"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c1b200b0-ae59-4207-acd0-d8b1a130dc73
+      X-Runtime:
+      - '0.276998'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjkxNiwibmFtZSI6IkFzc2luYXR1cmEg
+        Q29uc3VtaWRvciA4IC0gUGxhbm8gU21hcnQgQW51YWwiLCJ0aXRsZSI6IkFz
+        c2luYXR1cmEgQ29uc3VtaWRvciA4IC0gUGxhbm8gU21hcnQgQW51YWwiLCJ0
+        b2tlbiI6IjNmOWE5ODQxNjJmMjRlOWYxZGJkYTU4ZmRiYzJmZDhmIiwiZGVz
+        Y3JpcHRpb24iOm51bGwsImN1c3RvbWVyX2lkIjoxMzgsInN1cHBsaWVyX2lk
+        Ijo0LCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0aXZl
+        IiwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjA5LzExLzIwMTYiLCJl
+        bmRfZGF0ZSI6IjA2LzExLzIwMTciLCJjcmVhdGVkX2F0IjoiMDkvMTEvMjAx
+        NiAxNDozNTowOSAtMDI6MDAiLCJraW5kIjoic2FsZSIsInJlZ2lzdHJhdGlv
+        bl9tZXRob2QiOiJzdWJzY3JpcHRpb24iLCJvdmVyZHVlIjpmYWxzZSwidmFs
+        aWRfdW50aWwiOiIwNi8xMS8yMDE3Iiwic3RhdHVzIjoiY2FuY2VsbGVkIiwi
+        Y2FuY2VsX2RhdGUiOiIxNC8xMi8yMDE2IiwiY2FuY2VsX3JlYXNvbiI6IkNh
+        bmNlbGFtZW50byB2aWEgQVBJIGRlIGUtY29tbWVyY2UiLCJwbGFuIjp7Imlk
+        IjoxNSwibmFtZSI6IlBsYW5vIFNtYXJ0IEFudWFsIiwiZGVzY3JpcHRpb24i
+        OiJQbGFubyBTbWFydCBjb20gcGVyaW9kaWNpZGFkZSBhbnVhbCIsInJlZGly
+        ZWN0X3VybCI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS5iciIsInByaWNlIjoi
+        MTguMCIsImJpbGxpbmdfcGVyaW9kIjoxMiwidHJhbnNsYXRlZF9iaWxsaW5n
+        X3BlcmlvZCI6IkFudWFsbWVudGUiLCJjaGFyZ2luZ19tZXRob2QiOiJwb3N0
+        X3BhaWQiLCJ0cmFuc2xhdGVkX2NoYXJnaW5nX21ldGhvZCI6IlDDs3MtcGFn
+        byIsImhhc190cmlhbCI6dHJ1ZSwidHJpYWxfcGVyaW9kIjo3MCwiZmVhdHVy
+        ZXMiOltdLCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOjQ3LCJlbWl0ZXNf
+        c2VydmljZV92YWx1ZV9uYW1lIjoiQWx1Z3VlbCBkZSBzb2Z0d2FyZSIsImNv
+        YnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdfaWQiOjExMCwiY29icmF0b19i
+        aWxsZXRfY2hhcmdlX2NvbmZpZ19uYW1lIjoiT3V0cmEgY29udGEgZGUgY29i
+        cmFuw6dhIiwiY29icmF0b19iaWxsZXRfY2hhcmdlX3RlbXBsYXRlX2lkIjpu
+        dWxsLCJjb2JyYXRvX2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfbmFtZSI6bnVs
+        bCwiY29icmF0b19wYXltZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19pZCI6
+        MTM3LCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX25h
+        bWUiOiJUZXN0ZSBDYXJ0w6NvIiwiZmluYW5jZV9jYXRlZ29yeSI6Ik91dHJv
+        cyIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOiJDUjEiLCJjcmVhdGVkX2F0
+        IjoiMTYvMDMvMjAxNiAxMjoxNDoxMyAtMDM6MDAiLCJwcm9kdWN0cyI6W3si
+        aWQiOjM4NTUsIm5hbWUiOiJGb3JuZWNpbWVudG8gZGUgcGXDp2FzIGRlIHJl
+        cG9zacOnw6NvIiwidW5pdF92YWx1ZSI6IjE4LjAiLCJ1bml0cyI6IjEuMCIs
+        InZhbHVlIjoiMTguMCJ9XX0sInBheW1lbnRfaW5mb3JtYXRpb24iOnsiaWQi
+        OjE1NSwicGF5bWVudF9tZXRob2QiOiJwYXltZW50X2dhdGV3YXkiLCJjb2Jy
+        YXRvX2NhcmRfaWQiOjM5NzEsImNhcmRfZXhwaXJhdGlvbl9tb250aCI6MTIs
+        ImNhcmRfZXhwaXJhdGlvbl95ZWFyIjoyMDIxLCJjcmVhdGVkX2F0IjoiMDkv
+        MTEvMjAxNiAxNDozNzo1NiAtMDI6MDAifX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/3f9a984162f24e9f1dbda58fdbc2fd8f/cancel
+  recorded_at: Wed, 14 Dec 2016 13:04:27 GMT
+- request:
+    method: patch
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/ef7948eff1adb29a693cca46a1238a64/cancel
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"cancel_date":null,"cancel_reason":"Cancelamento via
+        API de e-commerce"}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.10.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 15 Dec 2016 11:12:16 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"956cb693fc3ef42093a3eb72ba9534ee"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4c674d86-5129-44a2-a752-eff92a5da8e9
+      X-Runtime:
+      - '1.824122'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg1OTIsIm5hbWUiOiJBc3NpbmF0dXJh
+        IENvbXBhbmhpYSBkZSBUZXN0ZXMgLSBURVNURSBCSUxMSU1BVElDIE15Zmlu
+        YW5jZSBHb2xkIiwidGl0bGUiOiJBc3NpbmF0dXJhIENvbXBhbmhpYSBkZSBU
+        ZXN0ZXMgLSBURVNURSBCSUxMSU1BVElDIE15ZmluYW5jZSBHb2xkIiwidG9r
+        ZW4iOiJlZjc5NDhlZmYxYWRiMjlhNjkzY2NhNDZhMTIzOGE2NCIsImRlc2Ny
+        aXB0aW9uIjpudWxsLCJjdXN0b21lcl9pZCI6NjEzLCJzdXBwbGllcl9pZCI6
+        NDg2LCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0aXZl
+        IiwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjE1LzEyLzIwMTYiLCJl
+        bmRfZGF0ZSI6IjEyLzAxLzIwMTciLCJjcmVhdGVkX2F0IjoiMTUvMTIvMjAx
+        NiAwOTowMTozOCAtMDI6MDAiLCJraW5kIjoic2FsZSIsInJlZ2lzdHJhdGlv
+        bl9tZXRob2QiOiJzdWJzY3JpcHRpb24iLCJvdmVyZHVlIjpmYWxzZSwidmFs
+        aWRfdW50aWwiOiIxMi8wMS8yMDE3Iiwic3RhdHVzIjoiY2FuY2VsbGVkIiwi
+        Y2FuY2VsX2RhdGUiOiIxNS8xMi8yMDE2IiwiY2FuY2VsX3JlYXNvbiI6IkNh
+        bmNlbGFtZW50byB2aWEgQVBJIGRlIGUtY29tbWVyY2UiLCJwbGFuIjp7Imlk
+        IjoxMCwibmFtZSI6IlRFU1RFIEJJTExJTUFUSUMgTXlmaW5hbmNlIEdvbGQi
+        LCJkZXNjcmlwdGlvbiI6IkdyYW5kZXMgZW1wcmVzYXMgcXVlIHByb2N1cmFt
+        IGNvbnRyb2xlIGZpbmFuY2Vpcm8gY29tcGxldG8uIiwicmVkaXJlY3RfdXJs
+        IjoiaHR0cHM6Ly9iaWxsaW1hdGljLWRlbW8tc2Fhcy1wcm9kdWN0Lmhlcm9r
+        dWFwcC5jb20vIiwicHJpY2UiOiIxNTAuMCIsImJpbGxpbmdfcGVyaW9kIjox
+        LCJ0cmFuc2xhdGVkX2JpbGxpbmdfcGVyaW9kIjoiTWVuc2FsbWVudGUiLCJj
+        aGFyZ2luZ19tZXRob2QiOiJwcmVfcGFpZCIsInRyYW5zbGF0ZWRfY2hhcmdp
+        bmdfbWV0aG9kIjoiUHLDqS1wYWdvIiwiaGFzX3RyaWFsIjp0cnVlLCJ0cmlh
+        bF9wZXJpb2QiOjE1LCJmZWF0dXJlcyI6W3siaWQiOjcsImRlc2NyaXB0aW9u
+        IjoiMiBFbXByZXNhcyIsInZhbHVlIjoiMiIsInRhZyI6InF1YW50aWRhZGVf
+        ZGVfZW1wcmVzYXMifSx7ImlkIjo4LCJkZXNjcmlwdGlvbiI6IjEyIFVzdcOh
+        cmlvcyIsInZhbHVlIjoiMTIiLCJ0YWciOiJxdWFudGlkYWRlX2RlX3VzdWFy
+        aW9zIn0seyJpZCI6OSwiZGVzY3JpcHRpb24iOiI4IEdCIGRlIGFybWF6ZW5h
+        bWVudG8iLCJ2YWx1ZSI6IjgiLCJ0YWciOiJhcm1hemVuYW1lbnRvIn0seyJp
+        ZCI6MTAsImRlc2NyaXB0aW9uIjoiQ29udHJvbGUgZGUgVXN1w6FyaW9zIiwi
+        dmFsdWUiOiIxIiwidGFnIjoiY29udHJvbGVfZGVfdXN1YXJpb3MifV0sImVt
+        aXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6NDQsImVtaXRlc19zZXJ2aWNlX3Zh
+        bHVlX25hbWUiOiJMaWNlbmNpYW1lbnRvIGRlIHVzbyBkZSBwcm9ncmFtYXMg
+        ZGUgY29tcHV0YWRvciIsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdf
+        aWQiOjEyOCwiY29icmF0b19iaWxsZXRfY2hhcmdlX2NvbmZpZ19uYW1lIjoi
+        Q29icmFuw6dhIG7Do28gcmVnaXN0cmFkYSIsImNvYnJhdG9fYmlsbGV0X2No
+        YXJnZV90ZW1wbGF0ZV9pZCI6bnVsbCwiY29icmF0b19iaWxsZXRfY2hhcmdl
+        X3RlbXBsYXRlX25hbWUiOm51bGwsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5
+        X2NoYXJnZV9jb25maWdfaWQiOjEzNywiY29icmF0b19wYXltZW50X2dhdGV3
+        YXlfY2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQ2FydMOjbyIsImZpbmFu
+        Y2VfY2F0ZWdvcnkiOiJSZWNlaXRhIC8gQWx1Z3VlbCBkZSBwcm9kdXRvIiwi
+        ZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6Ik15ZmluYW5jZSIsImNyZWF0ZWRf
+        YXQiOiIwNi8wNS8yMDE2IDEyOjI1OjAwIC0wMzowMCIsInByb2R1Y3RzIjpb
+        eyJpZCI6Nzk4NDcsIm5hbWUiOiJNeWZpbmFuY2UiLCJ1bml0X3ZhbHVlIjoi
+        MTUwLjAiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoiMTUwLjAifV19LCJwYXlt
+        ZW50X2luZm9ybWF0aW9uIjp7ImlkIjo3MTEzLCJwYXltZW50X21ldGhvZCI6
+        InBheW1lbnRfZ2F0ZXdheSIsImNvYnJhdG9fY2FyZF9pZCI6NDIxMywiY2Fy
+        ZF9leHBpcmF0aW9uX21vbnRoIjoxMiwiY2FyZF9leHBpcmF0aW9uX3llYXIi
+        OjIwMjIsImNyZWF0ZWRfYXQiOiIxNS8xMi8yMDE2IDA5OjAzOjEwIC0wMjow
+        MCJ9fX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/ef7948eff1adb29a693cca46a1238a64/cancel
+  recorded_at: Thu, 15 Dec 2016 11:12:16 GMT
+recorded_with: VCR 3.0.3
