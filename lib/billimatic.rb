@@ -31,6 +31,7 @@ require 'billimatic/entities/webhook'
 
 require 'billimatic/resources/base'
 require 'billimatic/resources/company'
+require 'billimatic/resources/person'
 require 'billimatic/resources/organization'
 require 'billimatic/resources/contract'
 require 'billimatic/resources/invoice_rule'
