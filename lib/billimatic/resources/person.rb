@@ -1,7 +1,7 @@
 module Billimatic
   module Resources
     class Person < Base
-      crud :create, :update
+      crud :create, :update, :destroy
 
       def initialize(http)
         @collection_name = 'people'

@@ -154,5 +154,34 @@ describe Billimatic::Resources::Person do
         end
       end
     end
+
+    describe '#destroy' do
+      it "raises Billimatic::RequestError if person wasn't found" do
+        VCR.use_cassette('people/destroy/failure/person_not_found') do
+          expect {
+            subject.destroy(25000)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError if person cannot be deleted' do
+        VCR.use_cassette('people/destroy/failure/person_with_attached_contracts') do
+          expect {
+            subject.destroy(103)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+            expect(error.body['errors']).not_to be_empty
+          end
+        end
+      end
+
+      it 'successfully deletes a person' do
+        VCR.use_cassette('people/destroy/success') do
+          expect(subject.destroy(187)).to be true
+        end
+      end
+    end
   end
 end
