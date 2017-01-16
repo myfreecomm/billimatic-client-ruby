@@ -122,5 +122,37 @@ describe Billimatic::Resources::Person do
         end
       end
     end
+
+    describe '#update' do
+      it 'raises Billimatic::RequestError on not found status' do
+        VCR.use_cassette('people/update/failure/person_not_found') do
+          expect {
+            subject.update(25000, email: "teste-pessoa-fisica@teste.com.br")
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when request is invalid' do
+        VCR.use_cassette('people/update/failure/invalid_params') do
+          expect {
+            subject.update(187, name: "")
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+            expect(error.body['errors']).to have_key 'name'
+          end
+        end
+      end
+
+      it 'successfully updates person' do
+        VCR.use_cassette('people/update/success') do
+          person = subject.update(187, email: "teste-pessoa-fisica@teste.com.br")
+
+          expect(person).to be_a entity_klass
+          expect(person.email).to eql "teste-pessoa-fisica@teste.com.br"
+        end
+      end
+    end
   end
 end
