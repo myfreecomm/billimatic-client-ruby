@@ -54,6 +54,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
 * [Invoices API](https://app.billimatic.com.br/docs/api#!/invoices) as `client.invoices`
 * [Invoice Rules API](https://app.billimatic.com.br/docs/api#!/invoice_rules) as `client.invoice_rules`
 * [Companies API](https://app.billimatic.com.br/docs/api#!/companies) as `client.companies`
+* [People API](https://app.billimatic.com.br/docs/api#!/people) as `client.people`
 * [Service Items API](https://app.billimatic.com.br/docs/api#!/service_items) as `client.service_items`
 
 ## Endpoints
@@ -447,6 +448,60 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
         <td>
             <code>client.companies.destroy(id)</code>
+        </td>
+    </tr>
+</table>
+
+#### [People](https://app.billimatic.com.br/docs/api#!/people)
+
+<table>
+    <tr>
+        <th>HTTP method</th>
+        <th>Endpoint</th>
+        <th>Client method</th>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_search_get_0" target="_blank">
+                /api/v1/people/search?cpf=:cpf
+            </a>
+        </td>
+        <td>
+            <code>client.people.search(cnpj)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>POST</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_create_post_1" target="_blank">
+                /api/v1/people
+            </a>
+        </td>
+        <td>
+            <code>client.people.create(attributes_hash)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>PATCH</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_update_patch_2" target="_blank">
+                /api/v1/people/:id
+            </a>
+        </td>
+        <td>
+            <code>client.people.update(id, attributes_hash)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>DELETE</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_destroy_delete_3" target="_blank">
+                /api/v1/people/:id
+            </a>
+        </td>
+        <td>
+            <code>client.people.destroy(id)</code>
         </td>
     </tr>
 </table>
