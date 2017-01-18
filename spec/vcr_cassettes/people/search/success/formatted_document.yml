@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/people/search?cpf=048.145.157-90
+    uri: https://sandbox.billimatic.com.br/api/v1/people/search?cpf=640.801.487-98
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,42 +22,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Mon, 16 Jan 2017 16:46:28 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Wed, 18 Jan 2017 10:03:25 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"6cc0dffafc034f695c098a703ac2b6d7"
+      Etag:
+      - W/"f647ef41e8e0cbe90570766730b41dd4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f404267a-c035-40d6-a917-42b7b5e0d7ec
+      - d55320dc-5d1c-4e09-ac15-22d043b88d90
       X-Runtime:
-      - '0.112237'
+      - '0.013505'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJwZW9wbGUiOlt7ImlkIjo5NywiYWNjb3VudF9pZCI6MSwibmFtZSI6IlBl
-        c3NvYSBGw61zaWNhIiwiY3BmIjoiMDQ4MTQ1MTU3OTAiLCJlbWFpbCI6InBl
-        c3NvYUBmaXNpY2EuY29tIiwiemlwY29kZSI6IjAxMDAyMDAwIiwiYWRkcmVz
-        cyI6IlJ1YSBEaXJlaXRhIiwibnVtYmVyIjoiMTIiLCJjb21wbGVtZW50Ijoi
-        IiwiZGlzdHJpY3QiOiJTw6kiLCJjaXR5IjoiU8OjbyBQYXVsbyIsInN0YXRl
-        IjoiU1AiLCJjb21tZW50cyI6bnVsbCwiY2xpZW50X3NpbmNlIjpudWxsLCJj
-        cmVhdGVkX2F0IjoiMDMvMDgvMjAxNiAxMjoyNDoyOSAtMDM6MDAifV19
+        eyJwZW9wbGUiOlt7ImlkIjozLCJhY2NvdW50X2lkIjozMiwibmFtZSI6IkZ1
+        bGFubyBkZSBUYWwiLCJjcGYiOiI2NDA4MDE0ODc5OCIsImVtYWlsIjoiZnVs
+        YW5vQGRldGFsLmNvbSIsInppcGNvZGUiOiIyMjQ2MTAyMCIsImFkZHJlc3Mi
+        OiJSdWEgRmFybyIsIm51bWJlciI6IjMzIiwiY29tcGxlbWVudCI6ImFwdG8g
+        NDIiLCJkaXN0cmljdCI6IkphcmRpbSBCb3TDom5pY28iLCJjaXR5IjoiUmlv
+        IGRlIEphbmVpcm8iLCJzdGF0ZSI6IlJKIiwiY29tbWVudHMiOiJvYnNlcnZh
+        bmRvIGZ1bGFubyBkZSB0YWwiLCJjbGllbnRfc2luY2UiOm51bGwsImNyZWF0
+        ZWRfYXQiOiIwOC8wNC8yMDE2IDE2OjI1OjE4IC0wMzowMCJ9XX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/people/search?cpf=048.145.157-90
-  recorded_at: Mon, 16 Jan 2017 16:46:28 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people/search?cpf=640.801.487-98
+  recorded_at: Wed, 18 Jan 2017 10:03:25 GMT
 recorded_with: VCR 3.0.3

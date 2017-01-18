@@ -2,39 +2,55 @@ require 'spec_helper'
 
 describe Billimatic::Resources::Person do
   let(:entity_klass) { Billimatic::Entities::Person }
+  let(:http) { Billimatic::Http.new('bfe97f701f615edf41587cbd59d6a0e8') }
 
-  before do
-    Billimatic.configuration.host = "http://localhost:3000"
-    @http = Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d')
-  end
-
-  subject { described_class.new(@http) }
+  subject { described_class.new(http) }
 
   it 'has a instance of Billimatic::Http' do
-    expect(subject.http).to eq(@http)
+    expect(subject.http).to eq(http)
   end
 
   describe '#search' do
+    it 'raises Billimatic::RequestError when :cpf argument is nil' do
+      VCR.use_cassette('/people/search/failure/null_argument') do
+        expect {
+          subject.search(cpf: nil)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 400
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when :cpf argument is an empty string' do
+      VCR.use_cassette('/people/search/failure/empty_string_argument') do
+        expect {
+          subject.search(cpf: "")
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 400
+        end
+      end
+    end
+
     it 'returns a list of people with matching unformatted document' do
       VCR.use_cassette('/people/search/success/unformatted_document') do
-        result = subject.search(cpf: "04814515790")
+        result = subject.search(cpf: "64080148798")
 
         expect(result).not_to be_empty
         result.each do |person|
           expect(person).to be_a entity_klass
-          expect(person.cpf).to eql "04814515790"
+          expect(person.cpf).to eql "64080148798"
         end
       end
     end
 
     it 'returns a list of people with matching formatted document' do
       VCR.use_cassette('/people/search/success/formatted_document') do
-        result = subject.search(cpf: "048.145.157-90")
+        result = subject.search(cpf: "640.801.487-98")
 
         expect(result).not_to be_empty
         result.each do |person|
           expect(person).to be_a entity_klass
-          expect(person.cpf).to eql "04814515790"
+          expect(person.cpf).to eql "64080148798"
         end
       end
     end
@@ -66,7 +82,7 @@ describe Billimatic::Resources::Person do
           expect {
             subject.create(
               name: "Pessoa Física 2",
-              cpf: "048.145.157-90",
+              cpf: "717.810.625-52",
               email: "foo@bar.com"
             )
           }.to raise_error(Billimatic::RequestError) do |error|
@@ -137,7 +153,7 @@ describe Billimatic::Resources::Person do
       it 'raises Billimatic::RequestError when request is invalid' do
         VCR.use_cassette('people/update/failure/invalid_params') do
           expect {
-            subject.update(187, name: "")
+            subject.update(1592, name: "")
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 422
             expect(error.body['errors']).to have_key 'name'
@@ -147,7 +163,7 @@ describe Billimatic::Resources::Person do
 
       it 'successfully updates person' do
         VCR.use_cassette('people/update/success') do
-          person = subject.update(187, email: "teste-pessoa-fisica@teste.com.br")
+          person = subject.update(1592, email: "teste-pessoa-fisica@teste.com.br")
 
           expect(person).to be_a entity_klass
           expect(person.email).to eql "teste-pessoa-fisica@teste.com.br"
@@ -169,7 +185,7 @@ describe Billimatic::Resources::Person do
       it 'raises Billimatic::RequestError if person cannot be deleted' do
         VCR.use_cassette('people/destroy/failure/person_with_attached_contracts') do
           expect {
-            subject.destroy(103)
+            subject.destroy(1194)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 422
             expect(error.body['errors']).not_to be_empty
@@ -179,7 +195,7 @@ describe Billimatic::Resources::Person do
 
       it 'successfully deletes a person' do
         VCR.use_cassette('people/destroy/success') do
-          expect(subject.destroy(187)).to be true
+          expect(subject.destroy(1592)).to be true
         end
       end
     end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/people
+    uri: https://sandbox.billimatic.com.br/api/v1/people
     body:
       encoding: UTF-8
       string: '{"name":"Person"}'
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Date:
-      - Mon, 16 Jan 2017 17:08:38 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Wed, 18 Jan 2017 10:11:02 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,13 +39,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 95d13798-3c64-4ccb-ac19-b6133ac7d043
+      - eaba3a0d-0b92-4ba4-8e18-ed59c77753f7
       X-Runtime:
-      - '0.303130'
+      - '0.064703'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -51,6 +53,6 @@ http_interactions:
         XX19
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/people
-  recorded_at: Mon, 16 Jan 2017 17:08:38 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people
+  recorded_at: Wed, 18 Jan 2017 10:11:03 GMT
 recorded_with: VCR 3.0.3

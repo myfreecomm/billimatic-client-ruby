@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/people/search?cpf=553.973.204-98
+    uri: https://sandbox.billimatic.com.br/api/v1/people/search?cpf=553.973.204-98
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,35 +22,37 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Mon, 16 Jan 2017 16:48:21 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Wed, 18 Jan 2017 10:04:10 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
+      Etag:
       - W/"7b4c5f22ab6d517300e916a8484c136d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2a413999-b779-458e-a1da-bff6ccce5289
+      - 358960be-ca27-4482-a759-1a1928cbf6ea
       X-Runtime:
-      - '0.175437'
+      - '0.012079'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"people":[]}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/people/search?cpf=553.973.204-98
-  recorded_at: Mon, 16 Jan 2017 16:48:21 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people/search?cpf=553.973.204-98
+  recorded_at: Wed, 18 Jan 2017 10:04:10 GMT
 recorded_with: VCR 3.0.3

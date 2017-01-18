@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: http://localhost:3000/api/v1/people/187
+    uri: https://sandbox.billimatic.com.br/api/v1/people/1592
     body:
       encoding: UTF-8
       string: '{"email":"teste-pessoa-fisica@teste.com.br"}'
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,37 +22,39 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Mon, 16 Jan 2017 17:41:42 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Wed, 18 Jan 2017 10:18:21 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"58ecdac9a1f7bc6fb82bc4e29fdf757d"
+      Etag:
+      - W/"1c5faef3a2cbbb64de4c55eb68b71723"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 38ce5e3e-4d33-4c96-8dd1-6dcf667dc91c
+      - 8cf1898c-18ac-4d80-835f-b493110c0e98
       X-Runtime:
-      - '1.075303'
+      - '0.199458'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"person":{"id":187,"account_id":1,"name":"Nova Pessoa Teste Client
-        Billimatic","cpf":"24198947317","email":"teste-pessoa-fisica@teste.com.br","zipcode":null,"address":null,"number":null,"complement":null,"district":null,"city":null,"state":null,"comments":null,"client_since":"16/01/2017","created_at":"16/01/2017
-        15:29:56 -02:00"}}'
+      string: '{"person":{"id":1592,"account_id":32,"name":"Nova Pessoa Teste Client
+        Billimatic","cpf":"24198947317","email":"teste-pessoa-fisica@teste.com.br","zipcode":null,"address":null,"number":null,"complement":null,"district":null,"city":null,"state":null,"comments":null,"client_since":"16/01/2017","created_at":"18/01/2017
+        08:14:45 -02:00"}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/people/187
-  recorded_at: Mon, 16 Jan 2017 17:41:42 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people/1592
+  recorded_at: Wed, 18 Jan 2017 10:18:21 GMT
 recorded_with: VCR 3.0.3

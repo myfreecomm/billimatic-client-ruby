@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: http://localhost:3000/api/v1/people/25000
+    uri: https://sandbox.billimatic.com.br/api/v1/people/25000
     body:
       encoding: UTF-8
       string: '{"email":"teste-pessoa-fisica@teste.com.br"}'
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
-      Date:
-      - Mon, 16 Jan 2017 17:36:15 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Wed, 18 Jan 2017 10:16:07 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,18 +39,18 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - d466e484-6866-4d2a-af84-6847c8a4bff2
+      - 62ed48b4-a43a-4422-9a61-721517dbf3c3
       X-Runtime:
-      - '1.033827'
+      - '0.189796'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: ''
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/people/25000
-  recorded_at: Mon, 16 Jan 2017 17:36:15 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people/25000
+  recorded_at: Wed, 18 Jan 2017 10:16:07 GMT
 recorded_with: VCR 3.0.3
