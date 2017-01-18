@@ -15,6 +15,10 @@ module Billimatic
       false
     end
 
+    def organizations
+      Resources::Organization.new(http)
+    end
+
     def plans
       Resources::Plan.new(http)
     end
@@ -39,8 +43,8 @@ module Billimatic
       Resources::Company.new(http)
     end
 
-    def organizations
-      Resources::Organization.new(http)
+    def people
+      Resources::Person.new(http)
     end
 
     def service_items

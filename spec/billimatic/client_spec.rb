@@ -22,6 +22,12 @@ describe Billimatic::Client do
     end
   end
 
+  describe "#organizations" do
+    it "returns an instance of Billimatic::Resources::Organization" do
+      expect(subject.organizations).to be_a(Billimatic::Resources::Organization)
+    end
+  end
+
   describe "#plans" do
     it "returns an instance of Billimatic::Resources::Plan" do
       expect(subject.plans).to be_a(Billimatic::Resources::Plan)
@@ -58,9 +64,9 @@ describe Billimatic::Client do
     end
   end
 
-  describe "#organizations" do
-    it "returns an instance of Billimatic::Resources::Organization" do
-      expect(subject.organizations).to be_a(Billimatic::Resources::Organization)
+  describe "#people" do
+    it "returns an instance of Billimatic::Resources::Person" do
+      expect(subject.people).to be_a(Billimatic::Resources::Person)
     end
   end
 
@@ -75,5 +81,4 @@ describe Billimatic::Client do
       expect(subject.webhooks).to be_a(Billimatic::Resources::Webhook)
     end
   end
-
 end

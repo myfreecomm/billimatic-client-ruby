@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://sandbox.billimatic.com.br/api/v1/people/1194
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.10.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Wed, 18 Jan 2017 10:20:49 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 25ddf973-9c32-4720-9f88-f289f96c6788
+      X-Runtime:
+      - '0.056468'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiYmFzZSI6WyJOw6NvIGZvaSBwb3Nzw612ZWwgYXBhZ2Fy
+        IGVzdGEgcGVzc29hLCBwb2lzIGjDoSBjb250cmF0b3MgYXNzb2NpYWRvcyDD
+        oCBtZXNtYS4iXX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people/1194
+  recorded_at: Wed, 18 Jan 2017 10:20:49 GMT
+recorded_with: VCR 3.0.3

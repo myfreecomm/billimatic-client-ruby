@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/people/1592
+    body:
+      encoding: UTF-8
+      string: '{"email":"teste-pessoa-fisica@teste.com.br"}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.10.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Wed, 18 Jan 2017 10:18:21 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1c5faef3a2cbbb64de4c55eb68b71723"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8cf1898c-18ac-4d80-835f-b493110c0e98
+      X-Runtime:
+      - '0.199458'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"person":{"id":1592,"account_id":32,"name":"Nova Pessoa Teste Client
+        Billimatic","cpf":"24198947317","email":"teste-pessoa-fisica@teste.com.br","zipcode":null,"address":null,"number":null,"complement":null,"district":null,"city":null,"state":null,"comments":null,"client_since":"16/01/2017","created_at":"18/01/2017
+        08:14:45 -02:00"}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people/1592
+  recorded_at: Wed, 18 Jan 2017 10:18:21 GMT
+recorded_with: VCR 3.0.3

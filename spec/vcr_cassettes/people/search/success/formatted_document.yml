@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/people/search?cpf=640.801.487-98
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.10.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Wed, 18 Jan 2017 10:03:25 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f647ef41e8e0cbe90570766730b41dd4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d55320dc-5d1c-4e09-ac15-22d043b88d90
+      X-Runtime:
+      - '0.013505'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwZW9wbGUiOlt7ImlkIjozLCJhY2NvdW50X2lkIjozMiwibmFtZSI6IkZ1
+        bGFubyBkZSBUYWwiLCJjcGYiOiI2NDA4MDE0ODc5OCIsImVtYWlsIjoiZnVs
+        YW5vQGRldGFsLmNvbSIsInppcGNvZGUiOiIyMjQ2MTAyMCIsImFkZHJlc3Mi
+        OiJSdWEgRmFybyIsIm51bWJlciI6IjMzIiwiY29tcGxlbWVudCI6ImFwdG8g
+        NDIiLCJkaXN0cmljdCI6IkphcmRpbSBCb3TDom5pY28iLCJjaXR5IjoiUmlv
+        IGRlIEphbmVpcm8iLCJzdGF0ZSI6IlJKIiwiY29tbWVudHMiOiJvYnNlcnZh
+        bmRvIGZ1bGFubyBkZSB0YWwiLCJjbGllbnRfc2luY2UiOm51bGwsImNyZWF0
+        ZWRfYXQiOiIwOC8wNC8yMDE2IDE2OjI1OjE4IC0wMzowMCJ9XX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people/search?cpf=640.801.487-98
+  recorded_at: Wed, 18 Jan 2017 10:03:25 GMT
+recorded_with: VCR 3.0.3
