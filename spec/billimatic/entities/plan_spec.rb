@@ -22,6 +22,10 @@ describe Billimatic::Entities::Plan do
           id: 2, description: '50 GB de armazenamento', value: 'Bar', tag: 'Tag'
         )
       ],
+      readjustment_will_be_created: true,
+      readjustment_month_quantity: 12,
+      price_index: 'ipca',
+      readjustment_days_until_update: 5,
       emites_service_values_id: 47,
       emites_service_value_name: "Aluguel de software",
       cobrato_billet_charge_config_id: 128,
@@ -49,7 +53,9 @@ describe Billimatic::Entities::Plan do
                     :id, :name, :description, :price, :billing_period,
                     :translated_billing_period, :charging_method,
                     :translated_charging_method, :has_trial, :trial_period,
-                    :redirect_url, :features, :emites_service_values_id,
+                    :redirect_url, :features, :readjustment_will_be_created,
+                    :readjustment_month_quantity, :price_index,
+                    :readjustment_days_until_update, :emites_service_values_id,
                     :emites_service_value_name, :cobrato_billet_charge_config_id,
                     :cobrato_billet_charge_config_name,
                     :cobrato_billet_charge_template_id,
