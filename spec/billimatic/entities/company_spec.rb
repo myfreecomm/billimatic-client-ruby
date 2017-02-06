@@ -8,6 +8,7 @@ describe Billimatic::Entities::Company do
       name: "Acme Inc",
       company_name: "Acme Incorporated",
       cnpj: "81.644.331/0001-66",
+      state_inscription: "935.864.055.700",
       address: "Rua Tal",
       number: "1337",
       zipcode: "22290-080",
@@ -26,8 +27,8 @@ describe Billimatic::Entities::Company do
   subject { described_class.new(attributes) }
 
   it_behaves_like "entity_attributes", [
-                    :id, :account_id, :name, :company_name, :cnpj, :address,
-                    :number, :zipcode, :district, :complement, :city, :state,
+                    :id, :account_id, :name, :company_name, :cnpj, :state_inscription,
+                    :address, :number, :zipcode, :district, :complement, :city, :state,
                     :ibge_code, :contacts, :billing_contacts, :comments, :kind,
                     :client_since, :created_at
                   ]
