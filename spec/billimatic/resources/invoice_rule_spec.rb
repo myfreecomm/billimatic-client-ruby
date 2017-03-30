@@ -148,17 +148,23 @@ describe Billimatic::Resources::InvoiceRule do
     context 'dealing with services' do
       it 'creates services for invoice_rule and calculates its gross value automatically' do
         invoice_rule_params[:services] = [
-          { service_item_id: 1, units: 2, unit_value: 150.0, value: 300.0 }
+          {
+            service_item_id: 57,
+            description: 'Descrição teste',
+            units: 2,
+            unit_value: 150.0,
+            value: 300.0
+          }
         ]
 
         VCR.use_cassette('invoice_rules/create/success/with_services') do
           invoice_rule = subject.create(invoice_rule_params, contract_id: 6666)
-
           expect(invoice_rule).to be_a entity_klass
           expect(invoice_rule.id).not_to be_nil
           expect(invoice_rule.services).not_to be_empty
           expect(invoice_rule.services.first).to be_a Billimatic::Entities::Service
           expect(invoice_rule.services.first.value).to eql 300.0
+          expect(invoice_rule.services.first.description).to eql 'Descrição teste'
           expect(invoice_rule.gross_value).to eql 300.0
         end
       end
@@ -378,24 +384,26 @@ describe Billimatic::Resources::InvoiceRule do
     it 'updates rule with services and calculates its gross_value automatically' do
       VCR.use_cassette('invoice_rules/update/success/new_services') do
         invoice_rule = subject.update(
-          127224,
+          167722,
           {
             services: [
               {
-                service_item_id: 1,
+                service_item_id: 57,
+                description: 'Descrição atualizada',
                 units: 2,
                 unit_value: 100.0,
                 value: 200.0
               }
             ]
           },
-          contract_id: 6666
+          contract_id: 8126
         )
 
         expect(invoice_rule).to be_a entity_klass
         expect(invoice_rule.id).not_to be_nil
         expect(invoice_rule.services).not_to be_empty
         expect(invoice_rule.services.first.value).to eql 200.0
+        expect(invoice_rule.services.first.description).to eql 'Descrição atualizada'
         expect(invoice_rule.gross_value).to eql 200.0
       end
     end
@@ -403,26 +411,28 @@ describe Billimatic::Resources::InvoiceRule do
     it "updates rule's existing services and calculates its gross_value automatically" do
       VCR.use_cassette('invoice_rules/update/success/existing_services') do
         invoice_rule = subject.update(
-          127230,
+          167722,
           {
             services: [
               {
-                id: 183069,
-                service_item_id: 1,
+                id: 226324,
+                service_item_id: 57,
+                description: 'Descrição atualizada',
                 units: 1,
                 unit_value: 200.0,
                 value: 200.0
               }
             ]
           },
-          contract_id: 6666
+          contract_id: 8126
         )
 
         expect(invoice_rule).to be_a entity_klass
         expect(invoice_rule.id).not_to be_nil
         expect(invoice_rule.services).not_to be_empty
         expect(invoice_rule.services.first.value).to eql 200.0
-        expect(invoice_rule.gross_value).to eql 200.0
+        expect(invoice_rule.services.first.description).to eql 'Descrição atualizada'
+        expect(invoice_rule.gross_value).to eql 400.0
       end
     end
   end

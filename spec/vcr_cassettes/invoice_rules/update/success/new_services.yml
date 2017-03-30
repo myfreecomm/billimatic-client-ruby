@@ -2,13 +2,14 @@
 http_interactions:
 - request:
     method: put
-    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127224
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/8126/invoice_rules/167722
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"services":[{"service_item_id":1,"units":2,"unit_value":100.0,"value":200.0}]}}'
+      string: '{"invoice_rule":{"services":[{"service_item_id":57,"description":"Descrição
+        atualizada","units":2,"unit_value":100.0,"value":200.0}]}}'
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.4.0
+      - Billimatic Ruby Client v0.11.1
       Accept:
       - application/json
       Content-Type:
@@ -22,43 +23,70 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Encoding:
-      - gzip
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Fri, 02 Sep 2016 15:42:07 GMT
-      ETag:
-      - W/"74a218f8cf2d941c9ddf46d8dfff7528"
       Server:
-      - nginx/1.10.1
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains;
-      Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 30 Mar 2017 18:54:48 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-Request-Id:
-      - 523d56df-530c-4a29-9347-0fc3680367ee
-      X-Runtime:
-      - '0.398805'
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
-      Content-Length:
-      - '629'
-      Connection:
-      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a32d22f8f1104f70a42908e0a752d444"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 03ea40e0-e7bb-4527-814d-04e659305484
+      X-Runtime:
+      - '0.266005'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
     body:
-      encoding: UTF-8
-      string: '{"invoice_rule":{"id":127224,"contract_id":6666,"gross_value":"200.0","number":null,"issue_date":null,"state":0,"description":"Faturamento","nfe_service":null,"nfe_verification":null,"created_at":"02/09/2016
-        11:18:54 -03:00","payment_value":null,"emites_service_values_id":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"nfe_issued":false,"nfe_issue_date":null,"cobrato_charge_config_id":null,"nfe_body":"$DESCRICAO","services":[{"id":183105,"name":"Aluguel
-        do PSOffice","unit_value":"100.0","units":"2.0","value":"200.0"}],"attachments":[],"additional_information":{"id":5364,"init_date":"2016-09-02","title":"REGRA","month_quantity":6,"end_date":null,"rulable_id":127224,"created_at":"2016-09-02T11:18:54.000-03:00","updated_at":"2016-09-02T11:18:54.000-03:00","rulable_type":"Invoice","accrual_month_quantity":"same_month"},"scheduled_update":{"id":99,"invoice_rule_id":127224,"execution_date":"2016-10-02","month_quantity":1,"price_index":"igpm","created_at":"2016-09-02T12:38:04.000-03:00","updated_at":"2016-09-02T12:39:00.000-03:00","init_date":"2016-10-02","days_until_update":2,"remind_at":"2016-09-30","notified":false},"receivables_additional_information":{"id":5355,"day_number":23,"parcel_number":null,"invoice_rule_id":127224,"created_at":"2016-09-02T11:18:54.000-03:00","updated_at":"2016-09-02T11:18:54.000-03:00","day_quantity":null,"month_quantity":null}}}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjE2NzcyMiwiY29udHJhY3RfaWQiOjgx
+        MjYsImlzc3VlX2RhdGUiOm51bGwsImdyb3NzX3ZhbHVlIjoiMjAwLjAiLCJw
+        YXltZW50X3ZhbHVlIjpudWxsLCJkZXNjcmlwdGlvbiI6IkRlc2NyacOnw6Nv
+        IHRlc3RlIiwic3RhdGUiOiJ0b19lbWl0IiwibmZlX3NlcnZpY2UiOm51bGws
+        Im5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpudWxs
+        LCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNzdWVkIjpmYWxzZSwi
+        bnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMzAvMDMvMjAxNyAxNTo1NDow
+        MiAtMDM6MDAiLCJhY2NydWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxs
+        LCJjdXN0b21lcl9pZCI6NTc4LCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIs
+        ImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiZW1pdGVzX3NlcnZp
+        Y2VfdmFsdWVfbmFtZSI6bnVsbCwiZmluYW5jZV9jYXRlZ29yeSI6bnVsbCwi
+        ZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6bnVsbCwiZmluYW5jZV9yZWNlaXZl
+        X3ZpYSI6bnVsbCwiY29icmF0b19jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJj
+        b2JyYXRvX2NoYXJnZV9jb25maWdfbmFtZSI6bnVsbCwiY29icmF0b19jaGFy
+        Z2VfdGVtcGxhdGVfaWQiOm51bGwsImNvYnJhdG9fY2hhcmdlX3RlbXBsYXRl
+        X25hbWUiOm51bGwsInJlY2VpdmFibGVzIjpbXSwic2VydmljZXMiOlt7Imlk
+        IjoyMjYzMjQsIm5hbWUiOiJTZXJ2aWNlIEl0ZW0gVXBkYXRlZCIsImRlc2Ny
+        aXB0aW9uIjoiRGVzY3Jpw6fDo28gYXR1YWxpemFkYSIsInVuaXRfdmFsdWUi
+        OiIxMDAuMCIsInVuaXRzIjoiMi4wIiwidmFsdWUiOiIyMDAuMCJ9XSwiYXR0
+        YWNobWVudHMiOltdLCJhZGRpdGlvbmFsX2luZm9ybWF0aW9uIjp7ImlkIjo3
+        MDI4LCJpbml0X2RhdGUiOiIyMDE3LTAzLTMxIiwidGl0bGUiOiJSZWdyYSB0
+        ZXN0ZSIsIm1vbnRoX3F1YW50aXR5IjoxLCJlbmRfZGF0ZSI6IjIwMTctMDQt
+        MzAiLCJydWxhYmxlX2lkIjoxNjc3MjIsImNyZWF0ZWRfYXQiOiIyMDE3LTAz
+        LTMwVDE1OjU0OjAyLjE3OC0wMzowMCIsInVwZGF0ZWRfYXQiOiIyMDE3LTAz
+        LTMwVDE1OjU0OjAyLjE3OC0wMzowMCIsInJ1bGFibGVfdHlwZSI6Ikludm9p
+        Y2UiLCJhY2NydWFsX21vbnRoX3F1YW50aXR5Ijoic2FtZV9tb250aCJ9LCJz
+        Y2hlZHVsZWRfdXBkYXRlIjpudWxsLCJyZWNlaXZhYmxlc19hZGRpdGlvbmFs
+        X2luZm9ybWF0aW9uIjp7ImlkIjo3MDE1LCJkYXlfbnVtYmVyIjoxLCJwYXJj
+        ZWxfbnVtYmVyIjpudWxsLCJpbnZvaWNlX3J1bGVfaWQiOjE2NzcyMiwiY3Jl
+        YXRlZF9hdCI6IjIwMTctMDMtMzBUMTU6NTQ6MDIuMTkxLTAzOjAwIiwidXBk
+        YXRlZF9hdCI6IjIwMTctMDMtMzBUMTU6NTQ6MDIuMTkxLTAzOjAwIiwiZGF5
+        X3F1YW50aXR5IjpudWxsLCJtb250aF9xdWFudGl0eSI6bnVsbCwib25seV9i
+        dXNpbmVzc19kYXlzIjpudWxsfX19
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127224
-  recorded_at: Fri, 02 Sep 2016 15:42:07 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/8126/invoice_rules/167722
+  recorded_at: Thu, 30 Mar 2017 18:54:48 GMT
 recorded_with: VCR 3.0.3
