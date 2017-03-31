@@ -107,7 +107,7 @@ describe Billimatic::Resources::Plan do
 
     context 'a plan with products' do
       it 'successfully creates a plan' do
-        plan_params[:products] = [{ service_item_id: 1, units: 1, unit_value: 100, value: 100 }]
+        plan_params[:products] = [{ service_item_id: 1, description: 'Nova descrição', units: 1, unit_value: 100, value: 100 }]
 
         VCR.use_cassette('plans/create/success_with_products') do
           plan = subject.create(plan_params, organization_id: 564)
@@ -115,6 +115,7 @@ describe Billimatic::Resources::Plan do
           expect(plan).to be_a entity_klass
           expect(plan.id).not_to be_nil
           expect(plan.products).not_to be_empty
+          expect(plan.products.first.description).to eql('Nova descrição')
         end
       end
 
@@ -315,14 +316,15 @@ describe Billimatic::Resources::Plan do
       it 'successfully updates plan and its existing product' do
         VCR.use_cassette('plans/update/success_with_existing_product') do
           plan = subject.update(
-            143,
-            { products: [{ id: 183067, unit_value: 150.0, value: 150.0 }] },
+            4,
+            { products: [{ id: 79385, unit_value: 150.0, value: 150.0, description: 'Descrição teste' }] },
             organization_id: 564
           )
 
           expect(plan).to be_a entity_klass
           expect(plan.id).not_to be_nil
           expect(plan.products.first.value).to eql 150.0
+          expect(plan.products.first.description).to eql('Descrição teste')
           expect(plan.price).to eql 150.0
         end
       end

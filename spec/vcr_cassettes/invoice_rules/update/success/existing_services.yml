@@ -2,13 +2,14 @@
 http_interactions:
 - request:
     method: put
-    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/8126/invoice_rules/167722
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"services":[{"id":183069,"service_item_id":1,"units":1,"unit_value":200.0,"value":200.0}]}}'
+      string: '{"invoice_rule":{"services":[{"service_item_id":57,"description":"Descrição
+        teste","units":1,"unit_value":200.0,"value":200.0}]}}'
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.4.0
+      - Billimatic Ruby Client v0.11.1
       Accept:
       - application/json
       Content-Type:
@@ -22,44 +23,73 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Encoding:
-      - gzip
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Fri, 02 Sep 2016 15:44:03 GMT
-      ETag:
-      - W/"b72ed40516f968c34d1db00471d0146d"
       Server:
-      - nginx/1.10.1
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains;
-      Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 30 Mar 2017 19:00:55 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-Request-Id:
-      - 4ee5e78e-7ff9-4037-baf4-38478a26bb30
-      X-Runtime:
-      - '3.490969'
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
-      Content-Length:
-      - '548'
-      Connection:
-      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8bc3242a7623fcef98610dfaa303f6ad"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c5a84b56-438f-4158-9ab9-1840c9472b3f
+      X-Runtime:
+      - '0.296193'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
     body:
-      encoding: UTF-8
-      string: '{"invoice_rule":{"id":127230,"contract_id":6666,"gross_value":"200.0","number":null,"issue_date":null,"state":0,"description":"Faturamento","nfe_service":null,"nfe_verification":null,"created_at":"02/09/2016
-        11:26:12 -03:00","payment_value":"300.0","emites_service_values_id":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"nfe_issued":false,"nfe_issue_date":null,"cobrato_charge_config_id":null,"nfe_body":"$DESCRICAO","services":[{"id":183069,"name":"Aluguel
-        do PSOffice","unit_value":"200.0","units":"1.0","value":"200.0"}],"attachments":[],"additional_information":{"id":5365,"init_date":"2016-09-02","title":"NOVA
-        REGRA","month_quantity":1,"end_date":null,"rulable_id":127230,"created_at":"2016-09-02T11:26:12.000-03:00","updated_at":"2016-09-02T12:24:33.000-03:00","rulable_type":"Invoice","accrual_month_quantity":"same_month"},"scheduled_update":null,"receivables_additional_information":{"id":5356,"day_number":25,"parcel_number":2,"invoice_rule_id":127230,"created_at":"2016-09-02T11:26:12.000-03:00","updated_at":"2016-09-02T12:27:54.000-03:00","day_quantity":null,"month_quantity":null}}}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjE2NzcyMiwiY29udHJhY3RfaWQiOjgx
+        MjYsImlzc3VlX2RhdGUiOm51bGwsImdyb3NzX3ZhbHVlIjoiNDAwLjAiLCJw
+        YXltZW50X3ZhbHVlIjpudWxsLCJkZXNjcmlwdGlvbiI6IkRlc2NyacOnw6Nv
+        IHRlc3RlIiwic3RhdGUiOiJ0b19lbWl0IiwibmZlX3NlcnZpY2UiOm51bGws
+        Im5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpudWxs
+        LCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNzdWVkIjpmYWxzZSwi
+        bnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMzAvMDMvMjAxNyAxNTo1NDow
+        MiAtMDM6MDAiLCJhY2NydWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxs
+        LCJjdXN0b21lcl9pZCI6NTc4LCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIs
+        ImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiZW1pdGVzX3NlcnZp
+        Y2VfdmFsdWVfbmFtZSI6bnVsbCwiZmluYW5jZV9jYXRlZ29yeSI6bnVsbCwi
+        ZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6bnVsbCwiZmluYW5jZV9yZWNlaXZl
+        X3ZpYSI6bnVsbCwiY29icmF0b19jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJj
+        b2JyYXRvX2NoYXJnZV9jb25maWdfbmFtZSI6bnVsbCwiY29icmF0b19jaGFy
+        Z2VfdGVtcGxhdGVfaWQiOm51bGwsImNvYnJhdG9fY2hhcmdlX3RlbXBsYXRl
+        X25hbWUiOm51bGwsInJlY2VpdmFibGVzIjpbXSwic2VydmljZXMiOlt7Imlk
+        IjoyMjYzMjQsIm5hbWUiOiJTZXJ2aWNlIEl0ZW0gVXBkYXRlZCIsImRlc2Ny
+        aXB0aW9uIjoiRGVzY3Jpw6fDo28gYXR1YWxpemFkYSIsInVuaXRfdmFsdWUi
+        OiIxMDAuMCIsInVuaXRzIjoiMi4wIiwidmFsdWUiOiIyMDAuMCJ9LHsiaWQi
+        OjIyNjMyNywibmFtZSI6IlNlcnZpY2UgSXRlbSBVcGRhdGVkIiwiZGVzY3Jp
+        cHRpb24iOiJEZXNjcmnDp8OjbyB0ZXN0ZSIsInVuaXRfdmFsdWUiOiIyMDAu
+        MCIsInVuaXRzIjoiMS4wIiwidmFsdWUiOiIyMDAuMCJ9XSwiYXR0YWNobWVu
+        dHMiOltdLCJhZGRpdGlvbmFsX2luZm9ybWF0aW9uIjp7ImlkIjo3MDI4LCJp
+        bml0X2RhdGUiOiIyMDE3LTAzLTMxIiwidGl0bGUiOiJSZWdyYSB0ZXN0ZSIs
+        Im1vbnRoX3F1YW50aXR5IjoxLCJlbmRfZGF0ZSI6IjIwMTctMDQtMzAiLCJy
+        dWxhYmxlX2lkIjoxNjc3MjIsImNyZWF0ZWRfYXQiOiIyMDE3LTAzLTMwVDE1
+        OjU0OjAyLjE3OC0wMzowMCIsInVwZGF0ZWRfYXQiOiIyMDE3LTAzLTMwVDE1
+        OjU0OjAyLjE3OC0wMzowMCIsInJ1bGFibGVfdHlwZSI6Ikludm9pY2UiLCJh
+        Y2NydWFsX21vbnRoX3F1YW50aXR5Ijoic2FtZV9tb250aCJ9LCJzY2hlZHVs
+        ZWRfdXBkYXRlIjpudWxsLCJyZWNlaXZhYmxlc19hZGRpdGlvbmFsX2luZm9y
+        bWF0aW9uIjp7ImlkIjo3MDE1LCJkYXlfbnVtYmVyIjoxLCJwYXJjZWxfbnVt
+        YmVyIjpudWxsLCJpbnZvaWNlX3J1bGVfaWQiOjE2NzcyMiwiY3JlYXRlZF9h
+        dCI6IjIwMTctMDMtMzBUMTU6NTQ6MDIuMTkxLTAzOjAwIiwidXBkYXRlZF9h
+        dCI6IjIwMTctMDMtMzBUMTU6NTQ6MDIuMTkxLTAzOjAwIiwiZGF5X3F1YW50
+        aXR5IjpudWxsLCJtb250aF9xdWFudGl0eSI6bnVsbCwib25seV9idXNpbmVz
+        c19kYXlzIjpudWxsfX19
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
-  recorded_at: Fri, 02 Sep 2016 15:44:04 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/8126/invoice_rules/167722
+  recorded_at: Thu, 30 Mar 2017 19:00:55 GMT
 recorded_with: VCR 3.0.3

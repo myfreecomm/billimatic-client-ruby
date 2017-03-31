@@ -3,6 +3,7 @@ module Billimatic
     class EntityServiceItem < Base
       attribute :id, Integer
       attribute :name, String
+      attribute :description, String
       attribute :unit_value, Decimal
       attribute :units, Decimal
       attribute :value, Decimal

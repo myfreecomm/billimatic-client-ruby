@@ -142,7 +142,14 @@ describe Billimatic::Resources::Invoice do
 
     it 'creates an invoice with services and automatically calculates its gross value' do
       VCR.use_cassette('/invoices/create/success/creation_with_services') do
-        invoice_attributes[:services] = [ { service_item_id: 31, units: 2, unit_value: 100 } ]
+        invoice_attributes[:services] = [
+                                          {
+                                            service_item_id: 57,
+                                            description: 'Descrição teste',
+                                            units: 2,
+                                            unit_value: 100
+                                          }
+                                        ]
 
         invoice = subject.create(invoice_attributes, contract_id: 6666)
 
@@ -150,6 +157,7 @@ describe Billimatic::Resources::Invoice do
         expect(invoice.contract_id).to eql 6666
         expect(invoice.gross_value).to eql 200.0
         expect(invoice.services).not_to be_empty
+        expect(invoice.services.first.description).to eql('Descrição teste')
       end
     end
 
@@ -291,7 +299,7 @@ describe Billimatic::Resources::Invoice do
       VCR.use_cassette('/invoices/update/success/creates_service') do
         invoice = subject.update(
           144097,
-          { services: [ { service_item_id: 31, units: 2, unit_value: 100.0 } ] },
+          { services: [ { service_item_id: 31, description: 'Descrição teste', units: 2, unit_value: 100.0 } ] },
           contract_id: 6666
         )
 

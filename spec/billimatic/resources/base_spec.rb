@@ -4,7 +4,7 @@ describe Billimatic::Resources::Base do
 
   module Billimatic::Resources
     class Dummy < Base
-      crud :create, :show, :destroy
+      crud :list, :create, :show, :destroy
 
       def parseable
         response = http.get("/1mayrfq1")
@@ -39,14 +39,25 @@ describe Billimatic::Resources::Base do
   describe 'crud' do
     context 'when subclass do not especify the crud method' do
       it 'should raise error' do
-        expect{ subject.list }.to raise_error(RuntimeError, "Dummy do not implement the list method")
+        expect{
+          subject.update(123, name: 'test')
+        }.to raise_error(RuntimeError, "Dummy do not implement the update method")
       end
     end
 
-    context 'when especify the crud method' do
-      it 'should make the request' do
-        expect(subject.http).to receive(:get).with('/dummys/15')
-        subject.show(15)
+    context 'when calling specific requests methods' do
+      it 'returns an entity' do
+        response = double(:response)
+        expect(subject.http).to receive(:get).with('/dummys/1').and_yield(response)
+        expect(subject).to receive(:respond_with_entity).with(response)
+        subject.show(1)
+      end
+
+      it 'returns a collection' do
+        response = double(:response)
+        expect(subject.http).to receive(:get).with('/dummys').and_yield(response)
+        expect(subject).to receive(:respond_with_collection).with(response)
+        subject.list
       end
     end
   end
@@ -114,6 +125,16 @@ describe Billimatic::Resources::Base do
     it 'when composed class name' do
       allow(subject).to receive(:base_klass).and_return('InvoiceRule')
       expect(subject.collection_name).to eql('invoice_rules')
+    end
+  end
+
+  describe '#respond_with_openstruct' do
+    it 'returns a collection with openstruct' do
+      response = double(:response)
+      expect(response).to receive(:body).and_return({name: 'test'}.to_json)
+      expect(
+        subject.send(:respond_with_openstruct, response)
+      ).to eql(OpenStruct.new(name: 'test'))
     end
   end
 end

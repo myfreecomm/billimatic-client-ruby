@@ -28,6 +28,7 @@ describe Billimatic::Entities::InvoiceRule do
           Billimatic::Entities::Service.new(
           id: 1,
           service_item_id: 1,
+          description: 'Descrição do serviço',
           units: 2,
           unit_value: 200.0,
           value: 400.0

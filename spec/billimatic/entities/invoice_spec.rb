@@ -34,6 +34,7 @@ describe Billimatic::Entities::Invoice do
         Billimatic::Entities::Service.new(
         id: 1,
         service_item_id: 1,
+        description: 'Descrição do serviço',
         units: 2,
         unit_value: 50.0,
         value: 100.0

@@ -5,10 +5,11 @@ http_interactions:
     uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices
     body:
       encoding: UTF-8
-      string: '{"invoice":{"gross_value":100.0,"issue_date":"2016-09-19","description":"FATURAMENTO","nfe_body":"FATURAMENTO","receivables":[{"due_date":"2016-10-01"}],"services":[{"service_item_id":31,"units":2,"unit_value":100}]}}'
+      string: '{"invoice":{"gross_value":100.0,"issue_date":"2016-09-19","description":"FATURAMENTO","nfe_body":"FATURAMENTO","receivables":[{"due_date":"2016-10-01"}],"services":[{"service_item_id":57,"description":"Descrição
+        teste","units":2,"unit_value":100}]}}'
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.5.1
+      - Billimatic Ruby Client v0.11.1
       Accept:
       - application/json
       Content-Type:
@@ -24,10 +25,10 @@ http_interactions:
     headers:
       Server:
       - Cowboy
-      Date:
-      - Mon, 19 Sep 2016 20:10:01 GMT
       Connection:
-      - keep-alive
+      - close
+      Date:
+      - Thu, 30 Mar 2017 19:13:09 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -37,37 +38,50 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"da5101f97a3eb881025a39ae622941cc"
+      - W/"aa1e4af99116fc3cbbf9d97816329c75"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1cd23487-2d4b-4069-bb98-4738c554b8db
+      - 52c29f7e-6e68-4d1d-8931-551d0bb054f1
       X-Runtime:
-      - '0.063792'
+      - '0.108107'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpbnZvaWNlIjp7ImlkIjoxNDQwOTksImNvbnRyYWN0X2lkIjo2NjY2LCJn
-        cm9zc192YWx1ZSI6IjIwMC4wIiwibnVtYmVyIjpudWxsLCJpc3N1ZV9kYXRl
-        IjoiMTkvMDkvMjAxNiIsInN0YXRlIjowLCJkZXNjcmlwdGlvbiI6IkZBVFVS
-        QU1FTlRPIiwibmZlX3NlcnZpY2UiOm51bGwsIm5mZV92ZXJpZmljYXRpb24i
-        Om51bGwsImNyZWF0ZWRfYXQiOiIxOS8wOS8yMDE2IDE3OjEwOjAyIC0wMzow
-        MCIsInBheW1lbnRfdmFsdWUiOiIyMDAuMCIsImVtaXRlc19zZXJ2aWNlX3Zh
-        bHVlc19pZCI6bnVsbCwiZmluYW5jZV9jYXRlZ29yeSI6bnVsbCwiZmluYW5j
-        ZV9yZXZlbnVlX2NlbnRlciI6bnVsbCwiZmluYW5jZV9yZWNlaXZlX3ZpYSI6
-        bnVsbCwibmZlX2lzc3VlZCI6ZmFsc2UsIm5mZV9pc3N1ZV9kYXRlIjpudWxs
-        LCJjb2JyYXRvX2NoYXJnZV9jb25maWdfaWQiOm51bGwsInNlcnZpY2VzIjpb
-        eyJpZCI6MjAwNTM2LCJuYW1lIjoiU2VydmnDp28gT25saW5lIDEiLCJ1bml0
-        X3ZhbHVlIjoiMTAwLjAiLCJ1bml0cyI6IjIuMCIsInZhbHVlIjoiMjAwLjAi
-        fV0sImF0dGFjaG1lbnRzIjpbXX19
+        eyJpbnZvaWNlIjp7ImlkIjoxNjc3NDIsImNvbnRyYWN0X2lkIjo2NjY2LCJp
+        c3N1ZV9kYXRlIjoiMTkvMDkvMjAxNiIsImdyb3NzX3ZhbHVlIjoiMjAwLjAi
+        LCJwYXltZW50X3ZhbHVlIjoiMjAwLjAiLCJkZXNjcmlwdGlvbiI6IkZBVFVS
+        QU1FTlRPIiwic3RhdGUiOiJ0b19lbWl0IiwibmZlX3NlcnZpY2UiOm51bGws
+        Im5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpudWxs
+        LCJuZmVfYm9keSI6IkZBVFVSQU1FTlRPIiwibmZlX2lzc3VlZCI6ZmFsc2Us
+        Im51bWJlciI6bnVsbCwiY3JlYXRlZF9hdCI6IjMwLzAzLzIwMTcgMTY6MTM6
+        MDkgLTAzOjAwIiwiYWNjcnVhbF9kYXRlIjpudWxsLCJjb21tZW50cyI6bnVs
+        bCwiY3VzdG9tZXJfaWQiOjU3NCwiY3VzdG9tZXJfdHlwZSI6IkNvbXBhbnki
+        LCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOm51bGwsImVtaXRlc19zZXJ2
+        aWNlX3ZhbHVlX25hbWUiOm51bGwsImZpbmFuY2VfY2F0ZWdvcnkiOm51bGws
+        ImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOm51bGwsImZpbmFuY2VfcmVjZWl2
+        ZV92aWEiOm51bGwsImNvYnJhdG9fY2hhcmdlX2NvbmZpZ19pZCI6bnVsbCwi
+        Y29icmF0b19jaGFyZ2VfY29uZmlnX25hbWUiOm51bGwsImNvYnJhdG9fY2hh
+        cmdlX3RlbXBsYXRlX2lkIjpudWxsLCJjb2JyYXRvX2NoYXJnZV90ZW1wbGF0
+        ZV9uYW1lIjpudWxsLCJyZWNlaXZhYmxlcyI6W3siaWQiOjE2Mzc2OSwiaW52
+        b2ljZV9pZCI6MTY3NzQyLCJkdWVfZGF0ZSI6IjAxLzEwLzIwMTYiLCJ2YWx1
+        ZSI6IjEwMC4wIiwiZ3Jvc3NfdmFsdWUiOiIyMDAuMCIsInBheW1lbnRfdmFs
+        dWUiOiIyMDAuMCIsInJlY2VpdmVkX3ZhbHVlIjpudWxsLCJyZWNlaXZlZF9h
+        dCI6bnVsbCwiY3JlYXRlZF9hdCI6IjMwLzAzLzIwMTcgMTY6MTM6MDkgLTAz
+        OjAwIiwic3RhdGUiOiJ0b19lbWl0IiwicGF5bWVudF9nYXRld2F5X3N0YXR1
+        cyI6bnVsbCwiY29icmF0b19jaGFyZ2VfaWQiOm51bGwsImNvYnJhdG9fZXJy
+        b3JzIjpudWxsLCJmaW5hbmNlX3JlY2VpdmFibGVfaWQiOm51bGwsImZpbmFu
+        Y2VfZW50aXR5X2lkIjpudWxsLCJmaW5hbmNlX2Vycm9ycyI6bnVsbH1dLCJz
+        ZXJ2aWNlcyI6W3siaWQiOjIyNjM0NiwibmFtZSI6IlNlcnZpY2UgSXRlbSBV
+        cGRhdGVkIiwiZGVzY3JpcHRpb24iOiJEZXNjcmnDp8OjbyB0ZXN0ZSIsInVu
+        aXRfdmFsdWUiOiIxMDAuMCIsInVuaXRzIjoiMi4wIiwidmFsdWUiOiIyMDAu
+        MCJ9XSwiYXR0YWNobWVudHMiOltdfX0=
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices
-  recorded_at: Mon, 19 Sep 2016 20:10:02 GMT
+  recorded_at: Thu, 30 Mar 2017 19:13:09 GMT
 recorded_with: VCR 3.0.3

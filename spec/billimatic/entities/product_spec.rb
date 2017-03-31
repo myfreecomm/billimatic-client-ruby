@@ -5,6 +5,7 @@ describe Billimatic::Entities::Product do
     {
       id: 1,
       name: 'Serviço',
+      description: 'Descrição do produto',
       unit_value: 150.0,
       units: 2.0,
       value: 300.0
@@ -16,6 +17,6 @@ describe Billimatic::Entities::Product do
   it { is_expected.to be_a Billimatic::Entities::EntityServiceItem }
 
   context 'as a subclass of EntityServiceItem' do
-    it_behaves_like 'entity_attributes', [:id, :name, :unit_value, :units, :value, :_destroy]
+    it_behaves_like 'entity_attributes', [:id, :name, :description, :unit_value, :units, :value, :_destroy]
   end
 end
