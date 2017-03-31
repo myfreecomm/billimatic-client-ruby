@@ -2,79 +2,14 @@
 http_interactions:
 - request:
     method: put
-    uri: http://localhost:3000/api/v1/organizations/4/plans/50
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/4
     body:
       encoding: UTF-8
-      string: '{"plan":{"products":[{"id":23920,"unit_value":150.0,"value":150.0}]}}'
+      string: '{"plan":{"products":[{"id":79385,"unit_value":150.0,"value":150.0,"description":"Descrição
+        teste"}]}}'
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.4.0
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
-      Accept-Language:
-      - pt-br
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
-      ETag:
-      - W/"301f70cfc4ce0341ca1ef39c32f23ccd"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - ac7376cc-6429-40da-ae98-ee0e4bed68d5
-      X-Runtime:
-      - '0.062146'
-      Connection:
-      - close
-      Server:
-      - thin
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJwbGFuIjp7ImlkIjo1MCwibmFtZSI6IlVwZGF0ZWQgUGxhbiIsImRlc2Ny
-        aXB0aW9uIjoiRGVzY3JpcHRpb24gZm9yIFBsYW4iLCJyZWRpcmVjdF91cmwi
-        OiJodHRwOi8vbmV4YWFzLmNvbSIsInByaWNlIjoiMTUwLjAiLCJiaWxsaW5n
-        X3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNh
-        bG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xh
-        dGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6
-        ZmFsc2UsInRyaWFsX3BlcmlvZCI6bnVsbCwiZmVhdHVyZXMiOlt7ImlkIjoz
-        MywiZGVzY3JpcHRpb24iOiJmZWF0dXJlIiwidmFsdWUiOiIzMDAiLCJ0YWci
-        OiJmZWF0LiJ9LHsiaWQiOjM1LCJkZXNjcmlwdGlvbiI6Im5ldyBmZWF0dXJl
-        IiwidmFsdWUiOiIyMDAiLCJ0YWciOiJuZXcgZmVhdC4ifV0sImVtaXRlc19z
-        ZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiY29icmF0b19iaWxsZXRfY2hhcmdl
-        X2NvbmZpZ19pZCI6MTI4LCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFy
-        Z2VfY29uZmlnX2lkIjpudWxsLCJmaW5hbmNlX2NhdGVnb3J5IjpudWxsLCJm
-        aW5hbmNlX3JldmVudWVfY2VudGVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMDEv
-        MDkvMjAxNiAxNDowODo0MCAtMDM6MDAiLCJwcm9kdWN0cyI6W3siaWQiOjIz
-        OTIwLCJuYW1lIjoiU2VydmnDp28gVGVzdGUiLCJ1bml0X3ZhbHVlIjoiMTUw
-        LjAiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoiMTUwLjAifV19fQ==
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/organizations/4/plans/50
-  recorded_at: Thu, 01 Sep 2016 19:00:11 GMT
-- request:
-    method: put
-    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/143
-    body:
-      encoding: UTF-8
-      string: '{"plan":{"products":[{"id":183067,"unit_value":150.0,"value":150.0}]}}'
-    headers:
-      User-Agent:
-      - Billimatic Ruby Client v0.4.0
+      - Billimatic Ruby Client v0.11.1
       Accept:
       - application/json
       Content-Type:
@@ -88,57 +23,65 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Encoding:
-      - gzip
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Fri, 02 Sep 2016 13:16:48 GMT
-      ETag:
-      - W/"03572e2b307dfd945f499d5c605f18c1"
       Server:
-      - nginx/1.10.1
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains;
-      Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 31 Mar 2017 20:20:03 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-Request-Id:
-      - 5966bd76-0982-40ab-8b00-703328806354
-      X-Runtime:
-      - '0.166991'
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
-      Content-Length:
-      - '408'
-      Connection:
-      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1718a11c4e439c6d790b8f4fa836a302"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 71591842-99a2-40a3-a61f-38167b88cbb8
+      X-Runtime:
+      - '0.172473'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJwbGFuIjp7ImlkIjoxNDMsIm5hbWUiOiJQbGFubyBkZSBUZXN0ZSIsImRl
-        c2NyaXB0aW9uIjoiRGVzY3JpcHRpb24iLCJyZWRpcmVjdF91cmwiOiJodHRw
-        Oi8vbmV4YWFzLmNvbSIsInByaWNlIjoiMTUwLjAiLCJiaWxsaW5nX3Blcmlv
-        ZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNhbG1lbnRl
-        IiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xhdGVkX2No
-        YXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6ZmFsc2Us
-        InRyaWFsX3BlcmlvZCI6bnVsbCwiZmVhdHVyZXMiOlt7ImlkIjo2MiwiZGVz
-        Y3JpcHRpb24iOiJmZWF0dXJlIiwidmFsdWUiOiIxMDAiLCJ0YWciOiJmZWF0
-        LiJ9XSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lkIjpudWxsLCJjb2JyYXRv
-        X2JpbGxldF9jaGFyZ2VfY29uZmlnX2lkIjoxMjgsImNvYnJhdG9fcGF5bWVu
-        dF9nYXRld2F5X2NoYXJnZV9jb25maWdfaWQiOm51bGwsImZpbmFuY2VfY2F0
-        ZWdvcnkiOm51bGwsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOm51bGwsImNy
-        ZWF0ZWRfYXQiOiIwMi8wOS8yMDE2IDA5OjU1OjQ1IC0wMzowMCIsInByb2R1
-        Y3RzIjpbeyJpZCI6MTgzMDY3LCJuYW1lIjoiQWx1Z3VlbCBkbyBQU09mZmlj
-        ZSIsInVuaXRfdmFsdWUiOiIxNTAuMCIsInVuaXRzIjoiMS4wIiwidmFsdWUi
-        OiIxNTAuMCJ9XX19
+        eyJwbGFuIjp7ImlkIjo0LCJuYW1lIjoiUGxhbm8gMSIsImRlc2NyaXB0aW9u
+        IjoiUGxhbm8gMSBkZXNjcmnDp8OjbyIsInJlZGlyZWN0X3VybCI6Imh0dHA6
+        Ly93d3cuZ29vZ2xlLmNvbS5iciIsInByaWNlIjoiMTUwLjAiLCJiaWxsaW5n
+        X3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNh
+        bG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xh
+        dGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6
+        dHJ1ZSwidHJpYWxfcGVyaW9kIjozMCwiZmVhdHVyZXMiOlt7ImlkIjoxLCJk
+        ZXNjcmlwdGlvbiI6IkF0w6kgMTAgdXN1w6FyaW9zIiwidmFsdWUiOiIxMCIs
+        InRhZyI6InF1YW50aWRhZGVfZGVfdXN1YXJpb3MifSx7ImlkIjoyLCJkZXNj
+        cmlwdGlvbiI6IkF0w6kgMTAwIEdCIGRlIGFybWF6ZW5hbWVudG8iLCJ2YWx1
+        ZSI6IjEwMCIsInRhZyI6ImFybWF6ZW5hbWVudG8ifSx7ImlkIjozLCJkZXNj
+        cmlwdGlvbiI6IkUtbWFpbHMgY29ycG9yYXRpdm9zIiwidmFsdWUiOiIxMCIs
+        InRhZyI6ImVtYWlscyJ9XSwicmVhZGp1c3RtZW50X3dpbGxfYmVfY3JlYXRl
+        ZCI6ZmFsc2UsInJlYWRqdXN0bWVudF9tb250aF9xdWFudGl0eSI6bnVsbCwi
+        cHJpY2VfaW5kZXgiOm51bGwsInJlYWRqdXN0bWVudF9kYXlzX3VudGlsX3Vw
+        ZGF0ZSI6bnVsbCwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lkIjpudWxsLCJl
+        bWl0ZXNfc2VydmljZV92YWx1ZV9uYW1lIjpudWxsLCJjb2JyYXRvX2JpbGxl
+        dF9jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJjb2JyYXRvX2JpbGxldF9jaGFy
+        Z2VfY29uZmlnX25hbWUiOm51bGwsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV90
+        ZW1wbGF0ZV9pZCI6bnVsbCwiY29icmF0b19iaWxsZXRfY2hhcmdlX3RlbXBs
+        YXRlX25hbWUiOm51bGwsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2NoYXJn
+        ZV9jb25maWdfaWQiOm51bGwsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2No
+        YXJnZV9jb25maWdfbmFtZSI6bnVsbCwiZmluYW5jZV9jYXRlZ29yeSI6bnVs
+        bCwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6bnVsbCwiY3JlYXRlZF9hdCI6
+        IjAyLzA1LzIwMTYgMTc6MTk6MjcgLTAzOjAwIiwicHJvZHVjdHMiOlt7Imlk
+        Ijo3OTM4NSwibmFtZSI6IlNlcnZpw6dvIE9ubGluZSAxIiwiZGVzY3JpcHRp
+        b24iOiJEZXNjcmnDp8OjbyB0ZXN0ZSIsInVuaXRfdmFsdWUiOiIxNTAuMCIs
+        InVuaXRzIjoiMS4wIiwidmFsdWUiOiIxNTAuMCJ9XX19
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/143
-  recorded_at: Fri, 02 Sep 2016 13:16:48 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/plans/4
+  recorded_at: Fri, 31 Mar 2017 20:20:03 GMT
 recorded_with: VCR 3.0.3
