@@ -28,6 +28,7 @@ module Billimatic
       attribute :cobrato_charge_config_name, String
       attribute :cobrato_charge_template_id, Integer
       attribute :cobrato_charge_template_name, String
+      attribute :management_type, String
       attribute :receivables, [Receivable]
       attribute :services, [Service]
       attribute :attachments, [Hash]
