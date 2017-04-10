@@ -8,7 +8,7 @@ http_interactions:
       string: '{"subscription":{"cancel_date":null,"cancel_reason":null}}'
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.10.1
+      - Billimatic Ruby Client v0.11.2
       Accept:
       - application/json
       Content-Type:
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 15 Dec 2016 11:19:01 GMT
+      - Mon, 10 Apr 2017 19:07:53 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -39,9 +39,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f53ac205-85da-47e9-8f0e-ebeaf12c3a3a
+      - d866f92a-e0d0-4311-83c7-90dff32a3676
       X-Runtime:
-      - '0.011335'
+      - '0.011251'
       Vary:
       - Origin
       Via:
@@ -52,5 +52,5 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/foo123/cancel
-  recorded_at: Thu, 15 Dec 2016 11:19:01 GMT
+  recorded_at: Mon, 10 Apr 2017 19:07:53 GMT
 recorded_with: VCR 3.0.3

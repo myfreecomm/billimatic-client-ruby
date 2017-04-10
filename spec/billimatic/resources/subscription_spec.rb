@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Billimatic::Resources::Subscription do
   let(:entity_klass) { Billimatic::Entities::Subscription }
-  let(:http) { Billimatic::Http.new('bfe97f701f615edf41587cbd59d6a0e8') }
+  let(:http) { Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f') }
 
   subject { described_class.new(http) }
 
@@ -13,10 +13,12 @@ describe Billimatic::Resources::Subscription do
   describe '#show :token' do
     it 'returns the subscription that has the token attached' do
       VCR.use_cassette('subscriptions/show_by_token/success') do
-        subscription = subject.show(token: 'f7e385a902a9f626addacdcccc90f10e')
+        subscription = subject.show(token: '330b961a1969e7ac435c811594c46e8e')
 
         expect(subscription).to be_a entity_klass
-        expect(subscription.token).to eql 'f7e385a902a9f626addacdcccc90f10e'
+        expect(subscription.token).to eql '330b961a1969e7ac435c811594c46e8e'
+        expect(subscription.state).to eql('active')
+        expect(subscription.status).to eql('established')
         expect(subscription.name).not_to be_nil
       end
     end
@@ -35,7 +37,7 @@ describe Billimatic::Resources::Subscription do
   describe '#create' do
     let(:subscription_params) do
       {
-        plan_id: 4,
+        plan_id: 1,
         customer: {
           name: "Empresa de Teste",
           email: "teste@companhia.com",
@@ -47,8 +49,7 @@ describe Billimatic::Resources::Subscription do
             district: "Sé",
             zipcode: "01001000",
             city: "São Paulo",
-            state: "SP",
-            ibge_code: "3550308"
+            state: "SP"
           }
         }
       }
@@ -59,27 +60,16 @@ describe Billimatic::Resources::Subscription do
         subscription = subject.create(subscription_params)
 
         expect(subscription).to be_a entity_klass
-        expect(subscription.name).to eql 'Assinatura Empresa de Teste - Plano 1'
+        expect(subscription.name).to eql 'Assinatura Empresa de Teste - TESTE BILLIMATIC Myfinance Bronze'
         expect(subscription.status).to eql 'trial'
+        expect(subscription.state).to eql 'active'
         expect(subscription.plan.id).to eql subscription_params.fetch(:plan_id)
-      end
-    end
-
-    it 'returns an error if a subscription already belongs to the same customer' do
-      VCR.use_cassette('subscriptions/create/failure') do
-        expect {
-          subject.create(subscription_params)
-        }.to raise_error(Billimatic::RequestError) do |error|
-          expect(error.code).to eql 422
-        end
       end
     end
 
     it 'returns an error if plan is not found' do
       VCR.use_cassette('subscriptions/create/plan_not_found') do
-        subscription_params.delete(:plan_id)
-        subscription_params[:customer][:name] = 'Empresa Teste'
-        subscription_params[:customer][:document] = '45.287.485/0001-84'
+        subscription_params[:plan_id] = 80000
 
         expect {
           subject.create(subscription_params)
@@ -114,12 +104,6 @@ describe Billimatic::Resources::Subscription do
       }
     end
 
-    before do
-      @http = Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f')
-    end
-
-    subject { described_class.new(@http) }
-
     it "returns not found if subscription isn't found by token sent" do
       VCR.use_cassette('/subscriptions/checkout/failure/subscription_not_found') do
         expect {
@@ -136,7 +120,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:customer][:address_information].delete(:zipcode)
 
         expect {
-          subject.checkout(checkout_params, token: "964f3000defaed43cd93f08af19c43db")
+          subject.checkout(checkout_params, token: "1870c414e05ac8a6dfb3c529b0a790f6")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['customer']).to have_key 'name'
@@ -150,7 +134,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:customer].delete(:type)
 
         expect {
-          subject.checkout(checkout_params, token: "964f3000defaed43cd93f08af19c43db")
+          subject.checkout(checkout_params, token: "1870c414e05ac8a6dfb3c529b0a790f6")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['customer']).to have_key 'type'
@@ -163,7 +147,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:payment_information][:type] = 'payment_gateway'
 
         expect {
-          subject.checkout(checkout_params, token: "964f3000defaed43cd93f08af19c43db")
+          subject.checkout(checkout_params, token: "1870c414e05ac8a6dfb3c529b0a790f6")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['payment_information']).to have_key 'card_brand'
@@ -183,7 +167,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:payment_information][:card_security_code] = '123'
 
         expect {
-          subject.checkout(checkout_params, token: "6022cac78bbe5bba8061efd522a1b130")
+          subject.checkout(checkout_params, token: "dad1b1d450e528c6436ed153d7ab7c42")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['payment_information']).to have_key 'type'
@@ -197,7 +181,7 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:payment_information][:type] = 'foo'
 
         expect {
-          subject.checkout(checkout_params, token: "6022cac78bbe5bba8061efd522a1b130")
+          subject.checkout(checkout_params, token: "1870c414e05ac8a6dfb3c529b0a790f6")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['payment_information']).to have_key 'type'
@@ -209,7 +193,7 @@ describe Billimatic::Resources::Subscription do
     it 'returns unprocessable entity on a duplicated checkout attempt' do
       VCR.use_cassette('/subscriptions/checkout/failure/duplicated_checkout') do
         expect {
-          subject.checkout(checkout_params, token: "6022cac78bbe5bba8061efd522a1b130")
+          subject.checkout(checkout_params, token: "0a06eeefb50a512dc1403225e26496f8")
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql 422
           expect(error.body['errors']['customer']).to have_key 'checkout'
@@ -228,11 +212,12 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:payment_information][:card_security_code] = '123'
 
         result = subject.checkout(
-          checkout_params, token: "964f3000defaed43cd93f08af19c43db"
+          checkout_params, token: "1870c414e05ac8a6dfb3c529b0a790f6"
         )
 
         expect(result).to be_a entity_klass
         expect(result.end_date).to be_nil
+        expect(result.state).to eql 'active'
         expect(result.status).to eql 'established'
       end
     end
@@ -246,23 +231,18 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:customer][:address_information][:complement] = nil
 
         result = subject.checkout(
-          checkout_params, token: "6022cac78bbe5bba8061efd522a1b130"
+          checkout_params, token: "dad1b1d450e528c6436ed153d7ab7c42"
         )
 
         expect(result).to be_a entity_klass
         expect(result.end_date).to be_nil
+        expect(result.state).to eql 'active'
         expect(result.status).to eql 'established'
       end
     end
   end
 
   describe '#change_plan' do
-    before do
-      @http = Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f')
-    end
-
-    subject { described_class.new(@http) }
-
     it 'returns not found if subscription token is wrong' do
       VCR.use_cassette('/subscriptions/change_plan/failure/wrong_token') do
         expect {
@@ -296,10 +276,6 @@ describe Billimatic::Resources::Subscription do
   end
 
   describe '#update_payment_information' do
-    before do
-      @http = Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f')
-    end
-
     let(:payment_information_params) do
       {
         payment_information: {
@@ -321,8 +297,6 @@ describe Billimatic::Resources::Subscription do
         }
       }
     end
-
-    subject { described_class.new(@http) }
 
     it 'returns not found when subscription token is wrong' do
       VCR.use_cassette('/subscriptions/update_payment_information/failure/wrong_token') do
@@ -394,18 +368,13 @@ describe Billimatic::Resources::Subscription do
   end
 
   describe '#cancel' do
-    before do
-      @http = Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f')
-    end
-
-    subject { described_class.new(@http) }
-
     it "successfully sets a subscription to 'cancelled' and cancel_date as today" do
       VCR.use_cassette('subscriptions/cancel/success/without_params') do
-        subscription = subject.cancel(token: 'd5f23d94e63b76740f933f36cc2b438b')
+        subscription = subject.cancel(token: 'dad1b1d450e528c6436ed153d7ab7c42')
 
         expect(subscription.status).to eql 'cancelled'
-        expect(subscription.cancel_date).to eql Date.parse('2016-12-15')
+        expect(subscription.state).to eql 'inactive'
+        expect(subscription.cancel_date).to eql Date.parse('2017-04-10')
         expect(subscription.cancel_reason).to be_nil
       end
     end
@@ -413,12 +382,13 @@ describe Billimatic::Resources::Subscription do
     it 'successfully cancels subscription and sets cancel_date' do
       VCR.use_cassette('subscriptions/cancel/success/with_cancel_date') do
         subscription = subject.cancel(
-          token: 'c74cfae98d7e56821172a0d858b1b468',
-          cancel_date: Date.parse("16/12/2016")
+          token: '1870c414e05ac8a6dfb3c529b0a790f6',
+          cancel_date: Date.parse("04-09-2017")
         )
 
         expect(subscription.status).to eql 'cancelled'
-        expect(subscription.cancel_date).to eql Date.parse('2016-12-16')
+        expect(subscription.state).to eql 'inactive'
+        expect(subscription.cancel_date).to eql Date.parse('2017-09-04')
         expect(subscription.cancel_reason).to be_nil
       end
     end
@@ -426,12 +396,13 @@ describe Billimatic::Resources::Subscription do
     it 'successfully cancels subscription and sets cancel_reason' do
       VCR.use_cassette('subscriptions/cancel/success/with_cancel_reason') do
         subscription = subject.cancel(
-          token: 'ef7948eff1adb29a693cca46a1238a64',
+          token: '330b961a1969e7ac435c811594c46e8e',
           cancel_reason: "Cancelamento via API de e-commerce"
         )
 
         expect(subscription.status).to eql 'cancelled'
-        expect(subscription.cancel_date).to eql Date.parse('2016-12-15')
+        expect(subscription.state).to eql 'inactive'
+        expect(subscription.cancel_date).to eql Date.parse('2017-04-10')
         expect(subscription.cancel_reason).to eql "Cancelamento via API de e-commerce"
       end
     end
@@ -439,13 +410,13 @@ describe Billimatic::Resources::Subscription do
     it 'successfully cancels subscription and sets both cancellation params' do
       VCR.use_cassette('subscriptions/cancel/success/with_cancellation_params') do
         subscription = subject.cancel(
-          token: 'a0cc470b0268e08ec00df3c71589fd31',
-          cancel_date: Date.parse("16/12/2016"),
+          token: '0a06eeefb50a512dc1403225e26496f8',
+          cancel_date: Date.parse("08/04/2017"),
           cancel_reason: "Cancelamento via API de e-commerce"
         )
 
         expect(subscription.status).to eql 'cancelled'
-        expect(subscription.cancel_date).to eql Date.parse('2016-12-16')
+        expect(subscription.cancel_date).to eql Date.parse('2017-04-08')
         expect(subscription.cancel_reason).to eql "Cancelamento via API de e-commerce"
       end
     end
