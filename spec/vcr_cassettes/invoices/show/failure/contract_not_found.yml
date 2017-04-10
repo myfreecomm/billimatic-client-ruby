@@ -2,64 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/contracts/10000/invoices/57259
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Billimatic Ruby Client v0.7.0
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
-      Accept-Language:
-      - pt-br
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Date:
-      - Mon, 24 Oct 2016 19:28:10 GMT
-      Connection:
-      - close
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - text/html
-      Cache-Control:
-      - no-cache
-      X-Request-Id:
-      - 5efd351f-82c3-442f-aef0-47c8b5bf9762
-      X-Runtime:
-      - '0.758211'
-      Vary:
-      - Origin
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: ''
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/10000/invoices/57259
-  recorded_at: Mon, 24 Oct 2016 19:28:10 GMT
-- request:
-    method: get
     uri: https://sandbox.billimatic.com.br/api/v1/contracts/10000/invoices/127262
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.7.0
+      - Billimatic Ruby Client v0.11.2
       Accept:
       - application/json
       Content-Type:
@@ -78,7 +27,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Tue, 25 Oct 2016 16:31:28 GMT
+      - Mon, 10 Apr 2017 19:33:18 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -90,9 +39,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - ea368ce7-c255-40b4-88a5-28ec32177b3e
+      - ddc03212-05f2-4f0f-9ffd-3b7a0ee150dc
       X-Runtime:
-      - '0.012994'
+      - '0.039844'
       Vary:
       - Origin
       Via:
@@ -103,5 +52,5 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/10000/invoices/127262
-  recorded_at: Tue, 25 Oct 2016 16:31:28 GMT
+  recorded_at: Mon, 10 Apr 2017 19:33:18 GMT
 recorded_with: VCR 3.0.3

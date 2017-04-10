@@ -2,68 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.billimatic.com.br/api/v1/contracts/7392/invoices/search?isue_date_from=02-05-2016&issue_date_to=03-05-2016
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Billimatic Ruby Client v0.5.1
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Authorization:
-      - Token token=bfe97f701f615edf41587cbd59d6a0e8
-      Accept-Language:
-      - pt-br
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - Cowboy
-      Date:
-      - Mon, 19 Sep 2016 18:57:36 GMT
-      Connection:
-      - keep-alive
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - text/html
-      Cache-Control:
-      - no-cache
-      X-Request-Id:
-      - a7b5f532-0e34-470b-9d8c-b7758b93db0c
-      X-Runtime:
-      - '0.008213'
-      Vary:
-      - Origin
-      Transfer-Encoding:
-      - chunked
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: ''
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/7392/invoices/search?isue_date_from=02-05-2016&issue_date_to=03-05-2016
-  recorded_at: Mon, 19 Sep 2016 18:57:37 GMT
-- request:
-    method: get
     uri: https://sandbox.billimatic.com.br/api/v1/contracts/7392/invoices/search?issue_date_from=02-05-2016&issue_date_to=03-05-2016
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.5.1
+      - Billimatic Ruby Client v0.11.2
       Accept:
       - application/json
       Content-Type:
@@ -79,10 +24,10 @@ http_interactions:
     headers:
       Server:
       - Cowboy
-      Date:
-      - Mon, 19 Sep 2016 19:03:23 GMT
       Connection:
-      - keep-alive
+      - close
+      Date:
+      - Mon, 10 Apr 2017 19:20:09 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -94,13 +39,11 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 78bfa623-787e-44a8-a8ca-6a7e3e39b032
+      - 2fc4f7c5-9234-4d24-9604-1010128d732d
       X-Runtime:
-      - '0.006913'
+      - '0.015858'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -109,5 +52,5 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/7392/invoices/search?issue_date_from=02-05-2016&issue_date_to=03-05-2016
-  recorded_at: Mon, 19 Sep 2016 19:03:24 GMT
+  recorded_at: Mon, 10 Apr 2017 19:20:09 GMT
 recorded_with: VCR 3.0.3

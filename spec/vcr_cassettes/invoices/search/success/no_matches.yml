@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.5.1
+      - Billimatic Ruby Client v0.11.2
       Accept:
       - application/json
       Content-Type:
@@ -24,10 +24,10 @@ http_interactions:
     headers:
       Server:
       - Cowboy
-      Date:
-      - Mon, 19 Sep 2016 19:05:26 GMT
       Connection:
-      - keep-alive
+      - close
+      Date:
+      - Mon, 10 Apr 2017 19:32:07 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -41,13 +41,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f2138c16-0785-4284-8bce-63617131ccfb
+      - 7cce9e80-fbdf-4b5b-92ba-022dd07f9a75
       X-Runtime:
-      - '0.010942'
+      - '0.018892'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -56,5 +54,5 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/search?issue_date_from=02-05-2019&issue_date_to=03-05-2020
-  recorded_at: Mon, 19 Sep 2016 19:05:27 GMT
+  recorded_at: Mon, 10 Apr 2017 19:32:07 GMT
 recorded_with: VCR 3.0.3
