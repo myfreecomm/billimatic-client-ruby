@@ -57,6 +57,7 @@ describe Billimatic::Entities::Invoice do
                     :receivables, :services, :attachments, :nfe_body,
                     :accrual_date, :comments, :customer_id, :customer_type,
                     :emites_service_value_name, :cobrato_charge_config_name,
-                    :cobrato_charge_template_id, :cobrato_charge_template_name
+                    :cobrato_charge_template_id, :cobrato_charge_template_name,
+                    :management_type
                   ]
 end

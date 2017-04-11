@@ -2,101 +2,13 @@
 http_interactions:
 - request:
     method: patch
-    uri: http://localhost:3000/api/v1/subscriptions/e5631118c9be24fef01b965ff3649483/cancel
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/1870c414e05ac8a6dfb3c529b0a790f6/cancel
     body:
       encoding: UTF-8
-      string: '{"subscription":{"cancel_date":"2016-12-15","cancel_reason":null}}'
+      string: '{"subscription":{"cancel_date":"2017-09-04","cancel_reason":null}}'
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.10.1
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
-      Accept-Language:
-      - pt-br
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 14 Dec 2016 12:59:33 GMT
-      Connection:
-      - close
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
-      ETag:
-      - W/"b9d4846d5a8c2c318e3e6cf47b63c26b"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a8e77cca-b2e9-4036-a339-d7a948cc666e
-      X-Runtime:
-      - '0.852734'
-      Vary:
-      - Origin
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjkxNSwibmFtZSI6IkFzc2luYXR1cmEg
-        Q29tcGFuaGlhIEJlbHRyYW5vIExUREEuIC0gUGxhbm8gRnVsbCIsInRpdGxl
-        IjoiQXNzaW5hdHVyYSBDb21wYW5oaWEgQmVsdHJhbm8gTFREQS4gLSBQbGFu
-        byBGdWxsIiwidG9rZW4iOiJlNTYzMTExOGM5YmUyNGZlZjAxYjk2NWZmMzY0
-        OTQ4MyIsImRlc2NyaXB0aW9uIjpudWxsLCJjdXN0b21lcl9pZCI6MzMzLCJz
-        dXBwbGllcl9pZCI6NCwic3VwcGxpZXJfdHlwZSI6IkNvbXBhbnkiLCJzdGF0
-        ZSI6ImFjdGl2ZSIsImNvbW1lbnRzIjpudWxsLCJpbml0X2RhdGUiOiIwOS8x
-        MS8yMDE2IiwiZW5kX2RhdGUiOiIxOS8xMi8yMDE2IiwiY3JlYXRlZF9hdCI6
-        IjA5LzExLzIwMTYgMTE6MjI6MzcgLTAyOjAwIiwia2luZCI6InNhbGUiLCJy
-        ZWdpc3RyYXRpb25fbWV0aG9kIjoic3Vic2NyaXB0aW9uIiwib3ZlcmR1ZSI6
-        ZmFsc2UsInZhbGlkX3VudGlsIjoiMTkvMTIvMjAxNiIsInN0YXR1cyI6ImNh
-        bmNlbGxlZCIsImNhbmNlbF9kYXRlIjoiMTUvMTIvMjAxNiIsImNhbmNlbF9y
-        ZWFzb24iOm51bGwsInBsYW4iOnsiaWQiOjU3LCJuYW1lIjoiUGxhbm8gRnVs
-        bCIsImRlc2NyaXB0aW9uIjoiUGxhbm8gY29tcGxldG8iLCJyZWRpcmVjdF91
-        cmwiOiJodHRwczovL3d3dy5nb29nbGUuY29tLmJyIiwicHJpY2UiOiIxMDAu
-        MCIsImJpbGxpbmdfcGVyaW9kIjoxLCJ0cmFuc2xhdGVkX2JpbGxpbmdfcGVy
-        aW9kIjoiTWVuc2FsbWVudGUiLCJjaGFyZ2luZ19tZXRob2QiOiJwcmVfcGFp
-        ZCIsInRyYW5zbGF0ZWRfY2hhcmdpbmdfbWV0aG9kIjoiUHLDqS1wYWdvIiwi
-        aGFzX3RyaWFsIjpmYWxzZSwidHJpYWxfcGVyaW9kIjpudWxsLCJmZWF0dXJl
-        cyI6W10sImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6NDcsImVtaXRlc19z
-        ZXJ2aWNlX3ZhbHVlX25hbWUiOiJBbHVndWVsIGRlIHNvZnR3YXJlIiwiY29i
-        cmF0b19iaWxsZXRfY2hhcmdlX2NvbmZpZ19pZCI6MTEyLCJjb2JyYXRvX2Jp
-        bGxldF9jaGFyZ2VfY29uZmlnX25hbWUiOiJNeWZpbmFuY2UiLCJjb2JyYXRv
-        X2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfaWQiOjMsImNvYnJhdG9fYmlsbGV0
-        X2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoiVGVzdGUgQ29icmFuw6dhIFJlZ2lz
-        dHJhZGEgQmlsbGltYXRpYyIsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2No
-        YXJnZV9jb25maWdfaWQiOjEzNywiY29icmF0b19wYXltZW50X2dhdGV3YXlf
-        Y2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQ2FydMOjbyIsImZpbmFuY2Vf
-        Y2F0ZWdvcnkiOiJPdXRyb3MgLyBPdXRyb3MiLCJmaW5hbmNlX3JldmVudWVf
-        Y2VudGVyIjoiQ1IxIiwiY3JlYXRlZF9hdCI6IjA0LzEwLzIwMTYgMTU6NDA6
-        MDUgLTAzOjAwIiwicHJvZHVjdHMiOltdfSwicGF5bWVudF9pbmZvcm1hdGlv
-        biI6eyJpZCI6MTU0LCJwYXltZW50X21ldGhvZCI6ImJpbGxldCIsImNvYnJh
-        dG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX21vbnRoIjoiLS0i
-        LCJjYXJkX2V4cGlyYXRpb25feWVhciI6Ii0tIiwiY3JlYXRlZF9hdCI6IjA5
-        LzExLzIwMTYgMTE6MjY6MjMgLTAyOjAwIn19fQ==
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/subscriptions/e5631118c9be24fef01b965ff3649483/cancel
-  recorded_at: Wed, 14 Dec 2016 12:59:33 GMT
-- request:
-    method: patch
-    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/c74cfae98d7e56821172a0d858b1b468/cancel
-    body:
-      encoding: UTF-8
-      string: '{"subscription":{"cancel_date":"2016-12-16","cancel_reason":null}}'
-    headers:
-      User-Agent:
-      - Billimatic Ruby Client v0.10.1
+      - Billimatic Ruby Client v0.11.2
       Accept:
       - application/json
       Content-Type:
@@ -115,7 +27,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 15 Dec 2016 11:10:39 GMT
+      - Mon, 10 Apr 2017 19:03:51 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -125,13 +37,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d90d3f47ec6af2fbe47fd7afd5084b04"
+      - W/"912efd8f81b2b99bd46102a3cf54c2a1"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 29f82482-2319-4eb9-9020-5c5aa4be4236
+      - 05445a8e-b843-4923-8c3e-4ee6c36b8fd8
       X-Runtime:
-      - '2.612654'
+      - '4.214886'
       Vary:
       - Origin
       Via:
@@ -139,57 +51,59 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg1OTEsIm5hbWUiOiJBc3NpbmF0dXJh
-        IENvbXBhbmhpYSBkZSBUZXN0ZXMgLSBURVNURSBCSUxMSU1BVElDIE15Zmlu
-        YW5jZSBTaWx2ZXIiLCJ0aXRsZSI6IkFzc2luYXR1cmEgQ29tcGFuaGlhIGRl
-        IFRlc3RlcyAtIFRFU1RFIEJJTExJTUFUSUMgTXlmaW5hbmNlIFNpbHZlciIs
-        InRva2VuIjoiYzc0Y2ZhZTk4ZDdlNTY4MjExNzJhMGQ4NThiMWI0NjgiLCJk
-        ZXNjcmlwdGlvbiI6bnVsbCwiY3VzdG9tZXJfaWQiOjYxMywic3VwcGxpZXJf
-        aWQiOjQ4Niwic3VwcGxpZXJfdHlwZSI6IkNvbXBhbnkiLCJzdGF0ZSI6ImFj
-        dGl2ZSIsImNvbW1lbnRzIjpudWxsLCJpbml0X2RhdGUiOiIxNS8xMi8yMDE2
-        IiwiZW5kX2RhdGUiOiIxMC8wMS8yMDE3IiwiY3JlYXRlZF9hdCI6IjE1LzEy
-        LzIwMTYgMDg6NTk6MzMgLTAyOjAwIiwia2luZCI6InNhbGUiLCJyZWdpc3Ry
-        YXRpb25fbWV0aG9kIjoic3Vic2NyaXB0aW9uIiwib3ZlcmR1ZSI6ZmFsc2Us
-        InZhbGlkX3VudGlsIjoiMjAvMTIvMjAxNiIsInN0YXR1cyI6ImNhbmNlbGxl
-        ZCIsImNhbmNlbF9kYXRlIjoiMTYvMTIvMjAxNiIsImNhbmNlbF9yZWFzb24i
-        Om51bGwsInBsYW4iOnsiaWQiOjIsIm5hbWUiOiJURVNURSBCSUxMSU1BVElD
-        IE15ZmluYW5jZSBTaWx2ZXIiLCJkZXNjcmlwdGlvbiI6Ik3DqWRpYXMgZW1w
-        cmVzYXMgcXVlIGJ1c2NhbSBtYW50ZXIgYSBzYcO6ZGUgZmluYW5jZWlyYSBz
-        ZW1wcmUgZW0gZGlhLiIsInJlZGlyZWN0X3VybCI6Imh0dHBzOi8vYmlsbGlt
-        YXRpYy1kZW1vLXNhYXMtcHJvZHVjdC5oZXJva3VhcHAuY29tLyIsInByaWNl
-        IjoiMTAwLjAiLCJiaWxsaW5nX3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxs
-        aW5nX3BlcmlvZCI6Ik1lbnNhbG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoi
-        cHJlX3BhaWQiLCJ0cmFuc2xhdGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6kt
-        cGFnbyIsImhhc190cmlhbCI6dHJ1ZSwidHJpYWxfcGVyaW9kIjoxNSwiZmVh
-        dHVyZXMiOlt7ImlkIjoxMSwiZGVzY3JpcHRpb24iOiIyIEVtcHJlc2FzIiwi
-        dmFsdWUiOiIyIiwidGFnIjoicXVhbnRpZGFkZV9kZV9lbXByZXNhcyJ9LHsi
-        aWQiOjEyLCJkZXNjcmlwdGlvbiI6IjYgVXN1w6FyaW9zIiwidmFsdWUiOiI2
-        IiwidGFnIjoicXVhbnRpZGFkZV9kZV91c3VhcmlvcyJ9LHsiaWQiOjEzLCJk
-        ZXNjcmlwdGlvbiI6IjUgR0IgZGUgYXJtYXplbmFtZW50byIsInZhbHVlIjoi
-        NSIsInRhZyI6ImFybWF6ZW5hbWVudG8ifSx7ImlkIjoxNCwiZGVzY3JpcHRp
-        b24iOiJDb250cm9sZSBkZSBVc3XDoXJpb3MiLCJ2YWx1ZSI6IjEiLCJ0YWci
-        OiJjb250cm9sZV9kZV91c3VhcmlvcyJ9XSwiZW1pdGVzX3NlcnZpY2VfdmFs
-        dWVzX2lkIjo2NSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVfbmFtZSI6IkFsdWd1
-        ZWwgZGUgc29mdHdhcmUgY29tIHJldGVuw6fDo28gZGUgSVNTIiwiY29icmF0
-        b19iaWxsZXRfY2hhcmdlX2NvbmZpZ19pZCI6MTI4LCJjb2JyYXRvX2JpbGxl
-        dF9jaGFyZ2VfY29uZmlnX25hbWUiOiJDb2JyYW7Dp2EgbsOjbyByZWdpc3Ry
-        YWRhIiwiY29icmF0b19iaWxsZXRfY2hhcmdlX3RlbXBsYXRlX2lkIjoyLCJj
-        b2JyYXRvX2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfbmFtZSI6IlRlc3RlIE1v
-        ZGVsbyBkZSBDb2JyYW7Dp2EgQmlsbGltYXRpYyIsImNvYnJhdG9fcGF5bWVu
-        dF9nYXRld2F5X2NoYXJnZV9jb25maWdfaWQiOjEzNywiY29icmF0b19wYXlt
-        ZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQ2FydMOj
-        byIsImZpbmFuY2VfY2F0ZWdvcnkiOiJSZWNlaXRhIC8gQWx1Z3VlbCBkZSBw
-        cm9kdXRvIiwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6IlJleHBlbnNlIiwi
-        Y3JlYXRlZF9hdCI6IjA0LzAzLzIwMTYgMTc6MzM6NDEgLTAzOjAwIiwicHJv
-        ZHVjdHMiOlt7ImlkIjo3ODU2MCwibmFtZSI6Ik15ZmluYW5jZSIsInVuaXRf
-        dmFsdWUiOiIxMDAuMCIsInVuaXRzIjoiMS4wIiwidmFsdWUiOiIxMDAuMCJ9
-        XX0sInBheW1lbnRfaW5mb3JtYXRpb24iOnsiaWQiOjcxMTIsInBheW1lbnRf
-        bWV0aG9kIjoiYmlsbGV0IiwiY29icmF0b19jYXJkX2lkIjoiLS0iLCJjYXJk
-        X2V4cGlyYXRpb25fbW9udGgiOiItLSIsImNhcmRfZXhwaXJhdGlvbl95ZWFy
-        IjoiLS0iLCJjcmVhdGVkX2F0IjoiMTUvMTIvMjAxNiAwOTowMDoyNCAtMDI6
-        MDAifX19
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg4MTMsIm5hbWUiOiJBc3NpbmF0dXJh
+        IENvbnN1bWlkb3IgOCAtIFRFU1RFIEJJTExJTUFUSUMgTXlmaW5hbmNlIEJy
+        b256ZSIsInRpdGxlIjoiQXNzaW5hdHVyYSBDb25zdW1pZG9yIDggLSBURVNU
+        RSBCSUxMSU1BVElDIE15ZmluYW5jZSBCcm9uemUiLCJ0b2tlbiI6IjE4NzBj
+        NDE0ZTA1YWM4YTZkZmIzYzUyOWIwYTc5MGY2IiwiZGVzY3JpcHRpb24iOm51
+        bGwsImN1c3RvbWVyX2lkIjoxNTk3LCJzdXBwbGllcl9pZCI6NDg2LCJzdXBw
+        bGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiaW5hY3RpdmUiLCJjb21t
+        ZW50cyI6bnVsbCwiaW5pdF9kYXRlIjoiMTAvMDQvMjAxNyIsImVuZF9kYXRl
+        IjoiMDcvMDUvMjAxNyIsImNyZWF0ZWRfYXQiOiIxMC8wNC8yMDE3IDE1OjQx
+        OjM3IC0wMzowMCIsImtpbmQiOiJzYWxlIiwib3ZlcmR1ZSI6ZmFsc2UsInZh
+        bGlkX3VudGlsIjoiMDcvMDUvMjAxNyIsInN0YXR1cyI6ImNhbmNlbGxlZCIs
+        InJlZ2lzdHJhdGlvbl9tZXRob2QiOiJzdWJzY3JpcHRpb24iLCJjYW5jZWxf
+        ZGF0ZSI6IjA0LzA5LzIwMTciLCJjYW5jZWxfcmVhc29uIjpudWxsLCJwbGFu
+        Ijp7ImlkIjoxLCJuYW1lIjoiVEVTVEUgQklMTElNQVRJQyBNeWZpbmFuY2Ug
+        QnJvbnplIiwiZGVzY3JpcHRpb24iOiJQZXF1ZW5hcyBlbXByZXNhcyBxdWUg
+        YnVzY2FtIGdlc3TDo28gZmluYW5jZWlyYSBuYSBtZWRpZGEgY2VydGEiLCJy
+        ZWRpcmVjdF91cmwiOiJodHRwczovL2JpbGxpbWF0aWMtZGVtby1zYWFzLXBy
+        b2R1Y3QuaGVyb2t1YXBwLmNvbS8iLCJwcmljZSI6IjQwLjAiLCJiaWxsaW5n
+        X3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNh
+        bG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xh
+        dGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIsImhhc190cmlhbCI6
+        dHJ1ZSwidHJpYWxfcGVyaW9kIjoxNSwiZmVhdHVyZXMiOlt7ImlkIjo0LCJk
+        ZXNjcmlwdGlvbiI6IjEgRW1wcmVzYSIsInZhbHVlIjoiMSIsInRhZyI6InF1
+        YW50aWRhZGVfZGVfZW1wcmVzYXMifSx7ImlkIjo1LCJkZXNjcmlwdGlvbiI6
+        IjIgVXN1w6FyaW9zIiwidmFsdWUiOiIyIiwidGFnIjoicXVhbnRpZGFkZV9k
+        ZV91c3VhcmlvcyJ9LHsiaWQiOjYsImRlc2NyaXB0aW9uIjoiMyBHQiBkZSBh
+        cm1hemVuYW1lbnRvIiwidmFsdWUiOiIzIiwidGFnIjoiYXJtYXplbmFtZW50
+        byJ9LHsiaWQiOjEzNTg1LCJkZXNjcmlwdGlvbiI6IiIsInZhbHVlIjoidCIs
+        InRhZyI6InVzZXJfcGxhbl9jaGFuZ2UifV0sInJlYWRqdXN0bWVudF93aWxs
+        X2JlX2NyZWF0ZWQiOmZhbHNlLCJyZWFkanVzdG1lbnRfbW9udGhfcXVhbnRp
+        dHkiOm51bGwsInByaWNlX2luZGV4IjpudWxsLCJyZWFkanVzdG1lbnRfZGF5
+        c191bnRpbF91cGRhdGUiOm51bGwsImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19p
+        ZCI6NjUsImVtaXRlc19zZXJ2aWNlX3ZhbHVlX25hbWUiOiJBbHVndWVsIGRl
+        IHNvZnR3YXJlIGNvbSByZXRlbsOnw6NvIGRlIElTUyIsImNvYnJhdG9fYmls
+        bGV0X2NoYXJnZV9jb25maWdfaWQiOjEyOCwiY29icmF0b19iaWxsZXRfY2hh
+        cmdlX2NvbmZpZ19uYW1lIjoiQ29icmFuw6dhIG7Do28gcmVnaXN0cmFkYSIs
+        ImNvYnJhdG9fYmlsbGV0X2NoYXJnZV90ZW1wbGF0ZV9pZCI6bnVsbCwiY29i
+        cmF0b19iaWxsZXRfY2hhcmdlX3RlbXBsYXRlX25hbWUiOiIiLCJjb2JyYXRv
+        X3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX2lkIjoxMzcsImNvYnJh
+        dG9fcGF5bWVudF9nYXRld2F5X2NoYXJnZV9jb25maWdfbmFtZSI6IlRlc3Rl
+        IENhcnTDo28iLCJmaW5hbmNlX2NhdGVnb3J5IjoiUmVjZWl0YSAvIEFsdWd1
+        ZWwgZGUgcHJvZHV0byIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOiJNeWZp
+        bmFuY2UiLCJjcmVhdGVkX2F0IjoiMDQvMDMvMjAxNiAxNzoyNzoyMyAtMDM6
+        MDAiLCJwcm9kdWN0cyI6W3siaWQiOjc4NTU5LCJuYW1lIjoiTXlmaW5hbmNl
+        IiwiZGVzY3JpcHRpb24iOiJQcm9kdXRvIE15ZmluYW5jZSIsInVuaXRfdmFs
+        dWUiOiI0MC4wIiwidW5pdHMiOiIxLjAiLCJ2YWx1ZSI6IjQwLjAifV19LCJw
+        YXltZW50X2luZm9ybWF0aW9uIjp7ImlkIjo3NDAzLCJwYXltZW50X21ldGhv
+        ZCI6InBheW1lbnRfZ2F0ZXdheSIsImNvYnJhdG9fY2FyZF9pZCI6NDY5OSwi
+        Y2FyZF9leHBpcmF0aW9uX21vbnRoIjoxMiwiY2FyZF9leHBpcmF0aW9uX3ll
+        YXIiOjIwMTksImNyZWF0ZWRfYXQiOiIxMC8wNC8yMDE3IDE1OjUzOjQxIC0w
+        MzowMCJ9fX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/c74cfae98d7e56821172a0d858b1b468/cancel
-  recorded_at: Thu, 15 Dec 2016 11:10:39 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/1870c414e05ac8a6dfb3c529b0a790f6/cancel
+  recorded_at: Mon, 10 Apr 2017 19:03:51 GMT
 recorded_with: VCR 3.0.3

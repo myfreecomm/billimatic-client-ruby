@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.5.1
+      - Billimatic Ruby Client v0.11.2
       Accept:
       - application/json
       Content-Type:
@@ -24,10 +24,10 @@ http_interactions:
     headers:
       Server:
       - Cowboy
-      Date:
-      - Thu, 22 Sep 2016 20:42:28 GMT
       Connection:
-      - keep-alive
+      - close
+      Date:
+      - Mon, 10 Apr 2017 19:15:27 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -37,17 +37,15 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"98d17f1643984835cd9cbc3a6e93f1b6"
+      - W/"c6e94eb24f4c6410163a78c4c29ade40"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 011492ed-a91f-480a-91c3-929a77c03ef9
+      - c05dc714-fd62-46bc-9cf3-31620bb0460e
       X-Runtime:
-      - '0.190272'
+      - '0.041115'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -58,14 +56,15 @@ http_interactions:
         bSIsInRva2VuIjpudWxsLCJkZXNjcmlwdGlvbiI6ImRlc2NyZXZlbmRvIG8g
         c2VydmnDp28iLCJjdXN0b21lcl9pZCI6NTY1LCJjdXN0b21lcl90eXBlIjoi
         Q29tcGFueSIsInN1cHBsaWVyX2lkIjo1NjQsInN1cHBsaWVyX3R5cGUiOiJD
-        b21wYW55Iiwic3RhdGUiOjEsImNvbW1lbnRzIjoib2JzZXJ2YW5kbyBvIHNl
-        cnZpw6dvIiwiaW5pdF9kYXRlIjoiMDEvMDQvMjAxNiIsImVuZF9kYXRlIjpu
-        dWxsLCJjcmVhdGVkX2F0IjoiMDgvMDQvMjAxNiAxNjoyNzozMCAtMDM6MDAi
-        LCJraW5kIjoic2FsZSIsInJlZ2lzdHJhdGlvbl9tZXRob2QiOiJyZWd1bGFy
-        Iiwib3ZlcmR1ZSI6ZmFsc2UsInZhbGlkX3VudGlsIjpudWxsLCJzdGF0dXMi
-        Om51bGwsInBsYW4iOm51bGx9XX0=
+        b21wYW55Iiwic3RhdGUiOiJhY3RpdmUiLCJjb21tZW50cyI6Im9ic2VydmFu
+        ZG8gbyBzZXJ2acOnbyIsImluaXRfZGF0ZSI6IjAxLzA0LzIwMTYiLCJlbmRf
+        ZGF0ZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjA4LzA0LzIwMTYgMTY6Mjc6MzAg
+        LTAzOjAwIiwia2luZCI6InNhbGUiLCJvdmVyZHVlIjpmYWxzZSwidmFsaWRf
+        dW50aWwiOm51bGwsInN0YXR1cyI6ImVzdGFibGlzaGVkIiwicmVnaXN0cmF0
+        aW9uX21ldGhvZCI6InJlZ3VsYXIiLCJjYW5jZWxfZGF0ZSI6bnVsbCwiY2Fu
+        Y2VsX3JlYXNvbiI6bnVsbCwicGxhbiI6bnVsbH1dfQ==
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/search?name=Presta%C3%A7%C3%A3o%20de%20Servi%C3%A7o%20Um
-  recorded_at: Thu, 22 Sep 2016 20:42:29 GMT
+  recorded_at: Mon, 10 Apr 2017 19:15:28 GMT
 recorded_with: VCR 3.0.3

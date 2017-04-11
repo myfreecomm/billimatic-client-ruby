@@ -19,6 +19,8 @@ describe Billimatic::Resources::Contract do
           expect(contracts).not_to be_empty
           contracts.each do |contract|
             expect(contract).to be_a entity_klass
+            expect(contract.state).to eql 'active'
+            expect(contract.status).to eql 'established'
             expect(contract.name).to eql 'Prestação de Serviço Um'
           end
         end
@@ -33,6 +35,8 @@ describe Billimatic::Resources::Contract do
           expect(contracts).not_to be_empty
           contracts.each do |contract|
             expect(contract).to be_a entity_klass
+            expect(contract.state).to eql 'active'
+            expect(contract.status).to eql 'trial'
             expect(contract.name).to match /Assinatura/
           end
         end

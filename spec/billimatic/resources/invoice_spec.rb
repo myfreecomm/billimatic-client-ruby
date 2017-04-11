@@ -42,15 +42,16 @@ describe Billimatic::Resources::Invoice do
     it 'returns a collection of invoices matching the desired issue_date range' do
       VCR.use_cassette('/invoices/search/success/issue_date_range_matches') do
         invoices = subject.search(
-          contract_id: 6666,
-          issue_date_from: '02-05-2015',
-          issue_date_to: '03-05-2017'
+          contract_id: 8818,
+          issue_date_from: '10-05-2017',
+          issue_date_to: '10-08-2017'
         )
 
         expect(invoices).not_to be_empty
         invoices.each do |invoice|
           expect(invoice).to be_a entity_klass
-          expect(invoice.contract_id).to eql 6666
+          expect(invoice.management_type).to eql 'manual'
+          expect(invoice.contract_id).to eql 8818
         end
       end
     end
@@ -91,11 +92,12 @@ describe Billimatic::Resources::Invoice do
 
     it 'returns invoice successfully' do
       VCR.use_cassette("/invoices/show/success") do
-        invoice = subject.show(127262, contract_id: 6666)
+        invoice = subject.show(168138, contract_id: 8818)
 
         expect(invoice).to be_a entity_klass
-        expect(invoice.id).to eql 127262
-        expect(invoice.contract_id).to eql 6666
+        expect(invoice.id).to eql 168138
+        expect(invoice.management_type).to eql 'manual'
+        expect(invoice.contract_id).to eql 8818
       end
     end
   end
