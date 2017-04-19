@@ -58,6 +58,6 @@ describe Billimatic::Entities::Invoice do
                     :accrual_date, :comments, :customer_id, :customer_type,
                     :emites_service_value_name, :cobrato_charge_config_name,
                     :cobrato_charge_template_id, :cobrato_charge_template_name,
-                    :management_type
+                    :management_type, :days_until_automatic_nfe_emission
                   ]
 end

@@ -17,6 +17,7 @@ module Billimatic
       attribute :cobrato_charge_template_id, Integer
       attribute :cobrato_charge_template_name, String
       attribute :management_type, String
+      attribute :days_until_automatic_nfe_emission, Integer
       attribute :services, Array[Service]
       attribute :additional_information, Hash
       attribute :scheduled_update, Hash
