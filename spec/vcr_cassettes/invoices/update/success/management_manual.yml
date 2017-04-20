@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: localhost:3000/api/v1/contracts/2/invoices/320
+    body:
+      encoding: UTF-8
+      string: '{"invoice":{"management_type":"manual","days_until_automatic_nfe_emission":0,"automatic_email_template_id":0}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.11.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 20 Apr 2017 17:35:11 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"582ad08645ef47d5404ab11bd5de3e07"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 271ca63d-7891-4bfc-a4e9-83ceea525edf
+      X-Runtime:
+      - '1.066127'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"invoice":{"id":320,"contract_id":2,"issue_date":"19/09/2016","gross_value":"100.0","payment_value":"100.0","description":"FATURAMENTO","state":"to_emit","nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"FATURAMENTO","nfe_issued":false,"number":null,"created_at":"20/04/2017
+        13:44:02 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":2,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":0,"receivables":[{"id":356,"invoice_id":320,"due_date":"01/10/2016","value":"100.0","gross_value":"100.0","payment_value":"100.0","received_value":null,"received_at":null,"created_at":"20/04/2017
+        13:44:02 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":1777030,"finance_entity_id":3804,"finance_errors":null}],"services":[],"attachments":[]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/2/invoices/320
+  recorded_at: Thu, 20 Apr 2017 17:35:11 GMT
+recorded_with: VCR 3.0.3

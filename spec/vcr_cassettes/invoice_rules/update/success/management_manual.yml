@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: localhost:3000/api/v1/contracts/3/invoice_rules/334
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"management_type":"manual","days_until_automatic_nfe_emission":0,"automatic_email_template_id":0}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.11.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 20 Apr 2017 17:31:12 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"998658001b718acf5baef30b4d85229f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cb8068e4-977a-48c8-ac7d-176fcdcbb140
+      X-Runtime:
+      - '1.232448'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"id":334,"contract_id":3,"issue_date":null,"gross_value":"100.0","payment_value":null,"description":"Faturamento","state":"to_emit","nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"20/04/2017
+        13:55:26 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":3,"customer_type":"Person","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":0,"receivables":[],"services":[],"attachments":[],"additional_information":{"id":15,"init_date":"2016-09-02","title":"REGRA","month_quantity":6,"end_date":null,"rulable_id":334,"created_at":"2017-04-20T13:55:26.525-03:00","updated_at":"2017-04-20T13:55:26.525-03:00","rulable_type":"Invoice","accrual_month_quantity":"same_month"},"scheduled_update":null,"receivables_additional_information":{"id":18,"day_number":23,"parcel_number":null,"invoice_rule_id":334,"created_at":"2017-04-20T13:55:26.527-03:00","updated_at":"2017-04-20T13:55:26.527-03:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/3/invoice_rules/334
+  recorded_at: Thu, 20 Apr 2017 17:31:12 GMT
+recorded_with: VCR 3.0.3
