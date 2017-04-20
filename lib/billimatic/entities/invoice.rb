@@ -30,6 +30,8 @@ module Billimatic
       attribute :cobrato_charge_template_name, String
       attribute :management_type, String
       attribute :days_until_automatic_nfe_emission, Integer
+      attribute :automatic_nfe_issue_date, Date
+      attribute :automatic_email_template_id, Integer
       attribute :receivables, [Receivable]
       attribute :services, [Service]
       attribute :attachments, [Hash]
