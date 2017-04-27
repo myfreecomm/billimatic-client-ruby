@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/144090
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/168538
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.5.1
+      - Billimatic Ruby Client v0.11.3
       Accept:
       - application/json
       Content-Type:
@@ -24,12 +24,12 @@ http_interactions:
     headers:
       Server:
       - Cowboy
-      Date:
-      - Tue, 20 Sep 2016 11:24:50 GMT
       Content-Length:
       - '0'
       Connection:
       - keep-alive
+      Date:
+      - Thu, 27 Apr 2017 12:32:23 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -39,9 +39,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - ee0a2f27-7c3c-48cd-bce4-396adf013434
+      - 96827832-ef08-407e-97ea-904acb00756d
       X-Runtime:
-      - '0.040392'
+      - '0.107926'
       Vary:
       - Origin
       Via:
@@ -51,6 +51,6 @@ http_interactions:
       string: ''
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/144090
-  recorded_at: Tue, 20 Sep 2016 11:24:51 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/168538
+  recorded_at: Thu, 27 Apr 2017 12:32:23 GMT
 recorded_with: VCR 3.0.3

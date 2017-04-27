@@ -164,12 +164,6 @@ describe Billimatic::Resources::Invoice do
     end
 
     context 'when invoice set management_type' do
-      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
-
-      subject { described_class.new(http) }
-
-      before { Billimatic.configuration.host = "localhost:3000" }
-
       it 'creates an invoice with automatic management' do
         VCR.use_cassette('/invoices/create/success/management_automatic') do
           invoice = subject.create(
@@ -178,11 +172,11 @@ describe Billimatic::Resources::Invoice do
               days_until_automatic_nfe_emission: 3,
               automatic_email_template_id: 1
             ),
-            contract_id: 2
+            contract_id: 6666
           )
 
           expect(invoice).to be_a entity_klass
-          expect(invoice.contract_id).to eql(2)
+          expect(invoice.contract_id).to eql(6666)
           expect(invoice.gross_value).to eql(100.0)
           expect(invoice.management_type).to eql('automatic')
           expect(invoice.days_until_automatic_nfe_emission).to eql(3)
@@ -199,11 +193,11 @@ describe Billimatic::Resources::Invoice do
               days_until_automatic_nfe_emission: 0,
               automatic_email_template_id: 0
             ),
-            contract_id: 2
+            contract_id: 6666
           )
 
           expect(invoice).to be_a entity_klass
-          expect(invoice.contract_id).to eql 2
+          expect(invoice.contract_id).to eql 6666
           expect(invoice.gross_value).to eql 100.0
           expect(invoice.management_type).to eql('manual')
           expect(invoice.days_until_automatic_nfe_emission).to eql(0)
@@ -461,25 +455,19 @@ describe Billimatic::Resources::Invoice do
     end
 
     context 'when change management_type of invoice' do
-      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
-
-      subject { described_class.new(http) }
-
-      before { Billimatic.configuration.host = "localhost:3000" }
-
       it 'updates an invoice with manual management' do
         VCR.use_cassette('/invoices/update/success/management_manual') do
           invoice = subject.update(
-            320, {
+            168537, {
               management_type: 'manual',
               days_until_automatic_nfe_emission: 0,
               automatic_email_template_id: 0
             },
-            contract_id: 2
+            contract_id: 6666
           )
 
           expect(invoice).to be_a entity_klass
-          expect(invoice.contract_id).to eql 2
+          expect(invoice.contract_id).to eql 6666
           expect(invoice.gross_value).to eql 100.0
           expect(invoice.management_type).to eql('manual')
           expect(invoice.days_until_automatic_nfe_emission).to eql(0)
@@ -491,16 +479,16 @@ describe Billimatic::Resources::Invoice do
       it 'updates an invoice with automatic management' do
         VCR.use_cassette('/invoices/update/success/management_automatic') do
           invoice = subject.update(
-            321, {
+            168538, {
               management_type: 'automatic',
               days_until_automatic_nfe_emission: 3,
               automatic_email_template_id: 1
             },
-            contract_id: 2
+            contract_id: 6666
           )
 
           expect(invoice).to be_a entity_klass
-          expect(invoice.contract_id).to eql(2)
+          expect(invoice.contract_id).to eql(6666)
           expect(invoice.management_type).to eql('automatic')
           expect(invoice.days_until_automatic_nfe_emission).to eql(3)
           expect(invoice.automatic_email_template_id).to eql(1)
@@ -511,11 +499,11 @@ describe Billimatic::Resources::Invoice do
       it 'updates only template_id of invoice' do
         VCR.use_cassette('/invoices/update/success/management_template') do
           invoice = subject.update(
-            321, { automatic_email_template_id: 2 }, contract_id: 2
+            168538, { automatic_email_template_id: 2 }, contract_id: 6666
           )
 
           expect(invoice).to be_a entity_klass
-          expect(invoice.contract_id).to eql(2)
+          expect(invoice.contract_id).to eql(6666)
           expect(invoice.management_type).to eql('automatic')
           expect(invoice.days_until_automatic_nfe_emission).to eql(3)
           expect(invoice.automatic_email_template_id).to eql(2)
@@ -548,7 +536,7 @@ describe Billimatic::Resources::Invoice do
 
     it 'successfully deletes an invoice' do
       VCR.use_cassette('/invoices/destroy/success') do
-        expect(subject.destroy(144090, contract_id: 6666)).to be true
+        expect(subject.destroy(168538, contract_id: 6666)).to be true
       end
     end
   end
