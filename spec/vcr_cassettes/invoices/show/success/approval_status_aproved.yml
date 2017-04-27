@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: localhost:3000/api/v1/contracts/10/invoices/346
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.11.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Apr 2017 19:09:48 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"a2a3e1d89ffaf831201dc617a4d6a49e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1c67e018-72c0-4e90-ba62-fb017ab12278
+      X-Runtime:
+      - '0.029996'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"invoice":{"id":346,"contract_id":10,"issue_date":"25/04/2017","gross_value":"1234.0","payment_value":"1234.0","description":"dfsadfasdfasdfasdf","state":"to_emit","nfe_service":null,"nfe_verification":"","nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":"","created_at":"24/04/2017
+        13:38:24 -03:00","management_type":"automatic","accrual_date":null,"comments":"","customer_id":1,"customer_type":"Person","emites_service_values_id":null,"emites_service_value_name":"","finance_category":"","finance_revenue_center":"","finance_receive_via":"","cobrato_charge_config_id":null,"cobrato_charge_config_name":"","cobrato_charge_template_id":null,"cobrato_charge_template_name":"","days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":"25/04/2017","automatic_email_template_id":1,"approval_status":"approved","receivables":[{"id":403,"invoice_id":346,"due_date":"25/04/2017","value":"100.0","gross_value":"1234.0","payment_value":"1234.0","received_value":null,"received_at":null,"created_at":"24/04/2017
+        13:38:24 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":1777646,"finance_entity_id":3804,"finance_errors":null}],"services":[],"attachments":[]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/10/invoices/346
+  recorded_at: Thu, 27 Apr 2017 19:09:48 GMT
+recorded_with: VCR 3.0.3

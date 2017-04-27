@@ -35,6 +35,7 @@ module Billimatic
       attribute :receivables, [Receivable]
       attribute :services, [Service]
       attribute :attachments, [Hash]
+      attribute :approval_status, String
     end
   end
 end

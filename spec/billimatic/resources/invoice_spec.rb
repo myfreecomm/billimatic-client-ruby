@@ -100,6 +100,34 @@ describe Billimatic::Resources::Invoice do
         expect(invoice.contract_id).to eql 8818
       end
     end
+
+    context 'when approval_status' do
+      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
+
+      subject { described_class.new(http) }
+
+      before { Billimatic.configuration.host = 'localhost:3000' }
+
+      it 'returns an invoice with approval_status is blocked' do
+        VCR.use_cassette("/invoices/show/success/approval_status_blocked") do
+          invoice = subject.show(342, contract_id: 3)
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.contract_id).to eql(3)
+          expect(invoice.approval_status).to eql('blocked')
+        end
+      end
+
+      it 'returns an invoice with approval_status is aproved' do
+        VCR.use_cassette("/invoices/show/success/approval_status_aproved") do
+          invoice = subject.show(346, contract_id: 10)
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.contract_id).to eql(10)
+          expect(invoice.approval_status).to eql('approved')
+        end
+      end
+    end
   end
 
   describe '#create' do
