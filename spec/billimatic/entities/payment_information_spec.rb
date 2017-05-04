@@ -15,6 +15,7 @@ describe Billimatic::Entities::PaymentInformation do
 
   it_behaves_like 'entity_attributes', [
                     :id, :payment_method, :cobrato_card_id,
-                    :card_expiration_month, :card_expiration_year, :created_at
+                    :card_expiration_month, :card_expiration_year, :installments,
+                    :created_at
                   ]
 end
