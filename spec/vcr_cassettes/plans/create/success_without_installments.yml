@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/organizations/1/plans
+    body:
+      encoding: UTF-8
+      string: '{"plan":{"name":"Plano de Teste","description":"Description","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
+        não registrada","features":[{"description":"feature","value":"100","tag":"feat."}],"products":[{"service_item_id":1,"units":1,"unit_value":100,"value":100}],"allow_installments":false}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.11.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Thu, 04 May 2017 21:04:51 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"ea69ac0da636159a2663a64674c74db7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0c4ceaba-4136-440b-8890-2022f87708ad
+      X-Runtime:
+      - '0.072174'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwbGFuIjp7ImlkIjo2LCJuYW1lIjoiUGxhbm8gZGUgVGVzdGUiLCJkZXNj
+        cmlwdGlvbiI6IkRlc2NyaXB0aW9uIiwicmVkaXJlY3RfdXJsIjoiaHR0cDov
+        L25leGFhcy5jb20iLCJwcmljZSI6IjEwMC4wIiwiYmlsbGluZ19wZXJpb2Qi
+        OjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxtZW50ZSIs
+        ImNoYXJnaW5nX21ldGhvZCI6InByZV9wYWlkIiwidHJhbnNsYXRlZF9jaGFy
+        Z2luZ19tZXRob2QiOiJQcsOpLXBhZ28iLCJoYXNfdHJpYWwiOmZhbHNlLCJ0
+        cmlhbF9wZXJpb2QiOm51bGwsImZlYXR1cmVzIjpbeyJpZCI6NCwiZGVzY3Jp
+        cHRpb24iOiJmZWF0dXJlIiwidmFsdWUiOiIxMDAiLCJ0YWciOiJmZWF0LiJ9
+        XSwicmVhZGp1c3RtZW50X3dpbGxfYmVfY3JlYXRlZCI6ZmFsc2UsInJlYWRq
+        dXN0bWVudF9tb250aF9xdWFudGl0eSI6bnVsbCwicHJpY2VfaW5kZXgiOm51
+        bGwsInJlYWRqdXN0bWVudF9kYXlzX3VudGlsX3VwZGF0ZSI6bnVsbCwiZW1p
+        dGVzX3NlcnZpY2VfdmFsdWVzX2lkIjpudWxsLCJlbWl0ZXNfc2VydmljZV92
+        YWx1ZV9uYW1lIjpudWxsLCJjb2JyYXRvX2JpbGxldF9jaGFyZ2VfY29uZmln
+        X2lkIjoxMjgsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdfbmFtZSI6
+        IkNvYnJhbsOnYSBuw6NvIHJlZ2lzdHJhZGEiLCJjb2JyYXRvX2JpbGxldF9j
+        aGFyZ2VfdGVtcGxhdGVfaWQiOm51bGwsImNvYnJhdG9fYmlsbGV0X2NoYXJn
+        ZV90ZW1wbGF0ZV9uYW1lIjpudWxsLCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdh
+        eV9jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJjb2JyYXRvX3BheW1lbnRfZ2F0
+        ZXdheV9jaGFyZ2VfY29uZmlnX25hbWUiOm51bGwsImZpbmFuY2VfY2F0ZWdv
+        cnkiOm51bGwsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOm51bGwsImFsbG93
+        X2luc3RhbGxtZW50cyI6ZmFsc2UsImluc3RhbGxtZW50c19saW1pdCI6bnVs
+        bCwiY3JlYXRlZF9hdCI6IjA0LzA1LzIwMTcgMTg6MDQ6NTEgLTAzOjAwIiwi
+        cHJvZHVjdHMiOlt7ImlkIjoxMTMsIm5hbWUiOiJNb3RvYm95IiwiZGVzY3Jp
+        cHRpb24iOm51bGwsInVuaXRfdmFsdWUiOiIxMDAuMCIsInVuaXRzIjoiMS4w
+        IiwidmFsdWUiOiIxMDAuMCJ9XX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/1/plans
+  recorded_at: Thu, 04 May 2017 21:04:51 GMT
+recorded_with: VCR 3.0.3

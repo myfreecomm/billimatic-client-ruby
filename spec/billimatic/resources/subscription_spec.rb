@@ -201,24 +201,33 @@ describe Billimatic::Resources::Subscription do
       end
     end
 
-    it 'successfully processes checkout paid in payment gateway' do
-      VCR.use_cassette('/subscriptions/checkout/success/paid_in_payment_gateway') do
-        checkout_params[:payment_information][:type] = 'payment_gateway'
-        checkout_params[:payment_information][:card_brand] = 'Visa'
-        checkout_params[:payment_information][:card_number] = '4012001038443335'
-        checkout_params[:payment_information][:card_holder_name] = 'CONSUMIDOR OITO'
-        checkout_params[:payment_information][:card_expiration_month] = '12'
-        checkout_params[:payment_information][:card_expiration_year] = '2019'
-        checkout_params[:payment_information][:card_security_code] = '123'
+    context 'when localhost tmp' do
+      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
 
-        result = subject.checkout(
-          checkout_params, token: "1870c414e05ac8a6dfb3c529b0a790f6"
-        )
+      subject { described_class.new(http) }
 
-        expect(result).to be_a entity_klass
-        expect(result.end_date).to be_nil
-        expect(result.state).to eql 'active'
-        expect(result.status).to eql 'established'
+      before { Billimatic.configuration.host = "http://localhost:3000" }
+
+      it 'successfully processes checkout paid in payment gateway' do
+        VCR.use_cassette('/subscriptions/checkout/success/paid_in_payment_gateway') do
+          checkout_params[:payment_information][:type] = 'payment_gateway'
+          checkout_params[:payment_information][:card_brand] = 'Visa'
+          checkout_params[:payment_information][:card_number] = '4012001038443335'
+          checkout_params[:payment_information][:card_holder_name] = 'CONSUMIDOR OITO'
+          checkout_params[:payment_information][:card_expiration_month] = '12'
+          checkout_params[:payment_information][:card_expiration_year] = '2019'
+          checkout_params[:payment_information][:card_security_code] = '123'
+
+          result = subject.checkout(
+            checkout_params, token: "2a289e29901e0a98fce56723015cefde"
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.end_date).to be_nil
+          expect(result.state).to eql 'active'
+          expect(result.status).to eql 'established'
+          expect(result.payment_information.installments).to eql(1)
+        end
       end
     end
 
