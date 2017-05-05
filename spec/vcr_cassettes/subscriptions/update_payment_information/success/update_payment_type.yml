@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/subscriptions/14430c24b945db9a980bf70f586c98eb/update_payment_information
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"payment_information":{"type":"payment_gateway","card_brand":"Visa","card_number":"4012001037141112","card_holder_name":"PRE
+        PAGO TESTE","card_expiration_month":"12","card_expiration_year":"2021","card_security_code":"123"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.11.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 05 May 2017 19:02:03 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"db182e39451977f31a22f48228081c40"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 449954bd-69ef-4922-b67e-2187b0fa1b9a
+      X-Runtime:
+      - '0.959089'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjI0LCJuYW1lIjoiQXNzaW5hdHVyYSBD
+        b25zdW1pZG9yIDggLSBQbGFub3MgZGUgMyBwYXJjZWxhcyIsInRpdGxlIjoi
+        QXNzaW5hdHVyYSBDb25zdW1pZG9yIDggLSBQbGFub3MgZGUgMyBwYXJjZWxh
+        cyIsInRva2VuIjoiMTQ0MzBjMjRiOTQ1ZGI5YTk4MGJmNzBmNTg2Yzk4ZWIi
+        LCJkZXNjcmlwdGlvbiI6bnVsbCwiY3VzdG9tZXJfaWQiOjcsInN1cHBsaWVy
+        X2lkIjoxLCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0
+        aXZlIiwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjA1LzA1LzIwMTci
+        LCJlbmRfZGF0ZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjA1LzA1LzIwMTcgMTU6
+        NTk6MzUgLTAzOjAwIiwia2luZCI6InNhbGUiLCJvdmVyZHVlIjpmYWxzZSwi
+        dmFsaWRfdW50aWwiOiIxMC8wNS8yMDE3Iiwic3RhdHVzIjoiZXN0YWJsaXNo
+        ZWQiLCJyZWdpc3RyYXRpb25fbWV0aG9kIjoic3Vic2NyaXB0aW9uIiwiY2Fu
+        Y2VsX2RhdGUiOm51bGwsImNhbmNlbF9yZWFzb24iOm51bGwsInBsYW4iOnsi
+        aWQiOjcsIm5hbWUiOiJQbGFub3MgZGUgMyBwYXJjZWxhcyIsImRlc2NyaXB0
+        aW9uIjoiU8OzIHBlcm1pdGUgMyBwYXJjZWxhcyIsInJlZGlyZWN0X3VybCI6
+        Imh0dHBzOi8vNDc2Nzc1ZTAubmdyb2suaW8iLCJwcmljZSI6IjEwMDAuMCIs
+        ImJpbGxpbmdfcGVyaW9kIjoxLCJ0cmFuc2xhdGVkX2JpbGxpbmdfcGVyaW9k
+        IjoiTWVuc2FsbWVudGUiLCJjaGFyZ2luZ19tZXRob2QiOiJwcmVfcGFpZCIs
+        InRyYW5zbGF0ZWRfY2hhcmdpbmdfbWV0aG9kIjoiUHLDqS1wYWdvIiwiaGFz
+        X3RyaWFsIjpmYWxzZSwidHJpYWxfcGVyaW9kIjpudWxsLCJmZWF0dXJlcyI6
+        W3siaWQiOjUsImRlc2NyaXB0aW9uIjoiIiwidmFsdWUiOiIxMDAwIiwidGFn
+        IjoiIn1dLCJyZWFkanVzdG1lbnRfd2lsbF9iZV9jcmVhdGVkIjpmYWxzZSwi
+        cmVhZGp1c3RtZW50X21vbnRoX3F1YW50aXR5IjpudWxsLCJwcmljZV9pbmRl
+        eCI6bnVsbCwicmVhZGp1c3RtZW50X2RheXNfdW50aWxfdXBkYXRlIjpudWxs
+        LCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOjQ3LCJlbWl0ZXNfc2Vydmlj
+        ZV92YWx1ZV9uYW1lIjoiQWx1Z3VlbCBkZSBzb2Z0d2FyZSIsImNvYnJhdG9f
+        YmlsbGV0X2NoYXJnZV9jb25maWdfaWQiOjIyMiwiY29icmF0b19iaWxsZXRf
+        Y2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQnJhZGVzY28iLCJjb2JyYXRv
+        X2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfaWQiOm51bGwsImNvYnJhdG9fYmls
+        bGV0X2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoiIiwiY29icmF0b19wYXltZW50
+        X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19pZCI6MTM2LCJjb2JyYXRvX3BheW1l
+        bnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX25hbWUiOiJUZXN0ZSBDYXJ0w6Nv
+        IGRlIENyw6lkaXRvIEJpbGxpbWF0aWMiLCJmaW5hbmNlX2NhdGVnb3J5Ijoi
+        IiwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6IiIsImFsbG93X2luc3RhbGxt
+        ZW50cyI6dHJ1ZSwiaW5zdGFsbG1lbnRzX2xpbWl0IjozLCJjcmVhdGVkX2F0
+        IjoiMDUvMDUvMjAxNyAxNTowMDoyMSAtMDM6MDAiLCJwcm9kdWN0cyI6W119
+        LCJwYXltZW50X2luZm9ybWF0aW9uIjp7InBheW1lbnRfbWV0aG9kIjoicGF5
+        bWVudF9nYXRld2F5In19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/subscriptions/14430c24b945db9a980bf70f586c98eb/update_payment_information
+  recorded_at: Fri, 05 May 2017 19:02:03 GMT
+recorded_with: VCR 3.0.3
