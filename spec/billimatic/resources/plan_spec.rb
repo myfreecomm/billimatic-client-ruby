@@ -190,7 +190,7 @@ describe Billimatic::Resources::Plan do
         end
       end
 
-      it 'raises Billimatic::RequestErrer when number of installments is bigger than allowed' do
+      it 'raises Billimatic::RequestError when number of installments is bigger than allowed' do
         plan_params[:allow_installments] = true
         plan_params[:installments_limit] = 36
 
