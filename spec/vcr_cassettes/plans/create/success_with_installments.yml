@@ -6,7 +6,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"plan":{"name":"Plano de Teste","description":"Description","price":100.0,"billing_period":1,"has_trial":false,"redirect_url":"http://nexaas.com","charging_method":"pre_paid","cobrato_billet_charge_config_id":128,"cobrato_billet_charge_config_name":"Cobrança
-        não registrada","features":[{"description":"feature","value":"100","tag":"feat."}],"products":[{"service_item_id":1,"units":1,"unit_value":100,"value":100}],"allow_installments":true,"installments_limit":36}}'
+        não registrada","features":[{"description":"feature","value":"100","tag":"feat."}],"products":[{"service_item_id":1,"units":1,"unit_value":100,"value":100}],"allow_installments":true,"installments_limit":12}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.11.3
@@ -24,7 +24,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Thu, 04 May 2017 20:49:09 GMT
+      - Mon, 08 May 2017 20:32:09 GMT
       Connection:
       - close
       X-Frame-Options:
@@ -36,13 +36,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       ETag:
-      - W/"14760b5209f03773e2b8b2a4b532edc6"
+      - W/"32cd9a0f0efa7f258bca6c4531f0f786"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 462184bf-09c6-4571-965d-c9a50af2e405
+      - f75045c6-6451-46bb-b057-d415302831cc
       X-Runtime:
-      - '0.178896'
+      - '0.337057'
       Vary:
       - Origin
       Transfer-Encoding:
@@ -50,13 +50,13 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJwbGFuIjp7ImlkIjo1LCJuYW1lIjoiUGxhbm8gZGUgVGVzdGUiLCJkZXNj
+        eyJwbGFuIjp7ImlkIjo4LCJuYW1lIjoiUGxhbm8gZGUgVGVzdGUiLCJkZXNj
         cmlwdGlvbiI6IkRlc2NyaXB0aW9uIiwicmVkaXJlY3RfdXJsIjoiaHR0cDov
         L25leGFhcy5jb20iLCJwcmljZSI6IjEwMC4wIiwiYmlsbGluZ19wZXJpb2Qi
         OjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxtZW50ZSIs
         ImNoYXJnaW5nX21ldGhvZCI6InByZV9wYWlkIiwidHJhbnNsYXRlZF9jaGFy
         Z2luZ19tZXRob2QiOiJQcsOpLXBhZ28iLCJoYXNfdHJpYWwiOmZhbHNlLCJ0
-        cmlhbF9wZXJpb2QiOm51bGwsImZlYXR1cmVzIjpbeyJpZCI6MywiZGVzY3Jp
+        cmlhbF9wZXJpb2QiOm51bGwsImZlYXR1cmVzIjpbeyJpZCI6NiwiZGVzY3Jp
         cHRpb24iOiJmZWF0dXJlIiwidmFsdWUiOiIxMDAiLCJ0YWciOiJmZWF0LiJ9
         XSwicmVhZGp1c3RtZW50X3dpbGxfYmVfY3JlYXRlZCI6ZmFsc2UsInJlYWRq
         dXN0bWVudF9tb250aF9xdWFudGl0eSI6bnVsbCwicHJpY2VfaW5kZXgiOm51
@@ -70,13 +70,13 @@ http_interactions:
         eV9jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJjb2JyYXRvX3BheW1lbnRfZ2F0
         ZXdheV9jaGFyZ2VfY29uZmlnX25hbWUiOm51bGwsImZpbmFuY2VfY2F0ZWdv
         cnkiOm51bGwsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOm51bGwsImFsbG93
-        X2luc3RhbGxtZW50cyI6dHJ1ZSwiaW5zdGFsbG1lbnRzX2xpbWl0IjozNiwi
-        Y3JlYXRlZF9hdCI6IjA0LzA1LzIwMTcgMTc6NDk6MDkgLTAzOjAwIiwicHJv
-        ZHVjdHMiOlt7ImlkIjoxMTIsIm5hbWUiOiJNb3RvYm95IiwiZGVzY3JpcHRp
+        X2luc3RhbGxtZW50cyI6dHJ1ZSwiaW5zdGFsbG1lbnRzX2xpbWl0IjoxMiwi
+        Y3JlYXRlZF9hdCI6IjA4LzA1LzIwMTcgMTc6MzI6MDkgLTAzOjAwIiwicHJv
+        ZHVjdHMiOlt7ImlkIjoxNDIsIm5hbWUiOiJNb3RvYm95IiwiZGVzY3JpcHRp
         b24iOm51bGwsInVuaXRfdmFsdWUiOiIxMDAuMCIsInVuaXRzIjoiMS4wIiwi
         dmFsdWUiOiIxMDAuMCJ9XX19
     http_version: '1.1'
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations/1/plans
-  recorded_at: Thu, 04 May 2017 20:49:09 GMT
+  recorded_at: Mon, 08 May 2017 20:32:09 GMT
 recorded_with: VCR 3.0.3
