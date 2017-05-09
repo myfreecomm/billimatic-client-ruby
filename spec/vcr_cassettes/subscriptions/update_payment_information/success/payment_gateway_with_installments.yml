@@ -6,7 +6,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"subscription":{"payment_information":{"type":"payment_gateway","card_brand":"Visa","card_number":"4012001037141112","card_holder_name":"PRE
-        PAGO TESTE","card_expiration_month":"12","card_expiration_year":"2021","card_security_code":"123","card_installments":23},"plan":{"allow_installments":true,"installments_limit":32}}}'
+        PAGO TESTE","card_expiration_month":"12","card_expiration_year":"2021","card_security_code":"123","card_installments":12}}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.11.3
@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 05 May 2017 17:45:59 GMT
+      - Tue, 09 May 2017 12:44:29 GMT
       Connection:
       - close
       X-Frame-Options:
@@ -36,13 +36,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       ETag:
-      - W/"830ad00fb07f8844499c88e830fe2983"
+      - W/"b3edfc31af5bbffb135f49d3b7c21f78"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3995d071-cd3e-4d8c-8105-9e5d097ddb89
+      - 015090a2-600d-439e-a478-6b74d120eac0
       X-Runtime:
-      - '0.880822'
+      - '0.878967'
       Vary:
       - Origin
       Transfer-Encoding:
@@ -58,37 +58,37 @@ http_interactions:
         c3VwcGxpZXJfdHlwZSI6IkNvbXBhbnkiLCJzdGF0ZSI6ImFjdGl2ZSIsImNv
         bW1lbnRzIjpudWxsLCJpbml0X2RhdGUiOiIwNS8wNS8yMDE3IiwiZW5kX2Rh
         dGUiOm51bGwsImNyZWF0ZWRfYXQiOiIwNS8wNS8yMDE3IDE0OjM4OjI5IC0w
-        MzowMCIsImtpbmQiOiJzYWxlIiwib3ZlcmR1ZSI6ZmFsc2UsInZhbGlkX3Vu
-        dGlsIjoiMDUvMDUvMjAxNyIsInN0YXR1cyI6ImVzdGFibGlzaGVkIiwicmVn
-        aXN0cmF0aW9uX21ldGhvZCI6InN1YnNjcmlwdGlvbiIsImNhbmNlbF9kYXRl
-        IjpudWxsLCJjYW5jZWxfcmVhc29uIjpudWxsLCJwbGFuIjp7ImlkIjoyLCJu
-        YW1lIjoiQmlsbGltYXRpYyBUcmlhbCIsImRlc2NyaXB0aW9uIjoiRGVtb25z
-        dHJhw6fDo28gZG8gYXBsaWNhdGl2byIsInJlZGlyZWN0X3VybCI6Imh0dHA6
-        Ly9sb2NhbGhvc3Q6MzAwMCIsInByaWNlIjoiMTAwMDAuMCIsImJpbGxpbmdf
-        cGVyaW9kIjoxLCJ0cmFuc2xhdGVkX2JpbGxpbmdfcGVyaW9kIjoiTWVuc2Fs
-        bWVudGUiLCJjaGFyZ2luZ19tZXRob2QiOiJwcmVfcGFpZCIsInRyYW5zbGF0
-        ZWRfY2hhcmdpbmdfbWV0aG9kIjoiUHLDqS1wYWdvIiwiaGFzX3RyaWFsIjp0
-        cnVlLCJ0cmlhbF9wZXJpb2QiOjIwLCJmZWF0dXJlcyI6W3siaWQiOjEsImRl
-        c2NyaXB0aW9uIjoiSW1wb3N0byBzb2JyZSBzZXJ2acOnbyIsInZhbHVlIjoi
-        NTAwIiwidGFnIjoiSVNTIn1dLCJyZWFkanVzdG1lbnRfd2lsbF9iZV9jcmVh
-        dGVkIjp0cnVlLCJyZWFkanVzdG1lbnRfbW9udGhfcXVhbnRpdHkiOjEyLCJw
-        cmljZV9pbmRleCI6ImlwY2EiLCJyZWFkanVzdG1lbnRfZGF5c191bnRpbF91
-        cGRhdGUiOjEyLCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOjQ3LCJlbWl0
-        ZXNfc2VydmljZV92YWx1ZV9uYW1lIjoiQWx1Z3VlbCBkZSBzb2Z0d2FyZSIs
-        ImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdfaWQiOjExMCwiY29icmF0
-        b19iaWxsZXRfY2hhcmdlX2NvbmZpZ19uYW1lIjoiT3V0cmEgY29udGEgZGUg
-        Y29icmFuw6dhIiwiY29icmF0b19iaWxsZXRfY2hhcmdlX3RlbXBsYXRlX2lk
-        IjpudWxsLCJjb2JyYXRvX2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfbmFtZSI6
-        IiIsImNvYnJhdG9fcGF5bWVudF9nYXRld2F5X2NoYXJnZV9jb25maWdfaWQi
-        OjEzNiwiY29icmF0b19wYXltZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19u
-        YW1lIjoiVGVzdGUgQ2FydMOjbyBkZSBDcsOpZGl0byBCaWxsaW1hdGljIiwi
-        ZmluYW5jZV9jYXRlZ29yeSI6IiIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIi
-        OiIiLCJhbGxvd19pbnN0YWxsbWVudHMiOnRydWUsImluc3RhbGxtZW50c19s
-        aW1pdCI6NjAsImNyZWF0ZWRfYXQiOiIwNy8wNC8yMDE3IDE1OjMwOjQ1IC0w
-        MzowMCIsInByb2R1Y3RzIjpbXX0sInBheW1lbnRfaW5mb3JtYXRpb24iOnsi
-        cGF5bWVudF9tZXRob2QiOiJwYXltZW50X2dhdGV3YXkifX19
+        MzowMCIsImtpbmQiOiJzYWxlIiwib3ZlcmR1ZSI6dHJ1ZSwidmFsaWRfdW50
+        aWwiOiIwNS8wNS8yMDE3Iiwic3RhdHVzIjoiZXN0YWJsaXNoZWQiLCJyZWdp
+        c3RyYXRpb25fbWV0aG9kIjoic3Vic2NyaXB0aW9uIiwiY2FuY2VsX2RhdGUi
+        Om51bGwsImNhbmNlbF9yZWFzb24iOm51bGwsInBsYW4iOnsiaWQiOjIsIm5h
+        bWUiOiJCaWxsaW1hdGljIFRyaWFsIiwiZGVzY3JpcHRpb24iOiJEZW1vbnN0
+        cmHDp8OjbyBkbyBhcGxpY2F0aXZvIiwicmVkaXJlY3RfdXJsIjoiaHR0cDov
+        L2xvY2FsaG9zdDozMDAwIiwicHJpY2UiOiIxMDAwMC4wIiwiYmlsbGluZ19w
+        ZXJpb2QiOjEsInRyYW5zbGF0ZWRfYmlsbGluZ19wZXJpb2QiOiJNZW5zYWxt
+        ZW50ZSIsImNoYXJnaW5nX21ldGhvZCI6InByZV9wYWlkIiwidHJhbnNsYXRl
+        ZF9jaGFyZ2luZ19tZXRob2QiOiJQcsOpLXBhZ28iLCJoYXNfdHJpYWwiOnRy
+        dWUsInRyaWFsX3BlcmlvZCI6MjAsImZlYXR1cmVzIjpbeyJpZCI6MSwiZGVz
+        Y3JpcHRpb24iOiJJbXBvc3RvIHNvYnJlIHNlcnZpw6dvIiwidmFsdWUiOiI1
+        MDAiLCJ0YWciOiJJU1MifV0sInJlYWRqdXN0bWVudF93aWxsX2JlX2NyZWF0
+        ZWQiOnRydWUsInJlYWRqdXN0bWVudF9tb250aF9xdWFudGl0eSI6MTIsInBy
+        aWNlX2luZGV4IjoiaXBjYSIsInJlYWRqdXN0bWVudF9kYXlzX3VudGlsX3Vw
+        ZGF0ZSI6MTIsImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6NDcsImVtaXRl
+        c19zZXJ2aWNlX3ZhbHVlX25hbWUiOiJBbHVndWVsIGRlIHNvZnR3YXJlIiwi
+        Y29icmF0b19iaWxsZXRfY2hhcmdlX2NvbmZpZ19pZCI6MTEwLCJjb2JyYXRv
+        X2JpbGxldF9jaGFyZ2VfY29uZmlnX25hbWUiOiJPdXRyYSBjb250YSBkZSBj
+        b2JyYW7Dp2EiLCJjb2JyYXRvX2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfaWQi
+        Om51bGwsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoi
+        IiwiY29icmF0b19wYXltZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19pZCI6
+        MTM2LCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX25h
+        bWUiOiJUZXN0ZSBDYXJ0w6NvIGRlIENyw6lkaXRvIEJpbGxpbWF0aWMiLCJm
+        aW5hbmNlX2NhdGVnb3J5IjoiIiwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6
+        IiIsImFsbG93X2luc3RhbGxtZW50cyI6dHJ1ZSwiaW5zdGFsbG1lbnRzX2xp
+        bWl0Ijo2MCwiY3JlYXRlZF9hdCI6IjA3LzA0LzIwMTcgMTU6MzA6NDUgLTAz
+        OjAwIiwicHJvZHVjdHMiOltdfSwicGF5bWVudF9pbmZvcm1hdGlvbiI6eyJw
+        YXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdheSJ9fX0=
     http_version: '1.1'
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/subscriptions/41bb4274d5084cdeea4575993f752299/update_payment_information
-  recorded_at: Fri, 05 May 2017 17:45:59 GMT
+  recorded_at: Tue, 09 May 2017 12:44:29 GMT
 recorded_with: VCR 3.0.3
