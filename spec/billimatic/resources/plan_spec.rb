@@ -149,23 +149,21 @@ describe Billimatic::Resources::Plan do
     end
 
     context 'when plan has installments' do
-      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
+      let(:http) { Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f') }
 
       subject { described_class.new(http) }
 
       before do
-        Billimatic.configuration.host = "http://localhost:3000"
-
         plan_params[:features] = [{ description: 'feature', value: '100', tag: 'feat.' }]
         plan_params[:products] = [{ service_item_id: 1, units: 1, unit_value: 100, value: 100 }]
       end
 
       it 'success creates a plan with installments' do
-        plan_params[:allow_installments] = true
-        plan_params[:installments_limit] = 12
-
         VCR.use_cassette('plans/create/success_with_installments') do
-          plan = subject.create(plan_params, organization_id: 1)
+          plan_params[:allow_installments] = true
+          plan_params[:installments_limit] = 12
+
+          plan = subject.create(plan_params, organization_id: 797)
 
           expect(plan).to be_a entity_klass
           expect(plan.id).not_to be_nil
@@ -177,10 +175,9 @@ describe Billimatic::Resources::Plan do
       end
 
       it 'success creates a plan without installments' do
-        plan_params[:allow_installments] = false
-
         VCR.use_cassette('plans/create/success_without_installments') do
-          plan = subject.create(plan_params, organization_id: 1)
+          plan_params[:allow_installments] = false
+          plan = subject.create(plan_params, organization_id: 797)
 
           expect(plan).to be_a entity_klass
           expect(plan.id).not_to be_nil
@@ -191,12 +188,12 @@ describe Billimatic::Resources::Plan do
       end
 
       it 'raises Billimatic::RequestError when number of installments is bigger than allowed' do
-        plan_params[:allow_installments] = true
-        plan_params[:installments_limit] = 36
-
         VCR.use_cassette('plans/create/invalid_installments') do
+          plan_params[:allow_installments] = true
+          plan_params[:installments_limit] = 36
+
           expect {
-            subject.create(plan_params, organization_id: 1)
+            subject.create(plan_params, organization_id: 797)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(422)
           end
@@ -402,18 +399,16 @@ describe Billimatic::Resources::Plan do
     end
 
     context 'when plan has installments' do
-      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
+      let(:http) { Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f') }
 
       subject { described_class.new(http) }
-
-      before { Billimatic.configuration.host = "http://localhost:3000" }
 
       it 'successfully updates plan with installments' do
         VCR.use_cassette('plans/update/success_with_installments') do
           plan = subject.update(
-              5,
+              648,
               { allow_installments: true, installments_limit: 12 },
-              organization_id: 1
+              organization_id: 797
           )
 
           expect(plan).to be_a entity_klass
@@ -428,9 +423,9 @@ describe Billimatic::Resources::Plan do
       it 'successfully updates plan without installments' do
         VCR.use_cassette('plans/update/success_without_installments') do
           plan = subject.update(
-              6,
+              647,
               { allow_installments: false },
-              organization_id: 1
+              organization_id: 797
           )
 
           expect(plan).to be_a entity_klass
@@ -446,9 +441,9 @@ describe Billimatic::Resources::Plan do
         VCR.use_cassette('plans/update/invalid_installments') do
           expect {
             subject.update(
-              5,
-              { allow_installments: true, installments_limit:48 },
-              organization_id: 1
+              648,
+              { allow_installments: true, installments_limit: 48 },
+              organization_id: 797
             )
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(422)

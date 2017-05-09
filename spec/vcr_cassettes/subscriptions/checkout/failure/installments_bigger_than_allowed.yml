@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/subscriptions/checkout/dd41fc105b1b6c62141e60fdba01fb2a
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/469ec72f34e3d427f782496452ceae25
     body:
       encoding: UTF-8
       string: '{"subscription":{"customer":{"type":"Person","name":"Consumidor 8","email":"consumidor_8@teste.com","document":"162.558.592-66","address_information":{"address":"Avenida
         Brigadeiro Luís Antônio","number":"12","complement":"apto. 111","zipcode":"01402000","district":"Jardim
         Paulista","city":"São Paulo","state":"SP"}},"payment_information":{"type":"payment_gateway","card_brand":"Visa","card_number":"4012001038443335","card_holder_name":"CONSUMIDOR
-        OITO","card_expiration_month":"12","card_expiration_year":"2019","card_security_code":"123","card_installments":"4"}}}'
+        OITO","card_expiration_month":"12","card_expiration_year":"2019","card_security_code":"123","card_installments":"23"}}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.11.3
@@ -17,7 +17,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -25,13 +25,15 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Date:
-      - Tue, 09 May 2017 12:35:21 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Tue, 09 May 2017 17:55:45 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -40,21 +42,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - e400d90a-d1a9-48ae-8c12-b2a80b59d8d7
+      - 0c95018a-e83b-4150-97f9-8e3752c6ab8c
       X-Runtime:
-      - '0.574073'
+      - '0.033007'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJlcnJvcnMiOnsiY3VzdG9tZXIiOnsiY2hlY2tvdXQiOlsibsOjbyBmb2kg
-        cmVhbGl6YWRvLCBwb2lzIGrDoSBmb2kgcHJvY2Vzc2FkbyBhbnRlcmlvcm1l
-        bnRlLiJdfX19
+      encoding: UTF-8
+      string: '{"errors":{"payment_information":{"card_installments":["deve ser menor
+        ou igual a 12"]}}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/subscriptions/checkout/dd41fc105b1b6c62141e60fdba01fb2a
-  recorded_at: Tue, 09 May 2017 12:35:21 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/469ec72f34e3d427f782496452ceae25
+  recorded_at: Tue, 09 May 2017 17:55:45 GMT
 recorded_with: VCR 3.0.3

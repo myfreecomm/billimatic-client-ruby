@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/subscriptions/checkout/dd41fc105b1b6c62141e60fdba01fb2a
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/5b22d1d3762f3d4a98254a331275bbce
     body:
       encoding: UTF-8
       string: '{"subscription":{"customer":{"type":"Person","name":"Consumidor 8","email":"consumidor_8@teste.com","document":"162.558.592-66","address_information":{"address":"Avenida
@@ -17,7 +17,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -25,75 +25,78 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Date:
-      - Fri, 05 May 2017 18:02:23 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Tue, 09 May 2017 17:53:20 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"bfa9939cb87ebcc4fbc8a9aa49240a58"
+      Etag:
+      - W/"a719fe6b858bde220f33de4033ff95b0"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4d831d2b-cbe9-4760-9b59-5ad3665154c9
+      - 369c9726-8c4c-443f-bc09-904e6f39b6a6
       X-Runtime:
-      - '0.730030'
+      - '1.748427'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjIwLCJuYW1lIjoiQXNzaW5hdHVyYSBD
-        b25zdW1pZG9yIDggLSBQbGFub3MgZGUgMyBwYXJjZWxhcyIsInRpdGxlIjoi
-        QXNzaW5hdHVyYSBDb25zdW1pZG9yIDggLSBQbGFub3MgZGUgMyBwYXJjZWxh
-        cyIsInRva2VuIjoiZGQ0MWZjMTA1YjFiNmM2MjE0MWU2MGZkYmEwMWZiMmEi
-        LCJkZXNjcmlwdGlvbiI6bnVsbCwiY3VzdG9tZXJfaWQiOjcsInN1cHBsaWVy
-        X2lkIjoxLCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0
-        aXZlIiwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjA1LzA1LzIwMTci
-        LCJlbmRfZGF0ZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjA1LzA1LzIwMTcgMTU6
-        MDA6NDcgLTAzOjAwIiwia2luZCI6InNhbGUiLCJvdmVyZHVlIjpmYWxzZSwi
-        dmFsaWRfdW50aWwiOiIwNS8wNS8yMDE3Iiwic3RhdHVzIjoiZXN0YWJsaXNo
-        ZWQiLCJyZWdpc3RyYXRpb25fbWV0aG9kIjoic3Vic2NyaXB0aW9uIiwiY2Fu
-        Y2VsX2RhdGUiOm51bGwsImNhbmNlbF9yZWFzb24iOm51bGwsInBsYW4iOnsi
-        aWQiOjcsIm5hbWUiOiJQbGFub3MgZGUgMyBwYXJjZWxhcyIsImRlc2NyaXB0
-        aW9uIjoiU8OzIHBlcm1pdGUgMyBwYXJjZWxhcyIsInJlZGlyZWN0X3VybCI6
-        Imh0dHBzOi8vNDc2Nzc1ZTAubmdyb2suaW8iLCJwcmljZSI6IjEwMDAuMCIs
-        ImJpbGxpbmdfcGVyaW9kIjoxLCJ0cmFuc2xhdGVkX2JpbGxpbmdfcGVyaW9k
-        IjoiTWVuc2FsbWVudGUiLCJjaGFyZ2luZ19tZXRob2QiOiJwcmVfcGFpZCIs
-        InRyYW5zbGF0ZWRfY2hhcmdpbmdfbWV0aG9kIjoiUHLDqS1wYWdvIiwiaGFz
-        X3RyaWFsIjpmYWxzZSwidHJpYWxfcGVyaW9kIjpudWxsLCJmZWF0dXJlcyI6
-        W3siaWQiOjUsImRlc2NyaXB0aW9uIjoiIiwidmFsdWUiOiIxMDAwIiwidGFn
-        IjoiIn1dLCJyZWFkanVzdG1lbnRfd2lsbF9iZV9jcmVhdGVkIjpmYWxzZSwi
-        cmVhZGp1c3RtZW50X21vbnRoX3F1YW50aXR5IjpudWxsLCJwcmljZV9pbmRl
-        eCI6bnVsbCwicmVhZGp1c3RtZW50X2RheXNfdW50aWxfdXBkYXRlIjpudWxs
-        LCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOjQ3LCJlbWl0ZXNfc2Vydmlj
-        ZV92YWx1ZV9uYW1lIjoiQWx1Z3VlbCBkZSBzb2Z0d2FyZSIsImNvYnJhdG9f
-        YmlsbGV0X2NoYXJnZV9jb25maWdfaWQiOjIyMiwiY29icmF0b19iaWxsZXRf
-        Y2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQnJhZGVzY28iLCJjb2JyYXRv
-        X2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfaWQiOm51bGwsImNvYnJhdG9fYmls
-        bGV0X2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoiIiwiY29icmF0b19wYXltZW50
-        X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19pZCI6MTM2LCJjb2JyYXRvX3BheW1l
-        bnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX25hbWUiOiJUZXN0ZSBDYXJ0w6Nv
-        IGRlIENyw6lkaXRvIEJpbGxpbWF0aWMiLCJmaW5hbmNlX2NhdGVnb3J5Ijoi
-        IiwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6IiIsImFsbG93X2luc3RhbGxt
-        ZW50cyI6dHJ1ZSwiaW5zdGFsbG1lbnRzX2xpbWl0IjozLCJjcmVhdGVkX2F0
-        IjoiMDUvMDUvMjAxNyAxNTowMDoyMSAtMDM6MDAiLCJwcm9kdWN0cyI6W119
-        LCJwYXltZW50X2luZm9ybWF0aW9uIjp7ImlkIjoyMSwicGF5bWVudF9tZXRo
-        b2QiOiJwYXltZW50X2dhdGV3YXkiLCJjb2JyYXRvX2NhcmRfaWQiOiItLSIs
-        ImNhcmRfZXhwaXJhdGlvbl9tb250aCI6MTIsImNhcmRfZXhwaXJhdGlvbl95
-        ZWFyIjoyMDE5LCJpbnN0YWxsbWVudHMiOjMsImNyZWF0ZWRfYXQiOiIwNS8w
-        NS8yMDE3IDE1OjAyOjIzIC0wMzowMCJ9fX0=
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg4NjUsIm5hbWUiOiJBc3NpbmF0dXJh
+        IENvbnN1bWlkb3IgOCAtIFBsYW5vIGRlIFRlc3RlIiwidGl0bGUiOiJBc3Np
+        bmF0dXJhIENvbnN1bWlkb3IgOCAtIFBsYW5vIGRlIFRlc3RlIiwidG9rZW4i
+        OiI1YjIyZDFkMzc2MmYzZDRhOTgyNTRhMzMxMjc1YmJjZSIsImRlc2NyaXB0
+        aW9uIjpudWxsLCJjdXN0b21lcl9pZCI6MTU5Nywic3VwcGxpZXJfaWQiOjc5
+        Nywic3VwcGxpZXJfdHlwZSI6IkNvbXBhbnkiLCJzdGF0ZSI6ImFjdGl2ZSIs
+        ImNvbW1lbnRzIjpudWxsLCJpbml0X2RhdGUiOiIwOS8wNS8yMDE3IiwiZW5k
+        X2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIwOS8wNS8yMDE3IDE0OjUyOjQ3
+        IC0wMzowMCIsImtpbmQiOiJzYWxlIiwib3ZlcmR1ZSI6ZmFsc2UsInZhbGlk
+        X3VudGlsIjoiMDkvMDUvMjAxNyIsInN0YXR1cyI6ImVzdGFibGlzaGVkIiwi
+        cmVnaXN0cmF0aW9uX21ldGhvZCI6InN1YnNjcmlwdGlvbiIsImNhbmNlbF9k
+        YXRlIjpudWxsLCJjYW5jZWxfcmVhc29uIjpudWxsLCJwbGFuIjp7ImlkIjo2
+        NDcsIm5hbWUiOiJQbGFubyBkZSBUZXN0ZSIsImRlc2NyaXB0aW9uIjoiRGVz
+        Y3JpcHRpb24iLCJyZWRpcmVjdF91cmwiOiJodHRwOi8vbmV4YWFzLmNvbSIs
+        InByaWNlIjoiMTAwLjAiLCJiaWxsaW5nX3BlcmlvZCI6MSwidHJhbnNsYXRl
+        ZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNhbG1lbnRlIiwiY2hhcmdpbmdfbWV0
+        aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xhdGVkX2NoYXJnaW5nX21ldGhvZCI6
+        IlByw6ktcGFnbyIsImhhc190cmlhbCI6dHJ1ZSwidHJpYWxfcGVyaW9kIjoy
+        NSwiZmVhdHVyZXMiOlt7ImlkIjoxMzYyNywiZGVzY3JpcHRpb24iOiJmZWF0
+        dXJlIiwidmFsdWUiOiIxMDAiLCJ0YWciOiJmZWF0LiJ9XSwicmVhZGp1c3Rt
+        ZW50X3dpbGxfYmVfY3JlYXRlZCI6ZmFsc2UsInJlYWRqdXN0bWVudF9tb250
+        aF9xdWFudGl0eSI6bnVsbCwicHJpY2VfaW5kZXgiOm51bGwsInJlYWRqdXN0
+        bWVudF9kYXlzX3VudGlsX3VwZGF0ZSI6bnVsbCwiZW1pdGVzX3NlcnZpY2Vf
+        dmFsdWVzX2lkIjo3MCwiZW1pdGVzX3NlcnZpY2VfdmFsdWVfbmFtZSI6IlRl
+        c3RlIGRlIG1vZGVsbyIsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdf
+        aWQiOm51bGwsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdfbmFtZSI6
+        IiIsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV90ZW1wbGF0ZV9pZCI6bnVsbCwi
+        Y29icmF0b19iaWxsZXRfY2hhcmdlX3RlbXBsYXRlX25hbWUiOiIiLCJjb2Jy
+        YXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX2lkIjoxMzcsImNv
+        YnJhdG9fcGF5bWVudF9nYXRld2F5X2NoYXJnZV9jb25maWdfbmFtZSI6IlRl
+        c3RlIENhcnTDo28iLCJmaW5hbmNlX2NhdGVnb3J5IjoiIiwiZmluYW5jZV9y
+        ZXZlbnVlX2NlbnRlciI6IiIsImFsbG93X2luc3RhbGxtZW50cyI6dHJ1ZSwi
+        aW5zdGFsbG1lbnRzX2xpbWl0IjozLCJjcmVhdGVkX2F0IjoiMDkvMDUvMjAx
+        NyAxMzo1MToxNiAtMDM6MDAiLCJwcm9kdWN0cyI6W3siaWQiOjIyNzI1Miwi
+        bmFtZSI6IkNhcnRlaXJhIiwiZGVzY3JpcHRpb24iOiIiLCJ1bml0X3ZhbHVl
+        IjoiMTAwLjAiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoiMTAwLjAifV19LCJw
+        YXltZW50X2luZm9ybWF0aW9uIjp7ImlkIjo3NDI1LCJwYXltZW50X21ldGhv
+        ZCI6InBheW1lbnRfZ2F0ZXdheSIsImNvYnJhdG9fY2FyZF9pZCI6Ii0tIiwi
+        Y2FyZF9leHBpcmF0aW9uX21vbnRoIjoxMiwiY2FyZF9leHBpcmF0aW9uX3ll
+        YXIiOjIwMTksImluc3RhbGxtZW50cyI6MywiY3JlYXRlZF9hdCI6IjA5LzA1
+        LzIwMTcgMTQ6NTM6MjAgLTAzOjAwIn19fQ==
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/subscriptions/checkout/dd41fc105b1b6c62141e60fdba01fb2a
-  recorded_at: Fri, 05 May 2017 18:02:23 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/5b22d1d3762f3d4a98254a331275bbce
+  recorded_at: Tue, 09 May 2017 17:53:21 GMT
 recorded_with: VCR 3.0.3

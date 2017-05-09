@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: http://localhost:3000/api/v1/subscriptions/14430c24b945db9a980bf70f586c98eb/update_payment_information
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/dbf0f7e76ab8eb455942db1b7043d9b3/update_payment_information
     body:
       encoding: UTF-8
       string: '{"subscription":{"payment_information":{"type":"payment_gateway","card_brand":"Visa","card_number":"4012001037141112","card_holder_name":"PRE
@@ -15,7 +15,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -23,13 +23,15 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Date:
-      - Tue, 09 May 2017 12:46:19 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Tue, 09 May 2017 18:18:31 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -38,19 +40,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f8ea32ec-0d95-48fa-a101-18a419c684d9
+      - 33aee4e1-b9a6-4c78-8485-c2d0844026ed
       X-Runtime:
-      - '0.024349'
+      - '0.019155'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"errors":{"payment_information":{"card_installments":["deve ser menor
         ou igual a 12"]}}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/subscriptions/14430c24b945db9a980bf70f586c98eb/update_payment_information
-  recorded_at: Tue, 09 May 2017 12:46:19 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/dbf0f7e76ab8eb455942db1b7043d9b3/update_payment_information
+  recorded_at: Tue, 09 May 2017 18:18:31 GMT
 recorded_with: VCR 3.0.3

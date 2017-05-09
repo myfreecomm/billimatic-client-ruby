@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: http://localhost:3000/api/v1/subscriptions/14430c24b945db9a980bf70f586c98eb/update_payment_information
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/dbf0f7e76ab8eb455942db1b7043d9b3/update_payment_information
     body:
       encoding: UTF-8
       string: '{"subscription":{"payment_information":{"type":"payment_gateway","card_brand":"Visa","card_number":"4012001037141112","card_holder_name":"PRE
@@ -15,7 +15,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -23,72 +23,87 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 05 May 2017 19:02:03 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Tue, 09 May 2017 18:17:04 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"db182e39451977f31a22f48228081c40"
+      Etag:
+      - W/"6f89f14f667913e45cc76b3c51bb1acb"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 449954bd-69ef-4922-b67e-2187b0fa1b9a
+      - cd19bfa0-62a5-4008-9251-aab14562e6e2
       X-Runtime:
-      - '0.959089'
+      - '0.375640'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjI0LCJuYW1lIjoiQXNzaW5hdHVyYSBD
-        b25zdW1pZG9yIDggLSBQbGFub3MgZGUgMyBwYXJjZWxhcyIsInRpdGxlIjoi
-        QXNzaW5hdHVyYSBDb25zdW1pZG9yIDggLSBQbGFub3MgZGUgMyBwYXJjZWxh
-        cyIsInRva2VuIjoiMTQ0MzBjMjRiOTQ1ZGI5YTk4MGJmNzBmNTg2Yzk4ZWIi
-        LCJkZXNjcmlwdGlvbiI6bnVsbCwiY3VzdG9tZXJfaWQiOjcsInN1cHBsaWVy
-        X2lkIjoxLCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0
-        aXZlIiwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjA1LzA1LzIwMTci
-        LCJlbmRfZGF0ZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjA1LzA1LzIwMTcgMTU6
-        NTk6MzUgLTAzOjAwIiwia2luZCI6InNhbGUiLCJvdmVyZHVlIjpmYWxzZSwi
-        dmFsaWRfdW50aWwiOiIxMC8wNS8yMDE3Iiwic3RhdHVzIjoiZXN0YWJsaXNo
-        ZWQiLCJyZWdpc3RyYXRpb25fbWV0aG9kIjoic3Vic2NyaXB0aW9uIiwiY2Fu
-        Y2VsX2RhdGUiOm51bGwsImNhbmNlbF9yZWFzb24iOm51bGwsInBsYW4iOnsi
-        aWQiOjcsIm5hbWUiOiJQbGFub3MgZGUgMyBwYXJjZWxhcyIsImRlc2NyaXB0
-        aW9uIjoiU8OzIHBlcm1pdGUgMyBwYXJjZWxhcyIsInJlZGlyZWN0X3VybCI6
-        Imh0dHBzOi8vNDc2Nzc1ZTAubmdyb2suaW8iLCJwcmljZSI6IjEwMDAuMCIs
-        ImJpbGxpbmdfcGVyaW9kIjoxLCJ0cmFuc2xhdGVkX2JpbGxpbmdfcGVyaW9k
-        IjoiTWVuc2FsbWVudGUiLCJjaGFyZ2luZ19tZXRob2QiOiJwcmVfcGFpZCIs
-        InRyYW5zbGF0ZWRfY2hhcmdpbmdfbWV0aG9kIjoiUHLDqS1wYWdvIiwiaGFz
-        X3RyaWFsIjpmYWxzZSwidHJpYWxfcGVyaW9kIjpudWxsLCJmZWF0dXJlcyI6
-        W3siaWQiOjUsImRlc2NyaXB0aW9uIjoiIiwidmFsdWUiOiIxMDAwIiwidGFn
-        IjoiIn1dLCJyZWFkanVzdG1lbnRfd2lsbF9iZV9jcmVhdGVkIjpmYWxzZSwi
-        cmVhZGp1c3RtZW50X21vbnRoX3F1YW50aXR5IjpudWxsLCJwcmljZV9pbmRl
-        eCI6bnVsbCwicmVhZGp1c3RtZW50X2RheXNfdW50aWxfdXBkYXRlIjpudWxs
-        LCJlbWl0ZXNfc2VydmljZV92YWx1ZXNfaWQiOjQ3LCJlbWl0ZXNfc2Vydmlj
-        ZV92YWx1ZV9uYW1lIjoiQWx1Z3VlbCBkZSBzb2Z0d2FyZSIsImNvYnJhdG9f
-        YmlsbGV0X2NoYXJnZV9jb25maWdfaWQiOjIyMiwiY29icmF0b19iaWxsZXRf
-        Y2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQnJhZGVzY28iLCJjb2JyYXRv
-        X2JpbGxldF9jaGFyZ2VfdGVtcGxhdGVfaWQiOm51bGwsImNvYnJhdG9fYmls
-        bGV0X2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoiIiwiY29icmF0b19wYXltZW50
-        X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19pZCI6MTM2LCJjb2JyYXRvX3BheW1l
-        bnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX25hbWUiOiJUZXN0ZSBDYXJ0w6Nv
-        IGRlIENyw6lkaXRvIEJpbGxpbWF0aWMiLCJmaW5hbmNlX2NhdGVnb3J5Ijoi
-        IiwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6IiIsImFsbG93X2luc3RhbGxt
-        ZW50cyI6dHJ1ZSwiaW5zdGFsbG1lbnRzX2xpbWl0IjozLCJjcmVhdGVkX2F0
-        IjoiMDUvMDUvMjAxNyAxNTowMDoyMSAtMDM6MDAiLCJwcm9kdWN0cyI6W119
-        LCJwYXltZW50X2luZm9ybWF0aW9uIjp7InBheW1lbnRfbWV0aG9kIjoicGF5
-        bWVudF9nYXRld2F5In19fQ==
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg4NjksIm5hbWUiOiJBc3NpbmF0dXJh
+        IENvbnN1bWlkb3IgOCAtIENvYnJhdG8gQsOhc2ljbyIsInRpdGxlIjoiQXNz
+        aW5hdHVyYSBDb25zdW1pZG9yIDggLSBDb2JyYXRvIELDoXNpY28iLCJ0b2tl
+        biI6ImRiZjBmN2U3NmFiOGViNDU1OTQyZGIxYjcwNDNkOWIzIiwiZGVzY3Jp
+        cHRpb24iOm51bGwsImN1c3RvbWVyX2lkIjoxNTk3LCJzdXBwbGllcl9pZCI6
+        NDg2LCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0aXZl
+        IiwiY29tbWVudHMiOm51bGwsImluaXRfZGF0ZSI6IjA5LzA1LzIwMTciLCJl
+        bmRfZGF0ZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjA5LzA1LzIwMTcgMTU6MDk6
+        NTcgLTAzOjAwIiwia2luZCI6InNhbGUiLCJvdmVyZHVlIjpmYWxzZSwidmFs
+        aWRfdW50aWwiOiIxNC8wNS8yMDE3Iiwic3RhdHVzIjoiZXN0YWJsaXNoZWQi
+        LCJyZWdpc3RyYXRpb25fbWV0aG9kIjoic3Vic2NyaXB0aW9uIiwiY2FuY2Vs
+        X2RhdGUiOm51bGwsImNhbmNlbF9yZWFzb24iOm51bGwsInBsYW4iOnsiaWQi
+        OjM2NSwibmFtZSI6IkNvYnJhdG8gQsOhc2ljbyIsImRlc2NyaXB0aW9uIjoi
+        MTUwIGNvYnJhbsOnYXMgcG9yIG3DqnMsIGEgUiQgMzAsMDAuIENvYnJhbsOn
+        YXMgZXhjZWRlbnRlcyBhIFIkIDAsNjAgY2FkYS4gVG9kYXMgYXMgZnVuY2lv
+        bmFsaWRhZGVzIGRpc3BvbsOtdmVpcywgdXN1w6FyaW9zIGUgY29uZmlndXJh
+        w6fDtWVzIGRlIGNvYnJhbsOnYXMgaWxpbWl0YWRhcy4iLCJyZWRpcmVjdF91
+        cmwiOiJodHRwczovL3NhbmRib3guY29icmF0by5jb20iLCJwcmljZSI6IjMw
+        LjAiLCJiaWxsaW5nX3BlcmlvZCI6MSwidHJhbnNsYXRlZF9iaWxsaW5nX3Bl
+        cmlvZCI6Ik1lbnNhbG1lbnRlIiwiY2hhcmdpbmdfbWV0aG9kIjoicHJlX3Bh
+        aWQiLCJ0cmFuc2xhdGVkX2NoYXJnaW5nX21ldGhvZCI6IlByw6ktcGFnbyIs
+        Imhhc190cmlhbCI6dHJ1ZSwidHJpYWxfcGVyaW9kIjo3LCJmZWF0dXJlcyI6
+        W3siaWQiOjEyOTY1LCJkZXNjcmlwdGlvbiI6IiIsInZhbHVlIjoiZmFsc2Ui
+        LCJ0YWciOiJjbG9zZWQifSx7ImlkIjoxMjk1NCwiZGVzY3JpcHRpb24iOiIi
+        LCJ2YWx1ZSI6InRydWUiLCJ0YWciOiJhZHZhbmNlZF9jaGFyZ2luZ19tZXRo
+        b2RzIn0seyJpZCI6MTI5NTUsImRlc2NyaXB0aW9uIjoiIiwidmFsdWUiOiJ0
+        cnVlIiwidGFnIjoib3Blbl9mb3Jfc3Vic2NyaXB0aW9uIn0seyJpZCI6MTI5
+        NTYsImRlc2NyaXB0aW9uIjoiIiwidmFsdWUiOiJjb2JyYXRvLWJhc2ljIiwi
+        dGFnIjoic2x1ZyJ9XSwicmVhZGp1c3RtZW50X3dpbGxfYmVfY3JlYXRlZCI6
+        ZmFsc2UsInJlYWRqdXN0bWVudF9tb250aF9xdWFudGl0eSI6bnVsbCwicHJp
+        Y2VfaW5kZXgiOm51bGwsInJlYWRqdXN0bWVudF9kYXlzX3VudGlsX3VwZGF0
+        ZSI6bnVsbCwiZW1pdGVzX3NlcnZpY2VfdmFsdWVzX2lkIjo0NCwiZW1pdGVz
+        X3NlcnZpY2VfdmFsdWVfbmFtZSI6IkxpY2VuY2lhbWVudG8gZGUgdXNvIGRl
+        IHByb2dyYW1hcyBkZSBjb21wdXRhZG9yIiwiY29icmF0b19iaWxsZXRfY2hh
+        cmdlX2NvbmZpZ19pZCI6MTEyLCJjb2JyYXRvX2JpbGxldF9jaGFyZ2VfY29u
+        ZmlnX25hbWUiOiJNeWZpbmFuY2UiLCJjb2JyYXRvX2JpbGxldF9jaGFyZ2Vf
+        dGVtcGxhdGVfaWQiOm51bGwsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV90ZW1w
+        bGF0ZV9uYW1lIjoiIiwiY29icmF0b19wYXltZW50X2dhdGV3YXlfY2hhcmdl
+        X2NvbmZpZ19pZCI6MTM2LCJjb2JyYXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFy
+        Z2VfY29uZmlnX25hbWUiOiJUZXN0ZSBDYXJ0w6NvIGRlIENyw6lkaXRvIEJp
+        bGxpbWF0aWMiLCJmaW5hbmNlX2NhdGVnb3J5IjoiUmVjZWl0YSAvIFNlcnZp
+        w6dvcyIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIiOiIiLCJhbGxvd19pbnN0
+        YWxsbWVudHMiOnRydWUsImluc3RhbGxtZW50c19saW1pdCI6MywiY3JlYXRl
+        ZF9hdCI6IjA2LzEwLzIwMTYgMTQ6MDI6NTMgLTAzOjAwIiwicHJvZHVjdHMi
+        Olt7ImlkIjoyMTg0MDYsIm5hbWUiOiJDb2JyYXRvIiwiZGVzY3JpcHRpb24i
+        OiIiLCJ1bml0X3ZhbHVlIjoiMC4yIiwidW5pdHMiOiIxNTAuMCIsInZhbHVl
+        IjoiMzAuMCJ9LHsiaWQiOjIxODQwNywibmFtZSI6IkNvYnJhdG8gRXh0cmEi
+        LCJkZXNjcmlwdGlvbiI6IiIsInVuaXRfdmFsdWUiOiIwLjYiLCJ1bml0cyI6
+        IjAuMCIsInZhbHVlIjoiMC4wIn1dfSwicGF5bWVudF9pbmZvcm1hdGlvbiI6
+        eyJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdheSJ9fX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/subscriptions/14430c24b945db9a980bf70f586c98eb/update_payment_information
-  recorded_at: Fri, 05 May 2017 19:02:03 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/dbf0f7e76ab8eb455942db1b7043d9b3/update_payment_information
+  recorded_at: Tue, 09 May 2017 18:17:04 GMT
 recorded_with: VCR 3.0.3
