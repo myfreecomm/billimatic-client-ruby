@@ -612,6 +612,77 @@ describe Billimatic::Resources::Invoice do
           end
         end
       end
+
+      it 'raises Billimatic::RequestError when invoice is to emit' do
+        VCR.use_cassette('/invoices/block/failure/invoice_is_to_emit') do
+          expect {
+            subject.block(143, contract_id: 5)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
+    end
+  end
+
+  describe '#approve' do
+    let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
+
+    subject { described_class.new(http) }
+
+    before { Billimatic.configuration.host = 'http://localhost:3000' }
+
+    context 'when success' do
+      it 'successfully approve an invoice' do
+        VCR.use_cassette('/invoices/approve/success') do
+          response = subject.approve(143, contract_id: 5)
+
+          expect(response).to be_a(entity_klass)
+          expect(response.approval_status).to eql('approved')
+        end
+      end
+    end
+
+    context 'when error' do
+      it 'raises Billimatic::RequestError when invoice not found' do
+        VCR.use_cassette('/invoices/approve/failure/invoice_not_found') do
+          expect {
+            subject.approve(8888, contract_id: 5)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(404)
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when contract not found' do
+        VCR.use_cassette('/invoices/approve/failure/contract_not_found') do
+          expect {
+            subject.approve(143, contract_id: 50)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(404)
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when invoice is already approved' do
+        VCR.use_cassette('/invoices/approve/failure/invoice_already_approved') do
+          expect {
+            subject.approve(143, contract_id: 5)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when invoice is to emit' do
+        VCR.use_cassette('/invoices/approve/failure/invoice_is_to_emit') do
+          expect {
+            subject.approve(143, contract_id: 5)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
     end
   end
 end

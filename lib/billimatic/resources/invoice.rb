@@ -33,6 +33,14 @@ module Billimatic
           respond_with_entity response
         end
       end
+
+      def approve(id, contract_id:)
+        http.patch(
+          "/contracts/#{contract_id}/invoices/#{id}/approve"
+        ) do |response|
+          respond_with_entity response
+        end
+      end
     end
   end
 end

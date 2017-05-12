@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/contracts/5/invoices/143/approve
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.11.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 12 May 2017 19:38:21 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"38941c467d5c892be4ceb02ba3c4260f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a8b3e48d-8db4-4180-b3d8-7f7e4c9b0d69
+      X-Runtime:
+      - '0.038892'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbnZvaWNlIjp7ImlkIjoxNDMsImNvbnRyYWN0X2lkIjo1LCJpc3N1ZV9k
+        YXRlIjoiMTIvMDUvMjAxNyIsImdyb3NzX3ZhbHVlIjoiMTcwMC4wIiwicGF5
+        bWVudF92YWx1ZSI6IjE3MDAuMCIsImRlc2NyaXB0aW9uIjoiQXNzaW5hdHVy
+        YSBDb25zdWx0b3JpYSBkZSBzb2Z0d2FyZSBQbGF0aW51bSIsInN0YXRlIjoi
+        dG9fZW1pdCIsIm5mZV9zZXJ2aWNlIjpudWxsLCJuZmVfdmVyaWZpY2F0aW9u
+        IjpudWxsLCJuZmVfaXNzdWVfZGF0ZSI6bnVsbCwibmZlX2JvZHkiOiIkREVT
+        Q1JJQ0FPIiwibmZlX2lzc3VlZCI6ZmFsc2UsIm51bWJlciI6bnVsbCwiY3Jl
+        YXRlZF9hdCI6IjEwLzA0LzIwMTcgMTU6MTY6MjEgLTAzOjAwIiwibWFuYWdl
+        bWVudF90eXBlIjoiYXV0b21hdGljIiwiYWNjcnVhbF9kYXRlIjoiMjAxNy0w
+        Ni0wMSIsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9pZCI6MywiY3VzdG9t
+        ZXJfdHlwZSI6IlBlcnNvbiIsImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6
+        NDcsImVtaXRlc19zZXJ2aWNlX3ZhbHVlX25hbWUiOiJBbHVndWVsIGRlIHNv
+        ZnR3YXJlIiwiZmluYW5jZV9jYXRlZ29yeSI6IkRlc3Blc2FzIGRlIFRyYWJh
+        bGhvIiwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6IkFkbWluaXN0cmHDp8Oj
+        byIsImZpbmFuY2VfcmVjZWl2ZV92aWEiOm51bGwsImNvYnJhdG9fY2hhcmdl
+        X2NvbmZpZ19pZCI6MTI4LCJjb2JyYXRvX2NoYXJnZV9jb25maWdfbmFtZSI6
+        IkNvYnJhbsOnYSBuw6NvIHJlZ2lzdHJhZGEiLCJjb2JyYXRvX2NoYXJnZV90
+        ZW1wbGF0ZV9pZCI6NCwiY29icmF0b19jaGFyZ2VfdGVtcGxhdGVfbmFtZSI6
+        Ik1vZGVsbyBkZSBDb2JyYW7Dp2EgQmlsbGltYXRpYyAyIiwiZGF5c191bnRp
+        bF9hdXRvbWF0aWNfbmZlX2VtaXNzaW9uIjo1LCJhdXRvbWF0aWNfbmZlX2lz
+        c3VlX2RhdGUiOm51bGwsImF1dG9tYXRpY19lbWFpbF90ZW1wbGF0ZV9pZCI6
+        MiwiYXBwcm92YWxfc3RhdHVzIjoiYXBwcm92ZWQiLCJyZWNlaXZhYmxlcyI6
+        W3siaWQiOjE1OCwiaW52b2ljZV9pZCI6MTQzLCJkdWVfZGF0ZSI6IjEwLzA2
+        LzIwMTciLCJ2YWx1ZSI6IjEwMC4wIiwiZ3Jvc3NfdmFsdWUiOiIxNzAwLjAi
+        LCJwYXltZW50X3ZhbHVlIjoiMTcwMC4wIiwicmVjZWl2ZWRfdmFsdWUiOm51
+        bGwsInJlY2VpdmVkX2F0IjpudWxsLCJjcmVhdGVkX2F0IjoiMTAvMDQvMjAx
+        NyAxNToxNjoyMSAtMDM6MDAiLCJzdGF0ZSI6InRvX2VtaXQiLCJwYXltZW50
+        X2dhdGV3YXlfc3RhdHVzIjpudWxsLCJjb2JyYXRvX2NoYXJnZV9pZCI6MTI5
+        NTgsImNvYnJhdG9fZXJyb3JzIjpudWxsLCJmaW5hbmNlX3JlY2VpdmFibGVf
+        aWQiOjE4MTMxMDIsImZpbmFuY2VfZW50aXR5X2lkIjozODA0LCJmaW5hbmNl
+        X2Vycm9ycyI6bnVsbH1dLCJzZXJ2aWNlcyI6W10sImF0dGFjaG1lbnRzIjpb
+        XX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/5/invoices/143/approve
+  recorded_at: Fri, 12 May 2017 19:38:21 GMT
+recorded_with: VCR 3.0.3
