@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: http://localhost:3000/api/v1/contracts/5/invoices/143/approve
+    uri: http://localhost:3000/api/v1/contracts/5/invoices/143/block
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Fri, 12 May 2017 19:53:17 GMT
+      - Fri, 12 May 2017 20:23:48 GMT
       Connection:
       - close
       X-Frame-Options:
@@ -37,9 +37,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 30091a00-dc95-460a-8bce-035231b84454
+      - 49dae42a-33df-42e6-97f2-320c15475931
       X-Runtime:
-      - '0.017630'
+      - '0.020374'
       Vary:
       - Origin
       Transfer-Encoding:
@@ -47,10 +47,10 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlcnJvcnMiOiJPIGZhdHVyYW1lbnRvIG7Do28gcG9kZSBzZXIgYXByb3Zh
-        ZG8uIn0=
+        eyJlcnJvcnMiOiJPIGZhdHVyYW1lbnRvIG7Do28gcG9kZSBzZXIgYmxvcXVl
+        YWRvLiJ9
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/5/invoices/143/approve
-  recorded_at: Fri, 12 May 2017 19:53:17 GMT
+      effective_url: http://localhost:3000/api/v1/contracts/5/invoices/143/block
+  recorded_at: Fri, 12 May 2017 20:23:48 GMT
 recorded_with: VCR 3.0.3

@@ -613,8 +613,8 @@ describe Billimatic::Resources::Invoice do
         end
       end
 
-      it 'raises Billimatic::RequestError when invoice is to emit' do
-        VCR.use_cassette('/invoices/block/failure/invoice_is_to_emit') do
+      it 'raises Billimatic::RequestError when invoice is not to emit' do
+        VCR.use_cassette('/invoices/block/failure/invoice_is_not_to_emit') do
           expect {
             subject.block(143, contract_id: 5)
           }.to raise_error(Billimatic::RequestError) do |error|
@@ -674,8 +674,8 @@ describe Billimatic::Resources::Invoice do
         end
       end
 
-      it 'raises Billimatic::RequestError when invoice is to emit' do
-        VCR.use_cassette('/invoices/approve/failure/invoice_is_to_emit') do
+      it 'raises Billimatic::RequestError when invoice is not to emit' do
+        VCR.use_cassette('/invoices/approve/failure/invoice_is_not_to_emit') do
           expect {
             subject.approve(143, contract_id: 5)
           }.to raise_error(Billimatic::RequestError) do |error|
