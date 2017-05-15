@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: http://localhost:3000/api/v1/contracts/5/invoices/143/approve
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/168431/approve
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,67 +22,39 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 12 May 2017 19:38:21 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Mon, 15 May 2017 13:01:50 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"38941c467d5c892be4ceb02ba3c4260f"
+      Etag:
+      - W/"df162a0ddd5d303b695dd695eeca1eb9"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a8b3e48d-8db4-4180-b3d8-7f7e4c9b0d69
+      - 11efda47-756a-47ef-859b-57d8a47d2dd2
       X-Runtime:
-      - '0.038892'
+      - '0.045877'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpbnZvaWNlIjp7ImlkIjoxNDMsImNvbnRyYWN0X2lkIjo1LCJpc3N1ZV9k
-        YXRlIjoiMTIvMDUvMjAxNyIsImdyb3NzX3ZhbHVlIjoiMTcwMC4wIiwicGF5
-        bWVudF92YWx1ZSI6IjE3MDAuMCIsImRlc2NyaXB0aW9uIjoiQXNzaW5hdHVy
-        YSBDb25zdWx0b3JpYSBkZSBzb2Z0d2FyZSBQbGF0aW51bSIsInN0YXRlIjoi
-        dG9fZW1pdCIsIm5mZV9zZXJ2aWNlIjpudWxsLCJuZmVfdmVyaWZpY2F0aW9u
-        IjpudWxsLCJuZmVfaXNzdWVfZGF0ZSI6bnVsbCwibmZlX2JvZHkiOiIkREVT
-        Q1JJQ0FPIiwibmZlX2lzc3VlZCI6ZmFsc2UsIm51bWJlciI6bnVsbCwiY3Jl
-        YXRlZF9hdCI6IjEwLzA0LzIwMTcgMTU6MTY6MjEgLTAzOjAwIiwibWFuYWdl
-        bWVudF90eXBlIjoiYXV0b21hdGljIiwiYWNjcnVhbF9kYXRlIjoiMjAxNy0w
-        Ni0wMSIsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9pZCI6MywiY3VzdG9t
-        ZXJfdHlwZSI6IlBlcnNvbiIsImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6
-        NDcsImVtaXRlc19zZXJ2aWNlX3ZhbHVlX25hbWUiOiJBbHVndWVsIGRlIHNv
-        ZnR3YXJlIiwiZmluYW5jZV9jYXRlZ29yeSI6IkRlc3Blc2FzIGRlIFRyYWJh
-        bGhvIiwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6IkFkbWluaXN0cmHDp8Oj
-        byIsImZpbmFuY2VfcmVjZWl2ZV92aWEiOm51bGwsImNvYnJhdG9fY2hhcmdl
-        X2NvbmZpZ19pZCI6MTI4LCJjb2JyYXRvX2NoYXJnZV9jb25maWdfbmFtZSI6
-        IkNvYnJhbsOnYSBuw6NvIHJlZ2lzdHJhZGEiLCJjb2JyYXRvX2NoYXJnZV90
-        ZW1wbGF0ZV9pZCI6NCwiY29icmF0b19jaGFyZ2VfdGVtcGxhdGVfbmFtZSI6
-        Ik1vZGVsbyBkZSBDb2JyYW7Dp2EgQmlsbGltYXRpYyAyIiwiZGF5c191bnRp
-        bF9hdXRvbWF0aWNfbmZlX2VtaXNzaW9uIjo1LCJhdXRvbWF0aWNfbmZlX2lz
-        c3VlX2RhdGUiOm51bGwsImF1dG9tYXRpY19lbWFpbF90ZW1wbGF0ZV9pZCI6
-        MiwiYXBwcm92YWxfc3RhdHVzIjoiYXBwcm92ZWQiLCJyZWNlaXZhYmxlcyI6
-        W3siaWQiOjE1OCwiaW52b2ljZV9pZCI6MTQzLCJkdWVfZGF0ZSI6IjEwLzA2
-        LzIwMTciLCJ2YWx1ZSI6IjEwMC4wIiwiZ3Jvc3NfdmFsdWUiOiIxNzAwLjAi
-        LCJwYXltZW50X3ZhbHVlIjoiMTcwMC4wIiwicmVjZWl2ZWRfdmFsdWUiOm51
-        bGwsInJlY2VpdmVkX2F0IjpudWxsLCJjcmVhdGVkX2F0IjoiMTAvMDQvMjAx
-        NyAxNToxNjoyMSAtMDM6MDAiLCJzdGF0ZSI6InRvX2VtaXQiLCJwYXltZW50
-        X2dhdGV3YXlfc3RhdHVzIjpudWxsLCJjb2JyYXRvX2NoYXJnZV9pZCI6MTI5
-        NTgsImNvYnJhdG9fZXJyb3JzIjpudWxsLCJmaW5hbmNlX3JlY2VpdmFibGVf
-        aWQiOjE4MTMxMDIsImZpbmFuY2VfZW50aXR5X2lkIjozODA0LCJmaW5hbmNl
-        X2Vycm9ycyI6bnVsbH1dLCJzZXJ2aWNlcyI6W10sImF0dGFjaG1lbnRzIjpb
-        XX19
+      encoding: UTF-8
+      string: '{"invoice":{"id":168431,"contract_id":6666,"issue_date":"15/05/2017","gross_value":"100.0","payment_value":"100.0","description":"FATURAMENTO","state":"to_emit","nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"FATURAMENTO","nfe_issued":false,"number":null,"created_at":"20/04/2017
+        10:02:41 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":574,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[{"id":164432,"invoice_id":168431,"due_date":"01/10/2016","value":"100.0","gross_value":"100.0","payment_value":"100.0","received_value":null,"received_at":null,"created_at":"20/04/2017
+        10:02:41 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":null,"finance_entity_id":null,"finance_errors":null}],"services":[],"attachments":[]}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/5/invoices/143/approve
-  recorded_at: Fri, 12 May 2017 19:38:21 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/168431/approve
+  recorded_at: Mon, 15 May 2017 13:01:50 GMT
 recorded_with: VCR 3.0.3

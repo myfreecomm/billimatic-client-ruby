@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: http://localhost:3000/api/v1/contracts/5/invoices/143/approve
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/168431/approve
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Date:
-      - Fri, 12 May 2017 19:46:01 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Mon, 15 May 2017 13:02:53 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,13 +39,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 6a2904ee-d658-4468-8090-286a2c554cab
+      - 1cd35c95-660f-4683-93be-f44cbf0ee808
       X-Runtime:
-      - '0.015815'
+      - '0.012957'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -51,6 +53,6 @@ http_interactions:
         ZG8uIn0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/5/invoices/143/approve
-  recorded_at: Fri, 12 May 2017 19:46:01 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/168431/approve
+  recorded_at: Mon, 15 May 2017 13:02:53 GMT
 recorded_with: VCR 3.0.3

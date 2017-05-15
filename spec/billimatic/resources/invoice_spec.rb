@@ -564,16 +564,10 @@ describe Billimatic::Resources::Invoice do
   end
 
   describe '#block' do
-    let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
-
-    subject { described_class.new(http) }
-
-    before { Billimatic.configuration.host = 'http://localhost:3000' }
-
     context 'when success' do
       it 'successfully block an invoice' do
         VCR.use_cassette('/invoices/block/success') do
-          invoice = subject.block(143, contract_id: 5)
+          invoice = subject.block(168431, contract_id: 6666)
 
           expect(invoice).to be_truthy
           expect(invoice).to be_a(entity_klass)
@@ -586,7 +580,7 @@ describe Billimatic::Resources::Invoice do
       it 'raises Billimatic::RequestError when invoice not found' do
         VCR.use_cassette('/invoices/block/failure/invoice_not_found') do
           expect {
-            subject.block(8888, contract_id: 5)
+            subject.block(8888, contract_id: 6666)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(404)
           end
@@ -596,7 +590,7 @@ describe Billimatic::Resources::Invoice do
       it 'raises Billimatic::RequestError when contract not found' do
         VCR.use_cassette('/invoices/block/failure/contract_not_found') do
           expect {
-            subject.block(143, contract_id: 50)
+            subject.block(168431, contract_id: 50)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(404)
           end
@@ -606,7 +600,7 @@ describe Billimatic::Resources::Invoice do
       it 'raises Billimatic::RequestError when invoice is already blocked' do
         VCR.use_cassette('/invoices/block/failure/invoice_already_blocked') do
           expect {
-            subject.block(143, contract_id: 5)
+            subject.block(168431, contract_id: 6666)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(422)
           end
@@ -616,7 +610,7 @@ describe Billimatic::Resources::Invoice do
       it 'raises Billimatic::RequestError when invoice is not to emit' do
         VCR.use_cassette('/invoices/block/failure/invoice_is_not_to_emit') do
           expect {
-            subject.block(143, contract_id: 5)
+            subject.block(168431, contract_id: 6666)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(422)
           end
@@ -626,16 +620,10 @@ describe Billimatic::Resources::Invoice do
   end
 
   describe '#approve' do
-    let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
-
-    subject { described_class.new(http) }
-
-    before { Billimatic.configuration.host = 'http://localhost:3000' }
-
     context 'when success' do
       it 'successfully approve an invoice' do
         VCR.use_cassette('/invoices/approve/success') do
-          response = subject.approve(143, contract_id: 5)
+          response = subject.approve(168431, contract_id: 6666)
 
           expect(response).to be_a(entity_klass)
           expect(response.approval_status).to eql('approved')
@@ -647,7 +635,7 @@ describe Billimatic::Resources::Invoice do
       it 'raises Billimatic::RequestError when invoice not found' do
         VCR.use_cassette('/invoices/approve/failure/invoice_not_found') do
           expect {
-            subject.approve(8888, contract_id: 5)
+            subject.approve(8888, contract_id: 6666)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(404)
           end
@@ -657,7 +645,7 @@ describe Billimatic::Resources::Invoice do
       it 'raises Billimatic::RequestError when contract not found' do
         VCR.use_cassette('/invoices/approve/failure/contract_not_found') do
           expect {
-            subject.approve(143, contract_id: 50)
+            subject.approve(168431, contract_id: 50)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(404)
           end
@@ -667,7 +655,7 @@ describe Billimatic::Resources::Invoice do
       it 'raises Billimatic::RequestError when invoice is already approved' do
         VCR.use_cassette('/invoices/approve/failure/invoice_already_approved') do
           expect {
-            subject.approve(143, contract_id: 5)
+            subject.approve(168431, contract_id: 6666)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(422)
           end
@@ -677,7 +665,7 @@ describe Billimatic::Resources::Invoice do
       it 'raises Billimatic::RequestError when invoice is not to emit' do
         VCR.use_cassette('/invoices/approve/failure/invoice_is_not_to_emit') do
           expect {
-            subject.approve(143, contract_id: 5)
+            subject.approve(168431, contract_id: 6666)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql(422)
           end
