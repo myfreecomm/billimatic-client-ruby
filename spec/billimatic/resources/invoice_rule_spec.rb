@@ -145,6 +145,46 @@ describe Billimatic::Resources::InvoiceRule do
       end
     end
 
+    context 'when invoice_rule set management_type' do
+      it 'creates an invoice_rule with automatic management' do
+        VCR.use_cassette('/invoice_rules/create/success/management_automatic') do
+          invoice_rules = subject.create(
+            invoice_rule_params.merge(
+              management_type: 'automatic',
+              days_until_automatic_nfe_emission: 3,
+              automatic_email_template_id: 1
+            ),
+            contract_id: 6666
+          )
+
+          expect(invoice_rules).to be_a entity_klass
+          expect(invoice_rules.gross_value).to eql(100.0)
+          expect(invoice_rules.management_type).to eql('automatic')
+          expect(invoice_rules.days_until_automatic_nfe_emission).to eql(3)
+          expect(invoice_rules.automatic_email_template_id).to eql(1)
+        end
+      end
+
+      it 'creates an invoice_rules with manual management' do
+        VCR.use_cassette('/invoice_rules/create/success/management_manual') do
+          invoice_rules = subject.create(
+            invoice_rule_params.merge(
+              management_type: 'manual',
+              days_until_automatic_nfe_emission: 0,
+              automatic_email_template_id: 0
+            ),
+            contract_id: 6666
+          )
+
+          expect(invoice_rules).to be_a entity_klass
+          expect(invoice_rules.gross_value).to eql 100.0
+          expect(invoice_rules.management_type).to eql('manual')
+          expect(invoice_rules.days_until_automatic_nfe_emission).to eql(0)
+          expect(invoice_rules.automatic_email_template_id).to eql(0)
+        end
+      end
+    end
+
     context 'dealing with services' do
       it 'creates services for invoice_rule and calculates its gross value automatically' do
         invoice_rule_params[:services] = [
@@ -433,6 +473,59 @@ describe Billimatic::Resources::InvoiceRule do
         expect(invoice_rule.services.first.value).to eql 200.0
         expect(invoice_rule.services.first.description).to eql 'Descrição atualizada'
         expect(invoice_rule.gross_value).to eql 400.0
+      end
+    end
+
+
+    context 'when change management_type of invoice_rules' do
+      it 'updates an invoice_rules with manual management' do
+        VCR.use_cassette('/invoice_rules/update/success/management_manual') do
+          invoice_rules = subject.update(
+            168525, {
+              management_type: 'manual',
+              days_until_automatic_nfe_emission: 0,
+              automatic_email_template_id: 0
+            },
+            contract_id: 6666
+          )
+
+          expect(invoice_rules).to be_a entity_klass
+          expect(invoice_rules.gross_value).to eql 100.0
+          expect(invoice_rules.management_type).to eql('manual')
+          expect(invoice_rules.days_until_automatic_nfe_emission).to eql(0)
+          expect(invoice_rules.automatic_email_template_id).to eql(0)
+        end
+      end
+
+      it 'updates an invoice_rules with automatic management' do
+        VCR.use_cassette('/invoice_rules/update/success/management_automatic') do
+          invoice = subject.update(
+            168531, {
+              management_type: 'automatic',
+              days_until_automatic_nfe_emission: 5,
+              automatic_email_template_id: 3
+            },
+            contract_id: 6666
+          )
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.management_type).to eql('automatic')
+          expect(invoice.days_until_automatic_nfe_emission).to eql(5)
+          expect(invoice.automatic_email_template_id).to eql(3)
+        end
+      end
+
+      it 'updates only template_id of invoice_rules' do
+        VCR.use_cassette('/invoice_rules/update/success/management_template') do
+          invoice = subject.update(
+            168531, { automatic_email_template_id: 2 }, contract_id: 6666
+          )
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.management_type).to eql('automatic')
+          expect(invoice.days_until_automatic_nfe_emission).to eql(5)
+          expect(invoice.automatic_email_template_id).to eql(2)
+        end
       end
     end
   end

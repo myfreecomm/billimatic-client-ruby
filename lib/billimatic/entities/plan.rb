@@ -29,6 +29,8 @@ module Billimatic
       attribute :finance_revenue_center, String
       attribute :created_at, DateTime
       attribute :products, Array[Product]
+      attribute :allow_installments, Boolean
+      attribute :installments_limit, Integer
     end
   end
 end

@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices
+    body:
+      encoding: UTF-8
+      string: '{"invoice":{"gross_value":100.0,"issue_date":"2016-09-19","description":"FATURAMENTO","nfe_body":"FATURAMENTO","receivables":[{"due_date":"2016-10-01"}],"management_type":"automatic","days_until_automatic_nfe_emission":3,"automatic_email_template_id":1}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.11.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 27 Apr 2017 12:23:46 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"bb69af7d0490326b7dadb5e393ef6cfc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9e264444-eaca-4fa3-ac93-8c782d79f2c8
+      X-Runtime:
+      - '0.171285'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"invoice":{"id":168537,"contract_id":6666,"issue_date":"19/09/2016","gross_value":"100.0","payment_value":"100.0","description":"FATURAMENTO","state":"to_emit","nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"FATURAMENTO","nfe_issued":false,"number":null,"created_at":"27/04/2017
+        09:23:46 -03:00","management_type":"automatic","accrual_date":null,"comments":null,"customer_id":574,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":3,"automatic_nfe_issue_date":null,"automatic_email_template_id":1,"receivables":[{"id":164558,"invoice_id":168537,"due_date":"01/10/2016","value":"100.0","gross_value":"100.0","payment_value":"100.0","received_value":null,"received_at":null,"created_at":"27/04/2017
+        09:23:46 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":null,"finance_entity_id":null,"finance_errors":null}],"services":[],"attachments":[]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices
+  recorded_at: Thu, 27 Apr 2017 12:23:46 GMT
+recorded_with: VCR 3.0.3

@@ -201,8 +201,12 @@ describe Billimatic::Resources::Subscription do
       end
     end
 
-    it 'successfully processes checkout paid in payment gateway' do
-      VCR.use_cassette('/subscriptions/checkout/success/paid_in_payment_gateway') do
+    context 'when payment type is credit card' do
+      let(:http) { Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f') }
+
+      subject { described_class.new(http) }
+
+      before do
         checkout_params[:payment_information][:type] = 'payment_gateway'
         checkout_params[:payment_information][:card_brand] = 'Visa'
         checkout_params[:payment_information][:card_number] = '4012001038443335'
@@ -210,15 +214,89 @@ describe Billimatic::Resources::Subscription do
         checkout_params[:payment_information][:card_expiration_month] = '12'
         checkout_params[:payment_information][:card_expiration_year] = '2019'
         checkout_params[:payment_information][:card_security_code] = '123'
+      end
 
-        result = subject.checkout(
-          checkout_params, token: "1870c414e05ac8a6dfb3c529b0a790f6"
-        )
+      it 'successfully processes checkout paid in payment_gateway' do
+        VCR.use_cassette('/subscriptions/checkout/success/paid_in_payment_gateway') do
+          result = subject.checkout(
+            checkout_params, token: "20c36a3090f45aba874a67c1029e513a"
+          )
 
-        expect(result).to be_a entity_klass
-        expect(result.end_date).to be_nil
-        expect(result.state).to eql 'active'
-        expect(result.status).to eql 'established'
+          expect(result).to be_a entity_klass
+          expect(result.end_date).to be_nil
+          expect(result.state).to eql 'active'
+          expect(result.status).to eql 'established'
+          expect(result.payment_information.installments).to eql(1)
+        end
+      end
+
+      it 'successfully processes checkout paid in payment gateway with installments' do
+        VCR.use_cassette('/subscriptions/checkout/success/payment_gateway_with_installments') do
+          checkout_params[:payment_information][:card_installments] = '4'
+
+          result = subject.checkout(
+            checkout_params, token: "214dbf83511a1f4fb58a4d80d1956ce1"
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.end_date).to be_nil
+          expect(result.state).to eql 'active'
+          expect(result.status).to eql 'established'
+          expect(result.payment_information.installments).to eql(4)
+        end
+      end
+
+      it 'successfully processes when number of installments is bigger than allowed' do
+        VCR.use_cassette('/subscriptions/checkout/success/installments_bigger_than_allowed') do
+          checkout_params[:payment_information][:card_installments] = '4'
+
+          result = subject.checkout(
+            checkout_params, token: "5b22d1d3762f3d4a98254a331275bbce"
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.end_date).to be_nil
+          expect(result.state).to eql 'active'
+          expect(result.status).to eql 'established'
+          expect(result.payment_information.installments).to eql(3)
+        end
+      end
+
+      it 'raises Billimatic::RequestError when number of installments is bigger than allowed' do
+        VCR.use_cassette('/subscriptions/checkout/failure/installments_bigger_than_allowed') do
+          checkout_params[:payment_information][:card_installments] = '23'
+
+          expect {
+            subject.checkout(
+              checkout_params, token: "469ec72f34e3d427f782496452ceae25"
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
+    end
+
+    context 'when payment type is billet' do
+      let(:http) { Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f') }
+
+      subject { described_class.new(http) }
+
+      it 'successfully processes billet with number of installments and limit 3' do
+        VCR.use_cassette('/subscriptions/checkout/success/billet_with_installments') do
+          checkout_params[:payment_information][:card_installments] = '10'
+
+          result = subject.checkout(
+            checkout_params, token: "dbf0f7e76ab8eb455942db1b7043d9b3"
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.end_date).to be_nil
+          expect(result.state).to eql 'active'
+          expect(result.status).to eql 'established'
+          expect(result.payment_information.payment_method).to eql("billet")
+          expect(result.payment_information.installments).to eql(3)
+        end
       end
     end
 
@@ -363,6 +441,50 @@ describe Billimatic::Resources::Subscription do
 
         expect(result).to be_a entity_klass
         expect(result.payment_information.payment_method).to eql 'payment_gateway'
+      end
+    end
+
+    context 'when update to payment_gateway' do
+      let(:http) { Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f') }
+
+      subject { described_class.new(http) }
+
+      it 'returns a subscription with payment_information updated' do
+        VCR.use_cassette('/subscriptions/update_payment_information/success/payment_gateway_with_installments') do
+          payment_gateway_params[:payment_information][:card_installments] = 12
+
+          result = subject.update_payment_information(
+            payment_gateway_params, token: "dbf0f7e76ab8eb455942db1b7043d9b3"
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.payment_information.payment_method).to eql('payment_gateway')
+        end
+      end
+
+      it 'returns a subscription with payment_gateway updated and same installments number' do
+        VCR.use_cassette('/subscriptions/update_payment_information/success/update_payment_type') do
+          result = subject.update_payment_information(
+            payment_gateway_params, token: "dbf0f7e76ab8eb455942db1b7043d9b3"
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.payment_information.payment_method).to eql('payment_gateway')
+        end
+      end
+
+      it 'raises Billimatic::RequestError when number of installments is bigger than allowed' do
+        VCR.use_cassette('/subscriptions/update_payment_information/failure/invalid_number_installments') do
+          payment_gateway_params[:payment_information][:card_installments] = 23
+
+          expect {
+            subject.update_payment_information(
+              payment_gateway_params, token: "dbf0f7e76ab8eb455942db1b7043d9b3"
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
       end
     end
   end

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/20c36a3090f45aba874a67c1029e513a
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/5b22d1d3762f3d4a98254a331275bbce
     body:
       encoding: UTF-8
       string: '{"subscription":{"customer":{"type":"Person","name":"Consumidor 8","email":"consumidor_8@teste.com","document":"162.558.592-66","address_information":{"address":"Avenida
         Brigadeiro Luís Antônio","number":"12","complement":"apto. 111","zipcode":"01402000","district":"Jardim
         Paulista","city":"São Paulo","state":"SP"}},"payment_information":{"type":"payment_gateway","card_brand":"Visa","card_number":"4012001038443335","card_holder_name":"CONSUMIDOR
-        OITO","card_expiration_month":"12","card_expiration_year":"2019","card_security_code":"123"}}}'
+        OITO","card_expiration_month":"12","card_expiration_year":"2019","card_security_code":"123","card_installments":"4"}}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.11.3
@@ -30,7 +30,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Tue, 09 May 2017 17:49:43 GMT
+      - Tue, 09 May 2017 17:53:20 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -40,13 +40,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f97eedc9fd51cc91b9beee04a34f71bb"
+      - W/"a719fe6b858bde220f33de4033ff95b0"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 18e21b7c-3dc7-48c8-ada2-bd87e72c5bd0
+      - 369c9726-8c4c-443f-bc09-904e6f39b6a6
       X-Runtime:
-      - '1.535109'
+      - '1.748427'
       Vary:
       - Origin
       Via:
@@ -54,25 +54,25 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg4NjMsIm5hbWUiOiJBc3NpbmF0dXJh
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg4NjUsIm5hbWUiOiJBc3NpbmF0dXJh
         IENvbnN1bWlkb3IgOCAtIFBsYW5vIGRlIFRlc3RlIiwidGl0bGUiOiJBc3Np
         bmF0dXJhIENvbnN1bWlkb3IgOCAtIFBsYW5vIGRlIFRlc3RlIiwidG9rZW4i
-        OiIyMGMzNmEzMDkwZjQ1YWJhODc0YTY3YzEwMjllNTEzYSIsImRlc2NyaXB0
+        OiI1YjIyZDFkMzc2MmYzZDRhOTgyNTRhMzMxMjc1YmJjZSIsImRlc2NyaXB0
         aW9uIjpudWxsLCJjdXN0b21lcl9pZCI6MTU5Nywic3VwcGxpZXJfaWQiOjc5
         Nywic3VwcGxpZXJfdHlwZSI6IkNvbXBhbnkiLCJzdGF0ZSI6ImFjdGl2ZSIs
         ImNvbW1lbnRzIjpudWxsLCJpbml0X2RhdGUiOiIwOS8wNS8yMDE3IiwiZW5k
-        X2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIwOS8wNS8yMDE3IDE0OjQ5OjA0
+        X2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIwOS8wNS8yMDE3IDE0OjUyOjQ3
         IC0wMzowMCIsImtpbmQiOiJzYWxlIiwib3ZlcmR1ZSI6ZmFsc2UsInZhbGlk
         X3VudGlsIjoiMDkvMDUvMjAxNyIsInN0YXR1cyI6ImVzdGFibGlzaGVkIiwi
         cmVnaXN0cmF0aW9uX21ldGhvZCI6InN1YnNjcmlwdGlvbiIsImNhbmNlbF9k
         YXRlIjpudWxsLCJjYW5jZWxfcmVhc29uIjpudWxsLCJwbGFuIjp7ImlkIjo2
-        NDgsIm5hbWUiOiJQbGFubyBkZSBUZXN0ZSIsImRlc2NyaXB0aW9uIjoiRGVz
+        NDcsIm5hbWUiOiJQbGFubyBkZSBUZXN0ZSIsImRlc2NyaXB0aW9uIjoiRGVz
         Y3JpcHRpb24iLCJyZWRpcmVjdF91cmwiOiJodHRwOi8vbmV4YWFzLmNvbSIs
         InByaWNlIjoiMTAwLjAiLCJiaWxsaW5nX3BlcmlvZCI6MSwidHJhbnNsYXRl
         ZF9iaWxsaW5nX3BlcmlvZCI6Ik1lbnNhbG1lbnRlIiwiY2hhcmdpbmdfbWV0
         aG9kIjoicHJlX3BhaWQiLCJ0cmFuc2xhdGVkX2NoYXJnaW5nX21ldGhvZCI6
-        IlByw6ktcGFnbyIsImhhc190cmlhbCI6dHJ1ZSwidHJpYWxfcGVyaW9kIjoz
-        MCwiZmVhdHVyZXMiOlt7ImlkIjoxMzYyOCwiZGVzY3JpcHRpb24iOiJmZWF0
+        IlByw6ktcGFnbyIsImhhc190cmlhbCI6dHJ1ZSwidHJpYWxfcGVyaW9kIjoy
+        NSwiZmVhdHVyZXMiOlt7ImlkIjoxMzYyNywiZGVzY3JpcHRpb24iOiJmZWF0
         dXJlIiwidmFsdWUiOiIxMDAiLCJ0YWciOiJmZWF0LiJ9XSwicmVhZGp1c3Rt
         ZW50X3dpbGxfYmVfY3JlYXRlZCI6ZmFsc2UsInJlYWRqdXN0bWVudF9tb250
         aF9xdWFudGl0eSI6bnVsbCwicHJpY2VfaW5kZXgiOm51bGwsInJlYWRqdXN0
@@ -82,22 +82,21 @@ http_interactions:
         aWQiOm51bGwsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV9jb25maWdfbmFtZSI6
         IiIsImNvYnJhdG9fYmlsbGV0X2NoYXJnZV90ZW1wbGF0ZV9pZCI6bnVsbCwi
         Y29icmF0b19iaWxsZXRfY2hhcmdlX3RlbXBsYXRlX25hbWUiOiIiLCJjb2Jy
-        YXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX2lkIjoxMzYsImNv
+        YXRvX3BheW1lbnRfZ2F0ZXdheV9jaGFyZ2VfY29uZmlnX2lkIjoxMzcsImNv
         YnJhdG9fcGF5bWVudF9nYXRld2F5X2NoYXJnZV9jb25maWdfbmFtZSI6IlRl
-        c3RlIENhcnTDo28gZGUgQ3LDqWRpdG8gQmlsbGltYXRpYyIsImZpbmFuY2Vf
-        Y2F0ZWdvcnkiOiIiLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjoiIiwiYWxs
-        b3dfaW5zdGFsbG1lbnRzIjp0cnVlLCJpbnN0YWxsbWVudHNfbGltaXQiOjEy
-        LCJjcmVhdGVkX2F0IjoiMDkvMDUvMjAxNyAxMzo1MjowOSAtMDM6MDAiLCJw
-        cm9kdWN0cyI6W3siaWQiOjIyNzI1MywibmFtZSI6IkNhcnRlaXJhIiwiZGVz
-        Y3JpcHRpb24iOiIiLCJ1bml0X3ZhbHVlIjoiMTAwLjAiLCJ1bml0cyI6IjEu
-        MCIsInZhbHVlIjoiMTAwLjAifV19LCJwYXltZW50X2luZm9ybWF0aW9uIjp7
-        ImlkIjo3NDIzLCJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdheSIs
-        ImNvYnJhdG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX21vbnRo
-        IjoxMiwiY2FyZF9leHBpcmF0aW9uX3llYXIiOjIwMTksImluc3RhbGxtZW50
-        cyI6MSwiY3JlYXRlZF9hdCI6IjA5LzA1LzIwMTcgMTQ6NDk6NDMgLTAzOjAw
-        In19fQ==
+        c3RlIENhcnTDo28iLCJmaW5hbmNlX2NhdGVnb3J5IjoiIiwiZmluYW5jZV9y
+        ZXZlbnVlX2NlbnRlciI6IiIsImFsbG93X2luc3RhbGxtZW50cyI6dHJ1ZSwi
+        aW5zdGFsbG1lbnRzX2xpbWl0IjozLCJjcmVhdGVkX2F0IjoiMDkvMDUvMjAx
+        NyAxMzo1MToxNiAtMDM6MDAiLCJwcm9kdWN0cyI6W3siaWQiOjIyNzI1Miwi
+        bmFtZSI6IkNhcnRlaXJhIiwiZGVzY3JpcHRpb24iOiIiLCJ1bml0X3ZhbHVl
+        IjoiMTAwLjAiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoiMTAwLjAifV19LCJw
+        YXltZW50X2luZm9ybWF0aW9uIjp7ImlkIjo3NDI1LCJwYXltZW50X21ldGhv
+        ZCI6InBheW1lbnRfZ2F0ZXdheSIsImNvYnJhdG9fY2FyZF9pZCI6Ii0tIiwi
+        Y2FyZF9leHBpcmF0aW9uX21vbnRoIjoxMiwiY2FyZF9leHBpcmF0aW9uX3ll
+        YXIiOjIwMTksImluc3RhbGxtZW50cyI6MywiY3JlYXRlZF9hdCI6IjA5LzA1
+        LzIwMTcgMTQ6NTM6MjAgLTAzOjAwIn19fQ==
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/20c36a3090f45aba874a67c1029e513a
-  recorded_at: Tue, 09 May 2017 17:49:43 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/5b22d1d3762f3d4a98254a331275bbce
+  recorded_at: Tue, 09 May 2017 17:53:21 GMT
 recorded_with: VCR 3.0.3

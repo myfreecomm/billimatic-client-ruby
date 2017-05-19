@@ -100,6 +100,28 @@ describe Billimatic::Resources::Invoice do
         expect(invoice.contract_id).to eql 8818
       end
     end
+
+    context 'when approval_status' do
+      it 'returns an invoice with approval_status is blocked' do
+        VCR.use_cassette("/invoices/show/success/approval_status_blocked") do
+          invoice = subject.show(167742, contract_id: 6666)
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.contract_id).to eql(6666)
+          expect(invoice.approval_status).to eql('blocked')
+        end
+      end
+
+      it 'returns an invoice with approval_status is aproved' do
+        VCR.use_cassette("/invoices/show/success/approval_status_aproved") do
+          invoice = subject.show(168426, contract_id: 6666)
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.contract_id).to eql(6666)
+          expect(invoice.approval_status).to eql('approved')
+        end
+      end
+    end
   end
 
   describe '#create' do
@@ -160,6 +182,50 @@ describe Billimatic::Resources::Invoice do
         expect(invoice.gross_value).to eql 200.0
         expect(invoice.services).not_to be_empty
         expect(invoice.services.first.description).to eql('Descrição teste')
+      end
+    end
+
+    context 'when invoice set management_type' do
+      it 'creates an invoice with automatic management' do
+        VCR.use_cassette('/invoices/create/success/management_automatic') do
+          invoice = subject.create(
+            invoice_attributes.merge(
+              management_type: 'automatic',
+              days_until_automatic_nfe_emission: 3,
+              automatic_email_template_id: 1
+            ),
+            contract_id: 6666
+          )
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.contract_id).to eql(6666)
+          expect(invoice.gross_value).to eql(100.0)
+          expect(invoice.management_type).to eql('automatic')
+          expect(invoice.days_until_automatic_nfe_emission).to eql(3)
+          expect(invoice.automatic_email_template_id).to eql(1)
+          expect(invoice.receivables).not_to be_empty
+        end
+      end
+
+      it 'creates an invoice with manual management' do
+        VCR.use_cassette('/invoices/create/success/management_manual') do
+          invoice = subject.create(
+            invoice_attributes.merge(
+              management_type: 'manual',
+              days_until_automatic_nfe_emission: 0,
+              automatic_email_template_id: 0
+            ),
+            contract_id: 6666
+          )
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.contract_id).to eql 6666
+          expect(invoice.gross_value).to eql 100.0
+          expect(invoice.management_type).to eql('manual')
+          expect(invoice.days_until_automatic_nfe_emission).to eql(0)
+          expect(invoice.automatic_email_template_id).to eql(0)
+          expect(invoice.receivables).not_to be_empty
+        end
       end
     end
 
@@ -409,6 +475,64 @@ describe Billimatic::Resources::Invoice do
         end
       end
     end
+
+    context 'when change management_type of invoice' do
+      it 'updates an invoice with manual management' do
+        VCR.use_cassette('/invoices/update/success/management_manual') do
+          invoice = subject.update(
+            168537, {
+              management_type: 'manual',
+              days_until_automatic_nfe_emission: 0,
+              automatic_email_template_id: 0
+            },
+            contract_id: 6666
+          )
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.contract_id).to eql 6666
+          expect(invoice.gross_value).to eql 100.0
+          expect(invoice.management_type).to eql('manual')
+          expect(invoice.days_until_automatic_nfe_emission).to eql(0)
+          expect(invoice.automatic_email_template_id).to eql(0)
+          expect(invoice.receivables).not_to be_empty
+        end
+      end
+
+      it 'updates an invoice with automatic management' do
+        VCR.use_cassette('/invoices/update/success/management_automatic') do
+          invoice = subject.update(
+            168538, {
+              management_type: 'automatic',
+              days_until_automatic_nfe_emission: 3,
+              automatic_email_template_id: 1
+            },
+            contract_id: 6666
+          )
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.contract_id).to eql(6666)
+          expect(invoice.management_type).to eql('automatic')
+          expect(invoice.days_until_automatic_nfe_emission).to eql(3)
+          expect(invoice.automatic_email_template_id).to eql(1)
+          expect(invoice.receivables).not_to be_empty
+        end
+      end
+
+      it 'updates only template_id of invoice' do
+        VCR.use_cassette('/invoices/update/success/management_template') do
+          invoice = subject.update(
+            168538, { automatic_email_template_id: 2 }, contract_id: 6666
+          )
+
+          expect(invoice).to be_a entity_klass
+          expect(invoice.contract_id).to eql(6666)
+          expect(invoice.management_type).to eql('automatic')
+          expect(invoice.days_until_automatic_nfe_emission).to eql(3)
+          expect(invoice.automatic_email_template_id).to eql(2)
+          expect(invoice.receivables).not_to be_empty
+        end
+      end
+    end
   end
 
   describe '#destroy' do
@@ -434,7 +558,118 @@ describe Billimatic::Resources::Invoice do
 
     it 'successfully deletes an invoice' do
       VCR.use_cassette('/invoices/destroy/success') do
-        expect(subject.destroy(144090, contract_id: 6666)).to be true
+        expect(subject.destroy(168538, contract_id: 6666)).to be true
+      end
+    end
+  end
+
+  describe '#block' do
+    context 'when success' do
+      it 'successfully block an invoice' do
+        VCR.use_cassette('/invoices/block/success') do
+          invoice = subject.block(168431, contract_id: 6666)
+
+          expect(invoice).to be_truthy
+          expect(invoice).to be_a(entity_klass)
+          expect(invoice.approval_status).to eql('blocked')
+        end
+      end
+    end
+
+    context 'when error' do
+      it 'raises Billimatic::RequestError when invoice not found' do
+        VCR.use_cassette('/invoices/block/failure/invoice_not_found') do
+          expect {
+            subject.block(8888, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(404)
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when contract not found' do
+        VCR.use_cassette('/invoices/block/failure/contract_not_found') do
+          expect {
+            subject.block(168431, contract_id: 50)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(404)
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when invoice is already blocked' do
+        VCR.use_cassette('/invoices/block/failure/invoice_already_blocked') do
+          expect {
+            subject.block(168431, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when invoice is not to emit' do
+        VCR.use_cassette('/invoices/block/failure/invoice_is_not_to_emit') do
+          expect {
+            subject.block(168431, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
+    end
+  end
+
+  describe '#approve' do
+    context 'when success' do
+      it 'successfully approve an invoice' do
+        VCR.use_cassette('/invoices/approve/success') do
+          response = subject.approve(168431, contract_id: 6666)
+
+          expect(response).to be_a(entity_klass)
+          expect(response.approval_status).to eql('approved')
+        end
+      end
+    end
+
+    context 'when error' do
+      it 'raises Billimatic::RequestError when invoice not found' do
+        VCR.use_cassette('/invoices/approve/failure/invoice_not_found') do
+          expect {
+            subject.approve(8888, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(404)
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when contract not found' do
+        VCR.use_cassette('/invoices/approve/failure/contract_not_found') do
+          expect {
+            subject.approve(168431, contract_id: 50)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(404)
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when invoice is already approved' do
+        VCR.use_cassette('/invoices/approve/failure/invoice_already_approved') do
+          expect {
+            subject.approve(168431, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when invoice is not to emit' do
+        VCR.use_cassette('/invoices/approve/failure/invoice_is_not_to_emit') do
+          expect {
+            subject.approve(168431, contract_id: 6666)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
       end
     end
   end

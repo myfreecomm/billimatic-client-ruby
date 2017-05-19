@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/20c36a3090f45aba874a67c1029e513a
+    uri: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/214dbf83511a1f4fb58a4d80d1956ce1
     body:
       encoding: UTF-8
       string: '{"subscription":{"customer":{"type":"Person","name":"Consumidor 8","email":"consumidor_8@teste.com","document":"162.558.592-66","address_information":{"address":"Avenida
         Brigadeiro Luís Antônio","number":"12","complement":"apto. 111","zipcode":"01402000","district":"Jardim
         Paulista","city":"São Paulo","state":"SP"}},"payment_information":{"type":"payment_gateway","card_brand":"Visa","card_number":"4012001038443335","card_holder_name":"CONSUMIDOR
-        OITO","card_expiration_month":"12","card_expiration_year":"2019","card_security_code":"123"}}}'
+        OITO","card_expiration_month":"12","card_expiration_year":"2019","card_security_code":"123","card_installments":"4"}}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.11.3
@@ -30,7 +30,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Tue, 09 May 2017 17:49:43 GMT
+      - Tue, 09 May 2017 17:50:50 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -40,13 +40,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f97eedc9fd51cc91b9beee04a34f71bb"
+      - W/"4b89157930a6b5977945d70712dd0259"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 18e21b7c-3dc7-48c8-ada2-bd87e72c5bd0
+      - 456d0855-efdd-45d0-961b-84978bf52255
       X-Runtime:
-      - '1.535109'
+      - '1.430917'
       Vary:
       - Origin
       Via:
@@ -54,14 +54,14 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg4NjMsIm5hbWUiOiJBc3NpbmF0dXJh
+        eyJzdWJzY3JpcHRpb24iOnsiaWQiOjg4NjQsIm5hbWUiOiJBc3NpbmF0dXJh
         IENvbnN1bWlkb3IgOCAtIFBsYW5vIGRlIFRlc3RlIiwidGl0bGUiOiJBc3Np
         bmF0dXJhIENvbnN1bWlkb3IgOCAtIFBsYW5vIGRlIFRlc3RlIiwidG9rZW4i
-        OiIyMGMzNmEzMDkwZjQ1YWJhODc0YTY3YzEwMjllNTEzYSIsImRlc2NyaXB0
+        OiIyMTRkYmY4MzUxMWExZjRmYjU4YTRkODBkMTk1NmNlMSIsImRlc2NyaXB0
         aW9uIjpudWxsLCJjdXN0b21lcl9pZCI6MTU5Nywic3VwcGxpZXJfaWQiOjc5
         Nywic3VwcGxpZXJfdHlwZSI6IkNvbXBhbnkiLCJzdGF0ZSI6ImFjdGl2ZSIs
         ImNvbW1lbnRzIjpudWxsLCJpbml0X2RhdGUiOiIwOS8wNS8yMDE3IiwiZW5k
-        X2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIwOS8wNS8yMDE3IDE0OjQ5OjA0
+        X2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIwOS8wNS8yMDE3IDE0OjUwOjMy
         IC0wMzowMCIsImtpbmQiOiJzYWxlIiwib3ZlcmR1ZSI6ZmFsc2UsInZhbGlk
         X3VudGlsIjoiMDkvMDUvMjAxNyIsInN0YXR1cyI6ImVzdGFibGlzaGVkIiwi
         cmVnaXN0cmF0aW9uX21ldGhvZCI6InN1YnNjcmlwdGlvbiIsImNhbmNlbF9k
@@ -91,13 +91,13 @@ http_interactions:
         cm9kdWN0cyI6W3siaWQiOjIyNzI1MywibmFtZSI6IkNhcnRlaXJhIiwiZGVz
         Y3JpcHRpb24iOiIiLCJ1bml0X3ZhbHVlIjoiMTAwLjAiLCJ1bml0cyI6IjEu
         MCIsInZhbHVlIjoiMTAwLjAifV19LCJwYXltZW50X2luZm9ybWF0aW9uIjp7
-        ImlkIjo3NDIzLCJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdheSIs
+        ImlkIjo3NDI0LCJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdheSIs
         ImNvYnJhdG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX21vbnRo
         IjoxMiwiY2FyZF9leHBpcmF0aW9uX3llYXIiOjIwMTksImluc3RhbGxtZW50
-        cyI6MSwiY3JlYXRlZF9hdCI6IjA5LzA1LzIwMTcgMTQ6NDk6NDMgLTAzOjAw
+        cyI6NCwiY3JlYXRlZF9hdCI6IjA5LzA1LzIwMTcgMTQ6NTA6NTAgLTAzOjAw
         In19fQ==
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/20c36a3090f45aba874a67c1029e513a
-  recorded_at: Tue, 09 May 2017 17:49:43 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/subscriptions/checkout/214dbf83511a1f4fb58a4d80d1956ce1
+  recorded_at: Tue, 09 May 2017 17:50:51 GMT
 recorded_with: VCR 3.0.3

@@ -147,6 +147,59 @@ describe Billimatic::Resources::Plan do
         end
       end
     end
+
+    context 'when plan has installments' do
+      let(:http) { Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f') }
+
+      subject { described_class.new(http) }
+
+      before do
+        plan_params[:features] = [{ description: 'feature', value: '100', tag: 'feat.' }]
+        plan_params[:products] = [{ service_item_id: 1, units: 1, unit_value: 100, value: 100 }]
+      end
+
+      it 'success creates a plan with installments' do
+        VCR.use_cassette('plans/create/success_with_installments') do
+          plan_params[:allow_installments] = true
+          plan_params[:installments_limit] = 12
+
+          plan = subject.create(plan_params, organization_id: 797)
+
+          expect(plan).to be_a entity_klass
+          expect(plan.id).not_to be_nil
+          expect(plan.features).not_to be_empty
+          expect(plan.products).not_to be_empty
+          expect(plan.allow_installments).to be_truthy
+          expect(plan.installments_limit).to eql(12)
+        end
+      end
+
+      it 'success creates a plan without installments' do
+        VCR.use_cassette('plans/create/success_without_installments') do
+          plan_params[:allow_installments] = false
+          plan = subject.create(plan_params, organization_id: 797)
+
+          expect(plan).to be_a entity_klass
+          expect(plan.id).not_to be_nil
+          expect(plan.features).not_to be_empty
+          expect(plan.products).not_to be_empty
+          expect(plan.allow_installments).to be_falsey
+        end
+      end
+
+      it 'raises Billimatic::RequestError when number of installments is bigger than allowed' do
+        VCR.use_cassette('plans/create/invalid_installments') do
+          plan_params[:allow_installments] = true
+          plan_params[:installments_limit] = 36
+
+          expect {
+            subject.create(plan_params, organization_id: 797)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
+    end
   end
 
   describe '#update' do
@@ -341,6 +394,60 @@ describe Billimatic::Resources::Plan do
           expect(plan.id).not_to be_nil
           expect(plan.products.count).to eql 1
           expect(plan.products[1]).to be_nil
+        end
+      end
+    end
+
+    context 'when plan has installments' do
+      let(:http) { Billimatic::Http.new('4d34754cd68bbe74d725f6c8c9f6b48f') }
+
+      subject { described_class.new(http) }
+
+      it 'successfully updates plan with installments' do
+        VCR.use_cassette('plans/update/success_with_installments') do
+          plan = subject.update(
+              648,
+              { allow_installments: true, installments_limit: 12 },
+              organization_id: 797
+          )
+
+          expect(plan).to be_a entity_klass
+          expect(plan.id).not_to be_nil
+          expect(plan.products.count).to eql 1
+          expect(plan.products[1]).to be_nil
+          expect(plan.allow_installments).to be_truthy
+          expect(plan.installments_limit).to eql(12)
+        end
+      end
+
+      it 'successfully updates plan without installments' do
+        VCR.use_cassette('plans/update/success_without_installments') do
+          plan = subject.update(
+              647,
+              { allow_installments: false },
+              organization_id: 797
+          )
+
+          expect(plan).to be_a entity_klass
+          expect(plan.id).not_to be_nil
+          expect(plan.products.count).to eql 1
+          expect(plan.products[1]).to be_nil
+          expect(plan.allow_installments).to be_falsey
+          expect(plan.installments_limit).to be_nil
+        end
+      end
+
+      it 'raises Billimatic::RequestError if number of installments is bigger than allowed' do
+        VCR.use_cassette('plans/update/invalid_installments') do
+          expect {
+            subject.update(
+              648,
+              { allow_installments: true, installments_limit: 48 },
+              organization_id: 797
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
         end
       end
     end

@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: delete
-    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/168538
+    method: patch
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/8888/approve
     body:
       encoding: US-ASCII
       string: ''
@@ -19,29 +19,29 @@ http_interactions:
       - pt-br
   response:
     status:
-      code: 204
-      message: No Content
+      code: 404
+      message: Not Found
     headers:
       Server:
       - Cowboy
-      Content-Length:
-      - '0'
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Thu, 27 Apr 2017 12:32:23 GMT
+      - Mon, 15 May 2017 13:02:27 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Content-Type:
+      - application/json
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 96827832-ef08-407e-97ea-904acb00756d
+      - 92f2b590-53ac-4984-ba79-e1d07f85679a
       X-Runtime:
-      - '0.107926'
+      - '0.013762'
       Vary:
       - Origin
       Via:
@@ -51,6 +51,6 @@ http_interactions:
       string: ''
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/168538
-  recorded_at: Thu, 27 Apr 2017 12:32:23 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/8888/approve
+  recorded_at: Mon, 15 May 2017 13:02:27 GMT
 recorded_with: VCR 3.0.3
