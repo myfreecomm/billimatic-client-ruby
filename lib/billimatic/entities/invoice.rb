@@ -8,6 +8,7 @@ module Billimatic
       attribute :payment_value, Decimal
       attribute :description, String
       attribute :state, String
+      attribute :cancelled_automatically, Boolean
       attribute :nfe_service, String
       attribute :nfe_verification, String
       attribute :nfe_issue_date, DateTime
