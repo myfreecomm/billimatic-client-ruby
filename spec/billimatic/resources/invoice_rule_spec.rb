@@ -16,6 +16,7 @@ describe Billimatic::Resources::InvoiceRule do
         additional_information: {
           title: "REGRA",
           init_date: "02/09/2016",
+          period_unit: 0,
           month_quantity: 6
         },
         gross_value: 100.0,
@@ -75,6 +76,21 @@ describe Billimatic::Resources::InvoiceRule do
       end
     end
 
+    it 'creates an invoice_rule without scheduled update, without parcels and for last day of month' do
+      invoice_rule_params[:charge_type] = 'last_day_of_month'
+      invoice_rule_params[:receivables_additional_information][:day_number] = nil
+
+      VCR.use_cassette('invoice_rules/create/success/without_supdate_parcels_for_last_day_of_month') do
+        invoice_rule = subject.create(invoice_rule_params, contract_id: 6666)
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_update).to be_nil
+        expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+        expect(invoice_rule.receivables_additional_information['day_number']).to be_nil
+      end
+    end
+
     it 'creates an invoice_rule without scheduled update, without parcels and for day quantity' do
       invoice_rule_params[:charge_type] = 'day_quantity'
       invoice_rule_params[:receivables_additional_information][:day_number] = nil
@@ -106,6 +122,31 @@ describe Billimatic::Resources::InvoiceRule do
         expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
         expect(invoice_rule.receivables_additional_information['day_number']).to eql 3
         expect(invoice_rule.receivables_additional_information['month_quantity']).to eql 2
+      end
+    end
+
+    context 'when period_unit is weekly' do
+      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
+
+      subject { described_class.new(http) }
+
+      before { Billimatic.configuration.host = 'http://localhost:3000' }
+
+      it 'creates a weekly invoice_rule without scheduled update' do
+        invoice_rule_params[:additional_information][:period_unit] = 1
+        invoice_rule_params[:additional_information][:month_quantity] = nil
+
+        VCR.use_cassette('invoice_rules/create/success/weekly_period_unit_without_scheduled_update') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 41)
+
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.scheduled_update).to be_nil
+          expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
+          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+          expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
+        end
       end
     end
 
@@ -352,6 +393,53 @@ describe Billimatic::Resources::InvoiceRule do
         expect(invoice_rule.id).not_to be_nil
         expect(invoice_rule.additional_information['title']).to eql 'NOVA REGRA'
         expect(invoice_rule.additional_information['month_quantity']).to eql 1
+      end
+    end
+
+
+    context 'when period_unit is weekly' do
+      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
+
+      subject { described_class.new(http) }
+
+      before { Billimatic.configuration.host = 'http://localhost:3000' }
+
+      it 'updates period_unit from week to monthly' do
+        VCR.use_cassette('invoice_rules/update/success/monthly_period_unit') do
+          invoice_rule = subject.update(
+            1157, {
+              additional_information: {
+                id: 47, period_unit: 0, month_quantity: 1, title: 'Updated rule'
+              }
+            },
+            contract_id: 41
+          )
+
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.additional_information['period_unit']).to eql('monthly')
+          expect(invoice_rule.additional_information['title']).to eql('Updated rule')
+          expect(invoice_rule.additional_information['month_quantity']).to eql(1)
+          expect(invoice_rule.additional_information['accrual_month_quantity']).to eql('same_month')
+          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+        end
+      end
+
+      it 'updates period_unit from month to weekly' do
+        VCR.use_cassette('invoice_rules/update/success/weekly_period_unit') do
+          invoice_rule = subject.update(
+            1157, {
+              additional_information: {
+                id: 47, period_unit: 1, month_quantity: nil, title: 'weekly rule'
+              }
+            },
+            contract_id: 41
+          )
+
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
+          expect(invoice_rule.additional_information['title']).to eql('weekly rule')
+          expect(invoice_rule.additional_information['month_quantity']).to be_nil
+        end
       end
     end
 
