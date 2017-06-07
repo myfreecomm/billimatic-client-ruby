@@ -1,12 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: put
-    uri: http://localhost:3000/api/v1/contracts/41/invoice_rules/2664
+    method: post
+    uri: http://localhost:3000/api/v1/contracts/41/invoice_rules
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"additional_information":{"id":59,"month_quantity":null,"title":"weekly
-        rule","init_date":"2017-11-30","end_date":"2017-12-27"}}}'
+      string: '{"invoice_rule":{"additional_information":{"title":"REGRA","init_date":"02/09/2016","period_unit":"monthly","month_quantity":6},"gross_value":100.0,"description":"Faturamento","nfe_body":"$DESCRICAO","charge_type":"fixed_day","receivables_additional_information":{"day_number":23}}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.12.0
@@ -20,11 +19,11 @@ http_interactions:
       - pt-br
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
       Date:
-      - Wed, 07 Jun 2017 12:51:59 GMT
+      - Wed, 07 Jun 2017 12:48:10 GMT
       Connection:
       - close
       X-Frame-Options:
@@ -36,13 +35,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       ETag:
-      - W/"26c9944c8ce31b1b5f14e7c5d2123aa1"
+      - W/"04eb93f24d5a1ed358a2f987e4cd780d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 22378f28-e607-4917-8e59-b529a35cd0cb
+      - 8796b6a1-07a4-405d-a03d-b52e8937b8d2
       X-Runtime:
-      - '2.559850'
+      - '0.261929'
       Vary:
       - Origin
       Transfer-Encoding:
@@ -50,11 +49,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"invoice_rule":{"id":2664,"contract_id":41,"issue_date":null,"gross_value":"100.0","payment_value":"100.0","description":"Faturamento","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"07/06/2017
-        09:48:10 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":1,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[],"services":[],"attachments":[],"additional_information":{"id":59,"init_date":"2017-11-30","title":"weekly
-        rule","period_unit":"weekly","month_quantity":null,"end_date":"2017-12-27","created_at":"07/06/2017
+        09:48:10 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":1,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[],"services":[],"attachments":[],"additional_information":{"id":59,"init_date":"2016-09-02","title":"REGRA","period_unit":"monthly","month_quantity":6,"end_date":null,"created_at":"07/06/2017
         09:48:10 -03:00","accrual_month_quantity":"same_month"},"scheduled_update":null,"receivables_additional_information":{"id":70,"day_number":23,"parcel_number":null,"invoice_rule_id":2664,"created_at":"2017-06-07T09:48:10.223-03:00","updated_at":"2017-06-07T09:48:10.223-03:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/41/invoice_rules/2664
-  recorded_at: Wed, 07 Jun 2017 12:51:59 GMT
+      effective_url: http://localhost:3000/api/v1/contracts/41/invoice_rules
+  recorded_at: Wed, 07 Jun 2017 12:48:10 GMT
 recorded_with: VCR 3.0.3

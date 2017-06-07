@@ -152,7 +152,8 @@ describe Billimatic::Resources::InvoiceRule do
       end
 
       it 'creates a weekly rule only with period_unit' do
-        invoice_rule_params[:additional_information][:period_unit] = 'weekly'
+        invoice_rule_params[:additional_information][:period_unit]    = 'weekly'
+        invoice_rule_params[:additional_information][:month_quantity] = nil
 
         VCR.use_cassette('invoice_rules/create/success/rule_weekly_only_with_period_unit') do
           invoice_rule = subject.create(invoice_rule_params, contract_id: 41)
@@ -167,18 +168,17 @@ describe Billimatic::Resources::InvoiceRule do
         end
       end
 
-      it 'creates a weekly rule without scheduled update, without parcels and for day quantity' do
-        invoice_rule_params[:additional_information][:month_quantity] = nil
-        invoice_rule_params[:additional_information][:init_date]      = Date.parse("05/06/2017")
-        invoice_rule_params[:additional_information][:end_date]       = Date.parse("18/09/2017")
+      it 'creates a monthly rule' do
+        invoice_rule_params[:additional_information][:period_unit]    = 'monthly'
+        invoice_rule_params[:additional_information][:month_quantity] = 6
 
-        VCR.use_cassette('invoice_rules/create/success/rule_weekly_without_scheduled_update') do
+        VCR.use_cassette('invoice_rules/create/success/rule_monthly') do
           invoice_rule = subject.create(invoice_rule_params, contract_id: 41)
 
           expect(invoice_rule).to be_a entity_klass
           expect(invoice_rule.id).not_to be_nil
           expect(invoice_rule.scheduled_update).to be_nil
-          expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
+          expect(invoice_rule.additional_information['period_unit']).to eql('monthly')
           expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
           expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
           expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
@@ -186,6 +186,7 @@ describe Billimatic::Resources::InvoiceRule do
       end
 
       it 'creates a weekly rule without scheduled update, without parcels, for day quantity without end_date' do
+        invoice_rule_params[:additional_information][:period_unit]    = 'weekly'
         invoice_rule_params[:additional_information][:month_quantity] = nil
         invoice_rule_params[:additional_information][:init_date]      = Date.parse("05/06/2017")
 
@@ -199,6 +200,51 @@ describe Billimatic::Resources::InvoiceRule do
           expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
           expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
           expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
+        end
+      end
+
+      it 'returns unprocessable entity when period_unit is monthly but month_quantity is not present' do
+        invoice_rule_params[:additional_information][:period_unit]    = 'monthly'
+        invoice_rule_params[:additional_information][:month_quantity] = nil
+
+        VCR.use_cassette('invoice_rules/create/failure/rule_monthly_only_with_period_unit') do
+          expect {
+            subject.create(invoice_rule_params, contract_id: 41)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
+
+      it 'returns unprocessable entity when month_quantity is not present' do
+        invoice_rule_params[:additional_information] = {
+          title: "My rule",
+          init_date: Date.parse("15/02/2016"),
+          end_date: Date.parse("15/02/2017")
+        }
+
+        VCR.use_cassette('invoice_rules/create/failure/without_period_unit_and_month_quantity') do
+          expect {
+            subject.create(invoice_rule_params, contract_id: 41)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
+        end
+      end
+
+      it 'returns unprocessable entity when month_quantity is nil' do
+        invoice_rule_params[:additional_information] = {
+          month_quantity: nil,
+          init_date: Date.parse("05/06/2017"),
+          end_date: Date.parse("18/09/2017")
+        }
+
+        VCR.use_cassette('invoice_rules/create/failure/rule_with_null_month_quantity') do
+          expect {
+            subject.create(invoice_rule_params, contract_id: 41)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(422)
+          end
         end
       end
     end
@@ -496,9 +542,10 @@ describe Billimatic::Resources::InvoiceRule do
       it 'updates rule to be weekly' do
         VCR.use_cassette('invoice_rules/update/success/rule_weekly') do
           invoice_rule = subject.update(
-            1157, {
+            2664, {
               additional_information: {
-                id: 47, month_quantity: nil, title: 'weekly rule'
+                id: 59, month_quantity: nil, period_unit: 'weekly',
+                title: 'weekly rule'
               }
             },
             contract_id: 41
@@ -514,9 +561,9 @@ describe Billimatic::Resources::InvoiceRule do
       it 'updates weekly rule init_date and end_date' do
         VCR.use_cassette('invoice_rules/update/success/rule_weekly_with_init_and_end_date') do
           invoice_rule = subject.update(
-            1157, {
+            2664, {
               additional_information: {
-                id: 47, month_quantity: nil, title: 'weekly rule',
+                id: 59, month_quantity: nil, title: 'weekly rule',
                 init_date: Date.parse("30/11/2017"), end_date: Date.parse("27/12/2017")
               }
             },
@@ -535,9 +582,10 @@ describe Billimatic::Resources::InvoiceRule do
       it 'updates rule setting new weekly additional_information' do
         VCR.use_cassette('invoice_rules/update/success/rule_new_weekly_additional_information') do
           invoice_rule = subject.update(
-            1157, {
+            2664, {
               additional_information: {
                 title: "New Weekly Rule",
+                period_unit: 'weekly',
                 init_date: Date.parse("30/11/2017"),
                 end_date: Date.parse("27/01/2018")
               }
@@ -557,7 +605,7 @@ describe Billimatic::Resources::InvoiceRule do
       it 'updates rule setting new monthly additional_information' do
         VCR.use_cassette('invoice_rules/update/success/rule_new_monthly_additional_information') do
           invoice_rule = subject.update(
-            1157, {
+            2664, {
               additional_information: {
                 title: "New Monthly Rule",
                 month_quantity: 6,

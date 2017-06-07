@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: put
-    uri: http://localhost:3000/api/v1/contracts/41/invoice_rules/1157
+    uri: http://localhost:3000/api/v1/contracts/41/invoice_rules/2664
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"additional_information":{"title":"New Weekly Rule","init_date":"2017-11-30","end_date":"2018-01-27"}}}'
+      string: '{"invoice_rule":{"additional_information":{"title":"New Weekly Rule","period_unit":"weekly","init_date":"2017-11-30","end_date":"2018-01-27"}}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.12.0
@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 06 Jun 2017 14:16:55 GMT
+      - Wed, 07 Jun 2017 12:53:27 GMT
       Connection:
       - close
       X-Frame-Options:
@@ -35,25 +35,25 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       ETag:
-      - W/"c75d336e1b01042427d42924e6df27b9"
+      - W/"15626b45574600ace27772ff3cc04f83"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 807800f5-4360-4a13-b248-74a467b1548e
+      - 7d03a733-61af-4af6-83b7-ef8d84daf1e0
       X-Runtime:
-      - '1.404557'
+      - '1.423188'
       Vary:
       - Origin
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"id":1157,"contract_id":41,"issue_date":null,"gross_value":"100.0","payment_value":"100.0","description":"Faturamento","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"06/06/2017
-        09:55:42 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":1,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[],"services":[],"attachments":[],"additional_information":{"id":50,"init_date":"2017-11-30","title":"New
-        Weekly Rule","period_unit":"weekly","month_quantity":null,"end_date":"2018-01-27","created_at":"06/06/2017
-        11:16:55 -03:00","accrual_month_quantity":"same_month"},"scheduled_update":null,"receivables_additional_information":{"id":60,"day_number":23,"parcel_number":null,"invoice_rule_id":1157,"created_at":"2017-06-06T09:55:42.954-03:00","updated_at":"2017-06-06T09:55:42.954-03:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
+      string: '{"invoice_rule":{"id":2664,"contract_id":41,"issue_date":null,"gross_value":"100.0","payment_value":"100.0","description":"Faturamento","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"07/06/2017
+        09:48:10 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":1,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[],"services":[],"attachments":[],"additional_information":{"id":60,"init_date":"2017-11-30","title":"New
+        Weekly Rule","period_unit":"weekly","month_quantity":null,"end_date":"2018-01-27","created_at":"07/06/2017
+        09:53:27 -03:00","accrual_month_quantity":"same_month"},"scheduled_update":null,"receivables_additional_information":{"id":70,"day_number":23,"parcel_number":null,"invoice_rule_id":2664,"created_at":"2017-06-07T09:48:10.223-03:00","updated_at":"2017-06-07T09:48:10.223-03:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/41/invoice_rules/1157
-  recorded_at: Tue, 06 Jun 2017 14:16:55 GMT
+      effective_url: http://localhost:3000/api/v1/contracts/41/invoice_rules/2664
+  recorded_at: Wed, 07 Jun 2017 12:53:27 GMT
 recorded_with: VCR 3.0.3

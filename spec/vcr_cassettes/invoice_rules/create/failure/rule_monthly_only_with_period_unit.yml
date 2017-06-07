@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/contracts/41/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"additional_information":{"title":"REGRA","init_date":"02/09/2016","period_unit":"monthly","month_quantity":null},"gross_value":100.0,"description":"Faturamento","nfe_body":"$DESCRICAO","charge_type":"fixed_day","receivables_additional_information":{"day_number":23}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.12.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Wed, 07 Jun 2017 12:23:31 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 9850839f-41e0-4e45-9555-272d27ab3ef4
+      X-Runtime:
+      - '0.027721'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errors":{"additional_information.month_quantity":"valor deve ser
+        1, 2, 3, 6 ou 12 (em meses)"}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/41/invoice_rules
+  recorded_at: Wed, 07 Jun 2017 12:23:31 GMT
+recorded_with: VCR 3.0.3
