@@ -88,7 +88,10 @@ describe Billimatic::Resources::Contract do
           contracts = subject.list(organization_id: 1)
 
           expect(contracts).not_to be_empty
-          expect(contracts.first).to be_a(entity_klass)
+          contracts.each do |contract|
+            expect(contract).to be_a(entity_klass)
+            expect(contract.plan).to be_nil
+          end
         end
       end
 
