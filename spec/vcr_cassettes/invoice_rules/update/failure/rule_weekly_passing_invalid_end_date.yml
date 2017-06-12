@@ -1,11 +1,12 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/170829
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"additional_information":{"month_quantity":null,"init_date":"2017-06-05","end_date":"2017-09-18"},"gross_value":100.0,"description":"Faturamento","nfe_body":"$DESCRICAO","charge_type":"fixed_day","receivables_additional_information":{"day_number":23}}}'
+      string: '{"invoice_rule":{"additional_information":{"id":7117,"title":"Updated
+        rule","period_unit":"weekly","init_date":"05/06/2017","end_date":"07/07/2019"}}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.12.0
@@ -27,7 +28,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Mon, 12 Jun 2017 13:32:27 GMT
+      - Mon, 12 Jun 2017 13:52:38 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -39,9 +40,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - bdcdd96f-7a33-4306-8621-15d4d4792a4c
+      - 6d874772-c1e2-4360-a62c-d752b8659262
       X-Runtime:
-      - '0.056973'
+      - '0.159947'
       Vary:
       - Origin
       Via:
@@ -49,12 +50,10 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlcnJvcnMiOnsiYWRkaXRpb25hbF9pbmZvcm1hdGlvbi50aXRsZSI6Im7D
-        o28gcG9kZSBmaWNhciBlbSBicmFuY28iLCJhZGRpdGlvbmFsX2luZm9ybWF0
-        aW9uLm1vbnRoX3F1YW50aXR5IjoidmFsb3IgZGV2ZSBzZXIgMSwgMiwgMywg
-        NiBvdSAxMiAoZW0gbWVzZXMpIn19
+        eyJlcnJvcnMiOnsiYWRkaXRpb25hbF9pbmZvcm1hdGlvbi5wZXJpb2RpY2l0
+        eSI6ImRldmUgc2VyIG5vIG3DoXhpbW8gMSAodW0pIGFubyJ9fQ==
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules
-  recorded_at: Mon, 12 Jun 2017 13:32:27 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/170829
+  recorded_at: Mon, 12 Jun 2017 13:52:38 GMT
 recorded_with: VCR 3.0.3
