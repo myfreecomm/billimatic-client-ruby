@@ -75,6 +75,43 @@ describe Billimatic::Resources::Contract do
     end
   end
 
+  describe '#list' do
+    let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
+
+    subject { described_class.new(http) }
+
+    before { Billimatic.configuration.host = 'http://localhost:3000' }
+
+    context 'when success' do
+      it 'returns a contract collection by organization_id' do
+        VCR.use_cassette('/contracts/list/success/contract_collection') do
+          contracts = subject.list(organization_id: 1)
+
+          expect(contracts).not_to be_empty
+          expect(contracts.first).to be_a(entity_klass)
+        end
+      end
+
+      it 'returns an empty collection when organization has not contracts' do
+        VCR.use_cassette('/contracts/list/success/contract_with_empty_collection') do
+          expect(subject.list(organization_id: 6)).to be_empty
+        end
+      end
+    end
+
+    context 'when failure' do
+      it 'raises Billimatic::RequestError when 404 status code' do
+        VCR.use_cassette('/contracts/list/failure/organization_not_found') do
+          expect {
+            subject.list(organization_id: 333)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql(404)
+          end
+        end
+      end
+    end
+  end
+
   describe '#create' do
     let(:contract_attributes) do
       {

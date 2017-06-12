@@ -49,6 +49,12 @@ module Billimatic
         end
       end
 
+      def list_by_organization(id)
+        http.get("/organizations/#{id}#{resource_base_path}") do |response|
+          respond_with_collection response
+        end
+      end
+
       def destroy(id)
         crud_request do
           http.delete("#{resource_base_path}/#{id}") do |response|
