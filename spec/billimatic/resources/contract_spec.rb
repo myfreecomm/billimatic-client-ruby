@@ -91,6 +91,8 @@ describe Billimatic::Resources::Contract do
           contracts.each do |contract|
             expect(contract).to be_a(entity_klass)
             expect(contract.plan).to be_nil
+            expect(contract.valid_until).to be_nil
+            expect(contract.overdue).to be_nil
           end
         end
       end
