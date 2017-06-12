@@ -185,7 +185,7 @@ describe Billimatic::Resources::Invoice do
       end
     end
 
-    context 'when invoice is already blocked' do
+    context 'when setting blocked approval status' do
       let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
 
       subject { described_class.new(http) }
@@ -500,7 +500,7 @@ describe Billimatic::Resources::Invoice do
       end
     end
 
-    context 'when invoice is already blocked' do
+    context 'managing invoice approval_status' do
       let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
 
       subject { described_class.new(http) }
