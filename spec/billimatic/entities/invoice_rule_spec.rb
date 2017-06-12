@@ -20,6 +20,7 @@ describe Billimatic::Entities::InvoiceRule do
       additional_information: {
         id: 1,
         init_date: '09-01-2016',
+        period_unit: 0,
         month_quantity: 12,
         end_date: '09-01-2017',
         accrual_month_quantity: 1

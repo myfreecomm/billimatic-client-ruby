@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/169928
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"additional_information":{"title":"New Monthly Rule","month_quantity":6,"init_date":"2017-11-30"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.12.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 12 Jun 2017 13:57:51 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1047a38ec9ee26802bddf4418e9391a5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8a0c947c-27be-4390-ba09-1eb1446d47ba
+      X-Runtime:
+      - '0.661036'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"id":169928,"contract_id":6666,"issue_date":null,"gross_value":"100.0","payment_value":"100.0","description":"Faturamento","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"09/06/2017
+        14:57:30 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":574,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[],"services":[],"attachments":[],"additional_information":{"id":7124,"init_date":"2017-11-30","title":"New
+        Monthly Rule","period_unit":"monthly","month_quantity":6,"end_date":null,"created_at":"12/06/2017
+        10:57:51 -03:00","accrual_month_quantity":"same_month"},"scheduled_update":null,"receivables_additional_information":{"id":7091,"day_number":23,"parcel_number":null,"invoice_rule_id":169928,"created_at":"2017-06-09T14:57:30.323-03:00","updated_at":"2017-06-09T14:57:30.323-03:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/169928
+  recorded_at: Mon, 12 Jun 2017 13:57:52 GMT
+recorded_with: VCR 3.0.3

@@ -9,6 +9,7 @@ describe Billimatic::Entities::Invoice do
       number: '123',
       issue_date: '2016-09-19',
       state: 0,
+      cancelled_automatically: false,
       description: 'FATURAMENTO',
       nfe_service: 'foo',
       nfe_verification: 'bar',
@@ -50,15 +51,16 @@ describe Billimatic::Entities::Invoice do
 
   it_behaves_like 'entity_attributes', [
                     :id, :contract_id, :gross_value, :number, :issue_date,
-                    :state, :description, :nfe_service, :nfe_verification,
-                    :created_at, :payment_value, :emites_service_values_id,
-                    :finance_category, :finance_revenue_center, :finance_receive_via,
-                    :nfe_issued, :nfe_issue_date, :cobrato_charge_config_id,
-                    :receivables, :services, :attachments, :nfe_body,
-                    :accrual_date, :comments, :customer_id, :customer_type,
-                    :emites_service_value_name, :cobrato_charge_config_name,
-                    :cobrato_charge_template_id, :cobrato_charge_template_name,
-                    :management_type, :days_until_automatic_nfe_emission,
+                    :state, :cancelled_automatically, :description, :nfe_service,
+                    :nfe_verification, :created_at, :payment_value,
+                    :emites_service_values_id, :finance_category,
+                    :finance_revenue_center, :finance_receive_via, :nfe_issued,
+                    :nfe_issue_date, :cobrato_charge_config_id, :receivables,
+                    :services, :attachments, :nfe_body, :accrual_date, :comments,
+                    :customer_id, :customer_type, :emites_service_value_name,
+                    :cobrato_charge_config_name, :cobrato_charge_template_id,
+                    :cobrato_charge_template_name, :management_type,
+                    :days_until_automatic_nfe_emission,
                     :automatic_nfe_issue_date, :automatic_email_template_id,
                     :approval_status
                   ]
