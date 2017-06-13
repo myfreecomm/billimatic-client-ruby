@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: http://localhost:3000/api/v1/contracts/44/invoices/3628
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/170615
     body:
       encoding: UTF-8
       string: '{"invoice":{"approval_status":"approved"}}'
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=6995d1ad4f1ed7465bb122ee759a7aa6
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,37 +22,39 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Mon, 12 Jun 2017 18:19:34 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Tue, 13 Jun 2017 20:11:10 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"0d2d8ebeeff7d71c00275b26ca5c3ce4"
+      Etag:
+      - W/"58d909fa3294afaf1c4ea07038aff7fd"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6d5449c2-b8f3-4b9c-961d-23244300afc6
+      - 985f5fe3-f881-4926-9e44-214752d2f291
       X-Runtime:
-      - '1.100545'
+      - '0.505572'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"invoice":{"id":3628,"contract_id":44,"issue_date":"19/09/2016","gross_value":"100.0","payment_value":"100.0","description":"FATURAMENTO","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"FATURAMENTO","nfe_issued":false,"number":null,"created_at":"12/06/2017
-        15:01:09 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":5,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"blocked","receivables":[{"id":5932,"invoice_id":3628,"due_date":"12/06/2017","value":"100.0","gross_value":"100.0","payment_value":"100.0","received_value":null,"received_at":null,"created_at":"12/06/2017
-        15:01:09 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":1831417,"finance_entity_id":3804,"finance_errors":null}],"services":[],"attachments":[]}}'
+      string: '{"invoice":{"id":170615,"contract_id":6666,"issue_date":"02/10/2016","gross_value":"100.0","payment_value":"100.0","description":"Faturamento","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"09/06/2017
+        15:22:39 -03:00","management_type":"manual","accrual_date":"2016-10-01","comments":null,"customer_id":574,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"blocked","receivables":[{"id":166946,"invoice_id":170615,"due_date":"23/10/2016","value":"100.0","gross_value":"100.0","payment_value":"100.0","received_value":null,"received_at":null,"created_at":"09/06/2017
+        15:22:39 -03:00","state":"to_emit","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":null,"finance_entity_id":null,"finance_errors":null}],"services":[],"attachments":[]}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/44/invoices/3628
-  recorded_at: Mon, 12 Jun 2017 18:19:34 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoices/170615
+  recorded_at: Tue, 13 Jun 2017 20:11:10 GMT
 recorded_with: VCR 3.0.3

@@ -185,27 +185,19 @@ describe Billimatic::Resources::Invoice do
       end
     end
 
-    context 'when setting blocked approval status' do
-      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
+    it 'creates an already blocked invoice' do
+      VCR.use_cassette('/invoices/create/success/invoice_already_blocked') do
+        invoice = subject.create(
+          invoice_attributes.merge(
+            approval_status: 'blocked',
+            receivables: [{ due_date: Date.today }]
+          ), contract_id: 6666
+        )
 
-      subject { described_class.new(http) }
-
-      before { Billimatic.configuration.host = 'http://localhost:3000' }
-
-      it 'creates an already blocked invoice' do
-        VCR.use_cassette('/invoices/create/success/invoice_already_blocked') do
-          invoice = subject.create(
-            invoice_attributes.merge(
-              approval_status: 'blocked',
-              receivables: [{ due_date: Date.today }]
-            ), contract_id: 44
-          )
-
-          expect(invoice).to be_a entity_klass
-          expect(invoice.contract_id).to eql(44)
-          expect(invoice.receivables).not_to be_empty
-          expect(invoice.approval_status).to eql('blocked')
-        end
+        expect(invoice).to be_a entity_klass
+        expect(invoice.contract_id).to eql(6666)
+        expect(invoice.receivables).not_to be_empty
+        expect(invoice.approval_status).to eql('blocked')
       end
     end
 
@@ -500,35 +492,27 @@ describe Billimatic::Resources::Invoice do
       end
     end
 
-    context 'managing invoice approval_status' do
-      let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
+    it "can't change invoice approval_status to blocked" do
+      VCR.use_cassette('/invoices/update/failure/contract_approved_to_blocked') do
+        invoice = subject.update(
+          170614, {approval_status: 'blocked'}, contract_id: 6666
+        )
 
-      subject { described_class.new(http) }
-
-      before { Billimatic.configuration.host = 'http://localhost:3000' }
-
-      it "can't change invoice approval_status to blocked" do
-        VCR.use_cassette('/invoices/update/failure/contract_approved_to_blocked') do
-          invoice = subject.update(
-            3568, {approval_status: 'blocked'}, contract_id: 44
-          )
-
-          expect(invoice).to be_a entity_klass
-          expect(invoice.contract_id).to eql 44
-          expect(invoice.approval_status).to eql('approved')
-        end
+        expect(invoice).to be_a entity_klass
+        expect(invoice.contract_id).to eql 6666
+        expect(invoice.approval_status).to eql('approved')
       end
+    end
 
-      it "can't change invoice approval_status to approved" do
-        VCR.use_cassette('/invoices/update/failure/contract_blocked_to_approved') do
-          invoice = subject.update(
-            3628, {approval_status: 'approved'}, contract_id: 44
-          )
+    it "can't change invoice approval_status to approved" do
+      VCR.use_cassette('/invoices/update/failure/contract_blocked_to_approved') do
+        invoice = subject.update(
+          170615, {approval_status: 'approved'}, contract_id: 6666
+        )
 
-          expect(invoice).to be_a entity_klass
-          expect(invoice.contract_id).to eql 44
-          expect(invoice.approval_status).to eql('blocked')
-        end
+        expect(invoice).to be_a entity_klass
+        expect(invoice.contract_id).to eql 6666
+        expect(invoice.approval_status).to eql('blocked')
       end
     end
 

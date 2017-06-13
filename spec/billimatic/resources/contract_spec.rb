@@ -76,16 +76,10 @@ describe Billimatic::Resources::Contract do
   end
 
   describe '#list' do
-    let(:http) { Billimatic::Http.new('6995d1ad4f1ed7465bb122ee759a7aa6') }
-
-    subject { described_class.new(http) }
-
-    before { Billimatic.configuration.host = 'http://localhost:3000' }
-
     context 'when success' do
       it 'returns a contract collection by organization_id' do
         VCR.use_cassette('/contracts/list/success/contract_collection') do
-          contracts = subject.list(organization_id: 1)
+          contracts = subject.list(organization_id: 564)
 
           expect(contracts).not_to be_empty
           contracts.each do |contract|
@@ -99,7 +93,7 @@ describe Billimatic::Resources::Contract do
 
       it 'returns an empty collection when organization has not contracts' do
         VCR.use_cassette('/contracts/list/success/contract_with_empty_collection') do
-          expect(subject.list(organization_id: 6)).to be_empty
+          expect(subject.list(organization_id: 1890)).to be_empty
         end
       end
     end
