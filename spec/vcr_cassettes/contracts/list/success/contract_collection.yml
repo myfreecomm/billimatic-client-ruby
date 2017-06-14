@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/contracts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.12.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Tue, 13 Jun 2017 20:14:23 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"855b08d2105f19a1021072230f2027e3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e2f9e32c-18ca-4588-9709-01868288890b
+      X-Runtime:
+      - '0.061979'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb250cmFjdHMiOlt7ImlkIjoyMTksIm5hbWUiOiJQcmVzdGHDp8OjbyBk
+        ZSBTZXJ2acOnbyBVbSIsInRpdGxlIjoiVMOtdHVsbyBkbyBzZXJ2acOnbyBV
+        bSIsInRva2VuIjpudWxsLCJkZXNjcmlwdGlvbiI6ImRlc2NyZXZlbmRvIG8g
+        c2VydmnDp28iLCJjdXN0b21lcl9pZCI6NTY1LCJjdXN0b21lcl90eXBlIjoi
+        Q29tcGFueSIsInN1cHBsaWVyX2lkIjo1NjQsInN1cHBsaWVyX3R5cGUiOiJD
+        b21wYW55Iiwic3RhdGUiOiJhY3RpdmUiLCJjb21tZW50cyI6Im9ic2VydmFu
+        ZG8gbyBzZXJ2acOnbyIsImluaXRfZGF0ZSI6IjAxLzA0LzIwMTYiLCJlbmRf
+        ZGF0ZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjA4LzA0LzIwMTYgMTY6Mjc6MzAg
+        LTAzOjAwIiwia2luZCI6InNhbGUiLCJzdGF0dXMiOiJlc3RhYmxpc2hlZCIs
+        InJlZ2lzdHJhdGlvbl9tZXRob2QiOiJyZWd1bGFyIiwiY2FuY2VsX2RhdGUi
+        Om51bGwsImNhbmNlbF9yZWFzb24iOm51bGx9LHsiaWQiOjIyNSwibmFtZSI6
+        IkFzc2luYXR1cmEgRW1wcmVzYSBkZSBUZXN0ZSAtIFBsYW5vIDEiLCJ0aXRs
+        ZSI6IkFzc2luYXR1cmEgRW1wcmVzYSBkZSBUZXN0ZSAtIFBsYW5vIDEiLCJ0
+        b2tlbiI6IjBkMGU0MGU1MWYwZThjNzcyZDc1YmM1ODc5MDEzZmRhIiwiZGVz
+        Y3JpcHRpb24iOm51bGwsImN1c3RvbWVyX2lkIjo1NzQsImN1c3RvbWVyX3R5
+        cGUiOiJDb21wYW55Iiwic3VwcGxpZXJfaWQiOjU2NCwic3VwcGxpZXJfdHlw
+        ZSI6IkNvbXBhbnkiLCJzdGF0ZSI6ImFjdGl2ZSIsImNvbW1lbnRzIjpudWxs
+        LCJpbml0X2RhdGUiOiIwMy8wNS8yMDE2IiwiZW5kX2RhdGUiOiIyNy8wOS8y
+        MDE2IiwiY3JlYXRlZF9hdCI6IjAzLzA1LzIwMTYgMTM6NDc6MDggLTAzOjAw
+        Iiwia2luZCI6InNhbGUiLCJzdGF0dXMiOiJ0cmlhbCIsInJlZ2lzdHJhdGlv
+        bl9tZXRob2QiOiJzdWJzY3JpcHRpb24iLCJjYW5jZWxfZGF0ZSI6bnVsbCwi
+        Y2FuY2VsX3JlYXNvbiI6bnVsbH0seyJpZCI6MjI3LCJuYW1lIjoiQXNzaW5h
+        dHVyYSBDb21wYW5oaWEgTFREQS4gLSBQbGFubyAxIiwidGl0bGUiOiJBc3Np
+        bmF0dXJhIENvbXBhbmhpYSBMVERBLiAtIFBsYW5vIDEiLCJ0b2tlbiI6IjU0
+        NDZjNWI4YjZmM2MzZTdlYzc3NDUxOGVjZDkwOGNjIiwiZGVzY3JpcHRpb24i
+        Om51bGwsImN1c3RvbWVyX2lkIjo1NzgsImN1c3RvbWVyX3R5cGUiOiJDb21w
+        YW55Iiwic3VwcGxpZXJfaWQiOjU2NCwic3VwcGxpZXJfdHlwZSI6IkNvbXBh
+        bnkiLCJzdGF0ZSI6ImFjdGl2ZSIsImNvbW1lbnRzIjpudWxsLCJpbml0X2Rh
+        dGUiOiIwNC8wNS8yMDE2IiwiZW5kX2RhdGUiOiIwMy8wNi8yMDE2IiwiY3Jl
+        YXRlZF9hdCI6IjA0LzA1LzIwMTYgMDg6NTM6MzIgLTAzOjAwIiwia2luZCI6
+        InNhbGUiLCJzdGF0dXMiOiJ0cmlhbCIsInJlZ2lzdHJhdGlvbl9tZXRob2Qi
+        OiJzdWJzY3JpcHRpb24iLCJjYW5jZWxfZGF0ZSI6bnVsbCwiY2FuY2VsX3Jl
+        YXNvbiI6bnVsbH0seyJpZCI6NjY2NiwibmFtZSI6IkNvbnRyYXRvIGRlIFRl
+        c3RlIFBhcmEgbyBDTElFTlQiLCJ0aXRsZSI6IkNvbnRyYXRvIGRlIFRlc3Rl
+        IiwidG9rZW4iOm51bGwsImRlc2NyaXB0aW9uIjoiIiwiY3VzdG9tZXJfaWQi
+        OjU3NCwiY3VzdG9tZXJfdHlwZSI6IkNvbXBhbnkiLCJzdXBwbGllcl9pZCI6
+        NTY0LCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0aXZl
+        IiwiY29tbWVudHMiOiIiLCJpbml0X2RhdGUiOm51bGwsImVuZF9kYXRlIjoi
+        MjcvMDkvMjAxNiIsImNyZWF0ZWRfYXQiOiIwMi8wOS8yMDE2IDEwOjM3OjM3
+        IC0wMzowMCIsImtpbmQiOiJzYWxlIiwic3RhdHVzIjoiZXN0YWJsaXNoZWQi
+        LCJyZWdpc3RyYXRpb25fbWV0aG9kIjoicmVndWxhciIsImNhbmNlbF9kYXRl
+        IjpudWxsLCJjYW5jZWxfcmVhc29uIjpudWxsfSx7ImlkIjo4MTI3LCJuYW1l
+        IjoiUGVyc29uIHB1cmNoYXNlIGNvbnRyYWN0IiwidGl0bGUiOiJUaGUgbmV3
+        IGNvbnRyYWN0IiwidG9rZW4iOm51bGwsImRlc2NyaXB0aW9uIjpudWxsLCJj
+        dXN0b21lcl9pZCI6NTY0LCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIsInN1
+        cHBsaWVyX2lkIjoxMTk0LCJzdXBwbGllcl90eXBlIjoiUGVyc29uIiwic3Rh
+        dGUiOiJhY3RpdmUiLCJjb21tZW50cyI6bnVsbCwiaW5pdF9kYXRlIjpudWxs
+        LCJlbmRfZGF0ZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjI2LzA5LzIwMTYgMTA6
+        NTU6NTYgLTAzOjAwIiwia2luZCI6InB1cmNoYXNlIiwic3RhdHVzIjoiZXN0
+        YWJsaXNoZWQiLCJyZWdpc3RyYXRpb25fbWV0aG9kIjoicmVndWxhciIsImNh
+        bmNlbF9kYXRlIjpudWxsLCJjYW5jZWxfcmVhc29uIjpudWxsfSx7ImlkIjo4
+        ODE4LCJuYW1lIjoiQ29udHJhdG8gVGVzdGUgSUkiLCJ0aXRsZSI6InRlc3Rl
+        IiwidG9rZW4iOm51bGwsImRlc2NyaXB0aW9uIjoiIiwiY3VzdG9tZXJfaWQi
+        OjU3OCwiY3VzdG9tZXJfdHlwZSI6IkNvbXBhbnkiLCJzdXBwbGllcl9pZCI6
+        NTY0LCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoiYWN0aXZl
+        IiwiY29tbWVudHMiOiIiLCJpbml0X2RhdGUiOm51bGwsImVuZF9kYXRlIjpu
+        dWxsLCJjcmVhdGVkX2F0IjoiMTAvMDQvMjAxNyAxNjozMDozMSAtMDM6MDAi
+        LCJraW5kIjoic2FsZSIsInN0YXR1cyI6ImVzdGFibGlzaGVkIiwicmVnaXN0
+        cmF0aW9uX21ldGhvZCI6InJlZ3VsYXIiLCJjYW5jZWxfZGF0ZSI6bnVsbCwi
+        Y2FuY2VsX3JlYXNvbiI6bnVsbH1dfQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/contracts
+  recorded_at: Tue, 13 Jun 2017 20:14:23 GMT
+recorded_with: VCR 3.0.3
