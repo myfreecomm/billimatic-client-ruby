@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    billimatic-client (0.12.0)
+    billimatic-client (0.13.0)
       multi_json (~> 1.11)
       typhoeus (~> 0.8)
       virtus (~> 1.0.5)
@@ -119,4 +119,4 @@ DEPENDENCIES
   vcr (~> 3.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
