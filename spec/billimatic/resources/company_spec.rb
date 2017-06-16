@@ -56,6 +56,41 @@ describe Billimatic::Resources::Company do
     end
   end
 
+  describe '#show' do
+    let(:http) { Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d') }
+
+    subject { described_class.new(http) }
+
+    before do
+      Billimatic.configuration.host = 'http://localhost:3000'
+    end
+
+    it "raises Billimatic::RequestError with not found status when id isn't found" do
+      VCR.use_cassette('/companies/show/failure/company_not_found') do
+        expect { subject.show(520) }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it "raises Billimatic::RequestError with not found status when id is of an organization" do
+      VCR.use_cassette('/companies/show/failure/organization_not_found') do
+        expect { subject.show(4) }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'returns a company entity' do
+      VCR.use_cassette('/companies/show/success') do
+        company = subject.show(365)
+
+        expect(company).to be_a entity_klass
+        expect(company.id). to eql 365
+      end
+    end
+  end
+
   describe '#create' do
     let(:params) do
       {

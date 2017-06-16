@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/companies/365
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.13.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Jun 2017 18:18:07 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"c4a569cd54b1ed1301436eeb6148f548"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5a81366c-2ddd-4fd4-92e6-25ddd21fffe0
+      X-Runtime:
+      - '0.704281'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb21wYW55Ijp7ImlkIjozNjUsImFjY291bnRfaWQiOjEsIm5hbWUiOiJD
+        b21wYW5oaWEiLCJjb21wYW55X25hbWUiOiJDb21wYW5oaWEiLCJjbnBqIjoi
+        NDUuNDYwLjc5Ni8wMDAxLTAxIiwic3RhdGVfaW5zY3JpcHRpb24iOiIiLCJh
+        ZGRyZXNzIjoiUnVhIEdyb2VubMOibmRpYSIsIm51bWJlciI6IjEyMzQiLCJ6
+        aXBjb2RlIjoiMDE0MzQwMDAiLCJkaXN0cmljdCI6IkphcmRpbSBBbcOpcmlj
+        YSIsImNvbXBsZW1lbnQiOiIiLCJjaXR5IjoiU8OjbyBQYXVsbyIsInN0YXRl
+        IjoiU1AiLCJjb250YWN0cyI6ImNvbnRhdG9AY29tcGFuaGlhLmNvbSIsImJp
+        bGxpbmdfY29udGFjdHMiOiJmaW5hbmNlaXJvQGNvbXBhbmhpYS5jb20uYnIi
+        LCJraW5kIjoiY29tcGFueSIsImNvbW1lbnRzIjoiIiwiY2xpZW50X3NpbmNl
+        IjoiMDUvMTIvMjAxNiIsImNyZWF0ZWRfYXQiOiIwMy8wOC8yMDE2IDExOjAw
+        OjQxIC0wMzowMCJ9fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/companies/365
+  recorded_at: Fri, 16 Jun 2017 18:18:07 GMT
+recorded_with: VCR 3.0.3
