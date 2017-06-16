@@ -69,6 +69,80 @@ describe Billimatic::Resources::Invoice do
     end
   end
 
+  describe '#late' do
+    let(:http) { Billimatic::Http.new('d0cb3c0eae88857de3266c7b6dd7298d') }
+
+    subject { described_class.new(http) }
+
+    before do
+      Billimatic.configuration.host = 'http://localhost:3000'
+    end
+
+    it "raises Billimatic::RequestError with not found status when contract isn't found" do
+      VCR.use_cassette('/invoices/late/failure/contract_not_found') do
+        expect {
+          subject.late(contract_id: 100000)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    context 'when contract has late invoices' do
+      it 'returns a collection of all late invoices on contract' do
+        VCR.use_cassette('/invoices/late/success/contract_with_late_invoice') do
+          invoices = subject.late(contract_id: 1113)
+
+          expect(invoices.size).to eql 1
+          expect(invoices.map(&:id)).to include 72467
+
+          invoices.each do |invoice|
+            expect(invoice).to be_a entity_klass
+            expect(invoice.state).to eql 'to_receive'
+          end
+        end
+      end
+
+      it 'returns invoices even with other not late receivables' do
+        VCR.use_cassette('/invoices/late/success/invoices_with_not_late_receivables') do
+          invoices = subject.late(contract_id: 1325)
+
+          expect(invoices.size).to eql 3
+          expect(invoices.map(&:id)).to include 81516, 81515, 81489
+
+          invoices.each do |invoice|
+            expect(invoice).to be_a entity_klass
+            expect(invoice.state).to eql 'to_receive'
+          end
+        end
+      end
+    end
+
+    context 'when contract has only past to emit and cancelled invoices' do
+      it 'returns an empty collection' do
+        VCR.use_cassette('/invoices/late/success/only_to_emit_and_cancelled_invoices') do
+          expect(subject.late(contract_id: 1277)).to be_empty
+        end
+      end
+    end
+
+    context "when contract doesn't have late invoices" do
+      it 'returns an empty collection' do
+        VCR.use_cassette('/invoices/late/success/contract_with_no_late_invoices') do
+          expect(subject.late(contract_id: 1205)).to be_empty
+        end
+      end
+    end
+
+    context "when contract doesn't have invoices at all" do
+      it 'returns an empty collection' do
+        VCR.use_cassette('/invoices/late/success/contract_without_invoices') do
+          expect(subject.late(contract_id: 1355)).to be_empty
+        end
+      end
+    end
+  end
+
   describe '#show' do
     it 'returns not found when contract is not found' do
       VCR.use_cassette("/invoices/show/failure/contract_not_found") do
