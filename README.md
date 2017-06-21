@@ -332,9 +332,20 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_late_get_1" target="_blank">
+                /api/v1/contracts/:contract_id/invoices/late
+            </a>
+        </td>
+        <td>
+            <code>client.invoices.late(contract_id: id)</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_block_patch_1" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_block_patch_2" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id/block
             </a>
         </td>
@@ -345,7 +356,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_approve_patch_2" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_approve_patch_3" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id/approve
             </a>
         </td>
@@ -356,7 +367,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_create_post_3" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_create_post_4" target="_blank">
                 /api/v1/contracts/:contract_id/invoices
             </a>
         </td>
@@ -367,7 +378,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_show_get_4" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_show_get_5" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id
             </a>
         </td>
@@ -378,7 +389,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_update_patch_5" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_update_patch_6" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id
             </a>
         </td>
@@ -389,7 +400,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_destroy_delete_6" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_destroy_delete_7" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id
             </a>
         </td>
@@ -462,9 +473,20 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_show_get_2" target="_blank">
+                /api/v1/companies/:id
+            </a>
+        </td>
+        <td>
+            <code>client.companies.show(id)</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_update_patch_2" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_update_patch_3" target="_blank">
                 /api/v1/companies/:id
             </a>
         </td>
@@ -475,7 +497,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_destroy_delete_3" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_destroy_delete_4" target="_blank">
                 /api/v1/companies/:id
             </a>
         </td>

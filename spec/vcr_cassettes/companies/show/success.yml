@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/578
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.13.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Wed, 21 Jun 2017 12:03:26 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1615ad5fcec56e531fdc40a9484b85cd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4e7633fd-85e8-4c24-9890-efcf75b3b982
+      X-Runtime:
+      - '0.014364'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb21wYW55Ijp7ImlkIjo1NzgsImFjY291bnRfaWQiOjMyLCJuYW1lIjoi
+        Q29tcGFuaGlhIExUREEuIiwiY29tcGFueV9uYW1lIjpudWxsLCJjbnBqIjoi
+        ODEuNzAwLjQxNi8wMDAxLTE0Iiwic3RhdGVfaW5zY3JpcHRpb24iOm51bGws
+        ImFkZHJlc3MiOiJQcmHDp2EgZGEgU8OpIiwibnVtYmVyIjoiMTIiLCJ6aXBj
+        b2RlIjoiMDEwMDEwMDAiLCJkaXN0cmljdCI6IlPDqSIsImNvbXBsZW1lbnQi
+        Om51bGwsImNpdHkiOiJTw6NvIFBhdWxvIiwic3RhdGUiOiJTUCIsImNvbnRh
+        Y3RzIjpudWxsLCJiaWxsaW5nX2NvbnRhY3RzIjoidGVzdGVAY29tcGFuaGlh
+        LmNvbSIsImtpbmQiOiJjb21wYW55IiwiY29tbWVudHMiOm51bGwsImNsaWVu
+        dF9zaW5jZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjA0LzA1LzIwMTYgMDg6NTM6
+        MzIgLTAzOjAwIn19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/578
+  recorded_at: Wed, 21 Jun 2017 12:03:26 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/8818/invoices/late
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.13.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Wed, 21 Jun 2017 12:07:54 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"cd9bd8c7e21e792b88c76ad0d838a569"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 11a56416-d90c-4c32-bcc3-797a9ff555e1
+      X-Runtime:
+      - '0.038614'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"invoices":[{"id":168133,"contract_id":8818,"issue_date":"10/04/2017","gross_value":"150.0","payment_value":"150.0","description":"TESTE","state":"to_receive","cancelled_automatically":false,"nfe_service":null,"nfe_verification":"","nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":"","created_at":"10/04/2017
+        16:30:57 -03:00","management_type":"manual","accrual_date":"2017-04-01","comments":"","customer_id":578,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[{"id":164145,"invoice_id":168133,"due_date":"01/05/2017","value":"100.0","gross_value":"150.0","payment_value":"150.0","received_value":null,"received_at":null,"created_at":"10/04/2017
+        16:30:57 -03:00","state":"to_receive","payment_gateway_status":null,"cobrato_charge_id":null,"cobrato_errors":null,"finance_receivable_id":null,"finance_entity_id":null,"finance_errors":null}],"services":[],"attachments":[]}]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/8818/invoices/late
+  recorded_at: Wed, 21 Jun 2017 12:07:54 GMT
+recorded_with: VCR 3.0.3

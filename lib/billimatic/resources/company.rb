@@ -1,7 +1,7 @@
 module Billimatic
   module Resources
     class Company < Base
-      crud :create, :destroy
+      crud :show, :create, :destroy
 
       def initialize(http)
         @collection_name = 'companies'

@@ -10,6 +10,12 @@ module Billimatic
         end
       end
 
+      def late(contract_id:)
+        http.get("/contracts/#{contract_id}#{resource_base_path}/late") do |response|
+          respond_with_collection response
+        end
+      end
+
       def show(id, contract_id:)
         http.get(
           "/contracts/#{contract_id}#{resource_base_path}/#{id}"
