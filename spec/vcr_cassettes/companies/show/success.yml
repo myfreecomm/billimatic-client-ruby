@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/companies/365
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/578
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,46 +22,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 16 Jun 2017 18:18:07 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Wed, 21 Jun 2017 12:03:26 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"c4a569cd54b1ed1301436eeb6148f548"
+      Etag:
+      - W/"1615ad5fcec56e531fdc40a9484b85cd"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5a81366c-2ddd-4fd4-92e6-25ddd21fffe0
+      - 4e7633fd-85e8-4c24-9890-efcf75b3b982
       X-Runtime:
-      - '0.704281'
+      - '0.014364'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJjb21wYW55Ijp7ImlkIjozNjUsImFjY291bnRfaWQiOjEsIm5hbWUiOiJD
-        b21wYW5oaWEiLCJjb21wYW55X25hbWUiOiJDb21wYW5oaWEiLCJjbnBqIjoi
-        NDUuNDYwLjc5Ni8wMDAxLTAxIiwic3RhdGVfaW5zY3JpcHRpb24iOiIiLCJh
-        ZGRyZXNzIjoiUnVhIEdyb2VubMOibmRpYSIsIm51bWJlciI6IjEyMzQiLCJ6
-        aXBjb2RlIjoiMDE0MzQwMDAiLCJkaXN0cmljdCI6IkphcmRpbSBBbcOpcmlj
-        YSIsImNvbXBsZW1lbnQiOiIiLCJjaXR5IjoiU8OjbyBQYXVsbyIsInN0YXRl
-        IjoiU1AiLCJjb250YWN0cyI6ImNvbnRhdG9AY29tcGFuaGlhLmNvbSIsImJp
-        bGxpbmdfY29udGFjdHMiOiJmaW5hbmNlaXJvQGNvbXBhbmhpYS5jb20uYnIi
-        LCJraW5kIjoiY29tcGFueSIsImNvbW1lbnRzIjoiIiwiY2xpZW50X3NpbmNl
-        IjoiMDUvMTIvMjAxNiIsImNyZWF0ZWRfYXQiOiIwMy8wOC8yMDE2IDExOjAw
-        OjQxIC0wMzowMCJ9fQ==
+        eyJjb21wYW55Ijp7ImlkIjo1NzgsImFjY291bnRfaWQiOjMyLCJuYW1lIjoi
+        Q29tcGFuaGlhIExUREEuIiwiY29tcGFueV9uYW1lIjpudWxsLCJjbnBqIjoi
+        ODEuNzAwLjQxNi8wMDAxLTE0Iiwic3RhdGVfaW5zY3JpcHRpb24iOm51bGws
+        ImFkZHJlc3MiOiJQcmHDp2EgZGEgU8OpIiwibnVtYmVyIjoiMTIiLCJ6aXBj
+        b2RlIjoiMDEwMDEwMDAiLCJkaXN0cmljdCI6IlPDqSIsImNvbXBsZW1lbnQi
+        Om51bGwsImNpdHkiOiJTw6NvIFBhdWxvIiwic3RhdGUiOiJTUCIsImNvbnRh
+        Y3RzIjpudWxsLCJiaWxsaW5nX2NvbnRhY3RzIjoidGVzdGVAY29tcGFuaGlh
+        LmNvbSIsImtpbmQiOiJjb21wYW55IiwiY29tbWVudHMiOm51bGwsImNsaWVu
+        dF9zaW5jZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjA0LzA1LzIwMTYgMDg6NTM6
+        MzIgLTAzOjAwIn19
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/companies/365
-  recorded_at: Fri, 16 Jun 2017 18:18:07 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/578
+  recorded_at: Wed, 21 Jun 2017 12:03:26 GMT
 recorded_with: VCR 3.0.3

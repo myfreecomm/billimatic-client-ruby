@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/companies/520
+    uri: https://sandbox.billimatic.com.br/api/v1/companies/520
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
-      Date:
-      - Fri, 16 Jun 2017 18:14:38 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Wed, 21 Jun 2017 12:00:53 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,18 +39,18 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f9ba3eb9-4afb-4fa8-89a2-99f293fccd9f
+      - 714adf19-081e-4706-a81d-5885a1fe7b30
       X-Runtime:
-      - '0.359427'
+      - '0.029916'
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: ''
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/companies/520
-  recorded_at: Fri, 16 Jun 2017 18:14:38 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/companies/520
+  recorded_at: Wed, 21 Jun 2017 12:00:53 GMT
 recorded_with: VCR 3.0.3
