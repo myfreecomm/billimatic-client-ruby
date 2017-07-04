@@ -32,7 +32,10 @@ describe Billimatic::Entities::Subscription do
                       :customer_type, :supplier_id, :supplier_type, :state,
                       :init_date, :end_date, :comments, :created_at, :kind,
                       :registration_method, :overdue, :valid_until, :status,
-                      :cancel_date, :cancel_reason, :plan, :payment_information
+                      :cancel_date, :cancel_reason,
+                      :cobrato_payment_gateway_charge_config_id,
+                      :cobrato_payment_gateway_charge_config_name,
+                      :plan, :payment_information
                     ]
   end
 
