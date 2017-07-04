@@ -24,6 +24,7 @@ module Billimatic
       attribute :additional_information, Hash
       attribute :scheduled_update, Hash
       attribute :receivables_additional_information, Hash
+      attribute :payment_information, PaymentInformation
     end
   end
 end

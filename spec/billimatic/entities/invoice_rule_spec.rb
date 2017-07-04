@@ -49,6 +49,10 @@ describe Billimatic::Entities::InvoiceRule do
         day_number: 5,
         month_quantity: 12,
         day_quantity: 0
+      },
+      payment_information: {
+        id: 1234,
+        payment_method: 'billet'
       }
     }
   end
@@ -65,6 +69,7 @@ describe Billimatic::Entities::InvoiceRule do
                     :management_type, :days_until_automatic_nfe_emission,
                     :automatic_nfe_issue_date, :automatic_email_template_id,
                     :additional_information, :services,
-                    :scheduled_update, :receivables_additional_information
+                    :scheduled_update, :receivables_additional_information,
+                    :payment_information
                   ]
 end
