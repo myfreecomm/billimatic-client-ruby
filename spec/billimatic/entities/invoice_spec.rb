@@ -43,7 +43,11 @@ describe Billimatic::Entities::Invoice do
       ],
       attachments: [
         { id: 1, filename: 'foo.jpg', content_type: 'application/pdf', content: 'content', _destroy: false }
-      ]
+      ],
+      payment_information: {
+        id: 123,
+        payment_method: 'payment_gateway'
+      }
     }
   end
 
@@ -62,6 +66,6 @@ describe Billimatic::Entities::Invoice do
                     :cobrato_charge_template_name, :management_type,
                     :days_until_automatic_nfe_emission,
                     :automatic_nfe_issue_date, :automatic_email_template_id,
-                    :approval_status
+                    :approval_status, :payment_information
                   ]
 end

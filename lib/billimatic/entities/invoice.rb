@@ -35,6 +35,7 @@ module Billimatic
       attribute :automatic_email_template_id, Integer
       attribute :receivables, [Receivable]
       attribute :services, [Service]
+      attribute :payment_information, PaymentInformation
       attribute :attachments, [Hash]
       attribute :approval_status, String
     end

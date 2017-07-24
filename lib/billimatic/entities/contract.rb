@@ -22,6 +22,8 @@ module Billimatic
       attribute :status, String
       attribute :cancel_date, Date
       attribute :cancel_reason, String
+      attribute :cobrato_payment_gateway_charge_config_id, Integer
+      attribute :cobrato_payment_gateway_charge_config_name, String
       attribute :plan, Plan
     end
   end

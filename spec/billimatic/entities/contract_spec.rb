@@ -18,7 +18,9 @@ describe Billimatic::Entities::Contract do
       kind: 'sale',
       registration_method: 'regular',
       overdue: false,
-      status: 'established'
+      status: 'established',
+      cobrato_payment_gateway_charge_config_id: 12,
+      cobrato_payment_gateway_charge_config_name: 'Config'
     }
   end
 
@@ -29,6 +31,8 @@ describe Billimatic::Entities::Contract do
                     :customer_type, :supplier_id, :supplier_type, :state,
                     :init_date, :end_date, :comments, :created_at, :kind,
                     :registration_method, :overdue, :valid_until, :status,
-                    :cancel_date, :cancel_reason, :plan
+                    :cancel_date, :cancel_reason, :plan,
+                    :cobrato_payment_gateway_charge_config_id,
+                    :cobrato_payment_gateway_charge_config_name
                   ]
 end
