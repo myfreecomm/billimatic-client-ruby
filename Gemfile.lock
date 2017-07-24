@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    billimatic-client (0.14.0)
+    billimatic-client (0.14.1)
       multi_json (~> 1.11)
       typhoeus (~> 0.8)
       virtus (~> 1.0.5)
