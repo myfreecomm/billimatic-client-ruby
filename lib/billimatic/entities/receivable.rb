@@ -14,6 +14,7 @@ module Billimatic
       attribute :payment_gateway_status, String
       attribute :cobrato_charge_id, Integer
       attribute :cobrato_errors, String
+      attribute :myfinance_sale_id, Integer
       attribute :finance_receivable_id, Integer
       attribute :finance_entity_id, Integer
       attribute :finance_errors, String
