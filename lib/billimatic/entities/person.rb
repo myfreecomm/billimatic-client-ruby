@@ -15,6 +15,8 @@ module Billimatic
       attribute :state, String
       attribute :comments, String
       attribute :client_since, Date
+      attribute :myfinance_customer_id, Integer
+      attribute :myfinance_errors, String
       attribute :created_at, DateTime
     end
   end

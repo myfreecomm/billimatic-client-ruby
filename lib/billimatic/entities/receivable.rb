@@ -17,7 +17,7 @@ module Billimatic
       attribute :myfinance_sale_id, Integer
       attribute :finance_receivable_id, Integer
       attribute :finance_entity_id, Integer
-      attribute :finance_errors, String
+      attribute :myfinance_errors, String
     end
   end
 end

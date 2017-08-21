@@ -30,6 +30,7 @@ describe Billimatic::Entities::Company do
                     :id, :account_id, :name, :company_name, :cnpj, :state_inscription,
                     :address, :number, :zipcode, :district, :complement, :city, :state,
                     :ibge_code, :contacts, :billing_contacts, :comments, :kind,
-                    :client_since, :created_at
+                    :client_since, :myfinance_customer_id, :myfinance_errors,
+                    :created_at
                   ]
 end

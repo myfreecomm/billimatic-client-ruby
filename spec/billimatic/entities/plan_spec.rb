@@ -63,6 +63,10 @@ describe Billimatic::Entities::Plan do
                     :cobrato_payment_gateway_charge_config_id,
                     :cobrato_payment_gateway_charge_config_name,
                     :finance_category, :finance_revenue_center,
+                    :myfinance_billet_sale_account_id,
+                    :myfinance_billet_sale_account_name,
+                    :myfinance_payment_gateway_sale_account_id,
+                    :myfinance_payment_gateway_sale_account_name,
                     :allow_installments, :installments_limit, :created_at,
                     :products
                   ]
