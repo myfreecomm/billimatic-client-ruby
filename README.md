@@ -90,7 +90,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
-        <td><code>PATCH</code></td>
+        <td><code>PUT</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/organizations/API_V1_Organizations_update_patch_2" target="_blank">
                 /api/v1/organizations/:id
@@ -144,7 +144,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
-        <td><code>PATCH</code></td>
+        <td><code>PUT</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/plans/API_V1_Plans_update_patch_2" target="_blank">
                 /api/v1/organizations/:organization_id/plans/:id
@@ -289,7 +289,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
-        <td><code>PATCH</code></td>
+        <td><code>PUT</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_update_patch_3" target="_blank">
                 /api/v1/contracts/:id
@@ -387,7 +387,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
-        <td><code>PATCH</code></td>
+        <td><code>PUT</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_update_patch_6" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id
@@ -430,7 +430,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
-        <td><code>PATCH</code></td>
+        <td><code>PUT</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_update_patch_1" target="_blank">
                 /api/v1/contracts/:contract_id/invoice_rules/:id
@@ -523,7 +523,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
             </a>
         </td>
         <td>
-            <code>client.people.search(cnpj)</code>
+            <code>client.people.search(cpf: cpf)</code>
         </td>
     </tr>
     <tr>
@@ -538,7 +538,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
-        <td><code>PATCH</code></td>
+        <td><code>PUT</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_update_patch_2" target="_blank">
                 /api/v1/people/:id
@@ -592,7 +592,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
-        <td><code>PATCH</code></td>
+        <td><code>PUT</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/service_items/API_V1_ServiceItems_update_patch_2" target="_blank">
                 /api/v1/service_items/:id
