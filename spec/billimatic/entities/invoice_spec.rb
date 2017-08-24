@@ -55,9 +55,9 @@ describe Billimatic::Entities::Invoice do
 
   it_behaves_like 'entity_attributes', [
                     :id, :contract_id, :gross_value, :number, :issue_date,
-                    :state, :cancelled_automatically, :description, :nfe_service,
-                    :nfe_verification, :created_at, :payment_value,
-                    :emites_service_values_id, :finance_category,
+                    :estimated_issue_date, :state, :cancelled_automatically,
+                    :description, :nfe_service, :nfe_verification, :created_at,
+                    :payment_value, :emites_service_values_id, :finance_category,
                     :finance_revenue_center, :finance_receive_via,
                     :myfinance_sale_account_id, :myfinance_sale_account_name,
                     :nfe_issued, :nfe_issue_date, :cobrato_charge_config_id,

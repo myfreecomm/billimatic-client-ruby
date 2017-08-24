@@ -4,6 +4,7 @@ module Billimatic
       attribute :id, Integer
       attribute :contract_id, Integer
       attribute :issue_date, Date
+      attribute :estimated_issue_date, Date
       attribute :gross_value, Decimal
       attribute :payment_value, Decimal
       attribute :description, String
