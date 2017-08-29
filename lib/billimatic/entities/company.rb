@@ -7,6 +7,7 @@ module Billimatic
       attribute :company_name, String
       attribute :cnpj, String
       attribute :state_inscription, String
+      attribute :city_inscription, String
       attribute :address, String
       attribute :number, String
       attribute :zipcode, String
