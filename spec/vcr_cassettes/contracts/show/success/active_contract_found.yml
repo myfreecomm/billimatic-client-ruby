@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/organizations/1/contracts/19
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.14.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=c79e6686db0795fa89ddc74be3e79781
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 26 Dec 2017 15:59:24 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"20608e8b2c0c36720ae67aaf8082a679"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 97f9933b-9fca-4381-922b-d34c4e75c485
+      X-Runtime:
+      - '0.696379'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"contract":{"id":19,"name":"Contrato Nova Pessoa","title":"contrato
+        nova pessoa","token":"4c8430ec7638a76138005df90d48ff30","description":"","customer_id":8,"customer_type":"Person","supplier_id":1,"supplier_type":"Company","state":"active","comments":"","init_date":null,"end_date":null,"created_at":"20/12/2017
+        09:16:13 -02:00","kind":"sale","overdue":true,"valid_until":"18/10/2017","status":"established","registration_method":"regular","cobrato_payment_gateway_charge_config_id":null,"cobrato_payment_gateway_charge_config_name":"","cancel_date":null,"cancel_reason":null,"plan":null}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/1/contracts/19
+  recorded_at: Tue, 26 Dec 2017 15:59:24 GMT
+recorded_with: VCR 3.0.3

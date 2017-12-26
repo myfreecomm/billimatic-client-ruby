@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/organizations/1/contracts/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.14.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=c79e6686db0795fa89ddc74be3e79781
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 26 Dec 2017 16:00:54 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"7d8f4ecd43c15ad09b9e25d344e0a16a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - acde0ed6-66c6-41e7-a8e9-ab83054ece07
+      X-Runtime:
+      - '0.185765'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb250cmFjdCI6eyJpZCI6MSwibmFtZSI6IkNvbnRyYXRvIEkgLSBDb250
+        cmF0byBkZSBUw610dWxvcyBwYXJhIHRlc3RlIGRlIHRlbGEgZGUgcmVsYXTD
+        s3JpbyIsInRpdGxlIjoiQ29udHJhdG8gSSIsInRva2VuIjoiMDJjYTVmZjk1
+        MzgwZmQyMWQwNTA4NjExMzcwMzZlM2UiLCJkZXNjcmlwdGlvbiI6IiIsImN1
+        c3RvbWVyX2lkIjoxLCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIsInN1cHBs
+        aWVyX2lkIjoxLCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoi
+        aW5hY3RpdmUiLCJjb21tZW50cyI6IiIsImluaXRfZGF0ZSI6bnVsbCwiZW5k
+        X2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIzMS8xMC8yMDE3IDEzOjQ5OjAz
+        IC0wMjowMCIsImtpbmQiOiJzYWxlIiwib3ZlcmR1ZSI6dHJ1ZSwidmFsaWRf
+        dW50aWwiOiIzMC8xMS8yMDE3Iiwic3RhdHVzIjoiZXN0YWJsaXNoZWQiLCJy
+        ZWdpc3RyYXRpb25fbWV0aG9kIjoicmVndWxhciIsImNvYnJhdG9fcGF5bWVu
+        dF9nYXRld2F5X2NoYXJnZV9jb25maWdfaWQiOjEzNywiY29icmF0b19wYXlt
+        ZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQ2FydMOj
+        byIsImNhbmNlbF9kYXRlIjpudWxsLCJjYW5jZWxfcmVhc29uIjoiIiwicGxh
+        biI6bnVsbH19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/1/contracts/1
+  recorded_at: Tue, 26 Dec 2017 16:00:54 GMT
+recorded_with: VCR 3.0.3
