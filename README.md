@@ -269,7 +269,18 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_search_get_1" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_show_get_1" target="_blank">
+                /api/v1/organizations/:organization_id/contracts/:id
+            </a>
+        </td>
+        <td>
+            <code>client.contracts.show(id, organization_id: id)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_search_get_2" target="_blank">
                 /api/v1/contracts/search?name=:name
             </a>
         </td>
@@ -280,7 +291,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_create_post_2" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_create_post_3" target="_blank">
                 /api/v1/contracts
             </a>
         </td>
@@ -291,7 +302,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PUT</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_update_patch_3" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_update_patch_4" target="_blank">
                 /api/v1/contracts/:id
             </a>
         </td>
@@ -302,7 +313,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_destroy_delete_4" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_destroy_delete_5" target="_blank">
                 /api/v1/contracts/:id
             </a>
         </td>
