@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/organizations/1/contracts/1
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/564/contracts/9224
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=c79e6686db0795fa89ddc74be3e79781
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,50 +22,42 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Tue, 26 Dec 2017 16:00:54 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Wed, 27 Dec 2017 11:31:33 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"7d8f4ecd43c15ad09b9e25d344e0a16a"
+      Etag:
+      - W/"90fad9084013b1d195d0949a0dde9a98"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - acde0ed6-66c6-41e7-a8e9-ab83054ece07
+      - 3918d249-df81-4f64-933b-9512c6627a06
       X-Runtime:
-      - '0.185765'
+      - '0.019439'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJjb250cmFjdCI6eyJpZCI6MSwibmFtZSI6IkNvbnRyYXRvIEkgLSBDb250
-        cmF0byBkZSBUw610dWxvcyBwYXJhIHRlc3RlIGRlIHRlbGEgZGUgcmVsYXTD
-        s3JpbyIsInRpdGxlIjoiQ29udHJhdG8gSSIsInRva2VuIjoiMDJjYTVmZjk1
-        MzgwZmQyMWQwNTA4NjExMzcwMzZlM2UiLCJkZXNjcmlwdGlvbiI6IiIsImN1
-        c3RvbWVyX2lkIjoxLCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIsInN1cHBs
-        aWVyX2lkIjoxLCJzdXBwbGllcl90eXBlIjoiQ29tcGFueSIsInN0YXRlIjoi
-        aW5hY3RpdmUiLCJjb21tZW50cyI6IiIsImluaXRfZGF0ZSI6bnVsbCwiZW5k
-        X2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIzMS8xMC8yMDE3IDEzOjQ5OjAz
-        IC0wMjowMCIsImtpbmQiOiJzYWxlIiwib3ZlcmR1ZSI6dHJ1ZSwidmFsaWRf
-        dW50aWwiOiIzMC8xMS8yMDE3Iiwic3RhdHVzIjoiZXN0YWJsaXNoZWQiLCJy
-        ZWdpc3RyYXRpb25fbWV0aG9kIjoicmVndWxhciIsImNvYnJhdG9fcGF5bWVu
-        dF9nYXRld2F5X2NoYXJnZV9jb25maWdfaWQiOjEzNywiY29icmF0b19wYXlt
-        ZW50X2dhdGV3YXlfY2hhcmdlX2NvbmZpZ19uYW1lIjoiVGVzdGUgQ2FydMOj
-        byIsImNhbmNlbF9kYXRlIjpudWxsLCJjYW5jZWxfcmVhc29uIjoiIiwicGxh
-        biI6bnVsbH19
+      encoding: UTF-8
+      string: '{"contract":{"id":9224,"name":"Contrato de Teste III","title":"Contrato
+        de Teste","token":"dcf0463cfd868ca2557f69d950afe09c","description":"","customer_id":574,"customer_type":"Company","supplier_id":564,"supplier_type":"Company","state":"inactive","comments":"","init_date":null,"end_date":null,"created_at":"27/12/2017
+        09:30:40 -02:00","kind":"sale","overdue":false,"valid_until":null,"status":"established","registration_method":"regular","cobrato_payment_gateway_charge_config_id":null,"cobrato_payment_gateway_charge_config_name":null,"cancel_date":"27/12/2017","cancel_reason":"teste
+        para o client","plan":null}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/organizations/1/contracts/1
-  recorded_at: Tue, 26 Dec 2017 16:00:54 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/564/contracts/9224
+  recorded_at: Wed, 27 Dec 2017 11:31:33 GMT
 recorded_with: VCR 3.0.3

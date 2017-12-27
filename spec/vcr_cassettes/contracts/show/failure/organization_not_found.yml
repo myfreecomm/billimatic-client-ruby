@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/organizations/50/contracts/19
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/50/contracts/9224
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=c79e6686db0795fa89ddc74be3e79781
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
-      Date:
-      - Tue, 26 Dec 2017 16:04:25 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Wed, 27 Dec 2017 11:32:42 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,18 +39,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 31ec45a3-1904-40ae-9f6e-d69efa0dd463
+      - f0f382b8-7023-427f-bcec-f8b6a9621986
       X-Runtime:
-      - '0.151327'
+      - '0.049956'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: ''
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/organizations/50/contracts/19
-  recorded_at: Tue, 26 Dec 2017 16:04:25 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/50/contracts/9224
+  recorded_at: Wed, 27 Dec 2017 11:32:42 GMT
 recorded_with: VCR 3.0.3

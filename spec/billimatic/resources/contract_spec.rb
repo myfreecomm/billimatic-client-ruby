@@ -112,29 +112,22 @@ describe Billimatic::Resources::Contract do
   end
 
   describe '#show' do
-    before do
-      Billimatic.configuration.host = 'http://localhost:3000'
-      @http = Billimatic::Http.new('c79e6686db0795fa89ddc74be3e79781')
-    end
-
-    subject { described_class.new(@http) }
-
     it 'returns active contract found on organization correctly' do
       VCR.use_cassette('/contracts/show/success/active_contract_found') do
-        result = subject.show(19, organization_id: 1)
+        result = subject.show(6666, organization_id: 564)
 
         expect(result).to be_a entity_klass
-        expect(result.id).to eql 19
+        expect(result.id).to eql 6666
         expect(result.state).to eql 'active'
       end
     end
 
     it 'returns inactive contract found on organization correctly' do
       VCR.use_cassette('/contracts/show/success/inactive_contract_found') do
-        result = subject.show(1, organization_id: 1)
+        result = subject.show(9224, organization_id: 564)
 
         expect(result).to be_a entity_klass
-        expect(result.id).to eql 1
+        expect(result.id).to eql 9224
         expect(result.state).to eql 'inactive'
       end
     end
@@ -143,7 +136,7 @@ describe Billimatic::Resources::Contract do
       it 'raises Billimatic::RequestError when organization cannot be found' do
         VCR.use_cassette('/contracts/show/failure/organization_not_found') do
           expect {
-            subject.show(19, organization_id: 50)
+            subject.show(9224, organization_id: 50)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 404
           end
@@ -153,7 +146,7 @@ describe Billimatic::Resources::Contract do
       it 'raises Billimatic::RequestError when contract is from another organization' do
         VCR.use_cassette('/contracts/show/failure/contract_from_another_organization') do
           expect {
-            subject.show(13, organization_id: 1)
+            subject.show(8126, organization_id: 564)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 404
           end
@@ -163,7 +156,7 @@ describe Billimatic::Resources::Contract do
       it 'raises Billimatic::RequestError when contract does not exist' do
         VCR.use_cassette('/contracts/show/failure/contract_does_not_exist') do
           expect {
-            subject.show(10000, organization_id: 1)
+            subject.show(10000, organization_id: 564)
           }.to raise_error(Billimatic::RequestError) do |error|
             expect(error.code).to eql 404
           end
