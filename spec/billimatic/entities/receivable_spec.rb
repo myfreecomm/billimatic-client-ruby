@@ -23,6 +23,6 @@ describe Billimatic::Entities::Receivable do
                     :payment_value, :received_value, :received_at,
                     :created_at, :state, :payment_gateway_status,
                     :cobrato_charge_id, :cobrato_errors, :finance_receivable_id,
-                    :finance_entity_id, :finance_errors
+                    :myfinance_sale_id, :finance_entity_id, :myfinance_errors
                   ]
 end

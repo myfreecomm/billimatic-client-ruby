@@ -7,6 +7,7 @@ module Billimatic
       attribute :company_name, String
       attribute :cnpj, String
       attribute :state_inscription, String
+      attribute :city_inscription, String
       attribute :address, String
       attribute :number, String
       attribute :zipcode, String
@@ -20,6 +21,8 @@ module Billimatic
       attribute :comments, String
       attribute :kind, String
       attribute :client_since, Date
+      attribute :myfinance_customer_id, Integer
+      attribute :myfinance_errors, String
       attribute :created_at, DateTime
     end
   end

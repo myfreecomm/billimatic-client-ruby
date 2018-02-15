@@ -64,6 +64,7 @@ describe Billimatic::Entities::InvoiceRule do
                     :customer_type, :emites_service_values_id,
                     :emites_service_value_name, :finance_category,
                     :finance_revenue_center, :finance_receive_via,
+                    :myfinance_sale_account_id, :myfinance_sale_account_name,
                     :cobrato_charge_config_id, :cobrato_charge_config_name,
                     :cobrato_charge_template_id, :cobrato_charge_template_name,
                     :management_type, :days_until_automatic_nfe_emission,

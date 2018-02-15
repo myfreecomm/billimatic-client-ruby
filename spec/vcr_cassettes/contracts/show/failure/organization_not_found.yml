@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/50/contracts/9224
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.14.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Wed, 27 Dec 2017 11:32:42 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - f0f382b8-7023-427f-bcec-f8b6a9621986
+      X-Runtime:
+      - '0.049956'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/50/contracts/9224
+  recorded_at: Wed, 27 Dec 2017 11:32:42 GMT
+recorded_with: VCR 3.0.3

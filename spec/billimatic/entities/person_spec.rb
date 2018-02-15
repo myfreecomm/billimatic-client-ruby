@@ -22,6 +22,7 @@ describe Billimatic::Entities::Person do
   it_behaves_like 'entity_attributes', [
                     :id, :account_id, :name, :cpf, :email, :zipcode, :address,
                     :number, :complement, :district, :city, :state, :comments,
-                    :client_since, :created_at
+                    :client_since, :myfinance_customer_id, :myfinance_errors,
+                    :created_at
                   ]
 end

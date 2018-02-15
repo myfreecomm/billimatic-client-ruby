@@ -4,6 +4,7 @@ module Billimatic
       attribute :id, Integer
       attribute :contract_id, Integer
       attribute :issue_date, Date
+      attribute :estimated_issue_date, Date
       attribute :gross_value, Decimal
       attribute :payment_value, Decimal
       attribute :description, String
@@ -25,6 +26,8 @@ module Billimatic
       attribute :finance_category, String
       attribute :finance_revenue_center, String
       attribute :finance_receive_via, String
+      attribute :myfinance_sale_account_id, Integer
+      attribute :myfinance_sale_account_name, String
       attribute :cobrato_charge_config_id, Integer
       attribute :cobrato_charge_config_name, String
       attribute :cobrato_charge_template_id, Integer

@@ -27,6 +27,10 @@ module Billimatic
       attribute :cobrato_payment_gateway_charge_config_name, String
       attribute :finance_category, String
       attribute :finance_revenue_center, String
+      attribute :myfinance_billet_sale_account_id, Integer
+      attribute :myfinance_billet_sale_account_name, String
+      attribute :myfinance_payment_gateway_sale_account_id, Integer
+      attribute :myfinance_payment_gateway_sale_account_name, String
       attribute :created_at, DateTime
       attribute :products, Array[Product]
       attribute :allow_installments, Boolean

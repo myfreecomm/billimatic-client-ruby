@@ -111,6 +111,60 @@ describe Billimatic::Resources::Contract do
     end
   end
 
+  describe '#show' do
+    it 'returns active contract found on organization correctly' do
+      VCR.use_cassette('/contracts/show/success/active_contract_found') do
+        result = subject.show(6666, organization_id: 564)
+
+        expect(result).to be_a entity_klass
+        expect(result.id).to eql 6666
+        expect(result.state).to eql 'active'
+      end
+    end
+
+    it 'returns inactive contract found on organization correctly' do
+      VCR.use_cassette('/contracts/show/success/inactive_contract_found') do
+        result = subject.show(9224, organization_id: 564)
+
+        expect(result).to be_a entity_klass
+        expect(result.id).to eql 9224
+        expect(result.state).to eql 'inactive'
+      end
+    end
+
+    context 'when request is unsuccessful' do
+      it 'raises Billimatic::RequestError when organization cannot be found' do
+        VCR.use_cassette('/contracts/show/failure/organization_not_found') do
+          expect {
+            subject.show(9224, organization_id: 50)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when contract is from another organization' do
+        VCR.use_cassette('/contracts/show/failure/contract_from_another_organization') do
+          expect {
+            subject.show(8126, organization_id: 564)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+
+      it 'raises Billimatic::RequestError when contract does not exist' do
+        VCR.use_cassette('/contracts/show/failure/contract_does_not_exist') do
+          expect {
+            subject.show(10000, organization_id: 564)
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 404
+          end
+        end
+      end
+    end
+  end
+
   describe '#create' do
     let(:contract_attributes) do
       {
