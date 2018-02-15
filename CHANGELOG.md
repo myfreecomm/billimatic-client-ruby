@@ -2,6 +2,16 @@
 
 ## Next version
 
+## v0.15.0
+- Fixes README.md details for update endpoints, with correct HTTP method used.
+- Adds `city_inscription`, `myfinance_customer_id` and `myfinance_errors` attributes on Company entity.
+- Adds `myfinance_customer_id` and `myfinance_errors` attributes on Person entity.
+- Adds `estimated_issue_date`, `myfinance_sale_account_id` and `myfinance_sale_account_name` attributes on Invoice entity.
+- Adds `myfinance_sale_account_id` and `myfinance_sale_account_name` attributes on InvoiceRule entity.
+- Adds `myfinance_billet_sale_account_id`, `myfinance_billet_sale_account_name`, `myfinance_payment_gateway_sale_account_id` and `myfinance_payment_gateway_sale_account_name` attributes on Plan entity.
+- Adds `myfinance_sale_id` attribute and changes `finance_errors` attribute to `myfinance_errors` on Receivable entity.
+- Adds Contract#show endpoint.
+
 ## v0.14.1
 
 - Adds `cobrato_payment_gateway_charge_config_id` and `cobrato_payment_gateway_charge_config_name` attributes on Contract and Subscription entities.
