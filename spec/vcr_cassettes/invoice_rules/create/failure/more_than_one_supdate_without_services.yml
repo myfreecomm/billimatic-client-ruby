@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/contracts/30/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"additional_information":{"title":"REGRA","init_date":"02/09/2016","period_unit":0,"month_quantity":6},"gross_value":100.0,"description":"Faturamento","nfe_body":"$DESCRICAO","charge_type":"fixed_day","receivables_additional_information":{"day_number":23},"scheduled_updates":[{"price_index":"ipca","init_date":"02/10/2016","month_quantity":12,"days_until_update":5},{"price_index":"ipca","init_date":"02/10/2016","month_quantity":12,"days_until_update":5}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.15.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=43bee71be31f64edb39f9d03d1a07dfb
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 10 Apr 2018 17:25:18 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 2b419c32-be01-4611-a5f3-b8571e778181
+      X-Runtime:
+      - '0.193220'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMuc2VydmljZV9pdGVtX2lk
+        IjoibsOjbyBwb2RlIHRlciBtYWlzIGRlIHVtIHJlYWp1c3RlIHNlbSBzZXJ2
+        acOnbyJ9fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules
+  recorded_at: Tue, 10 Apr 2018 17:25:18 GMT
+recorded_with: VCR 3.0.3

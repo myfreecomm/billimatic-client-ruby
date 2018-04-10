@@ -35,14 +35,16 @@ describe Billimatic::Entities::InvoiceRule do
           value: 400.0
         )
       ],
-      scheduled_update: {
-        id: 1,
-        init_date: '10-01-2016',
-        month_quantity: 12,
-        price_index: 'ipca',
-        days_until_update: 5,
-        _destroy: false
-      },
+      scheduled_updates: [
+        {
+          id: 1,
+          init_date: '10-01-2016',
+          month_quantity: 12,
+          price_index: 'ipca',
+          days_until_update: 5,
+          _destroy: false
+        }
+      ],
       receivables_additional_information: {
         id: 1,
         parcel_number: 2,
@@ -70,7 +72,7 @@ describe Billimatic::Entities::InvoiceRule do
                     :management_type, :days_until_automatic_nfe_emission,
                     :automatic_nfe_issue_date, :automatic_email_template_id,
                     :additional_information, :services,
-                    :scheduled_update, :receivables_additional_information,
+                    :scheduled_updates, :receivables_additional_information,
                     :payment_information
                   ]
 end

@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"scheduled_updates":[{"month_quantity":""}]}}'
+      string: '{"invoice_rule":{"services":[{"id":3705,"_destroy":true}],"scheduled_updates":[{"id":27,"service_item_id":5}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.15.0
@@ -23,7 +23,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Tue, 10 Apr 2018 17:42:03 GMT
+      - Tue, 10 Apr 2018 18:33:41 GMT
       Connection:
       - close
       X-Frame-Options:
@@ -37,9 +37,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 778535ee-e3a2-4343-876d-d56282cfe289
+      - 1d6ce965-7618-4f1d-9831-1524b14470bc
       X-Runtime:
-      - '1.181222'
+      - '1.134260'
       Vary:
       - Origin
       Transfer-Encoding:
@@ -47,13 +47,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMubW9udGhfcXVhbnRpdHki
-        OiJkZXZlIHNlciBudW3DqXJpY28iLCJzY2hlZHVsZWRfdXBkYXRlcy5kYXlz
-        X3VudGlsX3VwZGF0ZSI6ImRldmUgc2VyIG51bcOpcmljbyIsInNjaGVkdWxl
-        ZF91cGRhdGVzLmluaXRfZGF0ZSI6ImRldmUgc2VyIGEgcGFydGlyIGRlIDAx
-        LzAxLzIwMDAifX0=
+        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMuc2VydmljZV9pdGVtX2lk
+        IjoiZGV2ZSBlc3RhciBlbnRyZSBvcyBzZXJ2acOnb3MgZGEgcmVncmEgcmVj
+        b3JyZW50ZSJ9fQ==
     http_version: '1.1'
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
-  recorded_at: Tue, 10 Apr 2018 17:42:03 GMT
+  recorded_at: Tue, 10 Apr 2018 18:33:41 GMT
 recorded_with: VCR 3.0.3

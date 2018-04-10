@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: put
-    uri: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
+    method: post
+    uri: http://localhost:3000/api/v1/contracts/30/invoice_rules
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"scheduled_updates":[{"month_quantity":""}]}}'
+      string: '{"invoice_rule":{"additional_information":{"title":"REGRA","init_date":"02/09/2016","period_unit":0,"month_quantity":6},"gross_value":100.0,"description":"Faturamento","nfe_body":"$DESCRICAO","charge_type":"fixed_day","receivables_additional_information":{"day_number":23},"scheduled_updates":[{"service_item_id":3,"price_index":"ipca","init_date":"02/10/2016","month_quantity":12,"days_until_update":5}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.15.0
@@ -23,7 +23,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Tue, 10 Apr 2018 17:42:03 GMT
+      - Tue, 10 Apr 2018 17:24:40 GMT
       Connection:
       - close
       X-Frame-Options:
@@ -37,9 +37,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 778535ee-e3a2-4343-876d-d56282cfe289
+      - 84b19a05-4af3-4456-9ebf-fdd9841ea206
       X-Runtime:
-      - '1.181222'
+      - '0.187074'
       Vary:
       - Origin
       Transfer-Encoding:
@@ -47,13 +47,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMubW9udGhfcXVhbnRpdHki
-        OiJkZXZlIHNlciBudW3DqXJpY28iLCJzY2hlZHVsZWRfdXBkYXRlcy5kYXlz
-        X3VudGlsX3VwZGF0ZSI6ImRldmUgc2VyIG51bcOpcmljbyIsInNjaGVkdWxl
-        ZF91cGRhdGVzLmluaXRfZGF0ZSI6ImRldmUgc2VyIGEgcGFydGlyIGRlIDAx
-        LzAxLzIwMDAifX0=
+        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMuc2VydmljZV9pdGVtX2lk
+        IjoiZGV2ZSBlc3RhciBlbnRyZSBvcyBzZXJ2acOnb3MgZGEgcmVncmEgcmVj
+        b3JyZW50ZSJ9fQ==
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
-  recorded_at: Tue, 10 Apr 2018 17:42:03 GMT
+      effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules
+  recorded_at: Tue, 10 Apr 2018 17:24:40 GMT
 recorded_with: VCR 3.0.3

@@ -2,72 +2,19 @@
 http_interactions:
 - request:
     method: put
-    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
+    uri: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"scheduled_update":{"will_be_created":"true","price_index":"igpm","month_quantity":1,"days_until_update":2}}}'
+      string: '{"invoice_rule":{"scheduled_updates":[{"id":27,"service_item_id":4,"price_index":"igpm","month_quantity":1,"days_until_update":2}]}}'
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.4.0
+      - Billimatic Ruby Client v0.15.0
       Accept:
       - application/json
       Content-Type:
       - application/json
       Authorization:
-      - Token token=bfe97f701f615edf41587cbd59d6a0e8
-      Accept-Language:
-      - pt-br
-  response:
-    status:
-      code: 422
-      message: Unprocessable Entity
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Fri, 02 Sep 2016 15:34:33 GMT
-      Server:
-      - nginx/1.10.1
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Request-Id:
-      - 6190020a-4179-4bc8-88e3-e514d3fe68da
-      X-Runtime:
-      - '0.057221'
-      X-XSS-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '69'
-      Connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZS5pbml0X2RhdGUiOiJuw6Nv
-        IHBvZGUgZmljYXIgZW0gYnJhbmNvIn19
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
-  recorded_at: Fri, 02 Sep 2016 15:34:33 GMT
-- request:
-    method: put
-    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127224
-    body:
-      encoding: UTF-8
-      string: '{"invoice_rule":{"scheduled_update":{"id":99,"will_be_created":"true","price_index":"igpm","month_quantity":1,"days_until_update":2}}}'
-    headers:
-      User-Agent:
-      - Billimatic Ruby Client v0.4.0
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Authorization:
-      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      - Token token=43bee71be31f64edb39f9d03d1a07dfb
       Accept-Language:
       - pt-br
   response:
@@ -75,42 +22,85 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Encoding:
-      - gzip
-      Content-Type:
-      - application/json; charset=utf-8
       Date:
-      - Fri, 02 Sep 2016 15:39:00 GMT
-      ETag:
-      - W/"398cd0ed8a8e8bacd6d93e8c1ece8587"
-      Server:
-      - nginx/1.10.1
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains;
-      Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
+      - Tue, 10 Apr 2018 18:28:31 GMT
+      Connection:
+      - close
       X-Frame-Options:
       - SAMEORIGIN
-      X-Request-Id:
-      - 0a4b0b9e-c64f-40f2-b123-53bf0b90cfb2
-      X-Runtime:
-      - '0.624602'
       X-XSS-Protection:
       - 1; mode=block
-      Content-Length:
-      - '585'
-      Connection:
-      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"1e18c46216329dc2613f900fea49dcbe"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 614ce0e1-f482-41d7-ab14-79ff1c30c175
+      X-Runtime:
+      - '1.092733'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: UTF-8
-      string: '{"invoice_rule":{"id":127224,"contract_id":6666,"gross_value":"100.0","number":null,"issue_date":null,"state":0,"description":"Faturamento","nfe_service":null,"nfe_verification":null,"created_at":"02/09/2016
-        11:18:54 -03:00","payment_value":null,"emites_service_values_id":null,"finance_category":null,"finance_revenue_center":null,"finance_receive_via":null,"nfe_issued":false,"nfe_issue_date":null,"cobrato_charge_config_id":null,"nfe_body":"$DESCRICAO","services":[],"attachments":[],"additional_information":{"id":5364,"init_date":"2016-09-02","title":"REGRA","month_quantity":6,"end_date":null,"rulable_id":127224,"created_at":"2016-09-02T11:18:54.000-03:00","updated_at":"2016-09-02T11:18:54.000-03:00","rulable_type":"Invoice","accrual_month_quantity":"same_month"},"scheduled_update":{"id":99,"invoice_rule_id":127224,"execution_date":"2016-10-02","month_quantity":1,"price_index":"igpm","created_at":"2016-09-02T12:38:04.000-03:00","updated_at":"2016-09-02T12:39:00.733-03:00","init_date":"2016-10-02","days_until_update":2,"remind_at":"2016-09-30","notified":false},"receivables_additional_information":{"id":5355,"day_number":23,"parcel_number":null,"invoice_rule_id":127224,"created_at":"2016-09-02T11:18:54.000-03:00","updated_at":"2016-09-02T11:18:54.000-03:00","day_quantity":null,"month_quantity":null}}}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjI2MDEsImNvbnRyYWN0X2lkIjozMCwi
+        aXNzdWVfZGF0ZSI6bnVsbCwiZXN0aW1hdGVkX2lzc3VlX2RhdGUiOm51bGws
+        Imdyb3NzX3ZhbHVlIjoiNjAwLjAiLCJwYXltZW50X3ZhbHVlIjpudWxsLCJk
+        ZXNjcmlwdGlvbiI6IkZhdHVyYW1lbnRvIiwic3RhdGUiOiJ0b19lbWl0Iiwi
+        Y2FuY2VsbGVkX2F1dG9tYXRpY2FsbHkiOmZhbHNlLCJuZmVfc2VydmljZSI6
+        bnVsbCwibmZlX3ZlcmlmaWNhdGlvbiI6bnVsbCwibmZlX2lzc3VlX2RhdGUi
+        Om51bGwsIm5mZV9ib2R5IjoiJERFU0NSSUNBTyIsIm5mZV9pc3N1ZWQiOmZh
+        bHNlLCJudW1iZXIiOm51bGwsImNyZWF0ZWRfYXQiOiIxMC8wNC8yMDE4IDE0
+        OjM2OjIwIC0wMzowMCIsIm1hbmFnZW1lbnRfdHlwZSI6Im1hbnVhbCIsImFj
+        Y3J1YWxfZGF0ZSI6bnVsbCwiY29tbWVudHMiOm51bGwsImN1c3RvbWVyX2lk
+        IjoxNCwiY3VzdG9tZXJfdHlwZSI6IkNvbXBhbnkiLCJlbWl0ZXNfc2Vydmlj
+        ZV92YWx1ZXNfaWQiOm51bGwsImVtaXRlc19zZXJ2aWNlX3ZhbHVlX25hbWUi
+        Om51bGwsImZpbmFuY2VfY2F0ZWdvcnkiOm51bGwsImZpbmFuY2VfcmV2ZW51
+        ZV9jZW50ZXIiOm51bGwsIm15ZmluYW5jZV9zYWxlX2FjY291bnRfaWQiOm51
+        bGwsIm15ZmluYW5jZV9zYWxlX2FjY291bnRfbmFtZSI6bnVsbCwiY29icmF0
+        b19jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJjb2JyYXRvX2NoYXJnZV9jb25m
+        aWdfbmFtZSI6bnVsbCwiY29icmF0b19jaGFyZ2VfdGVtcGxhdGVfaWQiOm51
+        bGwsImNvYnJhdG9fY2hhcmdlX3RlbXBsYXRlX25hbWUiOm51bGwsImRheXNf
+        dW50aWxfYXV0b21hdGljX25mZV9lbWlzc2lvbiI6MCwiYXV0b21hdGljX25m
+        ZV9pc3N1ZV9kYXRlIjpudWxsLCJhdXRvbWF0aWNfZW1haWxfdGVtcGxhdGVf
+        aWQiOm51bGwsImFwcHJvdmFsX3N0YXR1cyI6ImFwcHJvdmVkIiwicmVjZWl2
+        YWJsZXMiOltdLCJzZXJ2aWNlcyI6W3siaWQiOjM3MDYsIm5hbWUiOiJTZXJ2
+        acOnbyAxIiwiZGVzY3JpcHRpb24iOiJEZXNjcmnDp8OjbyB0ZXN0ZSIsInVu
+        aXRfdmFsdWUiOiIxNTAuMCIsInVuaXRzIjoiMi4wIiwidmFsdWUiOiIzMDAu
+        MCJ9LHsiaWQiOjM3MDUsIm5hbWUiOiJQcm9kdXRvIDEiLCJkZXNjcmlwdGlv
+        biI6IkRlc2NyacOnw6NvIHRlc3RlIiwidW5pdF92YWx1ZSI6IjE1MC4wIiwi
+        dW5pdHMiOiIyLjAiLCJ2YWx1ZSI6IjMwMC4wIn1dLCJhdHRhY2htZW50cyI6
+        W10sInBheW1lbnRfaW5mb3JtYXRpb24iOnsiaWQiOjI2ODUsInBheW1lbnRf
+        bWV0aG9kIjoiYmlsbGV0IiwiY29icmF0b19jYXJkX2lkIjoiLS0iLCJjYXJk
+        X2V4cGlyYXRpb25fbW9udGgiOiItLSIsImNhcmRfZXhwaXJhdGlvbl95ZWFy
+        IjoiLS0iLCJpbnN0YWxsbWVudHMiOjEsImNyZWF0ZWRfYXQiOiIxMC8wNC8y
+        MDE4IDE0OjM2OjIwIC0wMzowMCJ9LCJhZGRpdGlvbmFsX2luZm9ybWF0aW9u
+        Ijp7ImlkIjoxMTAsImluaXRfZGF0ZSI6IjIwMTYtMDktMDIiLCJ0aXRsZSI6
+        IlJFR1JBIiwicGVyaW9kX3VuaXQiOiJtb250aGx5IiwibW9udGhfcXVhbnRp
+        dHkiOjYsImVuZF9kYXRlIjpudWxsLCJjcmVhdGVkX2F0IjoiMTAvMDQvMjAx
+        OCAxNDozNjoyMCAtMDM6MDAiLCJhY2NydWFsX21vbnRoX3F1YW50aXR5Ijoi
+        c2FtZV9tb250aCJ9LCJzY2hlZHVsZWRfdXBkYXRlcyI6W3siaWQiOjI3LCJp
+        bnZvaWNlX3J1bGVfaWQiOjI2MDEsImV4ZWN1dGlvbl9kYXRlIjoiMjAxNi0x
+        MC0wMiIsIm1vbnRoX3F1YW50aXR5IjoxLCJwcmljZV9pbmRleCI6ImlncG0i
+        LCJjcmVhdGVkX2F0IjoiMjAxOC0wNC0xMFQxNToyNjowMS40NTEtMDM6MDAi
+        LCJ1cGRhdGVkX2F0IjoiMjAxOC0wNC0xMFQxNToyODozMS40NDMtMDM6MDAi
+        LCJpbml0X2RhdGUiOiIyMDE2LTEwLTAyIiwiZGF5c191bnRpbF91cGRhdGUi
+        OjIsInJlbWluZF9hdCI6IjIwMTYtMDktMzAiLCJub3RpZmllZCI6ZmFsc2Us
+        InNlcnZpY2VfaXRlbV9pZCI6NH1dLCJyZWNlaXZhYmxlc19hZGRpdGlvbmFs
+        X2luZm9ybWF0aW9uIjp7ImlkIjoxMTAsImRheV9udW1iZXIiOjIzLCJwYXJj
+        ZWxfbnVtYmVyIjpudWxsLCJpbnZvaWNlX3J1bGVfaWQiOjI2MDEsImNyZWF0
+        ZWRfYXQiOiIyMDE4LTA0LTEwVDE0OjM2OjIwLjgyNy0wMzowMCIsInVwZGF0
+        ZWRfYXQiOiIyMDE4LTA0LTEwVDE0OjM2OjIwLjgyNy0wMzowMCIsImRheV9x
+        dWFudGl0eSI6bnVsbCwibW9udGhfcXVhbnRpdHkiOm51bGwsIm9ubHlfYnVz
+        aW5lc3NfZGF5cyI6ZmFsc2V9fX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127224
-  recorded_at: Fri, 02 Sep 2016 15:39:00 GMT
+      effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
+  recorded_at: Tue, 10 Apr 2018 18:28:31 GMT
 recorded_with: VCR 3.0.3
