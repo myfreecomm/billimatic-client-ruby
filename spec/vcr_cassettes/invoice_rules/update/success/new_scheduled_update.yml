@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178735
     body:
       encoding: UTF-8
       string: '{"invoice_rule":{"scheduled_updates":[{"price_index":"ipca","init_date":"02/10/2016","month_quantity":12,"days_until_update":5}]}}'
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=43bee71be31f64edb39f9d03d1a07dfb
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,85 +22,42 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Tue, 10 Apr 2018 18:26:01 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Fri, 20 Apr 2018 12:30:07 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"1c40c66c32753c51eeeb3c4d2ca6d4cb"
+      Etag:
+      - W/"4036d74dcbb8a692b05d298406ff1c65"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 347afbcf-1f31-4000-9445-c46f46928421
+      - ba667cc9-db5b-4e34-a43c-470b64de9fca
       X-Runtime:
-      - '1.120488'
+      - '0.765169'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjI2MDEsImNvbnRyYWN0X2lkIjozMCwi
-        aXNzdWVfZGF0ZSI6bnVsbCwiZXN0aW1hdGVkX2lzc3VlX2RhdGUiOm51bGws
-        Imdyb3NzX3ZhbHVlIjoiNjAwLjAiLCJwYXltZW50X3ZhbHVlIjpudWxsLCJk
-        ZXNjcmlwdGlvbiI6IkZhdHVyYW1lbnRvIiwic3RhdGUiOiJ0b19lbWl0Iiwi
-        Y2FuY2VsbGVkX2F1dG9tYXRpY2FsbHkiOmZhbHNlLCJuZmVfc2VydmljZSI6
-        bnVsbCwibmZlX3ZlcmlmaWNhdGlvbiI6bnVsbCwibmZlX2lzc3VlX2RhdGUi
-        Om51bGwsIm5mZV9ib2R5IjoiJERFU0NSSUNBTyIsIm5mZV9pc3N1ZWQiOmZh
-        bHNlLCJudW1iZXIiOm51bGwsImNyZWF0ZWRfYXQiOiIxMC8wNC8yMDE4IDE0
-        OjM2OjIwIC0wMzowMCIsIm1hbmFnZW1lbnRfdHlwZSI6Im1hbnVhbCIsImFj
-        Y3J1YWxfZGF0ZSI6bnVsbCwiY29tbWVudHMiOm51bGwsImN1c3RvbWVyX2lk
-        IjoxNCwiY3VzdG9tZXJfdHlwZSI6IkNvbXBhbnkiLCJlbWl0ZXNfc2Vydmlj
-        ZV92YWx1ZXNfaWQiOm51bGwsImVtaXRlc19zZXJ2aWNlX3ZhbHVlX25hbWUi
-        Om51bGwsImZpbmFuY2VfY2F0ZWdvcnkiOm51bGwsImZpbmFuY2VfcmV2ZW51
-        ZV9jZW50ZXIiOm51bGwsIm15ZmluYW5jZV9zYWxlX2FjY291bnRfaWQiOm51
-        bGwsIm15ZmluYW5jZV9zYWxlX2FjY291bnRfbmFtZSI6bnVsbCwiY29icmF0
-        b19jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJjb2JyYXRvX2NoYXJnZV9jb25m
-        aWdfbmFtZSI6bnVsbCwiY29icmF0b19jaGFyZ2VfdGVtcGxhdGVfaWQiOm51
-        bGwsImNvYnJhdG9fY2hhcmdlX3RlbXBsYXRlX25hbWUiOm51bGwsImRheXNf
-        dW50aWxfYXV0b21hdGljX25mZV9lbWlzc2lvbiI6MCwiYXV0b21hdGljX25m
-        ZV9pc3N1ZV9kYXRlIjpudWxsLCJhdXRvbWF0aWNfZW1haWxfdGVtcGxhdGVf
-        aWQiOm51bGwsImFwcHJvdmFsX3N0YXR1cyI6ImFwcHJvdmVkIiwicmVjZWl2
-        YWJsZXMiOltdLCJzZXJ2aWNlcyI6W3siaWQiOjM3MDYsIm5hbWUiOiJTZXJ2
-        acOnbyAxIiwiZGVzY3JpcHRpb24iOiJEZXNjcmnDp8OjbyB0ZXN0ZSIsInVu
-        aXRfdmFsdWUiOiIxNTAuMCIsInVuaXRzIjoiMi4wIiwidmFsdWUiOiIzMDAu
-        MCJ9LHsiaWQiOjM3MDUsIm5hbWUiOiJQcm9kdXRvIDEiLCJkZXNjcmlwdGlv
-        biI6IkRlc2NyacOnw6NvIHRlc3RlIiwidW5pdF92YWx1ZSI6IjE1MC4wIiwi
-        dW5pdHMiOiIyLjAiLCJ2YWx1ZSI6IjMwMC4wIn1dLCJhdHRhY2htZW50cyI6
-        W10sInBheW1lbnRfaW5mb3JtYXRpb24iOnsiaWQiOjI2ODUsInBheW1lbnRf
-        bWV0aG9kIjoiYmlsbGV0IiwiY29icmF0b19jYXJkX2lkIjoiLS0iLCJjYXJk
-        X2V4cGlyYXRpb25fbW9udGgiOiItLSIsImNhcmRfZXhwaXJhdGlvbl95ZWFy
-        IjoiLS0iLCJpbnN0YWxsbWVudHMiOjEsImNyZWF0ZWRfYXQiOiIxMC8wNC8y
-        MDE4IDE0OjM2OjIwIC0wMzowMCJ9LCJhZGRpdGlvbmFsX2luZm9ybWF0aW9u
-        Ijp7ImlkIjoxMTAsImluaXRfZGF0ZSI6IjIwMTYtMDktMDIiLCJ0aXRsZSI6
-        IlJFR1JBIiwicGVyaW9kX3VuaXQiOiJtb250aGx5IiwibW9udGhfcXVhbnRp
-        dHkiOjYsImVuZF9kYXRlIjpudWxsLCJjcmVhdGVkX2F0IjoiMTAvMDQvMjAx
-        OCAxNDozNjoyMCAtMDM6MDAiLCJhY2NydWFsX21vbnRoX3F1YW50aXR5Ijoi
-        c2FtZV9tb250aCJ9LCJzY2hlZHVsZWRfdXBkYXRlcyI6W3siaWQiOjI3LCJp
-        bnZvaWNlX3J1bGVfaWQiOjI2MDEsImV4ZWN1dGlvbl9kYXRlIjoiMjAxNi0x
-        MC0wMiIsIm1vbnRoX3F1YW50aXR5IjoxMiwicHJpY2VfaW5kZXgiOiJpcGNh
-        IiwiY3JlYXRlZF9hdCI6IjIwMTgtMDQtMTBUMTU6MjY6MDEuNDUxLTAzOjAw
-        IiwidXBkYXRlZF9hdCI6IjIwMTgtMDQtMTBUMTU6MjY6MDEuNDUxLTAzOjAw
-        IiwiaW5pdF9kYXRlIjoiMjAxNi0xMC0wMiIsImRheXNfdW50aWxfdXBkYXRl
-        Ijo1LCJyZW1pbmRfYXQiOiIyMDE2LTA5LTI3Iiwibm90aWZpZWQiOmZhbHNl
-        LCJzZXJ2aWNlX2l0ZW1faWQiOm51bGx9XSwicmVjZWl2YWJsZXNfYWRkaXRp
-        b25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6MTEwLCJkYXlfbnVtYmVyIjoyMywi
-        cGFyY2VsX251bWJlciI6bnVsbCwiaW52b2ljZV9ydWxlX2lkIjoyNjAxLCJj
-        cmVhdGVkX2F0IjoiMjAxOC0wNC0xMFQxNDozNjoyMC44MjctMDM6MDAiLCJ1
-        cGRhdGVkX2F0IjoiMjAxOC0wNC0xMFQxNDozNjoyMC44MjctMDM6MDAiLCJk
-        YXlfcXVhbnRpdHkiOm51bGwsIm1vbnRoX3F1YW50aXR5IjpudWxsLCJvbmx5
-        X2J1c2luZXNzX2RheXMiOmZhbHNlfX19
+      encoding: UTF-8
+      string: '{"invoice_rule":{"id":178735,"contract_id":9545,"issue_date":null,"estimated_issue_date":null,"gross_value":"100.0","payment_value":null,"description":"Faturamento","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"20/04/2018
+        09:11:45 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":574,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"myfinance_sale_account_id":null,"myfinance_sale_account_name":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[],"services":[],"attachments":[],"payment_information":{"id":20352,"payment_method":"billet","cobrato_card_id":"--","card_expiration_month":"--","card_expiration_year":"--","installments":1,"created_at":"20/04/2018
+        09:11:45 -03:00"},"additional_information":{"id":7433,"init_date":"2016-09-02","title":"REGRA","period_unit":"monthly","month_quantity":1,"end_date":null,"created_at":"20/04/2018
+        09:11:45 -03:00","accrual_month_quantity":"same_month"},"scheduled_updates":[{"id":209,"invoice_rule_id":178735,"execution_date":"2016-10-02","month_quantity":12,"price_index":"ipca","created_at":"2018-04-20T09:30:07.348-03:00","updated_at":"2018-04-20T09:30:07.348-03:00","init_date":"2016-10-02","days_until_update":5,"remind_at":"2016-09-27","notified":false,"service_item_id":null}],"receivables_additional_information":{"id":7433,"day_number":23,"parcel_number":null,"invoice_rule_id":178735,"created_at":"2018-04-20T09:11:45.553-03:00","updated_at":"2018-04-20T09:11:45.553-03:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
-  recorded_at: Tue, 10 Apr 2018 18:26:01 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178735
+  recorded_at: Fri, 20 Apr 2018 12:30:07 GMT
 recorded_with: VCR 3.0.3

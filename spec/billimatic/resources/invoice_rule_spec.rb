@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Billimatic::Resources::InvoiceRule do
   let(:entity_klass) { Billimatic::Entities::InvoiceRule }
   let(:http) { Billimatic::Http.new('bfe97f701f615edf41587cbd59d6a0e8') }
-  let(:local_http) { Billimatic::Http.new('43bee71be31f64edb39f9d03d1a07dfb') }
 
   subject { described_class.new(http) }
 
@@ -50,72 +49,64 @@ describe Billimatic::Resources::InvoiceRule do
       end
     end
 
-    context 'testing on local environment' do
-      before do
-        Billimatic.configuration.host = "http://localhost:3000"
+    it 'creates an invoice_rule without scheduled update, without parcels and for fixed day' do
+      VCR.use_cassette('invoice_rules/create/success/without_supdate_parcels_for_fixed_day') do
+        invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_updates).to be_empty
+        expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+        expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
       end
+    end
 
-      subject { described_class.new(local_http) }
+    it 'creates an invoice_rule without scheduled update, without parcels and for last day of month' do
+      invoice_rule_params[:charge_type] = 'last_day_of_month'
+      invoice_rule_params[:receivables_additional_information][:day_number] = nil
 
-      it 'creates an invoice_rule without scheduled update, without parcels and for fixed day' do
-        VCR.use_cassette('invoice_rules/create/success/without_supdate_parcels_for_fixed_day') do
-          invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
+      VCR.use_cassette('invoice_rules/create/success/without_supdate_parcels_for_last_day_of_month') do
+        invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-          expect(invoice_rule).to be_a entity_klass
-          expect(invoice_rule.id).not_to be_nil
-          expect(invoice_rule.scheduled_updates).to be_empty
-          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
-        end
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_updates).to be_empty
+        expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+        expect(invoice_rule.receivables_additional_information['day_number']).to be_nil
       end
+    end
 
-      it 'creates an invoice_rule without scheduled update, without parcels and for last day of month' do
-        invoice_rule_params[:charge_type] = 'last_day_of_month'
-        invoice_rule_params[:receivables_additional_information][:day_number] = nil
+    it 'creates an invoice_rule without scheduled update, without parcels and for day quantity' do
+      invoice_rule_params[:charge_type] = 'day_quantity'
+      invoice_rule_params[:receivables_additional_information][:day_number] = nil
+      invoice_rule_params[:receivables_additional_information][:day_quantity] = 3
 
-        VCR.use_cassette('invoice_rules/create/success/without_supdate_parcels_for_last_day_of_month') do
-          invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
+      VCR.use_cassette('invoice_rules/create/success/without_supdate_parcels_for_day_quantity') do
+        invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-          expect(invoice_rule).to be_a entity_klass
-          expect(invoice_rule.id).not_to be_nil
-          expect(invoice_rule.scheduled_updates).to be_empty
-          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-          expect(invoice_rule.receivables_additional_information['day_number']).to be_nil
-        end
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_updates).to be_empty
+        expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+        expect(invoice_rule.receivables_additional_information['day_number']).to be_nil
+        expect(invoice_rule.receivables_additional_information['day_quantity']).to eql 3
       end
+    end
 
-      it 'creates an invoice_rule without scheduled update, without parcels and for day quantity' do
-        invoice_rule_params[:charge_type] = 'day_quantity'
-        invoice_rule_params[:receivables_additional_information][:day_number] = nil
-        invoice_rule_params[:receivables_additional_information][:day_quantity] = 3
+    it 'creates an invoice_rule without scheduled update, without parcels and for fixed day and month' do
+      invoice_rule_params[:charge_type] = 'fixed_day_and_month_quantity'
+      invoice_rule_params[:receivables_additional_information][:day_number] = 3
+      invoice_rule_params[:receivables_additional_information][:month_quantity] = 2
 
-        VCR.use_cassette('invoice_rules/create/success/without_supdate_parcels_for_day_quantity') do
-          invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
+      VCR.use_cassette('invoice_rules/create/success/without_supdate_parcels_for_fixed_day_and_month_quantity') do
+        invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-          expect(invoice_rule).to be_a entity_klass
-          expect(invoice_rule.id).not_to be_nil
-          expect(invoice_rule.scheduled_updates).to be_empty
-          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-          expect(invoice_rule.receivables_additional_information['day_number']).to be_nil
-          expect(invoice_rule.receivables_additional_information['day_quantity']).to eql 3
-        end
-      end
-
-      it 'creates an invoice_rule without scheduled update, without parcels and for fixed day and month' do
-        invoice_rule_params[:charge_type] = 'fixed_day_and_month_quantity'
-        invoice_rule_params[:receivables_additional_information][:day_number] = 3
-        invoice_rule_params[:receivables_additional_information][:month_quantity] = 2
-
-        VCR.use_cassette('invoice_rules/create/success/without_supdate_parcels_for_fixed_day_and_month_quantity') do
-          invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
-
-          expect(invoice_rule).to be_a entity_klass
-          expect(invoice_rule.id).not_to be_nil
-          expect(invoice_rule.scheduled_updates).to be_empty
-          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-          expect(invoice_rule.receivables_additional_information['day_number']).to eql 3
-          expect(invoice_rule.receivables_additional_information['month_quantity']).to eql 2
-        end
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_updates).to be_empty
+        expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+        expect(invoice_rule.receivables_additional_information['day_number']).to eql 3
+        expect(invoice_rule.receivables_additional_information['month_quantity']).to eql 2
       end
     end
 
@@ -134,136 +125,128 @@ describe Billimatic::Resources::InvoiceRule do
         end
       end
 
-      context 'testing on local environment' do
-        before do
-          Billimatic.configuration.host = "http://localhost:3000"
+      it "is valid if periodicity is lower than or equal to one year" do
+        invoice_rule_params[:additional_information][:period_unit] = 'weekly'
+        invoice_rule_params[:additional_information][:init_date]   = Date.parse("05/06/2017")
+        invoice_rule_params[:additional_information][:end_date]    = Date.parse("04/06/2017")
+
+        VCR.use_cassette('invoice_rules/create/success/rule_weekly_lower_than_one_year') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
+
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.scheduled_updates).to be_empty
+          expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
+          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+          expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
         end
+      end
 
-        subject { described_class.new(local_http) }
+      it "is valid if periodicity is lower or equal than 5 year" do
+        invoice_rule_params[:additional_information][:period_unit]    = 'monthly'
+        invoice_rule_params[:additional_information][:month_quantity] = 1
+        invoice_rule_params[:additional_information][:init_date]      = Date.parse("05/06/2017")
+        invoice_rule_params[:additional_information][:end_date]       = Date.parse("04/06/2022")
 
-        it "is valid if periodicity is lower than or equal to one year" do
-          invoice_rule_params[:additional_information][:period_unit] = 'weekly'
-          invoice_rule_params[:additional_information][:init_date]   = Date.parse("05/06/2017")
-          invoice_rule_params[:additional_information][:end_date]    = Date.parse("04/06/2017")
+        VCR.use_cassette('invoice_rules/create/success/rule_monthly_lower_than_five_year') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-          VCR.use_cassette('invoice_rules/create/success/rule_weekly_lower_than_one_year') do
-            invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
-
-            expect(invoice_rule).to be_a entity_klass
-            expect(invoice_rule.id).not_to be_nil
-            expect(invoice_rule.scheduled_updates).to be_empty
-            expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
-            expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
-            expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-            expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
-          end
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.scheduled_updates).to be_empty
+          expect(invoice_rule.additional_information['period_unit']).to eql('monthly')
+          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+          expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
         end
+      end
 
-        it "is valid if periodicity is lower or equal than 5 year" do
-          invoice_rule_params[:additional_information][:period_unit]    = 'monthly'
-          invoice_rule_params[:additional_information][:month_quantity] = 1
-          invoice_rule_params[:additional_information][:init_date]      = Date.parse("05/06/2017")
-          invoice_rule_params[:additional_information][:end_date]       = Date.parse("04/06/2022")
+      it 'creates a weekly rule without scheduled update, without parcels and with month quantity not being null' do
+        invoice_rule_params[:additional_information][:period_unit]    = 'weekly'
+        invoice_rule_params[:additional_information][:month_quantity] = 6
+        invoice_rule_params[:additional_information][:init_date]      = Date.parse("05/06/2017")
+        invoice_rule_params[:additional_information][:end_date]       = Date.parse("18/09/2017")
 
-          VCR.use_cassette('invoice_rules/create/success/rule_monthly_lower_than_five_year') do
-            invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
+        VCR.use_cassette('invoice_rules/create/success/rule_weekly_with_wrong_month_quantity') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-            expect(invoice_rule).to be_a entity_klass
-            expect(invoice_rule.id).not_to be_nil
-            expect(invoice_rule.scheduled_updates).to be_empty
-            expect(invoice_rule.additional_information['period_unit']).to eql('monthly')
-            expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
-            expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-            expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
-          end
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.scheduled_updates).to be_empty
+          expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
+          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+          expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
         end
+      end
 
-        it 'creates a weekly rule without scheduled update, without parcels and with month quantity not being null' do
-          invoice_rule_params[:additional_information][:period_unit]    = 'weekly'
-          invoice_rule_params[:additional_information][:month_quantity] = 6
-          invoice_rule_params[:additional_information][:init_date]      = Date.parse("05/06/2017")
-          invoice_rule_params[:additional_information][:end_date]       = Date.parse("18/09/2017")
+      it 'creates a weekly rule only with period_unit' do
+        invoice_rule_params[:additional_information][:period_unit]    = 'weekly'
+        invoice_rule_params[:additional_information][:month_quantity] = nil
 
-          VCR.use_cassette('invoice_rules/create/success/rule_weekly_with_wrong_month_quantity') do
-            invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
+        VCR.use_cassette('invoice_rules/create/success/rule_weekly_only_with_period_unit') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-            expect(invoice_rule).to be_a entity_klass
-            expect(invoice_rule.id).not_to be_nil
-            expect(invoice_rule.scheduled_updates).to be_empty
-            expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
-            expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
-            expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-            expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
-          end
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.scheduled_updates).to be_empty
+          expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
+          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+          expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
         end
+      end
 
-        it 'creates a weekly rule only with period_unit' do
-          invoice_rule_params[:additional_information][:period_unit]    = 'weekly'
-          invoice_rule_params[:additional_information][:month_quantity] = nil
+      it 'creates a monthly rule' do
+        invoice_rule_params[:additional_information][:period_unit]    = 'monthly'
+        invoice_rule_params[:additional_information][:month_quantity] = 6
 
-          VCR.use_cassette('invoice_rules/create/success/rule_weekly_only_with_period_unit') do
-            invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
+        VCR.use_cassette('invoice_rules/create/success/rule_monthly') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-            expect(invoice_rule).to be_a entity_klass
-            expect(invoice_rule.id).not_to be_nil
-            expect(invoice_rule.scheduled_updates).to be_empty
-            expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
-            expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
-            expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-            expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
-          end
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.scheduled_updates).to be_empty
+          expect(invoice_rule.additional_information['period_unit']).to eql('monthly')
+          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+          expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
         end
+      end
 
-        it 'creates a monthly rule' do
-          invoice_rule_params[:additional_information][:period_unit]    = 'monthly'
-          invoice_rule_params[:additional_information][:month_quantity] = 6
+      it 'creates a monthly rule without end_date defined' do
+        invoice_rule_params[:additional_information][:period_unit]    = 'monthly'
+        invoice_rule_params[:additional_information][:month_quantity] = 1
 
-          VCR.use_cassette('invoice_rules/create/success/rule_monthly') do
-            invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
+        VCR.use_cassette('invoice_rules/create/success/rule_monthly_without_end_date') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-            expect(invoice_rule).to be_a entity_klass
-            expect(invoice_rule.id).not_to be_nil
-            expect(invoice_rule.scheduled_updates).to be_empty
-            expect(invoice_rule.additional_information['period_unit']).to eql('monthly')
-            expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
-            expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-            expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
-          end
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.scheduled_updates).to be_empty
+          expect(invoice_rule.additional_information['period_unit']).to eql('monthly')
+          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+          expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
         end
+      end
 
-        it 'creates a monthly rule without end_date defined' do
-          invoice_rule_params[:additional_information][:period_unit]    = 'monthly'
-          invoice_rule_params[:additional_information][:month_quantity] = 1
+      it 'creates a weekly rule without scheduled update, without parcels, for day quantity without end_date' do
+        invoice_rule_params[:additional_information][:period_unit]    = 'weekly'
+        invoice_rule_params[:additional_information][:month_quantity] = nil
+        invoice_rule_params[:additional_information][:init_date]      = Date.parse("05/06/2017")
 
-          VCR.use_cassette('invoice_rules/create/success/rule_monthly_without_end_date') do
-            invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
+        VCR.use_cassette('invoice_rules/create/success/rule_weekly_without_scheduled_update_and_without_end_date') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-            expect(invoice_rule).to be_a entity_klass
-            expect(invoice_rule.id).not_to be_nil
-            expect(invoice_rule.scheduled_updates).to be_empty
-            expect(invoice_rule.additional_information['period_unit']).to eql('monthly')
-            expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
-            expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-            expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
-          end
-        end
-
-        it 'creates a weekly rule without scheduled update, without parcels, for day quantity without end_date' do
-          invoice_rule_params[:additional_information][:period_unit]    = 'weekly'
-          invoice_rule_params[:additional_information][:month_quantity] = nil
-          invoice_rule_params[:additional_information][:init_date]      = Date.parse("05/06/2017")
-
-          VCR.use_cassette('invoice_rules/create/success/rule_weekly_without_scheduled_update_and_without_end_date') do
-            invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
-
-            expect(invoice_rule).to be_a entity_klass
-            expect(invoice_rule.id).not_to be_nil
-            expect(invoice_rule.scheduled_updates).to be_empty
-            expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
-            expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
-            expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
-            expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
-          end
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.scheduled_updates).to be_empty
+          expect(invoice_rule.additional_information['period_unit']).to eql('weekly')
+          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+          expect(invoice_rule.receivables_additional_information['parcel_number']).to be_nil
+          expect(invoice_rule.receivables_additional_information['month_quantity']).to be_nil
         end
       end
 
@@ -328,94 +311,86 @@ describe Billimatic::Resources::InvoiceRule do
       end
     end
 
-    context 'testing on local environment' do
-      before do
-        Billimatic.configuration.host = "http://localhost:3000"
+    it 'creates an invoice_rule without scheduled update, with 3 parcels and for fixed day' do
+      invoice_rule_params[:receivables_additional_information][:parcel_number] = 3
+
+      VCR.use_cassette('invoice_rules/create/success/without_supdate_with_parcels_for_fixed_day') do
+        invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_updates).to be_empty
+        expect(invoice_rule.receivables_additional_information['parcel_number']).to eql 3
+        expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
       end
+    end
 
-      subject { described_class.new(local_http) }
+    it 'creates an invoice_rule with scheduled update, without parcels and for fixed day' do
+      invoice_rule_params[:scheduled_updates] = [
+        {
+          price_index: 'ipca',
+          init_date: '02/10/2016',
+          month_quantity: 12,
+          days_until_update: 5
+        }
+      ]
 
-      it 'creates an invoice_rule without scheduled update, with 3 parcels and for fixed day' do
-        invoice_rule_params[:receivables_additional_information][:parcel_number] = 3
+      VCR.use_cassette('invoice_rules/create/success/with_supdate_without_parcels_for_fixed_day') do
+        invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
 
-        VCR.use_cassette('invoice_rules/create/success/without_supdate_with_parcels_for_fixed_day') do
-          invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_updates).not_to be_empty
+        first_scheduled_update = invoice_rule.scheduled_updates.first
 
-          expect(invoice_rule).to be_a entity_klass
-          expect(invoice_rule.id).not_to be_nil
-          expect(invoice_rule.scheduled_updates).to be_empty
-          expect(invoice_rule.receivables_additional_information['parcel_number']).to eql 3
-          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+        expect(first_scheduled_update['init_date']).to eql '2016-10-02'
+        expect(first_scheduled_update['remind_at']).to eql '2016-09-27'
+        expect(first_scheduled_update['month_quantity']).to eql 12
+        expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
+      end
+    end
+
+    it 'returns unprocessable entity when scheduled_update has unknown service_item' do
+      invoice_rule_params[:scheduled_updates] = [
+        {
+          service_item_id: 3,
+          price_index: 'ipca',
+          init_date: '02/10/2016',
+          month_quantity: 12,
+          days_until_update: 5
+        }
+      ]
+
+      VCR.use_cassette('invoice_rules/create/failure/supdate_with_invalid_service_item') do
+        expect {
+          subject.create(invoice_rule_params, contract_id: 9545)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql(422)
         end
       end
+    end
 
-      it 'creates an invoice_rule with scheduled update, without parcels and for fixed day' do
-        invoice_rule_params[:scheduled_updates] = [
-          {
-            price_index: 'ipca',
-            init_date: '02/10/2016',
-            month_quantity: 12,
-            days_until_update: 5
-          }
-        ]
+    it 'returns unprocessable entity when scheduled_update has more than one scheduled_update' do
+      invoice_rule_params[:scheduled_updates] = [
+        {
+          price_index: 'ipca',
+          init_date: '02/10/2016',
+          month_quantity: 12,
+          days_until_update: 5
+        },
+        {
+          price_index: 'ipca',
+          init_date: '02/10/2016',
+          month_quantity: 12,
+          days_until_update: 5
+        }
+      ]
 
-        VCR.use_cassette('invoice_rules/create/success/with_supdate_without_parcels_for_fixed_day') do
-          invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
-
-          expect(invoice_rule).to be_a entity_klass
-          expect(invoice_rule.id).not_to be_nil
-          expect(invoice_rule.scheduled_updates).not_to be_empty
-          first_scheduled_update = invoice_rule.scheduled_updates.first
-
-          expect(first_scheduled_update['init_date']).to eql '2016-10-02'
-          expect(first_scheduled_update['remind_at']).to eql '2016-09-27'
-          expect(first_scheduled_update['month_quantity']).to eql 12
-          expect(invoice_rule.receivables_additional_information['day_number']).to eql 23
-        end
-      end
-
-      it 'returns unprocessable entity when scheduled_update has unknown service_item' do
-        invoice_rule_params[:scheduled_updates] = [
-          {
-            service_item_id: 3,
-            price_index: 'ipca',
-            init_date: '02/10/2016',
-            month_quantity: 12,
-            days_until_update: 5
-          }
-        ]
-
-        VCR.use_cassette('invoice_rules/create/failure/supdate_with_invalid_service_item') do
-          expect {
-            subject.create(invoice_rule_params, contract_id: 30)
-          }.to raise_error(Billimatic::RequestError) do |error|
-            expect(error.code).to eql(422)
-          end
-        end
-      end
-
-      it 'returns unprocessable entity when scheduled_update has more than one scheduled_update' do
-        invoice_rule_params[:scheduled_updates] = [
-          {
-            price_index: 'ipca',
-            init_date: '02/10/2016',
-            month_quantity: 12,
-            days_until_update: 5
-          },
-          {
-            price_index: 'ipca',
-            init_date: '02/10/2016',
-            month_quantity: 12,
-            days_until_update: 5
-          }
-        ]
-
-        VCR.use_cassette('invoice_rules/create/failure/more_than_one_supdate_without_services') do
-          expect {
-            subject.create(invoice_rule_params, contract_id: 30)
-          }.to raise_error(Billimatic::RequestError) do |error|
-            expect(error.code).to eql(422)
-          end
+      VCR.use_cassette('invoice_rules/create/failure/more_than_one_supdate_without_services') do
+        expect {
+          subject.create(invoice_rule_params, contract_id: 9545)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql(422)
         end
       end
     end
@@ -460,91 +435,83 @@ describe Billimatic::Resources::InvoiceRule do
       end
     end
 
-    context 'testing on local environment' do
-      before do
-        Billimatic.configuration.host = "http://localhost:3000"
+    context 'dealing with services' do
+      it 'creates services for invoice_rule and calculates its gross value automatically' do
+        invoice_rule_params[:services] = [
+          {
+            service_item_id: 5,
+            description: 'Descrição teste',
+            units: 2,
+            unit_value: 150.0,
+            value: 300.0
+          }
+        ]
+
+        invoice_rule_params[:scheduled_updates] = [
+          {
+            service_item_id: 5,
+            price_index: 'ipca',
+            init_date: '02/10/2016',
+            month_quantity: 12,
+            days_until_update: 5
+          }
+        ]
+
+        VCR.use_cassette('invoice_rules/create/success/with_services') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.gross_value).to eql 300.0
+          expect(invoice_rule.services).not_to be_empty
+          expect(invoice_rule.scheduled_updates).not_to be_empty
+
+          rule_service = invoice_rule.services.first
+          expect(rule_service).to be_a Billimatic::Entities::Service
+          expect(rule_service.value).to eql 300.0
+          expect(rule_service.description).to eql 'Descrição teste'
+
+          rule_schedule = invoice_rule.scheduled_updates.first
+          expect(rule_schedule['service_item_id']).to eql 5
+        end
       end
 
-      subject { described_class.new(local_http) }
+      it 'creates with two services and one scheduled update for one service' do
+        invoice_rule_params[:services] = [
+          {
+            service_item_id: 5,
+            description: 'Descrição teste',
+            units: 2,
+            unit_value: 150.0,
+            value: 300.0
+          },
+          {
+            service_item_id: 4,
+            description: 'Descrição teste',
+            units: 2,
+            unit_value: 150.0,
+            value: 300.0
+          }
+        ]
 
-      context 'dealing with services' do
-        it 'creates services for invoice_rule and calculates its gross value automatically' do
-          invoice_rule_params[:services] = [
-            {
-              service_item_id: 5,
-              description: 'Descrição teste',
-              units: 2,
-              unit_value: 150.0,
-              value: 300.0
-            }
-          ]
+        invoice_rule_params[:scheduled_updates] = [
+          {
+            service_item_id: 5,
+            price_index: 'ipca',
+            init_date: '02/10/2016',
+            month_quantity: 12,
+            days_until_update: 5
+          }
+        ]
 
-          invoice_rule_params[:scheduled_updates] = [
-            {
-              service_item_id: 5,
-              price_index: 'ipca',
-              init_date: '02/10/2016',
-              month_quantity: 12,
-              days_until_update: 5
-            }
-          ]
-
-          VCR.use_cassette('invoice_rules/create/success/with_services') do
-            invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
-            expect(invoice_rule).to be_a entity_klass
-            expect(invoice_rule.id).not_to be_nil
-            expect(invoice_rule.gross_value).to eql 300.0
-            expect(invoice_rule.services).not_to be_empty
-            expect(invoice_rule.scheduled_updates).not_to be_empty
-
-            rule_service = invoice_rule.services.first
-            expect(rule_service).to be_a Billimatic::Entities::Service
-            expect(rule_service.value).to eql 300.0
-            expect(rule_service.description).to eql 'Descrição teste'
-
-            rule_schedule = invoice_rule.scheduled_updates.first
-            expect(rule_schedule['service_item_id']).to eql 5
-          end
-        end
-
-        it 'creates with two services and one scheduled update for one service' do
-          invoice_rule_params[:services] = [
-            {
-              service_item_id: 5,
-              description: 'Descrição teste',
-              units: 2,
-              unit_value: 150.0,
-              value: 300.0
-            },
-            {
-              service_item_id: 4,
-              description: 'Descrição teste',
-              units: 2,
-              unit_value: 150.0,
-              value: 300.0
-            }
-          ]
-
-          invoice_rule_params[:scheduled_updates] = [
-            {
-              service_item_id: 5,
-              price_index: 'ipca',
-              init_date: '02/10/2016',
-              month_quantity: 12,
-              days_until_update: 5
-            }
-          ]
-
-          VCR.use_cassette('invoice_rules/create/success/with_two_services_one_supdate') do
-            invoice_rule = subject.create(invoice_rule_params, contract_id: 30)
-            expect(invoice_rule).to be_a entity_klass
-            expect(invoice_rule.id).not_to be_nil
-            expect(invoice_rule.gross_value).to eql 600.0
-            expect(invoice_rule.services.size).to eql 2
-            expect(invoice_rule.scheduled_updates).not_to be_empty
-            rule_schedule = invoice_rule.scheduled_updates.first
-            expect(rule_schedule['service_item_id']).to eql 5
-          end
+        VCR.use_cassette('invoice_rules/create/success/with_two_services_one_supdate') do
+          invoice_rule = subject.create(invoice_rule_params, contract_id: 9545)
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).not_to be_nil
+          expect(invoice_rule.gross_value).to eql 600.0
+          expect(invoice_rule.services.size).to eql 2
+          expect(invoice_rule.scheduled_updates).not_to be_empty
+          rule_schedule = invoice_rule.scheduled_updates.first
+          expect(rule_schedule['service_item_id']).to eql 5
         end
       end
     end
@@ -632,59 +599,51 @@ describe Billimatic::Resources::InvoiceRule do
       end
     end
 
-    context 'testing on local environment' do
-      before do
-        Billimatic.configuration.host = "http://localhost:3000"
-      end
-
-      subject { described_class.new(local_http) }
-
-      it 'raises Billimatic::RequestError if new scheduled update is invalid' do
-        VCR.use_cassette('invoice_rules/update/invalid_new_scheduled_update_failure') do
-          expect {
-            subject.update(
-              2601,
-              {
-                scheduled_updates: [{ month_quantity: '' }]
-              },
-              contract_id: 30
-            )
-          }.to raise_error(Billimatic::RequestError) do |error|
-            expect(error.code).to eql 422
-          end
+    it 'raises Billimatic::RequestError if new scheduled update is invalid' do
+      VCR.use_cassette('invoice_rules/update/invalid_new_scheduled_update_failure') do
+        expect {
+          subject.update(
+            178729,
+            {
+              scheduled_updates: [{ month_quantity: '' }]
+            },
+            contract_id: 9545
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
         end
       end
+    end
 
-      it 'raises Billimatic::RequestError if existing scheduled update has destroyed service_item' do
-        VCR.use_cassette('invoice_rules/update/invalid_service_item_on_scheduled_update') do
-          expect {
-            subject.update(
-              2601,
-              {
-                services: [{id: 3705, _destroy: true}],
-                scheduled_updates: [{ id: 27, service_item_id: 5 }]
-              },
-              contract_id: 30
-            )
-          }.to raise_error(Billimatic::RequestError) do |error|
-            expect(error.code).to eql 422
-          end
+    it 'raises Billimatic::RequestError if existing scheduled update has destroyed service_item' do
+      VCR.use_cassette('invoice_rules/update/invalid_service_item_on_scheduled_update') do
+        expect {
+          subject.update(
+            178795,
+            {
+              services: [{id: 232811, _destroy: true}],
+              scheduled_updates: [{ id: 206, service_item_id: 57 }]
+            },
+            contract_id: 9545
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
         end
       end
+    end
 
-      it 'raises Billimatic::RequestError if existing scheduled update is invalid' do
-        VCR.use_cassette('invoice_rules/update/invalid_existing_scheduled_update_failure') do
-          expect {
-            subject.update(
-              2595,
-              {
-                scheduled_updates: [{ id: 25, month_quantity: '' }]
-              },
-              contract_id: 30
-            )
-          }.to raise_error(Billimatic::RequestError) do |error|
-            expect(error.code).to eql 422
-          end
+    it 'raises Billimatic::RequestError if existing scheduled update is invalid' do
+      VCR.use_cassette('invoice_rules/update/invalid_existing_scheduled_update_failure') do
+        expect {
+          subject.update(
+            178795,
+            {
+              scheduled_updates: [{ id: 206, month_quantity: '' }]
+            },
+            contract_id: 9545
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
         end
       end
     end
@@ -896,64 +855,56 @@ describe Billimatic::Resources::InvoiceRule do
       end
     end
 
-    context 'testing on local environment' do
-      before do
-        Billimatic.configuration.host = "http://localhost:3000"
+    it 'updates rule creating scheduled update' do
+      VCR.use_cassette('invoice_rules/update/success/new_scheduled_update') do
+        invoice_rule = subject.update(
+          178735,
+          {
+            scheduled_updates: [
+              {
+                price_index: 'ipca',
+                init_date: '02/10/2016',
+                month_quantity: 12,
+                days_until_update: 5
+              }
+            ]
+          },
+          contract_id: 9545
+        )
+
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        expect(invoice_rule.scheduled_updates).not_to be_empty
+        first_schedule = invoice_rule.scheduled_updates.first
+        expect(first_schedule['execution_date']).to eql '2016-10-02'
+        expect(first_schedule['remind_at']).to eql '2016-09-27'
       end
+    end
 
-      subject { described_class.new(local_http) }
+    it 'updates rule existing scheduled update' do
+      VCR.use_cassette('invoice_rules/update/success/existing_scheduled_update') do
+        invoice_rule = subject.update(
+          178735,
+          {
+            scheduled_updates: [
+              {
+                id: 209,
+                service_item_id: 57,
+                price_index: 'igpm',
+                month_quantity: 1,
+                days_until_update: 2
+              }
+            ]
+          },
+          contract_id: 9545
+        )
 
-      it 'updates rule creating scheduled update' do
-        VCR.use_cassette('invoice_rules/update/success/new_scheduled_update') do
-          invoice_rule = subject.update(
-            2601,
-            {
-              scheduled_updates: [
-                {
-                  price_index: 'ipca',
-                  init_date: '02/10/2016',
-                  month_quantity: 12,
-                  days_until_update: 5
-                }
-              ]
-            },
-            contract_id: 30
-          )
-
-          expect(invoice_rule).to be_a entity_klass
-          expect(invoice_rule.id).not_to be_nil
-          expect(invoice_rule.scheduled_updates).not_to be_empty
-          first_schedule = invoice_rule.scheduled_updates.first
-          expect(first_schedule['execution_date']).to eql '2016-10-02'
-          expect(first_schedule['remind_at']).to eql '2016-09-27'
-        end
-      end
-
-      it 'updates rule existing scheduled update' do
-        VCR.use_cassette('invoice_rules/update/success/existing_scheduled_update') do
-          invoice_rule = subject.update(
-            2601,
-            {
-              scheduled_updates: [
-                {
-                  id: 27,
-                  service_item_id: 4,
-                  price_index: 'igpm',
-                  month_quantity: 1,
-                  days_until_update: 2
-                }
-              ]
-            },
-            contract_id: 30
-          )
-
-          expect(invoice_rule).to be_a entity_klass
-          expect(invoice_rule.id).not_to be_nil
-          first_schedule = invoice_rule.scheduled_updates.first
-          expect(first_schedule['execution_date']).to eql '2016-10-02'
-          expect(first_schedule['remind_at']).to eql '2016-09-30'
-          expect(first_schedule['service_item_id']).to eql 4
-        end
+        expect(invoice_rule).to be_a entity_klass
+        expect(invoice_rule.id).not_to be_nil
+        first_schedule = invoice_rule.scheduled_updates.first
+        expect(first_schedule['execution_date']).to eql '2016-10-02'
+        expect(first_schedule['remind_at']).to eql '2016-09-30'
+        expect(first_schedule['service_item_id']).to eql 57
       end
     end
 

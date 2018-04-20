@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/contracts/30/invoice_rules
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules
     body:
       encoding: UTF-8
       string: '{"invoice_rule":{"additional_information":{"title":"REGRA","init_date":"02/09/2016","period_unit":0,"month_quantity":6},"gross_value":100.0,"description":"Faturamento","nfe_body":"$DESCRICAO","charge_type":"fixed_day","receivables_additional_information":{"day_number":23},"scheduled_updates":[{"price_index":"ipca","init_date":"02/10/2016","month_quantity":12,"days_until_update":5},{"price_index":"ipca","init_date":"02/10/2016","month_quantity":12,"days_until_update":5}]}}'
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=43bee71be31f64edb39f9d03d1a07dfb
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Date:
-      - Tue, 10 Apr 2018 17:25:18 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Fri, 20 Apr 2018 12:17:17 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,13 +39,15 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 2b419c32-be01-4611-a5f3-b8571e778181
+      - 0fc26473-6c84-4742-83b4-732bcb5ffc36
       X-Runtime:
-      - '0.193220'
+      - '0.081305'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -52,6 +56,6 @@ http_interactions:
         acOnbyJ9fQ==
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules
-  recorded_at: Tue, 10 Apr 2018 17:25:18 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules
+  recorded_at: Fri, 20 Apr 2018 12:17:17 GMT
 recorded_with: VCR 3.0.3

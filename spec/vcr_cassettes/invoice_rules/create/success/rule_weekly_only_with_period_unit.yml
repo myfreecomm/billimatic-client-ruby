@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/contracts/30/invoice_rules
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules
     body:
       encoding: UTF-8
       string: '{"invoice_rule":{"additional_information":{"title":"REGRA","init_date":"02/09/2016","period_unit":"weekly","month_quantity":null},"gross_value":100.0,"description":"Faturamento","nfe_body":"$DESCRICAO","charge_type":"fixed_day","receivables_additional_information":{"day_number":23}}}'
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=43bee71be31f64edb39f9d03d1a07dfb
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,38 +22,42 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Date:
-      - Tue, 10 Apr 2018 17:08:50 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Fri, 20 Apr 2018 12:09:32 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"ad4901bd6cbd760668320226a9345a4b"
+      Etag:
+      - W/"d00f5b764cbcf4df9f2033dc6db5a480"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 76ed3d09-ee92-43ff-997f-c785bf231a84
+      - 76e627b7-ef45-4ebd-8ec4-9da5807c1d9f
       X-Runtime:
-      - '1.025313'
+      - '3.285560'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"id":2478,"contract_id":30,"issue_date":null,"estimated_issue_date":null,"gross_value":"100.0","payment_value":"100.0","description":"Faturamento","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"10/04/2018
-        14:08:49 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":14,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"myfinance_sale_account_id":null,"myfinance_sale_account_name":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[],"services":[],"attachments":[],"payment_information":{"id":2562,"payment_method":"billet","cobrato_card_id":"--","card_expiration_month":"--","card_expiration_year":"--","installments":1,"created_at":"10/04/2018
-        14:08:49 -03:00"},"additional_information":{"id":100,"init_date":"2016-09-02","title":"REGRA","period_unit":"weekly","month_quantity":null,"end_date":null,"created_at":"10/04/2018
-        14:08:49 -03:00","accrual_month_quantity":"same_month"},"scheduled_updates":[],"receivables_additional_information":{"id":100,"day_number":23,"parcel_number":null,"invoice_rule_id":2478,"created_at":"2018-04-10T14:08:49.448-03:00","updated_at":"2018-04-10T14:08:49.448-03:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
+      string: '{"invoice_rule":{"id":178702,"contract_id":9545,"issue_date":null,"estimated_issue_date":null,"gross_value":"100.0","payment_value":"100.0","description":"Faturamento","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"20/04/2018
+        09:09:28 -03:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":574,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":null,"finance_category":null,"finance_revenue_center":null,"myfinance_sale_account_id":null,"myfinance_sale_account_name":null,"cobrato_charge_config_id":null,"cobrato_charge_config_name":null,"cobrato_charge_template_id":null,"cobrato_charge_template_name":null,"days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","receivables":[],"services":[],"attachments":[],"payment_information":{"id":20319,"payment_method":"billet","cobrato_card_id":"--","card_expiration_month":"--","card_expiration_year":"--","installments":1,"created_at":"20/04/2018
+        09:09:28 -03:00"},"additional_information":{"id":7431,"init_date":"2016-09-02","title":"REGRA","period_unit":"weekly","month_quantity":null,"end_date":null,"created_at":"20/04/2018
+        09:09:28 -03:00","accrual_month_quantity":"same_month"},"scheduled_updates":[],"receivables_additional_information":{"id":7431,"day_number":23,"parcel_number":null,"invoice_rule_id":178702,"created_at":"2018-04-20T09:09:28.929-03:00","updated_at":"2018-04-20T09:09:28.929-03:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules
-  recorded_at: Tue, 10 Apr 2018 17:08:50 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules
+  recorded_at: Fri, 20 Apr 2018 12:09:32 GMT
 recorded_with: VCR 3.0.3

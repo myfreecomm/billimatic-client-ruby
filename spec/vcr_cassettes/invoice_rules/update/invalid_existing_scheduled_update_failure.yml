@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: put
-    uri: http://localhost:3000/api/v1/contracts/30/invoice_rules/2595
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178795
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"scheduled_updates":[{"id":25,"month_quantity":""}]}}'
+      string: '{"invoice_rule":{"scheduled_updates":[{"id":206,"month_quantity":""}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.15.0
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=43bee71be31f64edb39f9d03d1a07dfb
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Date:
-      - Tue, 10 Apr 2018 17:43:27 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Fri, 20 Apr 2018 12:28:08 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,13 +39,15 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 4adab56b-da7f-4535-9f81-668a84a20129
+      - bbf2db74-bffd-4d70-b142-98517dada02a
       X-Runtime:
-      - '1.044377'
+      - '0.223756'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -51,6 +55,6 @@ http_interactions:
         OiJkZXZlIHNlciBudW3DqXJpY28ifX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules/2595
-  recorded_at: Tue, 10 Apr 2018 17:43:27 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178795
+  recorded_at: Fri, 20 Apr 2018 12:28:08 GMT
 recorded_with: VCR 3.0.3

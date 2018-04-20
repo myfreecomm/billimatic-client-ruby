@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178729
     body:
       encoding: UTF-8
       string: '{"invoice_rule":{"scheduled_updates":[{"month_quantity":""}]}}'
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=43bee71be31f64edb39f9d03d1a07dfb
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Date:
-      - Tue, 10 Apr 2018 17:42:03 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Fri, 20 Apr 2018 12:24:07 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,13 +39,15 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 778535ee-e3a2-4343-876d-d56282cfe289
+      - a7e6bb4d-52e5-4319-a516-728d2c8060e5
       X-Runtime:
-      - '1.181222'
+      - '0.481997'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -54,6 +58,6 @@ http_interactions:
         LzAxLzIwMDAifX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/30/invoice_rules/2601
-  recorded_at: Tue, 10 Apr 2018 17:42:03 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178729
+  recorded_at: Fri, 20 Apr 2018 12:24:07 GMT
 recorded_with: VCR 3.0.3
