@@ -2,6 +2,9 @@
 
 ## Next version
 
+## v0.16.0
+- Changes `scheduled_updates` field on InvoiceRule entity, to become a collection of scheduled_update hashes.
+
 ## v0.15.0
 - Fixes README.md details for update endpoints, with correct HTTP method used.
 - Adds `city_inscription`, `myfinance_customer_id` and `myfinance_errors` attributes on Company entity.
