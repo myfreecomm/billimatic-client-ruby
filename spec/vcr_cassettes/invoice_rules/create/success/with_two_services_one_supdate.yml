@@ -6,6 +6,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"invoice_rule":{"additional_information":{"title":"REGRA","init_date":"02/09/2016","period_unit":0,"month_quantity":6},"gross_value":100.0,"description":"Faturamento","nfe_body":"$DESCRICAO","charge_type":"fixed_day","receivables_additional_information":{"day_number":23},"services":[{"service_item_id":5,"description":"Descrição
+        teste","units":2,"unit_value":150.0,"value":300.0},{"service_item_id":4,"description":"Descrição
         teste","units":2,"unit_value":150.0,"value":300.0}],"scheduled_updates":[{"service_item_id":5,"price_index":"ipca","init_date":"02/10/2016","month_quantity":12,"days_until_update":5}]}}'
     headers:
       User-Agent:
@@ -28,7 +29,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 20 Apr 2018 12:19:29 GMT
+      - Fri, 20 Apr 2018 12:21:16 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -38,13 +39,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"59ca32f596792acd9a554d80977525e5"
+      - W/"1032338146cee97da40f9e7bdba91a9f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 91c902df-70e3-45ec-864c-6204d472ef29
+      - 3b503b04-2425-4e4e-b58e-084f4800535a
       X-Runtime:
-      - '0.984804'
+      - '0.908866'
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -54,15 +55,15 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjE3ODgwMSwiY29udHJhY3RfaWQiOjk1
+        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjE3ODgwNywiY29udHJhY3RfaWQiOjk1
         NDUsImlzc3VlX2RhdGUiOm51bGwsImVzdGltYXRlZF9pc3N1ZV9kYXRlIjpu
-        dWxsLCJncm9zc192YWx1ZSI6IjMwMC4wIiwicGF5bWVudF92YWx1ZSI6IjMw
+        dWxsLCJncm9zc192YWx1ZSI6IjYwMC4wIiwicGF5bWVudF92YWx1ZSI6IjYw
         MC4wIiwiZGVzY3JpcHRpb24iOiJGYXR1cmFtZW50byIsInN0YXRlIjoidG9f
         ZW1pdCIsImNhbmNlbGxlZF9hdXRvbWF0aWNhbGx5IjpmYWxzZSwibmZlX3Nl
         cnZpY2UiOm51bGwsIm5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1
         ZV9kYXRlIjpudWxsLCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNz
         dWVkIjpmYWxzZSwibnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAvMDQv
-        MjAxOCAwOToxOToyOSAtMDM6MDAiLCJtYW5hZ2VtZW50X3R5cGUiOiJtYW51
+        MjAxOCAwOToyMToxNSAtMDM6MDAiLCJtYW5hZ2VtZW50X3R5cGUiOiJtYW51
         YWwiLCJhY2NydWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxsLCJjdXN0
         b21lcl9pZCI6NTc0LCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIsImVtaXRl
         c19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiZW1pdGVzX3NlcnZpY2VfdmFs
@@ -75,35 +76,38 @@ http_interactions:
         bCwiZGF5c191bnRpbF9hdXRvbWF0aWNfbmZlX2VtaXNzaW9uIjowLCJhdXRv
         bWF0aWNfbmZlX2lzc3VlX2RhdGUiOm51bGwsImF1dG9tYXRpY19lbWFpbF90
         ZW1wbGF0ZV9pZCI6bnVsbCwiYXBwcm92YWxfc3RhdHVzIjoiYXBwcm92ZWQi
-        LCJyZWNlaXZhYmxlcyI6W10sInNlcnZpY2VzIjpbeyJpZCI6MjMyNzg4LCJu
+        LCJyZWNlaXZhYmxlcyI6W10sInNlcnZpY2VzIjpbeyJpZCI6MjMyNzk0LCJu
         YW1lIjoiQWx1Z3VlbCBkbyBUYXhydWxlcyIsImRlc2NyaXB0aW9uIjoiRGVz
         Y3Jpw6fDo28gdGVzdGUiLCJ1bml0X3ZhbHVlIjoiMTUwLjAiLCJ1bml0cyI6
-        IjIuMCIsInZhbHVlIjoiMzAwLjAifV0sImF0dGFjaG1lbnRzIjpbXSwicGF5
-        bWVudF9pbmZvcm1hdGlvbiI6eyJpZCI6MjA0MTgsInBheW1lbnRfbWV0aG9k
-        IjoiYmlsbGV0IiwiY29icmF0b19jYXJkX2lkIjoiLS0iLCJjYXJkX2V4cGly
-        YXRpb25fbW9udGgiOiItLSIsImNhcmRfZXhwaXJhdGlvbl95ZWFyIjoiLS0i
-        LCJpbnN0YWxsbWVudHMiOjEsImNyZWF0ZWRfYXQiOiIyMC8wNC8yMDE4IDA5
-        OjE5OjI5IC0wMzowMCJ9LCJhZGRpdGlvbmFsX2luZm9ybWF0aW9uIjp7Imlk
-        Ijo3NDM3LCJpbml0X2RhdGUiOiIyMDE2LTA5LTAyIiwidGl0bGUiOiJSRUdS
-        QSIsInBlcmlvZF91bml0IjoibW9udGhseSIsIm1vbnRoX3F1YW50aXR5Ijo2
-        LCJlbmRfZGF0ZSI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwLzA0LzIwMTggMDk6
-        MTk6MjkgLTAzOjAwIiwiYWNjcnVhbF9tb250aF9xdWFudGl0eSI6InNhbWVf
-        bW9udGgifSwic2NoZWR1bGVkX3VwZGF0ZXMiOlt7ImlkIjoyMDcsImludm9p
-        Y2VfcnVsZV9pZCI6MTc4ODAxLCJleGVjdXRpb25fZGF0ZSI6IjIwMTYtMTAt
-        MDIiLCJtb250aF9xdWFudGl0eSI6MTIsInByaWNlX2luZGV4IjoiaXBjYSIs
-        ImNyZWF0ZWRfYXQiOiIyMDE4LTA0LTIwVDA5OjE5OjI5LjE4Ny0wMzowMCIs
-        InVwZGF0ZWRfYXQiOiIyMDE4LTA0LTIwVDA5OjE5OjI5LjE4Ny0wMzowMCIs
-        ImluaXRfZGF0ZSI6IjIwMTYtMTAtMDIiLCJkYXlzX3VudGlsX3VwZGF0ZSI6
-        NSwicmVtaW5kX2F0IjoiMjAxNi0wOS0yNyIsIm5vdGlmaWVkIjpmYWxzZSwi
-        c2VydmljZV9pdGVtX2lkIjo1fV0sInJlY2VpdmFibGVzX2FkZGl0aW9uYWxf
-        aW5mb3JtYXRpb24iOnsiaWQiOjc0MzcsImRheV9udW1iZXIiOjIzLCJwYXJj
-        ZWxfbnVtYmVyIjpudWxsLCJpbnZvaWNlX3J1bGVfaWQiOjE3ODgwMSwiY3Jl
-        YXRlZF9hdCI6IjIwMTgtMDQtMjBUMDk6MTk6MjkuMjIwLTAzOjAwIiwidXBk
-        YXRlZF9hdCI6IjIwMTgtMDQtMjBUMDk6MTk6MjkuMjIwLTAzOjAwIiwiZGF5
-        X3F1YW50aXR5IjpudWxsLCJtb250aF9xdWFudGl0eSI6bnVsbCwib25seV9i
-        dXNpbmVzc19kYXlzIjpmYWxzZX19fQ==
+        IjIuMCIsInZhbHVlIjoiMzAwLjAifSx7ImlkIjoyMzI3OTUsIm5hbWUiOiJN
+        YW51dGVuw6fDo28iLCJkZXNjcmlwdGlvbiI6IkRlc2NyacOnw6NvIHRlc3Rl
+        IiwidW5pdF92YWx1ZSI6IjE1MC4wIiwidW5pdHMiOiIyLjAiLCJ2YWx1ZSI6
+        IjMwMC4wIn1dLCJhdHRhY2htZW50cyI6W10sInBheW1lbnRfaW5mb3JtYXRp
+        b24iOnsiaWQiOjIwNDI0LCJwYXltZW50X21ldGhvZCI6ImJpbGxldCIsImNv
+        YnJhdG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX21vbnRoIjoi
+        LS0iLCJjYXJkX2V4cGlyYXRpb25feWVhciI6Ii0tIiwiaW5zdGFsbG1lbnRz
+        IjoxLCJjcmVhdGVkX2F0IjoiMjAvMDQvMjAxOCAwOToyMToxNSAtMDM6MDAi
+        fSwiYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6NzQzOCwiaW5pdF9k
+        YXRlIjoiMjAxNi0wOS0wMiIsInRpdGxlIjoiUkVHUkEiLCJwZXJpb2RfdW5p
+        dCI6Im1vbnRobHkiLCJtb250aF9xdWFudGl0eSI6NiwiZW5kX2RhdGUiOm51
+        bGwsImNyZWF0ZWRfYXQiOiIyMC8wNC8yMDE4IDA5OjIxOjE1IC0wMzowMCIs
+        ImFjY3J1YWxfbW9udGhfcXVhbnRpdHkiOiJzYW1lX21vbnRoIn0sInNjaGVk
+        dWxlZF91cGRhdGVzIjpbeyJpZCI6MjA4LCJpbnZvaWNlX3J1bGVfaWQiOjE3
+        ODgwNywiZXhlY3V0aW9uX2RhdGUiOiIyMDE2LTEwLTAyIiwibW9udGhfcXVh
+        bnRpdHkiOjEyLCJwcmljZV9pbmRleCI6ImlwY2EiLCJjcmVhdGVkX2F0Ijoi
+        MjAxOC0wNC0yMFQwOToyMToxNS4zMzktMDM6MDAiLCJ1cGRhdGVkX2F0Ijoi
+        MjAxOC0wNC0yMFQwOToyMToxNS4zMzktMDM6MDAiLCJpbml0X2RhdGUiOiIy
+        MDE2LTEwLTAyIiwiZGF5c191bnRpbF91cGRhdGUiOjUsInJlbWluZF9hdCI6
+        IjIwMTYtMDktMjciLCJub3RpZmllZCI6ZmFsc2UsInNlcnZpY2VfaXRlbV9p
+        ZCI6NX1dLCJyZWNlaXZhYmxlc19hZGRpdGlvbmFsX2luZm9ybWF0aW9uIjp7
+        ImlkIjo3NDM4LCJkYXlfbnVtYmVyIjoyMywicGFyY2VsX251bWJlciI6bnVs
+        bCwiaW52b2ljZV9ydWxlX2lkIjoxNzg4MDcsImNyZWF0ZWRfYXQiOiIyMDE4
+        LTA0LTIwVDA5OjIxOjE1LjM1MS0wMzowMCIsInVwZGF0ZWRfYXQiOiIyMDE4
+        LTA0LTIwVDA5OjIxOjE1LjM1MS0wMzowMCIsImRheV9xdWFudGl0eSI6bnVs
+        bCwibW9udGhfcXVhbnRpdHkiOm51bGwsIm9ubHlfYnVzaW5lc3NfZGF5cyI6
+        ZmFsc2V9fX0=
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules
-  recorded_at: Fri, 20 Apr 2018 12:19:29 GMT
+  recorded_at: Fri, 20 Apr 2018 12:21:16 GMT
 recorded_with: VCR 3.0.3

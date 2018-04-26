@@ -24,7 +24,7 @@ module Billimatic
       attribute :automatic_email_template_id, Integer
       attribute :services, Array[Service]
       attribute :additional_information, Hash
-      attribute :scheduled_update, Hash
+      attribute :scheduled_updates, Array[Hash]
       attribute :receivables_additional_information, Hash
       attribute :payment_information, PaymentInformation
     end

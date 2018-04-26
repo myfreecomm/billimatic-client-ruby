@@ -5,7 +5,7 @@ http_interactions:
     uri: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178795
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"scheduled_updates":[{"id":206,"month_quantity":""}]}}'
+      string: '{"invoice_rule":{"services":[{"id":232811,"_destroy":true}],"scheduled_updates":[{"id":206,"service_item_id":57}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.15.0
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 20 Apr 2018 12:28:08 GMT
+      - Fri, 20 Apr 2018 12:27:09 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -39,9 +39,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - bbf2db74-bffd-4d70-b142-98517dada02a
+      - 8e9d3ad7-46d9-4852-9121-9c811498b361
       X-Runtime:
-      - '0.223756'
+      - '0.231439'
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -51,10 +51,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMubW9udGhfcXVhbnRpdHki
-        OiJkZXZlIHNlciBudW3DqXJpY28ifX0=
+        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMuc2VydmljZV9pdGVtX2lk
+        IjoiZGV2ZSBlc3RhciBlbnRyZSBvcyBzZXJ2acOnb3MgZGEgcmVncmEgcmVj
+        b3JyZW50ZSJ9fQ==
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178795
-  recorded_at: Fri, 20 Apr 2018 12:28:08 GMT
+  recorded_at: Fri, 20 Apr 2018 12:27:09 GMT
 recorded_with: VCR 3.0.3

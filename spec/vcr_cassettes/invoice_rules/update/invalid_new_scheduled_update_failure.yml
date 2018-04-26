@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: put
-    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178729
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"scheduled_update":{"will_be_created":"true","month_quantity":""}}}'
+      string: '{"invoice_rule":{"scheduled_updates":[{"month_quantity":""}]}}'
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.4.0
+      - Billimatic Ruby Client v0.15.0
       Accept:
       - application/json
       Content-Type:
@@ -22,38 +22,42 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Fri, 02 Sep 2016 15:02:38 GMT
       Server:
-      - nginx/1.10.1
-      X-Content-Type-Options:
-      - nosniff
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 20 Apr 2018 12:24:07 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-Request-Id:
-      - fdabcef7-0b61-423f-afc7-789c0b27ab11
-      X-Runtime:
-      - '0.032063'
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
-      Content-Length:
-      - '182'
-      Connection:
-      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a7e6bb4d-52e5-4319-a516-728d2c8060e5
+      X-Runtime:
+      - '0.481997'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZS5tb250aF9xdWFudGl0eSI6
-        ImRldmUgc2VyIG51bcOpcmljbyIsInNjaGVkdWxlZF91cGRhdGUuZGF5c191
-        bnRpbF91cGRhdGUiOiJkZXZlIHNlciBudW3DqXJpY28iLCJzY2hlZHVsZWRf
-        dXBkYXRlLmluaXRfZGF0ZSI6Im7Do28gcG9kZSBmaWNhciBlbSBicmFuY28i
-        fX0=
+        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMubW9udGhfcXVhbnRpdHki
+        OiJkZXZlIHNlciBudW3DqXJpY28iLCJzY2hlZHVsZWRfdXBkYXRlcy5kYXlz
+        X3VudGlsX3VwZGF0ZSI6ImRldmUgc2VyIG51bcOpcmljbyIsInNjaGVkdWxl
+        ZF91cGRhdGVzLmluaXRfZGF0ZSI6ImRldmUgc2VyIGEgcGFydGlyIGRlIDAx
+        LzAxLzIwMDAifX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6666/invoice_rules/127230
-  recorded_at: Fri, 02 Sep 2016 15:02:38 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/9545/invoice_rules/178729
+  recorded_at: Fri, 20 Apr 2018 12:24:07 GMT
 recorded_with: VCR 3.0.3
