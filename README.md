@@ -432,7 +432,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_create_post_0" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_create_post_1" target="_blank">
                 /api/v1/contracts/:contract_id/invoice_rules
             </a>
         </td>
@@ -443,12 +443,23 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PUT</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_update_patch_1" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_update_patch_2" target="_blank">
                 /api/v1/contracts/:contract_id/invoice_rules/:id
             </a>
         </td>
         <td>
             <code>client.invoice_rules.update(id, attributes_hash, contract_id: id)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>DELETE</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_destroy_delete_3" target="_blank">
+                /api/v1/contracts/:contract_id/invoice_rules/:id
+            </a>
+        </td>
+        <td>
+            <code>client.invoice_rules.destroy(id, contract_id: id)</code>
         </td>
     </tr>
 </table>
