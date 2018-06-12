@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: http://localhost:3000/api/v1/contracts/2/invoice_rules/120
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.16.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=5cf447d40db79bfd74bc4421cb89b2fd
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Tue, 12 Jun 2018 18:19:50 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 6a8dca02-c575-4dbe-84eb-fdddb9bb5b27
+      X-Runtime:
+      - '0.041259'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/2/invoice_rules/120
+  recorded_at: Tue, 12 Jun 2018 18:19:50 GMT
+recorded_with: VCR 3.0.3

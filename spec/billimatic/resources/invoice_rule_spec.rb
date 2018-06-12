@@ -1016,4 +1016,41 @@ describe Billimatic::Resources::InvoiceRule do
       end
     end
   end
+
+  describe '#destroy' do
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+
+      @http = Billimatic::Http.new('5cf447d40db79bfd74bc4421cb89b2fd')
+    end
+
+    subject { described_class.new(@http) }
+
+    it 'raises Billimatic::RequestError when contract is not found' do
+      VCR.use_cassette('/invoice_rules/destroy/failure/contract_not_found') do
+        expect { 
+          subject.destroy(48, contract_id: 50000) 
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql(404)
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when invoice_rule is not found' do
+      VCR.use_cassette('/invoice_rules/destroy/failure/invoice_rule_not_found') do
+        expect {
+          subject.destroy(120, contract_id: 2)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql(404)
+        end
+      end
+    end
+
+    it 'returns true when successfully deletes invoice_rule' do
+      VCR.use_cassette('/invoice_rules/destroy/success/invoice_rule_successfully_deleted') do
+        expect(subject.destroy(120, contract_id: 22)).to be true
+      end
+    end
+  end
 end
