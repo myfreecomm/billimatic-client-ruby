@@ -430,6 +430,17 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         <th>Client method</th>
     </tr>
     <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_index_get_0" target="_blank">
+                /api/v1/contracts/:contract_id/invoice_rules
+            </a>
+        </td>
+        <td>
+            <code>client.invoice_rules.list(contract_id: id)</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>POST</code></td>
         <td>
             <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_create_post_1" target="_blank">
