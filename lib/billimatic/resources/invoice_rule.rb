@@ -1,6 +1,12 @@
 module Billimatic
   module Resources
     class InvoiceRule < Base
+      def list(contract_id:)
+        http.get(
+          "/contracts/#{contract_id}#{resource_base_path}"
+        ) { |response| respond_with_collection(response) }
+      end
+
       def create(params, contract_id:)
         http.post(
           "/contracts/#{contract_id}#{resource_base_path}",

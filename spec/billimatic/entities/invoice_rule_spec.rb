@@ -4,6 +4,7 @@ describe Billimatic::Entities::InvoiceRule do
   let(:attributes) do
     {
       id: 1,
+      contract_id: 123,
       gross_value: 100.0,
       description: 'Faturamento',
       nfe_body: 'Corpo do faturamento',
@@ -62,8 +63,8 @@ describe Billimatic::Entities::InvoiceRule do
   subject { described_class.new(attributes) }
 
   it_behaves_like 'entity_attributes', [
-                    :id, :gross_value, :description, :nfe_body, :customer_id,
-                    :customer_type, :emites_service_values_id,
+                    :id, :contract_id, :gross_value, :description, :nfe_body,
+                    :customer_id, :customer_type, :emites_service_values_id,
                     :emites_service_value_name, :finance_category,
                     :finance_revenue_center, :finance_receive_via,
                     :myfinance_sale_account_id, :myfinance_sale_account_name,
