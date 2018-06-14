@@ -2,6 +2,7 @@ module Billimatic
   module Entities
     class InvoiceRule < Base
       attribute :id, Integer
+      attribute :contract_id, Integer
       attribute :gross_value, Decimal
       attribute :description, String
       attribute :nfe_body, String

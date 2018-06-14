@@ -10,6 +10,32 @@ describe Billimatic::Resources::InvoiceRule do
     expect(subject.http).to eq(http)
   end
 
+  describe '#list' do
+    it 'raises Billimatic::RequestError when contract is not found' do
+      VCR.use_cassette('/invoice_rules/list/failure/contract_not_found') do
+        expect {
+          subject.list(contract_id: 50_000)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql(404)
+        end
+      end
+    end
+
+    it 'returns collection of invoice rules on contract' do
+      VCR.use_cassette('/invoice_rules/list/success/not_empty_collection') do
+        result = subject.list(contract_id: 8818)
+
+        expect(result).not_to be_empty
+
+        result.each do |invoice_rule|
+          expect(invoice_rule).to be_a entity_klass
+          expect(invoice_rule.id).to eql 168132
+          expect(invoice_rule.contract_id).to eql 8818
+        end
+      end
+    end
+  end
+
   describe '#create' do
     let(:invoice_rule_params) do
       {
@@ -1013,6 +1039,34 @@ describe Billimatic::Resources::InvoiceRule do
           expect(invoice.days_until_automatic_nfe_emission).to eql(5)
           expect(invoice.automatic_email_template_id).to eql(2)
         end
+      end
+    end
+  end
+
+  describe '#destroy' do
+    it 'raises Billimatic::RequestError when contract is not found' do
+      VCR.use_cassette('/invoice_rules/destroy/failure/contract_not_found') do
+        expect {
+          subject.destroy(179986, contract_id: 50_000)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql(404)
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when invoice_rule is not found' do
+      VCR.use_cassette('/invoice_rules/destroy/failure/invoice_rule_not_found') do
+        expect {
+          subject.destroy(1_000_000, contract_id: 8818)
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql(404)
+        end
+      end
+    end
+
+    it 'returns true when successfully deletes invoice_rule' do
+      VCR.use_cassette('/invoice_rules/destroy/success/invoice_rule_successfully_deleted') do
+        expect(subject.destroy(179986, contract_id: 8818)).to be true
       end
     end
   end
