@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/contracts/50000/invoice_rules
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/50000/invoice_rules
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=c79e6686db0795fa89ddc74be3e79781
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
-      Date:
-      - Tue, 12 Jun 2018 19:11:35 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Thu, 14 Jun 2018 12:25:11 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,18 +39,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 00aca40e-e2ca-44c3-b367-dea751ca30fe
+      - 12d7d25e-1b76-491f-8747-b3f56630d38b
       X-Runtime:
-      - '1.053560'
+      - '0.015829'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: ''
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/50000/invoice_rules
-  recorded_at: Tue, 12 Jun 2018 19:11:35 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/50000/invoice_rules
+  recorded_at: Thu, 14 Jun 2018 12:25:11 GMT
 recorded_with: VCR 3.0.3

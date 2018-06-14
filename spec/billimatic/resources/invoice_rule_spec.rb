@@ -11,15 +11,6 @@ describe Billimatic::Resources::InvoiceRule do
   end
 
   describe '#list' do
-    before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-
-      @http = Billimatic::Http.new('c79e6686db0795fa89ddc74be3e79781')
-    end
-
-    subject { described_class.new(@http) }
-
     it 'raises Billimatic::RequestError when contract is not found' do
       VCR.use_cassette('/invoice_rules/list/failure/contract_not_found') do
         expect {
@@ -32,14 +23,14 @@ describe Billimatic::Resources::InvoiceRule do
 
     it 'returns collection of invoice rules on contract' do
       VCR.use_cassette('/invoice_rules/list/success/not_empty_collection') do
-        result = subject.list(contract_id: 107)
+        result = subject.list(contract_id: 8818)
 
         expect(result).not_to be_empty
 
         result.each do |invoice_rule|
           expect(invoice_rule).to be_a entity_klass
-          expect(invoice_rule.id).to eql 3518
-          expect(invoice_rule.contract_id).to eql 107
+          expect(invoice_rule.id).to eql 168132
+          expect(invoice_rule.contract_id).to eql 8818
         end
       end
     end
@@ -1053,19 +1044,10 @@ describe Billimatic::Resources::InvoiceRule do
   end
 
   describe '#destroy' do
-    before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-
-      @http = Billimatic::Http.new('5cf447d40db79bfd74bc4421cb89b2fd')
-    end
-
-    subject { described_class.new(@http) }
-
     it 'raises Billimatic::RequestError when contract is not found' do
       VCR.use_cassette('/invoice_rules/destroy/failure/contract_not_found') do
         expect {
-          subject.destroy(48, contract_id: 50000)
+          subject.destroy(179986, contract_id: 50_000)
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql(404)
         end
@@ -1075,7 +1057,7 @@ describe Billimatic::Resources::InvoiceRule do
     it 'raises Billimatic::RequestError when invoice_rule is not found' do
       VCR.use_cassette('/invoice_rules/destroy/failure/invoice_rule_not_found') do
         expect {
-          subject.destroy(120, contract_id: 2)
+          subject.destroy(1_000_000, contract_id: 8818)
         }.to raise_error(Billimatic::RequestError) do |error|
           expect(error.code).to eql(404)
         end
@@ -1084,7 +1066,7 @@ describe Billimatic::Resources::InvoiceRule do
 
     it 'returns true when successfully deletes invoice_rule' do
       VCR.use_cassette('/invoice_rules/destroy/success/invoice_rule_successfully_deleted') do
-        expect(subject.destroy(120, contract_id: 22)).to be true
+        expect(subject.destroy(179986, contract_id: 8818)).to be true
       end
     end
   end
