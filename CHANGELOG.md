@@ -2,6 +2,10 @@
 
 ## Next version
 
+## v0.17.0
+- Adds InvoiceRule#list and InvoiceRule#destroy endpoints.
+- Adds `contract_id` field on InvoiceRule entity.
+
 ## v0.16.0
 - Changes `scheduled_updates` field on InvoiceRule entity, to become a collection of scheduled_update hashes.
 
