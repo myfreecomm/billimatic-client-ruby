@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/people/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.17.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=5cf447d40db79bfd74bc4421cb89b2fd
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 15 Jun 2018 18:26:35 GMT
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"f58132495bc4d16127af652611264f07"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ea77ba13-4fe1-44ee-a531-aa627f0e192c
+      X-Runtime:
+      - '0.017063'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwZXJzb24iOnsiaWQiOjMsImFjY291bnRfaWQiOjIsIm5hbWUiOiJNw6Fy
+        Y2lvIEVkc29uIEdvbsOnYWx2ZXMiLCJjcGYiOiI1ODk2ODExNzgwMiIsImVt
+        YWlsIjoiIiwiemlwY29kZSI6IiIsImFkZHJlc3MiOiIiLCJudW1iZXIiOiIi
+        LCJjb21wbGVtZW50IjoiIiwiZGlzdHJpY3QiOiIiLCJjaXR5IjoiIiwic3Rh
+        dGUiOiIiLCJjb21tZW50cyI6IiIsImNsaWVudF9zaW5jZSI6bnVsbCwibXlm
+        aW5hbmNlX2N1c3RvbWVyX2lkIjpudWxsLCJteWZpbmFuY2VfZXJyb3JzIjpu
+        dWxsLCJjcmVhdGVkX2F0IjoiMDkvMDUvMjAxOCAxNDoyMTowOSAtMDM6MDAi
+        fX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/people/3
+  recorded_at: Fri, 15 Jun 2018 18:26:35 GMT
+recorded_with: VCR 3.0.3

@@ -10,6 +10,42 @@ describe Billimatic::Resources::Person do
     expect(subject.http).to eq(http)
   end
 
+  describe '#show' do
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+
+      @http = Billimatic::Http.new('5cf447d40db79bfd74bc4421cb89b2fd')
+    end
+
+    subject { described_class.new(@http)  }
+
+    it "raises Billimatic::RequestError with not found status when id isn't found" do
+      VCR.use_cassette('/people/show/failure/person_not_found') do
+        expect { subject.show(1_000_000) }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it "raises Billimatic::RequestError with not found status when trying to find person from another account" do
+      VCR.use_cassette('/people/show/failure/another_account_person_not_found') do
+        expect { subject.show(6) }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 404
+        end
+      end
+    end
+
+    it 'returns a person entity' do
+      VCR.use_cassette('/people/show/success') do
+        person = subject.show(3)
+
+        expect(person).to be_a entity_klass
+        expect(person.id). to eql 3
+      end
+    end
+  end
+
   describe '#search' do
     it 'raises Billimatic::RequestError when :cpf argument is nil' do
       VCR.use_cassette('/people/search/failure/null_argument') do
