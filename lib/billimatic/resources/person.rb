@@ -1,17 +1,11 @@
 module Billimatic
   module Resources
     class Person < Base
-      crud :create, :update, :destroy
+      crud :show, :create, :update, :destroy
 
       def initialize(http)
         @collection_name = 'people'
         super http
-      end
-
-      def show(id)
-        http.get("#{resource_base_path}/#{id}") do |response|
-          respond_with_entity(response)
-        end
       end
 
       def search(cpf:)
