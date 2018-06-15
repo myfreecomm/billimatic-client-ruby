@@ -41,7 +41,7 @@ describe Billimatic::Resources::Person do
         person = subject.show(3)
 
         expect(person).to be_a entity_klass
-        expect(person.id). to eql 3
+        expect(person.id).to eql 3
       end
     end
   end
