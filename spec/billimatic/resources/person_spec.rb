@@ -11,15 +11,6 @@ describe Billimatic::Resources::Person do
   end
 
   describe '#show' do
-    before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-
-      @http = Billimatic::Http.new('5cf447d40db79bfd74bc4421cb89b2fd')
-    end
-
-    subject { described_class.new(@http)  }
-
     it "raises Billimatic::RequestError with not found status when id isn't found" do
       VCR.use_cassette('/people/show/failure/person_not_found') do
         expect { subject.show(1_000_000) }.to raise_error(Billimatic::RequestError) do |error|
