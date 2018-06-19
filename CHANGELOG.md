@@ -2,6 +2,9 @@
 
 ## Next version
 
+## v0.18.0
+- Adds Person#show endpoint.
+
 ## v0.17.0
 - Adds InvoiceRule#list and InvoiceRule#destroy endpoints.
 - Adds `contract_id` field on InvoiceRule entity.
