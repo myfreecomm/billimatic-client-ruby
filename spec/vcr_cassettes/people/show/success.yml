@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/people/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.17.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 18 Jun 2018 12:20:33 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4cdc77043dfeda4f9cdb14a59a38a848"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 90f8c5b2-4d3f-40a5-9385-3bf28b272f18
+      X-Runtime:
+      - '0.007205'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwZXJzb24iOnsiaWQiOjMsImFjY291bnRfaWQiOjMyLCJuYW1lIjoiRnVs
+        YW5vIGRlIFRhbCIsImNwZiI6IjY0MDgwMTQ4Nzk4IiwiZW1haWwiOiJmdWxh
+        bm9AZGV0YWwuY29tIiwiemlwY29kZSI6IjIyNDYxMDIwIiwiYWRkcmVzcyI6
+        IlJ1YSBGYXJvIiwibnVtYmVyIjoiMzMiLCJjb21wbGVtZW50IjoiYXB0byA0
+        MiIsImRpc3RyaWN0IjoiSmFyZGltIEJvdMOibmljbyIsImNpdHkiOiJSaW8g
+        ZGUgSmFuZWlybyIsInN0YXRlIjoiUkoiLCJjb21tZW50cyI6Im9ic2VydmFu
+        ZG8gZnVsYW5vIGRlIHRhbCIsImNsaWVudF9zaW5jZSI6bnVsbCwibXlmaW5h
+        bmNlX2N1c3RvbWVyX2lkIjpudWxsLCJteWZpbmFuY2VfZXJyb3JzIjpudWxs
+        LCJjcmVhdGVkX2F0IjoiMDgvMDQvMjAxNiAxNjoyNToxOCAtMDM6MDAifX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people/3
+  recorded_at: Mon, 18 Jun 2018 12:20:33 GMT
+recorded_with: VCR 3.0.3

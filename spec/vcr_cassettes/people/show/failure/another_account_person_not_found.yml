@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/people/6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.17.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 18 Jun 2018 12:20:32 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - '09f24af4-9588-4b9b-acd6-6f4677afe3d3'
+      X-Runtime:
+      - '0.006496'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people/6
+  recorded_at: Mon, 18 Jun 2018 12:20:32 GMT
+recorded_with: VCR 3.0.3

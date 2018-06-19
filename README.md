@@ -551,6 +551,17 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_show_get_2" target="_blank">
+                /api/v1/people/:id
+            </a>
+        </td>
+        <td>
+            <code>client.people.show(id)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
             <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_search_get_0" target="_blank">
                 /api/v1/people/search?cpf=:cpf
             </a>
