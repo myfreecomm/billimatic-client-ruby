@@ -11,19 +11,48 @@ describe Billimatic::Resources::Organization do
   end
 
   describe '#search' do
-    it 'successfully returns an organization matching formatted cnpj' do
-      VCR.use_cassette('/organizations/search/success/formatted_cnpj') do
-        organization = subject.search(cnpj: "64.445.823/0001-03")
-        expect(organization).to be_a entity_klass
-        expect(organization.cnpj).to eql "64.445.823/0001-03"
-      end
-    end
+    context 'for development environment' do
+      before do
+        Billimatic.configuration.host = "http://localhost:3000"
+        Typhoeus::Expectation.clear
 
-    it 'successfully returns an organization matching cnpj without any formatting' do
-      VCR.use_cassette('/organizations/search/success/unformatted_cnpj') do
-        organization = subject.search(cnpj: "64445823000103")
-        expect(organization).to be_a entity_klass
-        expect(organization.cnpj).to eql "64.445.823/0001-03"
+        @http = Billimatic::Http.new('5d09f5c3dc8df35e225ad074b66f47e0')
+      end
+
+      subject { described_class.new(@http) }
+
+      it 'successfully returns an organization matching formatted cnpj' do
+        VCR.use_cassette('/organizations/search/success/formatted_cnpj') do
+          organization = subject.search(cnpj: "65.403.264/0001-31")
+          expect(organization).to be_a entity_klass
+          expect(organization.name).to eql "Companhia de Testes Filial Sul"
+          expect(organization.company_name).to eql "Companhia de Testes LTDA."
+          expect(organization.cnpj).to eql "65.403.264/0001-31"
+          expect(organization.address).to eql 'Avenida Paulista'
+          expect(organization.number).to eql "123"
+          expect(organization.complement).to eql "sl. 542"
+          expect(organization.zipcode).to eql "01311000"
+          expect(organization.district).to eql "Bela Vista"
+          expect(organization.city).to eql "São Paulo"
+          expect(organization.state).to eql "SP"
+        end
+      end
+
+      it 'successfully returns an organization matching cnpj without any formatting' do
+        VCR.use_cassette('/organizations/search/success/unformatted_cnpj') do
+          organization = subject.search(cnpj: "65403264000131")
+          expect(organization).to be_a entity_klass
+          expect(organization.name).to eql "Companhia de Testes Filial Sul"
+          expect(organization.company_name).to eql "Companhia de Testes LTDA."
+          expect(organization.cnpj).to eql "65.403.264/0001-31"
+          expect(organization.address).to eql 'Avenida Paulista'
+          expect(organization.number).to eql "123"
+          expect(organization.complement).to eql "sl. 542"
+          expect(organization.zipcode).to eql "01311000"
+          expect(organization.district).to eql "Bela Vista"
+          expect(organization.city).to eql "São Paulo"
+          expect(organization.state).to eql "SP"
+        end
       end
     end
 
@@ -69,15 +98,50 @@ describe Billimatic::Resources::Organization do
   end
 
   describe '#create' do
-    it 'successfully creates an organization with formatted cnpj' do
-      VCR.use_cassette('organizations/create/success/formatted_cnpj') do
-        organization = subject.create(
-          name: "Nova Organização", cnpj: "87.667.729/0001-02"
-        )
+    context 'for development environment' do
+      before do
+        Billimatic.configuration.host = "http://localhost:3000"
+        Typhoeus::Expectation.clear
 
-        expect(organization).to be_a entity_klass
-        expect(organization.name).to eql 'Nova Organização'
-        expect(organization.cnpj).to eql "87.667.729/0001-02"
+        @http = Billimatic::Http.new('5d09f5c3dc8df35e225ad074b66f47e0')
+      end
+
+      subject { described_class.new(@http) }
+
+      it 'successfully creates an organization with formatted cnpj' do
+        VCR.use_cassette('organizations/create/success/formatted_cnpj') do
+          organization = subject.create(
+            name: "Nova Organização", company_name: 'Nova Organização LTDA.',
+            cnpj: "87.667.729/0001-02", address: 'Praça da Sé', number: '123',
+            complement: 'conj. 402', zipcode: '01001000', district: 'Sé',
+            city: 'São Paulo', state: 'SP'
+          )
+
+          expect(organization).to be_a entity_klass
+          expect(organization.name).to eql 'Nova Organização'
+          expect(organization.company_name).to eql 'Nova Organização LTDA.'
+          expect(organization.cnpj).to eql "87.667.729/0001-02"
+          expect(organization.address).to eql 'Praça da Sé'
+          expect(organization.number).to eql "123"
+          expect(organization.complement).to eql "conj. 402"
+          expect(organization.zipcode).to eql "01001000"
+          expect(organization.district).to eql "Sé"
+          expect(organization.city).to eql "São Paulo"
+          expect(organization.state).to eql "SP"
+        end
+      end
+
+      it 'raises Billimatic::RequestError when zipcode is invalid' do
+        VCR.use_cassette('organizations/create/failure/invalid_zipcode') do
+          expect {
+            subject.create(
+              name: 'Nova Organização', cnpj: "84.297.903/0001-76",
+              zipcode: '123'
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
       end
     end
 
@@ -125,11 +189,46 @@ describe Billimatic::Resources::Organization do
   end
 
   describe '#update' do
-    it 'successfully updates an organization' do
-      VCR.use_cassette('organizations/update/success/simple_update') do
-        organization = subject.update(1839, name: 'Organização atualizada')
-        expect(organization).to be_a entity_klass
-        expect(organization.name).to eql 'Organização atualizada'
+    context 'for development environment' do
+      before do
+        Billimatic.configuration.host = "http://localhost:3000"
+        Typhoeus::Expectation.clear
+
+        @http = Billimatic::Http.new('5d09f5c3dc8df35e225ad074b66f47e0')
+      end
+
+      subject { described_class.new(@http) }
+
+      it 'successfully updates an organization' do
+        VCR.use_cassette('organizations/update/success/simple_update') do
+          organization = subject.update(
+            29, name: 'Organização atualizada',
+            company_name: 'Nova Organização LTDA.', address: 'Praça da Sé', number: '123',
+            complement: 'conj. 402', zipcode: '01001000', district: 'Sé',
+            city: 'São Paulo', state: 'SP'
+          )
+
+          expect(organization).to be_a entity_klass
+          expect(organization.name).to eql 'Organização atualizada'
+          expect(organization.company_name).to eql 'Nova Organização LTDA.'
+          expect(organization.address).to eql 'Praça da Sé'
+          expect(organization.number).to eql "123"
+          expect(organization.complement).to eql "conj. 402"
+          expect(organization.zipcode).to eql "01001000"
+          expect(organization.district).to eql "Sé"
+          expect(organization.city).to eql "São Paulo"
+          expect(organization.state).to eql "SP"
+        end
+      end
+
+      it 'raises Billimatic::RequestError if zipcode is invalid' do
+        VCR.use_cassette('organizations/update/failure/invalid_zipcode') do
+          expect {
+            subject.update(29, zipcode: '1234')
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
       end
     end
 

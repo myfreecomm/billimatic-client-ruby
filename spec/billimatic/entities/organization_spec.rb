@@ -14,6 +14,8 @@ describe Billimatic::Entities::Organization do
   subject { described_class.new(attributes) }
 
   it_behaves_like 'entity_attributes', [
-                    :id, :account_id, :name, :cnpj, :created_at
+                    :id, :account_id, :name, :company_name, :cnpj, :address,
+                    :number, :complement, :zipcode, :district, :city, :state,
+                    :created_at
                   ]
 end
