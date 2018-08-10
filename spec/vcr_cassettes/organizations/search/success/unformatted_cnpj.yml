@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/organizations/search?cnpj=65403264000131
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/search?cnpj=25029551000109
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,43 +22,48 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Wed, 08 Aug 2018 13:28:05 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Fri, 10 Aug 2018 14:14:54 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"fdbc947d705fe0d23431d079f274048d"
+      Etag:
+      - W/"c8679537603d5657af69145a8d33a839"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d92dc005-ec5f-48bb-ab59-6080901bfd22
+      - 1d9b5ed9-708e-4d05-a469-3157f7d42cfb
       X-Runtime:
-      - '0.172446'
+      - '0.029948'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJvcmdhbml6YXRpb24iOnsiaWQiOjI5LCJhY2NvdW50X2lkIjoxLCJuYW1l
-        IjoiQ29tcGFuaGlhIGRlIFRlc3RlcyBGaWxpYWwgU3VsIiwiY29tcGFueV9u
-        YW1lIjoiQ29tcGFuaGlhIGRlIFRlc3RlcyBMVERBLiIsImNucGoiOiI2NS40
-        MDMuMjY0LzAwMDEtMzEiLCJhZGRyZXNzIjoiQXZlbmlkYSBQYXVsaXN0YSIs
-        Im51bWJlciI6IjEyMyIsImNvbXBsZW1lbnQiOiJzbC4gNTQyIiwiemlwY29k
-        ZSI6IjAxMzExMDAwIiwiZGlzdHJpY3QiOiJCZWxhIFZpc3RhIiwiY2l0eSI6
-        IlPDo28gUGF1bG8iLCJzdGF0ZSI6IlNQIiwiY3JlYXRlZF9hdCI6IjI0LzA3
-        LzIwMTggMTU6MzM6MTcgLTAzOjAwIn19
+        eyJvcmdhbml6YXRpb24iOnsiaWQiOjE4NDAsImFjY291bnRfaWQiOjMyLCJu
+        YW1lIjoiTm92YSBPcmdhbml6YcOnw6NvIGNvbSBDTlBKIHNlbSBmb3JtYXRv
+        IiwiY29tcGFueV9uYW1lIjoiTm92YSBPcmdhbml6YcOnw6NvIGNvbSBDTlBK
+        IHNlbSBmb3JtYXRvIExUREEiLCJjbnBqIjoiMjUuMDI5LjU1MS8wMDAxLTA5
+        IiwiYWRkcmVzcyI6IkF2ZW5pZGEgZGFzIEFtZWl4ZWlyYXMiLCJudW1iZXIi
+        OiIzMjQiLCJjb21wbGVtZW50IjoiOcK6IEFuZGFyIiwiemlwY29kZSI6IjA2
+        NjU0NjkwIiwiZGlzdHJpY3QiOiJKYXJkaW0gTWFyaWEgQ2Vjw61saWEiLCJj
+        aXR5IjoiSXRhcGV2aSIsInN0YXRlIjoiU1AiLCJjcmVhdGVkX2F0IjoiMjYv
+        MDkvMjAxNiAxMDo0MjozNiAtMDM6MDAifX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/organizations/search?cnpj=65403264000131
-  recorded_at: Wed, 08 Aug 2018 13:28:05 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/search?cnpj=25029551000109
+  recorded_at: Fri, 10 Aug 2018 14:14:54 GMT
 recorded_with: VCR 3.0.3

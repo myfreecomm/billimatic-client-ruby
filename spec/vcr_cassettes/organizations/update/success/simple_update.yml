@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: http://localhost:3000/api/v1/organizations/29
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/2053
     body:
       encoding: UTF-8
       string: '{"name":"Organização atualizada","company_name":"Nova Organização LTDA.","address":"Praça
@@ -16,7 +16,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -24,43 +24,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Wed, 08 Aug 2018 13:39:30 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Fri, 10 Aug 2018 14:36:52 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"0efafa619012f81829b66fce3122d500"
+      Etag:
+      - W/"32d5bf01323cd1b18beb3e778534e689"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8c4d4198-b347-4d1c-a227-44ff14e70d77
+      - ea1da997-9a93-4c2e-8803-c03c8bab62aa
       X-Runtime:
-      - '1.532440'
+      - '0.239147'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJvcmdhbml6YXRpb24iOnsiaWQiOjI5LCJhY2NvdW50X2lkIjoxLCJuYW1l
-        IjoiT3JnYW5pemHDp8OjbyBhdHVhbGl6YWRhIiwiY29tcGFueV9uYW1lIjoi
-        Tm92YSBPcmdhbml6YcOnw6NvIExUREEuIiwiY25waiI6IjY1LjQwMy4yNjQv
-        MDAwMS0zMSIsImFkZHJlc3MiOiJQcmHDp2EgZGEgU8OpIiwibnVtYmVyIjoi
-        MTIzIiwiY29tcGxlbWVudCI6ImNvbmouIDQwMiIsInppcGNvZGUiOiIwMTAw
-        MTAwMCIsImRpc3RyaWN0IjoiU8OpIiwiY2l0eSI6IlPDo28gUGF1bG8iLCJz
-        dGF0ZSI6IlNQIiwiY3JlYXRlZF9hdCI6IjI0LzA3LzIwMTggMTU6MzM6MTcg
-        LTAzOjAwIn19
+        eyJvcmdhbml6YXRpb24iOnsiaWQiOjIwNTMsImFjY291bnRfaWQiOjMyLCJu
+        YW1lIjoiT3JnYW5pemHDp8OjbyBhdHVhbGl6YWRhIiwiY29tcGFueV9uYW1l
+        IjoiTm92YSBPcmdhbml6YcOnw6NvIExUREEuIiwiY25waiI6Ijk1LjUzMi4z
+        NDkvMDAwMS04MCIsImFkZHJlc3MiOiJQcmHDp2EgZGEgU8OpIiwibnVtYmVy
+        IjoiMTIzIiwiY29tcGxlbWVudCI6ImNvbmouIDQwMiIsInppcGNvZGUiOiIw
+        MTAwMTAwMCIsImRpc3RyaWN0IjoiU8OpIiwiY2l0eSI6IlPDo28gUGF1bG8i
+        LCJzdGF0ZSI6IlNQIiwiY3JlYXRlZF9hdCI6IjEwLzA4LzIwMTggMTE6Mjc6
+        MTEgLTAzOjAwIn19
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/organizations/29
-  recorded_at: Wed, 08 Aug 2018 13:39:30 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/2053
+  recorded_at: Fri, 10 Aug 2018 14:36:53 GMT
 recorded_with: VCR 3.0.3

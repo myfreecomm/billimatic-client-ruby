@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/organizations
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations
     body:
       encoding: UTF-8
       string: '{"name":"Nova Organização","cnpj":"84.297.903/0001-76","zipcode":"123"}'
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
       Accept-Language:
       - pt-br
   response:
@@ -22,13 +22,15 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Date:
-      - Wed, 08 Aug 2018 13:36:03 GMT
+      Server:
+      - Cowboy
       Connection:
       - close
+      Date:
+      - Fri, 10 Aug 2018 14:31:38 GMT
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,13 +39,15 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - c5587483-bb07-4c41-86df-24b8cbc085c7
+      - b4241ed2-de05-4397-94a5-1d0f379afcc5
       X-Runtime:
-      - '0.709567'
+      - '0.013854'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -51,6 +55,6 @@ http_interactions:
         UCB2w6FsaWRvLiJdfX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/organizations
-  recorded_at: Wed, 08 Aug 2018 13:36:03 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations
+  recorded_at: Fri, 10 Aug 2018 14:31:38 GMT
 recorded_with: VCR 3.0.3
