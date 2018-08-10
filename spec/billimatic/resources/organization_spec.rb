@@ -11,8 +11,6 @@ describe Billimatic::Resources::Organization do
   end
 
   describe '#search' do
-    subject { described_class.new(http) }
-
     it 'successfully returns an organization matching formatted cnpj' do
       VCR.use_cassette('/organizations/search/success/formatted_cnpj') do
         organization = subject.search(cnpj: "87.667.729/0001-02")
@@ -89,8 +87,6 @@ describe Billimatic::Resources::Organization do
   end
 
   describe '#create' do
-    subject { described_class.new(http) }
-
     it 'successfully creates an organization with formatted cnpj' do
       VCR.use_cassette('organizations/create/success/formatted_cnpj') do
         organization = subject.create(
@@ -171,8 +167,6 @@ describe Billimatic::Resources::Organization do
   end
 
   describe '#update' do
-    subject { described_class.new(http) }
-
     it 'successfully updates an organization' do
       VCR.use_cassette('organizations/update/success/simple_update') do
         organization = subject.update(
