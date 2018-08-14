@@ -5,9 +5,7 @@ http_interactions:
     uri: https://sandbox.billimatic.com.br/api/v1/organizations/2053
     body:
       encoding: UTF-8
-      string: '{"name":"Organização atualizada","company_name":"Nova Organização LTDA.","address":"Praça
-        da Sé","number":"123","complement":"conj. 402","zipcode":"01001000","district":"Sé","city":"São
-        Paulo","state":"SP"}'
+      string: '{"zipcode":"1234"}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.18.0
@@ -21,15 +19,15 @@ http_interactions:
       - pt-br
   response:
     status:
-      code: 200
-      message: OK
+      code: 422
+      message: Unprocessable Entity
     headers:
       Server:
       - Cowboy
       Connection:
       - close
       Date:
-      - Fri, 10 Aug 2018 14:36:52 GMT
+      - Fri, 10 Aug 2018 14:38:19 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -38,14 +36,12 @@ http_interactions:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - W/"32d5bf01323cd1b18beb3e778534e689"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - ea1da997-9a93-4c2e-8803-c03c8bab62aa
+      - 00907a77-7008-45be-91b0-b0e3b35ef5d3
       X-Runtime:
-      - '0.239147'
+      - '0.159133'
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -55,16 +51,10 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJvcmdhbml6YXRpb24iOnsiaWQiOjIwNTMsImFjY291bnRfaWQiOjMyLCJu
-        YW1lIjoiT3JnYW5pemHDp8OjbyBhdHVhbGl6YWRhIiwiY29tcGFueV9uYW1l
-        IjoiTm92YSBPcmdhbml6YcOnw6NvIExUREEuIiwiY25waiI6Ijk1LjUzMi4z
-        NDkvMDAwMS04MCIsImFkZHJlc3MiOiJQcmHDp2EgZGEgU8OpIiwibnVtYmVy
-        IjoiMTIzIiwiY29tcGxlbWVudCI6ImNvbmouIDQwMiIsInppcGNvZGUiOiIw
-        MTAwMTAwMCIsImRpc3RyaWN0IjoiU8OpIiwiY2l0eSI6IlPDo28gUGF1bG8i
-        LCJzdGF0ZSI6IlNQIiwiY3JlYXRlZF9hdCI6IjEwLzA4LzIwMTggMTE6Mjc6
-        MTEgLTAzOjAwIn19
+        eyJlcnJvcnMiOnsiemlwY29kZSI6WyJQb3IgZmF2b3IgZGlnaXRlIHVtIENF
+        UCB2w6FsaWRvLiJdfX0=
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/2053
-  recorded_at: Fri, 10 Aug 2018 14:36:53 GMT
+  recorded_at: Fri, 10 Aug 2018 14:38:19 GMT
 recorded_with: VCR 3.0.3

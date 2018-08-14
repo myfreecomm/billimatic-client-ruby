@@ -2,63 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/organizations/search?cnpj=17.799.377%2F0001-55
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/search?cnpj=87.667.729%2F0001-02
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Billimatic Ruby Client v0.5.1
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Authorization:
-      - Token token=d0cb3c0eae88857de3266c7b6dd7298d
-      Accept-Language:
-      - pt-br
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
-      ETag:
-      - W/"88bb7596dc3918a5950acb24c0acb767"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 8d6eeee5-e23e-4526-8f01-87bdad71f84a
-      X-Runtime:
-      - '0.033826'
-      Vary:
-      - Origin
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: '{"organization":{"id":4,"account_id":1,"name":"Companhia de Testes","cnpj":"17.799.377/0001-55","created_at":"24/02/2016
-        13:26:59 -03:00"}}'
-    http_version: '1.1'
-    adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/organizations/search?cnpj=17.799.377%2F0001-55
-  recorded_at: Wed, 21 Sep 2016 15:27:53 GMT
-- request:
-    method: get
-    uri: https://sandbox.billimatic.com.br/api/v1/organizations/search?cnpj=64.445.823%2F0001-03
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Billimatic Ruby Client v0.5.1
+      - Billimatic Ruby Client v0.18.0
       Accept:
       - application/json
       Content-Type:
@@ -74,10 +24,10 @@ http_interactions:
     headers:
       Server:
       - Cowboy
-      Date:
-      - Mon, 26 Sep 2016 13:39:06 GMT
       Connection:
-      - keep-alive
+      - close
+      Date:
+      - Fri, 10 Aug 2018 14:08:58 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -87,25 +37,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b2fe518be208eec1f30f99f13981ff5f"
+      - W/"03ef2b6bbf755a32ec671244544431e9"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 04023e71-4504-4ecf-9098-e9c7d5ae7096
+      - 89b38b20-08d1-4d67-ac0a-9607550279b5
       X-Runtime:
-      - '0.030942'
+      - '0.013241'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
       - Origin
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 vegur
     body:
-      encoding: UTF-8
-      string: '{"organization":{"id":564,"account_id":32,"name":"Sample SaaS Company","cnpj":"64.445.823/0001-03","created_at":"07/04/2016
-        16:32:03 -03:00"}}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvcmdhbml6YXRpb24iOnsiaWQiOjIwNTIsImFjY291bnRfaWQiOjMyLCJu
+        YW1lIjoiTm92YSBPcmdhbml6YcOnw6NvIiwiY29tcGFueV9uYW1lIjoiTm92
+        YSBPcmdhbml6YcOnw6NvIExUREEiLCJjbnBqIjoiODcuNjY3LjcyOS8wMDAx
+        LTAyIiwiYWRkcmVzcyI6IlJ1YSBCYWxlaWEiLCJudW1iZXIiOiI4NTciLCJj
+        b21wbGVtZW50Ijoic2wuIDU0MiIsInppcGNvZGUiOiIwOTk3MTAwMCIsImRp
+        c3RyaWN0IjoiRWxkb3JhZG8iLCJjaXR5IjoiRGlhZGVtYSIsInN0YXRlIjoi
+        U1AiLCJjcmVhdGVkX2F0IjoiMTAvMDgvMjAxOCAxMDo1Mjo0MSAtMDM6MDAi
+        fX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/search?cnpj=64.445.823%2F0001-03
-  recorded_at: Mon, 26 Sep 2016 13:39:07 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/search?cnpj=87.667.729%2F0001-02
+  recorded_at: Fri, 10 Aug 2018 14:08:58 GMT
 recorded_with: VCR 3.0.3

@@ -5,9 +5,7 @@ http_interactions:
     uri: https://sandbox.billimatic.com.br/api/v1/organizations
     body:
       encoding: UTF-8
-      string: '{"name":"Nova Organização","company_name":"Nova Organização LTDA.","cnpj":"95.532.349/0001-80","address":"Praça
-        da Sé","number":"123","complement":"conj. 402","zipcode":"01001000","district":"Sé","city":"São
-        Paulo","state":"SP"}'
+      string: '{"name":"Nova Organização","cnpj":"84.297.903/0001-76","zipcode":"123"}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.18.0
@@ -21,15 +19,15 @@ http_interactions:
       - pt-br
   response:
     status:
-      code: 201
-      message: Created
+      code: 422
+      message: Unprocessable Entity
     headers:
       Server:
       - Cowboy
       Connection:
       - close
       Date:
-      - Fri, 10 Aug 2018 14:27:11 GMT
+      - Fri, 10 Aug 2018 14:31:38 GMT
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -38,14 +36,12 @@ http_interactions:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - W/"c05e29bb225a8ee02bb940db54b66ff7"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - b1720b72-fa02-44b2-8b9b-f4eb05c754c0
+      - b4241ed2-de05-4397-94a5-1d0f379afcc5
       X-Runtime:
-      - '0.048440'
+      - '0.013854'
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -55,16 +51,10 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJvcmdhbml6YXRpb24iOnsiaWQiOjIwNTMsImFjY291bnRfaWQiOjMyLCJu
-        YW1lIjoiTm92YSBPcmdhbml6YcOnw6NvIiwiY29tcGFueV9uYW1lIjoiTm92
-        YSBPcmdhbml6YcOnw6NvIExUREEuIiwiY25waiI6Ijk1LjUzMi4zNDkvMDAw
-        MS04MCIsImFkZHJlc3MiOiJQcmHDp2EgZGEgU8OpIiwibnVtYmVyIjoiMTIz
-        IiwiY29tcGxlbWVudCI6ImNvbmouIDQwMiIsInppcGNvZGUiOiIwMTAwMTAw
-        MCIsImRpc3RyaWN0IjoiU8OpIiwiY2l0eSI6IlPDo28gUGF1bG8iLCJzdGF0
-        ZSI6IlNQIiwiY3JlYXRlZF9hdCI6IjEwLzA4LzIwMTggMTE6Mjc6MTEgLTAz
-        OjAwIn19
+        eyJlcnJvcnMiOnsiemlwY29kZSI6WyJQb3IgZmF2b3IgZGlnaXRlIHVtIENF
+        UCB2w6FsaWRvLiJdfX0=
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.billimatic.com.br/api/v1/organizations
-  recorded_at: Fri, 10 Aug 2018 14:27:11 GMT
+  recorded_at: Fri, 10 Aug 2018 14:31:38 GMT
 recorded_with: VCR 3.0.3
