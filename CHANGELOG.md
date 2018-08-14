@@ -2,6 +2,9 @@
 
 ## Next version
 
+## v0.18.1
+- Adds `company_name`, `address`, `number`, `complement`, `zipcode`, `district`, `city` and `state` attributes on Organization entity.
+
 ## v0.18.0
 - Adds Person#show endpoint.
 
