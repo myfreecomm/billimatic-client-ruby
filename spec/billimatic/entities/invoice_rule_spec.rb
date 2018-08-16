@@ -18,6 +18,7 @@ describe Billimatic::Entities::InvoiceRule do
       finance_receive_via: 'bank',
       cobrato_charge_config_id: 1,
       cobrato_charge_config_name: 'charge',
+      notify_customer: true,
       additional_information: {
         id: 1,
         init_date: '09-01-2016',
@@ -72,7 +73,7 @@ describe Billimatic::Entities::InvoiceRule do
                     :cobrato_charge_template_id, :cobrato_charge_template_name,
                     :management_type, :days_until_automatic_nfe_emission,
                     :automatic_nfe_issue_date, :automatic_email_template_id,
-                    :additional_information, :services,
+                    :notify_customer, :additional_information, :services,
                     :scheduled_updates, :receivables_additional_information,
                     :payment_information
                   ]
