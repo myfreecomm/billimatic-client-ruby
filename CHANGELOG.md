@@ -2,6 +2,9 @@
 
 ## Next version
 
+## v0.18.2
+- Adds `notify_customer` attribute on InvoiceRule entity.
+
 ## v0.18.1
 - Adds `company_name`, `address`, `number`, `complement`, `zipcode`, `district`, `city` and `state` attributes on Organization entity.
 
