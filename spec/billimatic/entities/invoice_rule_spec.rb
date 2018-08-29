@@ -73,8 +73,8 @@ describe Billimatic::Entities::InvoiceRule do
                     :cobrato_charge_template_id, :cobrato_charge_template_name,
                     :management_type, :days_until_automatic_nfe_emission,
                     :automatic_nfe_issue_date, :automatic_email_template_id,
-                    :notify_customer, :additional_information, :services,
-                    :scheduled_updates, :receivables_additional_information,
+                    :notification_ruler_id, :notify_customer, :additional_information,
+                    :services, :scheduled_updates, :receivables_additional_information,
                     :payment_information
                   ]
 end
