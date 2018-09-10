@@ -10,6 +10,28 @@ describe Billimatic::Resources::Person do
     expect(subject.http).to eq(http)
   end
 
+  describe '#list' do
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+      @http = Billimatic::Http.new('25b95d42bf543580da7d47d04782b3c1')
+    end
+
+    subject { described_class.new(@http) }
+
+    it 'returns all people for an account' do
+      VCR.use_cassette('/people/list/success/all_people') do
+        people = subject.list
+
+        expect(people).not_to be_empty
+        expect(people.count).to eql 4
+
+        person = people.first
+        expect(person).to be_a(entity_klass)
+      end
+    end
+  end
+
   describe '#show' do
     it "raises Billimatic::RequestError with not found status when id isn't found" do
       VCR.use_cassette('/people/show/failure/person_not_found') do
