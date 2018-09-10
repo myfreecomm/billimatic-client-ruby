@@ -11,6 +11,28 @@ describe Billimatic::Resources::Company do
     expect(subject.http).to eq(http)
   end
 
+  describe '#list' do
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+      @http = Billimatic::Http.new('5d09f5c3dc8df35e225ad074b66f47e0')
+    end
+
+    subject { described_class.new(@http) }
+
+    it 'returns all companies for an account' do
+      VCR.use_cassette('/companies/list/success/all_companies') do
+        result = subject.list
+
+        expect(result).not_to be_empty
+        expect(result.count).to eql 32
+
+        company = result.first
+        expect(company).to be_a(entity_klass)
+      end
+    end
+  end
+
   describe '#search' do
     it 'returns an array of companies' do
       VCR.use_cassette('companies/search/success') do
