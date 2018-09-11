@@ -11,20 +11,12 @@ describe Billimatic::Resources::Person do
   end
 
   describe '#list' do
-    before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-      @http = Billimatic::Http.new('25b95d42bf543580da7d47d04782b3c1')
-    end
-
-    subject { described_class.new(@http) }
-
     it 'returns all people for an account' do
       VCR.use_cassette('/people/list/success/all_people') do
         people = subject.list
 
         expect(people).not_to be_empty
-        expect(people.count).to eql 4
+        expect(people.count).to eql 2
 
         person = people.first
         expect(person).to be_a(entity_klass)
