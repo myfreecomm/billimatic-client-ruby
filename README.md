@@ -495,9 +495,20 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_index_get_1" target="_blank">
+                /api/v1/companies
+            </a>
+        </td>
+        <td>
+            <code>client.companies.list</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_create_post_1" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_create_post_2" target="_blank">
                 /api/v1/companies
             </a>
         </td>
@@ -508,7 +519,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_show_get_2" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_show_get_3" target="_blank">
                 /api/v1/companies/:id
             </a>
         </td>
@@ -519,7 +530,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_update_patch_3" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_update_patch_4" target="_blank">
                 /api/v1/companies/:id
             </a>
         </td>
@@ -530,7 +541,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_destroy_delete_4" target="_blank">
+            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_destroy_delete_5" target="_blank">
                 /api/v1/companies/:id
             </a>
         </td>
