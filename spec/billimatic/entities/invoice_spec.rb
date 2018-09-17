@@ -67,6 +67,6 @@ describe Billimatic::Entities::Invoice do
                     :cobrato_charge_template_id, :cobrato_charge_template_name,
                     :management_type, :days_until_automatic_nfe_emission,
                     :automatic_nfe_issue_date, :automatic_email_template_id,
-                    :approval_status, :payment_information
+                    :notification_ruler_id, :approval_status, :payment_information
                   ]
 end

@@ -17,6 +17,8 @@ module Billimatic
       attribute :readjustment_month_quantity, Integer
       attribute :price_index, String
       attribute :readjustment_days_until_update, Integer
+      attribute :billet_notification_ruler_id, Integer
+      attribute :payment_gateway_notification_ruler_id, Integer
       attribute :emites_service_values_id, Integer
       attribute :emites_service_value_name, String
       attribute :cobrato_billet_charge_config_id, Integer

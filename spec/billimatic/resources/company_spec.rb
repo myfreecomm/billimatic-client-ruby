@@ -11,6 +11,20 @@ describe Billimatic::Resources::Company do
     expect(subject.http).to eq(http)
   end
 
+  describe '#list' do
+    it 'returns all companies for an account' do
+      VCR.use_cassette('/companies/list/success/all_companies') do
+        result = subject.list
+
+        expect(result).not_to be_empty
+        expect(result.count).to eql 4
+
+        company = result.first
+        expect(company).to be_a(entity_klass)
+      end
+    end
+  end
+
   describe '#search' do
     it 'returns an array of companies' do
       VCR.use_cassette('companies/search/success') do

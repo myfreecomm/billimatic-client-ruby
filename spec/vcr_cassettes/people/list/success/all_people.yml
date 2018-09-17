@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/people
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.18.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Tue, 11 Sep 2018 12:38:34 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"43d77ee275fa169e02147b96c69e2b8a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7e0072ef-9b11-4c55-87c1-d02577cb8ef2
+      X-Runtime:
+      - '0.012673'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwZW9wbGUiOlt7ImlkIjozLCJhY2NvdW50X2lkIjozMiwibmFtZSI6IkZ1
+        bGFubyBkZSBUYWwiLCJjcGYiOiI2NDA4MDE0ODc5OCIsImVtYWlsIjoiZnVs
+        YW5vQGRldGFsLmNvbSIsInppcGNvZGUiOiIyMjQ2MTAyMCIsImFkZHJlc3Mi
+        OiJSdWEgRmFybyIsIm51bWJlciI6IjMzIiwiY29tcGxlbWVudCI6ImFwdG8g
+        NDIiLCJkaXN0cmljdCI6IkphcmRpbSBCb3TDom5pY28iLCJjaXR5IjoiUmlv
+        IGRlIEphbmVpcm8iLCJzdGF0ZSI6IlJKIiwiY29tbWVudHMiOiJvYnNlcnZh
+        bmRvIGZ1bGFubyBkZSB0YWwiLCJjbGllbnRfc2luY2UiOm51bGwsIm15Zmlu
+        YW5jZV9jdXN0b21lcl9pZCI6bnVsbCwibXlmaW5hbmNlX2Vycm9ycyI6bnVs
+        bCwiY3JlYXRlZF9hdCI6IjA4LzA0LzIwMTYgMTY6MjU6MTggLTAzOjAwIn0s
+        eyJpZCI6MTE5NCwiYWNjb3VudF9pZCI6MzIsIm5hbWUiOiJQZXNzb2EgRsOt
+        c2ljYSIsImNwZiI6IjcxNzgxMDYyNTUyIiwiZW1haWwiOiJwZXNzb2FAdGVz
+        dGUuY29tLmJyIiwiemlwY29kZSI6IjAxMDAyMDAwIiwiYWRkcmVzcyI6IlJ1
+        YSBEaXJlaXRhIiwibnVtYmVyIjoiMTIiLCJjb21wbGVtZW50IjoiIiwiZGlz
+        dHJpY3QiOiJTw6kiLCJjaXR5IjoiU8OjbyBQYXVsbyIsInN0YXRlIjoiU1Ai
+        LCJjb21tZW50cyI6IiIsImNsaWVudF9zaW5jZSI6bnVsbCwibXlmaW5hbmNl
+        X2N1c3RvbWVyX2lkIjpudWxsLCJteWZpbmFuY2VfZXJyb3JzIjpudWxsLCJj
+        cmVhdGVkX2F0IjoiMTkvMDkvMjAxNiAxMjoxMzoxMSAtMDM6MDAifV19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/people
+  recorded_at: Tue, 11 Sep 2018 12:38:34 GMT
+recorded_with: VCR 3.0.3

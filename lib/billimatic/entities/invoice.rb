@@ -36,6 +36,7 @@ module Billimatic
       attribute :days_until_automatic_nfe_emission, Integer
       attribute :automatic_nfe_issue_date, Date
       attribute :automatic_email_template_id, Integer
+      attribute :notification_ruler_id, Integer
       attribute :receivables, [Receivable]
       attribute :services, [Service]
       attribute :payment_information, PaymentInformation
