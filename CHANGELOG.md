@@ -2,6 +2,13 @@
 
 ## Next version
 
+## v0.19.0
+- Adds Company#list endpoint.
+- Adds Person#list endpoint.
+- Adds `notification_ruler_id` attribute on Invoice entity.
+- Adds `notification_ruler_id` attribute on InvoiceRule entity.
+- Adds `billet_notification_ruler_id` and `payment_gateway_notification_ruler_id` attributes on Plan entity.
+
 ## v0.18.2
 - Adds `notify_customer` attribute on InvoiceRule entity.
 
