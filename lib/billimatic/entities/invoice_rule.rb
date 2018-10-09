@@ -25,6 +25,7 @@ module Billimatic
       attribute :automatic_email_template_id, Integer
       attribute :notification_ruler_id, Integer
       attribute :notify_customer, Boolean
+      attribute :apply_negative_updates, Boolean
       attribute :services, Array[Service]
       attribute :additional_information, Hash
       attribute :scheduled_updates, Array[Hash]
