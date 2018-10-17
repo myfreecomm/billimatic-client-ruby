@@ -2,6 +2,9 @@
 
 ## Next version
 
+## v0.19.1
+- Adds `apply_negative_updates` attribute on InvoiceRule entity.
+
 ## v0.19.0
 - Adds Company#list endpoint.
 - Adds Person#list endpoint.
