@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/contracts/221/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"invoice_template_id":16,"additional_information":{"title":"Regra
+        por template incompleto","init_date":"2018-12-17"},"receivables_additional_information":{"day_quantity":7,"parcel_number":2},"gross_value":79.5,"myfinance_sale_account_id":35,"myfinance_sale_account_name":"Boletos"}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.19.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"0d9fc12aafeca480bf4927a024d38786"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 21dfc0dd-709e-40d0-a063-963d90b09c09
+      X-Runtime:
+      - '0.272081'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"id":6775,"contract_id":221,"issue_date":null,"estimated_issue_date":null,"gross_value":"79.5","payment_value":"79.5","description":"teste","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"17/12/2018
+        08:32:54 -02:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":21,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":"","finance_category":"","finance_revenue_center":"","myfinance_sale_account_id":35,"myfinance_sale_account_name":"Boletos","cobrato_charge_config_id":null,"cobrato_charge_config_name":"","cobrato_charge_template_id":null,"cobrato_charge_template_name":"","days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","notification_ruler_id":null,"notify_customer":false,"apply_negative_updates":false,"receivables":[],"services":[],"attachments":[],"payment_information":{"id":7028,"payment_method":"billet","cobrato_card_id":"--","card_expiration_month":"--","card_expiration_year":"--","installments":1,"created_at":"17/12/2018
+        08:32:54 -02:00"},"additional_information":{"id":349,"init_date":"2018-12-17","title":"Regra
+        por template incompleto","period_unit":"monthly","month_quantity":12,"end_date":null,"created_at":"17/12/2018
+        08:32:54 -02:00","accrual_month_quantity":"same_month"},"scheduled_updates":[],"receivables_additional_information":{"id":351,"day_number":null,"parcel_number":2,"invoice_rule_id":6775,"created_at":"2018-12-17T08:32:54.579-02:00","updated_at":"2018-12-17T08:32:54.579-02:00","day_quantity":7,"month_quantity":null,"only_business_days":true}}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/221/invoice_rules
+  recorded_at: Mon, 17 Dec 2018 10:32:54 GMT
+recorded_with: VCR 3.0.3

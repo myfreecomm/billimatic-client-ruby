@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/contracts/221/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"invoice_template_id":10000,"additional_information":{"title":"Regra
+        com template não encontrado","init_date":"14/12/2018"}}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.19.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 81ef05bf-ae8d-42cb-80c5-6ef0dc0a1b56
+      X-Runtime:
+      - '0.311661'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiaW52b2ljZV90ZW1wbGF0ZV9pZCI6Ik7Do28gZm9pIHBv
+        c3PDrXZlbCBlbmNvbnRyYXIgbyBtb2RlbG8gZGUgZmF0dXJhbWVudG8gY29t
+        IElEIDEwMDAwIn19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/221/invoice_rules
+  recorded_at: Fri, 14 Dec 2018 18:51:34 GMT
+recorded_with: VCR 3.0.3

@@ -55,6 +55,128 @@ describe Billimatic::Resources::InvoiceRule do
       }
     end
 
+    context 'using a invoice_template_id' do
+      before do
+        Billimatic.configuration.host = "http://localhost:3000"
+        Typhoeus::Expectation.clear
+        @http = Billimatic::Http.new('5d09f5c3dc8df35e225ad074b66f47e0')
+      end
+
+      subject { described_class.new(@http) }
+
+      it "raises Billimatic::RequestError when invoice_template isn't found by id" do
+        VCR.use_cassette('invoice_rules/create/invoice_template_not_found') do
+          expect {
+            subject.create(
+              {
+                invoice_template_id: 10_000,
+                additional_information: {
+                  title: 'Regra com template não encontrado',
+                  init_date: '14/12/2018'
+                }
+              }, contract_id: 221
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
+      it 'creates a rule using an invoice template completely filled' do
+        VCR.use_cassette('invoice_rules/create/using_complete_invoice_template') do
+          result = subject.create(
+            {
+              invoice_template_id: 14,
+              additional_information: {
+                title: 'Teste com modelo completo',
+                init_date: Date.today
+              }
+            }, contract_id: 248
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.services.count).to eql 2
+
+          services = result.services
+          expect(services.map(&:name)).to include 'App', 'Serviço 1'
+          expect(services.map(&:units)).to include 1.0, 2.5
+          expect(services.map(&:unit_value)).to include 49.9, 5.75
+          expect(services.map(&:value)).to include 49.9, 14.38
+
+          expect(result.description).to eql 'teste'
+          expect(result.management_type).to eql 'automatic'
+          expect(result.automatic_email_template_id).to eql 1
+          expect(result.notification_ruler_id).to eql 57
+          expect(result.payment_information.payment_method).to eql 'payment_gateway'
+
+          additional_information = result.additional_information
+          expect(additional_information['month_quantity']).to eql 12
+        end
+      end
+
+      it 'creates a rule using an invoice template but changing values' do
+        VCR.use_cassette('invoice_rules/create/using_template_with_changed_values') do
+          result = subject.create(
+            {
+              invoice_template_id: 15,
+              additional_information: {
+                title: 'Regra com serviços',
+                init_date: Date.today
+              },
+              automatic_email_template_id: 1,
+              days_until_automatic_nfe_emission: 4,
+              receivables_additional_information: {
+                parcel_number: nil
+              }
+            }, contract_id: 221
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.services.count).to eql 3
+
+          expect(result.gross_value).to eql 160.05
+          expect(result.automatic_email_template_id).to eql 1
+          expect(result.days_until_automatic_nfe_emission).to eql 4
+          expect(result.receivables_additional_information['parcel_number']).to be_nil
+
+          services = result.services
+          expect(services.map(&:name)).to include 'App', 'Serviço 1', 'Serviço 9'
+          expect(services.map(&:units)).to include 1.0, 2.0, 3.5
+          expect(services.map(&:unit_value)).to include 59.9, 32.75, 9.9
+          expect(services.map(&:value)).to include 59.9, 65.5, 34.65
+        end
+      end
+
+      it 'creates a rule using an incomplete template' do
+        VCR.use_cassette('invoice_rules/create/using_an_incomplete_template') do
+          result = subject.create(
+            {
+              invoice_template_id: 16,
+              additional_information: {
+                title: 'Regra por template incompleto',
+                init_date: Date.today
+              },
+              receivables_additional_information: {
+                day_quantity: 7,
+                parcel_number: 2
+              },
+              gross_value: 79.5,
+              myfinance_sale_account_id: 35,
+              myfinance_sale_account_name: 'Boletos'
+            }, contract_id: 221
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.gross_value).to eql 79.5
+          expect(result.myfinance_sale_account_id).to eql 35
+          expect(result.myfinance_sale_account_name).to eql 'Boletos'
+          expect(result.receivables_additional_information['day_quantity']).to eql 7
+          expect(result.receivables_additional_information['only_business_days']).to be true
+          expect(result.receivables_additional_information['parcel_number']).to eql 2
+        end
+      end
+    end
+
     it "raises Billimatic::RequestError when contract isn't found" do
       VCR.use_cassette('invoice_rules/create/contract_not_found_failure') do
         expect {
