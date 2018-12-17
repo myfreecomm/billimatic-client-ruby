@@ -35,6 +35,10 @@ module Billimatic
       Resources::Invoice.new(http)
     end
 
+    def invoice_templates
+      Resources::InvoiceTemplate.new(http)
+    end
+
     def invoice_rules
       Resources::InvoiceRule.new(http)
     end

@@ -52,6 +52,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
 * [Subscriptions API](https://app.billimatic.com.br/docs/api#!/subscriptions) as `client.subscriptions`
 * [Contracts API](https://app.billimatic.com.br/docs/api#!/contracts) as `client.contracts`
 * [Invoices API](https://app.billimatic.com.br/docs/api#!/invoices) as `client.invoices`
+* [Invoice Templates API](https://app.billimatic.com.br/docs/api) as `client.invoice_templates`
 * [Invoice Rules API](https://app.billimatic.com.br/docs/api#!/invoice_rules) as `client.invoice_rules`
 * [Companies API](https://app.billimatic.com.br/docs/api#!/companies) as `client.companies`
 * [People API](https://app.billimatic.com.br/docs/api#!/people) as `client.people`
@@ -417,6 +418,38 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
         <td>
             <code>client.invoices.destroy(id, contract_id: id)</code>
+        </td>
+    </tr>
+</table>
+
+#### [Invoice Templates](https://app.billimatic.com.br/docs/api)
+
+<table>
+    <tr>
+        <th>HTTP method</th>
+        <th>Endpoint</th>
+        <th>Client method</th>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="#" target="_blank">
+                /api/v1/organizations/:organization_id/invoice_templates
+            </a>
+        </td>
+        <td>
+            <code>client.invoice_templates.list(organization_id: id)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="#" target="_blank">
+                /api/v1/organizations/:organization_id/invoice_templates/:id
+            </a>
+        </td>
+        <td>
+            <code>client.invoice_templates.show(id, organization_id: id)</code>
         </td>
     </tr>
 </table>
