@@ -3,6 +3,7 @@ module Billimatic
     class InvoiceTemplate < Base
       attribute :id, Integer
       attribute :name, String
+      attribute :services, [Service]
       attribute :gross_value, Decimal
       attribute :month_quantity, Integer
       attribute :period_unit, String

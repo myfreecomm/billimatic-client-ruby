@@ -14,9 +14,7 @@ module Billimatic
       end
 
       def show(id, organization_id:)
-        http.get(
-          "/organizations/#{organization_id}#{resource_base_path}/#{id}"
-        ) { |response| respond_with_entity response }
+        show_by_organization(organization_id, id)
       end
     end
   end

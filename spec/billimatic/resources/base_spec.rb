@@ -137,4 +137,30 @@ describe Billimatic::Resources::Base do
       ).to eql(OpenStruct.new(name: 'test'))
     end
   end
+
+  describe '#list_by_organization id' do
+    let(:response) { double(:response) }
+
+    subject { described_class.new(http) }
+
+    it 'issues a get request on http object for a collection path scoped by organization' do
+      allow(subject).to receive(:resource_base_path).and_return '/dummies'
+      expect(http).to receive(:get).once.with('/organizations/123/dummies').and_yield response
+      expect(subject).to receive(:respond_with_collection).once.with(response)
+
+      subject.list_by_organization(123)
+    end
+  end
+
+  describe '#show_by_organization organization_id, entity_id' do
+    let(:response) { double(:response) }
+
+    it 'issues a get request on http object for an entity path scoped by organization' do
+      allow(subject).to receive(:resource_base_path).and_return '/dummies'
+      expect(http).to receive(:get).once.with('/organizations/123/dummies/456').and_yield response
+      expect(subject).to receive(:respond_with_entity).once.with(response)
+
+      subject.show_by_organization(123, 456)
+    end
+  end
 end

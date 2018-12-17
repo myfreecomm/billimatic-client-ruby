@@ -15,7 +15,7 @@ describe Billimatic::Entities::InvoiceTemplate do
   subject { described_class.new(attributes) }
 
   it_behaves_like 'entity_attributes', [
-                    :id, :name, :gross_value, :month_quantity, :period_unit,
+                    :id, :name, :services, :gross_value, :month_quantity, :period_unit,
                     :management_type, :automatic_email_template_id,
                     :notification_ruler_id, :accrual_month_quantity, :description,
                     :receivables_additional_information, :emites_service_values_id,
