@@ -147,6 +147,146 @@ describe Billimatic::Resources::InvoiceRule do
         end
       end
 
+      it 'creates a rule using a template with services and overwriting their values' do
+        VCR.use_cassette('invoice_rules/create/using_template_and_overwriting_services') do
+          result = subject.create(
+            {
+              invoice_template_id: 15,
+              additional_information: {
+                title: 'Regra com serviços modificados',
+                init_date: Date.today
+              },
+              services: [
+                { invoice_template_service_item_id: 11219, units: 2, description: 'Nova descrição' },
+                { invoice_template_service_item_id: 11221, unit_value: 10.20, description: 'Serviço com valor mais caro' }
+              ]
+            }, contract_id: 3
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.services.count).to eql 3
+
+          expect(result.gross_value).to eql 221.0
+
+          services = result.services
+          expect(services.map(&:name)).to include 'App', 'Serviço 1', 'Serviço 9'
+          expect(services.map(&:description)).to include 'Nova descrição', '', 'Serviço com valor mais caro'
+          expect(services.map(&:units)).to include 2.0, 2.0, 3.5
+          expect(services.map(&:unit_value)).to include 59.9, 32.75, 10.20
+          expect(services.map(&:value)).to include 119.8, 65.5, 35.70
+        end
+      end
+
+      it 'creates a rule using a template with services and overwriting same service' do
+        VCR.use_cassette('invoice_rules/create/using_template_and_overwriting_same_service') do
+          result = subject.create(
+            {
+              invoice_template_id: 15,
+              additional_information: {
+                title: 'Regra com o mesmo serviço modificado',
+                init_date: Date.today
+              },
+              services: [
+                { invoice_template_service_item_id: 11219, units: 2, description: 'Nova descrição' },
+                { invoice_template_service_item_id: 11219, unit_value: 10.20, description: 'Serviço com valor mais caro' }
+              ]
+            }, contract_id: 3
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.services.count).to eql 3
+
+          expect(result.gross_value).to eql 120.55
+
+          services = result.services
+          expect(services.map(&:name)).to include 'App', 'Serviço 1', 'Serviço 9'
+          expect(services.map(&:description)).to include '', '', 'Serviço com valor mais caro'
+          expect(services.map(&:units)).to include 2.0, 2.0, 3.5
+          expect(services.map(&:unit_value)).to include 10.20, 32.75, 9.9
+          expect(services.map(&:value)).to include 20.4, 65.5, 34.65
+        end
+      end
+
+      it 'creates a rule using a template with services, overwriting one and creating more' do
+        VCR.use_cassette('invoice_rules/create/using_template_and_overwriting_service_and_create_more') do
+          result = subject.create(
+            {
+              invoice_template_id: 15,
+              additional_information: {
+                title: 'Regra com um serviço modificado e outros novos',
+                init_date: Date.today
+              },
+              services: [
+                { invoice_template_service_item_id: 11219, units: 2, description: 'Nova descrição' },
+                { service_item_id: 3, units: 1, unit_value: 10.20, description: 'novo serviço' }
+              ]
+            }, contract_id: 3
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.services.count).to eql 4
+
+          expect(result.gross_value).to eql 230.15
+
+          services = result.services
+          expect(services.map(&:name)).to include 'App', 'Serviço 1', 'Serviço 9', 'Serviço 3'
+          expect(services.map(&:description)).to include 'Nova descrição', '', '', 'novo serviço'
+          expect(services.map(&:units)).to include 2.0, 2.0, 3.5, 1.0
+          expect(services.map(&:unit_value)).to include 59.9, 32.75, 9.9, 10.20
+          expect(services.map(&:value)).to include 119.8, 65.5, 34.65, 10.20
+        end
+      end
+
+      it 'creates a rule using a template with services and creating more on not found ID' do
+        VCR.use_cassette('invoice_rules/create/using_template_and_creating_more_services_on_not_found_id') do
+          result = subject.create(
+            {
+              invoice_template_id: 15,
+              additional_information: {
+                title: 'Regra com serviço de ID errado e novo',
+                init_date: Date.today
+              },
+              services: [
+                { service_item_id: 3, invoice_template_service_item_id: 1_000_000, units: 2, unit_value: 30.0, description: 'Nova descrição' }
+              ]
+            }, contract_id: 3
+          )
+
+          expect(result).to be_a entity_klass
+          expect(result.services.count).to eql 4
+
+          expect(result.gross_value).to eql 220.05
+
+          services = result.services
+          expect(services.map(&:name)).to include 'App', 'Serviço 1', 'Serviço 9', 'Serviço 3'
+          expect(services.map(&:description)).to include 'Nova descrição', '', '', ''
+          expect(services.map(&:units)).to include 1.0, 2.0, 3.5, 2.0
+          expect(services.map(&:unit_value)).to include 59.9, 32.75, 9.9, 30.0
+          expect(services.map(&:value)).to include 59.9, 65.5, 34.65, 60.0
+        end
+      end
+
+      it 'raises Billimatic::RequestError when overwriting with wrong ID misses service attributes' do
+        VCR.use_cassette('invoice_rules/create/missing_attributes_on_wrong_id_from_template_service') do
+          expect {
+            subject.create(
+              {
+                invoice_template_id: 15,
+                additional_information: {
+                  title: 'Regra com serviço de ID errado e novo',
+                  init_date: Date.today
+                },
+                services: [
+                  { invoice_template_service_item_id: 1_000_000, units: 2 }
+                ]
+              }, contract_id: 3
+            )
+          }.to raise_error(Billimatic::RequestError) do |error|
+            expect(error.code).to eql 422
+          end
+        end
+      end
+
       it 'creates a rule using an incomplete template' do
         VCR.use_cassette('invoice_rules/create/using_an_incomplete_template') do
           result = subject.create(
