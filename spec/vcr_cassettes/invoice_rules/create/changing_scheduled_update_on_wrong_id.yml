@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/contracts/254/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"invoice_template_id":8,"additional_information":{"title":"Regra
+        com tentativa de mais de um reajuste","init_date":"2018-12-19"},"scheduled_updates":[{"invoice_template_scheduled_update_id":10467,"init_date":"2019-02-15","days_until_update":15}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.19.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 67dad15b-1c3a-4b05-a2a1-3d4f23189581
+      X-Runtime:
+      - '0.045311'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiZGVzY3JpcHRpb24iOiJuw6NvIHBvZGUgZmljYXIgZW0g
+        YnJhbmNvIiwic2NoZWR1bGVkX3VwZGF0ZXMubW9udGhfcXVhbnRpdHkiOiJk
+        ZXZlIHNlciBudW3DqXJpY28iLCJzY2hlZHVsZWRfdXBkYXRlcy5wcmljZV9p
+        bmRleCI6Im7Do28gcG9kZSBmaWNhciBlbSBicmFuY28iLCJzY2hlZHVsZWRf
+        dXBkYXRlcy5pbml0X2RhdGUiOiJkZXZlIHNlciBhIHBhcnRpciBkZSAwMS8w
+        MS8yMDAwIiwic2NoZWR1bGVkX3VwZGF0ZXMuc2VydmljZV9pdGVtX2lkIjoi
+        bsOjbyBwb2RlIHRlciBtYWlzIGRlIHVtIHJlYWp1c3RlIHNlbSBzZXJ2acOn
+        byJ9fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/254/invoice_rules
+  recorded_at: Wed, 19 Dec 2018 17:55:01 GMT
+recorded_with: VCR 3.0.3

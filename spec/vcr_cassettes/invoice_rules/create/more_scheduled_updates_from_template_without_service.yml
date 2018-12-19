@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/contracts/254/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"invoice_template_id":15,"additional_information":{"title":"Regra
+        com vários reajustes e um sem serviço","init_date":"2018-12-19"},"scheduled_updates":[{"invoice_template_scheduled_update_id":468,"init_date":"2019-02-15","month_quantity":12,"days_until_update":20},{"init_date":"2019-02-15","month_quantity":12,"days_until_update":20,"price_index":"inpc"}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.19.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 43176200-a042-4d5b-9a53-f7879fed3a9e
+      X-Runtime:
+      - '0.057686'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMuc2VydmljZV9pdGVtX2lk
+        IjoibsOjbyBwb2RlIHRlciBtYWlzIGRlIHVtIHJlYWp1c3RlIHNlbSBzZXJ2
+        acOnbyJ9fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/254/invoice_rules
+  recorded_at: Wed, 19 Dec 2018 18:10:21 GMT
+recorded_with: VCR 3.0.3
