@@ -13,6 +13,9 @@ module Billimatic
       attribute :accrual_month_quantity, String
       attribute :description, String
       attribute :receivables_additional_information, Hash
+      attribute :scheduled_updates, Hash
+      attribute :notify_customer, Boolean
+      attribute :apply_negative_updates, Boolean
       attribute :emites_service_values_id, Integer
       attribute :emites_service_value_name, String
       attribute :days_until_automatic_nfe_emission, Integer
