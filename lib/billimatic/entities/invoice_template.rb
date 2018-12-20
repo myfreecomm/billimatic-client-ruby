@@ -13,7 +13,7 @@ module Billimatic
       attribute :accrual_month_quantity, String
       attribute :description, String
       attribute :receivables_additional_information, Hash
-      attribute :scheduled_updates, Hash
+      attribute :scheduled_updates, Array[Hash]
       attribute :notify_customer, Boolean
       attribute :apply_negative_updates, Boolean
       attribute :emites_service_values_id, Integer
