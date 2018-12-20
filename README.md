@@ -47,20 +47,20 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
 
 ##### Now you have acess to every API endpoint:
 
-* [Organizations API](https://app.billimatic.com.br/docs/api#!/organizations) as `client.organizations`
-* [Plans API](https://app.billimatic.com.br/docs/api#!/plans) as `client.plans`
-* [Subscriptions API](https://app.billimatic.com.br/docs/api#!/subscriptions) as `client.subscriptions`
-* [Contracts API](https://app.billimatic.com.br/docs/api#!/contracts) as `client.contracts`
-* [Invoices API](https://app.billimatic.com.br/docs/api#!/invoices) as `client.invoices`
-* [Invoice Templates API](https://app.billimatic.com.br/docs/api) as `client.invoice_templates`
-* [Invoice Rules API](https://app.billimatic.com.br/docs/api#!/invoice_rules) as `client.invoice_rules`
-* [Companies API](https://app.billimatic.com.br/docs/api#!/companies) as `client.companies`
-* [People API](https://app.billimatic.com.br/docs/api#!/people) as `client.people`
-* [Service Items API](https://app.billimatic.com.br/docs/api#!/service_items) as `client.service_items`
+* [Organizations API](https://myfreecomm.github.io/billimatic-api-docs/#organizacoes) as `client.organizations`
+* [Plans API](https://myfreecomm.github.io/billimatic-api-docs/#planos) as `client.plans`
+* [Subscriptions API](https://myfreecomm.github.io/billimatic-api-docs/#assinaturas) as `client.subscriptions`
+* [Contracts API](https://myfreecomm.github.io/billimatic-api-docs/#contratos) as `client.contracts`
+* [Invoices API](https://myfreecomm.github.io/billimatic-api-docs/#faturamentos) as `client.invoices`
+* [Invoice Templates API](https://myfreecomm.github.io/billimatic-api-docs/#modelo-de-faturamento) as `client.invoice_templates`
+* [Invoice Rules API](https://myfreecomm.github.io/billimatic-api-docs/#regra-de-faturamentos) as `client.invoice_rules`
+* [Companies API](https://myfreecomm.github.io/billimatic-api-docs/#empresas) as `client.companies`
+* [People API](https://myfreecomm.github.io/billimatic-api-docs/#pessoas) as `client.people`
+* [Service Items API](https://myfreecomm.github.io/billimatic-api-docs/#servicos) as `client.service_items`
 
 ## Endpoints
 
-#### [Organizations](https://app.billimatic.com.br/docs/api#!/organizations)
+#### [Organizations](https://myfreecomm.github.io/billimatic-api-docs/#organizacoes)
 
 <table>
     <tr>
@@ -71,7 +71,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/organizations/API_V1_Organizations_search_get_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#busca-organizacao" target="_blank">
                 /api/v1/organizations/search?cnpj=:cnpj
             </a>
         </td>
@@ -82,7 +82,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/organizations/API_V1_Organizations_create_post_1" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-organizacao" target="_blank">
                 /api/v1/organizations
             </a>
         </td>
@@ -93,7 +93,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PUT</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/organizations/API_V1_Organizations_update_patch_2" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#atualiza-organizacao" target="_blank">
                 /api/v1/organizations/:id
             </a>
         </td>
@@ -104,7 +104,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/organizations/API_V1_Organizations_destroy_delete_3" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#exclui-organizacao" target="_blank">
                 /api/v1/organizations/:id
             </a>
         </td>
@@ -114,7 +114,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Plans](https://app.billimatic.com.br/docs/api#!/plans)
+#### [Plans](https://myfreecomm.github.io/billimatic-api-docs/#planos)
 
 <table>
     <tr>
@@ -125,7 +125,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/plans/API_V1_Plans_index_get_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#lista-plano-s" target="_blank">
                 /api/v1/organizations/:organization_id/plans
             </a>
         </td>
@@ -136,7 +136,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/plans/API_V1_Plans_create_post_1" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-plano" target="_blank">
                 /api/v1/organizations/:organization_id/plans
             </a>
         </td>
@@ -147,7 +147,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PUT</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/plans/API_V1_Plans_update_patch_2" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#atualiza-plano" target="_blank">
                 /api/v1/organizations/:organization_id/plans/:id
             </a>
         </td>
@@ -158,7 +158,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/plans/API_V1_Plans_destroy_delete_3" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#exclui-plano" target="_blank">
                 /api/v1/organizations/:organization_id/plans/:id
             </a>
         </td>
@@ -168,7 +168,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Subscriptions](https://app.billimatic.com.br/docs/api#!/subscriptions)
+#### [Subscriptions](https://myfreecomm.github.io/billimatic-api-docs/#assinaturas)
 
 <table>
     <tr>
@@ -179,7 +179,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/subscriptions/API_V1_Subscriptions_show_by_token_get_1" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#detalhes-de-assinaturas" target="_blank">
                 /api/v1/subscriptions/token/:token
             </a>
         </td>
@@ -190,7 +190,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/subscriptions/API_V1_Subscriptions_create_post_2" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-assinatura" target="_blank">
                 /api/v1/subscriptions
             </a>
         </td>
@@ -201,7 +201,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/checkouts/API_V1_Subscription_Checkouts_create_post_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#checkout-de-assinatura" target="_blank">
                 /api/v1/subscriptions/checkout/:token
             </a>
         </td>
@@ -212,7 +212,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/plan_modifications/API_V1_Subscription_PlanModifications_change_plan_patch_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#trocas-de-plano-de-assinaturas" target="_blank">
                 /api/v1/subscriptions/:token/change_plan
             </a>
         </td>
@@ -223,7 +223,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/payment_informations/API_V1_Subscription_PaymentInformations_update_patch_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#trocas-de-forma-de-pagamento-em-assinaturas" target="_blank">
                 /api/v1/subscriptions/:token/update_payment_information
             </a>
         </td>
@@ -234,7 +234,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/subscriptions/API_V1_Subscriptions_cancel_patch_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cancelamento-de-assinatura" target="_blank">
                 /api/v1/subscriptions/:token/cancel
             </a>
         </td>
@@ -248,7 +248,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Contracts](https://app.billimatic.com.br/docs/api#!/contracts)
+#### [Contracts](https://myfreecomm.github.io/billimatic-api-docs/#contratos)
 
 <table>
     <tr>
@@ -259,7 +259,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_index_get_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#lista-contrato-s" target="_blank">
                 /api/v1/organizations/:organization_id/contracts
             </a>
         </td>
@@ -270,7 +270,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_show_get_1" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#detalhes-contrato" target="_blank">
                 /api/v1/organizations/:organization_id/contracts/:id
             </a>
         </td>
@@ -281,7 +281,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_search_get_2" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#busca-contrato" target="_blank">
                 /api/v1/contracts/search?name=:name
             </a>
         </td>
@@ -292,7 +292,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_create_post_3" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-contrato" target="_blank">
                 /api/v1/contracts
             </a>
         </td>
@@ -303,7 +303,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PUT</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_update_patch_4" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#atualizar-contrato" target="_blank">
                 /api/v1/contracts/:id
             </a>
         </td>
@@ -314,7 +314,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/contracts/API_V1_Contracts_destroy_delete_5" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#exclui-contrato" target="_blank">
                 /api/v1/contracts/:id
             </a>
         </td>
@@ -324,7 +324,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Invoices](https://app.billimatic.com.br/docs/api#!/invoices)
+#### [Invoices](https://myfreecomm.github.io/billimatic-api-docs/#faturamentos)
 
 <table>
     <tr>
@@ -335,7 +335,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_search_get_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#buscar-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/search?issue_date_from=:issue_date_from&issue_date_to=:issue_date_to
             </a>
         </td>
@@ -346,7 +346,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_late_get_1" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#faturamento-inadimplementes" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/late
             </a>
         </td>
@@ -357,7 +357,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_block_patch_2" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#bloqueia-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id/block
             </a>
         </td>
@@ -368,7 +368,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_approve_patch_3" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#aprova-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id/approve
             </a>
         </td>
@@ -379,7 +379,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_create_post_4" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoices
             </a>
         </td>
@@ -390,7 +390,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_show_get_5" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#detalhes-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id
             </a>
         </td>
@@ -401,7 +401,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PUT</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_update_patch_6" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#atualiza-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id
             </a>
         </td>
@@ -412,7 +412,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoices/API_V1_Invoices_destroy_delete_7" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#exclui-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/:id
             </a>
         </td>
@@ -422,7 +422,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Invoice Templates](https://app.billimatic.com.br/docs/api)
+#### [Invoice Templates](https://myfreecomm.github.io/billimatic-api-docs/#modelo-de-faturamento)
 
 <table>
     <tr>
@@ -433,7 +433,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="#" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#lista-modelo-de-faturamento-s" target="_blank">
                 /api/v1/organizations/:organization_id/invoice_templates
             </a>
         </td>
@@ -444,7 +444,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="#" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#detalhes-modelo-de-faturamento" target="_blank">
                 /api/v1/organizations/:organization_id/invoice_templates/:id
             </a>
         </td>
@@ -454,7 +454,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Invoice Rules](https://app.billimatic.com.br/docs/api#!/invoice_rules)
+#### [Invoice Rules](https://myfreecomm.github.io/billimatic-api-docs/#regra-de-faturamentos)
 
 <table>
     <tr>
@@ -465,7 +465,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_index_get_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#lista-regra-s-faturamento-s" target="_blank">
                 /api/v1/contracts/:contract_id/invoice_rules
             </a>
         </td>
@@ -476,7 +476,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_create_post_1" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-regra-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoice_rules
             </a>
         </td>
@@ -487,7 +487,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PUT</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_update_patch_2" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#atualiza-regra-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoice_rules/:id
             </a>
         </td>
@@ -498,7 +498,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/invoice_rules/API_V1_InvoiceRules_destroy_delete_3" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#exclui-regra-faturamento" target="_blank">
                 /api/v1/contracts/:contract_id/invoice_rules/:id
             </a>
         </td>
@@ -508,7 +508,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Companies](https://app.billimatic.com.br/docs/api#!/companies)
+#### [Companies](https://myfreecomm.github.io/billimatic-api-docs/#empresas)
 
 <table>
     <tr>
@@ -519,7 +519,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_search_get_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#busca-empresa" target="_blank">
                 /api/v1/companies/search?cnpj=:cnpj
             </a>
         </td>
@@ -530,7 +530,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_index_get_1" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#lista-empresa-s" target="_blank">
                 /api/v1/companies
             </a>
         </td>
@@ -541,7 +541,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_create_post_2" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-empresa" target="_blank">
                 /api/v1/companies
             </a>
         </td>
@@ -552,7 +552,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_show_get_3" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#detalhes-empresa" target="_blank">
                 /api/v1/companies/:id
             </a>
         </td>
@@ -563,7 +563,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PATCH</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_update_patch_4" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#atualiza-empresa" target="_blank">
                 /api/v1/companies/:id
             </a>
         </td>
@@ -574,7 +574,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/companies/API_V1_Companies_destroy_delete_5" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#exclui-empresa" target="_blank">
                 /api/v1/companies/:id
             </a>
         </td>
@@ -584,7 +584,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [People](https://app.billimatic.com.br/docs/api#!/people)
+#### [People](https://myfreecomm.github.io/billimatic-api-docs/#pessoas)
 
 <table>
     <tr>
@@ -595,7 +595,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_search_get_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#busca-pessoa" target="_blank">
                 /api/v1/people/search?cpf=:cpf
             </a>
         </td>
@@ -606,7 +606,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_index_get_1" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#lista-pessoa-s" target="_blank">
                 /api/v1/people
             </a>
         </td>
@@ -617,7 +617,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_create_post_2" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-pessoa" target="_blank">
                 /api/v1/people
             </a>
         </td>
@@ -628,7 +628,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_show_get_3" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#detalhes-pessoa" target="_blank">
                 /api/v1/people/:id
             </a>
         </td>
@@ -639,7 +639,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PUT</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_update_patch_4" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#atualiza-pessoa" target="_blank">
                 /api/v1/people/:id
             </a>
         </td>
@@ -650,7 +650,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/people/API_V1_People_destroy_delete_5" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#exclui-pessoa" target="_blank">
                 /api/v1/people/:id
             </a>
         </td>
@@ -660,7 +660,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Service Items](https://app.billimatic.com.br/docs/api#!/service_items)
+#### [Service Items](https://myfreecomm.github.io/billimatic-api-docs/#servicos)
 
 <table>
     <tr>
@@ -671,7 +671,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/service_items/API_V1_ServiceItems_search_get_0" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#busca-servico" target="_blank">
                 /api/v1/service_items/search?name=:name
             </a>
         </td>
@@ -682,7 +682,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>POST</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/service_items/API_V1_ServiceItems_create_post_1" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-servico" target="_blank">
                 /api/v1/service_items
             </a>
         </td>
@@ -693,7 +693,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>PUT</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/service_items/API_V1_ServiceItems_update_patch_2" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#atualiza-servico" target="_blank">
                 /api/v1/service_items/:id
             </a>
         </td>
@@ -704,7 +704,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>DELETE</code></td>
         <td>
-            <a href="https://app.billimatic.com.br/docs/api#!/service_items/API_V1_ServiceItems_destroy_delete_3" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#exclui-servico" target="_blank">
                 /api/v1/service_items/:id
             </a>
         </td>
