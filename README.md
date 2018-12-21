@@ -52,8 +52,8 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
 * [Subscriptions API](https://myfreecomm.github.io/billimatic-api-docs/#assinaturas) as `client.subscriptions`
 * [Contracts API](https://myfreecomm.github.io/billimatic-api-docs/#contratos) as `client.contracts`
 * [Invoices API](https://myfreecomm.github.io/billimatic-api-docs/#faturamentos) as `client.invoices`
-* [Invoice Templates API](https://myfreecomm.github.io/billimatic-api-docs/#modelo-de-faturamento) as `client.invoice_templates`
-* [Invoice Rules API](https://myfreecomm.github.io/billimatic-api-docs/#regra-de-faturamentos) as `client.invoice_rules`
+* [Invoice Templates API](https://myfreecomm.github.io/billimatic-api-docs/#modelos-de-faturamento) as `client.invoice_templates`
+* [Invoice Rules API](https://myfreecomm.github.io/billimatic-api-docs/#regras-de-faturamento) as `client.invoice_rules`
 * [Companies API](https://myfreecomm.github.io/billimatic-api-docs/#empresas) as `client.companies`
 * [People API](https://myfreecomm.github.io/billimatic-api-docs/#pessoas) as `client.people`
 * [Service Items API](https://myfreecomm.github.io/billimatic-api-docs/#servicos) as `client.service_items`
@@ -346,7 +346,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     <tr>
         <td><code>GET</code></td>
         <td>
-            <a href="https://myfreecomm.github.io/billimatic-api-docs/#faturamento-inadimplementes" target="_blank">
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#faturamentos-inadimplentes" target="_blank">
                 /api/v1/contracts/:contract_id/invoices/late
             </a>
         </td>
@@ -422,7 +422,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Invoice Templates](https://myfreecomm.github.io/billimatic-api-docs/#modelo-de-faturamento)
+#### [Invoice Templates](https://myfreecomm.github.io/billimatic-api-docs/#modelos-de-faturamento)
 
 <table>
     <tr>
@@ -454,7 +454,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Invoice Rules](https://myfreecomm.github.io/billimatic-api-docs/#regra-de-faturamentos)
+#### [Invoice Rules](https://myfreecomm.github.io/billimatic-api-docs/#regras-de-faturamento)
 
 <table>
     <tr>
