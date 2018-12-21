@@ -2,6 +2,12 @@
 
 ## Next version
 
+## v0.20.0
+- Adds InvoiceTemplate entity.
+- Adds InvoiceTemplate#list and InvoiceTemplate#show endpoints.
+- Changes links on README for new API documentation.
+- Allows `invoice_template_id` attribute and InvoiceTemplate attributes override to be sent on InvoiceRule#create.
+
 ## v0.19.1
 - Adds `apply_negative_updates` attribute on InvoiceRule entity.
 
