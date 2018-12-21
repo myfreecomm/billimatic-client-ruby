@@ -55,6 +55,801 @@ describe Billimatic::Resources::InvoiceRule do
       }
     end
 
+    it "raises Billimatic::RequestError when invoice_template isn't found by id" do
+      VCR.use_cassette('invoice_rules/create/invoice_template_not_found') do
+        expect {
+          subject.create(
+            {
+              invoice_template_id: 10_000,
+              additional_information: {
+                title: 'Regra com template não encontrado',
+                init_date: '14/12/2018'
+              }
+            }, contract_id: 6667
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when trying to create more scheduled_updates besides template' do
+      VCR.use_cassette('invoice_rules/create/failing_more_scheduled_updates_than_template') do
+        expect {
+          subject.create(
+            {
+              invoice_template_id: 6,
+              additional_information: {
+                title: 'Regra com tentativa de mais de um reajuste',
+                init_date: Date.today
+              },
+              scheduled_updates: [
+                {
+                  invoice_template_scheduled_update_id: 467,
+                  init_date: Date.parse("15/02/2019")
+                },
+                {
+                  init_date: Date.parse("15/02/2019"),
+                  days_until_update: 15,
+                  month_quantity: 12,
+                  price_index: 'ipcfipe'
+                }
+              ]
+            }, contract_id: 6667
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when trying to change scheduled_update on wrong ID' do
+      VCR.use_cassette('invoice_rules/create/changing_scheduled_update_on_wrong_id') do
+        expect {
+          subject.create(
+            {
+              invoice_template_id: 8,
+              additional_information: {
+                title: 'Regra com ID errado de reajuste',
+                init_date: Date.today
+              },
+              scheduled_updates: [
+                {
+                  invoice_template_scheduled_update_id: 467 + 10_000,
+                  init_date: Date.parse("15/02/2019"),
+                  days_until_update: 15
+                }
+              ]
+            }, contract_id: 6667
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when forgetting to set missing values on scheduled_update' do
+      VCR.use_cassette('invoice_rules/create/forgetting_missing_values_on_scheduled_update') do
+        expect {
+          subject.create(
+            {
+              invoice_template_id: 8,
+              additional_information: {
+                title: 'Regra com reajuste incompleto',
+                init_date: Date.today
+              },
+              scheduled_updates: [
+                {
+                  invoice_template_scheduled_update_id: 467,
+                  init_date: Date.parse("15/02/2019")
+                }
+              ]
+            }, contract_id: 6667
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when trying to change scheduled_update from template to a invalid service' do
+      VCR.use_cassette('invoice_rules/create/invalid_service_item_on_template') do
+        expect {
+          subject.create(
+            {
+              invoice_template_id: 6,
+              additional_information: {
+                title: 'Regra com serviço inválido no reajuste',
+                init_date: Date.today
+              },
+              scheduled_updates: [
+                {
+                  invoice_template_scheduled_update_id: 468,
+                  init_date: Date.parse("15/02/2019"),
+                  service_item_id: 5,
+                  month_quantity: 12,
+                  days_until_update: 20
+                }
+              ]
+            }, contract_id: 6667
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when trying to create more scheduled_update without service' do
+      VCR.use_cassette('invoice_rules/create/more_scheduled_updates_from_template_without_service') do
+        expect {
+          subject.create(
+            {
+              invoice_template_id: 6,
+              additional_information: {
+                title: 'Regra com vários reajustes e um sem serviço',
+                init_date: Date.today
+              },
+              scheduled_updates: [
+                {
+                  invoice_template_scheduled_update_id: 468,
+                  init_date: Date.parse("15/02/2019"),
+                  month_quantity: 12,
+                  days_until_update: 20
+                },
+                {
+                  init_date: Date.parse("15/02/2019"),
+                  month_quantity: 12,
+                  days_until_update: 20,
+                  price_index: 'inpc'
+                }
+              ]
+            }, contract_id: 6667
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'raises Billimatic::RequestError when trying to remove a service but leaving its scheduled_update' do
+      VCR.use_cassette('invoice_rules/create/failed_to_remove_service_without_removing_scheduled_update') do
+        expect {
+          subject.create(
+            {
+              invoice_template_id: 6,
+              additional_information: {
+                title: 'Regra com vários reajustes e tentativa de remover serviço',
+                init_date: Date.today
+              },
+              services: [
+                {
+                  invoice_template_service_item_id: 349,
+                  _destroy: true
+                }
+              ],
+              scheduled_updates: [
+                {
+                  invoice_template_scheduled_update_id: 468,
+                  init_date: Date.parse("15/02/2019"),
+                  month_quantity: 12,
+                  days_until_update: 20
+                },
+                {
+                  invoice_template_scheduled_update_id: 469,
+                  init_date: Date.parse("15/02/2019"),
+                  month_quantity: 12,
+                  days_until_update: 20
+                },
+                {
+                  invoice_template_scheduled_update_id: 470,
+                  init_date: Date.parse("15/02/2019"),
+                  month_quantity: 12,
+                  days_until_update: 20
+                }
+              ]
+            }, contract_id: 6667
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'creates a rule using an invoice template completely filled' do
+      VCR.use_cassette('invoice_rules/create/using_complete_invoice_template') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Teste com modelo completo',
+              init_date: Date.today,
+            }
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.services.count).to eql 2
+
+        services = result.services
+        expect(services.map(&:name)).to include 'Billimatic', 'Carteira'
+        expect(services.map(&:units)).to include 1.0, 2.5
+        expect(services.map(&:unit_value)).to include 49.9, 5.75
+        expect(services.map(&:value)).to include 49.9, 14.38
+
+        expect(result.description).to eql 'teste'
+        expect(result.management_type).to eql 'automatic'
+        expect(result.automatic_email_template_id).to eql 83
+        expect(result.notification_ruler_id).to eql 2
+        expect(result.payment_information.payment_method).to eql 'payment_gateway'
+
+        additional_information = result.additional_information
+        expect(additional_information['month_quantity']).to eql 12
+      end
+    end
+
+    it 'creates a rule using a template and removing a service' do
+      VCR.use_cassette('invoice_rules/create/using_template_and_removing_service') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Teste removendo serviços',
+              init_date: Date.today
+            },
+            services: [
+              {
+                invoice_template_service_item_id: 246358,
+                _destroy: true
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.gross_value).to eql 14.38
+        expect(result.services.count).to eql 1
+
+        services = result.services
+        expect(services.first.name).to eql 'Carteira'
+        expect(services.first.units).to eql 2.5
+        expect(services.first.unit_value).to eql 5.75
+        expect(services.first.value).to eql 14.38
+      end
+    end
+
+    it 'creates a rule using an invoice template but changing values' do
+      VCR.use_cassette('invoice_rules/create/using_template_with_changed_values') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com serviços',
+              init_date: Date.today
+            },
+            automatic_email_template_id: 176,
+            days_until_automatic_nfe_emission: 4,
+            receivables_additional_information: {
+              parcel_number: nil
+            }
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.services.count).to eql 2
+
+        expect(result.gross_value).to eql 64.28
+        expect(result.automatic_email_template_id).to eql 176
+        expect(result.days_until_automatic_nfe_emission).to eql 4
+        expect(result.receivables_additional_information['parcel_number']).to be_nil
+
+        services = result.services
+        expect(services.map(&:name)).to include 'Billimatic', 'Carteira'
+        expect(services.map(&:units)).to include 1.0, 2.5
+        expect(services.map(&:unit_value)).to include 49.9, 5.75
+        expect(services.map(&:value)).to include 49.9, 14.38
+      end
+    end
+
+    it 'creates a rule using a template with services and overwriting their values' do
+      VCR.use_cassette('invoice_rules/create/using_template_and_overwriting_services') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com serviços modificados',
+              init_date: Date.today
+            },
+            services: [
+              { invoice_template_service_item_id: 246359, units: 2, description: 'Nova descrição' },
+              { invoice_template_service_item_id: 246358, unit_value: 10.20, description: 'Serviço com valor mais caro' }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.services.count).to eql 2
+
+        expect(result.gross_value).to eql 21.7
+
+        services = result.services
+        expect(services.map(&:name)).to include 'Carteira', 'Billimatic'
+        expect(services.map(&:description)).to include 'Nova descrição', 'Serviço com valor mais caro'
+        expect(services.map(&:units)).to include 2.0, 1.0
+        expect(services.map(&:unit_value)).to include 5.75, 10.20
+        expect(services.map(&:value)).to include 11.5, 10.20
+      end
+    end
+
+    it 'creates a rule using a template with services and overwriting same service' do
+      VCR.use_cassette('invoice_rules/create/using_template_and_overwriting_same_service') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com o mesmo serviço modificado',
+              init_date: Date.today
+            },
+            services: [
+              { invoice_template_service_item_id: 246359, units: 2, description: 'Nova descrição' },
+              { invoice_template_service_item_id: 246359, unit_value: 10.20, description: 'Serviço com valor mais caro' }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.services.count).to eql 2
+
+        expect(result.gross_value).to eql 70.3
+
+        services = result.services
+        expect(services.map(&:name)).to include 'Carteira', 'Billimatic'
+        expect(services.map(&:description)).to include '', 'Serviço com valor mais caro'
+        expect(services.map(&:units)).to include 2.0, 1.0
+        expect(services.map(&:unit_value)).to include 10.20, 49.9
+        expect(services.map(&:value)).to include 20.4, 49.9
+      end
+    end
+
+    it 'creates a rule using a template with services, overwriting one and creating more' do
+      VCR.use_cassette('invoice_rules/create/using_template_and_overwriting_service_and_create_more') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com um serviço modificado e outros novos',
+              init_date: Date.today
+            },
+            services: [
+              { invoice_template_service_item_id: 246359, units: 2, description: 'Nova descrição' },
+              { service_item_id: 34, units: 1, unit_value: 10.20, description: 'novo serviço' }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.services.count).to eql 3
+
+        expect(result.gross_value).to eq BigDecimal.new('71.6')
+
+        services = result.services
+        expect(services.map(&:name)).to include 'Carteira', 'Billimatic', 'Cobrato'
+        expect(services.map(&:description)).to include 'Nova descrição', '', 'novo serviço'
+        expect(services.map(&:units)).to include 2.0, 1.0, 1.0
+        expect(services.map(&:unit_value)).to include 49.9, 5.75, 10.20
+        expect(services.map(&:value)).to include 11.5, 10.2, 49.9
+      end
+    end
+
+    it 'creates a rule using a template with services and creating more on not found ID' do
+      VCR.use_cassette('invoice_rules/create/using_template_and_creating_more_services_on_not_found_id') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com serviço de ID errado e novo',
+              init_date: Date.today
+            },
+            services: [
+              { service_item_id: 3, invoice_template_service_item_id: 1_000_000, units: 2, unit_value: 30.0, description: 'Nova descrição' }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.services.count).to eql 3
+
+        expect(result.gross_value).to eql 124.28
+
+        services = result.services
+        expect(services.map(&:name)).to include 'Aluguel', 'Carteira', 'Billimatic'
+        expect(services.map(&:description)).to include 'Nova descrição', '', ''
+        expect(services.map(&:units)).to include 2.0, 2.5, 1.0
+        expect(services.map(&:unit_value)).to include 30.0, 5.75, 49.9
+        expect(services.map(&:value)).to include 60.0, 14.38, 49.9
+      end
+    end
+
+    it 'raises Billimatic::RequestError when overwriting with wrong ID misses service attributes' do
+      VCR.use_cassette('invoice_rules/create/missing_attributes_on_wrong_id_from_template_service') do
+        expect {
+          subject.create(
+            {
+              invoice_template_id: 6,
+              additional_information: {
+                title: 'Regra com serviço de ID errado e novo',
+                init_date: Date.today
+              },
+              services: [
+                { invoice_template_service_item_id: 1_000_000, units: 2 }
+              ]
+            }, contract_id: 6667
+          )
+        }.to raise_error(Billimatic::RequestError) do |error|
+          expect(error.code).to eql 422
+        end
+      end
+    end
+
+    it 'creates a rule using template with one scheduled_update' do
+      VCR.use_cassette('invoice_rules/create/using_template_with_one_scheduled_update') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template de um reajuste',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 543,
+                init_date: Date.parse('10/02/2019'),
+                days_until_update: 15
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.scheduled_updates.size).to eql 1
+
+        expect(result.scheduled_updates.map { |s| s['init_date'] }).to include '2019-02-10'
+        expect(result.scheduled_updates.map { |s| s['month_quantity'] }).to include 12
+        expect(result.scheduled_updates.map { |s| s['days_until_update'] }).to include 15
+        expect(result.scheduled_updates.map { |s| s['price_index'] }).to include 'ipca'
+        expect(result.scheduled_updates.map { |s| s['service_item_id'] }).to include nil
+      end
+    end
+
+    it 'creates a rule using template with one scheduled_update and changing values' do
+      VCR.use_cassette('invoice_rules/create/using_template_with_one_changed_scheduled_update') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template de um reajuste alterado',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 543,
+                init_date: Date.parse('10/02/2019'),
+                days_until_update: 15,
+                month_quantity: 6,
+                price_index: 'igpm'
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.scheduled_updates.size).to eql 1
+
+        expect(result.scheduled_updates.map { |s| s['init_date'] }).to include '2019-02-10'
+        expect(result.scheduled_updates.map { |s| s['month_quantity'] }).to include 6
+        expect(result.scheduled_updates.map { |s| s['days_until_update'] }).to include 15
+        expect(result.scheduled_updates.map { |s| s['price_index'] }).to include 'igpm'
+        expect(result.scheduled_updates.map { |s| s['service_item_id'] }).to include nil
+      end
+    end
+
+    it 'creates a rule using template with one scheduled_update and changing values more than once' do
+      VCR.use_cassette('invoice_rules/create/using_template_with_one_changed_scheduled_update_more_than_once') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template de um reajuste alterado mais de uma vez',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 543,
+                init_date: Date.parse('10/02/2019'),
+                days_until_update: 15,
+                month_quantity: 6,
+                price_index: 'igpm'
+              },
+              {
+                invoice_template_scheduled_update_id: 543,
+                init_date: Date.parse('10/03/2019'),
+                days_until_update: 20,
+                price_index: 'ipcfipe'
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.scheduled_updates.size).to eql 1
+
+        expect(result.scheduled_updates.map { |s| s['init_date'] }).to include '2019-03-10'
+        expect(result.scheduled_updates.map { |s| s['month_quantity'] }).to include 6
+        expect(result.scheduled_updates.map { |s| s['days_until_update'] }).to include 20
+        expect(result.scheduled_updates.map { |s| s['price_index'] }).to include 'ipcfipe'
+        expect(result.scheduled_updates.map { |s| s['service_item_id'] }).to include nil
+      end
+    end
+
+    it 'creates a rule using template with one scheduled_update for all services' do
+      VCR.use_cassette('invoice_rules/create/using_template_with_one_scheduled_update_for_all_services') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template de um reajuste para todos os serviços',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 543,
+                init_date: Date.parse('10/02/2019'),
+                days_until_update: 15
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.scheduled_updates.size).to eql 1
+
+        expect(result.scheduled_updates.map { |s| s['init_date'] }).to include '2019-02-10'
+        expect(result.scheduled_updates.map { |s| s['month_quantity'] }).to include 12
+        expect(result.scheduled_updates.map { |s| s['days_until_update'] }).to include 15
+        expect(result.scheduled_updates.map { |s| s['price_index'] }).to include 'ipca'
+        expect(result.scheduled_updates.map { |s| s['service_item_id'] }).to include nil
+      end
+    end
+
+    it 'creates a rule using template with one scheduled_update for one service' do
+      VCR.use_cassette('invoice_rules/create/using_template_with_one_scheduled_update_for_one_service') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template de um reajuste para um dos serviços',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 543,
+                init_date: Date.parse('10/02/2019'),
+                days_until_update: 15,
+                month_quantity: 12
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.scheduled_updates.size).to eql 1
+
+        expect(result.scheduled_updates.map { |s| s['init_date'] }).to include '2019-02-10'
+        expect(result.scheduled_updates.map { |s| s['month_quantity'] }).to include 12
+        expect(result.scheduled_updates.map { |s| s['days_until_update'] }).to include 15
+        expect(result.scheduled_updates.map { |s| s['price_index'] }).to include 'ipca'
+        expect(result.scheduled_updates.map { |s| s['service_item_id'] }).to include 39
+      end
+    end
+
+    it 'creates a rule using template with one scheduled_update changing its service' do
+      VCR.use_cassette('invoice_rules/create/using_template_with_one_scheduled_update_changing_its_service') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template de um reajuste com mudança do seu serviço',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 543,
+                init_date: Date.parse('10/02/2019'),
+                days_until_update: 15,
+                month_quantity: 12,
+                service_item_id: 370
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.scheduled_updates.size).to eql 1
+
+        expect(result.scheduled_updates.map { |s| s['init_date'] }).to include '2019-02-10'
+        expect(result.scheduled_updates.map { |s| s['month_quantity'] }).to include 12
+        expect(result.scheduled_updates.map { |s| s['days_until_update'] }).to include 15
+        expect(result.scheduled_updates.map { |s| s['price_index'] }).to include 'ipca'
+        expect(result.scheduled_updates.map { |s| s['service_item_id'] }).to include 370
+      end
+    end
+
+    it 'creates a rule using template with one scheduled_update and creating more' do
+      VCR.use_cassette('invoice_rules/create/using_template_with_one_scheduled_update_creating_more') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template de um reajuste e criando outros',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 543,
+                init_date: Date.parse('10/02/2019'),
+                days_until_update: 15,
+                month_quantity: 12
+              },
+              {
+                init_date: Date.parse('11/02/2019'),
+                days_until_update: 15,
+                month_quantity: 12,
+                price_index: 'igpm',
+                service_item_id: 370
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.scheduled_updates.size).to eql 2
+
+        expect(result.scheduled_updates.map { |s| s['init_date'] }).to include '2019-02-10', '2019-02-11'
+        expect(result.scheduled_updates.map { |s| s['month_quantity'] }).to include 12, 12
+        expect(result.scheduled_updates.map { |s| s['days_until_update'] }).to include 15, 15
+        expect(result.scheduled_updates.map { |s| s['price_index'] }).to include 'ipca', 'igpm'
+        expect(result.scheduled_updates.map { |s| s['service_item_id'] }).to include 370, 39
+      end
+    end
+
+    it 'creates a rule using template with scheduled_updates for all services' do
+      VCR.use_cassette('invoice_rules/create/using_template_with_scheduled_updates_for_all_services') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template com reajustes para todos os serviços',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 543,
+                init_date: Date.parse('10/02/2019'),
+                month_quantity: 20
+              },
+              {
+                invoice_template_scheduled_update_id: 555,
+                init_date: Date.parse('11/02/2019'),
+                days_until_update: 15,
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.notify_customer).to be true
+        expect(result.apply_negative_updates).to be true
+        expect(result.scheduled_updates.size).to eql 2
+
+        expect(result.scheduled_updates.map { |s| s['init_date'] }).to include '2019-02-10', '2019-02-11'
+        expect(result.scheduled_updates.map { |s| s['month_quantity'] }).to include 20, 12
+        expect(result.scheduled_updates.map { |s| s['days_until_update'] }).to include 15, 10
+        expect(result.scheduled_updates.map { |s| s['price_index'] }).to include 'igpdi', 'igpm'
+        expect(result.scheduled_updates.map { |s| s['service_item_id'] }).to include 39, 370
+      end
+    end
+
+    it 'creates a rule using template repeating scheduled_update and removing it' do
+      VCR.use_cassette('invoice_rules/create/using_template_repeating_scheduled_update_and_removing') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template repetindo reajuste e removendo',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 555,
+                init_date: Date.parse('10/02/2019'),
+                days_until_update: 15
+              },
+              {
+                invoice_template_scheduled_update_id: 555,
+                _destroy: true
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.scheduled_updates.size).to be_zero
+      end
+    end
+
+    it 'creates a rule using template removing scheduled_update and resetting it' do
+      VCR.use_cassette('invoice_rules/create/using_template_removing_scheduled_update_and_resetting') do
+        result = subject.create(
+          {
+            invoice_template_id: 6,
+            additional_information: {
+              title: 'Regra com template removendo reajuste e colocando',
+              init_date: Date.today
+            },
+            scheduled_updates: [
+              {
+                invoice_template_scheduled_update_id: 555,
+                _destroy: true
+              },
+              {
+                invoice_template_scheduled_update_id: 555,
+                init_date: '11/04/2019',
+                days_until_update: 10,
+                _destroy: false
+              }
+            ]
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.scheduled_updates.size).to eql 1
+
+        expect(result.scheduled_updates.map { |s| s['init_date'] }).to include '2019-04-11'
+        expect(result.scheduled_updates.map { |s| s['month_quantity'] }).to include 12
+        expect(result.scheduled_updates.map { |s| s['days_until_update'] }).to include 10
+        expect(result.scheduled_updates.map { |s| s['price_index'] }).to include 'ipca'
+        expect(result.scheduled_updates.map { |s| s['service_item_id'] }).to include nil
+      end
+    end
+
+    it 'creates a rule using an incomplete template' do
+      VCR.use_cassette('invoice_rules/create/using_an_incomplete_template') do
+        result = subject.create(
+          {
+            invoice_template_id: 8,
+            additional_information: {
+              title: 'Regra por template incompleto',
+              init_date: Date.today
+            },
+            receivables_additional_information: {
+              day_quantity: 7,
+              parcel_number: 2
+            },
+            gross_value: 79.5,
+            myfinance_sale_account_id: 35,
+            myfinance_sale_account_name: 'Boletos'
+          }, contract_id: 6667
+        )
+
+        expect(result).to be_a entity_klass
+        expect(result.gross_value).to eql 79.5
+        expect(result.myfinance_sale_account_id).to eql 35
+        expect(result.myfinance_sale_account_name).to eql 'Boletos'
+        expect(result.receivables_additional_information['day_quantity']).to eql 7
+        expect(result.receivables_additional_information['only_business_days']).to be true
+        expect(result.receivables_additional_information['parcel_number']).to eql 2
+      end
+    end
+
     it "raises Billimatic::RequestError when contract isn't found" do
       VCR.use_cassette('invoice_rules/create/contract_not_found_failure') do
         expect {

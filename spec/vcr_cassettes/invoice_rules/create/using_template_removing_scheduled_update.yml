@@ -1,0 +1,112 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/contracts/254/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"invoice_template_id":14,"additional_information":{"title":"Regra
+        com template com reajuste removendo um","init_date":"2018-12-19"},"scheduled_updates":[{"invoice_template_scheduled_update_id":481,"init_date":"2019-02-10","month_quantity":20},{"invoice_template_scheduled_update_id":475,"_destroy":true}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.19.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"daa5f03519a2d2118f9dd631988be3d8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 79172709-28dc-44e2-b8de-ec8e66b625c8
+      X-Runtime:
+      - '0.294734'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjY5MTEsImNvbnRyYWN0X2lkIjoyNTQs
+        Imlzc3VlX2RhdGUiOm51bGwsImVzdGltYXRlZF9pc3N1ZV9kYXRlIjpudWxs
+        LCJncm9zc192YWx1ZSI6IjY0LjI4IiwicGF5bWVudF92YWx1ZSI6IjY0LjI4
+        IiwiZGVzY3JpcHRpb24iOiJ0ZXN0ZSIsInN0YXRlIjoidG9fZW1pdCIsImNh
+        bmNlbGxlZF9hdXRvbWF0aWNhbGx5IjpmYWxzZSwibmZlX3NlcnZpY2UiOm51
+        bGwsIm5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpu
+        dWxsLCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNzdWVkIjpmYWxz
+        ZSwibnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMTkvMTIvMjAxOCAxNjo1
+        Njo0NyAtMDI6MDAiLCJtYW5hZ2VtZW50X3R5cGUiOiJhdXRvbWF0aWMiLCJh
+        Y2NydWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9p
+        ZCI6MjEsImN1c3RvbWVyX3R5cGUiOiJDb21wYW55IiwiZW1pdGVzX3NlcnZp
+        Y2VfdmFsdWVzX2lkIjo2NSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVfbmFtZSI6
+        IkFsdWd1ZWwgZGUgc29mdHdhcmUgY29tIHJldGVuw6fDo28gZGUgSVNTIiwi
+        ZmluYW5jZV9jYXRlZ29yeSI6IiIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIi
+        OiIiLCJteWZpbmFuY2Vfc2FsZV9hY2NvdW50X2lkIjozNiwibXlmaW5hbmNl
+        X3NhbGVfYWNjb3VudF9uYW1lIjoiQ2llbG8iLCJjb2JyYXRvX2NoYXJnZV9j
+        b25maWdfaWQiOm51bGwsImNvYnJhdG9fY2hhcmdlX2NvbmZpZ19uYW1lIjoi
+        IiwiY29icmF0b19jaGFyZ2VfdGVtcGxhdGVfaWQiOm51bGwsImNvYnJhdG9f
+        Y2hhcmdlX3RlbXBsYXRlX25hbWUiOiIiLCJkYXlzX3VudGlsX2F1dG9tYXRp
+        Y19uZmVfZW1pc3Npb24iOjcsImF1dG9tYXRpY19uZmVfaXNzdWVfZGF0ZSI6
+        bnVsbCwiYXV0b21hdGljX2VtYWlsX3RlbXBsYXRlX2lkIjoxLCJhcHByb3Zh
+        bF9zdGF0dXMiOiJhcHByb3ZlZCIsIm5vdGlmaWNhdGlvbl9ydWxlcl9pZCI6
+        NTcsIm5vdGlmeV9jdXN0b21lciI6dHJ1ZSwiYXBwbHlfbmVnYXRpdmVfdXBk
+        YXRlcyI6dHJ1ZSwicmVjZWl2YWJsZXMiOltdLCJzZXJ2aWNlcyI6W3siaWQi
+        OjExNDc5LCJuYW1lIjoiU2VydmnDp28gMSIsImRlc2NyaXB0aW9uIjoiIiwi
+        dW5pdF92YWx1ZSI6IjUuNzUiLCJ1bml0cyI6IjIuNSIsInZhbHVlIjoiMTQu
+        MzgifSx7ImlkIjoxMTQ4MCwibmFtZSI6IkFwcCIsImRlc2NyaXB0aW9uIjoi
+        IiwidW5pdF92YWx1ZSI6IjQ5LjkiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoi
+        NDkuOSJ9XSwiYXR0YWNobWVudHMiOltdLCJwYXltZW50X2luZm9ybWF0aW9u
+        Ijp7ImlkIjo3MTY1LCJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdh
+        eSIsImNvYnJhdG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX21v
+        bnRoIjoiLS0iLCJjYXJkX2V4cGlyYXRpb25feWVhciI6Ii0tIiwiaW5zdGFs
+        bG1lbnRzIjoxLCJjcmVhdGVkX2F0IjoiMTkvMTIvMjAxOCAxNjo1Njo0NyAt
+        MDI6MDAifSwiYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6MzY4LCJp
+        bml0X2RhdGUiOiIyMDE4LTEyLTE5IiwidGl0bGUiOiJSZWdyYSBjb20gdGVt
+        cGxhdGUgY29tIHJlYWp1c3RlIHJlbW92ZW5kbyB1bSIsInBlcmlvZF91bml0
+        IjoibW9udGhseSIsIm1vbnRoX3F1YW50aXR5IjoxMiwiZW5kX2RhdGUiOm51
+        bGwsImNyZWF0ZWRfYXQiOiIxOS8xMi8yMDE4IDE2OjU2OjQ3IC0wMjowMCIs
+        ImFjY3J1YWxfbW9udGhfcXVhbnRpdHkiOiJwcmV2aW91c19tb250aCJ9LCJz
+        Y2hlZHVsZWRfdXBkYXRlcyI6W3siaWQiOjQ4NCwiaW52b2ljZV9ydWxlX2lk
+        Ijo2OTExLCJleGVjdXRpb25fZGF0ZSI6IjIwMTktMDItMTAiLCJtb250aF9x
+        dWFudGl0eSI6MjAsInByaWNlX2luZGV4IjoiaWdwZGkiLCJjcmVhdGVkX2F0
+        IjoiMjAxOC0xMi0xOVQxNjo1Njo0Ny43NTgtMDI6MDAiLCJ1cGRhdGVkX2F0
+        IjoiMjAxOC0xMi0xOVQxNjo1Njo0Ny43NTgtMDI6MDAiLCJpbml0X2RhdGUi
+        OiIyMDE5LTAyLTEwIiwiZGF5c191bnRpbF91cGRhdGUiOjcsInJlbWluZF9h
+        dCI6IjIwMTktMDItMDMiLCJub3RpZmllZCI6ZmFsc2UsInNlcnZpY2VfaXRl
+        bV9pZCI6MTEsImludm9pY2VfdGVtcGxhdGVfaWQiOm51bGx9XSwicmVjZWl2
+        YWJsZXNfYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6MzcwLCJkYXlf
+        bnVtYmVyIjoxMiwicGFyY2VsX251bWJlciI6NCwiaW52b2ljZV9ydWxlX2lk
+        Ijo2OTExLCJjcmVhdGVkX2F0IjoiMjAxOC0xMi0xOVQxNjo1Njo0Ny43NjIt
+        MDI6MDAiLCJ1cGRhdGVkX2F0IjoiMjAxOC0xMi0xOVQxNjo1Njo0Ny43NjIt
+        MDI6MDAiLCJkYXlfcXVhbnRpdHkiOm51bGwsIm1vbnRoX3F1YW50aXR5Ijoz
+        LCJvbmx5X2J1c2luZXNzX2RheXMiOmZhbHNlfX19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/contracts/254/invoice_rules
+  recorded_at: Wed, 19 Dec 2018 18:56:47 GMT
+recorded_with: VCR 3.0.3

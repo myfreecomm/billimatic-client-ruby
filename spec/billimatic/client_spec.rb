@@ -52,6 +52,12 @@ describe Billimatic::Client do
     end
   end
 
+  describe "#invoice_templates" do
+    it "returns an instance of Billimatic::Resources::InvoiceTemplate" do
+      expect(subject.invoice_templates).to be_a(Billimatic::Resources::InvoiceTemplate)
+    end
+  end
+
   describe "#invoice_rules" do
     it "returns an instance of Billimatic::Resources::InvoiceRule" do
       expect(subject.invoice_rules).to be_a(Billimatic::Resources::InvoiceRule)

@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"invoice_template_id":6,"additional_information":{"title":"Regra
+        com template repetindo reajuste e removendo","init_date":"2018-12-21"},"scheduled_updates":[{"invoice_template_scheduled_update_id":555,"init_date":"2019-02-10","days_until_update":15},{"invoice_template_scheduled_update_id":555,"_destroy":true}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.19.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 21 Dec 2018 11:47:03 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"11bdf37f484641aceb5c81e9ff000340"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7c76fd0b-02c6-46ba-8541-ff79e58f9f0f
+      X-Runtime:
+      - '0.210812'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"id":185269,"contract_id":6667,"issue_date":null,"estimated_issue_date":null,"gross_value":"64.28","payment_value":"64.28","description":"teste","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"21/12/2018
+        09:47:03 -02:00","management_type":"automatic","accrual_date":null,"comments":null,"customer_id":562,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":"","finance_category":"","finance_revenue_center":"","myfinance_sale_account_id":null,"myfinance_sale_account_name":"","cobrato_charge_config_id":null,"cobrato_charge_config_name":"","cobrato_charge_template_id":null,"cobrato_charge_template_name":"","days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":83,"approval_status":"approved","notification_ruler_id":2,"notify_customer":true,"apply_negative_updates":true,"receivables":[],"services":[{"id":247588,"name":"Carteira","description":"","unit_value":"5.75","units":"2.5","value":"14.38"},{"id":247589,"name":"Billimatic","description":"","unit_value":"49.9","units":"1.0","value":"49.9"}],"attachments":[],"payment_information":{"id":29111,"payment_method":"payment_gateway","cobrato_card_id":"--","card_expiration_month":"--","card_expiration_year":"--","installments":1,"created_at":"21/12/2018
+        09:47:03 -02:00"},"additional_information":{"id":7768,"init_date":"2018-12-21","title":"Regra
+        com template repetindo reajuste e removendo","period_unit":"monthly","month_quantity":12,"end_date":null,"created_at":"21/12/2018
+        09:47:03 -02:00","accrual_month_quantity":"same_month"},"scheduled_updates":[],"receivables_additional_information":{"id":7775,"day_number":1,"parcel_number":2,"invoice_rule_id":185269,"created_at":"2018-12-21T09:47:03.843-02:00","updated_at":"2018-12-21T09:47:03.843-02:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+  recorded_at: Fri, 21 Dec 2018 11:47:04 GMT
+recorded_with: VCR 3.0.3

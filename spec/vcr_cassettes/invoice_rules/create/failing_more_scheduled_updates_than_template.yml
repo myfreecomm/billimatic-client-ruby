@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+    body:
+      encoding: UTF-8
+      string: '{"invoice_rule":{"invoice_template_id":6,"additional_information":{"title":"Regra
+        com tentativa de mais de um reajuste","init_date":"2018-12-20"},"scheduled_updates":[{"invoice_template_scheduled_update_id":467,"init_date":"2019-02-15"},{"init_date":"2019-02-15","days_until_update":15,"month_quantity":12,"price_index":"ipcfipe"}]}}'
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.19.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 20 Dec 2018 16:48:17 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - f1574eb2-a54f-4e53-b39e-a872b71c768d
+      X-Runtime:
+      - '0.212369'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiZGVzY3JpcHRpb24iOiJuw6NvIHBvZGUgZmljYXIgZW0gYnJhbmNvIiwic2NoZWR1bGVkX3VwZGF0ZXMubW9udGhfcXVhbnRpdHkiOiJkZXZlIHNlciBudW3DqXJpY28iLCJzY2hlZHVsZWRfdXBkYXRlcy5kYXlzX3VudGlsX3VwZGF0ZSI6ImRldmUgc2VyIG51bcOpcmljbyIsInNjaGVkdWxlZF91cGRhdGVzLnByaWNlX2luZGV4IjoibsOjbyBwb2RlIGZpY2FyIGVtIGJyYW5jbyIsInNjaGVkdWxlZF91cGRhdGVzLnNlcnZpY2VfaXRlbV9pZCI6Im7Do28gcG9kZSB0ZXIgbWFpcyBkZSB1bSByZWFqdXN0ZSBzZW0gc2VydmnDp28ifX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+  recorded_at: Thu, 20 Dec 2018 16:48:18 GMT
+recorded_with: VCR 3.0.3
