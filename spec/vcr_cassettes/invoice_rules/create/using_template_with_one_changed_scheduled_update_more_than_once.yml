@@ -2,11 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/contracts/254/invoice_rules
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"invoice_template_id":25,"additional_information":{"title":"Regra
-        com template de um reajuste alterado mais de uma vez","init_date":"2018-12-19"},"scheduled_updates":[{"invoice_template_scheduled_update_id":471,"init_date":"2019-02-10","days_until_update":15,"month_quantity":6,"price_index":"igpm"},{"invoice_template_scheduled_update_id":471,"init_date":"2019-03-10","days_until_update":20,"price_index":"ipcfipe"}]}}'
+      string: '{"invoice_rule":{"invoice_template_id":6,"additional_information":{"title":"Regra
+        com template de um reajuste alterado mais de uma vez","init_date":"2018-12-21"},"scheduled_updates":[{"invoice_template_scheduled_update_id":543,"init_date":"2019-02-10","days_until_update":15,"month_quantity":6,"price_index":"igpm"},{"invoice_template_scheduled_update_id":543,"init_date":"2019-03-10","days_until_update":20,"price_index":"ipcfipe"}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.19.1
@@ -15,7 +15,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -23,9 +23,15 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 21 Dec 2018 11:01:12 GMT
+      Connection:
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,27 +43,29 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"96165ae659989448f2245f10e52060e0"
+      Etag:
+      - W/"9f6b0d4c435613ac3aeb325b0ee80512"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0ea4a877-77d4-486f-ab90-3c3c98cef03a
+      - bc81199d-790c-48c5-8efa-808cd6a22743
       X-Runtime:
-      - '0.310284'
+      - '0.261064'
       Vary:
       - Origin
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"id":6881,"contract_id":254,"issue_date":null,"estimated_issue_date":null,"gross_value":"270.0","payment_value":"270.0","description":"teste","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"19/12/2018
-        16:35:03 -02:00","management_type":"manual","accrual_date":null,"comments":null,"customer_id":21,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":"","finance_category":"","finance_revenue_center":"","myfinance_sale_account_id":35,"myfinance_sale_account_name":"Boletos","cobrato_charge_config_id":112,"cobrato_charge_config_name":"Myfinance","cobrato_charge_template_id":null,"cobrato_charge_template_name":"","days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":null,"approval_status":"approved","notification_ruler_id":null,"notify_customer":false,"apply_negative_updates":false,"receivables":[],"services":[],"attachments":[],"payment_information":{"id":7135,"payment_method":"billet","cobrato_card_id":"--","card_expiration_month":"--","card_expiration_year":"--","installments":1,"created_at":"19/12/2018
-        16:35:03 -02:00"},"additional_information":{"id":362,"init_date":"2018-12-19","title":"Regra
-        com template de um reajuste alterado mais de uma vez","period_unit":"monthly","month_quantity":12,"end_date":null,"created_at":"19/12/2018
-        16:35:03 -02:00","accrual_month_quantity":"same_month"},"scheduled_updates":[{"id":474,"invoice_rule_id":6881,"execution_date":"2019-03-10","month_quantity":6,"price_index":"ipcfipe","created_at":"2018-12-19T16:35:03.784-02:00","updated_at":"2018-12-19T16:35:03.784-02:00","init_date":"2019-03-10","days_until_update":20,"remind_at":"2019-02-18","notified":false,"service_item_id":null,"invoice_template_id":null}],"receivables_additional_information":{"id":364,"day_number":null,"parcel_number":null,"invoice_rule_id":6881,"created_at":"2018-12-19T16:35:03.788-02:00","updated_at":"2018-12-19T16:35:03.788-02:00","day_quantity":null,"month_quantity":null,"only_business_days":true}}}'
+      string: '{"invoice_rule":{"id":185221,"contract_id":6667,"issue_date":null,"estimated_issue_date":null,"gross_value":"64.28","payment_value":"64.28","description":"teste","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"21/12/2018
+        09:01:12 -02:00","management_type":"automatic","accrual_date":null,"comments":null,"customer_id":562,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":"","finance_category":"","finance_revenue_center":"","myfinance_sale_account_id":null,"myfinance_sale_account_name":"","cobrato_charge_config_id":null,"cobrato_charge_config_name":"","cobrato_charge_template_id":null,"cobrato_charge_template_name":"","days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":83,"approval_status":"approved","notification_ruler_id":2,"notify_customer":true,"apply_negative_updates":true,"receivables":[],"services":[{"id":247492,"name":"Carteira","description":"","unit_value":"5.75","units":"2.5","value":"14.38"},{"id":247493,"name":"Billimatic","description":"","unit_value":"49.9","units":"1.0","value":"49.9"}],"attachments":[],"payment_information":{"id":29063,"payment_method":"payment_gateway","cobrato_card_id":"--","card_expiration_month":"--","card_expiration_year":"--","installments":1,"created_at":"21/12/2018
+        09:01:12 -02:00"},"additional_information":{"id":7756,"init_date":"2018-12-21","title":"Regra
+        com template de um reajuste alterado mais de uma vez","period_unit":"monthly","month_quantity":12,"end_date":null,"created_at":"21/12/2018
+        09:01:12 -02:00","accrual_month_quantity":"same_month"},"scheduled_updates":[{"id":547,"invoice_rule_id":185221,"execution_date":"2019-03-10","month_quantity":6,"price_index":"ipcfipe","created_at":"2018-12-21T09:01:12.076-02:00","updated_at":"2018-12-21T09:01:12.076-02:00","init_date":"2019-03-10","days_until_update":20,"remind_at":"2019-02-18","notified":false,"service_item_id":null,"invoice_template_id":null}],"receivables_additional_information":{"id":7763,"day_number":1,"parcel_number":2,"invoice_rule_id":185221,"created_at":"2018-12-21T09:01:12.078-02:00","updated_at":"2018-12-21T09:01:12.078-02:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/254/invoice_rules
-  recorded_at: Wed, 19 Dec 2018 18:35:03 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+  recorded_at: Fri, 21 Dec 2018 11:01:12 GMT
 recorded_with: VCR 3.0.3

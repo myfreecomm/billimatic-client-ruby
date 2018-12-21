@@ -2,11 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/contracts/254/invoice_rules
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"invoice_template_id":15,"additional_information":{"title":"Regra
-        com vários reajustes e tentativa de remover serviço","init_date":"2018-12-19"},"services":[{"invoice_template_service_item_id":11219,"_destroy":true}],"scheduled_updates":[{"invoice_template_scheduled_update_id":468,"init_date":"2019-02-15","month_quantity":12,"days_until_update":20},{"invoice_template_scheduled_update_id":469,"init_date":"2019-02-15","month_quantity":12,"days_until_update":20},{"invoice_template_scheduled_update_id":470,"init_date":"2019-02-15","month_quantity":12,"days_until_update":20}]}}'
+      string: '{"invoice_rule":{"invoice_template_id":6,"additional_information":{"title":"Regra
+        com vários reajustes e tentativa de remover serviço","init_date":"2018-12-20"},"services":[{"invoice_template_service_item_id":349,"_destroy":true}],"scheduled_updates":[{"invoice_template_scheduled_update_id":468,"init_date":"2019-02-15","month_quantity":12,"days_until_update":20},{"invoice_template_scheduled_update_id":469,"init_date":"2019-02-15","month_quantity":12,"days_until_update":20},{"invoice_template_scheduled_update_id":470,"init_date":"2019-02-15","month_quantity":12,"days_until_update":20}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.19.1
@@ -15,7 +15,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -23,9 +23,15 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 20 Dec 2018 16:57:38 GMT
+      Connection:
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -40,21 +46,21 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - b6a7712a-78b6-4ddf-a5c3-c03063a6c4da
+      - 7566328e-332b-4d7a-9492-5d730779c502
       X-Runtime:
-      - '0.059263'
+      - '0.048395'
       Vary:
       - Origin
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlcnJvcnMiOnsic2NoZWR1bGVkX3VwZGF0ZXMuc2VydmljZV9pdGVtX2lk
-        IjoiZGV2ZSBlc3RhciBlbnRyZSBvcyBzZXJ2acOnb3MgZGEgcmVncmEgcmVj
-        b3JyZW50ZSJ9fQ==
+        eyJlcnJvcnMiOnsiZGVzY3JpcHRpb24iOiJuw6NvIHBvZGUgZmljYXIgZW0gYnJhbmNvIiwic2NoZWR1bGVkX3VwZGF0ZXMucHJpY2VfaW5kZXgiOiJuw6NvIHBvZGUgZmljYXIgZW0gYnJhbmNvIiwic2NoZWR1bGVkX3VwZGF0ZXMuc2VydmljZV9pdGVtX2lkIjoibsOjbyBwb2RlIHRlciBtYWlzIGRlIHVtIHJlYWp1c3RlIHNlbSBzZXJ2acOnbyJ9fQ==
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/254/invoice_rules
-  recorded_at: Wed, 19 Dec 2018 18:14:53 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+  recorded_at: Thu, 20 Dec 2018 16:57:38 GMT
 recorded_with: VCR 3.0.3

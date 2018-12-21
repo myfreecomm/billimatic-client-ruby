@@ -2,11 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/contracts/254/invoice_rules
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"invoice_template_id":25,"additional_information":{"title":"Regra
-        com template repetindo reajuste e removendo","init_date":"2018-12-19"},"scheduled_updates":[{"invoice_template_scheduled_update_id":471,"init_date":"2019-02-10","days_until_update":15},{"invoice_template_scheduled_update_id":471,"_destroy":true}]}}'
+      string: '{"invoice_rule":{"invoice_template_id":6,"additional_information":{"title":"Regra
+        com template repetindo reajuste e removendo","init_date":"2018-12-21"},"scheduled_updates":[{"invoice_template_scheduled_update_id":555,"init_date":"2019-02-10","days_until_update":15},{"invoice_template_scheduled_update_id":555,"_destroy":true}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.19.1
@@ -15,7 +15,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -23,9 +23,15 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 21 Dec 2018 11:47:03 GMT
+      Connection:
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,70 +43,29 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"d289a4847a92626db556a55d914658ea"
+      Etag:
+      - W/"11bdf37f484641aceb5c81e9ff000340"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3ef32760-2ecf-4f55-b9cc-f3d3d27528fb
+      - 7c76fd0b-02c6-46ba-8541-ff79e58f9f0f
       X-Runtime:
-      - '0.236313'
+      - '0.210812'
       Vary:
       - Origin
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 vegur
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjY5MTUsImNvbnRyYWN0X2lkIjoyNTQs
-        Imlzc3VlX2RhdGUiOm51bGwsImVzdGltYXRlZF9pc3N1ZV9kYXRlIjpudWxs
-        LCJncm9zc192YWx1ZSI6IjEyOS4wIiwicGF5bWVudF92YWx1ZSI6IjEyOS4w
-        IiwiZGVzY3JpcHRpb24iOiJ0ZXN0ZSIsInN0YXRlIjoidG9fZW1pdCIsImNh
-        bmNlbGxlZF9hdXRvbWF0aWNhbGx5IjpmYWxzZSwibmZlX3NlcnZpY2UiOm51
-        bGwsIm5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpu
-        dWxsLCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNzdWVkIjpmYWxz
-        ZSwibnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMTkvMTIvMjAxOCAxNzow
-        MDo0MyAtMDI6MDAiLCJtYW5hZ2VtZW50X3R5cGUiOiJtYW51YWwiLCJhY2Ny
-        dWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9pZCI6
-        MjEsImN1c3RvbWVyX3R5cGUiOiJDb21wYW55IiwiZW1pdGVzX3NlcnZpY2Vf
-        dmFsdWVzX2lkIjpudWxsLCJlbWl0ZXNfc2VydmljZV92YWx1ZV9uYW1lIjoi
-        IiwiZmluYW5jZV9jYXRlZ29yeSI6IiIsImZpbmFuY2VfcmV2ZW51ZV9jZW50
-        ZXIiOiIiLCJteWZpbmFuY2Vfc2FsZV9hY2NvdW50X2lkIjozNSwibXlmaW5h
-        bmNlX3NhbGVfYWNjb3VudF9uYW1lIjoiQm9sZXRvcyIsImNvYnJhdG9fY2hh
-        cmdlX2NvbmZpZ19pZCI6MTEyLCJjb2JyYXRvX2NoYXJnZV9jb25maWdfbmFt
-        ZSI6Ik15ZmluYW5jZSIsImNvYnJhdG9fY2hhcmdlX3RlbXBsYXRlX2lkIjpu
-        dWxsLCJjb2JyYXRvX2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoiIiwiZGF5c191
-        bnRpbF9hdXRvbWF0aWNfbmZlX2VtaXNzaW9uIjowLCJhdXRvbWF0aWNfbmZl
-        X2lzc3VlX2RhdGUiOm51bGwsImF1dG9tYXRpY19lbWFpbF90ZW1wbGF0ZV9p
-        ZCI6bnVsbCwiYXBwcm92YWxfc3RhdHVzIjoiYXBwcm92ZWQiLCJub3RpZmlj
-        YXRpb25fcnVsZXJfaWQiOm51bGwsIm5vdGlmeV9jdXN0b21lciI6ZmFsc2Us
-        ImFwcGx5X25lZ2F0aXZlX3VwZGF0ZXMiOmZhbHNlLCJyZWNlaXZhYmxlcyI6
-        W10sInNlcnZpY2VzIjpbeyJpZCI6MTE0OTAsIm5hbWUiOiJTZXJ2acOnbyAx
-        MCIsImRlc2NyaXB0aW9uIjoiIiwidW5pdF92YWx1ZSI6IjQwLjAiLCJ1bml0
-        cyI6IjEuMCIsInZhbHVlIjoiNDAuMCJ9LHsiaWQiOjExNDkxLCJuYW1lIjoi
-        QXBwIiwiZGVzY3JpcHRpb24iOiIiLCJ1bml0X3ZhbHVlIjoiNTAuMCIsInVu
-        aXRzIjoiMS4wIiwidmFsdWUiOiI1MC4wIn0seyJpZCI6MTE0OTIsIm5hbWUi
-        OiJBcHAiLCJkZXNjcmlwdGlvbiI6IiIsInVuaXRfdmFsdWUiOiIzOS4wIiwi
-        dW5pdHMiOiIxLjAiLCJ2YWx1ZSI6IjM5LjAifV0sImF0dGFjaG1lbnRzIjpb
-        XSwicGF5bWVudF9pbmZvcm1hdGlvbiI6eyJpZCI6NzE2OSwicGF5bWVudF9t
-        ZXRob2QiOiJiaWxsZXQiLCJjb2JyYXRvX2NhcmRfaWQiOiItLSIsImNhcmRf
-        ZXhwaXJhdGlvbl9tb250aCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX3llYXIi
-        OiItLSIsImluc3RhbGxtZW50cyI6MSwiY3JlYXRlZF9hdCI6IjE5LzEyLzIw
-        MTggMTc6MDA6NDMgLTAyOjAwIn0sImFkZGl0aW9uYWxfaW5mb3JtYXRpb24i
-        OnsiaWQiOjM2OSwiaW5pdF9kYXRlIjoiMjAxOC0xMi0xOSIsInRpdGxlIjoi
-        UmVncmEgY29tIHRlbXBsYXRlIHJlcGV0aW5kbyByZWFqdXN0ZSBlIHJlbW92
-        ZW5kbyIsInBlcmlvZF91bml0IjoibW9udGhseSIsIm1vbnRoX3F1YW50aXR5
-        IjoxMiwiZW5kX2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIxOS8xMi8yMDE4
-        IDE3OjAwOjQzIC0wMjowMCIsImFjY3J1YWxfbW9udGhfcXVhbnRpdHkiOiJz
-        YW1lX21vbnRoIn0sInNjaGVkdWxlZF91cGRhdGVzIjpbXSwicmVjZWl2YWJs
-        ZXNfYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6MzcxLCJkYXlfbnVt
-        YmVyIjpudWxsLCJwYXJjZWxfbnVtYmVyIjpudWxsLCJpbnZvaWNlX3J1bGVf
-        aWQiOjY5MTUsImNyZWF0ZWRfYXQiOiIyMDE4LTEyLTE5VDE3OjAwOjQzLjMw
-        NC0wMjowMCIsInVwZGF0ZWRfYXQiOiIyMDE4LTEyLTE5VDE3OjAwOjQzLjMw
-        NC0wMjowMCIsImRheV9xdWFudGl0eSI6bnVsbCwibW9udGhfcXVhbnRpdHki
-        Om51bGwsIm9ubHlfYnVzaW5lc3NfZGF5cyI6dHJ1ZX19fQ==
+      encoding: UTF-8
+      string: '{"invoice_rule":{"id":185269,"contract_id":6667,"issue_date":null,"estimated_issue_date":null,"gross_value":"64.28","payment_value":"64.28","description":"teste","state":"to_emit","cancelled_automatically":false,"nfe_service":null,"nfe_verification":null,"nfe_issue_date":null,"nfe_body":"$DESCRICAO","nfe_issued":false,"number":null,"created_at":"21/12/2018
+        09:47:03 -02:00","management_type":"automatic","accrual_date":null,"comments":null,"customer_id":562,"customer_type":"Company","emites_service_values_id":null,"emites_service_value_name":"","finance_category":"","finance_revenue_center":"","myfinance_sale_account_id":null,"myfinance_sale_account_name":"","cobrato_charge_config_id":null,"cobrato_charge_config_name":"","cobrato_charge_template_id":null,"cobrato_charge_template_name":"","days_until_automatic_nfe_emission":0,"automatic_nfe_issue_date":null,"automatic_email_template_id":83,"approval_status":"approved","notification_ruler_id":2,"notify_customer":true,"apply_negative_updates":true,"receivables":[],"services":[{"id":247588,"name":"Carteira","description":"","unit_value":"5.75","units":"2.5","value":"14.38"},{"id":247589,"name":"Billimatic","description":"","unit_value":"49.9","units":"1.0","value":"49.9"}],"attachments":[],"payment_information":{"id":29111,"payment_method":"payment_gateway","cobrato_card_id":"--","card_expiration_month":"--","card_expiration_year":"--","installments":1,"created_at":"21/12/2018
+        09:47:03 -02:00"},"additional_information":{"id":7768,"init_date":"2018-12-21","title":"Regra
+        com template repetindo reajuste e removendo","period_unit":"monthly","month_quantity":12,"end_date":null,"created_at":"21/12/2018
+        09:47:03 -02:00","accrual_month_quantity":"same_month"},"scheduled_updates":[],"receivables_additional_information":{"id":7775,"day_number":1,"parcel_number":2,"invoice_rule_id":185269,"created_at":"2018-12-21T09:47:03.843-02:00","updated_at":"2018-12-21T09:47:03.843-02:00","day_quantity":null,"month_quantity":null,"only_business_days":false}}}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/254/invoice_rules
-  recorded_at: Wed, 19 Dec 2018 19:00:43 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+  recorded_at: Fri, 21 Dec 2018 11:47:04 GMT
 recorded_with: VCR 3.0.3

@@ -2,11 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/contracts/254/invoice_rules
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"invoice_template_id":14,"additional_information":{"title":"Teste
-        removendo serviços","init_date":"2018-12-19"},"services":[{"invoice_template_service_item_id":11209,"_destroy":true}]}}'
+      string: '{"invoice_rule":{"invoice_template_id":6,"additional_information":{"title":"Teste
+        removendo serviços","init_date":"2018-12-20"},"services":[{"invoice_template_service_item_id":246358,"_destroy":true}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.19.1
@@ -15,7 +15,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -23,9 +23,15 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 20 Dec 2018 19:12:47 GMT
+      Connection:
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,67 +43,26 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"084ce46a9d489841e85c3fa35cb7631e"
+      Etag:
+      - W/"d5522d10b9a4ae2ae89b98d1eb672738"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9703076d-4c67-428b-9749-3163cdc5bb92
+      - 7890fc9c-e83c-4763-b8c6-edfaff4e1a23
       X-Runtime:
-      - '1.004636'
+      - '0.638817'
       Vary:
       - Origin
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjY4NjksImNvbnRyYWN0X2lkIjoyNTQs
-        Imlzc3VlX2RhdGUiOm51bGwsImVzdGltYXRlZF9pc3N1ZV9kYXRlIjpudWxs
-        LCJncm9zc192YWx1ZSI6IjE0LjM4IiwicGF5bWVudF92YWx1ZSI6IjE0LjM4
-        IiwiZGVzY3JpcHRpb24iOiJ0ZXN0ZSIsInN0YXRlIjoidG9fZW1pdCIsImNh
-        bmNlbGxlZF9hdXRvbWF0aWNhbGx5IjpmYWxzZSwibmZlX3NlcnZpY2UiOm51
-        bGwsIm5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpu
-        dWxsLCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNzdWVkIjpmYWxz
-        ZSwibnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMTkvMTIvMjAxOCAxNjox
-        OTo1MyAtMDI6MDAiLCJtYW5hZ2VtZW50X3R5cGUiOiJhdXRvbWF0aWMiLCJh
-        Y2NydWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9p
-        ZCI6MjEsImN1c3RvbWVyX3R5cGUiOiJDb21wYW55IiwiZW1pdGVzX3NlcnZp
-        Y2VfdmFsdWVzX2lkIjo2NSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVfbmFtZSI6
-        IkFsdWd1ZWwgZGUgc29mdHdhcmUgY29tIHJldGVuw6fDo28gZGUgSVNTIiwi
-        ZmluYW5jZV9jYXRlZ29yeSI6IiIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIi
-        OiIiLCJteWZpbmFuY2Vfc2FsZV9hY2NvdW50X2lkIjozNiwibXlmaW5hbmNl
-        X3NhbGVfYWNjb3VudF9uYW1lIjoiQ2llbG8iLCJjb2JyYXRvX2NoYXJnZV9j
-        b25maWdfaWQiOjEzNywiY29icmF0b19jaGFyZ2VfY29uZmlnX25hbWUiOiJU
-        ZXN0ZSBDYXJ0w6NvIiwiY29icmF0b19jaGFyZ2VfdGVtcGxhdGVfaWQiOm51
-        bGwsImNvYnJhdG9fY2hhcmdlX3RlbXBsYXRlX25hbWUiOiIiLCJkYXlzX3Vu
-        dGlsX2F1dG9tYXRpY19uZmVfZW1pc3Npb24iOjcsImF1dG9tYXRpY19uZmVf
-        aXNzdWVfZGF0ZSI6bnVsbCwiYXV0b21hdGljX2VtYWlsX3RlbXBsYXRlX2lk
-        IjoxLCJhcHByb3ZhbF9zdGF0dXMiOiJhcHByb3ZlZCIsIm5vdGlmaWNhdGlv
-        bl9ydWxlcl9pZCI6NTcsIm5vdGlmeV9jdXN0b21lciI6ZmFsc2UsImFwcGx5
-        X25lZ2F0aXZlX3VwZGF0ZXMiOmZhbHNlLCJyZWNlaXZhYmxlcyI6W10sInNl
-        cnZpY2VzIjpbeyJpZCI6MTE0MDUsIm5hbWUiOiJTZXJ2acOnbyAxIiwiZGVz
-        Y3JpcHRpb24iOiIiLCJ1bml0X3ZhbHVlIjoiNS43NSIsInVuaXRzIjoiMi41
-        IiwidmFsdWUiOiIxNC4zOCJ9XSwiYXR0YWNobWVudHMiOltdLCJwYXltZW50
-        X2luZm9ybWF0aW9uIjp7ImlkIjo3MTIzLCJwYXltZW50X21ldGhvZCI6InBh
-        eW1lbnRfZ2F0ZXdheSIsImNvYnJhdG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9l
-        eHBpcmF0aW9uX21vbnRoIjoiLS0iLCJjYXJkX2V4cGlyYXRpb25feWVhciI6
-        Ii0tIiwiaW5zdGFsbG1lbnRzIjoxLCJjcmVhdGVkX2F0IjoiMTkvMTIvMjAx
-        OCAxNjoxOTo1MyAtMDI6MDAifSwiYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6
-        eyJpZCI6MzU5LCJpbml0X2RhdGUiOiIyMDE4LTEyLTE5IiwidGl0bGUiOiJU
-        ZXN0ZSByZW1vdmVuZG8gc2VydmnDp29zIiwicGVyaW9kX3VuaXQiOiJtb250
-        aGx5IiwibW9udGhfcXVhbnRpdHkiOjEyLCJlbmRfZGF0ZSI6bnVsbCwiY3Jl
-        YXRlZF9hdCI6IjE5LzEyLzIwMTggMTY6MTk6NTMgLTAyOjAwIiwiYWNjcnVh
-        bF9tb250aF9xdWFudGl0eSI6InByZXZpb3VzX21vbnRoIn0sInNjaGVkdWxl
-        ZF91cGRhdGVzIjpbXSwicmVjZWl2YWJsZXNfYWRkaXRpb25hbF9pbmZvcm1h
-        dGlvbiI6eyJpZCI6MzYxLCJkYXlfbnVtYmVyIjoxMiwicGFyY2VsX251bWJl
-        ciI6NCwiaW52b2ljZV9ydWxlX2lkIjo2ODY5LCJjcmVhdGVkX2F0IjoiMjAx
-        OC0xMi0xOVQxNjoxOTo1My40MDMtMDI6MDAiLCJ1cGRhdGVkX2F0IjoiMjAx
-        OC0xMi0xOVQxNjoxOTo1My40MDMtMDI6MDAiLCJkYXlfcXVhbnRpdHkiOm51
-        bGwsIm1vbnRoX3F1YW50aXR5IjozLCJvbmx5X2J1c2luZXNzX2RheXMiOmZh
-        bHNlfX19
+        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjE4NTAwMiwiY29udHJhY3RfaWQiOjY2NjcsImlzc3VlX2RhdGUiOm51bGwsImVzdGltYXRlZF9pc3N1ZV9kYXRlIjpudWxsLCJncm9zc192YWx1ZSI6IjE0LjM4IiwicGF5bWVudF92YWx1ZSI6IjE0LjM4IiwiZGVzY3JpcHRpb24iOiJ0ZXN0ZSIsInN0YXRlIjoidG9fZW1pdCIsImNhbmNlbGxlZF9hdXRvbWF0aWNhbGx5IjpmYWxzZSwibmZlX3NlcnZpY2UiOm51bGwsIm5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpudWxsLCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNzdWVkIjpmYWxzZSwibnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAvMTIvMjAxOCAxNzoxMjo0NyAtMDI6MDAiLCJtYW5hZ2VtZW50X3R5cGUiOiJhdXRvbWF0aWMiLCJhY2NydWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9pZCI6NTYyLCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIsImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiZW1pdGVzX3NlcnZpY2VfdmFsdWVfbmFtZSI6IiIsImZpbmFuY2VfY2F0ZWdvcnkiOiIiLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjoiIiwibXlmaW5hbmNlX3NhbGVfYWNjb3VudF9pZCI6bnVsbCwibXlmaW5hbmNlX3NhbGVfYWNjb3VudF9uYW1lIjoiIiwiY29icmF0b19jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJjb2JyYXRvX2NoYXJnZV9jb25maWdfbmFtZSI6IiIsImNvYnJhdG9fY2hhcmdlX3RlbXBsYXRlX2lkIjpudWxsLCJjb2JyYXRvX2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoiIiwiZGF5c191bnRpbF9hdXRvbWF0aWNfbmZlX2VtaXNzaW9uIjowLCJhdXRvbWF0aWNfbmZlX2lzc3VlX2RhdGUiOm51bGwsImF1dG9tYXRpY19lbWFpbF90ZW1wbGF0ZV9pZCI6ODMsImFwcHJvdmFsX3N0YXR1cyI6ImFwcHJvdmVkIiwibm90aWZpY2F0aW9uX3J1bGVyX2lkIjoyLCJub3RpZnlfY3VzdG9tZXIiOmZhbHNlLCJhcHBseV9uZWdhdGl2ZV91cGRhdGVzIjpmYWxzZSwicmVjZWl2YWJsZXMiOltdLCJzZXJ2aWNlcyI6W3siaWQiOjI0Njk4NCwibmFtZSI6IkNhcnRlaXJhIiwiZGVzY3JpcHRpb24iOiIiLCJ1bml0X3ZhbHVlIjoiNS43NSIsInVuaXRzIjoiMi41IiwidmFsdWUiOiIxNC4zOCJ9XSwiYXR0YWNobWVudHMiOltdLCJwYXltZW50X2luZm9ybWF0aW9uIjp7ImlkIjoyODg0NCwicGF5bWVudF9tZXRob2QiOiJwYXltZW50X2dhdGV3YXkiLCJjb2JyYXRvX2NhcmRfaWQiOiItLSIsImNhcmRfZXhwaXJhdGlvbl9tb250aCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX3llYXIiOiItLSIsImluc3RhbGxtZW50cyI6MSwiY3JlYXRlZF9hdCI6IjIwLzEyLzIwMTggMTc6MTI6NDcgLTAyOjAwIn0sImFkZGl0aW9uYWxfaW5mb3JtYXRpb24iOnsiaWQiOjc3MDgsImluaXRfZGF0ZSI6IjIwMTgtMTItMjAiLCJ0aXRsZSI6IlRlc3RlIHJlbW92ZW5kbyBzZXJ2acOnb3MiLCJwZXJpb2RfdW5pdCI6Im1vbnRobHkiLCJtb250aF9xdWFudGl0eSI6MTIsImVuZF9kYXRlIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAvMTIvMjAxOCAxNzoxMjo0NyAtMDI6MDAiLCJhY2NydWFsX21vbnRoX3F1YW50aXR5Ijoic2FtZV9tb250aCJ9LCJzY2hlZHVsZWRfdXBkYXRlcyI6W10sInJlY2VpdmFibGVzX2FkZGl0aW9uYWxfaW5mb3JtYXRpb24iOnsiaWQiOjc3MTUsImRheV9udW1iZXIiOjEsInBhcmNlbF9udW1iZXIiOjIsImludm9pY2VfcnVsZV9pZCI6MTg1MDAyLCJjcmVhdGVkX2F0IjoiMjAxOC0xMi0yMFQxNzoxMjo0Ny42MjAtMDI6MDAiLCJ1cGRhdGVkX2F0IjoiMjAxOC0xMi0yMFQxNzoxMjo0Ny42MjAtMDI6MDAiLCJkYXlfcXVhbnRpdHkiOm51bGwsIm1vbnRoX3F1YW50aXR5IjpudWxsLCJvbmx5X2J1c2luZXNzX2RheXMiOmZhbHNlfX19
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/254/invoice_rules
-  recorded_at: Wed, 19 Dec 2018 18:19:54 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+  recorded_at: Thu, 20 Dec 2018 19:12:48 GMT
 recorded_with: VCR 3.0.3

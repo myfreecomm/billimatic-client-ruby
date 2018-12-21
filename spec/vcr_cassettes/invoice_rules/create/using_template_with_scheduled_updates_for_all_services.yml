@@ -2,11 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/contracts/254/invoice_rules
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"invoice_template_id":14,"additional_information":{"title":"Regra
-        com template com reajustes para todos os serviços","init_date":"2018-12-19"},"scheduled_updates":[{"invoice_template_scheduled_update_id":481,"init_date":"2019-02-10","month_quantity":20},{"invoice_template_scheduled_update_id":475,"init_date":"2019-02-11","days_until_update":15}]}}'
+      string: '{"invoice_rule":{"invoice_template_id":6,"additional_information":{"title":"Regra
+        com template com reajustes para todos os serviços","init_date":"2018-12-21"},"scheduled_updates":[{"invoice_template_scheduled_update_id":543,"init_date":"2019-02-10","month_quantity":20},{"invoice_template_scheduled_update_id":555,"init_date":"2019-02-11","days_until_update":15}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.19.1
@@ -15,7 +15,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -23,9 +23,15 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 21 Dec 2018 11:13:41 GMT
+      Connection:
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,84 +43,26 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"ca26bc505eb27dce03fef4146d7c4b36"
+      Etag:
+      - W/"de733ba961841b1ea66c7663318d3c24"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2ce752db-ada0-4263-8745-16242f2687d6
+      - a1794177-93a1-4b52-9ad8-d31acc6cef43
       X-Runtime:
-      - '0.295591'
+      - '0.213113'
       Vary:
       - Origin
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjY5MDcsImNvbnRyYWN0X2lkIjoyNTQs
-        Imlzc3VlX2RhdGUiOm51bGwsImVzdGltYXRlZF9pc3N1ZV9kYXRlIjpudWxs
-        LCJncm9zc192YWx1ZSI6IjY0LjI4IiwicGF5bWVudF92YWx1ZSI6IjY0LjI4
-        IiwiZGVzY3JpcHRpb24iOiJ0ZXN0ZSIsInN0YXRlIjoidG9fZW1pdCIsImNh
-        bmNlbGxlZF9hdXRvbWF0aWNhbGx5IjpmYWxzZSwibmZlX3NlcnZpY2UiOm51
-        bGwsIm5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpu
-        dWxsLCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNzdWVkIjpmYWxz
-        ZSwibnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMTkvMTIvMjAxOCAxNjo1
-        MzozNSAtMDI6MDAiLCJtYW5hZ2VtZW50X3R5cGUiOiJhdXRvbWF0aWMiLCJh
-        Y2NydWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9p
-        ZCI6MjEsImN1c3RvbWVyX3R5cGUiOiJDb21wYW55IiwiZW1pdGVzX3NlcnZp
-        Y2VfdmFsdWVzX2lkIjo2NSwiZW1pdGVzX3NlcnZpY2VfdmFsdWVfbmFtZSI6
-        IkFsdWd1ZWwgZGUgc29mdHdhcmUgY29tIHJldGVuw6fDo28gZGUgSVNTIiwi
-        ZmluYW5jZV9jYXRlZ29yeSI6IiIsImZpbmFuY2VfcmV2ZW51ZV9jZW50ZXIi
-        OiIiLCJteWZpbmFuY2Vfc2FsZV9hY2NvdW50X2lkIjozNiwibXlmaW5hbmNl
-        X3NhbGVfYWNjb3VudF9uYW1lIjoiQ2llbG8iLCJjb2JyYXRvX2NoYXJnZV9j
-        b25maWdfaWQiOm51bGwsImNvYnJhdG9fY2hhcmdlX2NvbmZpZ19uYW1lIjoi
-        IiwiY29icmF0b19jaGFyZ2VfdGVtcGxhdGVfaWQiOm51bGwsImNvYnJhdG9f
-        Y2hhcmdlX3RlbXBsYXRlX25hbWUiOiIiLCJkYXlzX3VudGlsX2F1dG9tYXRp
-        Y19uZmVfZW1pc3Npb24iOjcsImF1dG9tYXRpY19uZmVfaXNzdWVfZGF0ZSI6
-        bnVsbCwiYXV0b21hdGljX2VtYWlsX3RlbXBsYXRlX2lkIjoxLCJhcHByb3Zh
-        bF9zdGF0dXMiOiJhcHByb3ZlZCIsIm5vdGlmaWNhdGlvbl9ydWxlcl9pZCI6
-        NTcsIm5vdGlmeV9jdXN0b21lciI6dHJ1ZSwiYXBwbHlfbmVnYXRpdmVfdXBk
-        YXRlcyI6dHJ1ZSwicmVjZWl2YWJsZXMiOltdLCJzZXJ2aWNlcyI6W3siaWQi
-        OjExNDcxLCJuYW1lIjoiU2VydmnDp28gMSIsImRlc2NyaXB0aW9uIjoiIiwi
-        dW5pdF92YWx1ZSI6IjUuNzUiLCJ1bml0cyI6IjIuNSIsInZhbHVlIjoiMTQu
-        MzgifSx7ImlkIjoxMTQ3MiwibmFtZSI6IkFwcCIsImRlc2NyaXB0aW9uIjoi
-        IiwidW5pdF92YWx1ZSI6IjQ5LjkiLCJ1bml0cyI6IjEuMCIsInZhbHVlIjoi
-        NDkuOSJ9XSwiYXR0YWNobWVudHMiOltdLCJwYXltZW50X2luZm9ybWF0aW9u
-        Ijp7ImlkIjo3MTYxLCJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdh
-        eSIsImNvYnJhdG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX21v
-        bnRoIjoiLS0iLCJjYXJkX2V4cGlyYXRpb25feWVhciI6Ii0tIiwiaW5zdGFs
-        bG1lbnRzIjoxLCJjcmVhdGVkX2F0IjoiMTkvMTIvMjAxOCAxNjo1MzozNSAt
-        MDI6MDAifSwiYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6MzY3LCJp
-        bml0X2RhdGUiOiIyMDE4LTEyLTE5IiwidGl0bGUiOiJSZWdyYSBjb20gdGVt
-        cGxhdGUgY29tIHJlYWp1c3RlcyBwYXJhIHRvZG9zIG9zIHNlcnZpw6dvcyIs
-        InBlcmlvZF91bml0IjoibW9udGhseSIsIm1vbnRoX3F1YW50aXR5IjoxMiwi
-        ZW5kX2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIxOS8xMi8yMDE4IDE2OjUz
-        OjM1IC0wMjowMCIsImFjY3J1YWxfbW9udGhfcXVhbnRpdHkiOiJwcmV2aW91
-        c19tb250aCJ9LCJzY2hlZHVsZWRfdXBkYXRlcyI6W3siaWQiOjQ4MiwiaW52
-        b2ljZV9ydWxlX2lkIjo2OTA3LCJleGVjdXRpb25fZGF0ZSI6IjIwMTktMDIt
-        MTAiLCJtb250aF9xdWFudGl0eSI6MjAsInByaWNlX2luZGV4IjoiaWdwZGki
-        LCJjcmVhdGVkX2F0IjoiMjAxOC0xMi0xOVQxNjo1MzozNS4zNDktMDI6MDAi
-        LCJ1cGRhdGVkX2F0IjoiMjAxOC0xMi0xOVQxNjo1MzozNS4zNDktMDI6MDAi
-        LCJpbml0X2RhdGUiOiIyMDE5LTAyLTEwIiwiZGF5c191bnRpbF91cGRhdGUi
-        OjcsInJlbWluZF9hdCI6IjIwMTktMDItMDMiLCJub3RpZmllZCI6ZmFsc2Us
-        InNlcnZpY2VfaXRlbV9pZCI6MTEsImludm9pY2VfdGVtcGxhdGVfaWQiOm51
-        bGx9LHsiaWQiOjQ4MywiaW52b2ljZV9ydWxlX2lkIjo2OTA3LCJleGVjdXRp
-        b25fZGF0ZSI6IjIwMTktMDItMTEiLCJtb250aF9xdWFudGl0eSI6MTIsInBy
-        aWNlX2luZGV4IjoiaWdwbSIsImNyZWF0ZWRfYXQiOiIyMDE4LTEyLTE5VDE2
-        OjUzOjM1LjM1MS0wMjowMCIsInVwZGF0ZWRfYXQiOiIyMDE4LTEyLTE5VDE2
-        OjUzOjM1LjM1MS0wMjowMCIsImluaXRfZGF0ZSI6IjIwMTktMDItMTEiLCJk
-        YXlzX3VudGlsX3VwZGF0ZSI6MTUsInJlbWluZF9hdCI6IjIwMTktMDEtMjci
-        LCJub3RpZmllZCI6ZmFsc2UsInNlcnZpY2VfaXRlbV9pZCI6MSwiaW52b2lj
-        ZV90ZW1wbGF0ZV9pZCI6bnVsbH1dLCJyZWNlaXZhYmxlc19hZGRpdGlvbmFs
-        X2luZm9ybWF0aW9uIjp7ImlkIjozNjksImRheV9udW1iZXIiOjEyLCJwYXJj
-        ZWxfbnVtYmVyIjo0LCJpbnZvaWNlX3J1bGVfaWQiOjY5MDcsImNyZWF0ZWRf
-        YXQiOiIyMDE4LTEyLTE5VDE2OjUzOjM1LjM1My0wMjowMCIsInVwZGF0ZWRf
-        YXQiOiIyMDE4LTEyLTE5VDE2OjUzOjM1LjM1My0wMjowMCIsImRheV9xdWFu
-        dGl0eSI6bnVsbCwibW9udGhfcXVhbnRpdHkiOjMsIm9ubHlfYnVzaW5lc3Nf
-        ZGF5cyI6ZmFsc2V9fX0=
+        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjE4NTI1NywiY29udHJhY3RfaWQiOjY2NjcsImlzc3VlX2RhdGUiOm51bGwsImVzdGltYXRlZF9pc3N1ZV9kYXRlIjpudWxsLCJncm9zc192YWx1ZSI6IjY0LjI4IiwicGF5bWVudF92YWx1ZSI6IjY0LjI4IiwiZGVzY3JpcHRpb24iOiJ0ZXN0ZSIsInN0YXRlIjoidG9fZW1pdCIsImNhbmNlbGxlZF9hdXRvbWF0aWNhbGx5IjpmYWxzZSwibmZlX3NlcnZpY2UiOm51bGwsIm5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpudWxsLCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNzdWVkIjpmYWxzZSwibnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMjEvMTIvMjAxOCAwOToxMzo0MiAtMDI6MDAiLCJtYW5hZ2VtZW50X3R5cGUiOiJhdXRvbWF0aWMiLCJhY2NydWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9pZCI6NTYyLCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIsImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiZW1pdGVzX3NlcnZpY2VfdmFsdWVfbmFtZSI6IiIsImZpbmFuY2VfY2F0ZWdvcnkiOiIiLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjoiIiwibXlmaW5hbmNlX3NhbGVfYWNjb3VudF9pZCI6bnVsbCwibXlmaW5hbmNlX3NhbGVfYWNjb3VudF9uYW1lIjoiIiwiY29icmF0b19jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJjb2JyYXRvX2NoYXJnZV9jb25maWdfbmFtZSI6IiIsImNvYnJhdG9fY2hhcmdlX3RlbXBsYXRlX2lkIjpudWxsLCJjb2JyYXRvX2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoiIiwiZGF5c191bnRpbF9hdXRvbWF0aWNfbmZlX2VtaXNzaW9uIjowLCJhdXRvbWF0aWNfbmZlX2lzc3VlX2RhdGUiOm51bGwsImF1dG9tYXRpY19lbWFpbF90ZW1wbGF0ZV9pZCI6ODMsImFwcHJvdmFsX3N0YXR1cyI6ImFwcHJvdmVkIiwibm90aWZpY2F0aW9uX3J1bGVyX2lkIjoyLCJub3RpZnlfY3VzdG9tZXIiOnRydWUsImFwcGx5X25lZ2F0aXZlX3VwZGF0ZXMiOnRydWUsInJlY2VpdmFibGVzIjpbXSwic2VydmljZXMiOlt7ImlkIjoyNDc1NjQsIm5hbWUiOiJDYXJ0ZWlyYSIsImRlc2NyaXB0aW9uIjoiIiwidW5pdF92YWx1ZSI6IjUuNzUiLCJ1bml0cyI6IjIuNSIsInZhbHVlIjoiMTQuMzgifSx7ImlkIjoyNDc1NjUsIm5hbWUiOiJCaWxsaW1hdGljIiwiZGVzY3JpcHRpb24iOiIiLCJ1bml0X3ZhbHVlIjoiNDkuOSIsInVuaXRzIjoiMS4wIiwidmFsdWUiOiI0OS45In1dLCJhdHRhY2htZW50cyI6W10sInBheW1lbnRfaW5mb3JtYXRpb24iOnsiaWQiOjI5MDk5LCJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdheSIsImNvYnJhdG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX21vbnRoIjoiLS0iLCJjYXJkX2V4cGlyYXRpb25feWVhciI6Ii0tIiwiaW5zdGFsbG1lbnRzIjoxLCJjcmVhdGVkX2F0IjoiMjEvMTIvMjAxOCAwOToxMzo0MiAtMDI6MDAifSwiYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6Nzc2NSwiaW5pdF9kYXRlIjoiMjAxOC0xMi0yMSIsInRpdGxlIjoiUmVncmEgY29tIHRlbXBsYXRlIGNvbSByZWFqdXN0ZXMgcGFyYSB0b2RvcyBvcyBzZXJ2acOnb3MiLCJwZXJpb2RfdW5pdCI6Im1vbnRobHkiLCJtb250aF9xdWFudGl0eSI6MTIsImVuZF9kYXRlIjpudWxsLCJjcmVhdGVkX2F0IjoiMjEvMTIvMjAxOCAwOToxMzo0MiAtMDI6MDAiLCJhY2NydWFsX21vbnRoX3F1YW50aXR5Ijoic2FtZV9tb250aCJ9LCJzY2hlZHVsZWRfdXBkYXRlcyI6W3siaWQiOjU2MCwiaW52b2ljZV9ydWxlX2lkIjoxODUyNTcsImV4ZWN1dGlvbl9kYXRlIjoiMjAxOS0wMi0xMCIsIm1vbnRoX3F1YW50aXR5IjoyMCwicHJpY2VfaW5kZXgiOiJpZ3BtIiwiY3JlYXRlZF9hdCI6IjIwMTgtMTItMjFUMDk6MTM6NDIuNzU2LTAyOjAwIiwidXBkYXRlZF9hdCI6IjIwMTgtMTItMjFUMDk6MTM6NDIuNzU2LTAyOjAwIiwiaW5pdF9kYXRlIjoiMjAxOS0wMi0xMCIsImRheXNfdW50aWxfdXBkYXRlIjoxMCwicmVtaW5kX2F0IjoiMjAxOS0wMS0zMSIsIm5vdGlmaWVkIjpmYWxzZSwic2VydmljZV9pdGVtX2lkIjozOSwiaW52b2ljZV90ZW1wbGF0ZV9pZCI6bnVsbH0seyJpZCI6NTYxLCJpbnZvaWNlX3J1bGVfaWQiOjE4NTI1NywiZXhlY3V0aW9uX2RhdGUiOiIyMDE5LTAyLTExIiwibW9udGhfcXVhbnRpdHkiOjEyLCJwcmljZV9pbmRleCI6ImlncGRpIiwiY3JlYXRlZF9hdCI6IjIwMTgtMTItMjFUMDk6MTM6NDIuNzU3LTAyOjAwIiwidXBkYXRlZF9hdCI6IjIwMTgtMTItMjFUMDk6MTM6NDIuNzU3LTAyOjAwIiwiaW5pdF9kYXRlIjoiMjAxOS0wMi0xMSIsImRheXNfdW50aWxfdXBkYXRlIjoxNSwicmVtaW5kX2F0IjoiMjAxOS0wMS0yNyIsIm5vdGlmaWVkIjpmYWxzZSwic2VydmljZV9pdGVtX2lkIjozNzAsImludm9pY2VfdGVtcGxhdGVfaWQiOm51bGx9XSwicmVjZWl2YWJsZXNfYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6Nzc3MiwiZGF5X251bWJlciI6MSwicGFyY2VsX251bWJlciI6MiwiaW52b2ljZV9ydWxlX2lkIjoxODUyNTcsImNyZWF0ZWRfYXQiOiIyMDE4LTEyLTIxVDA5OjEzOjQyLjc1OS0wMjowMCIsInVwZGF0ZWRfYXQiOiIyMDE4LTEyLTIxVDA5OjEzOjQyLjc1OS0wMjowMCIsImRheV9xdWFudGl0eSI6bnVsbCwibW9udGhfcXVhbnRpdHkiOm51bGwsIm9ubHlfYnVzaW5lc3NfZGF5cyI6ZmFsc2V9fX0=
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/254/invoice_rules
-  recorded_at: Wed, 19 Dec 2018 18:53:35 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+  recorded_at: Fri, 21 Dec 2018 11:13:43 GMT
 recorded_with: VCR 3.0.3

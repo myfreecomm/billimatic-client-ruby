@@ -2,11 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/contracts/254/invoice_rules
+    uri: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
     body:
       encoding: UTF-8
-      string: '{"invoice_rule":{"invoice_template_id":15,"additional_information":{"title":"Regra
-        com template de um reajuste para um dos serviços","init_date":"2018-12-19"},"scheduled_updates":[{"invoice_template_scheduled_update_id":469,"init_date":"2019-02-10","days_until_update":15,"month_quantity":12}]}}'
+      string: '{"invoice_rule":{"invoice_template_id":6,"additional_information":{"title":"Regra
+        com template de um reajuste para um dos serviços","init_date":"2018-12-21"},"scheduled_updates":[{"invoice_template_scheduled_update_id":543,"init_date":"2019-02-10","days_until_update":15,"month_quantity":12}]}}'
     headers:
       User-Agent:
       - Billimatic Ruby Client v0.19.1
@@ -15,7 +15,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -23,9 +23,15 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 21 Dec 2018 11:06:08 GMT
+      Connection:
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -37,80 +43,26 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
-      ETag:
-      - W/"02bb744b6ed7ba43a52fe60c7a1daaea"
+      Etag:
+      - W/"71e5a29549b092a0d9efcd1fab500afa"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 85a89228-2ee3-4ba3-9f08-01e5d465ff18
+      - d6f4b2ce-9bac-4cdd-b1a0-b1d05e976e8d
       X-Runtime:
-      - '0.515918'
+      - '0.224264'
       Vary:
       - Origin
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjY4ODksImNvbnRyYWN0X2lkIjoyNTQs
-        Imlzc3VlX2RhdGUiOm51bGwsImVzdGltYXRlZF9pc3N1ZV9kYXRlIjpudWxs
-        LCJncm9zc192YWx1ZSI6IjE2MC4wNSIsInBheW1lbnRfdmFsdWUiOiIxNjAu
-        MDUiLCJkZXNjcmlwdGlvbiI6InRlc3RlIGNvbSBzZXJ2acOnb3MiLCJzdGF0
-        ZSI6InRvX2VtaXQiLCJjYW5jZWxsZWRfYXV0b21hdGljYWxseSI6ZmFsc2Us
-        Im5mZV9zZXJ2aWNlIjpudWxsLCJuZmVfdmVyaWZpY2F0aW9uIjpudWxsLCJu
-        ZmVfaXNzdWVfZGF0ZSI6bnVsbCwibmZlX2JvZHkiOiIkREVTQ1JJQ0FPIiwi
-        bmZlX2lzc3VlZCI6ZmFsc2UsIm51bWJlciI6bnVsbCwiY3JlYXRlZF9hdCI6
-        IjE5LzEyLzIwMTggMTY6NDI6NTUgLTAyOjAwIiwibWFuYWdlbWVudF90eXBl
-        IjoiYXV0b21hdGljIiwiYWNjcnVhbF9kYXRlIjpudWxsLCJjb21tZW50cyI6
-        bnVsbCwiY3VzdG9tZXJfaWQiOjIxLCJjdXN0b21lcl90eXBlIjoiQ29tcGFu
-        eSIsImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6NjUsImVtaXRlc19zZXJ2
-        aWNlX3ZhbHVlX25hbWUiOiJBbHVndWVsIGRlIHNvZnR3YXJlIGNvbSByZXRl
-        bsOnw6NvIGRlIElTUyIsImZpbmFuY2VfY2F0ZWdvcnkiOiJDYXJ0w6NvIENy
-        w6lkaXRvIiwiZmluYW5jZV9yZXZlbnVlX2NlbnRlciI6IkNSMSIsIm15Zmlu
-        YW5jZV9zYWxlX2FjY291bnRfaWQiOjM1LCJteWZpbmFuY2Vfc2FsZV9hY2Nv
-        dW50X25hbWUiOiJCb2xldG9zIiwiY29icmF0b19jaGFyZ2VfY29uZmlnX2lk
-        IjoxMTIsImNvYnJhdG9fY2hhcmdlX2NvbmZpZ19uYW1lIjoiTXlmaW5hbmNl
-        IiwiY29icmF0b19jaGFyZ2VfdGVtcGxhdGVfaWQiOjMsImNvYnJhdG9fY2hh
-        cmdlX3RlbXBsYXRlX25hbWUiOiJUZXN0ZSBDb2JyYW7Dp2EgUmVnaXN0cmFk
-        YSBCaWxsaW1hdGljIiwiZGF5c191bnRpbF9hdXRvbWF0aWNfbmZlX2VtaXNz
-        aW9uIjozLCJhdXRvbWF0aWNfbmZlX2lzc3VlX2RhdGUiOm51bGwsImF1dG9t
-        YXRpY19lbWFpbF90ZW1wbGF0ZV9pZCI6MjIsImFwcHJvdmFsX3N0YXR1cyI6
-        ImFwcHJvdmVkIiwibm90aWZpY2F0aW9uX3J1bGVyX2lkIjpudWxsLCJub3Rp
-        ZnlfY3VzdG9tZXIiOmZhbHNlLCJhcHBseV9uZWdhdGl2ZV91cGRhdGVzIjpm
-        YWxzZSwicmVjZWl2YWJsZXMiOltdLCJzZXJ2aWNlcyI6W3siaWQiOjExNDE3
-        LCJuYW1lIjoiU2VydmnDp28gMSIsImRlc2NyaXB0aW9uIjoiIiwidW5pdF92
-        YWx1ZSI6IjMyLjc1IiwidW5pdHMiOiIyLjAiLCJ2YWx1ZSI6IjY1LjUifSx7
-        ImlkIjoxMTQxOCwibmFtZSI6IlNlcnZpw6dvIDkiLCJkZXNjcmlwdGlvbiI6
-        IiIsInVuaXRfdmFsdWUiOiI5LjkiLCJ1bml0cyI6IjMuNSIsInZhbHVlIjoi
-        MzQuNjUifSx7ImlkIjoxMTQxOSwibmFtZSI6IkFwcCIsImRlc2NyaXB0aW9u
-        IjoiIiwidW5pdF92YWx1ZSI6IjU5LjkiLCJ1bml0cyI6IjEuMCIsInZhbHVl
-        IjoiNTkuOSJ9XSwiYXR0YWNobWVudHMiOltdLCJwYXltZW50X2luZm9ybWF0
-        aW9uIjp7ImlkIjo3MTQzLCJwYXltZW50X21ldGhvZCI6ImJpbGxldCIsImNv
-        YnJhdG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX21vbnRoIjoi
-        LS0iLCJjYXJkX2V4cGlyYXRpb25feWVhciI6Ii0tIiwiaW5zdGFsbG1lbnRz
-        IjoxLCJjcmVhdGVkX2F0IjoiMTkvMTIvMjAxOCAxNjo0Mjo1NSAtMDI6MDAi
-        fSwiYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6MzY0LCJpbml0X2Rh
-        dGUiOiIyMDE4LTEyLTE5IiwidGl0bGUiOiJSZWdyYSBjb20gdGVtcGxhdGUg
-        ZGUgdW0gcmVhanVzdGUgcGFyYSB1bSBkb3Mgc2VydmnDp29zIiwicGVyaW9k
-        X3VuaXQiOiJtb250aGx5IiwibW9udGhfcXVhbnRpdHkiOjYsImVuZF9kYXRl
-        IjpudWxsLCJjcmVhdGVkX2F0IjoiMTkvMTIvMjAxOCAxNjo0Mjo1NSAtMDI6
-        MDAiLCJhY2NydWFsX21vbnRoX3F1YW50aXR5IjoicHJldmlvdXNfbW9udGgi
-        fSwic2NoZWR1bGVkX3VwZGF0ZXMiOlt7ImlkIjo0NzcsImludm9pY2VfcnVs
-        ZV9pZCI6Njg4OSwiZXhlY3V0aW9uX2RhdGUiOiIyMDE5LTAyLTEwIiwibW9u
-        dGhfcXVhbnRpdHkiOjEyLCJwcmljZV9pbmRleCI6ImlwY2EiLCJjcmVhdGVk
-        X2F0IjoiMjAxOC0xMi0xOVQxNjo0Mjo1NS4zNDQtMDI6MDAiLCJ1cGRhdGVk
-        X2F0IjoiMjAxOC0xMi0xOVQxNjo0Mjo1NS4zNDQtMDI6MDAiLCJpbml0X2Rh
-        dGUiOiIyMDE5LTAyLTEwIiwiZGF5c191bnRpbF91cGRhdGUiOjE1LCJyZW1p
-        bmRfYXQiOiIyMDE5LTAxLTI2Iiwibm90aWZpZWQiOmZhbHNlLCJzZXJ2aWNl
-        X2l0ZW1faWQiOjksImludm9pY2VfdGVtcGxhdGVfaWQiOm51bGx9XSwicmVj
-        ZWl2YWJsZXNfYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6MzY2LCJk
-        YXlfbnVtYmVyIjpudWxsLCJwYXJjZWxfbnVtYmVyIjoyLCJpbnZvaWNlX3J1
-        bGVfaWQiOjY4ODksImNyZWF0ZWRfYXQiOiIyMDE4LTEyLTE5VDE2OjQyOjU1
-        LjM0Ni0wMjowMCIsInVwZGF0ZWRfYXQiOiIyMDE4LTEyLTE5VDE2OjQyOjU1
-        LjM0Ni0wMjowMCIsImRheV9xdWFudGl0eSI6bnVsbCwibW9udGhfcXVhbnRp
-        dHkiOm51bGwsIm9ubHlfYnVzaW5lc3NfZGF5cyI6dHJ1ZX19fQ==
+        eyJpbnZvaWNlX3J1bGUiOnsiaWQiOjE4NTIzNywiY29udHJhY3RfaWQiOjY2NjcsImlzc3VlX2RhdGUiOm51bGwsImVzdGltYXRlZF9pc3N1ZV9kYXRlIjpudWxsLCJncm9zc192YWx1ZSI6IjY0LjI4IiwicGF5bWVudF92YWx1ZSI6IjY0LjI4IiwiZGVzY3JpcHRpb24iOiJ0ZXN0ZSIsInN0YXRlIjoidG9fZW1pdCIsImNhbmNlbGxlZF9hdXRvbWF0aWNhbGx5IjpmYWxzZSwibmZlX3NlcnZpY2UiOm51bGwsIm5mZV92ZXJpZmljYXRpb24iOm51bGwsIm5mZV9pc3N1ZV9kYXRlIjpudWxsLCJuZmVfYm9keSI6IiRERVNDUklDQU8iLCJuZmVfaXNzdWVkIjpmYWxzZSwibnVtYmVyIjpudWxsLCJjcmVhdGVkX2F0IjoiMjEvMTIvMjAxOCAwOTowNjowOSAtMDI6MDAiLCJtYW5hZ2VtZW50X3R5cGUiOiJhdXRvbWF0aWMiLCJhY2NydWFsX2RhdGUiOm51bGwsImNvbW1lbnRzIjpudWxsLCJjdXN0b21lcl9pZCI6NTYyLCJjdXN0b21lcl90eXBlIjoiQ29tcGFueSIsImVtaXRlc19zZXJ2aWNlX3ZhbHVlc19pZCI6bnVsbCwiZW1pdGVzX3NlcnZpY2VfdmFsdWVfbmFtZSI6IiIsImZpbmFuY2VfY2F0ZWdvcnkiOiIiLCJmaW5hbmNlX3JldmVudWVfY2VudGVyIjoiIiwibXlmaW5hbmNlX3NhbGVfYWNjb3VudF9pZCI6bnVsbCwibXlmaW5hbmNlX3NhbGVfYWNjb3VudF9uYW1lIjoiIiwiY29icmF0b19jaGFyZ2VfY29uZmlnX2lkIjpudWxsLCJjb2JyYXRvX2NoYXJnZV9jb25maWdfbmFtZSI6IiIsImNvYnJhdG9fY2hhcmdlX3RlbXBsYXRlX2lkIjpudWxsLCJjb2JyYXRvX2NoYXJnZV90ZW1wbGF0ZV9uYW1lIjoiIiwiZGF5c191bnRpbF9hdXRvbWF0aWNfbmZlX2VtaXNzaW9uIjowLCJhdXRvbWF0aWNfbmZlX2lzc3VlX2RhdGUiOm51bGwsImF1dG9tYXRpY19lbWFpbF90ZW1wbGF0ZV9pZCI6ODMsImFwcHJvdmFsX3N0YXR1cyI6ImFwcHJvdmVkIiwibm90aWZpY2F0aW9uX3J1bGVyX2lkIjoyLCJub3RpZnlfY3VzdG9tZXIiOnRydWUsImFwcGx5X25lZ2F0aXZlX3VwZGF0ZXMiOnRydWUsInJlY2VpdmFibGVzIjpbXSwic2VydmljZXMiOlt7ImlkIjoyNDc1MjQsIm5hbWUiOiJDYXJ0ZWlyYSIsImRlc2NyaXB0aW9uIjoiIiwidW5pdF92YWx1ZSI6IjUuNzUiLCJ1bml0cyI6IjIuNSIsInZhbHVlIjoiMTQuMzgifSx7ImlkIjoyNDc1MjUsIm5hbWUiOiJCaWxsaW1hdGljIiwiZGVzY3JpcHRpb24iOiIiLCJ1bml0X3ZhbHVlIjoiNDkuOSIsInVuaXRzIjoiMS4wIiwidmFsdWUiOiI0OS45In1dLCJhdHRhY2htZW50cyI6W10sInBheW1lbnRfaW5mb3JtYXRpb24iOnsiaWQiOjI5MDc5LCJwYXltZW50X21ldGhvZCI6InBheW1lbnRfZ2F0ZXdheSIsImNvYnJhdG9fY2FyZF9pZCI6Ii0tIiwiY2FyZF9leHBpcmF0aW9uX21vbnRoIjoiLS0iLCJjYXJkX2V4cGlyYXRpb25feWVhciI6Ii0tIiwiaW5zdGFsbG1lbnRzIjoxLCJjcmVhdGVkX2F0IjoiMjEvMTIvMjAxOCAwOTowNjowOSAtMDI6MDAifSwiYWRkaXRpb25hbF9pbmZvcm1hdGlvbiI6eyJpZCI6Nzc2MCwiaW5pdF9kYXRlIjoiMjAxOC0xMi0yMSIsInRpdGxlIjoiUmVncmEgY29tIHRlbXBsYXRlIGRlIHVtIHJlYWp1c3RlIHBhcmEgdW0gZG9zIHNlcnZpw6dvcyIsInBlcmlvZF91bml0IjoibW9udGhseSIsIm1vbnRoX3F1YW50aXR5IjoxMiwiZW5kX2RhdGUiOm51bGwsImNyZWF0ZWRfYXQiOiIyMS8xMi8yMDE4IDA5OjA2OjA5IC0wMjowMCIsImFjY3J1YWxfbW9udGhfcXVhbnRpdHkiOiJzYW1lX21vbnRoIn0sInNjaGVkdWxlZF91cGRhdGVzIjpbeyJpZCI6NTUxLCJpbnZvaWNlX3J1bGVfaWQiOjE4NTIzNywiZXhlY3V0aW9uX2RhdGUiOiIyMDE5LTAyLTEwIiwibW9udGhfcXVhbnRpdHkiOjEyLCJwcmljZV9pbmRleCI6ImlwY2EiLCJjcmVhdGVkX2F0IjoiMjAxOC0xMi0yMVQwOTowNjowOS4zMjUtMDI6MDAiLCJ1cGRhdGVkX2F0IjoiMjAxOC0xMi0yMVQwOTowNjowOS4zMjUtMDI6MDAiLCJpbml0X2RhdGUiOiIyMDE5LTAyLTEwIiwiZGF5c191bnRpbF91cGRhdGUiOjE1LCJyZW1pbmRfYXQiOiIyMDE5LTAxLTI2Iiwibm90aWZpZWQiOmZhbHNlLCJzZXJ2aWNlX2l0ZW1faWQiOjM5LCJpbnZvaWNlX3RlbXBsYXRlX2lkIjpudWxsfV0sInJlY2VpdmFibGVzX2FkZGl0aW9uYWxfaW5mb3JtYXRpb24iOnsiaWQiOjc3NjcsImRheV9udW1iZXIiOjEsInBhcmNlbF9udW1iZXIiOjIsImludm9pY2VfcnVsZV9pZCI6MTg1MjM3LCJjcmVhdGVkX2F0IjoiMjAxOC0xMi0yMVQwOTowNjowOS4zMjctMDI6MDAiLCJ1cGRhdGVkX2F0IjoiMjAxOC0xMi0yMVQwOTowNjowOS4zMjctMDI6MDAiLCJkYXlfcXVhbnRpdHkiOm51bGwsIm1vbnRoX3F1YW50aXR5IjpudWxsLCJvbmx5X2J1c2luZXNzX2RheXMiOmZhbHNlfX19
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/contracts/254/invoice_rules
-  recorded_at: Wed, 19 Dec 2018 18:42:55 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/contracts/6667/invoice_rules
+  recorded_at: Fri, 21 Dec 2018 11:06:09 GMT
 recorded_with: VCR 3.0.3

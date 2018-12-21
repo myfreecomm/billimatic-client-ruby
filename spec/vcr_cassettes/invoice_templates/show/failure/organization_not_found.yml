@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/organizations/1000000/invoice_templates/16
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/1000000/invoice_templates/16
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Token token=5d09f5c3dc8df35e225ad074b66f47e0
+      - Token token=4d34754cd68bbe74d725f6c8c9f6b48f
       Accept-Language:
       - pt-br
   response:
@@ -22,9 +22,15 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 20 Dec 2018 16:31:23 GMT
+      Connection:
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
-      X-XSS-Protection:
+      X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
@@ -39,18 +45,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 0f554a4a-914f-49e9-b8b6-9902d1d0f02c
+      - e74b5364-f55b-4f15-a361-f3242884b88f
       X-Runtime:
-      - '0.048379'
+      - '0.065485'
       Vary:
       - Origin
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: ''
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://localhost:3000/api/v1/organizations/1000000/invoice_templates/16
-  recorded_at: Mon, 17 Dec 2018 11:47:39 GMT
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/1000000/invoice_templates/16
+  recorded_at: Thu, 20 Dec 2018 16:31:23 GMT
 recorded_with: VCR 3.0.3
