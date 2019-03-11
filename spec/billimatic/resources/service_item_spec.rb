@@ -10,6 +10,28 @@ describe Billimatic::Resources::ServiceItem do
     expect(subject.http).to eq(http)
   end
 
+  describe '#list' do
+    before do
+      Billimatic.configuration.host = "http://localhost:3000"
+      Typhoeus::Expectation.clear
+      @http = Billimatic::Http.new('47e385dee631f26d09bb8a5654359f26')
+    end
+
+    subject { described_class.new(@http) }
+
+    it 'returns all service_items for an account' do
+      VCR.use_cassette('/service_items/list/success/all_service_items') do
+        result = subject.list
+
+        expect(result).not_to be_empty
+        expect(result.count).to eql 2
+
+        service_item = result.first
+        expect(service_item).to be_a(entity_klass)
+      end
+    end
+  end
+
   describe '#search' do
     it 'retuns successfully the service item with name matching search' do
       VCR.use_cassette('/service_items/search/success') do

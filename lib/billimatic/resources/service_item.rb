@@ -1,7 +1,7 @@
 module Billimatic
   module Resources
     class ServiceItem < Base
-      crud :create, :update, :destroy
+      crud :list, :create, :update, :destroy
 
       def search(name:)
         http.get(

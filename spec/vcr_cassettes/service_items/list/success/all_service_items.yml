@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/service_items
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.20.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=47e385dee631f26d09bb8a5654359f26
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"f1d73b1977131d7950ab2416ac3eb046"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 432b90af-e266-4b0c-b532-31df9fb4c3d8
+      X-Runtime:
+      - '0.049313'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzZXJ2aWNlX2l0ZW1zIjpbeyJpZCI6MiwiYWNjb3VudF9pZCI6MSwibmFtZSI6IlNlcnZpw6dvICMyIiwiZGVzY3JpcHRpb24iOiJxd2VydHkiLCJ2YWx1ZSI6IjIwMC4wIiwidW5pdCI6Iml0ZW0ifSx7ImlkIjoxLCJhY2NvdW50X2lkIjoxLCJuYW1lIjoiU2VydmnDp28gIzEiLCJkZXNjcmlwdGlvbiI6IkRlc2NyacOnw6NvIHNlcnZpw6dvIDEiLCJ2YWx1ZSI6IjEwMC4wIiwidW5pdCI6Iml0ZW0ifV19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/service_items
+  recorded_at: Mon, 11 Mar 2019 17:41:37 GMT
+recorded_with: VCR 3.0.3
