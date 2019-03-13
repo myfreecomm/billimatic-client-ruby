@@ -11,14 +11,6 @@ describe Billimatic::Resources::ServiceItem do
   end
 
   describe '#list' do
-    before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-      @http = Billimatic::Http.new('47e385dee631f26d09bb8a5654359f26')
-    end
-
-    subject { described_class.new(@http) }
-
     it 'returns all service_items for an account' do
       VCR.use_cassette('/service_items/list/success/all_service_items') do
         result = subject.list
