@@ -680,6 +680,17 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#lista-servico-s" target="_blank">
+                /api/v1/service_items
+            </a>
+        </td>
+        <td>
+            <code>client.service_items.list</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>POST</code></td>
         <td>
             <a href="https://myfreecomm.github.io/billimatic-api-docs/#cria-servico" target="_blank">

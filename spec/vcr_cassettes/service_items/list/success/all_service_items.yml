@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/service_items
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.20.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 13 Mar 2019 13:11:07 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c011b830093778a1aaa4433b35a79961"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4d8cd82f-f964-48b1-a3bb-982881565a4c
+      X-Runtime:
+      - '0.099183'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzZXJ2aWNlX2l0ZW1zIjpbeyJpZCI6MzEsImFjY291bnRfaWQiOjMyLCJuYW1lIjoiU2VydmnDp28gT25saW5lIDEiLCJkZXNjcmlwdGlvbiI6Ik8gc2VydmnDp28gb25saW5lIG7Dum1lcm8gdW0uIiwidmFsdWUiOiIxMjMuNDUiLCJ1bml0IjoiaXRlbSJ9LHsiaWQiOjU3LCJhY2NvdW50X2lkIjozMiwibmFtZSI6IlNlcnZpY2UgSXRlbSBVcGRhdGVkIiwiZGVzY3JpcHRpb24iOiJEZXNjcmlwdGlvbiIsInZhbHVlIjoiNDUwLjAiLCJ1bml0IjoiaXRlbSJ9XX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/service_items
+  recorded_at: Wed, 13 Mar 2019 13:11:08 GMT
+recorded_with: VCR 3.0.3
