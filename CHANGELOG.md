@@ -2,6 +2,9 @@
 
 ## Next version
 
+## v0.21.0
+- Adds ServiceItem#list endpoint.
+
 ## v0.20.0
 - Adds InvoiceTemplate entity.
 - Adds InvoiceTemplate#list and InvoiceTemplate#show endpoints.
