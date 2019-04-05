@@ -29,6 +29,7 @@ require 'billimatic/entities/invoice_rule'
 require 'billimatic/entities/invoice_template'
 require 'billimatic/entities/subscription'
 require 'billimatic/entities/webhook'
+require 'billimatic/entities/email_template'
 
 require 'billimatic/resources/base'
 require 'billimatic/resources/company'
@@ -42,6 +43,7 @@ require 'billimatic/resources/plan'
 require 'billimatic/resources/service_item'
 require 'billimatic/resources/subscription'
 require 'billimatic/resources/webhook'
+require 'billimatic/resources/email_template'
 
 module Billimatic
   def self.configuration

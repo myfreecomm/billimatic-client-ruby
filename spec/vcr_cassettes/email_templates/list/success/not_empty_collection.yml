@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/organizations/12/email_templates
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.21.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=0131ed0f662e6fdb3ba8ab9cff35c14a
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"388f451cba347be48f61387ea2d885a7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 05e2c489-390c-4735-86cb-858ca7be858d
+      X-Runtime:
+      - '0.012249'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlbWFpbF90ZW1wbGF0ZXMiOlt7ImlkIjoxNywia2luZCI6bnVsbCwibmFtZSI6Ik5vdGlmaWNhw6fDo28gcGFkcsOjbyBwYXJhIGFzc2luYXR1cmFzIiwiZGVzY3JpcHRpb24iOiJOb3RpZmljYSBvIGNsaWVudGUgc29icmUgY29icmFuw6dhIGVtIGFzc2luYXR1cmEuIiwic3ViamVjdCI6IkFzc2luYXR1cmEgZG8gcGxhbm8gJFBMQU5PIiwiY2MiOm51bGwsImJvZHkiOiJQcmV6YWRvIENsaWVudGUsXG5cbiRJTlNUUlVDQU9fQ09CUkFOQ0EsIG5vIHZhbG9yIGRlIFIkICRWQUxPUl9BX1JFQ0VCRVIsIHJlZmVyZW50ZSDDoCBhc3NpbmF0dXJhIGRvIHBsYW5vICRQTEFOTy4gUXVhbHF1ZXIgZGl2ZXJnw6puY2lhLCBmYXZvciBjb250YXRhci1ub3MuXG5cbk9icmlnYWRvIHBvciB1dGlsaXphciBub3Nzb3Mgc2VydmnDp29zLlxuIiwiY3JlYXRlZF9hdCI6IjIwMTktMDQtMDRUMTU6MjI6MjEuMDYxLTAzOjAwIiwidXBkYXRlZF9hdCI6IjIwMTktMDQtMDVUMTY6MzA6MzEuNTM4LTAzOjAwIiwiZGVmYXVsdF90ZW1wbGF0ZSI6dHJ1ZSwiZnJvbSI6bnVsbCwiY29tcGFueV9pZCI6MTIsImluY2x1ZGVfYXR0YWNobWVudHMiOmZhbHNlLCJpbmNsdWRlX2JpbGxldCI6dHJ1ZSwic3Vic2NyaXB0aW9uX2RlZmF1bHRfdGVtcGxhdGUiOnRydWUsImluY2x1ZGVfaW52b2ljZV9wZGYiOmZhbHNlLCJpbmNsdWRlX25mc2VfcGRmIjpmYWxzZSwiaW5jbHVkZV9uZnNlX3htbCI6ZmFsc2V9XX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://localhost:3000/api/v1/organizations/12/email_templates
+  recorded_at: Fri, 05 Apr 2019 19:31:07 GMT
+recorded_with: VCR 3.0.3
