@@ -1,7 +1,9 @@
 module Billimatic
   module Resources
     class EmailTemplate < Base
-      crud :list_by_organization
+      def list(organization_id:)
+        list_by_organization(organization_id)
+      end
     end
   end
 end
