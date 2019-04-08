@@ -17,7 +17,6 @@ module Billimatic
       attribute :default_template, Integer
       attribute :subscription_default_template, Integer
       attribute :created_at, DateTime
-      attribute :updated_at, DateTime
     end
   end
 end

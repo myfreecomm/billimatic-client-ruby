@@ -725,6 +725,27 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
+#### [Notificações](https://myfreecomm.github.io/billimatic-api-docs/#lista-notificacoes)
+
+<table>
+    <tr>
+        <th>HTTP method</th>
+        <th>Endpoint</th>
+        <th>Client method</th>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#lista-notificacoes" target="_blank">
+                /api/v1/organizations/:organization_id/email_templates/:id
+            </a>
+        </td>
+        <td>
+            <code>client.email_templates.list(organization_id: id)</code>
+        </td>
+    </tr>
+</table>
+
 ## Url helpers
 
 Some url helpers are available:

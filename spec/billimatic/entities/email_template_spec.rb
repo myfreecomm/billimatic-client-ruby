@@ -19,7 +19,6 @@ describe Billimatic::Entities::EmailTemplate do
       default_template: false,
       subscription_default_template: false,
       created_at: "2019-02-11T09:30:44.567-02:00",
-      updated_at: "2019-02-11T09:30:44.567-02:00"
     }
   end
 
@@ -30,6 +29,6 @@ describe Billimatic::Entities::EmailTemplate do
                     :description, :include_billet, :include_invoice_pdf,
                     :include_nfse_pdf, :include_nfse_xml, :include_attachments,
                     :default_template, :subscription_default_template,
-                    :created_at, :updated_at
+                    :created_at
                   ]
 end
