@@ -726,7 +726,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
     </tr>
 </table>
 
-#### [Email Templates](https://myfreecomm.github.io/billimatic-api-docs/#lista-notificacoes)
+#### [Email Templates](https://myfreecomm.github.io/billimatic-api-docs/#notificacoes)
 
 <table>
     <tr>
