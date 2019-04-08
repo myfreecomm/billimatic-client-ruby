@@ -37,13 +37,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       ETag:
-      - W/"388f451cba347be48f61387ea2d885a7"
+      - W/"74418e6659b6699f9da5d2062cb57260"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 05e2c489-390c-4735-86cb-858ca7be858d
+      - 7832da54-478c-4c1a-88a7-b0c5e7dd6bdc
       X-Runtime:
-      - '0.012249'
+      - '0.034899'
       Vary:
       - Origin
       Transfer-Encoding:
@@ -51,9 +51,9 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlbWFpbF90ZW1wbGF0ZXMiOlt7ImlkIjoxNywia2luZCI6bnVsbCwibmFtZSI6Ik5vdGlmaWNhw6fDo28gcGFkcsOjbyBwYXJhIGFzc2luYXR1cmFzIiwiZGVzY3JpcHRpb24iOiJOb3RpZmljYSBvIGNsaWVudGUgc29icmUgY29icmFuw6dhIGVtIGFzc2luYXR1cmEuIiwic3ViamVjdCI6IkFzc2luYXR1cmEgZG8gcGxhbm8gJFBMQU5PIiwiY2MiOm51bGwsImJvZHkiOiJQcmV6YWRvIENsaWVudGUsXG5cbiRJTlNUUlVDQU9fQ09CUkFOQ0EsIG5vIHZhbG9yIGRlIFIkICRWQUxPUl9BX1JFQ0VCRVIsIHJlZmVyZW50ZSDDoCBhc3NpbmF0dXJhIGRvIHBsYW5vICRQTEFOTy4gUXVhbHF1ZXIgZGl2ZXJnw6puY2lhLCBmYXZvciBjb250YXRhci1ub3MuXG5cbk9icmlnYWRvIHBvciB1dGlsaXphciBub3Nzb3Mgc2VydmnDp29zLlxuIiwiY3JlYXRlZF9hdCI6IjIwMTktMDQtMDRUMTU6MjI6MjEuMDYxLTAzOjAwIiwidXBkYXRlZF9hdCI6IjIwMTktMDQtMDVUMTY6MzA6MzEuNTM4LTAzOjAwIiwiZGVmYXVsdF90ZW1wbGF0ZSI6dHJ1ZSwiZnJvbSI6bnVsbCwiY29tcGFueV9pZCI6MTIsImluY2x1ZGVfYXR0YWNobWVudHMiOmZhbHNlLCJpbmNsdWRlX2JpbGxldCI6dHJ1ZSwic3Vic2NyaXB0aW9uX2RlZmF1bHRfdGVtcGxhdGUiOnRydWUsImluY2x1ZGVfaW52b2ljZV9wZGYiOmZhbHNlLCJpbmNsdWRlX25mc2VfcGRmIjpmYWxzZSwiaW5jbHVkZV9uZnNlX3htbCI6ZmFsc2V9XX0=
+        eyJlbWFpbF90ZW1wbGF0ZXMiOlt7ImlkIjoxNywiY29tcGFueV9pZCI6MTIsIm5hbWUiOiJOb3RpZmljYcOnw6NvIHBhZHLDo28gcGFyYSBhc3NpbmF0dXJhcyIsImNjIjpudWxsLCJmcm9tIjpudWxsLCJib2R5IjoiUHJlemFkbyBDbGllbnRlLFxuXG4kSU5TVFJVQ0FPX0NPQlJBTkNBLCBubyB2YWxvciBkZSBSJCAkVkFMT1JfQV9SRUNFQkVSLCByZWZlcmVudGUgw6AgYXNzaW5hdHVyYSBkbyBwbGFubyAkUExBTk8uIFF1YWxxdWVyIGRpdmVyZ8OqbmNpYSwgZmF2b3IgY29udGF0YXItbm9zLlxuXG5PYnJpZ2FkbyBwb3IgdXRpbGl6YXIgbm9zc29zIHNlcnZpw6dvcy5cbiIsInN1YmplY3QiOiJBc3NpbmF0dXJhIGRvIHBsYW5vICRQTEFOTyIsImRlc2NyaXB0aW9uIjoiTm90aWZpY2EgbyBjbGllbnRlIHNvYnJlIGNvYnJhbsOnYSBlbSBhc3NpbmF0dXJhLiIsImluY2x1ZGVfYmlsbGV0Ijp0cnVlLCJpbmNsdWRlX25mc2VfcGRmIjpmYWxzZSwiaW5jbHVkZV9uZnNlX3htbCI6ZmFsc2UsImluY2x1ZGVfYXR0YWNobWVudHMiOmZhbHNlLCJpbmNsdWRlX2ludm9pY2VfcGRmIjpmYWxzZSwiZGVmYXVsdF90ZW1wbGF0ZSI6dHJ1ZSwic3Vic2NyaXB0aW9uX2RlZmF1bHRfdGVtcGxhdGUiOnRydWUsImNyZWF0ZWRfYXQiOiIwNC8wNC8yMDE5IDE1OjIyOjIxIC0wMzowMCJ9XX0=
     http_version: '1.1'
     adapter_metadata:
       effective_url: http://localhost:3000/api/v1/organizations/12/email_templates
-  recorded_at: Fri, 05 Apr 2019 19:31:07 GMT
+  recorded_at: Mon, 08 Apr 2019 13:44:11 GMT
 recorded_with: VCR 3.0.3
