@@ -57,6 +57,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
 * [Companies API](https://myfreecomm.github.io/billimatic-api-docs/#empresas) as `client.companies`
 * [People API](https://myfreecomm.github.io/billimatic-api-docs/#pessoas) as `client.people`
 * [Service Items API](https://myfreecomm.github.io/billimatic-api-docs/#servicos) as `client.service_items`
+* [Email Templates API](https://myfreecomm.github.io/billimatic-api-docs/#notificacoes) as `client.email_templates`
 
 ## Endpoints
 
