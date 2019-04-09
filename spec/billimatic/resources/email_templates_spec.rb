@@ -11,13 +11,7 @@ describe Billimatic::Resources::EmailTemplate do
   end
 
   describe '#list' do
-    before do
-      Billimatic.configuration.host = "http://localhost:3000"
-      Typhoeus::Expectation.clear
-      @http = Billimatic::Http.new('0131ed0f662e6fdb3ba8ab9cff35c14a')
-    end
-
-    subject { described_class.new(@http) }
+    subject { described_class.new(http) }
 
     it 'raises Billimatic::RequestError when organization is not found' do
       VCR.use_cassette('/email_templates/list/failure/organization_not_found') do
@@ -31,13 +25,13 @@ describe Billimatic::Resources::EmailTemplate do
 
     it 'returns collection of email templates on organization' do
       VCR.use_cassette('/email_templates/list/success/not_empty_collection') do
-        result = subject.list(organization_id: 12)
+        result = subject.list(organization_id: 2052)
 
         expect(result).not_to be_empty
 
         result.each do |email_template|
           expect(email_template).to be_a entity_klass
-          expect(email_template.id).to eql 17
+          expect(email_template.id).to eql 217
         end
       end
     end
