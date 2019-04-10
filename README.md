@@ -57,6 +57,7 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
 * [Companies API](https://myfreecomm.github.io/billimatic-api-docs/#empresas) as `client.companies`
 * [People API](https://myfreecomm.github.io/billimatic-api-docs/#pessoas) as `client.people`
 * [Service Items API](https://myfreecomm.github.io/billimatic-api-docs/#servicos) as `client.service_items`
+* [Email Templates API](https://myfreecomm.github.io/billimatic-api-docs/#notificacoes) as `client.email_templates`
 
 ## Endpoints
 
@@ -721,6 +722,27 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
         <td>
             <code>client.service_items.destroy(id)</code>
+        </td>
+    </tr>
+</table>
+
+#### [Email Templates](https://myfreecomm.github.io/billimatic-api-docs/#notificacoes)
+
+<table>
+    <tr>
+        <th>HTTP method</th>
+        <th>Endpoint</th>
+        <th>Client method</th>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td>
+            <a href="https://myfreecomm.github.io/billimatic-api-docs/#lista-notificacoes" target="_blank">
+                /api/v1/organizations/:organization_id/email_templates/:id
+            </a>
+        </td>
+        <td>
+            <code>client.email_templates.list(organization_id: id)</code>
         </td>
     </tr>
 </table>

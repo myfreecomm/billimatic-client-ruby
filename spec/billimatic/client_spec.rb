@@ -87,4 +87,10 @@ describe Billimatic::Client do
       expect(subject.webhooks).to be_a(Billimatic::Resources::Webhook)
     end
   end
+
+  describe "#email_templates" do
+    it "returns an instance of Billimatic::Resources::EmailTemplate" do
+      expect(subject.email_templates).to be_a(Billimatic::Resources::EmailTemplate)
+    end
+  end
 end

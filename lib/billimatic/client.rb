@@ -58,5 +58,9 @@ module Billimatic
     def webhooks
       Resources::Webhook.new(http)
     end
+
+    def email_templates
+      Resources::EmailTemplate.new(http)
+    end
   end
 end

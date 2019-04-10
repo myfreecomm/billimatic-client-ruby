@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.billimatic.com.br/api/v1/organizations/2052/email_templates
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Billimatic Ruby Client v0.21.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token=bfe97f701f615edf41587cbd59d6a0e8
+      Accept-Language:
+      - pt-br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 09 Apr 2019 14:51:45 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2aa6cd62712e3245f5c180b749f3ab1d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c4972397-5bff-459f-92f4-0c24e1dccae4
+      X-Runtime:
+      - '0.010160'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlbWFpbF90ZW1wbGF0ZXMiOlt7ImlkIjoyMTcsImNvbXBhbnlfaWQiOjIwNTIsIm5hbWUiOiJGYXR1cmFtZW50byBSZXN1bWlkbyIsImNjIjpudWxsLCJmcm9tIjpudWxsLCJib2R5IjoiUHJlemFkbyhhKSBDbGllbnRlLFxuXG5JbmZvcm1hbW9zIHF1ZSBlbSAkREFUQV9FTUlTU0FPIGZvaSBlbWl0aWRhIGEgbm90YSBmaXNjYWwgJE5VTUVSTywgbm8gdmFsb3IgZGUgUiQgJFZBTE9SX0JSVVRPLCAkREVTQ1JJQ0FPLlxuXG4kTkZTRV9QREZfTElOS1xuXG5BbHRlcm5hdGl2YW1lbnRlLCBhY2Vzc2UgbyBwb3J0YWwgZGEgcHJlZmVpdHVyYSBlIHZlcmlmaXF1ZSBhIGF1dGVudGljaWRhZGUgZGVzdGEgTkYtZSBpbmZvcm1hbmRvIG9zIGRhZG9zIGEgc2VndWlyOlxuQ05QSiBkbyBQcmVzdGFkb3IgPSAkQ05QSl9QUkVTVEFET1Jcbk7Dum1lcm8gZGEgTkYtZSA9ICROVU1FUk9cbkPDs2RpZ28gZGUgVmVyaWZpY2HDp8OjbyA9ICRDT0RJR09fVkVSSUZJQ0FDQU9cblxuTyB2ZW5jaW1lbnRvIG9jb3JyZSBubyhzKSBkaWEocykgJERBVEFTX1ZFTkNJTUVOVE8uXG5cbkVtIGNhc28gZGUgZMO6dmlkYSwgcG9yIGZhdm9yIGVudHJlIGVtIGNvbnRhdG8gY29ub3Njby5cblxuQXRlbmNpb3NhbWVudGUsXG5cbkRlcGFydGFtZW50byBGaW5hbmNlaXJvXG4kTk9NRV9QUkVTVEFET1JcbiIsInN1YmplY3QiOiJOb3RhIEZpc2NhbCBFbWl0aWRhIiwiZGVzY3JpcHRpb24iOiJOb3RpZmljYSBvIGNsaWVudGUgcXVlIHVtIG5vdm8gZmF0dXJhbWVudG8gZm9pIGNyaWFkby4iLCJpbmNsdWRlX2JpbGxldCI6dHJ1ZSwiaW5jbHVkZV9uZnNlX3BkZiI6ZmFsc2UsImluY2x1ZGVfbmZzZV94bWwiOmZhbHNlLCJpbmNsdWRlX2F0dGFjaG1lbnRzIjpmYWxzZSwiaW5jbHVkZV9pbnZvaWNlX3BkZiI6ZmFsc2UsImRlZmF1bHRfdGVtcGxhdGUiOnRydWUsInN1YnNjcmlwdGlvbl9kZWZhdWx0X3RlbXBsYXRlIjp0cnVlLCJjcmVhdGVkX2F0IjoiMTAvMDgvMjAxOCAxMDo1Mjo0MSAtMDM6MDAifV19
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.billimatic.com.br/api/v1/organizations/2052/email_templates
+  recorded_at: Tue, 09 Apr 2019 14:51:46 GMT
+recorded_with: VCR 3.0.3
