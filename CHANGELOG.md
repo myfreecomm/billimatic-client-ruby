@@ -2,6 +2,10 @@
 
 ## Next version
 
+## v0.22.0
+- Adds EmailTemplate entity.
+- Adds EmailTemplate#list endpoint.
+
 ## v0.21.0
 - Adds ServiceItem#list endpoint.
 
