@@ -21,7 +21,7 @@ describe Billimatic::Entities::InvoiceTemplate do
                     :receivables_additional_information, :scheduled_updates,
                     :notify_customer, :apply_negative_updates, :emites_service_values_id,
                     :emites_service_value_name, :days_until_automatic_nfe_emission,
-                    :nfe_body, :payment_method, :cobrato_charge_config_id,
+                    :nfe_body, :payment_method, :card_installments, :cobrato_charge_config_id,
                     :cobrato_charge_config_name, :cobrato_charge_template_id,
                     :cobrato_charge_template_name, :finance_category, :finance_revenue_center,
                     :myfinance_sale_account_id, :myfinance_sale_account_name, :created_at
