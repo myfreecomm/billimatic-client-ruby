@@ -35,7 +35,7 @@ describe Billimatic::Entities::Subscription do
                       :cancel_date, :cancel_reason,
                       :cobrato_payment_gateway_charge_config_id,
                       :cobrato_payment_gateway_charge_config_name,
-                      :plan, :payment_information
+                      :overdue_automatic_management, :plan, :payment_information
                     ]
   end
 

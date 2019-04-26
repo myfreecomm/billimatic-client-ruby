@@ -24,6 +24,7 @@ module Billimatic
       attribute :cancel_reason, String
       attribute :cobrato_payment_gateway_charge_config_id, Integer
       attribute :cobrato_payment_gateway_charge_config_name, String
+      attribute :overdue_automatic_management, Boolean
       attribute :plan, Plan
     end
   end
