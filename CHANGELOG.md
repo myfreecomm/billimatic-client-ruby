@@ -2,6 +2,9 @@
 
 ## Next version
 
+## v0.22.1
+- Adds `overdue_automatic_management` attribute on Contract entity.
+
 ## v0.22.0
 - Adds EmailTemplate entity.
 - Adds EmailTemplate#list endpoint.
