@@ -2,6 +2,11 @@
 
 ## Next version
 
+## v1.0.0
+### BREAKING CHANGES
+- Removes Subscription#checkout endpoint.
+- Removes Subscription#update_payment_information endpoint.
+
 ## v0.22.1
 - Adds `overdue_automatic_management` attribute on Contract entity.
 
