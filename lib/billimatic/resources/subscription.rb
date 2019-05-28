@@ -9,27 +9,10 @@ module Billimatic
         end
       end
 
-      def checkout(params, token:)
-        http.post(
-          "#{resource_base_path}/checkout/#{token}", body: { subscription: params }
-        ) do |response|
-          respond_with_entity response
-        end
-      end
-
       def change_plan(token:, new_plan_id:)
         http.patch(
           "#{resource_base_path}/#{token}/change_plan",
           body: { subscription: { new_plan_id: new_plan_id } }
-        ) do |response|
-          respond_with_entity response
-        end
-      end
-
-      def update_payment_information(params, token:)
-        http.patch(
-          "#{resource_base_path}/#{token}/update_payment_information",
-          body: { subscription: params }
         ) do |response|
           respond_with_entity response
         end

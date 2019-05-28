@@ -200,17 +200,6 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
     </tr>
     <tr>
-        <td><code>POST</code></td>
-        <td>
-            <a href="https://myfreecomm.github.io/billimatic-api-docs/#checkout-de-assinatura" target="_blank">
-                /api/v1/subscriptions/checkout/:token
-            </a>
-        </td>
-        <td>
-            <code>client.subscriptions.checkout(attributes_hash, token: token)</code>
-        </td>
-    </tr>
-    <tr>
         <td><code>PATCH</code></td>
         <td>
             <a href="https://myfreecomm.github.io/billimatic-api-docs/#trocas-de-plano-de-assinaturas" target="_blank">
@@ -219,17 +208,6 @@ client = Billimatic.client("YOUR_TOKEN_HERE")
         </td>
         <td>
             <code>client.subscriptions.change_plan(token: token, new_plan_id: id)</code>
-        </td>
-    </tr>
-    <tr>
-        <td><code>PATCH</code></td>
-        <td>
-            <a href="https://myfreecomm.github.io/billimatic-api-docs/#trocas-de-forma-de-pagamento-em-assinaturas" target="_blank">
-                /api/v1/subscriptions/:token/update_payment_information
-            </a>
-        </td>
-        <td>
-            <code>client.subscriptions.update_payment_information(attributes_hash, token: token)</code>
         </td>
     </tr>
     <tr>
