@@ -21,6 +21,7 @@ module Billimatic
       attribute :days_until_automatic_nfe_emission, Integer
       attribute :nfe_body, String
       attribute :payment_method, String
+      attribute :card_installments, Integer
       attribute :cobrato_charge_config_id, Integer
       attribute :cobrato_charge_config_name, String
       attribute :cobrato_charge_template_id, Integer
