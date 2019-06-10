@@ -2,6 +2,8 @@
 
 ## Next version
 
+## v1.0.1
+- Adds `card_installments` attribute on InvoiceTemplate entity.
 ## v1.0.0
 ### BREAKING CHANGES
 - Removes Subscription#checkout endpoint.
